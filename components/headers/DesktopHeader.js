@@ -17,7 +17,7 @@ export default function DesktopHeader(headerProps) {
           onMouseEnter={() => setActiveDesktopMenu("products")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
-          Products <i className="fa-solid fa-angle-down ml-5" />
+          Products <i className={"fa-solid ml-5 " + (activeDesktopMenu === "products" ? "fa-angle-up" : "fa-angle-down")} />
         </div>
         <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-smokyBlack">Partner With Us</div>
         <div
@@ -25,7 +25,7 @@ export default function DesktopHeader(headerProps) {
           onMouseEnter={() => setActiveDesktopMenu("resources")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
-          Resources <i className="fa-solid fa-angle-down ml-5" />
+          Resources <i className={"fa-solid ml-5 " + (activeDesktopMenu === "resources" ? "fa-angle-up" : "fa-angle-down")} />
         </div>
         <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-smokyBlack">Careers</div>
         <div
@@ -33,7 +33,7 @@ export default function DesktopHeader(headerProps) {
           onMouseEnter={() => setActiveDesktopMenu("support")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
-          Support <i className="fa-solid fa-angle-down ml-5" />
+          Support <i className={"fa-solid ml-5 " + (activeDesktopMenu === "support" ? "fa-angle-up" : "fa-angle-down")} />
         </div>
       </div>
     </>
