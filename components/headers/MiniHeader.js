@@ -171,7 +171,7 @@ export default function MiniHeader(headerProps) {
         <div className="mx-16 h-100% w-205">
           {/* Menu title */}
           <div
-            className="flex items-center"
+            className="flex items-center cursor-pointer"
             onClick={() => {
               setActiveMenu("menu");
               setActiveProductsMenu("");
