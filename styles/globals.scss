@@ -26,3 +26,7 @@ a {
 .button {
   @apply flex items-center justify-center rounded-sm text-FFFFFF text-s22l26_4 cursor-pointer bg-button;
 }
+
+.mobile-button {
+  @apply flex items-center justify-center rounded-sm text-FFFFFF text-s14l16_8 cursor-pointer bg-button;
+}

@@ -17,7 +17,7 @@ export default function Home() {
           </div>
 
           <div className="w-50% flex items-center justify-center z-10">
-            <Image src="/images/backgrounds/home_top.svg" height={780} width={1100} />
+            <Image src="/images/backgrounds/home_top.png" height={780} width={1100} />
           </div>
         </div>
 

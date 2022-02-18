@@ -11,6 +11,7 @@ const colors = {
   E0E0E0: "#E0E0E0",
   FAFAFA: "#FAFAFA",
   F5FBF3: "#F5FBF3",
+  "8B8B8B": "#8B8B8B",
 
   // For testing
   red: "red",
@@ -45,8 +46,11 @@ module.exports = {
     fontSize: {
       s12l14: ["12px", "14px"],
       s14l17: ["14px", "17px"],
+      s14l16_8: ["14px", "16.8px"],
+      s14l24: ["14px", "24px"],
       s16l19: ["16px", "19px"],
       s18l21_6: ["18px", "21.6px"],
+      s18l27: ["18px", "27px"],
       s20l24: ["20px", "24px"],
       s20l140_62: ["20px", "140.62%"],
       s22l26_4: ["22px", "26.4px"],
