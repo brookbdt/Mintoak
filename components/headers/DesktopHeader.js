@@ -1,12 +1,12 @@
 import React from "react";
-import Image from "next/image";
+import Image from "../helpers/Image";
 
 export default function DesktopHeader(headerProps) {
   const { activeDesktopMenu, setActiveDesktopMenu } = headerProps;
   return (
     <>
       <div className="hidden desktop:flex">
-        <Image src="/logo.svg" alt="Logo" height={53.79} width={270} />
+        <Image src="/images/logo.svg" height={53.79} width={270} />
       </div>
 
       <div className="h-full items-center justify-center hidden desktop:flex">

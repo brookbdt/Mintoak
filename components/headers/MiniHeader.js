@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Image from "../helpers/Image";
 
 export default function MiniHeader(headerProps) {
   const iconSize = 20;
@@ -18,23 +18,23 @@ export default function MiniHeader(headerProps) {
 
         <div className={"smooth " + (activeProductsMenu === "ps" ? "h-175" : "h-0")}>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/omni.svg" alt="omni" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/omni.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">OMNI</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/mom.svg" alt="mom" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/mom.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">MOM</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/pay_later.svg" alt="pay_later" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/pay_later.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">Pay Later</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/acorn.svg" alt="acorn" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/acorn.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">ACORN</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/connect.svg" alt="connect" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/connect.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">CONNECT</div>
           </div>
         </div>
@@ -49,39 +49,39 @@ export default function MiniHeader(headerProps) {
         </div>
         <div className={"smooth " + (activeProductsMenu === "vas" ? "h-315" : "h-0")}>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/iku.svg" alt="iku" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/iku.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">IKU</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/oar.svg" alt="oar" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/oar.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">OAR</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/aim.svg" alt="aim" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/aim.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">AIM</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/mac.svg" alt="mac" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/mac.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">MAC</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/uam.svg" alt="uam" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/uam.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">UAM</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/bat.svg" alt="bat" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/bat.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">BAT</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/far.svg" alt="far" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/far.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">FAR</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/sam.svg" alt="sam" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/sam.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">SAM</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/pam.svg" alt="pam" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/pam.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">PAM</div>
           </div>
         </div>
@@ -97,11 +97,11 @@ export default function MiniHeader(headerProps) {
 
         <div className={"smooth " + (activeProductsMenu === "ls" ? "h-70" : "h-0")}>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/xsm.svg" alt="xsm" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/xsm.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">XSM</div>
           </div>
           <div className="flex pl-8 pb-15 items-center cursor-pointer">
-            <Image src="/icons/xsc.svg" alt="xsc" height={iconSize} width={iconSize} />
+            <Image src="/images/icons/xsc.svg" height={iconSize} width={iconSize} />
             <div className="text-s12l14 text-252525 shrink-0 ml-8">XSC</div>
           </div>
         </div>
@@ -116,17 +116,17 @@ export default function MiniHeader(headerProps) {
     return (
       <>
         <div className="flex pl-8 py-9 pt-15 items-center cursor-pointer">
-          <Image src="/icons/blog.svg" alt="blog" height={iconSize} width={iconSize} />
+          <Image src="/images/icons/blog.svg" height={iconSize} width={iconSize} />
           <div className="text-s12l14 text-252525 shrink-0 ml-8">Blog</div>
         </div>
 
         <div className="flex pl-8 py-9 items-center cursor-pointer">
-          <Image src="/icons/case_studies.svg" alt="case_studies" height={iconSize} width={iconSize} />
+          <Image src="/images/icons/case_studies.svg" height={iconSize} width={iconSize} />
           <div className="text-s12l14 text-252525 shrink-0 ml-8">Case Studies</div>
         </div>
 
         <div className="flex pl-8 py-9 items-center cursor-pointer">
-          <Image src="/icons/in_the_media.svg" alt="in_the_media" height={iconSize} width={iconSize} />
+          <Image src="/images/icons/in_the_media.svg" height={iconSize} width={iconSize} />
           <div className="text-s12l14 text-252525 shrink-0 ml-8">In the media</div>
         </div>
       </>
@@ -137,12 +137,12 @@ export default function MiniHeader(headerProps) {
     return (
       <>
         <div className="flex pl-8 py-9 pt-15 items-center cursor-pointer">
-          <Image src="/icons/faqs.svg" alt="faqs" height={iconSize} width={iconSize} />
+          <Image src="/images/icons/faqs.svg" height={iconSize} width={iconSize} />
           <div className="text-s12l14 text-252525 shrink-0 ml-8">FAQs</div>
         </div>
 
         <div className="flex pl-8 py-9 items-center cursor-pointer">
-          <Image src="/icons/contact_us.svg" alt="contact_us" height={iconSize} width={iconSize} />
+          <Image src="/images/icons/contact_us.svg" height={iconSize} width={iconSize} />
           <div className="text-s12l14 text-252525 shrink-0 ml-8">Contact Us</div>
         </div>
       </>
@@ -152,13 +152,13 @@ export default function MiniHeader(headerProps) {
   return (
     <>
       <div className="flex desktop:hidden">
-        <Image src="/logo.svg" alt="Logo" height={22} width={109} />
+        <Image src="/images/logo.svg" height={22} width={109} />
       </div>
 
       <i className="fa-solid fa-bars flex desktop:hidden cursor-pointer" onClick={() => setShowMobileMenu(true)} />
 
       {/* Mini Header menu */}
-      <div className={"desktop:hidden absolute right-0 top-0 h-100vh smooth bg-E0EFD4 " + (showMobileMenu ? "w-237" : "w-0")}>
+      <div className={"desktop:hidden absolute right-0 top-0 h-100vh smooth z-50 bg-E0EFD4 " + (showMobileMenu ? "w-237" : "w-0")}>
         <div className="flex h-54 w-100% justify-end items-center">
           <i
             className="fa-solid fa-xmark cursor-pointer mr-20"
