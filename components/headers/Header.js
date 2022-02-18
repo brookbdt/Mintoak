@@ -18,7 +18,7 @@ export default function Header() {
     return (
       <>
         <div
-          className="h-fit w-100% py-32 pl-65 bg-E0EFD4"
+          className="absolute h-fit w-100% py-32 pl-65 bg-E0EFD4"
           onMouseEnter={() => setActiveDesktopMenu("products")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
@@ -201,7 +201,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative flex items-center justify-between px-18 desktop:px-80 h-54 desktop:h-111 bg-E0EFD4">
+      <div className="relative flex items-center justify-between px-18 box-shadow desktop:px-80 h-54 desktop:h-111 bg-E0EFD4">
         {/* For desktop size */}
         <DesktopHeader {...headerProps} />
 

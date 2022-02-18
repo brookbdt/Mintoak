@@ -22,3 +22,11 @@ a {
   overflow: hidden;
   transition: all 0.3s ease;
 }
+
+.box-shadow {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-top-gradient {
+  background: linear-gradient(173.18deg, #e6f0df 19.15%, rgba(247, 255, 236, 0.1) 49.55%);
+}
