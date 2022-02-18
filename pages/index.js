@@ -1,11 +1,9 @@
-import Header from "../components/headers/Header";
 import Image from "../components/helpers/Image";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <div className="relative bg-home-top-bg h-fit w-100%">
+      <div className="relative bg-home-top h-fit w-100%">
         <div className="flex p-100 items-center">
           <div className="w-50% flex flex-col justify-center z-10">
             <div className="text-s44l120 text-252525">A one-stop </div>
