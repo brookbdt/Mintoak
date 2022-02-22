@@ -3,7 +3,7 @@ import Image from "../components/helpers/Image";
 export default function Home() {
   return (
     <div className="h-fit w-100%">
-      {/* Top layout */}
+      {/* Top layout with resp */}
       <div className="relative">
         <Image src="/images/backgrounds/home-bg.webp" layout="fill" className="absolute z-minus1" />
         <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-350 pb-40 z-10">
