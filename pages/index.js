@@ -17,7 +17,6 @@ export default function Home() {
           <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40">Request A Demo</div>
         </div>
       </div>
-
       {/* Count layout */}
       <div className="flex items-center justify-around px-200 mb-150">
         <div className="text-center text-s36l43 text-252525">
@@ -35,6 +34,33 @@ export default function Home() {
       </div>
 
       {/* Mintoak Advantages */}
+      <div className="flex justify-around text-252525 text-s44l120 mb-60">Mintoak Advantages</div>
+      <div className="flex justify-around w-100% px-100 mb-150">
+        <div className="flex flex-col items-center border border-8CC63E justify-center p-20 mx-20">
+          <Image src="/images/icons/cloud.svg" height={135} width={135} />
+          <div className="font-bold text-s24l29 text-252525 mt-30">Cloud based toolkit</div>
+          <div className="text-s20l150 text-525252 mt-15 text-center">Cloud-based toolkit with secure integration for successful payments</div>
+        </div>
+        <div className="flex flex-col items-center border border-8CC63E justify-center p-20 mx-20">
+          <Image src="/images/icons/value.svg" height={135} width={135} />
+          <div className="font-bold text-s24l29 text-252525 mt-30">Value added services</div>
+          <div className="text-s20l150 text-525252 mt-15 text-center">Wide-ranging value-added services for comprehensive business growth</div>
+        </div>
+        <div className="flex flex-col items-center border border-8CC63E justify-center p-20 mx-20">
+          <Image src="/images/icons/cloud.svg" height={135} width={135} />
+          <div className="font-bold text-s24l29 text-252525 mt-30">Instant onboarding</div>
+          <div className="text-s20l150 text-525252 mt-15 text-center">
+            Instant registering and onboarding for merchants through a robust digital interface
+          </div>
+        </div>
+        <div className="flex flex-col items-center border border-8CC63E justify-center p-20 mx-20">
+          <Image src="/images/icons/cloud.svg" height={135} width={135} />
+          <div className="font-bold text-s24l29 text-252525 mt-30">Payments re-imagined</div>
+          <div className="text-s20l150 text-525252 mt-15 text-center">
+            Reimagining payments through omni-channels with real-time tracking features
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
