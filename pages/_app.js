@@ -1,6 +1,7 @@
+import "../styles/globals.scss";
+import "antd/dist/antd.css";
 import AppContextProvider from "../components/helpers/AppContext";
 import Header from "../components/headers/Header";
-import "../styles/globals.scss";
 import Footer from "../components/footers/Footer";
 
 function MyApp({ Component, pageProps }) {

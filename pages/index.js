@@ -2,6 +2,9 @@ import { useState } from "react/cjs/react.development";
 import Carousel from "react-elastic-carousel";
 import Image from "../components/helpers/Image";
 import { consts } from "react-elastic-carousel";
+import { Collapse } from "antd";
+
+const { Panel } = Collapse;
 
 export default function Home() {
   const [isBORM, setIsBORM] = useState("b");
@@ -400,6 +403,56 @@ export default function Home() {
             </div>
           </Carousel>
           <div className="text-s22l26_4 text-8DBF52 border-b border-8DBF52 py-5 m-25 cursor-pointer font-bold">View All</div>
+        </div>
+      </div>
+      {/* FAQs */}
+      <div className="px-180 py-150">
+        <div className="border-2 border-8CC63E p-40">
+          <div>
+            <div className="text-252525 text-s45l45 py-10">FAQs</div>
+            <div className="text-252525 text-s32l38 py-10 mb-48">Curious about Mintoak? We’ve got you covered.</div>
+          </div>
+          <Collapse defaultActiveKey={["1"]} bordered={false}>
+            <Panel
+              className="text-252525 text-s24l29 px-20 py-20"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="1"
+            >
+              <p className="text-525252 text-s20l24">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="2">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="3">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="4">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="5">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+          </Collapse>
         </div>
       </div>
     </div>
