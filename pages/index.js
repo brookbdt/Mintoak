@@ -1,13 +1,25 @@
-import { useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import Carousel from "react-elastic-carousel";
 import Image from "../components/helpers/Image";
 import { consts } from "react-elastic-carousel";
 import { Collapse } from "antd";
+import { API, endpoints, getImageUrl } from "../components/helpers/API";
 
 const { Panel } = Collapse;
 
 export default function Home() {
   const [isBORM, setIsBORM] = useState("b");
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+
+  useEffect(() => {
+    API({
+      url: endpoints.home_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        setHomeBannerResp(resp);
+      }
+    });
+  }, []);
 
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -23,34 +35,17 @@ export default function Home() {
     );
   };
 
-  const whiteCarouselArrows = ({ type, onClick, isEdge }) => {
-    const pointer =
-      type === consts.PREV ? (
-        <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-      ) : (
-        <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-      );
-    return (
-      <button onClick={onClick} disabled={isEdge}>
-        {pointer}
-      </button>
-    );
-  };
-
   return (
     <div className="h-fit w-100% bg-8FC055">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
-        <Image src="/images/backgrounds/home-bg.webp" layout="fill" className="absolute z-minus1" />
+        <img src={getImageUrl(homeBannerResp?.Illustration)} className="absolute z-minus1" />
         <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-350 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">A one-stop </div>
           <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0">merchant ecosystem</div>
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">for all your business needs</div>
-          <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">
-            Powered by real-time analytics and easy access to financial services, our comprehensive digital payment's platform helps bridge the gap
-            between banks and small businesses.
-          </div>
-          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20">Request A Demo</div>
+          <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">{homeBannerResp?.Description}</div>
+          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20">{homeBannerResp?.Button}</div>
         </div>
       </div>
 
@@ -192,7 +187,25 @@ export default function Home() {
       <div className="flex flex-col items-center bg-footer w-100% p-60">
         <div className="text-center font-bold text-FAFAFA text-s44l120 p-50">Our achievements</div>
         <div className="flex items-center w-100% py-50 px-100">
-          <Carousel itemsToShow={3} itemPadding={[0, 20, 0, 20]} enableMouseSwipe={false} pagination={false} renderArrow={whiteCarouselArrows}>
+          <Carousel
+            itemsToShow={3}
+            itemPadding={[0, 20, 0, 20]}
+            enableMouseSwipe={false}
+            pagination={false}
+            renderArrow={({ type, onClick, isEdge }) => {
+              const pointer =
+                type === consts.PREV ? (
+                  <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                ) : (
+                  <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                );
+              return (
+                <button onClick={onClick} disabled={isEdge}>
+                  {pointer}
+                </button>
+              );
+            }}
+          >
             <div className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4">
               <Image src="/images/backgrounds/fintech_hub.svg" height={110} width={273} />
               <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">Mumbai Fintech Hub</div>
