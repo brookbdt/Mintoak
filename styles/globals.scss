@@ -1,7 +1,9 @@
+// ==================== TAILWIND IMPORT ====================
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+// ==================== COMMON CLASSES START ====================
 html,
 body {
   font-family: "Lato", sans-serif;
@@ -36,7 +38,9 @@ a {
     @apply z-minus1;
   }
 }
+// ==================== COMMON CLASSES START ====================
 
+// ==================== ANTD CUSTOMIZATION START ====================
 .ant-collapse-borderless > .ant-collapse-item {
   border-color: #a4d77a !important;
 }
@@ -52,3 +56,4 @@ a {
 .ant-collapse-item-active {
   background: #ffffff !important;
 }
+// ==================== ANTD CUSTOMIZATION END ====================
