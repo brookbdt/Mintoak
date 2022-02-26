@@ -26,8 +26,6 @@ const colors = {
   // For testing
   red: "red",
   green: "green",
-  yellow: "yellow",
-  black: "black",
   blue: "blue",
 };
 
@@ -99,5 +97,5 @@ module.exports = {
       "100vw": "100vw",
     },
   },
-  plugins: [],
+  // plugins: [],
 };
