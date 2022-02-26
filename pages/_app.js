@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import "antd/dist/antd.css";
-import AppContextProvider from "../components/helpers/AppContext";
+import AppContextProvider from "./AppContext";
 import Header from "../components/headers/Header";
 import Footer from "../components/footers/Footer";
 
