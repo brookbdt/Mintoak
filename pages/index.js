@@ -50,7 +50,7 @@ export default function Home() {
             Powered by real-time analytics and easy access to financial services, our comprehensive digital payment's platform helps bridge the gap
             between banks and small businesses.
           </div>
-          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40">Request A Demo</div>
+          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer">Request A Demo</div>
         </div>
       </div>
       {/* Count layout */}
@@ -203,12 +203,12 @@ export default function Home() {
               <div className="text-DFDFDF text-center mt-12 text-s20l150">Grant Certificate Awarded INR 10,00,000 by the State</div>
             </div>
             <div className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4">
-              <Image src="/images/backgrounds/service provider badge.svg" height={145} width={273} />
+              <Image src="/images/backgrounds/service provider badge.svg" height={148} width={273} />
               <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">Visa Global</div>
               <div className="text-DFDFDF text-center mt-12 text-s20l150">Visa Global Registry of Service Providers on the list 2020</div>
             </div>
             <div className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4">
-              <Image src="/images/backgrounds/secure_logic.svg" height={167} width={273} />
+              <Image src="/images/backgrounds/secure_logic.svg" height={145} width={273} />
               <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">Secure Logic</div>
               <div className="text-DFDFDF text-center mt-12 text-s20l150">PCI DSS Level : 1 Classifcation : Merchant</div>
             </div>
@@ -235,7 +235,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -252,7 +252,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer" />
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -269,7 +269,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer" />
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -286,7 +286,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -303,7 +303,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
           </Carousel>
@@ -330,7 +330,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -347,7 +347,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -364,7 +364,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -381,7 +381,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
             <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
@@ -398,61 +398,79 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg"></i>
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
           </Carousel>
           <div className="text-s22l26_4 text-8DBF52 border-b border-8DBF52 py-5 m-25 cursor-pointer font-bold">View All</div>
         </div>
       </div>
+
       {/* FAQs */}
       <div className="px-180 py-150">
-        <div className="border-2 border-8CC63E p-40">
-          <div>
-            <div className="text-252525 text-s45l45 py-10">FAQs</div>
-            <div className="text-252525 text-s32l38 py-10 mb-48">Curious about Mintoak? We’ve got you covered.</div>
+        <div className="border-2 border-8CC63E">
+          <div className="mb-40 ml-42 mt-50">
+            <div className="text-252525 text-s45l45">FAQs</div>
+            <div className="text-252525 text-s32l38 mb-48 mt-20">Curious about Mintoak? We’ve got you covered.</div>
           </div>
-          <Collapse defaultActiveKey={["1"]} bordered={false}>
-            <Panel
-              className="text-252525 text-s24l29 px-20 py-20"
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              key="1"
-            >
-              <p className="text-525252 text-s20l24">
-                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Panel>
-            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="2">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Panel>
-            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="3">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Panel>
-            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="4">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Panel>
-            <Panel header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? " key="5">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Panel>
-          </Collapse>
+          <div className="w-100%">
+            <Collapse expandIcon={({ isActive }) => isActive ? <i className="fa fa-angle-up" /> : <i className="fa fa-angle-down" />} expandIconPosition={"right"} defaultActiveKey={["1"]} bordered={false}>
+              <Panel
+                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E "
+                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+                key="1">
+                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </Panel>
+              <Panel
+                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
+                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+                key="2"
+              >
+                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </Panel>
+              <Panel
+                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
+                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+                key="3"
+              >
+                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </Panel>
+              <Panel
+                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
+                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+                key="4"
+              >
+                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </Panel>
+              <Panel
+                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
+                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+                key="5"
+              >
+                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </Panel>
+            </Collapse>
+          </div>
         </div>
       </div>
     </div>
