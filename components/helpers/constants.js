@@ -1,4 +1,4 @@
-// STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / Rds41177
+// STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / EÛ8×^û
 
 const domain = "http://uat-content.mintoak.com";
 const slug = "/";
