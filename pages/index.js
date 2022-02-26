@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="h-fit w-100% bg-8FC055">
       {/* Top layout with resp */}
-      <div className="relative">
+      <div className="relative top-bg-container">
         <Image src="/images/backgrounds/home-bg.webp" layout="fill" className="absolute z-minus1" />
         <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-350 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">A one-stop </div>
@@ -50,9 +50,10 @@ export default function Home() {
             Powered by real-time analytics and easy access to financial services, our comprehensive digital payment's platform helps bridge the gap
             between banks and small businesses.
           </div>
-          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer">Request A Demo</div>
+          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20">Request A Demo</div>
         </div>
       </div>
+
       {/* Count layout */}
       <div className="flex items-center justify-around px-200 mb-150">
         <div className="text-center text-s36l43 text-252525">
@@ -307,7 +308,7 @@ export default function Home() {
               </div>
             </div>
           </Carousel>
-          <div className="text-s22l26_4 text-8DBF52 border-b border-8DBF52 py-5 mt-25 cursor-pointer font-bold">View All</div>
+          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">View All</div>
         </div>
       </div>
 
@@ -402,75 +403,84 @@ export default function Home() {
               </div>
             </div>
           </Carousel>
-          <div className="text-s22l26_4 text-8DBF52 border-b border-8DBF52 py-5 m-25 cursor-pointer font-bold">View All</div>
+          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">View All</div>
         </div>
       </div>
 
       {/* FAQs */}
       <div className="px-180 py-150">
-        <div className="border-2 border-8CC63E">
-          <div className="mb-40 ml-42 mt-50">
+        <div className="border-2 border-b-0 border-8CC63E">
+          <div className="mb-40 ml-40 mt-50">
             <div className="text-252525 text-s45l45">FAQs</div>
-            <div className="text-252525 text-s32l38 mb-48 mt-20">Curious about Mintoak? We’ve got you covered.</div>
+            <div className="text-000000 text-s30l36 mb-48 mt-20">Curious about Mintoak? We’ve got you covered.</div>
           </div>
-          <div className="w-100%">
-            <Collapse expandIcon={({ isActive }) => isActive ? <i className="fa fa-angle-up" /> : <i className="fa fa-angle-down" />} expandIconPosition={"right"} defaultActiveKey={["1"]} bordered={false}>
-              <Panel
-                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E "
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-                key="1">
-                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Panel>
-              <Panel
-                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-                key="2"
-              >
-                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Panel>
-              <Panel
-                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-                key="3"
-              >
-                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Panel>
-              <Panel
-                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-                key="4"
-              >
-                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Panel>
-              <Panel
-                className="text-252525 text-s24l29 p-30 font-semibold border border-8CC63E"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-                key="5"
-              >
-                <p className="text-525252 text-s20l24 font-normal mt-10 mb-10">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Panel>
-            </Collapse>
-          </div>
+
+          <Collapse
+            expandIcon={({ isActive }) => (isActive ? <i className="fa fa-angle-up text-262626" /> : <i className="fa fa-angle-down text-262626" />)}
+            expandIconPosition={"right"}
+            bordered={false}
+            // defaultActiveKey={["1"]}
+          >
+            <Panel
+              className="text-252525 text-s24l29 p-30 font-semibold"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="1"
+            >
+              <p className="text-525252 text-s20l150 font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 text-s24l29 p-30 font-semibold"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="2"
+            >
+              <p className="text-525252 text-s20l150 font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 text-s24l29 p-30 font-semibold"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="3"
+            >
+              <p className="text-525252 text-s20l150 font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 text-s24l29 p-30 font-semibold"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="4"
+            >
+              <p className="text-525252 text-s20l150 font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 text-s24l29 p-30 font-semibold"
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              key="5"
+            >
+              <p className="text-525252 text-s20l150 font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisc ing elit, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Panel>
+          </Collapse>
+        </div>
+        <div className="flex items-center justify-center mt-40">
+          <div className="text-s24l29 text-6B6B6B">Still have unanswered questions?</div>
+          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 ml-10 cursor-pointer font-bold">View All</div>
         </div>
       </div>
     </div>
