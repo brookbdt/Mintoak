@@ -64,6 +64,7 @@ a {
 .sliderItem {
   &:hover {
     background: #ffffff;
+    transition: .7s;
     :first-child span {
       display: none !important;
     }
