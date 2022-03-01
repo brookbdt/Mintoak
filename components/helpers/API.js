@@ -24,6 +24,8 @@ const API = ({ url, method = "get", body = {}, headers = {} }) =>
 // API ENDPOINTS
 const endpoints = {
   home_banner: "home-banner",
+  metrics: "metrics",
+  homepage_for_banks: "homepage-for-banks",
 };
 
 export { API, endpoints, domain };
