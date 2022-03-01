@@ -59,3 +59,22 @@ a {
   background: #ffffff !important;
 }
 // ==================== ANTD CUSTOMIZATION END ====================
+
+// Hover Carousel
+.sliderItem {
+  &:hover {
+    background: #ffffff;
+    :first-child span {
+      display: none !important;
+    }
+    .comunityContent {
+      display: block;
+    }
+    .comunityColouredImage {
+      display: block !important;
+    }
+  }
+  .comunityColouredImage {
+    display: none !important;
+  }
+}
