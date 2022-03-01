@@ -277,7 +277,7 @@ export default function Home() {
           <div className="sliderItem">
             <Image src="/images/backgrounds/burgan_bank.svg" width={231} height={130} />
             <Image src="/images/backgrounds/burgan_bank_colored.svg" width={231} height={130} className="comunityColouredImage" />
-            <div className="comunityContent hidden duration-500 transition-opacity px-15 text-center pb-10">
+            <div className="comunityContent hidden transition px-15 text-center pb-10">
               Burgan Bank is Kuwait's second largest conventional bank by assets. Burgan is one of the youngest banks in Kuwait.
             </div>
           </div>
