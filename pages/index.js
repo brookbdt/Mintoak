@@ -56,6 +56,16 @@ export default function Home() {
     );
   };
 
+  const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
+    return (<>
+      <span className="flex w-30 justify-between mt-20">
+        <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100 pr-6"></span>
+        <span className="w-6 h-6 bg-525252 rounded-md bg-opacity-100 pr-6"></span>
+        <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
+      </span>
+    </>);
+  }
+
   return (
     <div className="h-fit w-100% bg-8FC055">
       {/* Top layout with resp */}
@@ -91,7 +101,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex items-center justify-around px-200 mobile:px-0 mb-150 mobile:mb-80 desktop:hidden">
-        <Carousel itemsToShow={3} itemsToScroll={1} itemPadding={[0, 0, 0, 0]} enableMouseSwipe={true} pagination={true} showArrows={false}>
+        <Carousel itemsToShow={3} itemsToScroll={1} itemPadding={[0, 0, 0, 0]} enableMouseSwipe={true} pagination={true} showArrows={false} renderPagination={mobileCarouselPagination}>
           <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
             {metricsResp?.Merchants}
             <span className="text-A4D77A">+</span>
@@ -345,8 +355,8 @@ export default function Home() {
             </div>
           </Carousel>
         </div>
-        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden">
-          <Carousel itemsToShow={1} itemPadding={[0, 0]} enableMouseSwipe={true} pagination={true} showArrows={false} outerSpacing={0}>
+        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden mb-40">
+          <Carousel itemsToShow={1} itemPadding={[0, 0]} enableMouseSwipe={true} pagination={true} showArrows={false} outerSpacing={0} renderPagination={mobileCarouselPagination}>
             <div className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4">
               <Image src="/images/backgrounds/fintech_hub.svg" height={110} width={273} />
               <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">Mumbai Fintech Hub</div>
@@ -476,7 +486,7 @@ export default function Home() {
           <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">View All</div>
         </div>
         <div className="w-100% block items-center desktop:hidden">
-          <Carousel itemPadding={[0, 15]} itemsToShow={1} outerSpacing={0} showArrows={false}>
+          <Carousel itemPadding={[0, 15]} itemsToShow={1} outerSpacing={0} showArrows={false} pagination={false}>
             <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
               <div className="px-10">
                 <Image src="/images/backgrounds/img-1.svg" height={203} width={216} />
@@ -661,7 +671,7 @@ export default function Home() {
           <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">View All</div>
         </div>
         <div className="w-100% flex flex-col items-center justify-around desktop:hidden">
-          <Carousel itemPadding={[0, 15]} itemsToShow={1} outerSpacing={0} showArrows={false}>
+          <Carousel itemPadding={[0, 15]} itemsToShow={1} outerSpacing={0} showArrows={false} pagination={false}>
             <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
               <div className="px-10">
                 <Image src="/images/backgrounds/img-4.svg" height={203} width={216} />
@@ -767,7 +777,7 @@ export default function Home() {
             expandIcon={({ isActive }) => (isActive ? <i className="fa fa-angle-up text-262626" /> : <i className="fa fa-angle-down text-262626" />)}
             expandIconPosition={"right"}
             bordered={false}
-            // defaultActiveKey={["1"]}
+          // defaultActiveKey={["1"]}
           >
             <Panel
               className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold"
@@ -826,7 +836,7 @@ export default function Home() {
             </Panel>
           </Collapse>
         </div>
-        <div className="flex items-center justify-center mt-40">
+        <div className="flex items-center justify-center mt-40 mobile:hidden">
           <div className="text-s24l29 text-6B6B6B">Still have unanswered questions?</div>
           <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 ml-10 cursor-pointer font-bold">View All</div>
         </div>
