@@ -26,8 +26,4 @@ const endpoints = {
   home_banner: "home-banner",
 };
 
-const getImageUrl = (imageData) => {
-  return domain + imageData?.url;
-};
-
-export { API, endpoints, getImageUrl };
+export { API, endpoints, domain };

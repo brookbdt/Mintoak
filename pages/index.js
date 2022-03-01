@@ -3,7 +3,7 @@ import Carousel from "react-elastic-carousel";
 import Image from "../components/helpers/Image";
 import { consts } from "react-elastic-carousel";
 import { Collapse } from "antd";
-import { API, endpoints, getImageUrl } from "../components/helpers/API";
+import { API, endpoints } from "../components/helpers/API";
 
 const { Panel } = Collapse;
 
@@ -39,7 +39,7 @@ export default function Home() {
     <div className="h-fit w-100% bg-8FC055">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
-        <img src={getImageUrl(homeBannerResp?.Illustration)} className="absolute z-minus1" />
+        <Image src={homeBannerResp?.Illustration} className="absolute z-minus1" />
         <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-350 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">A one-stop </div>
           <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0">merchant ecosystem</div>
