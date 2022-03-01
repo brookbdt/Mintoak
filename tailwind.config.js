@@ -75,6 +75,7 @@ module.exports = {
       s44l120: ["44px", "120%"],
       s45l45: ["45px", "54px"],
       s56l124_5: ["56px", "124.5%"],
+      s12l18: ["12px", "18px"],
     },
     extend: {
       colors,

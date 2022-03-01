@@ -4,9 +4,9 @@ import Image from "../helpers/Image";
 export default function MiniFooter() {
   return (
     <div className="flex desktop:hidden flex-col items-center pb-60 w-100%">
-      <div className="p-36 pb-0 w-100% flex flex-col items-center">
+      <div className="p-36 pb-0 w-100% flex flex-col items-center mobile:p-20">
         <div className="text-F1F1F1 text-s18l27">Ready to begin your journey with us? Get onboard!</div>
-        <div className="mobile-button h-40 w-300 m-30">Request A Demo</div>
+        <div className="mobile-button h-40 w-300 m-30  mobile:w-166 mobile:h-40">Request A Demo</div>
 
         <div className="w-100%">
           <div className="flex items-center justify-between cursor-pointer py-15">
