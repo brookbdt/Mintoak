@@ -258,14 +258,26 @@ export default function Home() {
       {/* Building a global community */}
       <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">Building a global community</div>
       <div className="flex justify-center items-center w-100% py-50 px-150 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
-        <Carousel itemsToShow={3} itemPadding={[0, 20, 0, 20]} enableMouseSwipe={false} pagination={false} renderArrow={blackCarouselArrows}>
+        <Carousel itemsToShow={3} itemPadding={[0, 20, 0, 20]} enableMouseSwipe={false} pagination={false} renderArrow={({ type, onClick, isEdge }) => {
+          const pointer =
+            type === consts.PREV ? (
+              <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+            ) : (
+              <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+            );
+          return (
+            <button onClick={onClick} disabled={isEdge} className="h-120">
+              {pointer}
+            </button>
+          );
+        }}>
           <div className="h-130 w-230 mobile:h-170 mobile:278">
             <Image src="/images/backgrounds/HDFC-Bank-logo.svg" width={231} height={130} />
           </div>
           <div className="sliderItem">
             <Image src="/images/backgrounds/burgan_bank.svg" width={231} height={130} />
             <Image src="/images/backgrounds/burgan_bank_colored.svg" width={231} height={130} className="comunityColouredImage" />
-            <div className="comunityContent hidden">
+            <div className="comunityContent hidden duration-500 transition-opacity px-15 text-center pb-10">
               Burgan Bank is Kuwait's second largest conventional bank by assets. Burgan is one of the youngest banks in Kuwait.
             </div>
           </div>
