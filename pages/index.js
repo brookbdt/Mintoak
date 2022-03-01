@@ -11,6 +11,7 @@ export default function Home() {
   const [isBORM, setIsBORM] = useState("b");
   const [homeBannerResp, setHomeBannerResp] = useState({});
   const [metricsResp, setMetricsResp] = useState({});
+  const [homeForBanksResp, setHomeForBanksResp] = useState({});
 
   useEffect(() => {
     // home_banner
@@ -28,6 +29,15 @@ export default function Home() {
     }).then((resp) => {
       if (!resp.message) {
         setMetricsResp(resp);
+      }
+    });
+
+    // homepage_for_banks
+    API({
+      url: endpoints.homepage_for_banks,
+    }).then((resp) => {
+      if (!resp.message) {
+        setHomeForBanksResp(resp);
       }
     });
   }, []);
@@ -164,23 +174,14 @@ export default function Home() {
           {isBORM === "b" ? (
             <>
               <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80">
-                  On your path to business growth, unlock new opportunities for saving costs, generating new revenue streams and simplified management
-                  with our comprehensive payments ecosystem that enables acceptance across all modes with the benefit of real-time tracking anytime,
-                  anywhere.
-                </div>
-                <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-                  Customizable solutions for your unique needs
-                </div>
-                <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-                  Our modular interface provides enough flexibility for you to customize solutions as per your needs or choose only the most relevant
-                  modules for your business.
-                </div>
-                <div className="text-s20l150 text-8CC63E cursor-pointer">Know More</div>
-                <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">Partner With Us</div>
+                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80">{homeForBanksResp?.Description1}</div>
+                <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">{homeForBanksResp?.Title2}</div>
+                <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">{homeForBanksResp?.Description2}</div>
+                <div className="text-s20l150 text-8CC63E cursor-pointer">{homeForBanksResp?.CTA1}</div>
+                <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">{homeForBanksResp?.CTA2}</div>
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
-                <Image src="/images/backgrounds/for_bank.svg" height={650} width={500} />
+                <Image src={homeForBanksResp?.BankIllustration} height={650} width={500} />
               </div>
             </>
           ) : (
@@ -210,21 +211,13 @@ export default function Home() {
             <div className={"font-bold text-s20l24"}>For Banks</div>
           </div>
           <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-            <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
-              On your path to business growth, unlock new opportunities for saving costs, generating new revenue streams and simplified management
-              with our comprehensive payments ecosystem that enables acceptance across all modes with the benefit of real-time tracking anytime,
-              anywhere.
-            </div>
-            <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-              Customizable solutions for your unique needs
-            </div>
-            <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-              Our modular interface provides enough flexibility for you to customize solutions as per your needs or choose only the most relevant
-              modules for your business.
-            </div>
-            <div className="text-s20l150 text-8CC63E cursor-pointer">Know More</div>
+            <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">{homeForBanksResp?.Description1}</div>
+            <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">{homeForBanksResp?.Title2}</div>
+            <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">{homeForBanksResp?.Description2}</div>
+            <div className="text-s20l150 text-8CC63E cursor-pointer">{homeForBanksResp?.CTA1}</div>
+            <div className="text-s20l150 text-8CC63E cursor-pointer">{homeForBanksResp?.CTA2}</div>
             <div className="w-50% mobile:w-100% flex items-center justify-center">
-              <Image src="/images/backgrounds/for_bank.svg" height={650} width={500} />
+              <Image src={homeForBanksResp?.BankIllustration} height={650} width={500} />
             </div>
           </div>
           <div className="button w-216 h-54 mobile:w-290 mobile:h-40 mobile:ml-12 mb-40">Partner With Us</div>
@@ -232,7 +225,7 @@ export default function Home() {
           <div className={"flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "}>
             <div className={"mb-22 font-bold text-s20l24"}>For Merchants</div>
           </div>
-          <div className=" flex flex-col w-50% mobile:w-100% justify-center">
+          <div className="flex flex-col w-50% mobile:w-100% justify-center">
             <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
               The backbone of any business, merchants require a hassle-free, one-stop ecosystem for conducting their myriad transactions and managing,
               exploring, and expanding their business. This is what we offer, with superior features of real-time tracking of inventories and a robust
