@@ -167,7 +167,7 @@ export default function Home() {
         Mintoak Advantages
       </div>
       <div className="flex mobile:block justify-around w-100% px-100 mobile:px-0 mb-150">
-        <div className="flex flex-col items-center border w-345 h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0">
+        <div className="flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0">
           <Image src="/images/icons/cloud.svg" height={135} width={135} />
           <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
             Cloud based toolkit
@@ -791,7 +791,7 @@ export default function Home() {
         <div className="w-100% block items-center desktop:hidden laptop:hidden">
           <Carousel
             itemPadding={[0, 15]}
-            itemsToShow={1}
+            itemsToShow={1.3}
             outerSpacing={0}
             showArrows={false}
             pagination={false}
@@ -1064,7 +1064,7 @@ export default function Home() {
         <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
           <Carousel
             itemPadding={[0, 15]}
-            itemsToShow={1}
+            itemsToShow={1.3}
             outerSpacing={0}
             showArrows={false}
             pagination={false}
