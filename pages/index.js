@@ -95,7 +95,7 @@ export default function Home() {
         </div>
         <Image
           src="/images/backgrounds/mobile_home_banner.png"
-          className=" block relative desktop:hidden"
+          className=" block relative desktop:hidden laptop:hidden"
           type="img"
         />
       </div>
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-around px-200 mobile:px-0 mb-150 mobile:mb-80 desktop:hidden">
+      <div className="flex items-center justify-around px-200 mobile:px-0 mb-150 mobile:mb-80 desktop:hidden laptop:hidden">
         <Carousel
           itemsToShow={3}
           itemsToScroll={1}
@@ -167,7 +167,7 @@ export default function Home() {
         Mintoak Advantages
       </div>
       <div className="flex mobile:block justify-around w-100% px-100 mobile:px-0 mb-150">
-        <div className="flex flex-col items-center border mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0">
+        <div className="flex flex-col items-center border w-345 h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0">
           <Image src="/images/icons/cloud.svg" height={135} width={135} />
           <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
             Cloud based toolkit
@@ -176,7 +176,7 @@ export default function Home() {
             Cloud-based toolkit with secure integration for successful payments
           </div>
         </div>
-        <div className="flex flex-col items-center border mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
+        <div className="flex flex-col items-center border w-345 h-361 mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
           <Image src="/images/icons/value.svg" height={135} width={135} />
           <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
             Value added services
@@ -185,7 +185,7 @@ export default function Home() {
             Wide-ranging value-added services for comprehensive business growth
           </div>
         </div>
-        <div className="flex flex-col items-center border mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
+        <div className="flex flex-col items-center border w-345 h-361 mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
           <Image src="/images/icons/instant.svg" height={135} width={135} />
           <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
             Instant onboarding
@@ -195,7 +195,7 @@ export default function Home() {
             digital interface
           </div>
         </div>
-        <div className="flex flex-col items-center border mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
+        <div className="flex flex-col items-center border w-345 desktop:h-361 laptop:h-361 mobile:h-auto mobile:border-0 border-8CC63E justify-center mobile:w-100% p-20 mx-20 mobile:mx-0">
           <Image src="/images/icons/payment.svg" height={135} width={135} />
           <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
             Payments re-imagined
@@ -218,9 +218,8 @@ export default function Home() {
             onClick={() => setIsBORM("b")}
           >
             <Image
-              src={`/images/icons/radio-${
-                isBORM === "b" ? "selected" : "unselected"
-              }.svg`}
+              src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
               height={49}
               width={49}
             />
@@ -242,9 +241,8 @@ export default function Home() {
             onClick={() => setIsBORM("m")}
           >
             <Image
-              src={`/images/icons/radio-${
-                isBORM === "m" ? "selected" : "unselected"
-              }.svg`}
+              src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
               height={49}
               width={49}
             />
@@ -323,7 +321,7 @@ export default function Home() {
             </>
           )}
         </div>
-        <div className="flex mobile:block w-100% desktop:hidden mobile:px-20">
+        <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
           <div
             className={
               "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 pb-24 cursor-pointer"
@@ -409,7 +407,19 @@ export default function Home() {
           itemPadding={[0, 20, 0, 20]}
           enableMouseSwipe={false}
           pagination={false}
-          renderArrow={blackCarouselArrows}
+          renderArrow={({ type, onClick, isEdge }) => {
+            const pointer =
+              type === consts.PREV ? (
+                <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+              ) : (
+                <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+              )
+            return (
+              <button onClick={onClick} disabled={isEdge} className="h-120">
+                {pointer}
+              </button>
+            )
+          }}
         >
           <div className="h-130 w-230 mobile:h-170 mobile:278">
             <Image
@@ -419,18 +429,8 @@ export default function Home() {
             />
           </div>
           <div className="sliderItem">
-            <Image
-              src="/images/backgrounds/burgan_bank.svg"
-              width={231}
-              height={130}
-            />
-            <Image
-              src="/images/backgrounds/burgan_bank_colored.svg"
-              width={231}
-              height={130}
-              className="comunityColouredImage"
-            />
-            <div className="comunityContent hidden">
+            <span className="burganBank px-115 py-65"></span>
+            <div className="comunityContent pt-100 opacity-0">
               Burgan Bank is Kuwait's second largest conventional bank by
               assets. Burgan is one of the youngest banks in Kuwait.
             </div>
@@ -465,7 +465,7 @@ export default function Home() {
           </div>
         </Carousel>
       </div>
-      <div className="desktop:hidden items-center w-100% pl-42 mb-100 mobile:pr-0 mobile:mb-0">
+      <div className="desktop:hidden laptop:hidden items-center w-100% pl-42 mb-100 mobile:pr-0 mobile:mb-0">
         <div className="mobile:h-170 mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20">
           <div className="flex justify-center items-center px-46 w-100%">
             <Image
@@ -586,7 +586,7 @@ export default function Home() {
             </div>
           </Carousel>
         </div>
-        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden mb-40">
+        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
           <Carousel
             itemsToShow={1}
             itemPadding={[0, 0]}
@@ -654,9 +654,9 @@ export default function Home() {
 
       {/* In the media */}
       <div className="w-100% flex-col justify-center items-center mt-100">
-        <div className="mobile:pl-21 desktop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+        <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
           <span>In the media</span>
-          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden">
+          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
             View All
           </span>
         </div>
@@ -788,7 +788,7 @@ export default function Home() {
             View All
           </div>
         </div>
-        <div className="w-100% block items-center desktop:hidden">
+        <div className="w-100% block items-center desktop:hidden laptop:hidden">
           <Carousel
             itemPadding={[0, 15]}
             itemsToShow={1}
@@ -1061,7 +1061,7 @@ export default function Home() {
             View All
           </div>
         </div>
-        <div className="w-100% flex flex-col items-center justify-around desktop:hidden">
+        <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
           <Carousel
             itemPadding={[0, 15]}
             itemsToShow={1}
@@ -1220,7 +1220,7 @@ export default function Home() {
             }
             expandIconPosition={"right"}
             bordered={false}
-            // defaultActiveKey={["1"]}
+          // defaultActiveKey={["1"]}
           >
             <Panel
               className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold mobile:border"
