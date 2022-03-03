@@ -69,13 +69,20 @@ a {
       display: none !important;
     }
     .comunityContent {
-      display: block;
+      // display: block;
+      opacity: 1;
     }
     .comunityColouredImage {
       display: block !important;
     }
+    .burganBank {
+      background-image: url('/images/backgrounds/burgan_bank_colored.svg');
+    }
   }
   .comunityColouredImage {
     display: none !important;
+  }
+  .burganBank {
+    background-image: url('/images/backgrounds/burgan_bank.svg');
   }
 }
