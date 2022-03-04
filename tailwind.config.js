@@ -94,7 +94,8 @@ module.exports = {
     extend: {
       colors,
       backgroundImage: {
-        // "home-top": "linear-gradient(180deg, #e6f0df 19.15%, rgba(247, 255, 236, 0.1) 49.55%)",
+        "home-top":
+          "linear-gradient(91.09deg, rgba(57,181,101, 0.089) 0.82%, rgba(67,185,60, 0.09) 49.92%, rgba(140,198,62, 0.10) 98.95%);",
         button:
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
@@ -102,6 +103,7 @@ module.exports = {
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+        bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
       },
       zIndex: {
         minus1: -1,

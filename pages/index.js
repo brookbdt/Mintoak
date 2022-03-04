@@ -135,7 +135,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-fit w-100%">
+    <div className="h-fit w-100% bg-home-top">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
         <Image
@@ -155,12 +155,12 @@ export default function Home() {
           <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">
             {homeBannerResp?.Description}
           </div>
-          <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20">
+          <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20">
             {homeBannerResp?.Button}
           </div>
         </div>
         <Image
-          src="/images/backgrounds/mobile_home_banner.png"
+          src={homeBannerResp?.mobilebanner}
           className=" block relative desktop:hidden laptop:hidden"
           type="img"
         />
@@ -237,14 +237,21 @@ export default function Home() {
           return (
             <div
               key={index}
-              className="flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
+              className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
             >
-              <Image src={item.Icon} height={135} width={135} />
-              <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center">
-                {item.Tittle}
-              </div>
-              <div className="text-s20l150 mobile:text-s14l17 text-525252 mt-15 text-center mobile:w-218">
-                {item.Description}
+              <Image
+                src={item.Icon}
+                height={135}
+                width={135}
+                className="mobile:w-80 mobile:h-80"
+              />
+              <div>
+                <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
+                  {item.Tittle}
+                </div>
+                <div className="text-s20l150 mobile:text-s14l17 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
+                  {item.Description}
+                </div>
               </div>
             </div>
           )
@@ -274,7 +281,7 @@ export default function Home() {
                 (isBORM === "b" ? "text-FFFFFF" : "text-A2A2A2")
               }
             >
-              For Banks
+              {homeForBanksResp?.Title1}
             </div>
           </div>
           <div className="border-r border-8CC63E"></div>
@@ -368,7 +375,10 @@ export default function Home() {
             }
             onClick={() => setIsBORM("b")}
           >
-            <div className={"font-bold text-s20l24"}>For Banks</div>
+            <div className={"font-bold text-s20l24"}>
+              {" "}
+              {homeForBanksResp?.Title1}
+            </div>
           </div>
           <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
             <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
@@ -379,12 +389,13 @@ export default function Home() {
             </div>
             <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
               {homeForBanksResp?.Description2}
-              <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+              <span className="text-s20l150   mobile:text-s14l24 text-8CC63E cursor-pointer">
                 {homeForBanksResp?.CTA1}
               </span>
             </div>
-
-            {/* <div className="text-s20l150 text-8CC63E cursor-pointer">{homeForBanksResp?.CTA2}</div> */}
+            <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              {homeForBanksResp?.CTA2}
+            </div>
             <div className="w-50% mobile:w-100% flex items-center justify-center">
               <Image
                 src={homeForBanksResp?.BankIllustration}
@@ -393,46 +404,39 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="button w-216 h-54 mobile:w-290 mobile:h-40 mobile:ml-12 mb-40">
-            Partner With Us
-          </div>
+
           <div className="p-0 border-b border-8B8B8B"></div>
           <div
             className={
               "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
             }
           >
-            <div className={"mb-22 font-bold text-s20l24"}>For Merchants</div>
+            <div className={"mb-22 font-bold text-s20l24 "}>
+              {" "}
+              {homeForMerchant?.Title1}
+            </div>
           </div>
           <div className="flex flex-col w-50% mobile:w-100% justify-center">
             <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
-              The backbone of any business, merchants require a hassle-free,
-              one-stop ecosystem for conducting their myriad transactions and
-              managing, exploring, and expanding their business. This is what we
-              offer, with superior features of real-time tracking of inventories
-              and a robust payments interface.
+              {homeForMerchant?.Description1}
             </div>
             <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-              Take your business digital today
+              {homeForMerchant?.Title2}
             </div>
             <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-              With technology and data-driven platforms to make business
-              management simpler and faster, our solutions help merchants tackle
-              all existing challenges with ease
+              {homeForMerchant?.Description2}
             </div>
             <div className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
               Learn More
             </div>
+            <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              {homeForMerchant?.CTA2}
+            </div>
             <Image
-              src="/images/backgrounds/for_merchants.svg"
+              src={homeForMerchant?.MerchantIllustration}
               height={650}
               width={500}
             />
-          </div>
-          <div className="w-50% mobile:w-100% flex items-center justify-center">
-            <div className="button w-216 h-54 mb-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-              Know More
-            </div>
           </div>
         </div>
       </div>
@@ -481,51 +485,27 @@ export default function Home() {
           })}
         </Carousel>
       </div>
-      <div className="desktop:hidden laptop:hidden items-center w-100% pl-42 mb-100 mobile:pr-0 mobile:mb-0">
-        <div className="mobile:h-170 mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20">
-          <div className="flex justify-center items-center px-46 w-100%">
-            <Image
-              src="/images/backgrounds/HDFC-Bank-logo.svg"
-              width={200}
-              height={100}
-            />
-          </div>
-          <div className="items-center flex text-s12l18 justify-center w-100% text-center">
-            Burgan Bank is Kuwait's second largest conventional bank by assets.
-            Burgan is one of the youngest banks in Kuwait.
-          </div>
-        </div>
-        <div className="mobile:h-170 mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20">
-          <div className="flex justify-center items-center px-46 w-100%">
-            <Image
-              src="/images/backgrounds/burgan_bank.svg"
-              width={200}
-              height={100}
-            />
-          </div>
-          <div className="items-center flex text-s12l18 justify-center w-100% text-center">
-            Burgan Bank is Kuwait's second largest conventional bank by assets.
-            Burgan is one of the youngest banks in Kuwait.
-          </div>
-        </div>
-        <div className="mobile:h-170 mobile:w-278 bg-FFFFFF flex flex-col items-center px-21">
-          <div className="flex justify-center items-center px-46 w-100%">
-            <Image
-              src="/images/backgrounds/sbi-logo-state-bank-india-group-vector-eps-0.svg"
-              width={200}
-              height={100}
-            />
-          </div>
-          <div className="items-center flex text-s12l18 justify-center w-100% text-center">
-            Burgan Bank is Kuwait's second largest conventional bank by assets.
-            Burgan is one of the youngest banks in Kuwait.
-          </div>
-        </div>
+      <div className="desktop:hidden flex flex-col laptop:hidden items-center w-100% mb-100 mobile:pr-0 mobile:mb-0">
+        {comunityCard.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
+            >
+              <div className="flex justify-center items-center   w-100%">
+                <Image src={item.BankLogo} className="w-150 h-100" />
+              </div>
+              <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
+                {item.BankInfo}
+              </div>
+            </div>
+          )
+        })}
       </div>
 
       {/* Our achievements */}
       <div className="flex flex-col items-center bg-footer w-100% p-60 mobile:p-0 mobile:pt-40">
-        <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0">
+        <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0 mobile:mb-40">
           Our achievements
         </div>
         <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 mobile:hidden">
@@ -576,58 +556,22 @@ export default function Home() {
             outerSpacing={0}
             renderPagination={mobileCarouselPagination}
           >
-            <div className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4">
-              <Image
-                src="/images/backgrounds/fintech_hub.svg"
-                height={110}
-                width={273}
-              />
-              <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
-                Mumbai Fintech Hub
-              </div>
-              <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
-                Grant Certificate Awarded INR 10,00,000 by the State
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4">
-              <Image
-                src="/images/backgrounds/fintech_hub.svg"
-                height={110}
-                width={273}
-              />
-              <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
-                Mumbai Fintech Hub
-              </div>
-              <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
-                Grant Certificate Awarded INR 10,00,000 by the State
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4">
-              <Image
-                src="/images/backgrounds/service provider badge.svg"
-                height={110}
-                width={273}
-              />
-              <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
-                Mumbai Fintech Hub
-              </div>
-              <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
-                Grant Certificate Awarded INR 10,00,000 by the State
-              </div>
-            </div>
-            <div className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4">
-              <Image
-                src="/images/backgrounds/secure_logic.svg"
-                height={148}
-                width={273}
-              />
-              <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
-                Visa Global
-              </div>
-              <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
-                Visa Global Registry of Service Providers on the list 2020
-              </div>
-            </div>
+            {homepageAchievements.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4"
+                >
+                  <Image src={item.CertificateIcon} height={110} width={273} />
+                  <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
+                    {item?.Title}
+                  </div>
+                  <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
+                    {item?.Description}
+                  </div>
+                </div>
+              )
+            })}
           </Carousel>
         </div>
       </div>
@@ -689,131 +633,34 @@ export default function Home() {
             showArrows={false}
             pagination={false}
           >
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-1.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
+            {homepageMediaCards.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF"
+                >
+                  <div className="px-10">
+                    <Image src={item.ArticleImage} height={203} width={216} />
+                  </div>
+                  <div div className="flex flex-col items-start">
+                    <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                      {item.ReadTime}
+                    </div>
+                    <div className="text-252525 px-10 font-bold text-s14l16_8">
+                      {item.ArticleTitle}
+                    </div>
+                    <div className="text-525252 px-10 pb-0 text-s12l14">
+                      <span className="font-bold">{item.Author}</span>
+                      <br />
+                      {item.ArticleDate}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-end">
+                    <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  </div>
                 </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  Get your money in seconds — 24/7 — with instant transfer
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-2.svg"
-                  height={265}
-                  width={320}
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  Pandemic drives over half of consumers to shop locally
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-3.svg"
-                  height={265}
-                  width={320}
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 ">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  Small Business Filmmaker Competition in India
-                </div>
-                <div className="text-525252 p-20 mt-5 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-1.svg"
-                  height={265}
-                  width={320}
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  Get your money in seconds — 24/7 — with instant transfer
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-2.svg"
-                  height={265}
-                  width={320}
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  Pandemic drives over half of consumers to shop locally
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
+              )
+            })}
           </Carousel>
           <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
             View All
@@ -823,8 +670,11 @@ export default function Home() {
 
       {/* Most popular blogs */}
       <div className="w-100% flex-col justify-center items-center mt-100">
-        <div className="text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60">
-          Most popular blogs
+        <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+          <span>Most Popular Blogs</span>
+          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+            View All
+          </span>
         </div>
         <div className="w-100% flex flex-col items-center justify-around px-150 mobile:hidden">
           <Carousel
