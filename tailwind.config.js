@@ -27,22 +27,25 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-};
+}
 
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {};
+const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`;
-});
+  spacing2000px[n] = `${n}px`
+})
 
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {};
+const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`;
-});
+  spacing100Percentage[`${n}%`] = `${n}%`
+})
 
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     screens: {
       mobile: { min: "0px", max: "480px" },
@@ -66,6 +69,7 @@ module.exports = {
       s22l140_62: ["22px", "140.62%"],
       s24l29: ["24px", "29px"],
       s24l150: ["24px", "150%"],
+      s28l42: ["28px", "42px"],
       s30l36: ["30px", "36px"],
       s32l38: ["32px", "38px"],
       s34l42: ["34px", "42px"],
@@ -81,8 +85,10 @@ module.exports = {
       colors,
       backgroundImage: {
         // "home-top": "linear-gradient(180deg, #e6f0df 19.15%, rgba(247, 255, 236, 0.1) 49.55%)",
-        button: "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
-        footer: "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%);",
+        button:
+          "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
+        footer:
+          "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%);",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
@@ -99,4 +105,4 @@ module.exports = {
     },
   },
   // plugins: [],
-};
+}
