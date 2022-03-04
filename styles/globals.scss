@@ -64,25 +64,24 @@ a {
 .sliderItem {
   &:hover {
     background: #ffffff;
-    transition: .7s;
+    transition: 0.7s;
+    box-shadow: 0px 0px 12px rgba(37, 37, 37, 0.08);
+
     :first-child span {
       display: none !important;
     }
     .comunityContent {
-      // display: block;
-      opacity: 1;
-    }
-    .comunityColouredImage {
       display: block !important;
+      padding: 0 20px 20px 20px;
     }
-    .burganBank {
-      background-image: url('/images/backgrounds/burgan_bank_colored.svg');
+    .colorImage {
+      filter: none !important;
     }
+    // .comunityColouredImage {
+    //   display: block !important;
+    // }
   }
   .comunityColouredImage {
     display: none !important;
-  }
-  .burganBank {
-    background-image: url('/images/backgrounds/burgan_bank.svg');
   }
 }
