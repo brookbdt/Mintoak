@@ -313,7 +313,7 @@ export default function Home() {
                   {homeForBanksResp?.Title2}
                 </div>
                 <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-                  {homeForBanksResp?.Description2}{" "}
+                  {homeForBanksResp?.Description2}
                   <span className="text-s20l150 text-8CC63E cursor-pointer">
                     {homeForBanksResp?.CTA1}
                   </span>
@@ -378,7 +378,7 @@ export default function Home() {
               {homeForBanksResp?.Title2}
             </div>
             <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-              {homeForBanksResp?.Description2}{" "}
+              {homeForBanksResp?.Description2}
               <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
                 {homeForBanksResp?.CTA1}
               </span>
