@@ -544,7 +544,6 @@ export default function Merchant() {
             Hear from our users themselves!
           </div>
           <div>
-            {/* <CarouselCustom slides={slides} autoplay={true} interval={1000} /> */}
           </div>
         </div>
       </div>

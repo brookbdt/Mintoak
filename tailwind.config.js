@@ -22,25 +22,24 @@ const colors = {
   "000000": "#000000",
   "46AC34": "#46AC34",
   "6B6B6B": "#6B6B6B",
-
+  "8B8B8B": "#8B8B8B",
+  848484: "#848484",
+  949494: "#949494",
   // For testing
   red: "red",
   green: "green",
   blue: "blue",
 }
-
 // Adding dynamic pixels to Tailwind
 const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
   spacing2000px[n] = `${n}px`
 })
-
 // Adding dynamic percentages to Tailwind
 const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
   spacing100Percentage[`${n}%`] = `${n}%`
 })
-
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -59,32 +58,44 @@ module.exports = {
       s14l17: ["14px", "17px"],
       s14l16_8: ["14px", "16.8px"],
       s14l24: ["14px", "24px"],
+      s14l21: ["14px", "21px"],
       s16l19: ["16px", "19px"],
+      s16l24: ["16px", "24px"],
+      s16l33: ["16px", "33px"],
       s18l21_6: ["18px", "21.6px"],
       s18l27: ["18px", "27px"],
+      s18l33: ["18px", "33px"],
       s20l24: ["20px", "24px"],
+      s20l30: ["20px", "30px"],
+      s20l33: ["20px", "33px"],
       s20l140_62: ["20px", "140.62%"],
       s20l150: ["20px", "150%"],
       s22l26_4: ["22px", "26.4px"],
+      s22l33: ["22px", "33px"],
       s22l140_62: ["22px", "140.62%"],
       s24l29: ["24px", "29px"],
+      s24l36: ["24px", "36px"],
       s24l150: ["24px", "150%"],
       s28l42: ["28px", "42px"],
       s30l36: ["30px", "36px"],
+      s30l45: ["30px", "45px"],
       s32l38: ["32px", "38px"],
       s34l42: ["34px", "42px"],
       s36l43: ["36px", "43px"],
       s40l60: ["40px", "60px"],
       s44l66: ["44px", "66px"],
       s44l120: ["44px", "120%"],
-      s45l45: ["45px", "54px"],
+      s45l45: ["45px", "45px"],
+      s45l33: ["45px", "33px"],
+      s45l54: ["45px", "54px"],
       s56l124_5: ["56px", "124.5%"],
-      s12l18: ["12px", "18px"],
+      s56l67: ["56px", "67px"],
     },
     extend: {
       colors,
       backgroundImage: {
-        // "home-top": "linear-gradient(180deg, #e6f0df 19.15%, rgba(247, 255, 236, 0.1) 49.55%)",
+        "home-top":
+          "linear-gradient(91.09deg, rgba(57,181,101, 0.089) 0.82%, rgba(67,185,60, 0.09) 49.92%, rgba(140,198,62, 0.10) 98.95%);",
         button:
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
@@ -92,6 +103,7 @@ module.exports = {
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+        bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
       },
       zIndex: {
         minus1: -1,

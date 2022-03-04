@@ -1,73 +1,136 @@
+import { useEffect, useState } from "react"
 import Image from "../components/helpers/Image"
 import Carousel from "react-elastic-carousel"
 import { Chrono } from "react-chrono"
+import { API, endpoints } from "../components/helpers/API"
 
 export default function About() {
+
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({});
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+
+  useEffect(() => {
+    // about_banner
+    API({
+      url: endpoints.about_us_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        setAboutBannerResp(resp)
+      }
+    });
+    // story
+    API({
+      url: endpoints.mintoak_story,
+    }).then((resp) => {
+      if (!resp.message) {
+        setStoryResp(resp)
+      }
+    });
+    // matrics
+    API({
+      url: endpoints.about_us_metrics,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMatricsResp(resp)
+      }
+    });
+    //misson & visson
+    API({
+      url: endpoints.about_us_mission,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMissionResp(resp)
+      }
+    });
+    API({
+      url: endpoints.about_us_vision,
+    }).then((resp) => {
+      if (!resp.message) {
+        setVisionResp(resp)
+      }
+    });
+    // principal card
+    API({
+      url: endpoints.about_us_principle_cards,
+    }).then((resp) => {
+      if (!resp.message) {
+        setPrincipalResp(resp)
+      }
+    });
+    // about us our founders
+    API({
+      url: endpoints.about_us_our_founders,
+    }).then((resp) => {
+      if (!resp.message) {
+        setFounderResp(resp)
+      }
+    });
+    //about us meet the team 1
+    API({
+      url: endpoints.about_us_meet_the_team_1,
+    }).then((resp) => {
+      if (!resp.message) {
+        setTeamInfoResp(resp)
+      }
+    });
+  }, [])
+
   return (
     <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
       {/* Top layout with resp */}
-      <div className="relative top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
-        <div className="desktop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
+      <div className="relative top-bg-container">
+        <Image
+          src={aboutBannerResp?.Illustration}
+          className="absolute z-minus1 mobile:hidden"
+        />
+        <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="desktop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
-            Creating New-age Financial Solutions for
+            {aboutBannerResp?.Title}
           </div>
-          <div className="text-s56l67 mobile:text-s36l43  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
+          {/* <div className="text-s56l67 mobile:text-s36l43  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
             New-age Businesses
-          </div>
+          </div> */}
           <div className="text-s24l29 mobile:text-s14l24 desktop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
-            Designed to Empower Small Businesses with Technology.
+            {aboutBannerResp?.Description}
           </div>
           <div className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
-            Request a demo
+            {aboutBannerResp?.CTA}
           </div>
         </div>
-        <div className="desktop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile: w-100%">
-          <Image
-            src="/images/backgrounds/group-2.svg"
-            width={550}
-            height={550}
-          />
-        </div>
+        <Image
+          src="/images/backgrounds/mobile_home_banner.png"
+          className=" block relative desktop:hidden laptop:hidden"
+          type="img"
+        />
       </div>
+
 
       {/* The Mintoak Story */}
       <div className="desktop:flex flex-col p-80 justify-center items-center mobile:px-20 ">
-        <div className="text-s45l45 text-000000 font-bold mobile: text-left text-s22l33">
-          The Mintoak Story
+        <div className="text-s45l45 text-000000 font-bold mobile: text-left text-s45l45">
+          {storyResp?.Title}
         </div>
         <div className="desktop:text-s24l36 text-000000 text-center desktop:py-40 desktop:px-295 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
-          Born out of relentless passion for empowering banks and small
-          businesses through digital transformation, Mintoak is an innovative
-          start-up built on the pillars of a unique technology solution.
-          Mintoak’s comprehensive digital ecosystem simplifies payments
-          processes for small businesses with the help of banks,thus bridging
-          the long-existing gap between the two.
+          {storyResp?.Description}
         </div>
         <div className="flex w-100% justify-center desktop:px-100 desktop:py-42  mobile:w-100% mobile:flex-col">
-          <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-            <div>
-              <Image src="/images/icons/flag.svg" width={73} height={73} />
+          {matricsResp && matricsResp.map((item) => (
+
+            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
+              <div>
+                <Image src={item.Icon[0]} width={73} height={73} />
+              </div>
+              <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+                {item.Description}
+              </div>
             </div>
-            <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-100 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
-              Founded in 2017
-            </div>
-          </div>
-          <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-            <div>
-              <Image src="/images/icons/users.svg" width={73} height={73} />
-            </div>
-            <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-70 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
-              10,000+ Active users
-            </div>
-          </div>
-          <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-            <div>
-              <Image src="/images/icons/world.svg" width={73} height={73} />
-            </div>
-            <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
-              10+ Countries of operation
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -79,16 +142,11 @@ export default function About() {
               <Image src="/images/icons/vision.svg" width={49} height={49} />
             </div>
             <div className="text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 mobile:px-8 ">
-              Vision
+              {visionResp?.Title}
             </div>
           </div>
           <div className="text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-20 mobile:pb-14 mobile:pr-15">
-            Mintoak was established with a vision to build a cohesive,
-            high-performance ecosystem providing complete business solutions for
-            small and medium enterprises. We strongly believe in the extensive
-            transformation that the SME space can bring about for economies
-            through increased digital engagement powered by our flexible
-            solutions.
+            {visionResp?.Description}
           </div>
         </div>
         <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:px-86 desktop:pt-85 desktop:pb-94 mobile:border-t desktop:border-l border-8B8B8B">
@@ -97,14 +155,11 @@ export default function About() {
               <Image src="/images/icons/mission.svg" width={49} height={49} />
             </div>
             <div className="text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 mobile:px-8 ">
-              Mission
+              {missionResp?.Title}
             </div>
           </div>
           <div className="text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-20 mobile:pb-14 mobile:pr-15">
-            Mintoak aims to empower and elevate small businesses and merchants
-            by providing them access to the most competent digital tools that
-            place them at par, in terms of proficiency and experience, with
-            other players or giants in the organized sector.
+            {missionResp?.Description}
           </div>
         </div>
       </div>
@@ -115,45 +170,25 @@ export default function About() {
           Our Principles
         </div>
         <div className="flex mobile:flex-col justify-around w-100% desktop:px-150  mobile:px-13">
-          <div className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10">
-            <div>
-              <Image src="/images/icons/cloud.svg" height={135} width={135} />
-            </div>
-            <div>
-              <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525  desktop:text-center mobile:pl-20">
-                Innovation
+          {
+            principalResp && principalResp.map((item) => (
+              <div className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10">
+                <div>
+                  <Image src={item.Icon} height={135} width={135} />
+                </div>
+                <div>
+                  <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525  desktop:text-center mobile:pl-20">
+                    {item.Title}
+                  </div>
+
+                  <div className="desktop:text-s20l150 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center px-20">
+                    {item.Description}
+                  </div>
+                </div>
               </div>
-              <div className="desktop:text-s20l150 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center px-20">
-                Constant endeavor to create and execute fresh ideas
-              </div>
-            </div>
-          </div>
-          <div className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10">
-            <div>
-              <Image src="/images/icons/value.svg" height={135} width={135} />
-            </div>
-            <div>
-              <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525  desktop:text-center mobile:pl-20">
-                Passion
-              </div>
-              <div className="desktop:text-s20l150 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center px-20">
-                Relentless effort to leave a lasting impact on our users
-              </div>
-            </div>
-          </div>
-          <div className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10">
-            <div>
-              <Image src="/images/icons/instant.svg" height={135} width={135} />
-            </div>
-            <div>
-              <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525   desktop:text-center mobile:pl-20">
-                Integrity
-              </div>
-              <div className=" desktop:text-s20l150 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center px-20">
-                Unwavering commitments and open communications
-              </div>
-            </div>
-          </div>
+
+            ))
+          }
         </div>
       </div>
 
@@ -161,14 +196,10 @@ export default function About() {
       <div className="w-100% flex flex-col py-70">
         <div className="flex flex-col justify-center items-center w-100% ">
           <div className="text-s45l33 mobile:text-s22l33 mobile:text-000000 text-252525 font-bold px-40">
-            Meet the Team
+            {teamInfoResp?.Title}
           </div>
           <div className="desktop:text-s20l33 mobile:text-s14l21 mobile:text-525252 text-252525 py-35 text-center desktop:px-415  mobile:px-30">
-            Mintoak is proud to present its team of young, energetic and driven
-            individuals, led by three talented professionals with a vision. At
-            the core of the team’s approach is their stanch determination to
-            help small businesses through innovative, dynamic and tech-oriented
-            products.
+            {teamInfoResp?.Description}
           </div>
         </div>
         <div className="w-100% desktop:px-215 pb-60 desktop:pt-40">
@@ -252,28 +283,20 @@ export default function About() {
           <div className="flex mobile:flex-col">
             <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
               <Image
-                src="/images/backgrounds/raman khanduja.svg"
+                src={founderResp[2]?.FounderImage}
                 height={660}
                 width={529}
               />
             </div>
             <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
               <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
-                Raman Khanduja
+                {founderResp[2]?.Name}
               </div>
               <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
-                Chief Executive
+                {founderResp[2]?.Designation}
               </div>
               <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
-                Raman has over 20+ years of corporate experience in financial
-                services and payments. Before taking the entrepreneurial leap,
-                Raman was head of Business Development at Visa and worked with
-                leading financial institutions in India. Prior to Visa, Raman
-                has experience in retail strategy, portfolio management,
-                analytics and consulting across HDFC Bank, Centurion Bank,
-                American Express and Pricewaterhouse Coopers. Raman has an MBA
-                from Indian Institute of Management, Calcutta and a Bachelor in
-                Mechanical Engineering from T.I.E.T, Patiala
+                {founderResp[2]?.Description}
               </div>
             </div>
           </div>
@@ -292,13 +315,20 @@ export default function About() {
             mode="VERTICAL"
             hideControls={true}
           >
-            <div className="text-right">
+            {founderResp.map((item, index) => <div className="text-right">
               <div className="text-F1F1F1 text-s24l36 pt-33">
-                Raman Khanduja
+                {item.Name}
               </div>
-              <div className="text-F1F1F1 text-s20l30 ">Chief Executive</div>
-            </div>
-            <div className="text-right pr-20">
+              <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
+            </div>)}
+
+            {/* {founderResp.map((item, index) => <div className="text-right">
+              <div className="text-F1F1F1 text-s24l36 pt-33">
+                {item.Name}
+              </div>
+              <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
+            </div>)} */}
+            {/* <div className="text-right pr-20">
               <div className="text-F1F1F1 text-s20l30 pt-60">
                 Rama Tadepalli
               </div>
@@ -325,34 +355,23 @@ export default function About() {
               <div className="text-949494 text-s20l30 pl-50">
                 Chief Financial Officer
               </div>
-            </div>
+            </div> */}
           </Chrono>
         </div>
       </div>
       <div className="desktop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
         <div className="flex ">
-          <div>
-            <Image
-              src="/images/backgrounds/raman khanduja.svg"
-              height={660}
-              width={529}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/backgrounds/raman khanduja.svg"
-              height={660}
-              width={529}
-            />
-          </div>
-          <div>
-            <Image
-              src="/images/backgrounds/raman khanduja.svg"
-              height={660}
-              width={529}
-            />
-          </div>
+          {founderResp && founderResp.map((item) => (
+            <div>
+              <Image
+                src={item.FounderImage}
+                height={660}
+                width={529}
+              />
+            </div>
+
+          ))}
         </div>
         <div>
           <div>Raman Khanduja</div>
