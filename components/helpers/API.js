@@ -32,6 +32,14 @@ const endpoints = {
   homepage_achievements: "homepage-our-achievements?_sort=id:ASC",
   homepage_media_cards: "homepage-media-cards",
   faq: "faq-s",
+  about_us_banner: "about-us-banner",
+  mintoak_story: "mintoak-story",
+  about_us_metrics: "about-us-metrics",
+  about_us_mission: "about-us-mission",
+  about_us_vision: "about-us-vision",
+  about_us_principle_cards: "about-us-principle-cards",
+  about_us_our_founders: "about-us-our-founders",
+  about_us_meet_the_team_1: "about-us-meet-the-team-1",
 }
 
 export { API, endpoints, domain }
