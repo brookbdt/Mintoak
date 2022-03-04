@@ -315,12 +315,12 @@ export default function About() {
             mode="VERTICAL"
             hideControls={true}
           >
-            {founderResp.map((item, index) => <div className="text-right">
+            {/* {founderResp.map((item, index) => <div className="text-right">
               <div className="text-F1F1F1 text-s24l36 pt-33">
                 {item.Name}
               </div>
               <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
-            </div>)}
+            </div>)} */}
 
             {/* {founderResp.map((item, index) => <div className="text-right">
               <div className="text-F1F1F1 text-s24l36 pt-33">
@@ -328,7 +328,7 @@ export default function About() {
               </div>
               <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
             </div>)} */}
-            {/* <div className="text-right pr-20">
+            <div className="text-right pr-20">
               <div className="text-F1F1F1 text-s20l30 pt-60">
                 Rama Tadepalli
               </div>
@@ -355,7 +355,7 @@ export default function About() {
               <div className="text-949494 text-s20l30 pl-50">
                 Chief Financial Officer
               </div>
-            </div> */}
+            </div>
           </Chrono>
         </div>
       </div>
