@@ -313,7 +313,7 @@ export default function Home() {
           {isBORM === "b" ? (
             <>
               <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 mt-60 item-center">
+                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 item-center">
                   {homeForBanksResp?.Description1}
                 </div>
                 <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
