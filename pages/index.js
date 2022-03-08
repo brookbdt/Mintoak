@@ -313,7 +313,7 @@ export default function Home() {
           {isBORM === "b" ? (
             <>
               <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 mt-60 item-center">
+                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 item-center">
                   {homeForBanksResp?.Description1}
                 </div>
                 <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
@@ -321,7 +321,8 @@ export default function Home() {
                 </div>
                 <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
                   {homeForBanksResp?.Description2}
-                  <span className="text-s20l150 text-8CC63E cursor-pointer">
+                  <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+                    {" "}
                     {homeForBanksResp?.CTA1}
                   </span>
                 </div>
@@ -425,9 +426,10 @@ export default function Home() {
             </div>
             <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
               {homeForMerchant?.Description2}
-            </div>
-            <div className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
-              Learn More
+              <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+                {" "}
+                Learn More
+              </span>
             </div>
             <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
               {homeForMerchant?.CTA2}
@@ -532,7 +534,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4"
+                  className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4 h-420"
                 >
                   <Image src={item.CertificateIcon} height={110} width={273} />
                   <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">
@@ -596,10 +598,15 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="w-80% flex flex-col justify-center items-center bg-FFFFFF"
+                  className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
                 >
-                  <div className="px-10">
-                    <Image src={item.ArticleImage} height={265} width={320} />
+                  <div className="px-10 ">
+                    <Image
+                      src={item.ArticleImage}
+                      height={265}
+                      width={320}
+                      className="grayscale colorImage"
+                    />
                   </div>
                   <div div className="flex flex-col items-start">
                     <div className="text-83B449 text-s20l24 p-20">
@@ -637,10 +644,15 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF"
+                  className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
                 >
                   <div className="px-10">
-                    <Image src={item.ArticleImage} height={203} width={216} />
+                    <Image
+                      src={item.ArticleImage}
+                      height={203}
+                      width={216}
+                      className="grayscale colorImage"
+                    />
                   </div>
                   <div div className="flex flex-col items-start">
                     <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
@@ -684,12 +696,13 @@ export default function Home() {
             pagination={false}
             renderArrow={blackCarouselArrows}
           >
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
               <div className="px-16">
                 <Image
                   src="/images/backgrounds/img-4.svg"
                   height={265}
                   width={320}
+                  className="grayscale colorImage"
                 />
               </div>
               <div className="flex flex-col items-start">
@@ -707,12 +720,13 @@ export default function Home() {
                 <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
               <div className="px-10">
                 <Image
                   src="/images/backgrounds/img-5.svg"
                   height={265}
                   width={320}
+                  className="grayscale colorImage"
                 />
               </div>
               <div className="flex flex-col items-start">
@@ -730,12 +744,13 @@ export default function Home() {
                 <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
               <div className="px-10">
                 <Image
                   src="/images/backgrounds/img-6.svg"
                   height={265}
                   width={320}
+                  className="grayscale colorImage"
                 />
               </div>
               <div className="flex flex-col items-start">
@@ -753,12 +768,13 @@ export default function Home() {
                 <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
               <div className="px-10">
                 <Image
                   src="/images/backgrounds/img-4.svg"
                   height={265}
                   width={320}
+                  className="grayscale colorImage"
                 />
               </div>
               <div className="flex flex-col items-start">
@@ -776,12 +792,13 @@ export default function Home() {
                 <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
               </div>
             </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF">
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
               <div className="px-10">
                 <Image
                   src="/images/backgrounds/img-5.svg"
                   height={265}
                   width={320}
+                  className="grayscale colorImage"
                 />
               </div>
               <div className="flex flex-col items-start">

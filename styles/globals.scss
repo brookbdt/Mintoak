@@ -85,9 +85,39 @@ a {
 
 // merchant page
 .merchant-liner-bg {
-  background-image: linear-gradient(to top left, #19191A, #353537, #575757, #797979);
+  background-image: linear-gradient(to top left, #19191a, #353537, #575757, #797979);
 }
 
 .merchant-bg {
-  background-color: #F4FBF3;
+  background-color: #f4fbf3;
+}
+
+//disable button
+button:disabled,
+button[disabled] {
+  color: #666666;
+}
+
+// hover shadow
+.hover-shaddow {
+  &:hover {
+    transition: 0.7s;
+    box-shadow: 0px 0px 12px rgba(37, 37, 37, 0.08);
+
+    .colorImage {
+      filter: none !important;
+    }
+  }
+}
+
+//footer hover
+.hover-border {
+  &:hover {
+    border-bottom: 1px solid #8cc63e;
+  }
+}
+
+// time line
+.mt-minus-22 {
+  margin-top: -22px;
 }
