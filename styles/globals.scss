@@ -91,3 +91,65 @@ a {
 .merchant-bg {
   background-color: #F4FBF3;
 }
+
+// resorce page placeholder
+
+::placeholder {
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 50px;
+  padding-top: 22px;
+  padding-bottom: 27px;
+}
+
+// border-radius
+
+.border-radius {
+  border-radius: 15px;
+}
+
+.relative-text {
+    position: relative;
+    top: 214px;
+    left: 85px;
+}
+
+.custom-pagination .ant-pagination-item {
+  border-radius: 30px;
+  height: 63px;
+  width: 63px;
+  align-items: center;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.custom-pagination .ant-pagination-item a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link{
+  border-radius: 30px;
+  height: 63px;
+  width: 63px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.custom-pagination .ant-pagination-next .ant-pagination-item-link{
+  border-radius: 30px;
+  height: 63px;
+  width: 63px;
+  font-size: 24px;
+  line-height: 36px;
+} 
+
+.custom-pagination .ant-pagination-prev, .ant-pagination-next, .ant-pagination-jump-prev, .ant-pagination-jump-next {
+  height: auto !important; 
+}
+
+.bank-btn {
+  background-image: linear-gradient(#88CD37, #8FC055);
+}

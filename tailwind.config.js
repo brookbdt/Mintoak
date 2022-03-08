@@ -25,6 +25,11 @@ const colors = {
   "8B8B8B": "#8B8B8B",
   848484: "#848484",
   949494: "#949494",
+  "F3FBF5": "#F3FBF5",
+  "E5E5E5": "#E5E5E5",
+  "DFEFD4": "#DFEFD4",
+  "828282": "#828282",
+  "F4FBF4": "#F4FBF4",
   // For testing
   red: "red",
   green: "green",
@@ -68,6 +73,7 @@ module.exports = {
       s20l24: ["20px", "24px"],
       s20l30: ["20px", "30px"],
       s20l33: ["20px", "33px"],
+      s20l40: ["20px", "40px"],
       s20l140_62: ["20px", "140.62%"],
       s20l150: ["20px", "150%"],
       s22l26_4: ["22px", "26.4px"],
@@ -88,6 +94,7 @@ module.exports = {
       s45l45: ["45px", "45px"],
       s45l33: ["45px", "33px"],
       s45l54: ["45px", "54px"],
+      s54l80: ["54px", "80px"],
       s56l124_5: ["56px", "124.5%"],
       s56l67: ["56px", "67px"],
     },
@@ -100,6 +107,7 @@ module.exports = {
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%);",
+        bg_resource: "url(/images/backgrounds/resource-bg.svg)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
