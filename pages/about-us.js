@@ -5,15 +5,14 @@ import { Chrono } from "react-chrono"
 import { API, endpoints } from "../components/helpers/API"
 
 export default function About() {
-
   const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({});
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [storyResp, setStoryResp] = useState({})
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
 
   useEffect(() => {
     // about_banner
@@ -23,7 +22,7 @@ export default function About() {
       if (!resp.message) {
         setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
@@ -31,7 +30,7 @@ export default function About() {
       if (!resp.message) {
         setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
@@ -39,7 +38,7 @@ export default function About() {
       if (!resp.message) {
         setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
@@ -47,14 +46,14 @@ export default function About() {
       if (!resp.message) {
         setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
         setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
@@ -62,7 +61,7 @@ export default function About() {
       if (!resp.message) {
         setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
@@ -70,7 +69,7 @@ export default function About() {
       if (!resp.message) {
         setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
@@ -78,7 +77,7 @@ export default function About() {
       if (!resp.message) {
         setTeamInfoResp(resp)
       }
-    });
+    })
   }, [])
 
   return (
@@ -110,7 +109,6 @@ export default function About() {
         />
       </div>
 
-
       {/* The Mintoak Story */}
       <div className="desktop:flex flex-col p-80 justify-center items-center mobile:px-20 ">
         <div className="text-s45l45 text-000000 font-bold mobile: text-left text-s45l45">
@@ -120,17 +118,20 @@ export default function About() {
           {storyResp?.Description}
         </div>
         <div className="flex w-100% justify-center desktop:px-100 desktop:py-42  mobile:w-100% mobile:flex-col">
-          {matricsResp && matricsResp.map((item) => (
-
-            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
-                <Image src={item.Icon[0]} width={73} height={73} />
+          {matricsResp &&
+            matricsResp.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%"
+              >
+                <div>
+                  <Image src={item.Icon[0]} width={73} height={73} />
+                </div>
+                <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+                  {item.Description}
+                </div>
               </div>
-              <div className="text-s24l36 text-000000 font-bold py-42 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
-                {item.Description}
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 
@@ -170,9 +171,12 @@ export default function About() {
           Our Principles
         </div>
         <div className="flex mobile:flex-col justify-around w-100% desktop:px-150  mobile:px-13">
-          {
-            principalResp && principalResp.map((item) => (
-              <div className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10">
+          {principalResp &&
+            principalResp.map((item, index) => (
+              <div
+                key={index}
+                className="flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-25% mobile:w-100% desktop:py-25 mobile:py-10"
+              >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
                 </div>
@@ -186,9 +190,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-
-            ))
-          }
+            ))}
         </div>
       </div>
 
@@ -362,16 +364,12 @@ export default function About() {
       <div className="desktop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
         <div className="flex ">
-          {founderResp && founderResp.map((item) => (
-            <div>
-              <Image
-                src={item.FounderImage}
-                height={660}
-                width={529}
-              />
-            </div>
-
-          ))}
+          {founderResp &&
+            founderResp.map((item, index) => (
+              <div key={index}>
+                <Image src={item.FounderImage} height={660} width={529} />
+              </div>
+            ))}
         </div>
         <div>
           <div>Raman Khanduja</div>

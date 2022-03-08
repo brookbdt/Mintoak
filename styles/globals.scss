@@ -121,3 +121,25 @@ button[disabled] {
 .mt-minus-22 {
   margin-top: -22px;
 }
+// ============== CONTACT-US INPUT CUSTOMIZATION START ==============
+
+.global-input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #c4c4c4;
+}
+
+.global-input:focus {
+  border-bottom: 2px solid #a4d77a;
+}
+
+.global-input-number::-webkit-outer-spin-button,
+.global-input-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.global-input-number[type="number"] {
+  -moz-appearance: textfield;
+}
+// ============== CONTACT-US INPUT CUSTOMIZATION END ==============
