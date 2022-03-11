@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Image from "../components/helpers/Image"
 import Carousel from "react-elastic-carousel"
 import { Chrono } from "react-chrono"
+import ScrollAnimation from "react-animate-on-scroll"
 import { API, endpoints } from "../components/helpers/API"
-
 export default function About() {
   const [aboutBannerResp, setAboutBannerResp] = useState({})
   const [storyResp, setStoryResp] = useState({})
@@ -13,7 +13,8 @@ export default function About() {
   const [principalResp, setPrincipalResp] = useState([])
   const [founderResp, setFounderResp] = useState([])
   const [teamInfoResp, setTeamInfoResp] = useState({})
-
+  const [activeTab, setActiveTab] = useState(0)
+  const founder = useRef()
   useEffect(() => {
     // about_banner
     API({
@@ -277,88 +278,80 @@ export default function About() {
       </div>
 
       {/* Our founders */}
-      <div className="w-100% bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col">
-        <div className="flex flex-col desktop:w-70% mobile:w-100%">
+      <div
+        id="founder"
+        className="w-100%  bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-976 overflow-scroll laptop:h-976"
+      >
+        <ScrollAnimation
+          animateIn="fadeIn"
+          animateOut="fadeOut"
+          scrollableParentSelector="#founder"
+          className="overflow-auto removeScroll"
+        >
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden">
             Our founders
           </div>
-          <div className="flex mobile:flex-col">
-            <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
-              <Image
-                src={founderResp[2]?.FounderImage}
-                height={660}
-                width={529}
-              />
+          {founderResp.map((item, index) => (
+            <div
+              key={index}
+              id={`founders${index}`}
+              className="flex flex-col desktop:w-70% mobile:w-100%"
+              onLoadStart={() => {
+                console.log("first")
+              }}
+            >
+              <div className="flex mobile:flex-col">
+                <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
+                  <Image src={item?.FounderImage} height={660} width={529} />
+                </div>
+                <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
+                  <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
+                    {item?.Name}
+                  </div>
+                  <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
+                    {item?.Designation}
+                  </div>
+                  <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
+                    {item?.Description}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
-              <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
-                {founderResp[2]?.Name}
-              </div>
-              <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
-                {founderResp[2]?.Designation}
-              </div>
-              <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
-                {founderResp[2]?.Description}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-30% pt-80 flex flex-col itmes-center justify-center mobile:hidden">
-          <Chrono
-            cardWidth={250}
-            cardHeight={120}
-            theme={{
-              primary: "#848484",
-              secondary: "#F1F1F1",
-              cardBgColor: "footer",
-              outline: "red",
-            }}
-            flipLayout={true}
-            mode="VERTICAL"
-            hideControls={true}
-          >
-            {/* {founderResp.map((item, index) => <div className="text-right">
-              <div className="text-F1F1F1 text-s24l36 pt-33">
-                {item.Name}
-              </div>
-              <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
-            </div>)} */}
+          ))}
+        </ScrollAnimation>
 
-            {/* {founderResp.map((item, index) => <div className="text-right">
-              <div className="text-F1F1F1 text-s24l36 pt-33">
-                {item.Name}
-              </div>
-              <div className="text-F1F1F1 text-s20l30 ">{item.Designation[0]}</div>
-            </div>)} */}
-            <div className="text-right pr-20">
-              <div className="text-F1F1F1 text-s20l30 pt-60">
-                Rama Tadepalli
-              </div>
-              <div className="text-949494 text-s20l30">
-                Chief of Product & Marketing
-              </div>
-            </div>
-            <div className="text-right pr-20">
-              <div className="text-F1F1F1 text-s20l30 pt-60 pl-40">
-                Sanjay Nazareth
-              </div>
-              <div className="text-949494 text-s20l30  pl-50">
-                Chief of Operations
-              </div>
-            </div>
-            <div className="text-right pr-20">
-              <div className="text-F1F1F1 text-s20l30 pt-55">Kabeer Jain</div>
-              <div className="text-949494 text-s20l30 ">
-                Chief of Product Engineering
-              </div>
-            </div>
-            <div className="text-right pr-20">
-              <div className="text-F1F1F1 text-s20l30 pt-60 ">Rohit Ramana</div>
-              <div className="text-949494 text-s20l30 pl-50">
-                Chief Financial Officer
-              </div>
-            </div>
-          </Chrono>
+        <div className="w-30% pt-80 flex flex-col itmes-center justify-center mobile:hidden sticky top-0">
+          <div className="h-700 flex flex-col">
+            {founderResp &&
+              founderResp.map((item, index) => (
+                <div
+                  onClick={() => {
+                    setActiveTab(index)
+                  }}
+                  key={index}
+                >
+                  <span
+                    className={`${
+                      activeTab == index ? "text-F1F1F1" : "text-848484"
+                    } text-s18l33`}
+                  >
+                    {founderResp[index]?.Name}
+                  </span>
+                  <span className="items-center flex flex-col mt-minus-22">
+                    <span
+                      className={`${
+                        activeTab == index
+                          ? "w-22 h-22 bg-F1F1F1 p-11"
+                          : "w-14 h-14 bg-848484 p-7"
+                      } rounded-md bg-opacity-100`}
+                    ></span>
+                    {founderResp && founderResp.length - 1 != index && (
+                      <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
+                    )}
+                  </span>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
       <div className="desktop:hidden mobile:flex flex-col">

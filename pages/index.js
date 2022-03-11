@@ -135,7 +135,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-fit w-100% bg-home-top">
+    <div className="h-fit w-100% ">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
         <Image
@@ -165,43 +165,9 @@ export default function Home() {
           type="img"
         />
       </div>
-
-      {/* Count layout */}
-      <div className="flex items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden">
-        <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-          {metricsResp?.Merchants}
-          <span className="text-A4D77A">+</span>
-          <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
-            Merchants
-          </div>
-        </div>
-        <div className="text-center text-s36l43 mobile:text-s20l24 text-252525">
-          <span className="mobile:font-semibold">
-            {metricsResp?.TransactionsAnnually}
-            <span className="text-A4D77A">+</span>
-          </span>
-          <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
-            Transactions Annually
-          </div>
-        </div>
-        <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-          {metricsResp?.GMVAnnuals}
-          <span className="text-A4D77A">+</span>
-          <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
-            GMV Annuals
-          </div>
-        </div>
-      </div>
-      <div className="flex items-center justify-around px-200 mobile:px-0 mb-150 mobile:mb-80 desktop:hidden laptop:hidden">
-        <Carousel
-          itemsToShow={3}
-          itemsToScroll={1}
-          itemPadding={[0, 0, 0, 0]}
-          enableMouseSwipe={true}
-          pagination={true}
-          showArrows={false}
-          renderPagination={mobileCarouselPagination}
-        >
+      <div className="bg-home-top">
+        {/* Count layout */}
+        <div className="flex items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden">
           <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
             {metricsResp?.Merchants}
             <span className="text-A4D77A">+</span>
@@ -225,111 +191,211 @@ export default function Home() {
               GMV Annuals
             </div>
           </div>
-        </Carousel>
-      </div>
-
-      {/* Mintoak Advantages */}
-      <div className="flex justify-around text-252525 text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
-        Mintoak Advantages
-      </div>
-      <div className="flex mobile:block justify-around w-100% px-100 mobile:px-0 mb-150">
-        {homeAdvantagesCard.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
-            >
-              <Image
-                src={item.Icon}
-                height={135}
-                width={135}
-                className="mobile:w-80 mobile:h-80"
-              />
-              <div>
-                <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
-                  {item.Tittle}
-                </div>
-                <div className="text-s20l150 mobile:text-s14l17 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
-                  {item.Description}
-                </div>
+        </div>
+        <div className="flex items-center justify-around px-200 mobile:px-0 mb-150 mobile:mb-80 desktop:hidden laptop:hidden">
+          <Carousel
+            itemsToShow={3}
+            itemsToScroll={1}
+            itemPadding={[0, 0, 0, 0]}
+            enableMouseSwipe={true}
+            pagination={true}
+            showArrows={false}
+            renderPagination={mobileCarouselPagination}
+          >
+            <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
+              {metricsResp?.Merchants}
+              <span className="text-A4D77A">+</span>
+              <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
+                Merchants
               </div>
             </div>
-          )
-        })}
-      </div>
-
-      {/* Banks/Merchants */}
-      <div className="flex flex-col bg-footer mb-100 w-100%">
-        <div className="flex w-100% mobile:hidden">
-          <div
-            className={
-              "flex items-center justify-center w-50% mobile:w-100% py-40 border-b cursor-pointer " +
-              (isBORM === "b" ? "border-8CC63E" : "border-8B8B8B")
-            }
-            onClick={() => setIsBORM("b")}
-          >
-            <Image
-              src={`/images/icons/radio-${
-                isBORM === "b" ? "selected" : "unselected"
-              }.svg`}
-              height={49}
-              width={49}
-            />
-            <div
-              className={
-                "ml-25 font-bold text-s40l60 " +
-                (isBORM === "b" ? "text-FFFFFF" : "text-A2A2A2")
-              }
-            >
-              {homeForBanksResp?.Title1}
+            <div className="text-center text-s36l43 mobile:text-s20l24 text-252525">
+              <span className="mobile:font-semibold">
+                {metricsResp?.TransactionsAnnually}
+                <span className="text-A4D77A">+</span>
+              </span>
+              <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
+                Transactions Annually
+              </div>
             </div>
-          </div>
-          <div className="border-r border-8CC63E"></div>
-          <div
-            className={
-              "flex items-center justify-center w-50% mobile:w-100% py-40 border-b cursor-pointer " +
-              (isBORM === "m" ? "border-8CC63E" : "border-8B8B8B")
-            }
-            onClick={() => setIsBORM("m")}
-          >
-            <Image
-              src={`/images/icons/radio-${
-                isBORM === "m" ? "selected" : "unselected"
-              }.svg`}
-              height={49}
-              width={49}
-            />
-            <div
-              className={
-                "ml-25 font-bold text-s40l60 " +
-                (isBORM === "m" ? "text-FFFFFF" : "text-A2A2A2")
-              }
-            >
-              {homeForMerchant?.Title1}
+            <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
+              {metricsResp?.GMVAnnuals}
+              <span className="text-A4D77A">+</span>
+              <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
+                GMV Annuals
+              </div>
             </div>
-          </div>
+          </Carousel>
         </div>
-        <div className="flex items-center w-100% px-100 mobile:px-20 py-50 mobile:hidden">
-          {isBORM === "b" ? (
-            <>
-              <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 item-center">
-                  {homeForBanksResp?.Description1}
-                </div>
-                <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-                  {homeForBanksResp?.Title2}
-                </div>
-                <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-                  {homeForBanksResp?.Description2}
-                  <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
-                    {" "}
-                    {homeForBanksResp?.CTA1}
-                  </span>
-                </div>
 
-                <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                  {homeForBanksResp?.CTA2}
+        {/* Mintoak Advantages */}
+        <div className="flex justify-around text-252525 text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
+          Mintoak Advantages
+        </div>
+        <div className="flex mobile:block justify-around w-100% px-100 mobile:px-0 mb-150">
+          {homeAdvantagesCard.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
+              >
+                <Image
+                  src={item.Icon}
+                  height={135}
+                  width={135}
+                  className="mobile:w-80 mobile:h-80"
+                />
+                <div>
+                  <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
+                    {item.Tittle}
+                  </div>
+                  <div className="text-s20l150 mobile:text-s14l17 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
+                    {item.Description}
+                  </div>
                 </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Banks/Merchants */}
+        <div className="flex flex-col bg-footer mb-100 w-100%">
+          <div className="flex w-100% mobile:hidden">
+            <div
+              className={
+                "flex items-center justify-center w-50% mobile:w-100% py-40 border-b cursor-pointer " +
+                (isBORM === "b" ? "border-8CC63E" : "border-8B8B8B")
+              }
+              onClick={() => setIsBORM("b")}
+            >
+              <Image
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
+                height={49}
+                width={49}
+              />
+              <div
+                className={
+                  "ml-25 font-bold text-s40l60 " +
+                  (isBORM === "b" ? "text-FFFFFF" : "text-A2A2A2")
+                }
+              >
+                {homeForBanksResp?.Title1}
+              </div>
+            </div>
+            <div className="border-r border-8CC63E"></div>
+            <div
+              className={
+                "flex items-center justify-center w-50% mobile:w-100% py-40 border-b cursor-pointer " +
+                (isBORM === "m" ? "border-8CC63E" : "border-8B8B8B")
+              }
+              onClick={() => setIsBORM("m")}
+            >
+              <Image
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
+                height={49}
+                width={49}
+              />
+              <div
+                className={
+                  "ml-25 font-bold text-s40l60 " +
+                  (isBORM === "m" ? "text-FFFFFF" : "text-A2A2A2")
+                }
+              >
+                {homeForMerchant?.Title1}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center w-100% px-100 mobile:px-20 py-50 mobile:hidden">
+            {isBORM === "b" ? (
+              <>
+                <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
+                  <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 item-center">
+                    {homeForBanksResp?.Description1}
+                  </div>
+                  <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                    {homeForBanksResp?.Title2}
+                  </div>
+                  <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                    {homeForBanksResp?.Description2}
+                    <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+                      {" "}
+                      {homeForBanksResp?.CTA1}
+                    </span>
+                  </div>
+
+                  <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    {homeForBanksResp?.CTA2}
+                  </div>
+                </div>
+                <div className="w-50% mobile:w-100% flex items-center justify-center">
+                  <Image
+                    src={homeForBanksResp?.BankIllustration}
+                    height={650}
+                    width={500}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className=" flex flex-col w-50% mobile:w-100% justify-center">
+                  <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80">
+                    {homeForMerchant?.Description1}
+                  </div>
+                  <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                    {homeForMerchant?.Title2}
+                  </div>
+                  <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                    {homeForMerchant?.Description2}
+                    <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                      {homeForMerchant?.CTA1}
+                    </span>
+                  </div>
+
+                  <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    {homeForMerchant?.CTA2}
+                  </div>
+                </div>
+                <div className="w-50% mobile:w-100% flex items-center justify-center">
+                  <Image
+                    src={homeForMerchant?.MerchantIllustration}
+                    height={650}
+                    width={500}
+                  />
+                </div>
+              </>
+            )}
+          </div>
+          <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
+            <div
+              className={
+                "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 pb-24 cursor-pointer"
+              }
+              onClick={() => setIsBORM("b")}
+            >
+              <div className={"font-bold text-s20l24"}>
+                {" "}
+                {homeForBanksResp?.Title1}
+              </div>
+            </div>
+            <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
+              <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
+                {homeForBanksResp?.Description1}
+              </div>
+              <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                {homeForBanksResp?.Title2}
+              </div>
+              <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                {homeForBanksResp?.Description2}
+                <span className="text-s20l150   mobile:text-s14l24 text-8CC63E cursor-pointer">
+                  {homeForBanksResp?.CTA1}
+                </span>
+              </div>
+              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+                {homeForBanksResp?.CTA2}
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
                 <Image
@@ -338,179 +404,50 @@ export default function Home() {
                   width={500}
                 />
               </div>
-            </>
-          ) : (
-            <>
-              <div className=" flex flex-col w-50% mobile:w-100% justify-center">
-                <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80">
-                  {homeForMerchant?.Description1}
-                </div>
-                <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-                  {homeForMerchant?.Title2}
-                </div>
-                <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-                  {homeForMerchant?.Description2}
-                  <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
-                    {homeForMerchant?.CTA1}
-                  </span>
-                </div>
+            </div>
 
-                <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                  {homeForMerchant?.CTA2}
-                </div>
+            <div className="p-0 border-b border-8B8B8B"></div>
+            <div
+              className={
+                "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
+              }
+            >
+              <div className={"mb-22 font-bold text-s20l24 "}>
+                {" "}
+                {homeForMerchant?.Title1}
               </div>
-              <div className="w-50% mobile:w-100% flex items-center justify-center">
-                <Image
-                  src={homeForMerchant?.MerchantIllustration}
-                  height={650}
-                  width={500}
-                />
+            </div>
+            <div className="flex flex-col w-50% mobile:w-100% justify-center">
+              <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
+                {homeForMerchant?.Description1}
               </div>
-            </>
-          )}
-        </div>
-        <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
-          <div
-            className={
-              "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 pb-24 cursor-pointer"
-            }
-            onClick={() => setIsBORM("b")}
-          >
-            <div className={"font-bold text-s20l24"}>
-              {" "}
-              {homeForBanksResp?.Title1}
-            </div>
-          </div>
-          <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-            <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
-              {homeForBanksResp?.Description1}
-            </div>
-            <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-              {homeForBanksResp?.Title2}
-            </div>
-            <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-              {homeForBanksResp?.Description2}
-              <span className="text-s20l150   mobile:text-s14l24 text-8CC63E cursor-pointer">
-                {homeForBanksResp?.CTA1}
-              </span>
-            </div>
-            <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
-              {homeForBanksResp?.CTA2}
-            </div>
-            <div className="w-50% mobile:w-100% flex items-center justify-center">
+              <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                {homeForMerchant?.Title2}
+              </div>
+              <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                {homeForMerchant?.Description2}
+                <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+                  {" "}
+                  Learn More
+                </span>
+              </div>
+              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+                {homeForMerchant?.CTA2}
+              </div>
               <Image
-                src={homeForBanksResp?.BankIllustration}
+                src={homeForMerchant?.MerchantIllustration}
                 height={650}
                 width={500}
               />
             </div>
           </div>
-
-          <div className="p-0 border-b border-8B8B8B"></div>
-          <div
-            className={
-              "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
-            }
-          >
-            <div className={"mb-22 font-bold text-s20l24 "}>
-              {" "}
-              {homeForMerchant?.Title1}
-            </div>
-          </div>
-          <div className="flex flex-col w-50% mobile:w-100% justify-center">
-            <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-40">
-              {homeForMerchant?.Description1}
-            </div>
-            <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-              {homeForMerchant?.Title2}
-            </div>
-            <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
-              {homeForMerchant?.Description2}
-              <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
-                {" "}
-                Learn More
-              </span>
-            </div>
-            <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
-              {homeForMerchant?.CTA2}
-            </div>
-            <Image
-              src={homeForMerchant?.MerchantIllustration}
-              height={650}
-              width={500}
-            />
-          </div>
         </div>
-      </div>
 
-      {/* Building a global community */}
-      <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
-        Building a global community
-      </div>
-      <div className="flex justify-center items-center w-100% py-50 px-150 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
-        <Carousel
-          itemsToShow={3}
-          itemPadding={[0, 20, 0, 20]}
-          enableMouseSwipe={false}
-          pagination={false}
-          renderArrow={({ type, onClick, isEdge }) => {
-            const pointer =
-              type === consts.PREV ? (
-                <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-              ) : (
-                <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-              )
-            return (
-              <button onClick={onClick} disabled={isEdge} className="h-120">
-                {pointer}
-              </button>
-            )
-          }}
-        >
-          {comunityCard.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="h-230 mobile:h-170 mobile:278 sliderItem "
-              >
-                <Image
-                  src={item.BankLogo}
-                  width={231}
-                  height={130}
-                  className="grayscale h-130 colorImage m-auto"
-                />
-                <div className="">
-                  <div className="comunityContent hidden">{item.BankInfo}</div>
-                </div>
-              </div>
-            )
-          })}
-        </Carousel>
-      </div>
-      <div className="desktop:hidden flex flex-col laptop:hidden items-center w-100% mb-100 mobile:pr-0 mobile:mb-0">
-        {comunityCard.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
-            >
-              <div className="flex justify-center items-center   w-100%">
-                <Image src={item.BankLogo} className="w-150 h-100" />
-              </div>
-              <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
-                {item.BankInfo}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      {/* Our achievements */}
-      <div className="flex flex-col items-center bg-footer w-100% p-60 mobile:p-0 mobile:pt-40">
-        <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0 mobile:mb-40">
-          Our achievements
+        {/* Building a global community */}
+        <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
+          Building a global community
         </div>
-        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 mobile:hidden">
+        <div className="flex justify-center items-center w-100% py-50 px-150 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
           <Carousel
             itemsToShow={3}
             itemPadding={[0, 20, 0, 20]}
@@ -519,490 +456,564 @@ export default function Home() {
             renderArrow={({ type, onClick, isEdge }) => {
               const pointer =
                 type === consts.PREV ? (
-                  <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                  <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 ) : (
-                  <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 )
               return (
-                <button onClick={onClick} disabled={isEdge}>
+                <button onClick={onClick} disabled={isEdge} className="h-120">
                   {pointer}
                 </button>
               )
             }}
           >
-            {homepageAchievements.map((item, index) => {
+            {comunityCard.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4 h-420"
+                  className="h-230 mobile:h-170 mobile:278 sliderItem "
                 >
-                  <Image src={item.CertificateIcon} height={110} width={273} />
-                  <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">
-                    {item?.Title}
-                  </div>
-                  <div className="text-DFDFDF text-center mt-12 text-s20l150">
-                    {item?.Description}
+                  <Image
+                    src={item.BankLogo}
+                    width={231}
+                    height={130}
+                    className="grayscale h-130 colorImage m-auto"
+                  />
+                  <div className="">
+                    <div className="comunityContent hidden">
+                      {item.BankInfo}
+                    </div>
                   </div>
                 </div>
               )
             })}
           </Carousel>
         </div>
-        <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
-          <Carousel
-            itemsToShow={1}
-            itemPadding={[0, 0]}
-            enableMouseSwipe={true}
-            pagination={true}
-            showArrows={false}
-            outerSpacing={0}
-            renderPagination={mobileCarouselPagination}
-          >
-            {homepageAchievements.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4"
-                >
-                  <Image src={item.CertificateIcon} height={110} width={273} />
-                  <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
-                    {item?.Title}
-                  </div>
-                  <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
-                    {item?.Description}
-                  </div>
+        <div className="desktop:hidden flex flex-col laptop:hidden items-center w-100% mb-100 mobile:pr-0 mobile:mb-0">
+          {comunityCard.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
+              >
+                <div className="flex justify-center items-center   w-100%">
+                  <Image src={item.BankLogo} className="w-150 h-100" />
                 </div>
-              )
-            })}
-          </Carousel>
+                <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
+                  {item.BankInfo}
+                </div>
+              </div>
+            )
+          })}
         </div>
-      </div>
 
-      {/* In the media */}
-      <div className="w-100% flex-col justify-center items-center mt-100">
-        <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
-          <span>In the media</span>
-          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
-            View All
-          </span>
-        </div>
-        <div className="w-100% flex flex-col items-center px-150 mobile:hidden">
-          <Carousel
-            itemsToShow={3}
-            itemPadding={[0, 20, 0, 20]}
-            enableMouseSwipe={false}
-            pagination={false}
-            renderArrow={blackCarouselArrows}
-          >
-            {homepageMediaCards.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
-                >
-                  <div className="px-10 ">
+        {/* Our achievements */}
+        <div className="flex flex-col items-center bg-footer w-100% p-60 mobile:p-0 mobile:pt-40">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0 mobile:mb-40">
+            Our achievements
+          </div>
+          <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 mobile:hidden">
+            <Carousel
+              itemsToShow={3}
+              itemPadding={[0, 20, 0, 20]}
+              enableMouseSwipe={false}
+              pagination={false}
+              renderArrow={({ type, onClick, isEdge }) => {
+                const pointer =
+                  type === consts.PREV ? (
+                    <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                  ) : (
+                    <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                  )
+                return (
+                  <button onClick={onClick} disabled={isEdge}>
+                    {pointer}
+                  </button>
+                )
+              }}
+            >
+              {homepageAchievements.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4 h-420"
+                  >
                     <Image
-                      src={item.ArticleImage}
-                      height={265}
-                      width={320}
-                      className="grayscale colorImage"
+                      src={item.CertificateIcon}
+                      height={110}
+                      width={273}
                     />
-                  </div>
-                  <div div className="flex flex-col items-start">
-                    <div className="text-83B449 text-s20l24 p-20">
-                      {item.ReadTime}
+                    <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">
+                      {item?.Title}
                     </div>
-                    <div className="text-252525 px-20 font-bold text-s24l29">
-                      {item.ArticleTitle}
-                    </div>
-                    <div className="text-525252 px-20 mt-15 text-s20l24">
-                      <span className="font-bold">{item.Author}</span>
-                      <br />
-                      {item.ArticleDate}
+                    <div className="text-DFDFDF text-center mt-12 text-s20l150">
+                      {item?.Description}
                     </div>
                   </div>
-                  <div className="w-full flex items-center justify-end">
-                    <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
-                  </div>
-                </div>
-              )
-            })}
-          </Carousel>
-          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
-            View All
+                )
+              })}
+            </Carousel>
           </div>
-        </div>
-        <div className="w-100% block items-center desktop:hidden laptop:hidden">
-          <Carousel
-            itemPadding={[0, 15]}
-            itemsToShow={1.3}
-            outerSpacing={0}
-            showArrows={false}
-            pagination={false}
-          >
-            {homepageMediaCards.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
-                >
-                  <div className="px-10">
+          <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
+            <Carousel
+              itemsToShow={1}
+              itemPadding={[0, 0]}
+              enableMouseSwipe={true}
+              pagination={true}
+              showArrows={false}
+              outerSpacing={0}
+              renderPagination={mobileCarouselPagination}
+            >
+              {homepageAchievements.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4"
+                  >
                     <Image
-                      src={item.ArticleImage}
-                      height={203}
-                      width={216}
-                      className="grayscale colorImage"
+                      src={item.CertificateIcon}
+                      height={110}
+                      width={273}
                     />
-                  </div>
-                  <div div className="flex flex-col items-start">
-                    <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                      {item.ReadTime}
+                    <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
+                      {item?.Title}
                     </div>
-                    <div className="text-252525 px-10 font-bold text-s14l16_8">
-                      {item.ArticleTitle}
-                    </div>
-                    <div className="text-525252 px-10 pb-0 text-s12l14">
-                      <span className="font-bold">{item.Author}</span>
-                      <br />
-                      {item.ArticleDate}
+                    <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
+                      {item?.Description}
                     </div>
                   </div>
-                  <div className="w-full flex items-center justify-end">
-                    <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                )
+              })}
+            </Carousel>
+          </div>
+        </div>
+
+        {/* In the media */}
+        <div className="w-100% flex-col justify-center items-center mt-100">
+          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+            <span>In the media</span>
+            <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+              View All
+            </span>
+          </div>
+          <div className="w-100% flex flex-col items-center px-150 mobile:hidden">
+            <Carousel
+              itemsToShow={3}
+              itemPadding={[0, 20, 0, 20]}
+              enableMouseSwipe={false}
+              pagination={false}
+              renderArrow={blackCarouselArrows}
+            >
+              {homepageMediaCards.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                  >
+                    <div className="px-10 ">
+                      <Image
+                        src={item.ArticleImage}
+                        height={265}
+                        width={320}
+                        className="grayscale colorImage"
+                      />
+                    </div>
+                    <div div className="flex flex-col items-start">
+                      <div className="text-83B449 text-s20l24 p-20">
+                        {item.ReadTime}
+                      </div>
+                      <div className="text-252525 px-20 font-bold text-s24l29">
+                        {item.ArticleTitle}
+                      </div>
+                      <div className="text-525252 px-20 mt-15 text-s20l24">
+                        <span className="font-bold">{item.Author}</span>
+                        <br />
+                        {item.ArticleDate}
+                      </div>
+                    </div>
+                    <div className="w-full flex items-center justify-end">
+                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                    </div>
+                  </div>
+                )
+              })}
+            </Carousel>
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
+              View All
+            </div>
+          </div>
+          <div className="w-100% block items-center desktop:hidden laptop:hidden">
+            <Carousel
+              itemPadding={[0, 15]}
+              itemsToShow={1.3}
+              outerSpacing={0}
+              showArrows={false}
+              pagination={false}
+            >
+              {homepageMediaCards.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                  >
+                    <div className="px-10">
+                      <Image
+                        src={item.ArticleImage}
+                        height={203}
+                        width={216}
+                        className="grayscale colorImage"
+                      />
+                    </div>
+                    <div div className="flex flex-col items-start">
+                      <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                        {item.ReadTime}
+                      </div>
+                      <div className="text-252525 px-10 font-bold text-s14l16_8">
+                        {item.ArticleTitle}
+                      </div>
+                      <div className="text-525252 px-10 pb-0 text-s12l14">
+                        <span className="font-bold">{item.Author}</span>
+                        <br />
+                        {item.ArticleDate}
+                      </div>
+                    </div>
+                    <div className="w-full flex items-center justify-end">
+                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                    </div>
+                  </div>
+                )
+              })}
+            </Carousel>
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
+              View All
+            </div>
+          </div>
+        </div>
+
+        {/* Most popular blogs */}
+        <div className="w-100% flex-col justify-center items-center mt-100">
+          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+            <span>Most Popular Blogs</span>
+            <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+              View All
+            </span>
+          </div>
+          <div className="w-100% flex flex-col items-center justify-around px-150 mobile:hidden">
+            <Carousel
+              itemsToShow={3}
+              itemPadding={[0, 20, 0, 20]}
+              enableMouseSwipe={false}
+              pagination={false}
+              renderArrow={blackCarouselArrows}
+            >
+              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+                <div className="px-16">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={265}
+                    width={320}
+                    className="grayscale colorImage"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                  <div className="text-252525 px-20 font-bold text-s24l29">
+                    How to standout in digital payments business space
+                  </div>
+                  <div className="text-525252 p-20 mt-10 text-s20l24">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
                   </div>
                 </div>
-              )
-            })}
-          </Carousel>
-          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
-            View All
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-5.svg"
+                    height={265}
+                    width={320}
+                    className="grayscale colorImage"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                  <div className="text-252525 px-20 font-bold text-s24l29">
+                    How to fix recurring payments under new RBI guidelines
+                  </div>
+                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-6.svg"
+                    height={265}
+                    width={320}
+                    className="grayscale colorImage"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                  <div className="text-252525 px-20 font-bold text-s24l29">
+                    The tango between banks and fintechs: Rivals turn partners
+                  </div>
+                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={265}
+                    width={320}
+                    className="grayscale colorImage"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                  <div className="text-252525 px-20 font-bold text-s24l29">
+                    How to standout in digital payments business space
+                  </div>
+                  <div className="text-525252 p-20 mt-10 text-s20l24">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-5.svg"
+                    height={265}
+                    width={320}
+                    className="grayscale colorImage"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                  <div className="text-252525 px-20 font-bold text-s24l29">
+                    How to fix recurring payments under new RBI guidelines
+                  </div>
+                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+            </Carousel>
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">
+              View All
+            </div>
+          </div>
+          <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
+            <Carousel
+              itemPadding={[0, 15]}
+              itemsToShow={1.3}
+              outerSpacing={0}
+              showArrows={false}
+              pagination={false}
+            >
+              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                    How to standout in digital payments business space
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-5.svg"
+                    height={203}
+                    width={216}
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                    How to fix recurring payments under new RBI guidelines
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-6.svg"
+                    height={203}
+                    width={216}
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                    The tango between banks and fintechs: Rivals turn partners
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                    How to standout in digital payments business space
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
+                <div className="px-10">
+                  <Image
+                    src="/images/backgrounds/img-5.svg"
+                    height={203}
+                    width={216}
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                    How to fix recurring payments under new RBI guidelines
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14">
+                    By <span className="font-bold">Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+            </Carousel>
           </div>
         </div>
-      </div>
 
-      {/* Most popular blogs */}
-      <div className="w-100% flex-col justify-center items-center mt-100">
-        <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
-          <span>Most Popular Blogs</span>
-          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
-            View All
-          </span>
-        </div>
-        <div className="w-100% flex flex-col items-center justify-around px-150 mobile:hidden">
-          <Carousel
-            itemsToShow={3}
-            itemPadding={[0, 20, 0, 20]}
-            enableMouseSwipe={false}
-            pagination={false}
-            renderArrow={blackCarouselArrows}
-          >
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-              <div className="px-16">
-                <Image
-                  src="/images/backgrounds/img-4.svg"
-                  height={265}
-                  width={320}
-                  className="grayscale colorImage"
-                />
+        {/* FAQs */}
+        <div className="px-180 py-150 mobile:px-0 mobile:py-0">
+          <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60">
+            <div className="mb-40 ml-40 mt-50 mobile:ml-0">
+              <div className="text-252525 text-s45l45 mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
+                FAQs
               </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                <div className="text-252525 px-20 font-bold text-s24l29">
-                  How to standout in digital payments business space
-                </div>
-                <div className="text-525252 p-20 mt-10 text-s20l24">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <div className="text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:font-semibold">
+                Curious about Mintoak? We’ve got you covered.
               </div>
             </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-5.svg"
-                  height={265}
-                  width={320}
-                  className="grayscale colorImage"
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                <div className="text-252525 px-20 font-bold text-s24l29">
-                  How to fix recurring payments under new RBI guidelines
-                </div>
-                <div className="text-525252 px-20 mt-15 text-s20l24">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-6.svg"
-                  height={265}
-                  width={320}
-                  className="grayscale colorImage"
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                <div className="text-252525 px-20 font-bold text-s24l29">
-                  The tango between banks and fintechs: Rivals turn partners
-                </div>
-                <div className="text-525252 px-20 mt-15 text-s20l24">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-4.svg"
-                  height={265}
-                  width={320}
-                  className="grayscale colorImage"
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                <div className="text-252525 px-20 font-bold text-s24l29">
-                  How to standout in digital payments business space
-                </div>
-                <div className="text-525252 p-20 mt-10 text-s20l24">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-5.svg"
-                  height={265}
-                  width={320}
-                  className="grayscale colorImage"
-                />
-              </div>
-              <div className="flex flex-col items-start">
-                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                <div className="text-252525 px-20 font-bold text-s24l29">
-                  How to fix recurring payments under new RBI guidelines
-                </div>
-                <div className="text-525252 px-20 mt-15 text-s20l24">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-          </Carousel>
-          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">
-            View All
-          </div>
-        </div>
-        <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
-          <Carousel
-            itemPadding={[0, 15]}
-            itemsToShow={1.3}
-            outerSpacing={0}
-            showArrows={false}
-            pagination={false}
-          >
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-4.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  How to standout in digital payments business space
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-5.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  How to fix recurring payments under new RBI guidelines
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-6.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  The tango between banks and fintechs: Rivals turn partners
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-4.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  How to standout in digital payments business space
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-            <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-              <div className="px-10">
-                <Image
-                  src="/images/backgrounds/img-5.svg"
-                  height={203}
-                  width={216}
-                />
-              </div>
-              <div div className="flex flex-col items-start">
-                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                  6 min read
-                </div>
-                <div className="text-252525 px-10 font-bold text-s14l16_8">
-                  How to fix recurring payments under new RBI guidelines
-                </div>
-                <div className="text-525252 px-10 pb-0 text-s12l14">
-                  By <span className="font-bold">Raman Kahnduja</span>
-                  <br />
-                  Sept 13, 2021
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-end">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-              </div>
-            </div>
-          </Carousel>
-        </div>
-      </div>
 
-      {/* FAQs */}
-      <div className="px-180 py-150 mobile:px-0 mobile:py-0">
-        <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60">
-          <div className="mb-40 ml-40 mt-50 mobile:ml-0">
-            <div className="text-252525 text-s45l45 mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
-              FAQs
-            </div>
-            <div className="text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:font-semibold">
-              Curious about Mintoak? We’ve got you covered.
-            </div>
+            <Collapse
+              expandIcon={({ isActive }) =>
+                isActive ? (
+                  <i className="fa fa-angle-up text-262626" />
+                ) : (
+                  <i className="fa fa-angle-down text-262626" />
+                )
+              }
+              expandIconPosition={"right"}
+              bordered={false}
+              // defaultActiveKey={["1"]}
+            >
+              {faq.map((item, index) => {
+                return (
+                  <Panel
+                    className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold mobile:border"
+                    header={item.Question}
+                    key={index}
+                  >
+                    <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal">
+                      {item.Answer}
+                    </p>
+                  </Panel>
+                )
+              })}
+            </Collapse>
           </div>
-
-          <Collapse
-            expandIcon={({ isActive }) =>
-              isActive ? (
-                <i className="fa fa-angle-up text-262626" />
-              ) : (
-                <i className="fa fa-angle-down text-262626" />
-              )
-            }
-            expandIconPosition={"right"}
-            bordered={false}
-            // defaultActiveKey={["1"]}
-          >
-            {faq.map((item, index) => {
-              return (
-                <Panel
-                  className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold mobile:border"
-                  header={item.Question}
-                  key={index}
-                >
-                  <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal">
-                    {item.Answer}
-                  </p>
-                </Panel>
-              )
-            })}
-          </Collapse>
-        </div>
-        <div className="flex items-center justify-center mt-40 mobile:hidden">
-          <div className="text-s24l29 text-6B6B6B">
-            Still have unanswered questions?
-          </div>
-          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 ml-10 cursor-pointer font-bold">
-            View All
+          <div className="flex items-center justify-center mt-40 mobile:hidden">
+            <div className="text-s24l29 text-6B6B6B">
+              Still have unanswered questions?
+            </div>
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 ml-10 cursor-pointer font-bold">
+              View All
+            </div>
           </div>
         </div>
       </div>
