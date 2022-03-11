@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react"
 import Image from "../components/helpers/Image"
 import Carousel from "react-elastic-carousel"
 import { Chrono } from "react-chrono"
-import ScrollAnimation from "react-animate-on-scroll"
 import { API, endpoints } from "../components/helpers/API"
 export default function About() {
   const [aboutBannerResp, setAboutBannerResp] = useState({})
@@ -278,47 +277,40 @@ export default function About() {
       </div>
 
       {/* Our founders */}
-      <div
+      {/* <div
         id="founder"
         className="w-100%  bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-976 overflow-scroll laptop:h-976"
       >
-        <ScrollAnimation
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-          scrollableParentSelector="#founder"
-          className="overflow-auto removeScroll"
-        >
-          <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden">
-            Our founders
-          </div>
-          {founderResp.map((item, index) => (
-            <div
-              key={index}
-              id={`founders${index}`}
-              className="flex flex-col desktop:w-70% mobile:w-100%"
-              onLoadStart={() => {
-                console.log("first")
-              }}
-            >
-              <div className="flex mobile:flex-col">
-                <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
-                  <Image src={item?.FounderImage} height={660} width={529} />
+        <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden">
+          Our founders
+        </div>
+        {founderResp.map((item, index) => (
+          <div
+            key={index}
+            id={`founders${index}`}
+            className="flex flex-col desktop:w-70% mobile:w-100%"
+            onLoadStart={() => {
+              console.log("first")
+            }}
+          >
+            <div className="flex mobile:flex-col">
+              <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
+                <Image src={item?.FounderImage} height={660} width={529} />
+              </div>
+              <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
+                <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
+                  {item?.Name}
                 </div>
-                <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
-                  <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
-                    {item?.Name}
-                  </div>
-                  <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
-                    {item?.Designation}
-                  </div>
-                  <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
-                    {item?.Description}
-                  </div>
+                <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
+                  {item?.Designation}
+                </div>
+                <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
+                  {item?.Description}
                 </div>
               </div>
             </div>
-          ))}
-        </ScrollAnimation>
+          </div>
+        ))}
 
         <div className="w-30% pt-80 flex flex-col itmes-center justify-center mobile:hidden sticky top-0">
           <div className="h-700 flex flex-col">
@@ -368,7 +360,7 @@ export default function About() {
           <div>Raman Khanduja</div>
           <div>Chief Executive</div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
