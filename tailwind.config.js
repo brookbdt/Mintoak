@@ -56,8 +56,8 @@ module.exports = {
     screens: {
       mobile: { min: "0px", max: "480px" },
       tablet: { min: "481px", max: "1025px" },
-      laptop: { min: "1026px", max: "1335px" },
-      desktop: "1336px",
+      laptop: { min: "1026px", max: "1440px" },
+      desktop: "1441px",
     },
     colors,
     fontSize: {

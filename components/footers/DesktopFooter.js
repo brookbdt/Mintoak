@@ -3,7 +3,7 @@ import Image from "../helpers/Image"
 
 export default function DesktopFooter() {
   return (
-    <div className="hidden desktop:flex flex-col">
+    <div className="hidden desktop:flex laptop:flex flex-col">
       <div className="flex justify-between items-center px-80 py-60">
         <div className="text-F1F1F1 text-s40l60">
           Ready to begin your journey with us?

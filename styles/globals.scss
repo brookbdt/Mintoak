@@ -336,3 +336,7 @@ button[disabled] {
 .removeScroll::-webkit-scrollbar {
   display: none;
 }
+
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+  padding-right: 60px !important;
+}
