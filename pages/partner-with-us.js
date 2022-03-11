@@ -1,9 +1,25 @@
 import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState } from "react";
+import { consts } from "react-elastic-carousel";
 import { Modal } from "antd";
-import { useState } from "react";
+import { API, endpoints } from "../components/helpers/API";
 
 export default function Partner() {
   const [modalvisible, setmodalVisible] = useState(false);
+  const [comunityCard, setComunityCard] = useState([]);
+
+  useEffect(() => {
+    // Community card
+    API({
+      url: endpoints.comminity_cards,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setComunityCard(resp);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -53,11 +69,18 @@ export default function Partner() {
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 desktop:px-30  mobile:w-100% mobile:flex-col">
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+              <div className="mobile:hidden">
                 <Image
                   src="/images/icons/financial-service-icon.svg"
                   width={54}
                   height={101}
+                />
+              </div>
+              <div className="desktop:hidden">
+                <Image
+                  src="/images/icons/financial-service-icon.svg"
+                  width={24.96}
+                  height={48.13}
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 font-bold py-37 text-center desktop:px-20 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -65,11 +88,18 @@ export default function Partner() {
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+              <div className="mobile:hidden">
                 <Image
                   src="/images/icons/devices-icon.svg"
                   width={65}
                   height={95}
+                />
+              </div>
+              <div className="desktop:hidden">
+                <Image
+                  src="/images/icons/devices-icon.svg"
+                  width={28.8}
+                  height={51.14}
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525  font-bold py-37 text-center desktop:px-30 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -77,11 +107,18 @@ export default function Partner() {
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+              <div className="mobile:hidden">
                 <Image
                   src="/images/icons/lamp-icon.svg"
                   width={68}
                   height={95}
+                />
+              </div>
+              <div className="desktop:hidden">
+                <Image
+                  src="/images/icons/lamp-icon.svg"
+                  width={27.84}
+                  height={40.11}
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 font-bold py-37 text-center desktop:px-50 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -89,11 +126,18 @@ export default function Partner() {
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+              <div className="mobile:hidden">
                 <Image
                   src="/images/icons/cart-icon.svg"
                   width={101}
                   height={97}
+                />
+              </div>
+              <div className="desktop:hidden">
+                <Image
+                  src="/images/icons/cart-icon.svg"
+                  width={39.36}
+                  height={40.11}
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 font-bold py-37 text-center desktop:px-50  mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -323,6 +367,54 @@ export default function Partner() {
             >
               Submit
             </div>
+          </div>
+        </div>
+        {/* our partners */}
+        <div>
+          <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150">
+            Our partners
+          </div>
+          <div className="flex justify-center items-center w-100% py-50 px-150 pb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+            <Carousel
+              itemsToShow={3}
+              itemPadding={[0, 20, 0, 20]}
+              enableMouseSwipe={false}
+              pagination={false}
+              renderArrow={({ type, onClick, isEdge }) => {
+                const pointer =
+                  type === consts.PREV ? (
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  ) : (
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  );
+                return (
+                  <button onClick={onClick} disabled={isEdge} className="h-120">
+                    {pointer}
+                  </button>
+                );
+              }}
+            >
+              {comunityCard.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="h-230 mobile:h-170 mobile:278 sliderItem "
+                  >
+                    <Image
+                      src={item.BankLogo}
+                      width={231}
+                      height={130}
+                      className="grayscale h-130 colorImage m-auto"
+                    />
+                    <div className="">
+                      <div className="comunityContent hidden">
+                        {item.BankInfo}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
         </div>
       </div>

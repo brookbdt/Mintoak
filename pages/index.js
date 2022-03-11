@@ -1,112 +1,112 @@
-import { useEffect, useState } from "react"
-import Carousel from "react-elastic-carousel"
-import Image from "../components/helpers/Image"
-import { consts } from "react-elastic-carousel"
-import { Collapse } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Item from "antd/lib/list/Item"
+import { useEffect, useState } from "react";
+import Carousel from "react-elastic-carousel";
+import Image from "../components/helpers/Image";
+import { consts } from "react-elastic-carousel";
+import { Collapse } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Item from "antd/lib/list/Item";
 
-const { Panel } = Collapse
+const { Panel } = Collapse;
 
 export default function Home() {
-  const [isBORM, setIsBORM] = useState("b")
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [metricsResp, setMetricsResp] = useState({})
-  const [homeForBanksResp, setHomeForBanksResp] = useState({})
-  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([])
-  const [homeForMerchant, setHomeForMerchant] = useState([])
-  const [comunityCard, setComunityCard] = useState([])
-  const [homepageAchievements, setHomepageAchievements] = useState([])
-  const [homepageMediaCards, setHomepageMediaCards] = useState([])
-  const [faq, setFaq] = useState([])
+  const [isBORM, setIsBORM] = useState("b");
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [metricsResp, setMetricsResp] = useState({});
+  const [homeForBanksResp, setHomeForBanksResp] = useState({});
+  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([]);
+  const [homeForMerchant, setHomeForMerchant] = useState([]);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [homepageAchievements, setHomepageAchievements] = useState([]);
+  const [homepageMediaCards, setHomepageMediaCards] = useState([]);
+  const [faq, setFaq] = useState([]);
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
 
     // metrics
     API({
       url: endpoints.metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMetricsResp(resp)
+        setMetricsResp(resp);
       }
-    })
+    });
 
     // homepage_for_banks
     API({
       url: endpoints.homepage_for_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeForBanksResp(resp)
+        setHomeForBanksResp(resp);
       }
-    })
+    });
 
     // Advantages Card
     API({
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomeAdvantagesCard(resp)
+        console.log(resp, "resp");
+        setHomeAdvantagesCard(resp);
       }
-    })
+    });
 
     // Home page for merchant
     API({
       url: endpoints.homeoage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomeForMerchant(resp)
+        console.log(resp, "resp");
+        setHomeForMerchant(resp);
       }
-    })
+    });
 
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setComunityCard(resp)
+        console.log(resp, "resp");
+        setComunityCard(resp);
       }
-    })
+    });
 
     // Homepage Our Achievements
     API({
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomepageAchievements(resp)
+        console.log(resp, "resp");
+        setHomepageAchievements(resp);
       }
-    })
+    });
 
     // Homepage Media Cards
     API({
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomepageMediaCards(resp)
+        console.log(resp, "resp");
+        setHomepageMediaCards(resp);
       }
-    })
+    });
 
     // Faq
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setFaq(resp)
+        console.log(resp, "resp");
+        setFaq(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -114,13 +114,13 @@ export default function Home() {
         <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
       ) : (
         <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-      )
+      );
     return (
       <button onClick={onClick} disabled={isEdge}>
         {pointer}
       </button>
-    )
-  }
+    );
+  };
 
   const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
     return (
@@ -131,8 +131,8 @@ export default function Home() {
           <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
         </span>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div className="h-fit w-100% ">
@@ -209,14 +209,34 @@ export default function Home() {
                 Merchants
               </div>
             </div>
-            <div className="text-center text-s36l43 mobile:text-s20l24 text-252525">
-              <span className="mobile:font-semibold">
-                {metricsResp?.TransactionsAnnually}
-                <span className="text-A4D77A">+</span>
-              </span>
-              <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
-                Transactions Annually
-              </div>
+          );
+        })}
+      </div>
+
+      {/* Banks/Merchants */}
+      <div className="flex flex-col bg-footer mb-100 w-100%">
+        <div className="flex w-100% mobile:hidden">
+          <div
+            className={
+              "flex items-center justify-center w-50% mobile:w-100% py-40 border-b cursor-pointer " +
+              (isBORM === "b" ? "border-8CC63E" : "border-8B8B8B")
+            }
+            onClick={() => setIsBORM("b")}
+          >
+            <Image
+              src={`/images/icons/radio-${
+                isBORM === "b" ? "selected" : "unselected"
+              }.svg`}
+              height={49}
+              width={49}
+            />
+            <div
+              className={
+                "ml-25 font-bold text-s40l60 " +
+                (isBORM === "b" ? "text-FFFFFF" : "text-A2A2A2")
+              }
+            >
+              {homeForBanksResp?.Title1}
             </div>
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
               {metricsResp?.GMVAnnuals}
@@ -443,9 +463,72 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Building a global community */}
-        <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
-          Building a global community
+      {/* Building a global community */}
+      <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
+        Building a global community
+      </div>
+      <div className="flex justify-center items-center w-100% py-50 px-150 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+        <Carousel
+          itemsToShow={3}
+          itemPadding={[0, 20, 0, 20]}
+          enableMouseSwipe={false}
+          pagination={false}
+          renderArrow={({ type, onClick, isEdge }) => {
+            const pointer =
+              type === consts.PREV ? (
+                <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+              ) : (
+                <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+              );
+            return (
+              <button onClick={onClick} disabled={isEdge} className="h-120">
+                {pointer}
+              </button>
+            );
+          }}
+        >
+          {comunityCard.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="h-230 mobile:h-170 mobile:278 sliderItem "
+              >
+                <Image
+                  src={item.BankLogo}
+                  width={231}
+                  height={130}
+                  className="grayscale h-130 colorImage m-auto"
+                />
+                <div className="">
+                  <div className="comunityContent hidden">{item.BankInfo}</div>
+                </div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
+      <div className="desktop:hidden flex flex-col laptop:hidden items-center w-100% mb-100 mobile:pr-0 mobile:mb-0">
+        {comunityCard.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
+            >
+              <div className="flex justify-center items-center   w-100%">
+                <Image src={item.BankLogo} className="w-150 h-100" />
+              </div>
+              <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
+                {item.BankInfo}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Our achievements */}
+      <div className="flex flex-col items-center bg-footer w-100% p-60 mobile:p-0 mobile:pt-40">
+        <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0 mobile:mb-40">
+          Our achievements
         </div>
         <div className="flex justify-center items-center w-100% py-50 laptop:px-100 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
           <Carousel
@@ -458,13 +541,13 @@ export default function Home() {
                 type === consts.PREV ? (
                   <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 ) : (
-                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                )
+                  <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                );
               return (
                 <button onClick={onClick} disabled={isEdge} className="h-120">
                   {pointer}
                 </button>
-              )
+              );
             }}
           >
             {comunityCard.map((item, index) => {
@@ -485,7 +568,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </Carousel>
         </div>
@@ -499,12 +582,9 @@ export default function Home() {
                 <div className="flex justify-center items-center   w-100%">
                   <Image src={item.BankLogo} className="w-150 h-100" />
                 </div>
-                <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
-                  {item.BankInfo}
-                </div>
-              </div>
-            )
-          })}
+              );
+            })}
+          </Carousel>
         </div>
 
         {/* Our achievements */}
@@ -781,8 +861,28 @@ export default function Home() {
                     Sept 13, 2021
                   </div>
                 </div>
-                <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+              );
+            })}
+          </Carousel>
+          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
+            View All
+          </div>
+        </div>
+        <div className="w-100% block items-center desktop:hidden laptop:hidden">
+          <Carousel
+            itemPadding={[0, 15]}
+            itemsToShow={1.3}
+            outerSpacing={0}
+            showArrows={false}
+            pagination={false}
+          >
+            {homepageMediaCards.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                >
+                  <div className="px-10">
                     <Image
                       src="/images/icons/arrow.svg"
                       type="img"
@@ -815,15 +915,49 @@ export default function Home() {
                     Sept 13, 2021
                   </div>
                 </div>
-                <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
-                    <Image
-                      src="/images/icons/arrow.svg"
-                      type="img"
-                      height={40}
-                      width={40}
-                    />
-                  </div>
+              );
+            })}
+          </Carousel>
+          <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
+            View All
+          </div>
+        </div>
+      </div>
+
+      {/* Most popular blogs */}
+      <div className="w-100% flex-col justify-center items-center mt-100">
+        <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+          <span>Most Popular Blogs</span>
+          <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+            View All
+          </span>
+        </div>
+        <div className="w-100% flex flex-col items-center justify-around px-150 mobile:hidden">
+          <Carousel
+            itemsToShow={3}
+            itemPadding={[0, 20, 0, 20]}
+            enableMouseSwipe={false}
+            pagination={false}
+            renderArrow={blackCarouselArrows}
+          >
+            <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
+              <div className="px-16">
+                <Image
+                  src="/images/backgrounds/img-4.svg"
+                  height={265}
+                  width={320}
+                  className="grayscale colorImage"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <div className="text-83B449 text-s20l24 p-20">6 min read</div>
+                <div className="text-252525 px-20 font-bold text-s24l29">
+                  How to standout in digital payments business space
+                </div>
+                <div className="text-525252 p-20 mt-10 text-s20l24">
+                  By <span className="font-bold">Raman Kahnduja</span>
+                  <br />
+                  Sept 13, 2021
                 </div>
               </div>
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
@@ -1073,21 +1207,25 @@ export default function Home() {
               expandIconPosition={"right"}
               bordered={false}
             // defaultActiveKey={["1"]}
-            >
-              {faq.map((item, index) => {
-                return (
-                  <Panel
-                    className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold mobile:border"
-                    header={item.Question}
-                    key={index}
-                  >
-                    <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal">
-                      {item.Answer}
-                    </p>
-                  </Panel>
-                )
-              })}
-            </Collapse>
+          >
+            {faq.map((item, index) => {
+              return (
+                <Panel
+                  className="text-252525 text-s24l29 mobile:text-s14l24 p-30 mobile:p-0 mobile:ml-20 mobile:mr-20 font-semibold mobile:border"
+                  header={item.Question}
+                  key={index}
+                >
+                  <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal">
+                    {item.Answer}
+                  </p>
+                </Panel>
+              );
+            })}
+          </Collapse>
+        </div>
+        <div className="flex items-center justify-center mt-40 mobile:hidden">
+          <div className="text-s24l29 text-6B6B6B">
+            Still have unanswered questions?
           </div>
           <div className="flex items-center justify-center mt-40 mobile:hidden">
             <div className="text-s24l29 text-6B6B6B">
@@ -1100,5 +1238,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

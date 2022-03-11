@@ -26,11 +26,11 @@ const colors = {
   "8B8B8B": "#8B8B8B",
   848484: "#848484",
   949494: "#949494",
-  "F3FBF5": "#F3FBF5",
-  "E5E5E5": "#E5E5E5",
-  "DFEFD4": "#DFEFD4",
-  "828282": "#828282",
-  "F4FBF4": "#F4FBF4",
+  F3FBF5: "#F3FBF5",
+  E5E5E5: "#E5E5E5",
+  DFEFD4: "#DFEFD4",
+  828282: "#828282",
+  F4FBF4: "#F4FBF4",
   e0efd4: "#e0efd4",
   464646: "#464646",
   // DFEFD4: "#DFEFD4",
@@ -46,17 +46,17 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-}
+};
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {}
-Array.from(Array(5000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`
-})
+const spacing2000px = {};
+Array.from(Array(2000).keys()).forEach((n) => {
+  spacing2000px[n] = `${n}px`;
+});
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {}
+const spacing100Percentage = {};
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`
-})
+  spacing100Percentage[`${n}%`] = `${n}%`;
+});
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -103,6 +103,7 @@ module.exports = {
       s24l36: ["24px", "36px"],
       s24l31_92: ["24px", "31.92px"],
       s24l40_8: ["24px", "40.8px"],
+      s24l45: ["24px", "45px"],
       s24l150: ["24px", "150%"],
       s28l42: ["28px", "42px"],
       s30l33: ["30px", "33px"],
@@ -128,6 +129,7 @@ module.exports = {
       s45l67: ["45px", "67px"],
       s56l124_5: ["56px", "124.5%"],
       s56l67: ["56px", "67px"],
+      s56l63: ["56px", "63px"],
     },
     extend: {
       colors,
@@ -162,4 +164,4 @@ module.exports = {
     },
   },
   // plugins: [],
-}
+};
