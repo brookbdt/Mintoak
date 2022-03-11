@@ -36,6 +36,11 @@ const colors = {
   // DFEFD4: "#DFEFD4",
   "87BD25": "#87BD25",
   // 828282: "#828282",
+  e0efd4: "#e0efd4",
+  464646: "#464646",
+  DFEFD4: "#DFEFD4",
+  "87BD25": "#87BD25",
+  828282: "#828282",
 
   // For testing
   red: "red",
@@ -61,8 +66,8 @@ module.exports = {
     screens: {
       mobile: { min: "0px", max: "480px" },
       tablet: { min: "481px", max: "1025px" },
-      laptop: { min: "1026px", max: "1335px" },
-      desktop: "1336px",
+      laptop: { min: "1026px", max: "1440px" },
+      desktop: "1441px",
     },
     colors,
     fontSize: {
@@ -94,6 +99,7 @@ module.exports = {
       s22l140_62: ["22px", "140.62%"],
       s23_7l28_44: ["23.7px", "28.44px"],
       s24l29: ["24px", "29px"],
+      s24l31: ["24px", "31px"],
       s24l36: ["24px", "36px"],
       s24l31_92: ["24px", "31.92px"],
       s24l40_8: ["24px", "40.8px"],
@@ -127,7 +133,7 @@ module.exports = {
       colors,
       backgroundImage: {
         "home-top":
-          "linear-gradient(91.09deg, rgba(57,181,101, 0.00) 0.82%, rgba(67,185,60, 0.03) 49.92%, rgba(140,198,62, 0.03) 98.95%)",
+          "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 0.82%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
         button:
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
@@ -142,6 +148,7 @@ module.exports = {
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
+        mediaCard: "0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
       },
       zIndex: {
         minus1: -1,

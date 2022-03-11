@@ -142,7 +142,7 @@ export default function Home() {
           src={homeBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
         />
-        <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             {homeBannerResp?.TittleTop}
           </div>
@@ -165,9 +165,9 @@ export default function Home() {
           type="img"
         />
       </div>
-      <div className="bg-home-top">
+      <div className="">
         {/* Count layout */}
-        <div className="flex items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden">
+        <div className="flex desktop:w-70% laptop:w-80% mx-auto items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden">
           <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
             {metricsResp?.Merchants}
             <span className="text-A4D77A">+</span>
@@ -229,10 +229,10 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex justify-around text-252525 text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
-          Mintoak Advantages
+        <div className="flex justify-around text-252525 font-bold text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
+          The Mintoak Advantages
         </div>
-        <div className="flex mobile:block justify-around w-100% px-100 mobile:px-0 mb-150">
+        <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150">
           {homeAdvantagesCard.map((item, index) => {
             return (
               <div
@@ -246,10 +246,10 @@ export default function Home() {
                   className="mobile:w-80 mobile:h-80"
                 />
                 <div>
-                  <div className="font-bold text-s24l29 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
+                  <div className="font-bold text-s24l29 laptop:text-s22l26_4 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
                     {item.Tittle}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l17 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
+                  <div className="text-s20l150 mobile:text-s14l17 laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
                     {item.Description}
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export default function Home() {
         </div>
 
         {/* Banks/Merchants */}
-        <div className="flex flex-col bg-footer mb-100 w-100%">
+        <div className="flex flex-col bg-footer mb-150 w-100%">
           <div className="flex w-100% mobile:hidden">
             <div
               className={
@@ -269,9 +269,8 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "b" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -293,9 +292,8 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "m" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -309,19 +307,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex items-center w-100% px-100 mobile:px-20 py-50 mobile:hidden">
+          <div className="flex items-center w-100% laptop:px-100 px-180 mobile:px-20 py-120 mobile:hidden">
             {isBORM === "b" ? (
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80 item-center">
+                  <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
                     {homeForBanksResp?.Description1}
                   </div>
-                  <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                  <div className="flex items-center desktop:text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                     {homeForBanksResp?.Title2}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     {homeForBanksResp?.Description2}
-                    <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
+                    <span className="text-s20l150 mobile:text-s14l24  text-8CC63E cursor-pointer">
                       {" "}
                       {homeForBanksResp?.CTA1}
                     </span>
@@ -331,24 +329,25 @@ export default function Home() {
                     {homeForBanksResp?.CTA2}
                   </div>
                 </div>
-                <div className="w-50% mobile:w-100% flex items-center justify-center">
+                <div className="w-50% mobile:w-100% flex items-center justify-end">
                   <Image
                     src={homeForBanksResp?.BankIllustration}
-                    height={650}
-                    width={500}
+                    height={633}
+                    width={663}
+                    className="laptop:w-520"
                   />
                 </div>
               </>
             ) : (
               <>
                 <div className=" flex flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l29 mobile:text-s14l24 text-F1F1F1 mb-80">
+                  <div className="text-s24l36  tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                     {homeForMerchant?.Description1}
                   </div>
-                  <div className="flex items-center text-s36l43 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                  <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                     {homeForMerchant?.Title2}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l24 text-F1F1F1">
+                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     {homeForMerchant?.Description2}
                     <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                       {homeForMerchant?.CTA1}
@@ -359,11 +358,12 @@ export default function Home() {
                     {homeForMerchant?.CTA2}
                   </div>
                 </div>
-                <div className="w-50% mobile:w-100% flex items-center justify-center">
+                <div className="w-50% mobile:w-100% flex items-center justify-end">
                   <Image
                     src={homeForMerchant?.MerchantIllustration}
-                    height={650}
-                    width={500}
+                    height={633}
+                    width={663}
+                    className="laptop:w-520"
                   />
                 </div>
               </>
@@ -447,7 +447,7 @@ export default function Home() {
         <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
           Building a global community
         </div>
-        <div className="flex justify-center items-center w-100% py-50 px-150 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+        <div className="flex justify-center items-center w-100% py-50 laptop:px-100 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
           <Carousel
             itemsToShow={3}
             itemPadding={[0, 20, 0, 20]}
@@ -480,7 +480,7 @@ export default function Home() {
                     className="grayscale h-130 colorImage m-auto"
                   />
                   <div className="">
-                    <div className="comunityContent hidden">
+                    <div className="comunityContent hidden laptop:text-s18l33 text-s20l30 text-center">
                       {item.BankInfo}
                     </div>
                   </div>
@@ -508,11 +508,11 @@ export default function Home() {
         </div>
 
         {/* Our achievements */}
-        <div className="flex flex-col items-center bg-footer w-100% p-60 mobile:p-0 mobile:pt-40">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 p-50 mobile:p-0 mobile:mb-40">
-            Our achievements
+        <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120 mobile:p-0 mobile:pt-40">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:p-0 mobile:mb-40">
+            Our Achievements
           </div>
-          <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 mobile:hidden">
+          <div className="flex items-center w-100% pt-50  mobile:px-0 mobile:py-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -536,14 +536,16 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4 h-420"
+                    className="flex flex-col items-center bg-313131 w-90% p-40 border border-C4C4C4 h-390"
                   >
                     <Image
                       src={item.CertificateIcon}
-                      height={110}
+                      height={165}
                       width={273}
+                      type="img"
+                      className="h-165"
                     />
-                    <div className="font-bold text-DFDFDF text-center text-s32l38 mt-24">
+                    <div className="font-semibold text-DFDFDF text-center text-s32l38 mt-24">
                       {item?.Title}
                     </div>
                     <div className="text-DFDFDF text-center mt-12 text-s20l150">
@@ -589,17 +591,18 @@ export default function Home() {
         </div>
 
         {/* In the media */}
-        <div className="w-100% flex-col justify-center items-center mt-100">
+        <div className="w-100% flex-col justify-center items-center  my-150">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
-            <span>In the media</span>
+            <span>In The Media</span>
             <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
-              View All
+              View all
             </span>
           </div>
-          <div className="w-100% flex flex-col items-center px-150 mobile:hidden">
+          <div className="w-100% flex flex-col items-center laptop:px-100 px-180 mobile:hidden">
             <Carousel
               itemsToShow={3}
-              itemPadding={[0, 20, 0, 20]}
+              outerSpacing={0}
+              itemPadding={[15, 0, 15, 0]}
               enableMouseSwipe={false}
               pagination={false}
               renderArrow={blackCarouselArrows}
@@ -608,38 +611,45 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard"
                   >
-                    <div className="px-10 ">
+                    <div className="p-16">
                       <Image
                         src={item.ArticleImage}
                         height={265}
-                        width={320}
+                        width={"100%"}
                         className="grayscale colorImage"
                       />
                     </div>
                     <div div className="flex flex-col items-start">
-                      <div className="text-83B449 text-s20l24 p-20">
+                      <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 px-20 font-bold text-s24l29">
+                      <div className="text-252525 h-100 px-20 font-semibold text-s24l31">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 px-20 mt-15 text-s20l24">
+                      <div className="text-525252 px-20 mt-25 text-s20l24">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
-                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                    <div className="w-full flex items-center justify-end ">
+                      <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                        <Image
+                          src="/images/icons/arrow.svg"
+                          type="img"
+                          height={40}
+                          width={40}
+                        />
+                      </div>
                     </div>
                   </div>
                 )
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
-              View All
+              View all
             </div>
           </div>
           <div className="w-100% block items-center desktop:hidden laptop:hidden">
@@ -678,14 +688,21 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end">
-                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                      <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                        <Image
+                          src="/images/icons/arrow.svg"
+                          type="img"
+                          height={40}
+                          width={40}
+                        />
+                      </div>
                     </div>
                   </div>
                 )
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
-              View All
+              View all
             </div>
           </div>
         </div>
@@ -695,140 +712,191 @@ export default function Home() {
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>Most Popular Blogs</span>
             <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
-              View All
+              View all
             </span>
           </div>
-          <div className="w-100% flex flex-col items-center justify-around px-150 mobile:hidden">
+          <div className="w-100% flex flex-col items-center justify-around laptop:px-100 px-180 mobile:hidden">
             <Carousel
               itemsToShow={3}
-              itemPadding={[0, 20, 0, 20]}
+              outerSpacing={0}
+              itemPadding={[15, 0, 15, 0]}
               enableMouseSwipe={false}
               pagination={false}
               renderArrow={blackCarouselArrows}
             >
-              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-                <div className="px-16">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+                <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={265}
-                    width={320}
+                    width={"100%"}
+                    type="img"
                     className="grayscale colorImage"
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                  <div className="text-252525 px-20 font-bold text-s24l29">
+                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 p-20 mt-10 text-s20l24">
+                  <div className="text-525252 mt-25 px-20 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-                <div className="px-10">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+                <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
                     height={265}
-                    width={320}
+                    width={"100%"}
+                    type="img"
                     className="grayscale colorImage"
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                  <div className="text-252525 px-20 font-bold text-s24l29">
+                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                  <div className="text-525252 px-20 mt-25 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-                <div className="px-10">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+                <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-6.svg"
                     height={265}
-                    width={320}
+                    width={"100%"}
+                    type="img"
                     className="grayscale colorImage"
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                  <div className="text-252525 px-20 font-bold text-s24l29">
+                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     The tango between banks and fintechs: Rivals turn partners
                   </div>
-                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                  <div className="text-525252 px-20 mt-25 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-                <div className="px-10">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+                <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={265}
-                    width={320}
+                    width={"100%"}
+                    type="img"
                     className="grayscale colorImage"
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                  <div className="text-252525 px-20 font-bold text-s24l29">
+                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 p-20 mt-10 text-s20l24">
+                  <div className="text-525252 p-20 mt-25 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-80% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow">
-                <div className="px-10">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+                <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
                     height={265}
-                    width={320}
+                    width={"100%"}
+                    type="img"
                     className="grayscale colorImage"
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 p-20">6 min read</div>
-                  <div className="text-252525 px-20 font-bold text-s24l29">
+                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-15 text-s20l24">
+                  <div className="text-525252 px-20 mt-25 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">
-              View All
+              View all
             </div>
           </div>
           <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
@@ -861,7 +929,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
@@ -961,7 +1036,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
+                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                    <Image
+                      src="/images/icons/arrow.svg"
+                      type="img"
+                      height={40}
+                      width={40}
+                    />
+                  </div>
                 </div>
               </div>
             </Carousel>
@@ -972,7 +1054,7 @@ export default function Home() {
         <div className="px-180 py-150 mobile:px-0 mobile:py-0">
           <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60">
             <div className="mb-40 ml-40 mt-50 mobile:ml-0">
-              <div className="text-252525 text-s45l45 mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
+              <div className="text-252525 text-s45l45 font-bold mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
                 FAQs
               </div>
               <div className="text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:font-semibold">
@@ -990,7 +1072,7 @@ export default function Home() {
               }
               expandIconPosition={"right"}
               bordered={false}
-              // defaultActiveKey={["1"]}
+            // defaultActiveKey={["1"]}
             >
               {faq.map((item, index) => {
                 return (
@@ -1012,7 +1094,7 @@ export default function Home() {
               Still have unanswered questions?
             </div>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 ml-10 cursor-pointer font-bold">
-              View All
+              View all
             </div>
           </div>
         </div>
