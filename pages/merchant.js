@@ -20,6 +20,7 @@ export default function Merchant() {
 
   return (
     <div className="h-fit w-100% ">
+      {/* Merchant Banner */}
       <div className="relative top-bg-container">
         <Image
           src="/images/backgrounds/home-bg.webp"
@@ -45,14 +46,16 @@ export default function Merchant() {
           </div>
         </div>
       </div>
+      {/* border */}
       <div className="border-t-1 border-A4D77A w-100%"></div>
+      {/* Benefits for the Merchants */}
       <div className="h-686 mobile:h-auto w-100% merchant-bg mobile:pb-150">
         <div className="pt-157 mobile:pt-128">
-          <div className="font-bold text-s45l45 mobile:text-s20l24 text-center">
+          <div className="font-bold text-s45l67 mobile:text-s20l24 text-center">
             Benefits for the Merchants
           </div>
         </div>
-        <div className="flex justify-center pt-40 mobile:block">
+        <div className="flex justify-center pt-40 mobile:block justify-around px-125 mobile:px-50">
           <div className="w-200 flex flex-col justify-center mr-50 mobile:w-100%">
             <Image
               src="/images/icons/empowering.svg"
@@ -60,50 +63,51 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l29 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center w-197 h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
               Empowering and elevating small businesses
             </div>
           </div>
-          <div className="w-200 flex flex-col justify-center mr-50 mobile:w-100%">
+          <div className="w-273 flex flex-col justify-center mr-50 mobile:w-100%">
             <Image
               src="/images/icons/partership.svg"
               className=""
               width={120}
               height={120}
             />
-            <div className="text-s24l29 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center w-197 h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
               Partnerships with leading trustworthy banks
             </div>
           </div>
-          <div className="w-200 flex flex-col justify-center mr-50 mobile:w-100%">
+          <div className="w-225 flex flex-col justify-center mr-50 mobile:w-100%">
             <Image
               src="/images/icons/offers.svg"
               className=""
               width={120}
               height={120}
             />
-            <div className="text-s24l29 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center w-197 h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
               Various offers and merchant loyalty on board
             </div>
           </div>
-          <div className="w-200 flex flex-col justify-center mobile:w-100%">
+          <div className="w-273 flex flex-col justify-center mobile:w-100%">
             <Image
               src="/images/icons/merchant-exp.svg"
               className=""
               width={120}
               height={120}
             />
-            <div className="text-s24l29 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center w-197 h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
               Completely customized merchant experience
             </div>
           </div>
         </div>
       </div>
+      {/* Decluttering Business Transactions with Reduced Friction */}
       <div className="merchant-liner-bg">
         <div className="pt-100 flex justify-center text-center m-auto text-s45l45 mobile:text-s20l24 text-F1F1F1 w-714 mobile:w-301 mobile:pt-40">
           Decluttering Business Transactions with Reduced Friction
         </div>
-        <div className="my-40 text-s20l24 font-normal text-F1F1F1 text-center m-auto w-885 mobile:text-s14l17 mobile:w-315">
+        <div className="my-40 text-s20l30 font-normal text-F1F1F1 text-center m-auto w-885 mobile:text-s14l21 mobile:w-315">
           Not all small businesses and merchants have the right built-in
           technological resources to foster digital advancements and ease of
           transactions for them. Bringing this much-needed virtual interface,
@@ -129,7 +133,7 @@ export default function Merchant() {
           </div>
         </div>
         <div className="pt-51 laptop:mx-200 text-F1F1F1 flex text-center m-auto pb-122 justify-center">
-          <div className="w-300 desktop:w-417 mobile:text-s14l17">
+          <div className="pl-135 desktop:w-417 mobile:text-s14l17 mobile:pl-0">
             No more clunky legacy systems
           </div>
           <div className="w-300 desktop:w-417 mobile:text-s14l17">
@@ -141,13 +145,14 @@ export default function Merchant() {
           </div>
         </div>
       </div>
+      {/* Time to Get Onboard with Mintoak */}
       <div className="pb-160 w-100% mt-243 mobile:mt-80">
         <div className="flex w-100% mobile:hidden">
           <div className="w-33%">
             <div className="text-s45l45 font-bold pl-115">
               Time to Get Onboard with Mintoak
             </div>
-            <div className="pt-40 text-s20l24 pl-115">
+            <div className="pt-40 text-s20l30 pl-115">
               Working with us is easy! Mintoak welcomes all small and medium
               enterprises and merchants with open arms, helping bridge the gap
               of access between them and banks while also offering powerful
@@ -241,7 +246,7 @@ export default function Merchant() {
             <div className="mobile:text-s20l24 font-bold">
               Time to Get Onboard with Mintoak
             </div>
-            <div className="mobile:text-s14l17 pt-24">
+            <div className="mobile:text-s14l21 pt-24">
               Not all small businesses and merchants have the right built-in
               technological resources to foster digital advancements and ease of
               transactions for them. Bringing this much-needed virtual
@@ -260,6 +265,7 @@ export default function Merchant() {
           </div>
         </div>
       </div>
+      {/* Features We Offer */}
       <div className="h-670 merchant-liner-bg px-125 mobile:px-10 mobile:h-auto">
         <div className="text-F1F1F1 text-s45l45 mobile:text-s20l24 font-bold pt-81 pb-60 flex justify-center">
           Features We Offer
@@ -390,13 +396,14 @@ export default function Merchant() {
           </div>
         </div>
       </div>
+      {/* Get Assured By Your Bank Today! */}
       <div className="pb-51 w-100% px-100 merchant-bg mobile:px-0">
         <div className="flex w-100% mobile:block mobile:pt-80 mobile:text-center">
           <div className="w-50% flex flex-col justify-end pb-70 mobile:w-100%">
             <div className="font-bold text-s45l45 laptop:text-s32l38 mobile:text-s20l24 pb-40">
               Get Assured By Your Bank Today!
             </div>
-            <div className="text-s20l24 laptop:text-s16l19 mobile:text-s14l17 mobile:text-center mobile:px-30 font-normal">
+            <div className="text-s20l30 laptop:text-s16l19 mobile:text-s14l21 mobile:text-center mobile:px-30 font-normal">
               Mintoak has established itself as a brand of repute and immense
               trust when it comes to large contract wins, thanks to our ability
               to upsell dedicated product stacks to esteemed banks like HDFC,
@@ -418,69 +425,65 @@ export default function Merchant() {
           <div className="flex justify-center font-bold text-s45l45 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
-          <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0">
-            <div className="mobile:hidden">
-              <Carousel
-                itemsToShow={5}
-                itemPadding={[0, 20, 0, 20]}
-                enableMouseSwipe={false}
-                pagination={false}
-                renderArrow={({ type, onClick, isEdge }) => {
-                  const pointer =
-                    type === consts.PREV ? (
-                      <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                    ) : (
-                      <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                    )
-                  return (
-                    <button
-                      onClick={onClick}
-                      disabled={isEdge}
-                      className="h-120"
-                    >
-                      {pointer}
-                    </button>
+          <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+            <Carousel
+              itemsToShow={5}
+              itemPadding={[0, 20, 0, 20]}
+              enableMouseSwipe={false}
+              pagination={false}
+              renderArrow={({ type, onClick, isEdge }) => {
+                const pointer =
+                  type === consts.PREV ? (
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  ) : (
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   )
-                }}
-              >
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/wellness.svg"
-                    width={231}
-                    height={130}
-                  />
-                </div>
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/food.svg"
-                    width={231}
-                    height={130}
-                  />
-                </div>
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/subway.svg"
-                    width={231}
-                    height={130}
-                  />
-                </div>
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/synk.svg"
-                    width={231}
-                    height={130}
-                  />
-                </div>
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/birdy.svg"
-                    width={231}
-                    height={130}
-                  />
-                </div>
-              </Carousel>
-            </div>
-            <div className="desktop:hidden laptop:hidden px-20">
+                return (
+                  <button onClick={onClick} disabled={isEdge} className="h-120">
+                    {pointer}
+                  </button>
+                )
+              }}
+            >
+              <div className="">
+                <Image
+                  src="/images/backgrounds/wellness.svg"
+                  width={231}
+                  height={130}
+                />
+              </div>
+              <div className="">
+                <Image
+                  src="/images/backgrounds/food.svg"
+                  width={231}
+                  height={130}
+                />
+              </div>
+              <div className="">
+                <Image
+                  src="/images/backgrounds/subway.svg"
+                  width={231}
+                  height={130}
+                />
+              </div>
+              <div className="">
+                <Image
+                  src="/images/backgrounds/synk.svg"
+                  width={231}
+                  height={130}
+                />
+              </div>
+              <div className="">
+                <Image
+                  src="/images/backgrounds/birdy.svg"
+                  width={231}
+                  height={130}
+                />
+              </div>
+            </Carousel>
+          </div>
+          <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 desktop:hidden laptop:hidden">
+            <div className="px-20">
               <Carousel
                 itemsToShow={3}
                 itemPadding={[0, 20, 0, 0]}
@@ -543,8 +546,7 @@ export default function Merchant() {
           <div className="text-s20l24 flex justify-center font-bold">
             Hear from our users themselves!
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
