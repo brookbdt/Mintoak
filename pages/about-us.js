@@ -100,7 +100,7 @@ export default function About() {
           <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 desktop:pb-40 desktop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
             {aboutBannerResp?.Description}
           </div>
-          <div className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
+          <div className="font-bold button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
             {aboutBannerResp?.CTA}
           </div>
         </div>
