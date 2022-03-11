@@ -90,14 +90,14 @@ export default function About() {
           className="absolute z-minus1 mobile:hidden"
         />
         <div className="desktop:w-50% desktop:p-100 desktop:pl-181 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="ls--3 desktop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
+          <div className="ls--3 text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
           </div>
           <div className="ls--3 text-s56l67 mobile:text-s36l43  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
             New-age Businesses
           </div>
-          <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 desktop:pb-40 desktop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
+          <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 desktop:pb-40 laptop:pt-32 laptop:pb-40 desktop:w-453 laptop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
             {aboutBannerResp?.Description}
           </div>
           <div className="font-bold button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
@@ -116,13 +116,13 @@ export default function About() {
 
       {/* The Mintoak Story */}
       <div className="desktop:flex flex-col p-80 desktop:pt-152 justify-center items-center mobile:px-20 ">
-        <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile: text-left text-s45l45">
+        <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile:text-left text-s45l45 laptop:text-center mobile:text-s22l33">
           {storyResp?.Title}
         </div>
-        <div className="desktop:text-s24l36 text-525252 text-center desktop:py-40 desktop:px-335 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
+        <div className="desktop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-335 laptop:px-150 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
           {storyResp?.Description}
         </div>
-        <div className="flex w-100% justify-center desktop:px-100 desktop:py-49  mobile:w-100% mobile:flex-col">
+        <div className="flex w-100% justify-center desktop:px-100 desktop:py-49 laptop:py-49  mobile:w-100% mobile:flex-col">
           {matricsResp &&
             matricsResp.map((item, index) => (
               <div
@@ -141,8 +141,8 @@ export default function About() {
       </div>
 
       {/* Vision & Mission */}
-      <div className="flex w-100% bg-footer desktop:px-94 mobile:flex-col desktop:h-412">
-        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:px-86 desktop:pt-84 desktop:pb-94 mobile:border-b desktop:border-r border-8B8B8B">
+      <div className="flex w-100% bg-footer desktop:px-94 laptop:px-94 mobile:flex-col desktop:h-412">
+        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 px-86 pt-84 pb-94 laptop:px-50 mobile:border-b desktop:border-r border-8B8B8B">
           <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
             <div>
               <Image src="/images/icons/vision.svg" width={49} height={49} />
@@ -155,8 +155,8 @@ export default function About() {
             {visionResp?.Description}
           </div>
         </div>
-        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-169 desktop:pr-177 desktop:pt-85 desktop:pb-94 mobile:border-t desktop:border-l border-8B8B8B">
-          <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
+        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 pl-169 desktop:pr-117 pt-85 desktop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
+          <div className="flex flex-row w-100% items-center pb-20 mobile:pt-27 mobile:pb-25">
             <div>
               <Image src="/images/icons/mission.svg" width={49} height={49} />
             </div>
@@ -171,26 +171,26 @@ export default function About() {
       </div>
 
       {/* Our Principles */}
-      <div className="desktop:w-100% desktop:py-70 mobile:w-100%">
-        <div className="flex desktop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 mobile:pb-25">
+      <div className="desktop:w-100% py-70 mobile:w-100%">
+        <div className="flex justify-around mobile:justify-start font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 pt-80 pb-60 mobile:pb-25">
           Our Principles
         </div>
-        <div className="flex mobile:flex-col items-center w-100% desktop:pr-387 desktop:pl-384  mobile:px-13">
+        <div className="flex mobile:flex-col items-center w-100% desktop:pr-387 desktop:pl-384 laptop:px-100 mobile:px-13">
           {principalResp &&
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:flex-col items-center desktop:border border-8CC63E justify-center desktop:w-345 desktop:h-336 ${index != principalResp.length - 1 && "mr-59"} mobile:w-100% desktop:py-25 mobile:py-10`}
+                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 desktop:h-336 ${index != principalResp.length - 1 && "laptop:mr-59 desktop:mr-59"} mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10 mobile:pl-30`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
                 </div>
                 <div>
-                  <div className="font-bold text-s24l36 ls-0_2 mobile:text-s16l19 text-252525  desktop:text-center mobile:pl-20">
+                  <div className="font-bold text-s24l36 ls-0_2 mobile:text-s16l19 text-252525  desktop:text-center laptop:text-center mobile:pl-20">
                     {item.Title}
                   </div>
 
-                  <div className="desktop:text-s20l30 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center px-20">
+                  <div className="desktop:text-s20l30 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center laptop:text-center px-20">
                     {item.Description}
                   </div>
                 </div>
@@ -200,12 +200,12 @@ export default function About() {
       </div>
 
       {/* Meet the Team */}
-      <div className="w-100% flex flex-col py-70 desktop:pt-78">
+      <div className="w-100% flex flex-col py-70 desktop:pt-78 laptop:pt-78">
         <div className="flex flex-col justify-center items-center w-100% ">
           <div className="text-s44l33 ls-2 mobile:text-s22l33 mobile:text-000000 text-252525 font-bold px-40">
             {teamInfoResp?.Title}
           </div>
-          <div className="desktop:text-s20l33 ls-2 mobile:text-s14l21 mobile:text-525252 text-252525 py-35 text-center desktop:pl-513 desktop:pr-517  mobile:px-30">
+          <div className="desktop:text-s20l33 ls-2 mobile:text-s14l21 mobile:text-525252 text-252525 py-35 text-center desktop:pl-513 desktop:pr-517 laptop:px-350 mobile:px-30">
             {teamInfoResp?.Description}
           </div>
         </div>
