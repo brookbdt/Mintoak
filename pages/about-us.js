@@ -84,7 +84,7 @@ export default function About() {
   return (
     <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
       {/* Top layout with resp */}
-      <div className="relative top-bg-container h-648">
+      <div className="relative top-bg-container desktop:h-648 laptop:h-648">
         <Image
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
