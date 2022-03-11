@@ -92,6 +92,192 @@ a {
   background-color: #f4fbf3;
 }
 
+
+// search input in career
+.search-input{
+  .ant-input-affix-wrapper{
+    height:60px;
+    background-color: #DFEFD4;
+    border:1px solid #8FC055;
+  }
+  .ant-input{
+    background-color: #DFEFD4;
+    margin-left:31px;
+    &::placeholder {
+      color: #525252;
+    }
+  }
+  .ant-input-prefix>img{
+    color:#252525;
+    height:26.21px;
+    width:26.21px;
+  }
+}
+
+
+// filter inputs css of career job filtering
+.filter-selection{
+  .ant-select, .ant-select-selector{
+    height:60px !important;
+    width: 100%;
+  }
+  .ant-select-selection-placeholder{
+    display: flex;
+    align-items: center;
+    color: #525252;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input{
+    height:60px;
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background-color: #DFEFD4;
+    border:1px solid #8FC055;
+  }
+}
+
+
+// Form of career detail page job application
+.job-app-form{
+  .ant-input{
+    background: transparent;
+    border:none;
+    border-bottom: 1.5px solid #C4C4C4;
+    color:#ffffff;
+    padding-left: 0;
+    margin-top:16px;
+    font-size: 20px;
+    &:focus{
+      border: none;
+      box-shadow: unset;
+      border-bottom: 1.5px solid #C4C4C4;
+    }
+  }
+  .ant-form-item-control-input-content{
+    label{
+      font-size: 20px;
+    }
+  }
+  .ant-select-selection-placeholder{
+    display: flex;
+    align-items: center;
+  }
+  .ant-input-group-addon{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1.5px solid #C4C4C4;
+    height:20px;
+    border-right: 1px solid #c4c4c4;
+  }
+  .ant-select-selector{
+    color:#ffffff;
+    font-size: 20px;
+  }
+  .ant-btn{
+    background: transparent;
+    border:none;
+    border-bottom: 1.5px solid #C4C4C4;
+    color:#ffffff;
+    padding-left: 0;
+    margin-top:16px;
+    font-size: 20px;
+    height: 46px;
+    text-align: left !important;
+    width: 100%;
+    &:hover, &:focus, &:active{
+      border: none;
+      box-shadow: unset;
+      border-bottom: 1.5px solid #C4C4C4;
+      background:transparent;
+      color: #FFFFFF;
+    }
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background: transparent;
+    border:none;
+    border-bottom: 1.5px solid #C4C4C4;
+    color:#ffffff;
+    padding-left: 0;
+    margin-top:16px;
+    font-size: 20px;
+    height: 46px;
+    text-align: left !important;
+    width: 100%;
+  }
+  .ant-select-arrow{
+    color: #ffffff;
+    top:65%;
+  }
+  .ant-select-focused{
+    border:none;
+    box-shadow: none;
+  }
+  .ant-upload{
+    width:100%;
+  }
+}
+
+
+// antd row and column
+.custom-row{
+  .ant-row{
+    margin: 0 !important;
+  }
+  .ant-col{
+    padding: 0 0 !important;
+  }
+}
+
+// job list pagination in career page
+.job-list-pagination{
+  .ant-pagination-item-link,.ant-pagination-item{
+    border-radius: 30px !important;
+    border-color: unset;
+    border-color: #525252;
+    background-color: transparent !important;
+    color: #252525;
+  }
+  .ant-pagination-item,.ant-pagination-prev,.ant-pagination-next{
+    height:63px !important;
+    width:63px !important;
+    border-color: #525252;
+    background-color: transparent;
+    color: #252525 !important;
+  }
+  .ant-pagination-item:hover{
+    border-color: #252525 !important;
+    background-color: #DFEFD4 !important;
+  }
+  .ant-pagination-item-link:hover{
+    border-color: #252525;
+    background-color: #DFEFD4 !important;
+  }
+  .ant-pagination-item-active{
+    background-color: #DFEFD4 !important;
+    color: #252525 !important;
+  }
+  .ant-pagination-item a{
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #525252;
+  }
+  .ant-pagination-item a:hover{
+    height: 63px;
+    color: #252525;
+  }
+  @media screen and (max-width:500px){
+    .ant-pagination-item,.ant-pagination-prev,.ant-pagination-next{
+      height:40px !important;
+      width:40px !important;
+    }
+    .ant-pagination-item a{
+      height: 40px;
+    }
+  }
+}
+
+
 //disable button
 button:disabled,
 button[disabled] {
