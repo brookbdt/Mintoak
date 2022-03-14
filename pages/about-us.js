@@ -132,7 +132,7 @@ export default function About() {
                 <div>
                   <Image src={item.Icon[0]} width={73} height={73} />
                 </div>
-                <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+                <div className={`text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${index == 0 || index == 1 ? 'w-150' : ''} ${index == 2 ? 'w-180' : ''}`}>
                   {item.Description}
                 </div>
               </div>
@@ -366,6 +366,6 @@ export default function About() {
           <div>Chief Executive</div>
         </div>
       </div> */}
-    </div>
+    </div >
   )
 }

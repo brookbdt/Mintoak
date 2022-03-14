@@ -19,21 +19,27 @@ export default function DesktopFooter() {
           <Image src="/images/logo_white.svg" width={250} height={50} />
           <div className="mt-50 text-F5FBF3 text-s20l24">Find us on</div>
           <div className="flex mt-15 w-150 justify-between cursor-pointer">
-            <Image
-              src="/images/social_media/insta.svg"
-              width={35}
-              height={35}
-            />
-            <Image
-              src="/images/social_media/facebook.svg"
-              width={35}
-              height={35}
-            />
-            <Image
-              src="/images/social_media/twitter.svg"
-              width={35}
-              height={35}
-            />
+            <span className="hover-border">
+              <Image
+                src="/images/social_media/insta.svg"
+                width={35}
+                height={35}
+              />
+            </span>
+            <span className="hover-border">
+              <Image
+                src="/images/social_media/facebook.svg"
+                width={35}
+                height={35}
+              />
+            </span>
+            <span className="hover-border">
+              <Image
+                src="/images/social_media/twitter.svg"
+                width={35}
+                height={35}
+              />
+            </span>
           </div>
           <div className="mt-50 text-FAFAFA text-s20l24">
             © Mintoak, Inc. {new Date().getFullYear()}.{" "}
