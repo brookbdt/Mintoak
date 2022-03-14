@@ -6,7 +6,7 @@ import { Pagination } from "antd";
 export default function Resources() {
   return (
     <div>
-      <div className="w-100% ">
+      <div className="w-100%">
         <div className="flex relative top-bg-container bg-bg_resource h-fit laptop:w-fit bg-origin-content">
           {/* <Image
                         src="/images/backgrounds/resource-bg.svg"
@@ -63,100 +63,120 @@ export default function Resources() {
           </div>
         </div>
       </div>
-      <div className="bg-F3FBF5">
-        <div className="pt-80 pl-182 text-s44l66 pb-60">In the media</div>
-        <div className="flex justify-center px-180 py-42 items-center">
-          <input
-            className="h-54 w-100% bg-DFEFD4 text-s20l24"
-            placeholder="Ex. Future of banking..."
-          />
-          <div className="absolute text-252525 pt-10 left-200">
-            <Image src="/images/icons/search.svg" width={26} height={26} />
+      <div className="bg-F3FBF5 px-100">
+        <div className="pt-80 text-s44l66 pb-60">In the media</div>
+        <div className="flex py-42 items-center">
+          <div className="w-100%">
+            <input
+              className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-70 text-s20l24"
+              placeholder="Ex. Future of banking..."
+            />
+          </div>
+          <div className="text-252525 absolute pl-27 pt-8">
+            <Image src="/images/icons/search-icon.svg" width={26} height={26} />
           </div>
           <div className="button w-206 mobile:w-100% mobile:h-40 h-54 cursor-pointer z-20">
             Search
           </div>
         </div>
-        <div className="px-180 flex pb-82 w-100% laptop:flex-wrap">
-          {/* <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div>
-                    <div className="pr-20">
-                        <div className="rounded-lg bg-green flex items-center justify-center px-18">
-                            <Image src="/images/icons/bank.svg" height={20} width={20} />
-                            <div className="text-s20l40 px-18">For Banks</div>
-                        </div>
-                    </div> */}
-          <button className="text-s20l40 w-151 bank-btn rounded-xl mr-21 border py-10">
-            <Image src="/images/icons/bank.svg" height={20} width={20} />
-            <span className="pl-6">For Banks</span>
-          </button>
-          <button className="text-s20l40 w-189 bg-DFEFD4  rounded-xl border py-10 mr-21">
-            <Image src="/images/icons/merchant.svg" height={20} width={20} />
-            <span className="pl-6">For Merchant</span>
-          </button>
-          <button className="text-s20l40 w-151  bg-DFEFD4 rounded-xl border mr-21 py-10">
-            <Image
-              src="/images/icons/payment-bank.svg"
-              height={20}
-              width={20}
-            />
-            <span className="pl-6">Payments</span>
-          </button>
-          <button className="text-s20l40 w-193  bg-DFEFD4 rounded-xl border mr-21 py-10">
-            <Image src="/images/icons/finance.svg" height={20} width={20} />
-            <span className="pl-6">Finance Trends</span>
-          </button>
-          <button className="text-s20l40 w-151  bg-DFEFD4 rounded-xl border mr-21 py-10">
-            <Image src="/images/icons/product.svg" height={20} width={20} />
-            <span className="pl-6">Product</span>
-          </button>
-          <button className="text-s20l40 w-120  bg-DFEFD4 rounded-xl border mr-21 py-10">
-            <Image src="/images/icons/fintech.svg" height={20} width={20} />
-            <span className="pl-6">Fintech</span>
-          </button>
-          <button className="text-s20l40 w-195  bg-DFEFD4 rounded-xl border mr-21 py-10">
-            <Image src="/images/icons/growth.svg" height={20} width={20} />
-            <span className="pl-6">Growth Strategy</span>
-          </button>
+
+        {/* scroll buttons */}
+        <div className="flex pb-80">
+          <div className="flex w-100% overf whitespace-nowrap pb-20">
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-faqs_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/bank-icon.svg"
+                    height={19}
+                    width={19}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">For Banks</div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/merchants-icon.svg"
+                    height={25}
+                    width={19}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">
+                  For Merchants
+                </div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/payment-blog.svg"
+                    height={21}
+                    width={32}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">Payments</div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/finance.svg"
+                    height={21.33}
+                    width={24}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">
+                  Finance Trends
+                </div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/product.svg"
+                    height={22.5}
+                    width={20}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">Products</div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/fintech.svg"
+                    height={22}
+                    width={22}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">Fintech</div>
+              </div>
+            </div>
+            <div className="pr-21 w-auto whitespace-nowrap">
+              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+                <div className="mobile:hidden w-50 flex justify-center">
+                  <Image
+                    src="/images/icons/growth.svg"
+                    height={18}
+                    width={19}
+                  />
+                </div>
+                <div className="text-s20l40 text-252525 pr-15">
+                  Growth Strategy
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="pl-181 laptop:pl-100 text-s20l24 text-828282 pb-20">
-          Showing 55 Blogs
-        </div>
-        <div className="mx-181 laptop:mx-100 bg-FFFFFF flex shadow-bankbox">
+        <div className="text-s20l24 text-828282 pb-20">Showing 55 Blogs</div>
+        <div className=" bg-FFFFFF flex mt-80 shadow-bankbox">
           <div className="p-22">
             <Image
               src="/images/backgrounds/blog1.svg"
@@ -165,16 +185,16 @@ export default function Resources() {
               // layout="fill"
             />
           </div>
-          <div className="pl-27 pt-53">
+          <div className="pl-27 pt-53 laptop:pt-22">
             <div className="text-46AC34 text-s20l24 pb-24">6 min read</div>
-            <div className="font-semibold text-s34l42 pb-31">
+            <div className="font-semibold text-s34l42 laptop:text-s24l40_8 pb-31 laptop:pb-15">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="flex text-s20l24 pb-31">
+            <div className="flex text-s20l24 pb-31 laptop:pb-15">
               <div className="w-200">By Raman Kahnduja | Sept 13, 2021</div>
               <div className="pl-14">Economic Times</div>
             </div>
-            <div className="text-s20l24 text-525252 pb-22">
+            <div className="text-s20l24 text-525252 pb-22 laptop:text-s16l19">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s...
@@ -184,24 +204,25 @@ export default function Resources() {
             <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
           </div>
         </div>
-        <div className="mx-181 laptop:mx-100 bg-FFFFFF flex mt-80 shadow-bankbox">
+        <div className=" bg-FFFFFF flex mt-80 shadow-bankbox">
           <div className="p-22">
             <Image
               src="/images/backgrounds/blog1.svg"
               height={296}
               width={388}
+              // layout="fill"
             />
           </div>
-          <div className="pl-27 pt-53">
+          <div className="pl-27 pt-53 laptop:pt-22">
             <div className="text-46AC34 text-s20l24 pb-24">6 min read</div>
-            <div className="font-semibold text-s34l42 pb-31">
+            <div className="font-semibold text-s34l42 laptop:text-s24l40_8 pb-31 laptop:pb-15">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="flex text-s20l24 pb-31">
+            <div className="flex text-s20l24 pb-31 laptop:pb-15">
               <div className="w-200">By Raman Kahnduja | Sept 13, 2021</div>
               <div className="pl-14">Economic Times</div>
             </div>
-            <div className="text-s20l24 text-525252 pb-22">
+            <div className="text-s20l24 text-525252 pb-22 laptop:text-s16l19">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s...
@@ -211,24 +232,25 @@ export default function Resources() {
             <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
           </div>
         </div>
-        <div className="mx-181 laptop:mx-100 bg-FFFFFF flex mt-80 shadow-bankbox">
+        <div className=" bg-FFFFFF flex mt-80 shadow-bankbox">
           <div className="p-22">
             <Image
               src="/images/backgrounds/blog1.svg"
               height={296}
               width={388}
+              // layout="fill"
             />
           </div>
-          <div className="pl-27 pt-53">
+          <div className="pl-27 pt-53 laptop:pt-22">
             <div className="text-46AC34 text-s20l24 pb-24">6 min read</div>
-            <div className="font-semibold text-s34l42 pb-31">
+            <div className="font-semibold text-s34l42 laptop:text-s24l40_8 pb-31 laptop:pb-15">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="flex text-s20l24 pb-31">
+            <div className="flex text-s20l24 pb-31 laptop:pb-15">
               <div className="w-200">By Raman Kahnduja | Sept 13, 2021</div>
               <div className="pl-14">Economic Times</div>
             </div>
-            <div className="text-s20l24 text-525252 pb-22">
+            <div className="text-s20l24 text-525252 pb-22 laptop:text-s16l19">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s...
@@ -238,24 +260,25 @@ export default function Resources() {
             <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
           </div>
         </div>
-        <div className="mx-181 laptop:mx-100 bg-FFFFFF flex mt-80 shadow-bankbox">
+        <div className=" bg-FFFFFF flex mt-80 shadow-bankbox">
           <div className="p-22">
             <Image
               src="/images/backgrounds/blog1.svg"
               height={296}
               width={388}
+              // layout="fill"
             />
           </div>
-          <div className="pl-27 pt-53">
+          <div className="pl-27 pt-53 laptop:pt-22">
             <div className="text-46AC34 text-s20l24 pb-24">6 min read</div>
-            <div className="font-semibold text-s34l42 pb-31">
+            <div className="font-semibold text-s34l42 laptop:text-s24l40_8 pb-31 laptop:pb-15">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="flex text-s20l24 pb-31">
+            <div className="flex text-s20l24 pb-31 laptop:pb-15">
               <div className="w-200">By Raman Kahnduja | Sept 13, 2021</div>
               <div className="pl-14">Economic Times</div>
             </div>
-            <div className="text-s20l24 text-525252 pb-22">
+            <div className="text-s20l24 text-525252 pb-22 laptop:text-s16l19">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s...
@@ -265,24 +288,25 @@ export default function Resources() {
             <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-60 w-70 flex items-center justify-center fa-lg cursor-pointer"></i>
           </div>
         </div>
-        <div className="mx-181 laptop:mx-100 bg-FFFFFF flex mt-80 shadow-bankbox">
+        <div className=" bg-FFFFFF flex mt-80 shadow-bankbox">
           <div className="p-22">
             <Image
               src="/images/backgrounds/blog1.svg"
               height={296}
               width={388}
+              // layout="fill"
             />
           </div>
-          <div className="pl-27 pt-53">
+          <div className="pl-27 pt-53 laptop:pt-22">
             <div className="text-46AC34 text-s20l24 pb-24">6 min read</div>
-            <div className="font-semibold text-s34l42 pb-31">
+            <div className="font-semibold text-s34l42 laptop:text-s24l40_8 pb-31 laptop:pb-15">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="flex text-s20l24 pb-31">
+            <div className="flex text-s20l24 pb-31 laptop:pb-15">
               <div className="w-200">By Raman Kahnduja | Sept 13, 2021</div>
               <div className="pl-14">Economic Times</div>
             </div>
-            <div className="text-s20l24 text-525252 pb-22">
+            <div className="text-s20l24 text-525252 pb-22 laptop:text-s16l19">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s...

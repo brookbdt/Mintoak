@@ -112,6 +112,7 @@ module.exports = {
       s32l38: ["32px", "38px"],
       s32l38_4: ["32px", "38.4px"],
       s32l45: ["32px", "45px"],
+      s32l42: ["32px", "42px"],
       s34l42: ["34px", "42px"],
       s36l43: ["36px", "43px"],
       s36l54: ["36px", "54px"],
@@ -150,7 +151,7 @@ module.exports = {
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
-        mediaCard: "0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
+        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
       },
       zIndex: {
         minus1: -1,

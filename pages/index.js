@@ -473,15 +473,15 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="h-230 mobile:h-170 mobile:278 sliderItem "
+                  className="h-230 mobile:h-170 mobile:278 sliderItem pt-35"
                 >
                   <Image
                     src={item.BankLogo}
                     width={231}
                     height={130}
-                    className="grayscale h-130 colorImage m-auto"
+                    className="grayscale h-53 colorImage m-auto"
                   />
-                  <div className="">
+                  <div className="pt-43">
                     <div className="comunityContent hidden laptop:text-s18l33 text-s20l30 text-center">
                       {item.BankInfo}
                     </div>
@@ -627,17 +627,17 @@ export default function Home() {
                       <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 h-100 px-20 font-semibold text-s24l31">
+                      <div className="text-252525 pt-10 pb-26 px-20 font-semibold text-s24l31">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 px-20 mt-25 text-s20l24">
+                      <div className="text-525252 px-20  text-s20l24">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                      <div className="bg-button rounded-sm text-FFFFFF px-10 py-8 flex items-center justify-center cursor-pointer">
                         <Image
                           src="/images/icons/arrow.svg"
                           type="img"
@@ -743,7 +743,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 mt-25 px-20 text-s20l24">
+                  <div className="text-525252 px-20 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
