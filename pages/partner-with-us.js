@@ -398,16 +398,16 @@ export default function Partner() {
                 return (
                   <div
                     key={index}
-                    className="h-230 mobile:h-170 mobile:278 sliderItem "
+                    className="h-230 mobile:h-170 mobile:278 sliderItem pt-30 pb-50 carousel-shadow"
                   >
                     <Image
                       src={item.BankLogo}
                       width={231}
                       height={130}
-                      className="grayscale h-130 colorImage m-auto"
+                      className="grayscale h-53 colorImage m-auto"
                     />
                     <div className="">
-                      <div className="comunityContent hidden">
+                      <div className="comunityContent hidden mt-30 text-center text-s20l30">
                         {item.BankInfo}
                       </div>
                     </div>
