@@ -341,191 +341,194 @@ button[disabled] {
   padding-right: 60px !important;
 }
 
-
 // search input in career
-.search-input{
-  .ant-input-affix-wrapper{
-    height:60px;
-    background-color: #DFEFD4;
-    border:1px solid #8FC055;
+.search-input {
+  .ant-input-affix-wrapper {
+    height: 60px;
+    background-color: #dfefd4;
+    border: 1px solid #8fc055;
   }
-  .ant-input{
-    background-color: #DFEFD4;
-    margin-left:31px;
+  .ant-input {
+    background-color: #dfefd4;
+    margin-left: 31px;
     &::placeholder {
       color: #525252;
     }
   }
-  .ant-input-prefix>img{
-    color:#252525;
-    height:26.21px;
-    width:26.21px;
+  .ant-input-prefix > img {
+    color: #252525;
+    height: 26.21px;
+    width: 26.21px;
   }
 }
 
-
 // filter inputs css of career job filtering
-.filter-selection{
-  .ant-select, .ant-select-selector{
-    height:60px !important;
+.filter-selection {
+  .ant-select,
+  .ant-select-selector {
+    height: 60px !important;
     width: 100%;
   }
-  .ant-select-selection-placeholder{
+  .ant-select-selection-placeholder {
     display: flex;
     align-items: center;
     color: #525252;
   }
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input{
-    height:60px;
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+    height: 60px;
   }
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector{
-    background-color: #DFEFD4;
-    border:1px solid #8FC055;
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: #dfefd4;
+    border: 1px solid #8fc055;
   }
 }
 
-
 // Form of career detail page job application
-.job-app-form{
-  .ant-input{
+.job-app-form {
+  .ant-input {
     background: transparent;
-    border:none;
-    border-bottom: 1.5px solid #C4C4C4;
-    color:#ffffff;
+    border: none;
+    border-bottom: 1.5px solid #c4c4c4;
+    color: #ffffff;
     padding-left: 0;
-    margin-top:16px;
+    margin-top: 16px;
     font-size: 20px;
-    &:focus{
+    &:focus {
       border: none;
       box-shadow: unset;
-      border-bottom: 1.5px solid #C4C4C4;
+      border-bottom: 1.5px solid #c4c4c4;
     }
   }
-  .ant-form-item-control-input-content{
-    label{
+  .ant-form-item-control-input-content {
+    label {
       font-size: 20px;
     }
   }
-  .ant-select-selection-placeholder{
+  .ant-select-selection-placeholder {
     display: flex;
     align-items: center;
   }
-  .ant-input-group-addon{
+  .ant-input-group-addon {
     background-color: transparent;
-    border:none;
-    border-bottom: 1.5px solid #C4C4C4;
-    height:20px;
+    border: none;
+    border-bottom: 1.5px solid #c4c4c4;
+    height: 20px;
     border-right: 1px solid #c4c4c4;
   }
-  .ant-select-selector{
-    color:#ffffff;
+  .ant-select-selector {
+    color: #ffffff;
     font-size: 20px;
   }
-  .ant-btn{
+  .ant-btn {
     background: transparent;
-    border:none;
-    border-bottom: 1.5px solid #C4C4C4;
-    color:#ffffff;
+    border: none;
+    border-bottom: 1.5px solid #c4c4c4;
+    color: #ffffff;
     padding-left: 0;
-    margin-top:16px;
+    margin-top: 16px;
     font-size: 20px;
     height: 46px;
     text-align: left !important;
     width: 100%;
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
       border: none;
       box-shadow: unset;
-      border-bottom: 1.5px solid #C4C4C4;
-      background:transparent;
-      color: #FFFFFF;
+      border-bottom: 1.5px solid #c4c4c4;
+      background: transparent;
+      color: #ffffff;
     }
   }
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background: transparent;
-    border:none;
-    border-bottom: 1.5px solid #C4C4C4;
-    color:#ffffff;
+    border: none;
+    border-bottom: 1.5px solid #c4c4c4;
+    color: #ffffff;
     padding-left: 0;
-    margin-top:16px;
+    margin-top: 16px;
     font-size: 20px;
     height: 46px;
     text-align: left !important;
     width: 100%;
   }
-  .ant-select-arrow{
+  .ant-select-arrow {
     color: #ffffff;
-    top:65%;
+    top: 65%;
   }
-  .ant-select-focused{
-    border:none;
+  .ant-select-focused {
+    border: none;
     box-shadow: none;
   }
-  .ant-upload{
-    width:100%;
+  .ant-upload {
+    width: 100%;
   }
 }
 
-
 // antd row and column
-.custom-row{
-  .ant-row{
+.custom-row {
+  .ant-row {
     margin: 0 !important;
   }
-  .ant-col{
+  .ant-col {
     padding: 0 0 !important;
   }
 }
 
 // job list pagination in career page
-.job-list-pagination{
-  .ant-pagination-item-link,.ant-pagination-item{
+.job-list-pagination {
+  .ant-pagination-item-link,
+  .ant-pagination-item {
     border-radius: 30px !important;
     border-color: unset;
     border-color: #525252;
     background-color: transparent !important;
     color: #252525;
   }
-  .ant-pagination-item,.ant-pagination-prev,.ant-pagination-next{
-    height:63px !important;
-    width:63px !important;
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    height: 63px !important;
+    width: 63px !important;
     border-color: #525252;
     background-color: transparent;
     color: #252525 !important;
   }
-  .ant-pagination-item:hover{
+  .ant-pagination-item:hover {
     border-color: #252525 !important;
-    background-color: #DFEFD4 !important;
+    background-color: #dfefd4 !important;
   }
-  .ant-pagination-item-link:hover{
+  .ant-pagination-item-link:hover {
     border-color: #252525;
-    background-color: #DFEFD4 !important;
+    background-color: #dfefd4 !important;
   }
-  .ant-pagination-item-active{
-    background-color: #DFEFD4 !important;
+  .ant-pagination-item-active {
+    background-color: #dfefd4 !important;
     color: #252525 !important;
   }
-  .ant-pagination-item a{
+  .ant-pagination-item a {
     height: 63px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #525252;
   }
-  .ant-pagination-item a:hover{
+  .ant-pagination-item a:hover {
     height: 63px;
     color: #252525;
   }
-  @media screen and (max-width:500px){
-    .ant-pagination-item,.ant-pagination-prev,.ant-pagination-next{
-      height:40px !important;
-      width:40px !important;
+  @media screen and (max-width: 500px) {
+    .ant-pagination-item,
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      height: 40px !important;
+      width: 40px !important;
     }
-    .ant-pagination-item a{
+    .ant-pagination-item a {
       height: 40px;
     }
   }
 }
-
 
 //disable button
 button:disabled,
@@ -548,7 +551,7 @@ button[disabled] {
 //footer hover
 .hover-border {
   &:hover {
-    border-bottom: 1px solid #8cc63e;
+    color: #8cc63e;
   }
 }
 
@@ -600,9 +603,9 @@ button[disabled] {
 }
 
 .relative-text {
-    position: relative;
-    top: 214px;
-    left: 85px;
+  position: relative;
+  top: 214px;
+  left: 85px;
 }
 
 .custom-pagination .ant-pagination-item {
@@ -621,7 +624,7 @@ button[disabled] {
   align-items: center;
 }
 
-.custom-pagination .ant-pagination-prev .ant-pagination-item-link{
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link {
   border-radius: 30px;
   height: 63px;
   width: 63px;
@@ -629,20 +632,23 @@ button[disabled] {
   line-height: 36px;
 }
 
-.custom-pagination .ant-pagination-next .ant-pagination-item-link{
+.custom-pagination .ant-pagination-next .ant-pagination-item-link {
   border-radius: 30px;
   height: 63px;
   width: 63px;
   font-size: 24px;
   line-height: 36px;
-} 
+}
 
-.custom-pagination .ant-pagination-prev, .ant-pagination-next, .ant-pagination-jump-prev, .ant-pagination-jump-next {
-  height: auto !important; 
+.custom-pagination .ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next {
+  height: auto !important;
 }
 
 .bank-btn {
-  background-image: linear-gradient(#88CD37, #8FC055);
+  background-image: linear-gradient(#88cd37, #8fc055);
 }
 
 // letter spacing

@@ -135,7 +135,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-fit w-100% ">
+    <div className="h-fit w-100% bg-home-top">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
         <Image
@@ -269,8 +269,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -292,8 +293,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -1072,7 +1074,7 @@ export default function Home() {
               }
               expandIconPosition={"right"}
               bordered={false}
-            // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
             >
               {faq.map((item, index) => {
                 return (
