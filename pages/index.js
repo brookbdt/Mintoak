@@ -458,9 +458,9 @@ export default function Home() {
             renderArrow={({ type, onClick, isEdge }) => {
               const pointer =
                 type === consts.PREV ? (
-                  <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 ) : (
-                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 );
               return (
                 <button onClick={onClick} disabled={isEdge} className="h-120">
