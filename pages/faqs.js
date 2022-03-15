@@ -1,17 +1,17 @@
-import Image from "../components/helpers/Image";
-import { Checkbox, Collapse } from "antd";
-import { Pagination } from "antd";
-import { Input } from "antd";
-import { Modal } from "antd";
-import { useState } from "react";
+import Image from "../components/helpers/Image"
+import { Checkbox, Collapse } from "antd"
+import { Pagination } from "antd"
+import { Input } from "antd"
+import { Modal } from "antd"
+import { useState } from "react"
 
-const { TextArea } = Input;
+const { TextArea } = Input
 
-const { Panel } = Collapse;
+const { Panel } = Collapse
 
 export default function Contact() {
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function Contact() {
               />
             </div>
             <div className="button w-54 text-s22l26_4 px-18">
-              <i class="fa-solid fa-arrow-right-long"></i>
+              <i className="fa-solid fa-arrow-right-long"></i>
             </div>
             <div
               className="pl-10 flex items-center justify-center cursor-pointer"
@@ -758,5 +758,5 @@ export default function Contact() {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { API, endpoints } from "../components/helpers/API";
-import Image from "../components/helpers/Image";
-import { Pagination } from "antd";
+import { useEffect, useState } from "react"
+import { API, endpoints } from "../components/helpers/API"
+import Image from "../components/helpers/Image"
+import { Pagination } from "antd"
 
 export default function Resources() {
   return (
@@ -109,7 +109,7 @@ export default function Resources() {
             Search
           </div>
           <div className="desktop:hidden laptop:hidden button px-20 py-15">
-            <i class="fa-solid fa-arrow-right-long"></i>
+            <i className="fa-solid fa-arrow-right-long"></i>
           </div>
         </div>
 
@@ -427,5 +427,5 @@ export default function Resources() {
         </div>
       </div>
     </div>
-  );
+  )
 }
