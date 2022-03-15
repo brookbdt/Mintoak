@@ -296,16 +296,15 @@ button[disabled] {
 }
 
 // hover shadow
-.hover-shaddow {
-  &:hover {
-    box-shadow: 1px 1px 16px 4px rgb(0 0 0 / 20%);
-
-    .colorImage {
-      filter: none !important;
-    }
+.custom-shaddow {
+  box-shadow: 0px 0px 11.8511px rgba(0, 0, 0, 0.1);
+}
+.custom-shaddow:hover {
+  box-shadow: 0px 1px 11.8511px 4px rgba(0, 0, 0, 0.2);
+  .colorImage {
+    filter: none !important;
   }
 }
-
 //footer hover
 .hover-border {
   &:hover {

@@ -309,11 +309,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex items-center w-100% laptop:px-100 px-180 mobile:px-20 py-120 mobile:hidden">
+          <div className="flex items-center w-100% laptop:px-100 desktop:px-180 mobile:px-20 desktop:py-120 laptop:py-100  mobile:hidden">
             {isBORM === "b" ? (
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
+                  <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 pb-99 item-center">
                     {homeForBanksResp?.Description1}
                   </div>
                   <div className="flex items-center desktop:text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
@@ -349,7 +349,7 @@ export default function Home() {
                   <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                     {homeForMerchant?.Title2}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
+                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1 w-638">
                     {homeForMerchant?.Description2}
                     <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                       {homeForMerchant?.CTA1}
@@ -613,7 +613,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard"
+                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="p-16">
                       <Image
@@ -666,7 +666,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="px-10">
                       <Image
@@ -726,7 +726,7 @@ export default function Home() {
               pagination={false}
               renderArrow={blackCarouselArrows}
             >
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
@@ -743,7 +743,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 px-20 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -760,7 +760,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
@@ -777,7 +777,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -794,7 +794,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-6.svg"
@@ -811,7 +811,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     The tango between banks and fintechs: Rivals turn partners
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -828,7 +828,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
@@ -845,7 +845,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 p-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -862,7 +862,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
@@ -879,7 +879,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
