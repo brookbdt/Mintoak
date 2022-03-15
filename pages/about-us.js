@@ -1,88 +1,88 @@
-import { useEffect, useState, useRef } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
+import { useEffect, useState, useRef } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({})
-  const [matricsResp, setMatricsResp] = useState([])
-  const [visionResp, setVisionResp] = useState({})
-  const [missionResp, setMissionResp] = useState({})
-  const [principalResp, setPrincipalResp] = useState([])
-  const [founderResp, setFounderResp] = useState([])
-  const [teamInfoResp, setTeamInfoResp] = useState({})
-  const [activeTab, setActiveTab] = useState(0)
-  const founder = useRef()
+  const [aboutBannerResp, setAboutBannerResp] = useState({});
+  const [storyResp, setStoryResp] = useState({});
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [activeTab, setActiveTab] = useState(0);
+  const founder = useRef();
   useEffect(() => {
     // about_banner
     API({
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp)
+        setAboutBannerResp(resp);
       }
-    })
+    });
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp)
+        setStoryResp(resp);
       }
-    })
+    });
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp)
+        setMatricsResp(resp);
       }
-    })
+    });
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp)
+        setMissionResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp)
+        setVisionResp(resp);
       }
-    })
+    });
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp)
+        setPrincipalResp(resp);
       }
-    })
+    });
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp)
+        setFounderResp(resp);
       }
-    })
+    });
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp)
+        setTeamInfoResp(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
-    <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
+    <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
-      <div className="relative top-bg-container desktop:h-100% laptop:h-100%">
+      <div className="relative top-bg-container desktop:h-100% laptop:h-100">
         <Image
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
@@ -365,5 +365,5 @@ export default function About() {
         </div>
       </div> */}
     </div>
-  )
+  );
 }
