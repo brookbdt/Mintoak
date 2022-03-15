@@ -288,17 +288,15 @@ button[disabled] {
 }
 
 // hover shadow
-.hover-shaddow {
-  &:hover {
-    transition: 0.7s;
-    box-shadow: 0px 1px 11.8511px 4px rgba(0, 0, 0, 0.2);
-
-    .colorImage {
-      filter: none !important;
-    }
+.custom-shaddow {
+  box-shadow: 0px 0px 11.8511px rgba(0, 0, 0, 0.1);
+}
+.custom-shaddow:hover {
+  box-shadow: 0px 1px 11.8511px 4px rgba(0, 0, 0, 0.2);
+  .colorImage {
+    filter: none !important;
   }
 }
-
 //footer hover
 .hover-border {
   &:hover {
@@ -591,9 +589,6 @@ button[disabled] {
 ::placeholder {
   font-size: 20px;
   line-height: 24px;
-  padding-left: 50px;
-  padding-top: 22px;
-  padding-bottom: 27px;
 }
 
 // border-radius
@@ -666,4 +661,190 @@ button[disabled] {
 
 .ls-2 {
   letter-spacing: 2%;
+}
+// ================== FAQ POPUP CONTENT START ================
+
+.popup-content {
+  display: none;
+}
+
+.popup:hover {
+  .popup-content {
+    display: contents;
+    padding-top: 5px;
+  }
+}
+// ================== FAQ POPUP CONTENT END ================
+
+// ================== FAQ CUSTOM PAGINATION START ================
+
+.custom-pagination .ant-pagination {
+  display: flex;
+}
+.custom-pagination .ant-pagination-item {
+  border-radius: 50%;
+  height: 63px;
+  width: 63px;
+  padding: 13px;
+  font-size: 24px;
+  line-height: 36px;
+  background-color: transparent;
+}
+
+.custom-pagination .ant-pagination-item-active {
+  border-color: #252525;
+  color: #252525;
+  background-color: #dfefd4;
+}
+.custom-pagination .ant-pagination-item-active:hover a {
+  color: #252525;
+}
+.custom-pagination .ant-pagination-item:hover {
+  border-radius: 50%;
+  height: 63px;
+  width: 63px;
+  padding: 13px;
+  font-size: 24px;
+  line-height: 36px;
+  border-color: #252525;
+}
+.custom-pagination .ant-pagination-item a {
+  color: #252525;
+}
+.custom-pagination .ant-pagination-item:hover a {
+  color: #252525;
+}
+.custom-pagination .ant-pagination-item-active a {
+  color: #252525;
+}
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link {
+  border-radius: 50%;
+  height: 63px;
+  width: 63px;
+  font-size: 24px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.custom-pagination .ant-pagination-next .ant-pagination-item-link {
+  border-radius: 30px;
+  height: 63px;
+  width: 63px;
+  font-size: 24px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.custom-pagination .ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next {
+  height: auto !important;
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link:hover {
+  border-color: #46ac34;
+  color: #46ac34;
+}
+
+.custom-pagination .ant-pagination-next .ant-pagination-item-link:hover {
+  border-color: #46ac34;
+  color: #46ac34;
+}
+// ================== FAQ CUSTOM PAGINATION START ================
+
+// ================== FAQ CUSTOM TEXTARIA START ================
+
+.custom-textaria .ant-input {
+  font-size: 20px;
+  line-height: 24px;
+  color: #252525;
+  outline: none;
+  border: 1px solid #525252;
+}
+.custom-textaria .ant-input:hover {
+  font-size: 20px;
+  line-height: 24px;
+  color: #252525;
+  outline: none;
+  border: 1px solid #525252;
+}
+.custom-textaria .ant-input:focus {
+  font-size: 20px;
+  line-height: 24px;
+  color: #252525;
+  outline: none;
+  border: 1px solid #525252;
+  border-radius: 0px;
+}
+.custom-textaria .textarea.ant-input:focus {
+  border: 1px solid #525252;
+}
+
+// ================== FAQ CUSTOM TEXTARIA END ================
+
+// ================== FAQ POPUP CHECKBOX START ================
+
+.custom-checkbox .ant-checkbox-inner {
+  width: 34px;
+  height: 70px;
+  border: none;
+  background-color: #e9f5dc;
+}
+.custom-checkbox {
+  margin-left: 15px;
+  display: flex;
+}
+.custom-checkbox .ant-checkbox-inner::after {
+  width: 10px;
+  height: 20px;
+  border: 1px solid #46ac34;
+}
+.custom-checkbox .ant-checkbox-checked::after {
+  border: none;
+}
+
+.custom-checkbox .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #46ac34;
+}
+
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #c5e39d;
+  border-color: none;
+}
+
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border: 2px solid #46ac34;
+  border-top: 0;
+  border-left: 0;
+}
+.custom-checkbox .ant-checkbox-wrapper {
+  line-height: 0;
+}
+.custom-checkbox .ant-checkbox {
+  top: 0;
+  border-left: 1px solid #46ac34;
+}
+
+// ================== FAQ POPUP CHECKBOX END ================
+
+.overf {
+  overflow-x: scroll;
+}
+.overf::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 5px;
+}
+
+.overf::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(104, 104, 104, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }

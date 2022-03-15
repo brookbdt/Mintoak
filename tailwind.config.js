@@ -46,17 +46,17 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-}
+};
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {}
-Array.from(Array(5000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`
-})
+const spacing2000px = {};
+Array.from(Array(2000).keys()).forEach((n) => {
+  spacing2000px[n] = `${n}px`;
+});
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {}
+const spacing100Percentage = {};
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`
-})
+  spacing100Percentage[`${n}%`] = `${n}%`;
+});
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -103,6 +103,7 @@ module.exports = {
       s24l36: ["24px", "36px"],
       s24l31_92: ["24px", "31.92px"],
       s24l40_8: ["24px", "40.8px"],
+      s24l45: ["24px", "45px"],
       s24l150: ["24px", "150%"],
       s28l42: ["28px", "42px"],
       s30l33: ["30px", "33px"],
@@ -111,6 +112,7 @@ module.exports = {
       s32l38: ["32px", "38px"],
       s32l38_4: ["32px", "38.4px"],
       s32l45: ["32px", "45px"],
+      s32l42: ["32px", "42px"],
       s34l42: ["34px", "42px"],
       s36l43: ["36px", "43px"],
       s36l54: ["36px", "54px"],
@@ -128,6 +130,7 @@ module.exports = {
       s45l67: ["45px", "67px"],
       s56l124_5: ["56px", "124.5%"],
       s56l67: ["56px", "67px"],
+      s56l63: ["56px", "63px"],
     },
     extend: {
       colors,
@@ -148,7 +151,7 @@ module.exports = {
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
-        mediaCard: "0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
+        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
       },
       zIndex: {
         minus1: -1,
@@ -162,4 +165,4 @@ module.exports = {
     },
   },
   // plugins: [],
-}
+};
