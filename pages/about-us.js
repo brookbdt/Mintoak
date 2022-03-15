@@ -82,33 +82,20 @@ export default function About() {
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
       {/* Top layout with resp */}
-<<<<<<< HEAD
       <div className="relative top-bg-container desktop:h-100% laptop:h-100%">
-=======
-      <div className="relative top-bg-container desktop:h-648 laptop:h-648">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
         <Image
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
         />
-<<<<<<< HEAD
         <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-65  laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
-=======
-        <div className="desktop:w-50% desktop:p-100 desktop:pl-181 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="ls--3 text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
           </div>
           <div className="ls--3 text-s56l67 mobile:text-s36l43  font-bold text-252525 shrink-0 desktop:pt-6 laptop:pt-6 mobile:pt-10">
             New-age Businesses
           </div>
-<<<<<<< HEAD
           <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 desktop:pb-40 laptop:pb-40 desktop:w-453 laptop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
-=======
-          <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 desktop:pb-40 laptop:pt-32 laptop:pb-40 desktop:w-453 laptop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
             {aboutBannerResp?.Description}
           </div>
           <div className="font-bold button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
@@ -124,7 +111,6 @@ export default function About() {
       <div className="border border-A4D77A w-100%"></div>
 
       {/* The Mintoak Story */}
-<<<<<<< HEAD
       <div className="desktop:flex laptop:flex flex-col p-80 desktop:pt-152 laptop:pt-152 justify-center items-center mobile:px-20 ">
         <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile:text-left mobile:text-s22l33">
           {storyResp?.Title}
@@ -133,16 +119,6 @@ export default function About() {
           {storyResp?.Description}
         </div>
         <div className="flex w-100% justify-center desktop:px-100 laptop:px-70 desktop:py-49 laptop:py-49 mobile:w-100% mobile:flex-col">
-=======
-      <div className="desktop:flex flex-col p-80 desktop:pt-152 justify-center items-center mobile:px-20 ">
-        <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile:text-left text-s45l45 laptop:text-center mobile:text-s22l33">
-          {storyResp?.Title}
-        </div>
-        <div className="desktop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-335 laptop:px-150 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
-          {storyResp?.Description}
-        </div>
-        <div className="flex w-100% justify-center desktop:px-100 desktop:py-49 laptop:py-49  mobile:w-100% mobile:flex-col">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
           {matricsResp &&
             matricsResp.map((item, index) => (
               <div
@@ -161,13 +137,8 @@ export default function About() {
       </div>
 
       {/* Vision & Mission */}
-<<<<<<< HEAD
       <div className="flex w-100% bg-footer desktop:px-94 mobile:flex-col desktop:h-412 laptop:h-412">
         <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:px-86 laptop:px-86 desktop:pt-84 laptop:pt-84 desktop:pb-94 laptop:pb-94 mobile:border-b desktop:border-r laptop:border-r border-8B8B8B">
-=======
-      <div className="flex w-100% bg-footer desktop:px-94 laptop:px-94 mobile:flex-col desktop:h-412">
-        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 px-86 pt-84 pb-94 laptop:px-50 mobile:border-b desktop:border-r border-8B8B8B">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
           <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
             <div>
               <Image src="/images/icons/vision.svg" width={49} height={49} />
@@ -180,13 +151,8 @@ export default function About() {
             {visionResp?.Description}
           </div>
         </div>
-<<<<<<< HEAD
         <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-169 laptop:pl-86 desktop:pr-177 laptop:pr-177 desktop:pt-85 laptop:pt-85 desktop:pb-94 laptop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
           <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
-=======
-        <div className="flex mobile:w-100% desktop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 pl-169 desktop:pr-117 pt-85 desktop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
-          <div className="flex flex-row w-100% items-center pb-20 mobile:pt-27 mobile:pb-25">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
             <div>
               <Image src="/images/icons/mission.svg" width={49} height={49} />
             </div>
@@ -201,30 +167,18 @@ export default function About() {
       </div>
 
       {/* Our Principles */}
-<<<<<<< HEAD
       <div className="desktop:w-100% laptop:w-100% desktop:py-70 laptop:py-70 mobile:w-100%">
         <div className="flex desktop:justify-around laptop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 laptop:pt-80 laptop:pb-60 mobile:pb-25">
           Our Principles
         </div>
         <div className="flex mobile:flex-col items-center w-100% desktop desktop:px-200 desktop:justify-around laptop:justify-around laptop:px-100 mobile:px-13">
-=======
-      <div className="desktop:w-100% py-70 mobile:w-100%">
-        <div className="flex justify-around mobile:justify-start font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 pt-80 pb-60 mobile:pb-25">
-          Our Principles
-        </div>
-        <div className="flex mobile:flex-col items-center w-100% desktop:pr-387 desktop:pl-384 laptop:px-100 mobile:px-13">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
           {principalResp &&
             principalResp.map((item, index) => (
               <div
                 key={index}
-<<<<<<< HEAD
                 className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
                   index != principalResp.length - 1 && ""
                 } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
-=======
-                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 desktop:h-336 ${index != principalResp.length - 1 && "laptop:mr-59 desktop:mr-59"} mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10 mobile:pl-30`}
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -234,11 +188,7 @@ export default function About() {
                     {item.Title}
                   </div>
 
-<<<<<<< HEAD
                   <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s14l21 text-525252 desktop:pt-15 laptop:pt-15 desktop:text-center laptop:text-center px-20">
-=======
-                  <div className="desktop:text-s20l30 mobile:text-s14l21 text-525252 desktop:pt-15 desktop:text-center laptop:text-center px-20">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
                     {item.Description}
                   </div>
                 </div>
@@ -248,20 +198,12 @@ export default function About() {
       </div>
 
       {/* Meet the Team */}
-<<<<<<< HEAD
       <div className="w-100% flex flex-col pt-50 desktop:pt-78 laptop:pt-78">
-=======
-      <div className="w-100% flex flex-col py-70 desktop:pt-78 laptop:pt-78">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
         <div className="flex flex-col justify-center items-center w-100% ">
           <div className="text-s44l33 ls-2 mobile:text-s22l33 mobile:text-000000 text-252525 font-bold px-40">
             {teamInfoResp?.Title}
           </div>
-<<<<<<< HEAD
           <div className="desktop:text-s20l33 laptop:text-s20l33 ls-2 mobile:text-s14l21 mobile:text-525252 text-252525 py-35 text-center desktop:pl-513 laptop:pl-270 desktop:pr-517 laptop:pr-270  mobile:px-30">
-=======
-          <div className="desktop:text-s20l33 ls-2 mobile:text-s14l21 mobile:text-525252 text-252525 py-35 text-center desktop:pl-513 desktop:pr-517 laptop:px-350 mobile:px-30">
->>>>>>> 6c0e131e0b2fc3e1ed9cbbdd52cbeaaec7136360
             {teamInfoResp?.Description}
           </div>
         </div>

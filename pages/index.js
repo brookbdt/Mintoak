@@ -237,7 +237,7 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
+                className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
               >
                 <Image
                   src={item.Icon}
@@ -481,8 +481,8 @@ export default function Home() {
                     height={130}
                     className="grayscale h-53 colorImage m-auto"
                   />
-                  <div className="pt-43">
-                    <div className="comunityContent hidden laptop:text-s18l33 text-s20l30 text-center">
+                  <div className="pt-20">
+                    <div className="comunityContent hidden text-s20l30 text-center">
                       {item.BankInfo}
                     </div>
                   </div>
