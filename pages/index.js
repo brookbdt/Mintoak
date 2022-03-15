@@ -143,19 +143,19 @@ export default function Home() {
           className="absolute z-minus1 mobile:hidden"
         />
         <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
+          <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0">
             {homeBannerResp?.TittleTop}
           </div>
-          <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0">
+          <div className="text-s56l124_5 laptop:text-s40l60 mobile:text-s34l42 font-bold text-252525 shrink-0">
             {homeBannerResp?.TitleMiddle}
           </div>
-          <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
+          <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0">
             {homeBannerResp?.TitleBottom}
           </div>
-          <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">
+          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l24 text-525252 shrink-0 mt-37">
             {homeBannerResp?.Description}
           </div>
-          <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20">
+          <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold">
             {homeBannerResp?.Button}
           </div>
         </div>
@@ -167,15 +167,15 @@ export default function Home() {
       </div>
       <div className="">
         {/* Count layout */}
-        <div className="flex desktop:w-70% laptop:w-80% mx-auto items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden">
-          <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
+        <div className="flex desktop:w-70% laptop:w-100% mx-auto items-center justify-around px-200 mobile:px-23 mb-150 mobile:mb-80 mobile:hidden pt-108">
+          <div className="text-center text-s36l43 laptop:text-s28l42 mobile:text-s14l17 text-252525">
             {metricsResp?.Merchants}
             <span className="text-A4D77A">+</span>
             <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
               Merchants
             </div>
           </div>
-          <div className="text-center text-s36l43 mobile:text-s20l24 text-252525">
+          <div className="text-center text-s36l43 laptop:text-s28l42 mobile:text-s20l24 text-252525">
             <span className="mobile:font-semibold">
               {metricsResp?.TransactionsAnnually}
               <span className="text-A4D77A">+</span>
@@ -184,7 +184,7 @@ export default function Home() {
               Transactions Annually
             </div>
           </div>
-          <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
+          <div className="text-center text-s36l43 laptop:text-s28l42 mobile:text-s14l17 text-252525">
             {metricsResp?.GMVAnnuals}
             <span className="text-A4D77A">+</span>
             <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
@@ -229,7 +229,7 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex justify-around text-252525 font-bold text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
+        <div className="flex justify-around text-252525 font-semibold text-s44l120 mobile:text-s20l150 mobile:font-bold mb-60">
           The Mintoak Advantages
         </div>
         <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150">
@@ -246,10 +246,10 @@ export default function Home() {
                   className="mobile:w-80 mobile:h-80"
                 />
                 <div>
-                  <div className="font-bold text-s24l29 laptop:text-s22l26_4 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5">
+                  <div className="font-bold text-s24l29 laptop:text-s18l33 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5 responsive-title-text">
                     {item.Tittle}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l17 laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left">
+                  <div className="text-s20l150 mobile:text-s14l17 laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left laptop:text-s13l18 responsive-desc-text">
                     {item.Description}
                   </div>
                 </div>
@@ -311,13 +311,13 @@ export default function Home() {
             {isBORM === "b" ? (
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
+                  <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
                     {homeForBanksResp?.Description1}
                   </div>
-                  <div className="flex items-center desktop:text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                  <div className="flex items-center desktop:text-s36l43 laptop:text-s24l150 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                     {homeForBanksResp?.Title2}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
+                  <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     {homeForBanksResp?.Description2}
                     <span className="text-s20l150 mobile:text-s14l24  text-8CC63E cursor-pointer">
                       {" "}
@@ -341,13 +341,13 @@ export default function Home() {
             ) : (
               <>
                 <div className=" flex flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l36  tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
+                  <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                     {homeForMerchant?.Description1}
                   </div>
                   <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                     {homeForMerchant?.Title2}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
+                  <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     {homeForMerchant?.Description2}
                     <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                       {homeForMerchant?.CTA1}
@@ -445,9 +445,9 @@ export default function Home() {
 
         {/* Building a global community */}
         <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center">
-          Building a global community
+          Building A Global Community
         </div>
-        <div className="flex justify-center items-center w-100% py-50 laptop:px-100 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+        <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
           <Carousel
             itemsToShow={3}
             itemPadding={[0, 20, 0, 20]}
@@ -461,7 +461,7 @@ export default function Home() {
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 )
               return (
-                <button onClick={onClick} disabled={isEdge} className="h-120">
+                <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-70">
                   {pointer}
                 </button>
               )
@@ -471,16 +471,16 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="h-230 mobile:h-170 mobile:278 sliderItem "
+                  className="h-240 mobile:h-170 mobile:278 sliderItem "
                 >
                   <Image
                     src={item.BankLogo}
                     width={231}
                     height={130}
-                    className="grayscale h-130 colorImage m-auto"
+                    className="grayscale desktop:h-130 laptop:h-60 colorImage m-auto"
                   />
                   <div className="">
-                    <div className="comunityContent hidden laptop:text-s18l33 text-s20l30 text-center">
+                    <div className="comunityContent hidden mt-20 laptop:text-s16l24 text-s20l30 text-center">
                       {item.BankInfo}
                     </div>
                   </div>
@@ -496,7 +496,7 @@ export default function Home() {
                 key={index}
                 className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
               >
-                <div className="flex justify-center items-center   w-100%">
+                <div className="flex justify-center items-center  w-100%">
                   <Image src={item.BankLogo} className="w-150 h-100" />
                 </div>
                 <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">

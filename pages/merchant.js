@@ -63,7 +63,7 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-100">
               Empowering and elevating small businesses
             </div>
           </div>
