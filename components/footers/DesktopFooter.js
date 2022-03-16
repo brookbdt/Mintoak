@@ -1,5 +1,5 @@
-import React from "react"
-import Image from "../helpers/Image"
+import React from "react";
+import Image from "../helpers/Image";
 
 export default function DesktopFooter() {
   return (
@@ -114,5 +114,5 @@ export default function DesktopFooter() {
         </div>
       </div>
     </div>
-  )
+  );
 }

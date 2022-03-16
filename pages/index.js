@@ -1,112 +1,112 @@
-import { useEffect, useState } from "react"
-import Carousel from "react-elastic-carousel"
-import Image from "../components/helpers/Image"
-import { consts } from "react-elastic-carousel"
-import { Collapse } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Item from "antd/lib/list/Item"
+import { useEffect, useState } from "react";
+import Carousel from "react-elastic-carousel";
+import Image from "../components/helpers/Image";
+import { consts } from "react-elastic-carousel";
+import { Collapse } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Item from "antd/lib/list/Item";
 
-const { Panel } = Collapse
+const { Panel } = Collapse;
 
 export default function Home() {
-  const [isBORM, setIsBORM] = useState("b")
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [metricsResp, setMetricsResp] = useState({})
-  const [homeForBanksResp, setHomeForBanksResp] = useState({})
-  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([])
-  const [homeForMerchant, setHomeForMerchant] = useState([])
-  const [comunityCard, setComunityCard] = useState([])
-  const [homepageAchievements, setHomepageAchievements] = useState([])
-  const [homepageMediaCards, setHomepageMediaCards] = useState([])
-  const [faq, setFaq] = useState([])
+  const [isBORM, setIsBORM] = useState("b");
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [metricsResp, setMetricsResp] = useState({});
+  const [homeForBanksResp, setHomeForBanksResp] = useState({});
+  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([]);
+  const [homeForMerchant, setHomeForMerchant] = useState([]);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [homepageAchievements, setHomepageAchievements] = useState([]);
+  const [homepageMediaCards, setHomepageMediaCards] = useState([]);
+  const [faq, setFaq] = useState([]);
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
 
     // metrics
     API({
       url: endpoints.metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMetricsResp(resp)
+        setMetricsResp(resp);
       }
-    })
+    });
 
     // homepage_for_banks
     API({
       url: endpoints.homepage_for_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeForBanksResp(resp)
+        setHomeForBanksResp(resp);
       }
-    })
+    });
 
     // Advantages Card
     API({
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomeAdvantagesCard(resp)
+        console.log(resp, "resp");
+        setHomeAdvantagesCard(resp);
       }
-    })
+    });
 
     // Home page for merchant
     API({
       url: endpoints.homeoage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomeForMerchant(resp)
+        console.log(resp, "resp");
+        setHomeForMerchant(resp);
       }
-    })
+    });
 
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setComunityCard(resp)
+        console.log(resp, "resp");
+        setComunityCard(resp);
       }
-    })
+    });
 
     // Homepage Our Achievements
     API({
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomepageAchievements(resp)
+        console.log(resp, "resp");
+        setHomepageAchievements(resp);
       }
-    })
+    });
 
     // Homepage Media Cards
     API({
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setHomepageMediaCards(resp)
+        console.log(resp, "resp");
+        setHomepageMediaCards(resp);
       }
-    })
+    });
 
     // Faq
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setFaq(resp)
+        console.log(resp, "resp");
+        setFaq(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -114,13 +114,13 @@ export default function Home() {
         <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
       ) : (
         <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-      )
+      );
     return (
       <button onClick={onClick} disabled={isEdge}>
         {pointer}
       </button>
-    )
-  }
+    );
+  };
 
   const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
     return (
@@ -131,11 +131,11 @@ export default function Home() {
           <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
         </span>
       </>
-    )
-  }
+    );
+  };
 
   return (
-    <div className="h-fit w-100% ">
+    <div className="h-fit w-100% bg-home-top">
       {/* Top layout with resp */}
       <div className="relative top-bg-container">
         <Image
@@ -237,7 +237,7 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
+                className="mobile:flex mobile:mt-10 mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0"
               >
                 <Image
                   src={item.Icon}
@@ -254,7 +254,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -307,35 +307,37 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex items-center w-100% laptop:px-100 px-180 mobile:px-20 py-120 mobile:hidden">
+          <div className="flex items-center w-100% laptop:px-100 desktop:px-180 mobile:px-20 desktop:py-120 laptop:py-100  mobile:hidden">
             {isBORM === "b" ? (
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
                   <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
-                    {homeForBanksResp?.Description1}
-                  </div>
-                  <div className="flex items-center desktop:text-s36l43 laptop:text-s24l150 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
-                    {homeForBanksResp?.Title2}
-                  </div>
-                  <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
-                    {homeForBanksResp?.Description2}
-                    <span className="text-s20l150 mobile:text-s14l24  text-8CC63E cursor-pointer">
-                      {" "}
-                      {homeForBanksResp?.CTA1}
-                    </span>
-                  </div>
+                    <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 pb-99 item-center">
+                      {homeForBanksResp?.Description1}
+                    </div>
+                    <div className="flex items-center desktop:text-s36l43 laptop:text-s24l150 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                      {homeForBanksResp?.Title2}
+                    </div>
+                    <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
+                      {homeForBanksResp?.Description2}
+                      <span className="text-s20l150 mobile:text-s14l24  text-8CC63E cursor-pointer">
+                        {" "}
+                        {homeForBanksResp?.CTA1}
+                      </span>
+                    </div>
 
-                  <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                    {homeForBanksResp?.CTA2}
+                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                      {homeForBanksResp?.CTA2}
+                    </div>
                   </div>
-                </div>
-                <div className="w-50% mobile:w-100% flex items-center justify-end">
-                  <Image
-                    src={homeForBanksResp?.BankIllustration}
-                    height={633}
-                    width={663}
-                    className="laptop:w-520"
-                  />
+                  <div className="w-50% mobile:w-100% flex items-center justify-end">
+                    <Image
+                      src={homeForBanksResp?.BankIllustration}
+                      height={633}
+                      width={663}
+                      className="laptop:w-520"
+                    />
+                  </div>
                 </div>
               </>
             ) : (
@@ -348,23 +350,25 @@ export default function Home() {
                     {homeForMerchant?.Title2}
                   </div>
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
-                    {homeForMerchant?.Description2}
-                    <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
-                      {homeForMerchant?.CTA1}
-                    </span>
-                  </div>
+                    <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1 w-638">
+                      {homeForMerchant?.Description2}
+                      <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                        {homeForMerchant?.CTA1}
+                      </span>
+                    </div>
 
-                  <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                    {homeForMerchant?.CTA2}
+                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                      {homeForMerchant?.CTA2}
+                    </div>
                   </div>
-                </div>
-                <div className="w-50% mobile:w-100% flex items-center justify-end">
-                  <Image
-                    src={homeForMerchant?.MerchantIllustration}
-                    height={633}
-                    width={663}
-                    className="laptop:w-520"
-                  />
+                  <div className="w-50% mobile:w-100% flex items-center justify-end">
+                    <Image
+                      src={homeForMerchant?.MerchantIllustration}
+                      height={633}
+                      width={663}
+                      className="laptop:w-520"
+                    />
+                  </div>
                 </div>
               </>
             )}
@@ -456,36 +460,37 @@ export default function Home() {
             renderArrow={({ type, onClick, isEdge }) => {
               const pointer =
                 type === consts.PREV ? (
-                  <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 ) : (
-                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                )
+                  <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
+                );
               return (
                 <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-70">
                   {pointer}
                 </button>
-              )
+              );
             }}
           >
             {comunityCard.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="h-240 mobile:h-170 mobile:278 sliderItem "
+                  // className="h-240 mobile:h-170 mobile:278 sliderItem "
+                  className="h-230 mobile:h-170 mobile:278 sliderItem pt-35"
                 >
                   <Image
                     src={item.BankLogo}
                     width={231}
                     height={130}
-                    className="grayscale desktop:h-130 laptop:h-60 colorImage m-auto"
+                    className="grayscale h-53 colorImage m-auto"
                   />
-                  <div className="">
-                    <div className="comunityContent hidden mt-20 laptop:text-s16l24 text-s20l30 text-center">
+                  <div className="pt-20">
+                    <div className="comunityContent hidden text-s20l30 text-center">
                       {item.BankInfo}
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </Carousel>
         </div>
@@ -503,7 +508,7 @@ export default function Home() {
                   {item.BankInfo}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -524,12 +529,12 @@ export default function Home() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {homepageAchievements.map((item, index) => {
@@ -552,7 +557,7 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -584,7 +589,7 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -611,7 +616,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard"
+                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="p-16">
                       <Image
@@ -625,17 +630,17 @@ export default function Home() {
                       <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 h-100 px-20 font-semibold text-s24l31">
+                      <div className="text-252525 pt-10 pb-26 px-20 font-semibold text-s24l31">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 px-20 mt-25 text-s20l24">
+                      <div className="text-525252 px-20  text-s20l24">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                      <div className="bg-button rounded-sm text-FFFFFF px-10 py-8 flex items-center justify-center cursor-pointer">
                         <Image
                           src="/images/icons/arrow.svg"
                           type="img"
@@ -645,7 +650,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
@@ -664,7 +669,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF hover-shaddow"
+                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="px-10">
                       <Image
@@ -698,7 +703,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
@@ -724,7 +729,7 @@ export default function Home() {
               pagination={false}
               renderArrow={blackCarouselArrows}
             >
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
@@ -741,7 +746,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 mt-25 px-20 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -758,7 +763,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
@@ -775,7 +780,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -792,7 +797,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-6.svg"
@@ -809,7 +814,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     The tango between banks and fintechs: Rivals turn partners
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -826,7 +831,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
@@ -843,7 +848,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 p-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -860,7 +865,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF hover-shaddow shadow-mediaCard">
+              <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
                 <div className="p-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
@@ -877,7 +882,7 @@ export default function Home() {
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 mt-25 text-s20l24">
+                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -1085,7 +1090,7 @@ export default function Home() {
                       {item.Answer}
                     </p>
                   </Panel>
-                )
+                );
               })}
             </Collapse>
           </div>
@@ -1100,5 +1105,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

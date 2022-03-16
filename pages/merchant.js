@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
-import { API, endpoints } from "../components/helpers/API"
-import Image from "../components/helpers/Image"
-import { Chrono } from "react-chrono"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
+import { useEffect, useState } from "react";
+import { API, endpoints } from "../components/helpers/API";
+import Image from "../components/helpers/Image";
+import { Chrono } from "react-chrono";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
 export default function Merchant() {
-  const [merchantBannerResp, setMerchantBannerResp] = useState({})
+  const [merchantBannerResp, setMerchantBannerResp] = useState({});
 
   useEffect(() => {
     // merchant_banner
@@ -16,7 +16,7 @@ export default function Merchant() {
     //         setMerchantBannerResp(resp)
     //     }
     // })
-  }, [])
+  }, []);
 
   return (
     <div className="h-fit w-100% ">
@@ -283,12 +283,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               <div className="flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4">
@@ -345,12 +345,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-24 w-24 text-s12l14" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-24 w-24 text-s12l14" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge} className="h-650">
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               <div className="flex flex-col items-center w-311 mobile:h-191 p-28 border border-C4C4C4">
@@ -437,12 +437,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge} className="h-120">
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               <div className="">
@@ -495,12 +495,12 @@ export default function Merchant() {
                       <i className="fa fa-angle-left text-s12l14 flex items-center justify-center border border-8B8B8B rounded-full h-24 w-24 " />
                     ) : (
                       <i className="fa fa-angle-right text-s12l14 flex items-center justify-center border border-8B8B8B rounded-full h-24 w-24" />
-                    )
+                    );
                   return (
                     <button onClick={onClick} disabled={isEdge} className="">
                       {pointer}
                     </button>
-                  )
+                  );
                 }}
               >
                 <div className="">
@@ -550,5 +550,5 @@ export default function Merchant() {
         </div>
       </div>
     </div>
-  )
+  );
 }
