@@ -98,7 +98,7 @@ export default function Career() {
           src={homeBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
         />
-        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             Give your career
           </div>
@@ -137,7 +137,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="text-s26l36 font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-60 laptop:text-center">
+              <div className="m-auto text-s24l36 font-bold w-212 text-center mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-60 laptop:text-center">
                 Healthcare and wellness coverage
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="text-s26l36 font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
+              <div className="m-auto text-s24l36 font-bold w-176 text-center  mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
                 Paid time off and holidays
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="text-s26l36 font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-40 laptop:text-center">
+              <div className="m-auto text-s24l36 w-228 text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-40 laptop:text-center">
                 Employee assistance program
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="text-s26l36 font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
+              <div className="m-auto text-s24l36 w-273 text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
                 Learning and development resources
               </div>
             </div>
@@ -318,7 +318,7 @@ export default function Career() {
             }}
           >
             {onBoardData.map((data, index) => (
-              <div className="bg-FFFFFF shadow-lg my-21" key={index}>
+              <div className="desktop:w-416 bg-FFFFFF shadow-lg my-21" key={index}>
                 <div className="pt-10 px-12">
                   <Image
                     src="/images/backgrounds/img-11.png"

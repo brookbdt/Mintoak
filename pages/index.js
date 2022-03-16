@@ -142,7 +142,7 @@ export default function Home() {
           src={homeBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
         />
-        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0">
             {homeBannerResp?.TittleTop}
           </div>
@@ -749,7 +749,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                  <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
                     <Image
                       src="/images/icons/arrow.svg"
                       type="img"
@@ -783,7 +783,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                  <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
                     <Image
                       src="/images/icons/arrow.svg"
                       type="img"
@@ -817,7 +817,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                  <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
                     <Image
                       src="/images/icons/arrow.svg"
                       type="img"
@@ -1055,10 +1055,10 @@ export default function Home() {
         <div className="px-180 py-150 mobile:px-0 mobile:py-0">
           <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60">
             <div className="mb-40 ml-40 mt-50 mobile:ml-0">
-              <div className="text-252525 text-s45l45 font-bold mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
-                FAQs
+              <div className="text-252525 text-s45l54 font-bold mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
+                FAQ's
               </div>
-              <div className="text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:font-semibold">
+              <div className="font-semibold text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:font-semibold">
                 Curious about Mintoak? We’ve got you covered.
               </div>
             </div>
@@ -1082,7 +1082,7 @@ export default function Home() {
                     header={item.Question}
                     key={index}
                   >
-                    <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal">
+                    <p className="text-525252 text-s20l150 mobile:text-s12l14 font-normal w-80%">
                       {item.Answer}
                     </p>
                   </Panel>
