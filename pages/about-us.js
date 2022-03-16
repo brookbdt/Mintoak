@@ -128,7 +128,8 @@ export default function About() {
                 <div>
                   <Image src={item.Icon[0]} width={73} height={73} />
                 </div>
-                <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+                <div className={`text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${index == 0 || index == 1 ? 'w-150' : ''} ${index == 2 ? 'w-180' : ''}`}>
+                  {/* <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9  text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium"> */}
                   {item.Description}
                 </div>
               </div>
@@ -176,9 +177,8 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
-                  index != principalResp.length - 1 && ""
-                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
+                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />

@@ -74,6 +74,7 @@ module.exports = {
     fontSize: {
       s12l14: ["12px", "14px"],
       s12l18: ["12px", "18px"],
+      s13l18: ["13px", "18px"],
       s14l17: ["14px", "17px"],
       s14l16_8: ["14px", "16.8px"],
       s14l24: ["14px", "24px"],

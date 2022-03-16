@@ -675,6 +675,17 @@ button[disabled] {
 .ls-2 {
   letter-spacing: 2%;
 }
+
+// home page Mintoak Advantages
+
+@media screen and (max-width: 1618px) {
+  .responsive-title-text{
+    font-size: 22px;
+  }
+  .responsive-desc-text {
+    font-size: 15px;
+  }
+}
 // ================== FAQ POPUP CONTENT START ================
 
 .popup-content {
