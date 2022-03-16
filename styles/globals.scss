@@ -85,7 +85,13 @@ a {
 
 // merchant page
 .merchant-liner-bg {
-  background-image: linear-gradient(to top left, #19191a, #353537, #575757, #797979);
+  background-image: linear-gradient(
+    to top left,
+    #19191a,
+    #353537,
+    #575757,
+    #797979
+  );
 }
 
 .merchant-bg {
@@ -125,7 +131,9 @@ a {
     align-items: center;
     color: #525252;
   }
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+  .ant-select-single:not(.ant-select-customize-input)
+    .ant-select-selector
+    .ant-select-selection-search-input {
     height: 60px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -284,7 +292,7 @@ a {
 //disable button
 button:disabled,
 button[disabled] {
-  color: #666666;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 // hover shadow
@@ -375,7 +383,9 @@ button[disabled] {
     align-items: center;
     color: #525252;
   }
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+  .ant-select-single:not(.ant-select-customize-input)
+    .ant-select-selector
+    .ant-select-selection-search-input {
     height: 60px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -534,7 +544,7 @@ button[disabled] {
 //disable button
 button:disabled,
 button[disabled] {
-  color: #666666;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 // hover shadow
@@ -860,4 +870,7 @@ button[disabled] {
 }
 .social-hover-1 {
   fill: white;
+}
+.global-border {
+  margin-top: -5px;
 }
