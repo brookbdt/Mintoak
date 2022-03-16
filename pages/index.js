@@ -312,7 +312,7 @@ export default function Home() {
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
                   <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
-                    <div className="text-s24l36 tracking-wide mobile:text-s14l24 text-F1F1F1 pb-99 item-center">
+                    <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 pb-99 item-center">
                       {homeForBanksResp?.Description1}
                     </div>
                     <div className="flex items-center desktop:text-s36l43 laptop:text-s24l150 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
@@ -325,19 +325,15 @@ export default function Home() {
                         {homeForBanksResp?.CTA1}
                       </span>
                     </div>
-
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                      {homeForBanksResp?.CTA2}
-                    </div>
                   </div>
-                  <div className="w-50% mobile:w-100% flex items-center justify-end">
-                    <Image
-                      src={homeForBanksResp?.BankIllustration}
-                      height={633}
-                      width={663}
-                      className="laptop:w-520"
-                    />
-                  </div>
+                </div>
+                <div className="w-50% mobile:w-100% flex items-center justify-end">
+                  <Image
+                    src={homeForBanksResp?.BankIllustration}
+                    height={633}
+                    width={663}
+                    className="laptop:w-520"
+                  />
                 </div>
               </>
             ) : (
@@ -361,14 +357,14 @@ export default function Home() {
                       {homeForMerchant?.CTA2}
                     </div>
                   </div>
-                  <div className="w-50% mobile:w-100% flex items-center justify-end">
-                    <Image
-                      src={homeForMerchant?.MerchantIllustration}
-                      height={633}
-                      width={663}
-                      className="laptop:w-520"
-                    />
-                  </div>
+                </div>
+                <div className="w-50% mobile:w-100% flex items-center justify-end">
+                  <Image
+                    src={homeForMerchant?.MerchantIllustration}
+                    height={633}
+                    width={663}
+                    className="laptop:w-520"
+                  />
                 </div>
               </>
             )}
