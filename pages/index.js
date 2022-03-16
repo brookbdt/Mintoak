@@ -615,7 +615,7 @@ export default function Home() {
                     key={index}
                     className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
-                    <div className="p-16">
+                    <div className="px-16 pt-16">
                       <Image
                         src={item.ArticleImage}
                         height={265}
@@ -624,7 +624,7 @@ export default function Home() {
                       />
                     </div>
                     <div div className="flex flex-col items-start">
-                      <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                      <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                         {item.ReadTime}
                       </div>
                       <div className="text-252525 pt-10 pb-26 px-20 font-semibold text-s24l31">
@@ -637,7 +637,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF px-10 py-8 flex items-center justify-center cursor-pointer">
+                      <div className="bg-button rounded-sm text-FFFFFF px-15 py-10 flex items-center justify-center cursor-pointer">
                         <Image
                           src="/images/icons/arrow.svg"
                           type="img"
@@ -727,7 +727,7 @@ export default function Home() {
               renderArrow={blackCarouselArrows}
             >
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
-                <div className="p-16">
+                <div className="px-16 pt-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={265}
@@ -737,7 +737,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                     6 min read
                   </div>
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
@@ -761,7 +761,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
-                <div className="p-16">
+                <div className="px-16 pt-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
                     height={265}
@@ -771,7 +771,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                     6 min read
                   </div>
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
@@ -795,7 +795,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
-                <div className="p-16">
+                <div className="px-16 pt-16">
                   <Image
                     src="/images/backgrounds/img-6.svg"
                     height={265}
@@ -805,7 +805,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                     6 min read
                   </div>
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
@@ -829,7 +829,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
-                <div className="p-16">
+                <div className="px-16 pt-16">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={265}
@@ -839,7 +839,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                     6 min read
                   </div>
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
@@ -863,7 +863,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
-                <div className="p-16">
+                <div className="px-16 pt-16">
                   <Image
                     src="/images/backgrounds/img-5.svg"
                     height={265}
@@ -873,7 +873,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-20 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
                     6 min read
                   </div>
                   <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
