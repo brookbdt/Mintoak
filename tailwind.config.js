@@ -42,22 +42,23 @@ const colors = {
   DFEFD4: "#DFEFD4",
   "87BD25": "#87BD25",
   828282: "#828282",
+  D1E6BA: "#D1E6BA",
 
   // For testing
   red: "red",
   green: "green",
   blue: "blue",
-};
+}
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {};
+const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`;
-});
+  spacing2000px[n] = `${n}px`
+})
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {};
+const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`;
-});
+  spacing100Percentage[`${n}%`] = `${n}%`
+})
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -158,6 +159,9 @@ module.exports = {
       zIndex: {
         minus1: -1,
       },
+      fill: {
+        hover: "#8cc63e",
+      },
     },
     spacing: {
       ...spacing2000px,
@@ -167,4 +171,4 @@ module.exports = {
     },
   },
   // plugins: [],
-};
+}
