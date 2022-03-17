@@ -240,7 +240,7 @@ a {
   .ant-pagination-item {
     border-radius: 30px !important;
     border-color: unset;
-    border-color: #525252;
+    border: 1px solid red;
     background-color: transparent !important;
     color: #252525;
   }
@@ -679,7 +679,7 @@ button[disabled] {
 // home page Mintoak Advantages
 
 @media screen and (max-width: 1618px) {
-  .responsive-title-text{
+  .responsive-title-text {
     font-size: 22px;
   }
   .responsive-desc-text {

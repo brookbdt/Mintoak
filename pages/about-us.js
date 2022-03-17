@@ -126,9 +126,19 @@ export default function About() {
                 className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%"
               >
                 <div>
-                  <Image src={item.Icon[0]} width={73} height={73} />
+                  <Image
+                    src={item.Icon[0]}
+                    width={73}
+                    height={73}
+                    type="img"
+                    className="desktop:h-73 desktop:w-73 laptop:h-73 laptop:w-73 mobile:h-40 mobile:w-38"
+                  />
                 </div>
-                <div className={`text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${index == 0 || index == 1 ? 'w-150' : ''} ${index == 2 ? 'w-180' : ''}`}>
+                <div
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${
+                    index == 0 || index == 1 ? "w-150" : ""
+                  } ${index == 2 ? "w-180" : ""}`}
+                >
                   {/* <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9  text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium"> */}
                   {item.Description}
                 </div>
@@ -140,22 +150,30 @@ export default function About() {
       {/* Vision & Mission */}
       <div className="flex w-100% bg-footer desktop:px-94 mobile:flex-col desktop:h-412 laptop:h-412">
         <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:px-86 laptop:px-86 desktop:pt-84 laptop:pt-84 desktop:pb-94 laptop:pb-94 mobile:border-b desktop:border-r laptop:border-r border-8B8B8B">
-          <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
+          <div className="flex flex-row w-100% items-center desktop:pb-6 mobile:pt-27 mobile:pb-25">
             <div>
-              <Image src="/images/icons/vision.svg" width={49} height={49} />
+              <Image
+                src="/images/icons/vision.svg"
+                type="img"
+                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-29 mobile:w-29"
+              />
             </div>
             <div className="ls--1_5 text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 laptop:px-25 mobile:px-8 ">
               {visionResp?.Title}
             </div>
           </div>
-          <div className="ls-2 text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-21 laptop:pt-21 mobile:pb-14 mobile:pr-15">
+          <div className="ls-2 text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-19 laptop:pt-19 mobile:pb-14 mobile:pr-15">
             {visionResp?.Description}
           </div>
         </div>
         <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-169 laptop:pl-86 desktop:pr-177 laptop:pr-177 desktop:pt-85 laptop:pt-85 desktop:pb-94 laptop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
-          <div className="flex flex-row w-100% items-center desktop:pb-20 mobile:pt-27 mobile:pb-25">
+          <div className="flex flex-row w-100% items-center desktop:pb-6 mobile:pt-27 mobile:pb-25">
             <div>
-              <Image src="/images/icons/mission.svg" width={49} height={49} />
+              <Image
+                src="/images/icons/mission.svg"
+                type="img"
+                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-29 mobile:w-29"
+              />
             </div>
             <div className="ls--1_5 text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 laptop:px-25 mobile:px-8 ">
               {missionResp?.Title}
@@ -177,8 +195,9 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
-                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                  index != principalResp.length - 1 && ""
+                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
