@@ -311,19 +311,24 @@ export default function Home() {
             {isBORM === "b" ? (
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-                  <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99 item-center">
-                    <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 pb-99 item-center">
+                  <div className=" flex flex-col  mobile:w-100% justify-center">
+                    <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                       {homeForBanksResp?.Description1}
                     </div>
-                    <div className="flex items-center desktop:text-s36l43 laptop:text-s24l150 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
                       {homeForBanksResp?.Title2}
                     </div>
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
-                      {homeForBanksResp?.Description2}
-                      <span className="text-s20l150 mobile:text-s14l24  text-8CC63E cursor-pointer">
-                        {" "}
-                        {homeForBanksResp?.CTA1}
-                      </span>
+                      <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
+                        {homeForBanksResp?.Description2}
+                        <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                          {homeForBanksResp?.CTA1}
+                        </span>
+                      </div>
+
+                      <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                        {homeForMerchant?.CTA2}
+                      </div>
                     </div>
                     <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
                       {homeForBanksResp?.CTA2}
@@ -349,7 +354,7 @@ export default function Home() {
                     {homeForMerchant?.Title2}
                   </div>
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
-                    <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1 w-638">
+                    <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       {homeForMerchant?.Description2}
                       <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                         {homeForMerchant?.CTA1}
@@ -464,7 +469,7 @@ export default function Home() {
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 );
               return (
-                <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-70">
+                <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-140">
                   {pointer}
                 </button>
               );
