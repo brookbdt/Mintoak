@@ -47,12 +47,12 @@ export default function Contact() {
         </div>
         <div className="mobile:w-100% mobile:pb-80 desktop:w-50% laptop:w-50% flex items-center flex-col mobile:pt-129 desktop:py-80 laptop:py-80 desktop:pr-100 laptop:pr-100">
           {/* form */}
-          <div className="bg-form mobile:p-40 desktop:py-40 laptop:py-40 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+          <div className="bg-form mobile:p-40 desktop:py-40 laptop:py-40 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-75% laptop:w-100%">
             <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
               Contact us
             </div>
             <div className="pb-40 ">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Full Name
               </div>
               <input
@@ -61,7 +61,7 @@ export default function Contact() {
               />
             </div>
             <div className="pb-40">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Business Email
               </div>
               <input
@@ -70,7 +70,7 @@ export default function Contact() {
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14  mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Bank Name
               </div>
               <input
@@ -79,7 +79,7 @@ export default function Contact() {
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14  mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Job Title
               </div>
               <input
@@ -88,7 +88,7 @@ export default function Contact() {
               />
             </div>
             <div className="pb-40">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Contact Number
               </div>
               <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B border-r border-C4C4C4 pr-5 absolute mobile:pt-3">
@@ -100,7 +100,7 @@ export default function Contact() {
               />
             </div>
             <div className="pb-40">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Domain
               </div>
               <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5">
@@ -109,7 +109,7 @@ export default function Contact() {
               </select>
             </div>
             <div className="pb-40">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-15">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Message
               </div>
               <input
