@@ -351,7 +351,7 @@ export default function Home() {
                     {homeForMerchant?.Title2}
                   </div>
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
-                    <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1 w-638">
+                    <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       {homeForMerchant?.Description2}
                       <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                         {homeForMerchant?.CTA1}
