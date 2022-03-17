@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
-import { API, endpoints } from "../components/helpers/API"
-import Image from "../components/helpers/Image"
-import { Pagination } from "antd"
+import { useEffect, useState } from "react";
+import { API, endpoints } from "../components/helpers/API";
+import Image from "../components/helpers/Image";
+import { Pagination } from "antd";
 
 export default function Resources() {
   return (
@@ -258,7 +258,7 @@ export default function Resources() {
               </div>
             </div>
             <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF px-15 py-20 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
             </div>
           </div>
         </div>
@@ -298,7 +298,7 @@ export default function Resources() {
               </div>
             </div>
             <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF px-15 py-20 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
             </div>
           </div>
         </div>
@@ -338,7 +338,7 @@ export default function Resources() {
               </div>
             </div>
             <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF px-15 py-20 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
             </div>
           </div>
         </div>
@@ -378,7 +378,7 @@ export default function Resources() {
               </div>
             </div>
             <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF px-15 py-20 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
             </div>
           </div>
         </div>
@@ -418,14 +418,14 @@ export default function Resources() {
               </div>
             </div>
             <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF px-15 py-20 flex items-center justify-center fa-lg cursor-pointer"></i>
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
             </div>
           </div>
         </div>
         <div className="flex justify-center desktop:pt-60 laptop:pt-60  laptop:pb-150 desktop:pb-150 mobile:pt-24 mobile:pb-80 custom-pagination">
-          <Pagination defaultCurrent={1} total={30} pageSize={10} />
+          <Pagination defaultCurrent={1} total={30} />
         </div>
       </div>
     </div>
-  )
+  );
 }

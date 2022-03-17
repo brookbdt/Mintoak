@@ -137,7 +137,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 text-center laptop:px-30 desktop:px-30">
+              <div className="text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-212 laptop:w-212 mobile:text-s16l24 mobile:pr-30">
                 Healthcare and wellness coverage
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="m-auto text-s24l36 font-bold w-176 text-center  mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
+              <div className="desktop:m-auto laptop:m-auto text-s24l36 font-bold w-176 desktop:text-center  mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-212 laptop:w-170 laptop:text-center mobile:text-s16l24">
                 Paid time off and holidays
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="m-auto text-s24l36 w-228 text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-40 laptop:text-center">
+              <div className="desktop:m-auto laptop:m-auto text-s24l36 w-228 desktop:text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-212 laptop:w-212 laptop:text-center mobile:text-s16l24">
                 Employee assistance program
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="m-auto text-s24l36 w-273 text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-30 laptop:text-center">
+              <div className="desktop:m-auto laptop:m-auto text-s24l36 w-273 desktop:text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-260 laptop:w-260 laptop:text-center mobile:text-s16l24">
                 Learning and development resources
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function Career() {
       <div className="flex flex-col bg-footer mb-100 mobile:mb-0 w-100%">
         <div className="desktop:flex laptop:flex items-center w-100%  mobile:px-20">
           <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center desktop:pl-100 laptop:pl-100 desktop:py-100 laptop:py-100 desktop:pr-50 laptop:pr-50">
-            <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:mb-40 laptop:mb-40 mobile:mb-30">
+            <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:pb-40 laptop:pb-40 mobile:pb-30 pt-40">
               Life at Mintoak
             </div>
             <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left">
@@ -197,7 +197,7 @@ export default function Career() {
               </span>
             </div>
           </div>
-          <div className="w-50% mobile:w-100%  flex items-center justify-center mobile:pt-30">
+          <div className="w-50% mobile:w-100%  flex items-center justify-center mobile:pt-30 mobile:pb-41">
             <Image
               src="/images/backgrounds/teamwork.svg"
               type="img"
@@ -293,8 +293,8 @@ export default function Career() {
               </Col>
             ))}
         </Row>
-        <div className="job-list-pagination flex justify-center">
-          <Pagination defaultCurrent={1} total={50} />
+        <div className="custom-pagination flex justify-center">
+          <Pagination defaultCurrent={1} total={30} />
         </div>
         {/* </div> */}
         {/* </div> */}
@@ -325,7 +325,10 @@ export default function Career() {
             }}
           >
             {onBoardData.map((data, index) => (
-              <div className="desktop:w-416 bg-FFFFFF shadow-lg my-21" key={index}>
+              <div
+                className="desktop:w-416 bg-FFFFFF shadow-lg my-21"
+                key={index}
+              >
                 <div className="pt-10 px-12">
                   <Image
                     src="/images/backgrounds/img-11.png"

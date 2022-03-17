@@ -135,7 +135,7 @@ export default function About() {
                   />
                 </div>
                 <div
-                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${
                     index == 0 || index == 1 ? "w-150" : ""
                   } ${index == 2 ? "w-180" : ""}`}
                 >

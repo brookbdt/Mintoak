@@ -69,18 +69,13 @@ export default function Partner() {
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div className="mobile:hidden">
+              <div>
                 <Image
                   src="/images/icons/financial-service-icon.svg"
                   width={54}
                   height={101}
-                />
-              </div>
-              <div className="desktop:hidden laptop:hidden">
-                <Image
-                  src="/images/icons/financial-service-icon.svg"
-                  width={24.96}
-                  height={48.13}
+                  type="img"
+                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-20 laptop:px-20 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -88,37 +83,28 @@ export default function Partner() {
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div className="mobile:hidden">
+              <div>
                 <Image
                   src="/images/icons/devices-icon.svg"
                   width={65}
                   height={95}
+                  type="img"
+                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-28 mobile:h-51"
                 />
               </div>
-              <div className="desktop:hidden laptop:hidden">
-                <Image
-                  src="/images/icons/devices-icon.svg"
-                  width={28.8}
-                  height={51.14}
-                />
-              </div>
+
               <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-30 laptop:px-30 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
                 Platform-as-a-service model
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div className="mobile:hidden">
+              <div>
                 <Image
                   src="/images/icons/lamp-icon.svg"
                   width={68}
                   height={95}
-                />
-              </div>
-              <div className="desktop:hidden laptop:hidden">
-                <Image
-                  src="/images/icons/lamp-icon.svg"
-                  width={27.84}
-                  height={40.11}
+                  type="img"
+                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-27 mobile:h-40"
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-50 laptop:px-50 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -126,18 +112,13 @@ export default function Partner() {
               </div>
             </div>
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div className="mobile:hidden">
+              <div>
                 <Image
                   src="/images/icons/cart-icon.svg"
                   width={101}
                   height={97}
-                />
-              </div>
-              <div className="desktop:hidden laptop:hidden">
-                <Image
-                  src="/images/icons/cart-icon.svg"
-                  width={39.36}
-                  height={40.11}
+                  type="img"
+                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-39 mobile:h-48"
                 />
               </div>
               <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-50 laptop:px-50 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
@@ -185,7 +166,7 @@ export default function Partner() {
               <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
                 Modular product stack
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 ">
                 Choose different modules from a range of products available
               </div>
             </div>
