@@ -351,7 +351,7 @@ export default function Partner() {
           </div>
         </div>
         {/* our partners */}
-        <div>
+        <div className="mobile:py-80">
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>
@@ -392,6 +392,44 @@ export default function Partner() {
                         {item.BankInfo}
                       </div>
                     </div>
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+          <div className="px-20">
+            <Carousel
+              itemsToShow={1}
+              // verticalMode
+              itemPadding={[0, 0, 28, 0]}
+              enableMouseSwipe={true}
+              pagination={true}
+              showArrows={false}
+              outerSpacing={0}
+              renderPagination={({ pages, activePage, onClick }) => {
+                return (
+                  <div className="flex">
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
+                      return (
+                        <div
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
+                          key={page}
+                          onClick={() => onClick(page)}
+                          active={isActivePage}
+                        ></div>
+                      );
+                    })}
+                  </div>
+                );
+              }}
+            >
+              {comunityCard.map((item, index) => {
+                return (
+                  <div className="">
+                    <Image src={item.BankLogo} width={167} height={96} />
                   </div>
                 );
               })}
