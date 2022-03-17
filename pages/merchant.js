@@ -63,7 +63,7 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-100">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
               Empowering and elevating small businesses
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
               Partnerships with leading trustworthy banks
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
               Various offers and merchant loyalty on board
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Merchant() {
               width={120}
               height={120}
             />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5">
+            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30">
               Completely customized merchant experience
             </div>
           </div>
