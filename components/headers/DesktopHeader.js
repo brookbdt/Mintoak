@@ -14,13 +14,13 @@ export default function DesktopHeader(headerProps) {
       <div className="h-full items-center justify-center hidden desktop:flex laptop:flex">
         {/* <div className="flex px-26 h-full items-center cursor-pointer hover:bg-8FC055_O20 text-s20l24 text-0D0D0D">About Us</div> */}
         <div
-          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D"
+          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA"
           onClick={() => router.push("/about-us")}
         >
           About Us
         </div>
         <div
-          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D"
+          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA"
           onMouseEnter={() => setActiveDesktopMenu("products")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
@@ -34,11 +34,11 @@ export default function DesktopHeader(headerProps) {
             }
           />
         </div>
-        <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D">
+        <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA">
           Partner With Us
         </div>
         <div
-          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D"
+          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA"
           onMouseEnter={() => setActiveDesktopMenu("resources")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >
@@ -53,13 +53,13 @@ export default function DesktopHeader(headerProps) {
           />
         </div>
         <div
-          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D"
+          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA"
           onClick={() => router.push("/career")}
         >
           Careers
         </div>
         <div
-          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D"
+          className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA"
           onMouseEnter={() => setActiveDesktopMenu("support")}
           onMouseLeave={() => setActiveDesktopMenu("")}
         >

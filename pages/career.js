@@ -93,7 +93,7 @@ export default function Career() {
   }, []);
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
-      <div className="relative top-bg-container">
+      <div className="relative top-bg-container border-b-2 border-A4D77A">
         <Image
           src={homeBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
@@ -113,7 +113,7 @@ export default function Career() {
             dedicated individuals to join our team.
           </div>
           <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20">
-            Explore Jobs
+            Request A Demo
           </div>
         </div>
         <Image
@@ -123,13 +123,13 @@ export default function Career() {
         />
       </div>
 
-      <div className="py-156 mobile:py-80 flex justify-center justify-items-center items-center">
+      <div className="py-156 mobile:py-80 flex justify-center items-center">
         <div className="w-full">
           <div className="desktop:text-s44l45 laptop:text-s44l45 mobile:text-s22l33 font-bold flex justify-center">
             Why join Mintoak?
           </div>
-          <div className="desktop:flex laptop:flex desktop:justify-around laptop:justify-around desktop:pt-69 laptop:pt-69 desktop:px-253 laptop:px-253 mobile:py-25 mobile:px-25">
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15">
+          <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-around desktop:justify-around  mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
+            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
               <div className="flex justify-center align-center">
                 <Image
                   src="/images/icons/stethoscope.svg"
@@ -137,11 +137,11 @@ export default function Career() {
                   type="img"
                 />
               </div>
-              <div className="m-auto text-s24l36 font-bold w-212 text-center mobile:pl-19 desktop:pt-49 laptop:pt-49 laptop:px-60 laptop:text-center">
+              <div className="text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 text-center laptop:px-30 desktop:px-30">
                 Healthcare and wellness coverage
               </div>
             </div>
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justfiy-center mobile:justify-flex-start items-center mobile:py-15">
+            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justfiy-center mobile:justify-flex-start items-center mobile:py-15 ">
               <div className="flex justify-center align-center">
                 <Image
                   src="/images/icons/umbrella.svg"
@@ -153,7 +153,7 @@ export default function Career() {
                 Paid time off and holidays
               </div>
             </div>
-            <div className="desktop:flex-column laptoP:flex-column mobile:flex desktop:justify-center  laptop:justify-center mobile:justify-flex-start items-center mobile:py-15">
+            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center  laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
               <div className="flex justify-center align-center">
                 <Image
                   src="/images/icons/network.svg"
@@ -165,7 +165,7 @@ export default function Career() {
                 Employee assistance program
               </div>
             </div>
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15">
+            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
               <div className="flex justify-center align-center">
                 <Image
                   src="/images/icons/bulb.svg"
@@ -182,13 +182,13 @@ export default function Career() {
       </div>
 
       <div className="flex flex-col bg-footer mb-100 mobile:mb-0 w-100%">
-        <div className="desktop:flex laptop:flex items-center w-100% px-180 laptop:px-100 mobile:px-20 py-100">
-          <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
-            <div className="flex items-center text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:mb-40 laptop:mb-40 mobile:mb-30">
+        <div className="desktop:flex laptop:flex items-center w-100%  mobile:px-20">
+          <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center desktop:pl-100 laptop:pl-100 desktop:py-100 laptop:py-100 desktop:pr-50 laptop:pr-50">
+            <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:mb-40 laptop:mb-40 mobile:mb-30">
               Life at Mintoak
             </div>
-            <div className="text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left">
-              <span className="font-normal text-s20l30 text-FFFFFF ">
+            <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left">
+              <span className="font-normal text-s20l30 text-F1F1F1 ">
                 At Mintoak, we are a team of energetic and driven individuals,
                 led by three talented professionals with a vision. We are always
                 on the lookout for passionate individuals, who wish to help
@@ -197,12 +197,13 @@ export default function Career() {
               </span>
             </div>
           </div>
-          <div className="w-50% mobile:w-100% flex items-center justify-end mobile:pt-30">
+          <div className="w-50% mobile:w-100%  flex items-center justify-center mobile:pt-30">
             <Image
               src="/images/backgrounds/teamwork.svg"
               type="img"
               // height={650}
-              width={486}
+              // width={486}
+              className="w-100% h-fit desktop:py-60 desktop:pl-60 desktop:pr-180 laptop:py-60 laptop:pl-60 laptop:pr-100"
             />
           </div>
         </div>
@@ -214,7 +215,7 @@ export default function Career() {
         </div>
         <div className="search-input mobile:my-12">
           <Input
-            placeholder="Ex. Product Manager"
+            placeholder="Search For Jobs"
             // className="h-60 bg-DFEFD4"
             value={searchJob}
             onChange={(e) => setSearchJob(e.target.value)}
@@ -225,21 +226,27 @@ export default function Career() {
         <Row gutter={24} className="my-30">
           <Col xs={24} md={8} className="mobile:my-12">
             <div className="filter-selection">
-              <Select placeholder="All job title">
+              <Select
+                placeholder="All job title"
+                style={{ fontWeight: "bold" }}
+              >
                 <Option>Select</Option>
               </Select>
             </div>
           </Col>
           <Col xs={24} md={8} className="mobile:my-12">
             <div className="filter-selection">
-              <Select placeholder="All Location">
+              <Select placeholder="All Location" style={{ fontWeight: "bold" }}>
                 <Option>Select</Option>
               </Select>
             </div>
           </Col>
           <Col xs={24} md={8} className="mobile:my-12">
             <div className="filter-selection">
-              <Select placeholder="All Departments">
+              <Select
+                placeholder="All Departments"
+                style={{ fontWeight: "bold" }}
+              >
                 <Option>Select</Option>
               </Select>
             </div>
@@ -247,7 +254,7 @@ export default function Career() {
         </Row>
         {/* </div> */}
         <div className="text-s18l21_6 font-normal text-525252 pb-20">
-          Showing 18 job openings in Mumbai
+          Showing 55 job openings in Mumbai
         </div>
         {/* <div className="flex w-full justify-between"> */}
         {/* <div className="custom-row"> */}
@@ -258,13 +265,13 @@ export default function Career() {
             )
             ?.map((data, index) => (
               <Col xs={24} md={8} className="mb-30" key={index}>
-                <div className="py-20 px-20 shadow-sm hover:bg-8FC055 drop-shadow border border-8FC055 w-full cursor-pointer">
+                <div className="p-20 shadow-sm hover:bg-8FC055 drop-shadow border border-8FC055 w-100% cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s12l18 text-A8FC055 font-normal">
+                      <div className="desktop:text-s20l30 laptop:text-s20l24 mobile:text-s12l18 text-A8FC055">
                         {data.department}
                       </div>
-                      <div className="desktop:text-s30l33 mobile:text-s16l20 laptop:text-s30l33 text-252525 font-semibold">
+                      <div className="desktop:text-s30l33 mobile:text-s16l20 laptop:text-s30l30 text-252525 font-semibold laptop:pt-5">
                         {data.designation}
                       </div>
                     </div>
@@ -272,8 +279,8 @@ export default function Career() {
                       <Image src="/images/icons/file.svg" type="img" />
                     </div>
                   </div>
-                  <div className="flex items-center pt-46">
-                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14">
+                  <div className="flex items-center desktop:pt-46 laptop:pt-30">
+                    <span className="bg-8FC055 py-9 rounded-lg border-box px-13 flex items-center mr-14">
                       <Image src="/images/icons/bag.svg" type="img" />
                       <span className="pl-5">{data.timing}</span>
                     </span>

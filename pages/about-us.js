@@ -80,12 +80,12 @@ export default function About() {
   }, []);
 
   return (
-    <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100%">
+    <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
       {/* Top layout with resp */}
-      <div className="relative top-bg-container desktop:h-100% laptop:h-100%">
+      <div className="relative top-bg-container desktop:h-100% laptop:h-100% ">
         <Image
           src={aboutBannerResp?.Illustration}
-          className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100%"
+          className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
         <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-65  laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
@@ -170,7 +170,7 @@ export default function About() {
       {/* Our Principles */}
       <div className="desktop:w-100% laptop:w-100% desktop:py-70 laptop:py-70 mobile:w-100%">
         <div className="flex desktop:justify-around laptop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 laptop:pt-80 laptop:pb-60 mobile:pb-25">
-          Our Principles
+          Our principles
         </div>
         <div className="flex mobile:flex-col items-center w-100% desktop desktop:px-200 desktop:justify-around laptop:justify-around laptop:px-100 mobile:px-13">
           {principalResp &&
@@ -184,7 +184,7 @@ export default function About() {
                   <Image src={item.Icon} height={135} width={135} />
                 </div>
                 <div>
-                  <div className="font-bold text-s24l36 ls-0_2 mobile:text-s16l19 text-252525  desktop:text-center laptop:text-center mobile:pl-20">
+                  <div className="font-bold text-s24l36 ls-0_2  mobile:text-s16l19 text-252525  desktop:text-center laptop:text-center mobile:pl-20">
                     {item.Title}
                   </div>
 
