@@ -15,55 +15,55 @@ export default function Merchant() {
 
   useEffect(() => {
     // merchant_banner
-    API({
-      url: endpoints.merchant_banner,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantBannerResp(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_benefits,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantBenefitsResp(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_benefits_2,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantBenefits2(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_assured_by_banks,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantAssuredByBanks(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_onboarding,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantPageOnboarding(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_mock_up2,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantPageMockUp2(resp)
-      }
-    })
-    API({
-      url: endpoints.merchant_page_mock_up3,
-    }).then((resp) => {
-      if (!resp.message) {
-        setMerchantPageMockUp3(resp)
-      }
-    })
+    // API({
+    //   url: endpoints.merchant_banner,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantBannerResp(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_benefits,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantBenefitsResp(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_benefits_2,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantBenefits2(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_assured_by_banks,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantAssuredByBanks(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_onboarding,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantPageOnboarding(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_mock_up2,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantPageMockUp2(resp)
+    //   }
+    // })
+    // API({
+    //   url: endpoints.merchant_page_mock_up3,
+    // }).then((resp) => {
+    //   if (!resp.message) {
+    //     setMerchantPageMockUp3(resp)
+    //   }
+    // })
   }, []);
 
   return (
@@ -197,7 +197,7 @@ export default function Merchant() {
         </div>
       </div>
       {/* Decluttering Business Transactions with Reduced Friction */}
-      <div className="merchant-liner-bg">
+      <div className="merchant-liner-bg mobile:pb-150">
         <div className="pt-100 flex justify-center text-center m-auto text-s44l52_8 mobile:text-s20l24 text-F1F1F1 w-714 mobile:w-301 mobile:pt-40 desktop:font-bold laptop:font-bold">
           Decluttering Business Transactions with Reduced Friction
         </div>
@@ -253,7 +253,7 @@ export default function Merchant() {
         </div> */}
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-160 w-100% mobile:mt-80">
+      <div className="pb-160 w-100% mobile:mt-0 mobile:pb-0">
         <div className="flex w-100% mobile:hidden pl-180 laptop:pl-100">
           <div className="w-33% mt-275">
             <div className="text-s45l45 font-bold">
