@@ -327,10 +327,6 @@ export default function Home() {
                           {homeForBanksResp?.CTA1}
                         </span>
                       </div>
-
-                      <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
-                        {homeForMerchant?.CTA2}
-                      </div>
                     </div>
                     <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
                       {homeForBanksResp?.CTA2}
