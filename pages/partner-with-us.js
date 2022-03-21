@@ -1,13 +1,13 @@
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { useEffect, useState } from "react";
-import { consts } from "react-elastic-carousel";
-import { Modal } from "antd";
-import { API, endpoints } from "../components/helpers/API";
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { useEffect, useState } from "react"
+import { consts } from "react-elastic-carousel"
+import { Modal } from "antd"
+import { API, endpoints } from "../components/helpers/API"
 
 export default function Partner() {
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [comunityCard, setComunityCard] = useState([]);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [comunityCard, setComunityCard] = useState([])
 
   useEffect(() => {
     // Community card
@@ -15,11 +15,11 @@ export default function Partner() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setComunityCard(resp);
+        console.log(resp, "resp")
+        setComunityCard(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <>
@@ -367,12 +367,12 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge} className="h-120">
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -393,7 +393,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -410,7 +410,7 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page;
+                      const isActivePage = activePage === page
                       return (
                         <div
                           className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
@@ -420,18 +420,18 @@ export default function Partner() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      );
+                      )
                     })}
                   </div>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
                 return (
-                  <div className="">
+                  <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -463,5 +463,5 @@ export default function Partner() {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }

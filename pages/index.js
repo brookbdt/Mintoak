@@ -1,112 +1,112 @@
-import { useEffect, useState } from "react";
-import Carousel from "react-elastic-carousel";
-import Image from "../components/helpers/Image";
-import { consts } from "react-elastic-carousel";
-import { Collapse } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import Item from "antd/lib/list/Item";
+import { useEffect, useState } from "react"
+import Carousel from "react-elastic-carousel"
+import Image from "../components/helpers/Image"
+import { consts } from "react-elastic-carousel"
+import { Collapse } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import Item from "antd/lib/list/Item"
 
-const { Panel } = Collapse;
+const { Panel } = Collapse
 
 export default function Home() {
-  const [isBORM, setIsBORM] = useState("b");
-  const [homeBannerResp, setHomeBannerResp] = useState({});
-  const [metricsResp, setMetricsResp] = useState({});
-  const [homeForBanksResp, setHomeForBanksResp] = useState({});
-  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([]);
-  const [homeForMerchant, setHomeForMerchant] = useState([]);
-  const [comunityCard, setComunityCard] = useState([]);
-  const [homepageAchievements, setHomepageAchievements] = useState([]);
-  const [homepageMediaCards, setHomepageMediaCards] = useState([]);
-  const [faq, setFaq] = useState([]);
+  const [isBORM, setIsBORM] = useState("b")
+  const [homeBannerResp, setHomeBannerResp] = useState({})
+  const [metricsResp, setMetricsResp] = useState({})
+  const [homeForBanksResp, setHomeForBanksResp] = useState({})
+  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([])
+  const [homeForMerchant, setHomeForMerchant] = useState([])
+  const [comunityCard, setComunityCard] = useState([])
+  const [homepageAchievements, setHomepageAchievements] = useState([])
+  const [homepageMediaCards, setHomepageMediaCards] = useState([])
+  const [faq, setFaq] = useState([])
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp);
+        setHomeBannerResp(resp)
       }
-    });
+    })
 
     // metrics
     API({
       url: endpoints.metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMetricsResp(resp);
+        setMetricsResp(resp)
       }
-    });
+    })
 
     // homepage_for_banks
     API({
       url: endpoints.homepage_for_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeForBanksResp(resp);
+        setHomeForBanksResp(resp)
       }
-    });
+    })
 
     // Advantages Card
     API({
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setHomeAdvantagesCard(resp);
+        console.log(resp, "resp")
+        setHomeAdvantagesCard(resp)
       }
-    });
+    })
 
     // Home page for merchant
     API({
-      url: endpoints.homeoage_for_merchant,
+      url: endpoints.homepage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setHomeForMerchant(resp);
+        console.log(resp, "resp")
+        setHomeForMerchant(resp)
       }
-    });
+    })
 
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setComunityCard(resp);
+        console.log(resp, "resp")
+        setComunityCard(resp)
       }
-    });
+    })
 
     // Homepage Our Achievements
     API({
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setHomepageAchievements(resp);
+        console.log(resp, "resp")
+        setHomepageAchievements(resp)
       }
-    });
+    })
 
     // Homepage Media Cards
     API({
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setHomepageMediaCards(resp);
+        console.log(resp, "resp")
+        setHomepageMediaCards(resp)
       }
-    });
+    })
 
     // Faq
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setFaq(resp);
+        console.log(resp, "resp")
+        setFaq(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -114,13 +114,13 @@ export default function Home() {
         <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
       ) : (
         <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-      );
+      )
     return (
       <button onClick={onClick} disabled={isEdge}>
         {pointer}
       </button>
-    );
-  };
+    )
+  }
 
   const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
     return (
@@ -131,8 +131,8 @@ export default function Home() {
           <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
         </span>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <div className="h-fit w-100% bg-home-top">
@@ -254,7 +254,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
 
@@ -469,7 +469,7 @@ export default function Home() {
                   <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 ) : (
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                );
+                )
               return (
                 <button
                   onClick={onClick}
@@ -478,7 +478,7 @@ export default function Home() {
                 >
                   {pointer}
                 </button>
-              );
+              )
             }}
           >
             {comunityCard.map((item, index) => {
@@ -500,7 +500,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              );
+              )
             })}
           </Carousel>
         </div>
@@ -518,7 +518,7 @@ export default function Home() {
                   {item.BankInfo}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
 
@@ -539,12 +539,12 @@ export default function Home() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {homepageAchievements.map((item, index) => {
@@ -567,7 +567,7 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -599,7 +599,7 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -660,7 +660,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
@@ -706,7 +706,7 @@ export default function Home() {
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
@@ -919,7 +919,7 @@ export default function Home() {
                 <div className="px-10 pb-18">
                   <Image
                     src="/images/backgrounds/img-4.svg"
-                    height={203}
+                    height={150}
                     width={216}
                     className="grayscale colorImage h-fit"
                     type="img"
@@ -1121,7 +1121,7 @@ export default function Home() {
                       {item.Answer}
                     </p>
                   </Panel>
-                );
+                )
               })}
             </Collapse>
           </div>
@@ -1136,5 +1136,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }

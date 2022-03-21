@@ -833,3 +833,29 @@ button[disabled] {
 .global-border {
   margin-top: -5px;
 }
+
+.bg-active {
+  background-color: #c4c4c4 !important;
+}
+.rec .rec-pagination {
+}
+.cust-pagination .lcUbOd {
+  box-shadow: none;
+  background-color: #c4c4c4;
+  border: none;
+  outline: none;
+}
+.cust-pagination .eaptOe {
+  background-color: #525252;
+  box-shadow: none;
+}
+.lcUbOd:hover,
+.lcUbOd:focus {
+  box-shadow: none;
+}
+.rec .rec-dot:hover {
+  outline: none;
+}
+.cust-pagination .eaptOe:hover {
+  box-shadow: none;
+}
