@@ -269,8 +269,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -292,8 +293,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -469,7 +471,15 @@ export default function Home() {
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 );
               return (
+<<<<<<< HEAD
+                <button
+                  onClick={onClick}
+                  disabled={isEdge}
+                  className="h-120 laptop:h-70"
+                >
+=======
                 <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-140">
+>>>>>>> b53554a019fdbf231f02528aac499e74cf4fd32c
                   {pointer}
                 </button>
               );
@@ -600,7 +610,7 @@ export default function Home() {
         </div>
 
         {/* In the media */}
-        <div className="w-100% flex-col justify-center items-center  my-150">
+        <div className="w-100% flex-col justify-center items-center my-150">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>In The Media</span>
             <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
@@ -673,9 +683,9 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
-                    <div className="px-10">
+                    <div className="px-10 pb-18">
                       <Image
                         src={item.ArticleImage}
                         height={203}
@@ -684,27 +694,20 @@ export default function Home() {
                       />
                     </div>
                     <div div className="flex flex-col items-start">
-                      <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                      <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 px-10 font-bold text-s14l16_8">
+                      <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 px-10 pb-0 text-s12l14">
+                      <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end">
-                      <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
-                        <Image
-                          src="/images/icons/arrow.svg"
-                          type="img"
-                          height={40}
-                          width={40}
-                        />
-                      </div>
+                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
                 );
@@ -916,143 +919,171 @@ export default function Home() {
               showArrows={false}
               pagination={false}
             >
-              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-                <div className="px-10">
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={150}
                     width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
                   />
                 </div>
                 <div div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
                     6 min read
                   </div>
-                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 px-10 pb-0 text-s12l14">
-                    By <span className="font-bold">Raman Kahnduja</span>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
-                    <Image
-                      src="/images/icons/arrow.svg"
-                      type="img"
-                      height={40}
-                      width={40}
-                    />
-                  </div>
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                 </div>
               </div>
-              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-                <div className="px-10">
-                  <Image
-                    src="/images/backgrounds/img-5.svg"
-                    height={203}
-                    width={216}
-                  />
-                </div>
-                <div div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                    6 min read
-                  </div>
-                  <div className="text-252525 px-10 font-bold text-s14l16_8">
-                    How to fix recurring payments under new RBI guidelines
-                  </div>
-                  <div className="text-525252 px-10 pb-0 text-s12l14">
-                    By <span className="font-bold">Raman Kahnduja</span>
-                    <br />
-                    Sept 13, 2021
-                  </div>
-                </div>
-                <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-                </div>
-              </div>
-              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-                <div className="px-10">
-                  <Image
-                    src="/images/backgrounds/img-6.svg"
-                    height={203}
-                    width={216}
-                  />
-                </div>
-                <div div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                    6 min read
-                  </div>
-                  <div className="text-252525 px-10 font-bold text-s14l16_8">
-                    The tango between banks and fintechs: Rivals turn partners
-                  </div>
-                  <div className="text-525252 px-10 pb-0 text-s12l14">
-                    By <span className="font-bold">Raman Kahnduja</span>
-                    <br />
-                    Sept 13, 2021
-                  </div>
-                </div>
-                <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-                </div>
-              </div>
-              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-                <div className="px-10">
+
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
                   <Image
                     src="/images/backgrounds/img-4.svg"
                     height={203}
                     width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
                   />
                 </div>
                 <div div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
                     6 min read
                   </div>
-                  <div className="text-252525 px-10 font-bold text-s14l16_8">
-                    How to standout in digital payments business space
-                  </div>
-                  <div className="text-525252 px-10 pb-0 text-s12l14">
-                    By <span className="font-bold">Raman Kahnduja</span>
-                    <br />
-                    Sept 13, 2021
-                  </div>
-                </div>
-                <div className="w-full flex items-center justify-end">
-                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF h-33 w-38 flex items-center justify-center fa-lg cursor-pointer"></i>
-                </div>
-              </div>
-              <div className="w-234 h-315 flex flex-col justify-center items-center bg-FFFFFF">
-                <div className="px-10">
-                  <Image
-                    src="/images/backgrounds/img-5.svg"
-                    height={203}
-                    width={216}
-                  />
-                </div>
-                <div div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
-                    6 min read
-                  </div>
-                  <div className="text-252525 px-10 font-bold text-s14l16_8">
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-10 pb-0 text-s12l14">
-                    By <span className="font-bold">Raman Kahnduja</span>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
                   </div>
                 </div>
                 <div className="w-full flex items-center justify-end">
-                  <div className="bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
-                    <Image
-                      src="/images/icons/arrow.svg"
-                      type="img"
-                      height={40}
-                      width={40}
-                    />
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
+                    6 min read
                   </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
+                    The tango between banks and fintechs: Rivals turn partners
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
+                    How to standout in digital payments business space
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
+                    How to fix recurring payments under new RBI guidelines
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+                </div>
+              </div>
+
+              <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow">
+                <div className="px-10 pb-18">
+                  <Image
+                    src="/images/backgrounds/img-4.svg"
+                    height={203}
+                    width={216}
+                    className="grayscale colorImage h-fit"
+                    type="img"
+                  />
+                </div>
+                <div div className="flex flex-col items-start">
+                  <div className="text-83B449 text-s14l16_8  pl-20 pb-4">
+                    6 min read
+                  </div>
+                  <div className="text-252525 px-10 font-bold text-s14l16_8 pb-15 pl-20">
+                    The tango between banks and fintechs: Rivals turn partners
+                  </div>
+                  <div className="text-525252 px-10 pb-0 text-s12l14 pl-20">
+                    <span className="font-bold">By Raman Kahnduja</span>
+                    <br />
+                    Sept 13, 2021
+                  </div>
+                </div>
+                <div className="w-full flex items-center justify-end">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                 </div>
               </div>
             </Carousel>
@@ -1081,7 +1112,7 @@ export default function Home() {
               }
               expandIconPosition={"right"}
               bordered={false}
-            // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
             >
               {faq.map((item, index) => {
                 return (

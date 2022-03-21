@@ -107,7 +107,7 @@ a {
   }
   .ant-input {
     background-color: #dfefd4;
-    margin-left: 31px;
+
     &::placeholder {
       color: #525252;
     }
@@ -240,7 +240,7 @@ a {
   .ant-pagination-item {
     border-radius: 30px !important;
     border-color: unset;
-    border-color: #525252;
+    border: 1px solid red;
     background-color: transparent !important;
     color: #252525;
   }
@@ -359,7 +359,7 @@ button[disabled] {
   }
   .ant-input {
     background-color: #dfefd4;
-    margin-left: 31px;
+
     &::placeholder {
       color: #525252;
     }
@@ -487,59 +487,59 @@ button[disabled] {
 }
 
 // job list pagination in career page
-.job-list-pagination {
-  .ant-pagination-item-link,
-  .ant-pagination-item {
-    border-radius: 30px !important;
-    border-color: unset;
-    border-color: #525252;
-    background-color: transparent !important;
-    color: #252525;
-  }
-  .ant-pagination-item,
-  .ant-pagination-prev,
-  .ant-pagination-next {
-    height: 63px !important;
-    width: 63px !important;
-    border-color: #525252;
-    background-color: transparent;
-    color: #252525 !important;
-  }
-  .ant-pagination-item:hover {
-    border-color: #252525 !important;
-    background-color: #dfefd4 !important;
-  }
-  .ant-pagination-item-link:hover {
-    border-color: #252525;
-    background-color: #dfefd4 !important;
-  }
-  .ant-pagination-item-active {
-    background-color: #dfefd4 !important;
-    color: #252525 !important;
-  }
-  .ant-pagination-item a {
-    height: 63px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #525252;
-  }
-  .ant-pagination-item a:hover {
-    height: 63px;
-    color: #252525;
-  }
-  @media screen and (max-width: 500px) {
-    .ant-pagination-item,
-    .ant-pagination-prev,
-    .ant-pagination-next {
-      height: 40px !important;
-      width: 40px !important;
-    }
-    .ant-pagination-item a {
-      height: 40px;
-    }
-  }
-}
+// .job-list-pagination {
+//   .ant-pagination-item-link,
+//   .ant-pagination-item {
+//     border-radius: 30px !important;
+//     border-color: unset;
+//     border-color: #525252;
+//     background-color: transparent !important;
+//     color: #252525;
+//   }
+//   .ant-pagination-item,
+//   .ant-pagination-prev,
+//   .ant-pagination-next {
+//     height: 63px !important;
+//     width: 63px !important;
+//     border-color: #525252;
+//     background-color: transparent;
+//     color: #252525 !important;
+//   }
+//   .ant-pagination-item:hover {
+//     border-color: #252525 !important;
+//     background-color: #dfefd4 !important;
+//   }
+//   .ant-pagination-item-link:hover {
+//     border-color: #252525;
+//     background-color: #dfefd4 !important;
+//   }
+//   .ant-pagination-item-active {
+//     background-color: #dfefd4 !important;
+//     color: #252525 !important;
+//   }
+//   .ant-pagination-item a {
+//     height: 63px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #525252;
+//   }
+//   .ant-pagination-item a:hover {
+//     height: 63px;
+//     color: #252525;
+//   }
+//   @media screen and (max-width: 500px) {
+//     .ant-pagination-item,
+//     .ant-pagination-prev,
+//     .ant-pagination-next {
+//       height: 43px !important;
+//       width: 43px !important;
+//     }
+//     .ant-pagination-item a {
+//       height: 40px;
+//     }
+//   }
+// }
 
 //disable button
 button:disabled,
@@ -599,11 +599,6 @@ button[disabled] {
 
 // resorce page placeholder
 
-::placeholder {
-  font-size: 20px;
-  line-height: 24px;
-}
-
 // border-radius
 
 .border-radius {
@@ -614,45 +609,6 @@ button[disabled] {
   position: relative;
   top: 214px;
   left: 85px;
-}
-
-.custom-pagination .ant-pagination-item {
-  border-radius: 30px;
-  height: 63px;
-  width: 63px;
-  align-items: center;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.custom-pagination .ant-pagination-item a {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.custom-pagination .ant-pagination-prev .ant-pagination-item-link {
-  border-radius: 30px;
-  height: 63px;
-  width: 63px;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.custom-pagination .ant-pagination-next .ant-pagination-item-link {
-  border-radius: 30px;
-  height: 63px;
-  width: 63px;
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.custom-pagination .ant-pagination-prev,
-.ant-pagination-next,
-.ant-pagination-jump-prev,
-.ant-pagination-jump-next {
-  height: auto !important;
 }
 
 .bank-btn {
@@ -679,7 +635,7 @@ button[disabled] {
 // home page Mintoak Advantages
 
 @media screen and (max-width: 1618px) {
-  .responsive-title-text{
+  .responsive-title-text {
     font-size: 22px;
   }
   .responsive-desc-text {
@@ -700,17 +656,17 @@ button[disabled] {
 }
 // ================== FAQ POPUP CONTENT END ================
 
-// ================== FAQ CUSTOM PAGINATION START ================
+// ================== CUSTOM PAGINATION START ================
 
 .custom-pagination .ant-pagination {
   display: flex;
 }
 .custom-pagination .ant-pagination-item {
   border-radius: 50%;
-  height: 63px;
-  width: 63px;
-  padding: 13px;
-  font-size: 24px;
+  height: 53px;
+  width: 53px;
+  padding: 8px;
+  font-size: 20px;
   line-height: 36px;
   background-color: transparent;
 }
@@ -725,10 +681,10 @@ button[disabled] {
 }
 .custom-pagination .ant-pagination-item:hover {
   border-radius: 50%;
-  height: 63px;
-  width: 63px;
-  padding: 13px;
-  font-size: 24px;
+  height: 53px;
+  width: 53px;
+  padding: 8px;
+  font-size: 20px;
   line-height: 36px;
   border-color: #252525;
 }
@@ -743,9 +699,9 @@ button[disabled] {
 }
 .custom-pagination .ant-pagination-prev .ant-pagination-item-link {
   border-radius: 50%;
-  height: 63px;
-  width: 63px;
-  font-size: 24px;
+  height: 53px;
+  width: 53px;
+  font-size: 15px;
   line-height: 36px;
   display: flex;
   align-items: center;
@@ -754,15 +710,16 @@ button[disabled] {
 }
 .custom-pagination .ant-pagination-next .ant-pagination-item-link {
   border-radius: 30px;
-  height: 63px;
-  width: 63px;
-  font-size: 24px;
+  height: 53px;
+  width: 53px;
+  font-size: 15px;
   line-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
 }
+
 .custom-pagination .ant-pagination-prev,
 .ant-pagination-next,
 .ant-pagination-jump-prev,
