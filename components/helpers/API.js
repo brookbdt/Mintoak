@@ -1,13 +1,13 @@
 // STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / EÛ8×^û
 
-import axios from "axios"
-import { Notification } from "./utils"
+import axios from "axios";
+import { Notification } from "./utils";
 
-const domain = "http://uat-content.mintoak.com"
-const slug = "/"
-const host = domain + slug
+const domain = "http://uat-content.mintoak.com";
+const slug = "/";
+const host = domain + slug;
 
-axios.defaults.baseURL = host
+axios.defaults.baseURL = host;
 
 const API = ({ url, method = "get", body = {}, headers = {} }) =>
   axios[method](url, headers, body)
@@ -17,9 +17,9 @@ const API = ({ url, method = "get", body = {}, headers = {} }) =>
         type: "error",
         message: "Opps, Something went wrong!",
         description: err.message,
-      })
-      return err
-    })
+      });
+      return err;
+    });
 
 // API ENDPOINTS
 const endpoints = {
@@ -40,6 +40,6 @@ const endpoints = {
   about_us_principle_cards: "about-us-principle-cards",
   about_us_our_founders: "about-us-our-founders",
   about_us_meet_the_team_1: "about-us-meet-the-team-1",
-}
+};
 
-export { API, endpoints, domain }
+export { API, endpoints, domain };

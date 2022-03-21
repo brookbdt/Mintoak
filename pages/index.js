@@ -471,15 +471,11 @@ export default function Home() {
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 );
               return (
-<<<<<<< HEAD
                 <button
                   onClick={onClick}
                   disabled={isEdge}
-                  className="h-120 laptop:h-70"
+                  className="h-120 laptop:h-140"
                 >
-=======
-                <button onClick={onClick} disabled={isEdge} className="h-120 laptop:h-140">
->>>>>>> b53554a019fdbf231f02528aac499e74cf4fd32c
                   {pointer}
                 </button>
               );

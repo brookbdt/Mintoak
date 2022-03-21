@@ -8,14 +8,14 @@ export default function Merchant() {
   const [merchantBannerResp, setMerchantBannerResp] = useState({});
 
   useEffect(() => {
-    // merchant_banner
-    // API({
-    //     url: endpoints.merchant_banner,
-    // }).then((resp) => {
-    //     if (!resp.message) {
-    //         setMerchantBannerResp(resp)
-    //     }
-    // })
+    merchant_banner;
+    API({
+      url: endpoints.merchant_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantBannerResp(resp);
+      }
+    });
   }, []);
 
   return (
