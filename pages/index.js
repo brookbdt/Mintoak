@@ -59,7 +59,7 @@ export default function Home() {
 
     // Home page for merchant
     API({
-      url: endpoints.homeoage_for_merchant,
+      url: endpoints.homepage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
         console.log(resp, "resp");
@@ -920,7 +920,7 @@ export default function Home() {
                 <div className="px-10">
                   <Image
                     src="/images/backgrounds/img-4.svg"
-                    height={203}
+                    height={150}
                     width={216}
                   />
                 </div>

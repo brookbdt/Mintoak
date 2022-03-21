@@ -43,6 +43,7 @@ const colors = {
   "87BD25": "#87BD25",
   828282: "#828282",
   D1E6BA: "#D1E6BA",
+  393939: "#393939",
 
   // For testing
   red: "red",
@@ -101,6 +102,8 @@ module.exports = {
       s22l45: ["22px", "45px"],
       s22l140_62: ["22px", "140.62%"],
       s23_7l28_44: ["23.7px", "28.44px"],
+      s24l26: ["24px", "26px"],
+      s24l28_8: ["24px", "28.8px"],
       s24l29: ["24px", "29px"],
       s24l31: ["24px", "31px"],
       s24l36: ["24px", "36px"],
@@ -151,6 +154,8 @@ module.exports = {
           "linear-gradient(163.57deg, #A7CD7E 11.39%, rgba(123, 205, 37, 0) 95.33%)",
         faqs_bg:
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
+        we_offer_bg:
+          "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)"
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",

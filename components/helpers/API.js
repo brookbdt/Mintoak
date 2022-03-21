@@ -27,7 +27,7 @@ const endpoints = {
   metrics: "metrics",
   homepage_for_banks: "homepage-for-banks",
   homepage_advantage_cards: "platform-feature-cards?_sort=id:ASC",
-  homeoage_for_merchant: "homepage-for-merchants",
+  homepage_for_merchant: "homepage-for-merchants",
   comminity_cards: "community-cards",
   homepage_achievements: "homepage-our-achievements?_sort=id:ASC",
   homepage_media_cards: "homepage-media-cards",
@@ -40,6 +40,12 @@ const endpoints = {
   about_us_principle_cards: "about-us-principle-cards",
   about_us_our_founders: "about-us-our-founders",
   about_us_meet_the_team_1: "about-us-meet-the-team-1",
+  merchant_page_benefits: "merchant-page-benefits",
+  merchant_page_benefits_2: "merchant-page-benefits-2",
+  merchant_page_assured_by_banks: "merchant-page-assured-by-banks",
+  merchant_page_onboarding: "merchant-page-onboarding",
+  merchant_page_mock_up2: "merchant-page-mock-up2",
+  merchant_page_mock_up3: "merchant-page-mock-up3"
 }
 
 export { API, endpoints, domain }
