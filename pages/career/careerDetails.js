@@ -43,12 +43,12 @@ export default function CareerDetails() {
     <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
-        <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20">
+        <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33">
           <div>
             <div className="text-s44l52_8 mobile:text-s24l31_92  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
               Senior Software Developer
             </div>
-            <div className="flex items-center pt-46 mobile:pt-16 mobile:flex-wrap">
+            <div className="desktop:pt-16 laptop:pt-16 flex items-center mobile:pt-16 mobile:flex-wrap">
               <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14">
                 <span className="pl-5">Mumbai</span>
               </span>
@@ -79,69 +79,70 @@ export default function CareerDetails() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between laptop:p-100 pt-100 mobile:pt-40 px-180 mobile:px-20">
-        <div className="desktop:flex items-center justify-between w-100% ">
+      <div className="flex items-center justify-between laptop:p-50 pt-100 mobile:pt-40 px-180 mobile:px-20">
+        <div className="desktop:flex laptop:flex items-center justify-between w-100% ">
           <div className="w-50% desktop:pr-14 mobile:w-100% mobile:py-20">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Job description
             </div>
             <ul className="pt-24 list-disc mobile:px-20">
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Design overall architecture of the application.
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Work with UI designers
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 API Integration, Database Management and code review
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Maintain quality and ensure responsiveness of applications
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Collaborate with the rest of the engineering team to design
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Maintain code integrity and organization
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 OWASP security implementation
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Understand and implement security and data protection
               </li>
             </ul>
           </div>
           <div className="w-50% desktop:pl-14 mobile:w-100% mobile:py-20">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
-              Job description
+              Technical skills
             </div>
             <ul className="pt-24 list-disc mobile:px-20">
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Design overall architecture of the application.
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Minimum 6-9 years
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Work with UI designers
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Proficient in core java, Spring boot, REST Service
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                API Integration, Database Management and code review
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Strong in data structure, JSON parsing, Encryption & Decryption
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Maintain quality and ensure responsiveness of applications
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Experience with bitbucket and jira tools
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Collaborate with the rest of the engineering team to design
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Ability to quickly adapt to most current technology
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Maintain code integrity and organization
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Should be comfortable with Agile methodology and using Agile tools
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                OWASP security implementation
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Good verbal and written communication skills
               </li>
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
-                Understand and implement security and data protection
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
+                Good problem-solving skills
               </li>
             </ul>
+
           </div>
         </div>
       </div>
@@ -152,7 +153,7 @@ export default function CareerDetails() {
               Qualifications
             </div>
             <ul className="pt-24 list-disc mobile:px-20">
-              <li className="text-s24l40_8 mobile:text-s14l23_28">
+              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 BTech, BE, MCA or higher
               </li>
             </ul>
@@ -165,7 +166,7 @@ export default function CareerDetails() {
           <div className="text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1">
             Job application
           </div>
-          <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100">
+          <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16">
             Senior Software Developer
           </div>
           <div className="job-app-form pt-40">
@@ -244,7 +245,7 @@ export default function CareerDetails() {
               <div className="pt-58">
                 <Form.Item>
                   <Upload>
-                    <Button icon={false}>Tap here to upload</Button>
+                    <Button icon={false} ><span className="text-F1F1F1">Tap here to upload</span></Button>
                   </Upload>
                 </Form.Item>
               </div>
@@ -258,7 +259,7 @@ export default function CareerDetails() {
         </div>
       </div>
 
-      <div className="desktop:px-180 py-150 pt-0 mobile:py-80">
+      <div className="desktop:px-180 laptop:px-50 py-150 pt-0 mobile:py-80">
         <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44">
           View similar roles
         </div>
@@ -266,10 +267,10 @@ export default function CareerDetails() {
           <Row gutter={24}>
             {jobOpenings.map((data, index) => (
               <Col xs={24} md={8} className="mb-30" key={index}>
-                <div className="py-20 px-20 shadow-sm hover:bg-8FC055 drop-shadow border border-8FC055 w-full cursor-pointer">
+                <div className="py-20 px-20 carrer-detail-card hover:bg-8FC055 drop-shadow border border-8FC055 w-full cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="desktop:text-s20l30 mobile:text-s12l18 text-A8FC055 font-normal">
+                      <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s12l18 text-8FC0551 font-normal">
                         {data.department}
                       </div>
                       <div className="desktop:text-s30l33 mobile:text-s16l20 text-252525 font-semibold">

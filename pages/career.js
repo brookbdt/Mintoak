@@ -223,7 +223,7 @@ export default function Career() {
         </div>
         <div className="search-input mobile:my-12">
           <Input
-            placeholder="Search For Jobs"
+            placeholder="Ex. Product Manager"
             // className="h-60 bg-DFEFD4"
             value={searchJob}
             onChange={(e) => setSearchJob(e.target.value)}
@@ -345,7 +345,7 @@ export default function Career() {
                   />
                 </div>
                 <div className="p-20">
-                  <div className="desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12">
+                  <div className="desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12 font-semibold">
                     {data.title}
                   </div>
                   <div className="text-s18l25">{data.description}</div>

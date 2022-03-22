@@ -8,6 +8,7 @@ const colors = {
   FFFFFF: "#FFFFFF",
   E0EFD4: "#E0EFD4",
   "8FC055": "rgba(143,192,85,0.2)",
+  "8FC0551": "rgba(143,192,85,1)",
   A8FC055: "#8FC055",
   "8CC63E": "#8CC63E",
   A4D77A: "#A4D77A",
@@ -50,17 +51,17 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-};
+}
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {};
+const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`;
-});
+  spacing2000px[n] = `${n}px`
+})
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {};
+const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`;
-});
+  spacing100Percentage[`${n}%`] = `${n}%`
+})
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -159,6 +160,7 @@ module.exports = {
         bg_contact: "url(/images/backgrounds/contact-background.svg)",
         we_offer_bg:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
+        contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
@@ -180,4 +182,4 @@ module.exports = {
     },
   },
   // plugins: [],
-};
+}

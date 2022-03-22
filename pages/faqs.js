@@ -80,7 +80,7 @@ export default function Contact() {
           {/* scroll buttons */}
           <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20">
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center px-18 bg-faqs_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-faqs_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/bank-icon.svg"
@@ -94,7 +94,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -108,7 +108,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
-              <div className="shadow-md flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -122,7 +122,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
-              <div className="shadow-md flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -139,11 +139,11 @@ export default function Contact() {
         </div>
 
         {/* accordian  */}
-        <div className="pt-40 mobile:w-100%">
+        <div className="pt-40 desktop:pt-81 laptop:pt-81 mobile:w-100%">
           <div className="text-s20l24 text-828282 pb-20">
             Need help ? We got you covered.
           </div>
-          <div className="border-2 border-8CC63E bg-8FC055 mobile:w-100%">
+          <div className="border-2 border-8CC63E mobile:w-100% border-b-0">
             <Collapse
               expandIcon={({ isActive }) =>
                 isActive ? (
@@ -154,7 +154,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-              // defaultActiveKey={["1"]}
+            // defaultActiveKey={["1"]}
             >
               <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
@@ -274,7 +274,7 @@ export default function Contact() {
         </div>
         <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 mobile:pt-20 mobile:pb-28">
           <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">
-            <div className="desktop:text-s45l45 laptop:text-s45l45 mobile:text-s22l33 mobile:font-bold text-252525 pb-16">
+            <div className="desktop:text-s45l45 laptop:text-s45l45 mobile:text-s22l33 font-bold text-252525 pb-16">
               Have more queries?
             </div>
             <div className="w-100% px-55 desktop:hidden laptop:hidden">
@@ -744,11 +744,20 @@ export default function Contact() {
         >
           <div className="w-100%">
             <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+              <div className="desktop:hidden">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="laptop:hidden">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
             </div>
             <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
               Thank you!

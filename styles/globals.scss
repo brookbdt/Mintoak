@@ -85,13 +85,7 @@ a {
 
 // merchant page
 .merchant-liner-bg {
-  background-image: linear-gradient(
-    to top left,
-    #19191a,
-    #353537,
-    #575757,
-    #797979
-  );
+  background-image: linear-gradient(to top left, #19191a, #353537, #575757, #797979);
 }
 
 .merchant-bg {
@@ -119,6 +113,30 @@ a {
   }
 }
 
+<<<<<<< HEAD
+=======
+// filter inputs css of career job filtering
+.filter-selection {
+  .ant-select,
+  .ant-select-selector {
+    height: 60px !important;
+    width: 100%;
+  }
+  .ant-select-selection-placeholder {
+    display: flex;
+    align-items: center;
+    color: #525252;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+    height: 60px;
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: #dfefd4;
+    border: 1px solid #8fc055;
+  }
+}
+
+>>>>>>> b9a93cce4aa5d45c1432c20268f2758b03b839d7
 // Form of career detail page job application
 .job-app-form {
   .ant-input {
@@ -360,9 +378,7 @@ button[disabled] {
     align-items: center;
     color: #525252;
   }
-  .ant-select-single:not(.ant-select-customize-input)
-    .ant-select-selector
-    .ant-select-selection-search-input {
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     height: 60px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -836,6 +852,7 @@ button[disabled] {
 .cust-pagination .eaptOe:hover {
   box-shadow: none;
 }
+<<<<<<< HEAD
 // ===========GLOBAL-OPTIONS==========
 
 .global-option {
@@ -885,4 +902,16 @@ button[disabled] {
   .ant-select-selection-item,
 .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
   color: #252525;
+=======
+
+// =========== FAQ BUTTON SHADDOW ============
+.shadow-md-faq {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.carrer-detail-card {
+  border: 1px solid #8fc055;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
+>>>>>>> b9a93cce4aa5d45c1432c20268f2758b03b839d7
 }
