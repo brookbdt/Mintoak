@@ -135,12 +135,15 @@ export default function About() {
                   />
                 </div>
                 <div
-                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium ${
-                    index == 0 || index == 1 ? "w-150" : ""
-                  } ${index == 2 ? "w-180" : ""}`}
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold  desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium `}
                 >
                   {/* <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9  text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium"> */}
                   {item.Description}
+                </div>
+                <div
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium `}
+                >
+                  {item.Description2}
                 </div>
               </div>
             ))}
@@ -226,75 +229,127 @@ export default function About() {
             {teamInfoResp?.Description}
           </div>
         </div>
-        <div className="w-100% desktop:px-215 laptop:px-215 pb-60 desktop:pt-40 laptop:pt-40">
-          <Carousel
-            itemsToShow={3}
-            showArrows={false}
-            enableAutoPlay={false}
-            className="flex itmes-center justify-center"
-            pagination={false}
-          >
-            <div className="flex flex-col items-center justify-center ">
-              <div className="">
-                <Image
-                  src="/images/backgrounds/megha.jpg"
-                  height={299}
-                  width={229}
-                />
+        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
+          <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 ">
+            <Carousel
+              itemsToShow={7}
+              itemPadding={[0, 7]}
+              showArrows={false}
+              enableAutoPlay={false}
+              className="flex itmes-center justify-center bg-bg_reel bg-no-repeat h-439"
+              pagination={false}
+            >
+              <div className="flex flex-col items-center justify-center">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/megha.svg"
+                    type="img"
+                    className="h-299 w-100%"
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-              <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                Name
+              <div className="flex flex-col items-center justify-center ">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/janine.svg"
+                    height={299}
+                    width={229}
+                    type="img"
+                    className="h-299 w-229"
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-              <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
-                Designation
+              <div className="flex flex-col items-center justify-center ">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/kunal.svg"
+                    height={299}
+                    width={229}
+                    type="img"
+                    className="h-299 w-229"
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="">
-                <Image
-                  src="/images/backgrounds/megha.jpg"
-                  height={299}
-                  width={229}
-                />
+              <div className="flex flex-col items-center justify-center ">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/Abhishek.svg"
+                    type="img"
+                    className="h-299 w-229"
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-              <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                Name
+              <div className="flex flex-col items-center justify-center">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/Sharad.svg"
+                    type="img"
+                    className="h-299 w-229"
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-              <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
-                Designation
+              <div className="flex flex-col items-center justify-center">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/megha.jpg"
+                    height={299}
+                    width={229}
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="">
-                <Image
-                  src="/images/backgrounds/megha.jpg"
-                  height={299}
-                  width={229}
-                />
+              <div className="flex flex-col items-center justify-center">
+                <div className="">
+                  <Image
+                    src="/images/backgrounds/megha.jpg"
+                    height={299}
+                    width={229}
+                  />
+                </div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
+                  Name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                  Designation
+                </div>
               </div>
-              <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                Name
-              </div>
-              <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
-                Designation
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="">
-                <Image
-                  src="/images/backgrounds/megha.jpg"
-                  height={299}
-                  width={229}
-                />
-              </div>
-              <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                Name
-              </div>
-              <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
-                Designation
-              </div>
-            </div>
-          </Carousel>
+            </Carousel>
+          </div>
         </div>
       </div>
 

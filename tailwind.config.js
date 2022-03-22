@@ -50,17 +50,17 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-};
+}
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {};
+const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`;
-});
+  spacing2000px[n] = `${n}px`
+})
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {};
+const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`;
-});
+  spacing100Percentage[`${n}%`] = `${n}%`
+})
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -155,9 +155,10 @@ module.exports = {
           "linear-gradient(163.57deg, #A7CD7E 11.39%, rgba(123, 205, 37, 0) 95.33%)",
         faqs_bg:
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
+        bg_reel: "url(/images/backgrounds/reel-img.svg)",
         we_offer_bg:
-          "linear-;gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
-        contact_us: "url(/images/backgrounds/contact-us-bg.svg)"
+          "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
+        contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
@@ -179,4 +180,4 @@ module.exports = {
     },
   },
   // plugins: [],
-};
+}

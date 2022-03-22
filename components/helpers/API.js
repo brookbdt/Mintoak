@@ -1,13 +1,13 @@
 // STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / EÛ8×^û
 
-import axios from "axios"
-import { Notification } from "./utils"
+import axios from "axios";
+import { Notification } from "./utils";
 
-const domain = "http://uat-content.mintoak.com"
-const slug = "/"
-const host = domain + slug
+const domain = "http://uat-content.mintoak.com";
+const slug = "/";
+const host = domain + slug;
 
-axios.defaults.baseURL = host
+axios.defaults.baseURL = host;
 
 const API = ({ url, method = "get", body = {}, headers = {} }) =>
   axios[method](url, headers, body)
@@ -17,9 +17,9 @@ const API = ({ url, method = "get", body = {}, headers = {} }) =>
         type: "error",
         message: "Opps, Something went wrong!",
         description: err.message,
-      })
-      return err
-    })
+      });
+      return err;
+    });
 
 // API ENDPOINTS
 const endpoints = {
@@ -42,10 +42,12 @@ const endpoints = {
   about_us_meet_the_team_1: "about-us-meet-the-team-1",
   merchant_page_benefits: "merchant-page-benefits",
   merchant_page_benefits_2: "merchant-page-benefits-2",
+  merchant_page_benefits_3: "merchant-page-benefits-3",
   merchant_page_assured_by_banks: "merchant-page-assured-by-banks",
   merchant_page_onboarding: "merchant-page-onboarding",
   merchant_page_mock_up2: "merchant-page-mock-up2",
-  merchant_page_mock_up3: "merchant-page-mock-up3"
-}
+  merchant_page_mock_up3: "merchant-page-mock-up3",
+  merchant_banner: "merchant-page-banner",
+};
 
-export { API, endpoints, domain }
+export { API, endpoints, domain };

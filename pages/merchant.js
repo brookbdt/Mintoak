@@ -8,62 +8,76 @@ export default function Merchant() {
   const [merchantBannerResp, setMerchantBannerResp] = useState({});
   const [merchantBenefitsResp, setMerchantBenefitsResp] = useState();
   const [merchantBenefits2, setMerchantBenefits2] = useState();
+  const [merchantBenefits3, setMerchantBenefits3] = useState();
   const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState();
   const [merchantPageOnboarding, setMerchantPageOnboarding] = useState();
   const [merchantPageMockUp2, setMerchantPageMockUp2] = useState();
   const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
 
   useEffect(() => {
-    // merchant_banner
-    // API({
-    //   url: endpoints.merchant_banner,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantBannerResp(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_benefits,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantBenefitsResp(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_benefits_2,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantBenefits2(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_assured_by_banks,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantAssuredByBanks(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_onboarding,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantPageOnboarding(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_mock_up2,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantPageMockUp2(resp)
-    //   }
-    // })
-    // API({
-    //   url: endpoints.merchant_page_mock_up3,
-    // }).then((resp) => {
-    //   if (!resp.message) {
-    //     setMerchantPageMockUp3(resp)
-    //   }
-    // })
+    API({
+      url: endpoints.merchant_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantBannerResp(resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_benefits,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantBenefitsResp(resp);
+        console.log("dasdasdasdasdasdasds", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_benefits_2,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantBenefits2(resp);
+        console.log("asdasifasofjaksjd", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_benefits_3,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantBenefits3(resp);
+        console.log("asfsasdffsdafsadf", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_assured_by_banks,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantAssuredByBanks(resp);
+        console.log("Aasgdjahgsduasgd", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_onboarding,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantPageOnboarding(resp);
+        console.log("ASDksljsbsadvasgdashd", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_mock_up2,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantPageMockUp2(resp);
+        console.log("askduasbdywebnsdhgsds", resp);
+      }
+    });
+    API({
+      url: endpoints.merchant_page_mock_up3,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMerchantPageMockUp3(resp);
+        console.log("asjklasfdsfhkjhfkjdhfa", resp);
+      }
+    });
   }, []);
 
   return (
@@ -71,7 +85,7 @@ export default function Merchant() {
       {/* Merchant Banner */}
       <div className="relative top-bg-container">
         <Image
-          src="/images/backgrounds/home-bg.webp"
+          src={merchantBannerResp.Illustration}
           className="absolute z-minus1 mobile:hidden"
           layout="fill"
         />
@@ -86,11 +100,10 @@ export default function Merchant() {
             on a single destination
           </div>
           <div className="text-s24l26 mobile:text-s14l24 text-525252 shrink-0 mt-37 desktop:w-500 laptop:w-400">
-            Powerful analytics and platform innovation
-            transforming business finance
+            {merchantBannerResp.Description}
           </div>
           <div className="button w-216 mobile:w-166 mobile:text-s14l16_8 mobile:h-40 h-54 mt-40 cursor-pointer z-20 font-bold">
-            Request A Demo
+            {merchantBannerResp.CTA}
           </div>
         </div>
       </div>
@@ -103,110 +116,49 @@ export default function Merchant() {
             Benefits for the Merchants
           </div>
         </div>
-        <div className="flex justify-center pt-40 mobile:block justify-around mobile:px-20 mobile:hidden">
-          <div className="w-200 flex desktop:flex-col laptop:flex-col justify-center mr-50 mobile:w-100%">
-            <Image
-              src="/images/icons/empowering.svg"
-              className=""
-              width={120}
-              height={120}
-            />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
-              Empowering and elevating small businesses
-            </div>
-          </div>
-          <div className="w-273 flex flex-col justify-center mr-50 mobile:w-100%">
-            <Image
-              src="/images/icons/partership.svg"
-              className=""
-              width={120}
-              height={120}
-            />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
-              Partnerships with leading trustworthy banks
-            </div>
-          </div>
-          <div className="w-225 flex flex-col justify-center mr-50 mobile:w-100%">
-            <Image
-              src="/images/icons/offers.svg"
-              className=""
-              width={120}
-              height={120}
-            />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
-              Various offers and merchant loyalty on board
-            </div>
-          </div>
-          <div className="w-273 flex flex-col justify-center mobile:w-100%">
-            <Image
-              src="/images/icons/merchant-exp.svg"
-              className=""
-              width={120}
-              height={120}
-            />
-            <div className="text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center h-108 p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
-              Completely customized merchant experience
-            </div>
-          </div>
+        <div className="flex pt-40 mobile:block justify-center w-100% mobile:px-20 mobile:hidden">
+          {merchantBenefitsResp?.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="w-100% flex desktop:flex-col laptop:flex-col justify-center mobile:w-100% laptop:px-30 desktop:px-30"
+              >
+                <div className="w-100% flex items-center justify-center">
+                  <Image
+                    src={item.Icon[0]}
+                    type="img"
+                    className="desktop:h-114 desktop:w-92 laptop:h-114 laptop:w-92"
+                  />
+                </div>
+                <div className="w-100% text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
+                  {item.Title}
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="px-26 desktop:hidden laptop:hidden flex justify-center pt-40 mobile:block justify-around mobile:px-20">
-          <div className="flex pb-42">
-            <Image
-              src="/images/icons/empowering.svg"
-              className=""
-              width={48}
-              height={60}
-            />
-            <div className="pl-20 font-medium text-s16l24">
-              Empowering and elevating small businesses
-            </div>
-          </div>
-          <div className="flex pb-42">
-            <Image
-              src="/images/icons/partership.svg"
-              className=""
-              width={48}
-              height={60}
-            />
-            <div className="pl-20 font-medium text-s16l24">
-              Partnerships with leading trustworthy banks
-            </div>
-          </div>
-          <div className="flex pb-42">
-            <Image
-              src="/images/icons/offers.svg"
-              className=""
-              width={48}
-              height={60}
-            />
-            <div className="pl-20 font-medium text-s16l24">
-              Various offers and merchant loyalty on board
-            </div>
-          </div>
-          <div className="flex pb-86">
-            <Image
-              src="/images/icons/merchant-exp.svg"
-              className=""
-              width={48}
-              height={60}
-            />
-            <div className="pl-20 font-medium text-s16l24">
-              Completely customized merchant experience
-            </div>
-          </div>
+        <div className="px-26 desktop:hidden laptop:hidden flex justify-center  pt-40 mobile:block justify-around mobile:px-20">
+          {merchantBenefitsResp?.map((item, index) => {
+            return (
+              <div key={index} className="flex items-center pb-42">
+                <div className="flex items-center">
+                  <Image src={item.Icon[0]} type="img" className="h-60 w-48" />
+                </div>
+                <div className="pl-20 font-medium text-s16l24">
+                  {item.Title}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       {/* Decluttering Business Transactions with Reduced Friction */}
       <div className="merchant-liner-bg mobile:pb-150">
         <div className="pt-100 flex justify-center text-center m-auto text-s44l52_8 mobile:text-s20l24 text-F1F1F1 w-714 mobile:w-301 mobile:pt-40 desktop:font-bold laptop:font-bold">
-          Decluttering Business Transactions with Reduced Friction
+          {merchantBenefits2?.Title}
         </div>
         <div className="my-40 text-s20l30 font-normal text-F1F1F1 text-center m-auto w-885 mobile:text-s14l21 mobile:w-315">
-          Not all small businesses and merchants have the right built-in
-          technological resources to foster digital advancements and ease of
-          transactions for them. Bringing this much-needed virtual interface,
-          speed and innovation to SME business finance, Mintoak also offers
-          benefits of real-time analytics and complete flexibility.
+          {merchantBenefits2?.Description}
         </div>
         <div className="desktop:mx-100 m-auto laptop:mx-200">
           <div className="desktop:hidden m-auto mobile:hidden">
@@ -225,17 +177,15 @@ export default function Merchant() {
               className="w-4000 h-200"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center m-auto pb-122 justify-center mobile:hidden">
-            <div className="w-300 text-s24l36 font-semibold">
-              No more clunky
-              legacy systems
+          <div className="pt-51 text-F1F1F1 flex text-center items-center justify-center m-auto pb-122 justify-center mobile:hidden">
+            <div className="w-300 text-s24l36 font-semibold pr-70">
+              No more clunky legacy systems
             </div>
-            <div className="w-300 text-s24l36 font-semibold desktop:pl-33 laptop:ml-33">
+            <div className="w-300 text-s24l36 font-semibold ml-25">
               Say no to fragmented and scattered businesses
             </div>
-            <div className="w-300 text-s24l36 font-semibold desktop:pl-121 laptop:pl-100">
-              Stay away from
-              digital confusion
+            <div className="w-300 text-s24l36 font-semibold pl-70">
+              Stay away from digital confusion
             </div>
           </div>
         </div>
@@ -253,18 +203,14 @@ export default function Merchant() {
         </div> */}
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-160 w-100% mobile:mt-0 mobile:pb-0">
+      <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">
         <div className="flex w-100% mobile:hidden pl-180 laptop:pl-100">
           <div className="w-33% mt-275">
             <div className="text-s45l45 font-bold">
-              Time to Get Onboard with Mintoak
+              {merchantPageOnboarding?.Title}
             </div>
             <div className="pt-40 text-s20l30">
-              Working with us is easy! Mintoak welcomes all small and medium
-              enterprises and merchants with open arms, helping bridge the gap
-              of access between them and banks while also offering powerful
-              real-time analytics and decluttered finance as its underlying
-              pillars.
+              {merchantPageOnboarding?.Description}
             </div>
           </div>
           <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
@@ -331,7 +277,10 @@ export default function Merchant() {
               transactions
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              Get empowered with Mintoak’s advantage of real-time information access to understand your business performance from all aspects, including transactions and payments, customer experience and reach.
+              Get empowered with Mintoak’s advantage of real-time information
+              access to understand your business performance from all aspects,
+              including transactions and payments, customer experience and
+              reach.
             </div>
             <div className="pt-45 m-auto">
               <Image
@@ -345,7 +294,10 @@ export default function Merchant() {
               Myriad benefits to explore!
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              From customer recognition based on robust analytics to segmentation and merchant loyalty plans, there are several benefits for SMEs and merchants to explore and gain on Mintoak. </div>
+              From customer recognition based on robust analytics to
+              segmentation and merchant loyalty plans, there are several
+              benefits for SMEs and merchants to explore and gain on Mintoak.{" "}
+            </div>
             <div className="pt-45 m-auto">
               <Image
                 src="/images/backgrounds/mybrid.svg"
@@ -363,12 +315,12 @@ export default function Merchant() {
           Features We Offer
         </div>
         <div className="pb-60">
-          <div className="mobile:hidden desktop:px-105 laptop:px-0">
+          <div className="mobile:hidden desktop:px-105 laptop:px-0 cust-pagination">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
-              pagination={false}
+              pagination={true}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
@@ -392,7 +344,7 @@ export default function Merchant() {
                 <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
                   Mintoak OMNI
                 </div>
-                <div className="text-DFDFDF text-center mt-30 text-s20l30">
+                <div className="w-100% text-DFDFDF text-center mt-30 text-s20l30">
                   Handle all types of digital payments on a single platform
                 </div>
               </div>
@@ -436,17 +388,21 @@ export default function Merchant() {
               renderPagination={({ pages, activePage, onClick }) => {
                 return (
                   <div className="flex">
-                    {pages.map(page => {
-                      const isActivePage = activePage === page
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
                       return (
-                        <div className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""}`} key={page}
+                        <div
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
+                          key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
-                        >
-                        </div>)
+                        ></div>
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               <div className="w-256 h-211 bg-393939 flex flex-col items-center w-311 mobile:h-191 p-28 border border-C4C4C4">
@@ -497,28 +453,22 @@ export default function Merchant() {
         <div className="flex w-100% mobile:block mobile:pt-80">
           <div className="w-50% flex flex-col justify-end pb-70 mobile:w-100% desktop:block desktop:pt-268 laptop:block laptop:pt-268">
             <div className="font-bold text-s45l45 laptop:text-s32l38 mobile:text-s22l33 pb-40 mobile:pl-15 mobile:w-252">
-              Get Assured By Your Bank Today!
+              {merchantAssuredByBanks?.Title}
             </div>
             <div className="text-s20l30 laptop:text-s16l19 mobile:text-s14l21 mobile:pl-20 mobile:pr-25 font-normal">
-              Mintoak has established itself as a brand of repute and immense
-              trust when it comes to large contract wins, thanks to our ability
-              to upsell dedicated product stacks to esteemed banks like HDFC,
-              Burgan and SBI. Looking forward to further expansion and
-              affiliation with new partners from across the world, Mintoak has
-              already earned the trust of several happy customers and banks that
-              rely on us.
+              {merchantAssuredByBanks?.Description}
             </div>
           </div>
           <div className="pl-100 w-50% mobile:hidden">
             <Image
-              src="/images/icons/merchant-bank-today.svg"
+              src={merchantAssuredByBanks?.Illustration[0]}
               height={700}
               width={700}
             />
           </div>
           <div className="desktop:hidden laptop:hidden pr-10">
             <Image
-              src="/images/icons/merchant-bank-today.svg"
+              src={merchantAssuredByBanks?.Illustration[0]}
               height={700}
               width={700}
             />
@@ -528,7 +478,7 @@ export default function Merchant() {
           <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
-          <div className="flex mobile:block justify-center items-center w-100% pt-50 pb-170 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex mobile:block justify-center items-center w-100% pt-50 pb-169 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={5}
               itemPadding={[0, 20, 0, 20]}
@@ -598,17 +548,21 @@ export default function Merchant() {
                 renderPagination={({ pages, activePage, onClick }) => {
                   return (
                     <div className="flex">
-                      {pages.map(page => {
-                        const isActivePage = activePage === page
+                      {pages.map((page) => {
+                        const isActivePage = activePage === page;
                         return (
-                          <div className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""}`} key={page}
+                          <div
+                            className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                              isActivePage ? "bg-active" : ""
+                            }`}
+                            key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}
-                          >
-                          </div>)
+                          ></div>
+                        );
                       })}
                     </div>
-                  )
+                  );
                 }}
               >
                 <div className="">
