@@ -2,9 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import Image from "../components/helpers/Image";
 import Carousel from "react-elastic-carousel";
 import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+
 export default function About() {
   const [aboutBannerResp, setAboutBannerResp] = useState({});
   const [storyResp, setStoryResp] = useState({});
+  const [demoPopup, setDemoPopup] = useState(false);
   const [matricsResp, setMatricsResp] = useState([]);
   const [visionResp, setVisionResp] = useState({});
   const [missionResp, setMissionResp] = useState({});
@@ -13,6 +16,11 @@ export default function About() {
   const [teamInfoResp, setTeamInfoResp] = useState({});
   const [activeTab, setActiveTab] = useState(0);
   const founder = useRef();
+
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
+
   useEffect(() => {
     // about_banner
     API({
@@ -98,7 +106,10 @@ export default function About() {
           <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 desktop:pb-40 laptop:pb-40 desktop:w-453 laptop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
             {aboutBannerResp?.Description}
           </div>
-          <div className="font-bold button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
+          <div
+            onClick={() => setDemoPopup(true)}
+            className="font-bold button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20"
+          >
             {aboutBannerResp?.CTA}
           </div>
         </div>
@@ -438,6 +449,9 @@ export default function About() {
           <div>Chief Executive</div>
         </div>
       </div> */}
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
   );
 }

@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { API, endpoints } from "../components/helpers/API";
 import Image from "../components/helpers/Image";
+import Request_Demo from "./request_demo";
 import { Pagination } from "antd";
 
 export default function Resources() {
+  const [demoPopup, setDemoPopup] = useState(false);
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
   return (
     <div>
       <div className="w-100%">
@@ -26,7 +31,10 @@ export default function Resources() {
               wants to quit his gym membership...
             </div>
             <div>
-              <div className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20">
+              <div
+                onClick={() => setDemoPopup(true)}
+                className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20"
+              >
                 Request A Demo
               </div>
             </div>
@@ -426,6 +434,9 @@ export default function Resources() {
           <Pagination defaultCurrent={1} total={30} />
         </div>
       </div>
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
   );
 }

@@ -4,7 +4,10 @@ import Image from "../components/helpers/Image";
 import { Chrono } from "react-chrono";
 import Carousel from "react-elastic-carousel";
 import { consts } from "react-elastic-carousel";
+import Request_Demo from "./request_demo";
+
 export default function Merchant() {
+  const [demoPopup, setDemoPopup] = useState(false);
   const [merchantBannerResp, setMerchantBannerResp] = useState({});
   const [merchantBenefitsResp, setMerchantBenefitsResp] = useState();
   const [merchantBenefits2, setMerchantBenefits2] = useState();
@@ -13,6 +16,10 @@ export default function Merchant() {
   const [merchantPageOnboarding, setMerchantPageOnboarding] = useState();
   const [merchantPageMockUp2, setMerchantPageMockUp2] = useState();
   const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
+
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     API({
@@ -102,7 +109,10 @@ export default function Merchant() {
           <div className="text-s24l26 mobile:text-s14l24 text-525252 shrink-0 mt-37 desktop:w-500 laptop:w-400">
             {merchantBannerResp.Description}
           </div>
-          <div className="button w-216 mobile:w-166 mobile:text-s14l16_8 mobile:h-40 h-54 mt-40 cursor-pointer z-20 font-bold">
+          <div
+            onClick={() => setDemoPopup(true)}
+            className="button w-216 mobile:w-166 mobile:text-s14l16_8 mobile:h-40 h-54 mt-40 cursor-pointer z-20 font-bold"
+          >
             {merchantBannerResp.CTA}
           </div>
         </div>
@@ -110,7 +120,7 @@ export default function Merchant() {
       {/* border */}
       <div className="border border-1 border-A4D77A w-100%"></div>
       {/* Benefits for the Merchants */}
-      <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-326">
+      <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-250">
         <div className="pt-157 mobile:pt-81">
           <div className="font-bold text-s45l67 mobile:text-s20l24 text-center">
             Benefits for the Merchants
@@ -121,7 +131,7 @@ export default function Merchant() {
             return (
               <div
                 key={index}
-                className="w-100% flex desktop:flex-col laptop:flex-col justify-center mobile:w-100% laptop:px-30 desktop:px-30"
+                className="w-100% flex desktop:flex-col laptop:flex-col desktop:justify-center  mobile:w-100% laptop:px-50 desktop:px-50"
               >
                 <div className="w-100% flex items-center justify-center">
                   <Image
@@ -611,6 +621,9 @@ export default function Merchant() {
           <div></div>
         </div>
       </div>
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
   );
 }

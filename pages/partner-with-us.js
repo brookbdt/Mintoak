@@ -1,13 +1,15 @@
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { useEffect, useState } from "react"
-import { consts } from "react-elastic-carousel"
-import { Modal } from "antd"
-import { API, endpoints } from "../components/helpers/API"
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState } from "react";
+import { consts } from "react-elastic-carousel";
+import { Modal } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
 
 export default function Partner() {
-  const [modalvisible, setmodalVisible] = useState(false)
-  const [comunityCard, setComunityCard] = useState([])
+  const [modalvisible, setmodalVisible] = useState(false);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [demoPopup, setDemoPopup] = useState(false);
 
   useEffect(() => {
     // Community card
@@ -15,12 +17,14 @@ export default function Partner() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setComunityCard(resp)
+        console.log(resp, "resp");
+        setComunityCard(resp);
       }
-    })
-  }, [])
-
+    });
+  }, []);
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
@@ -40,7 +44,10 @@ export default function Partner() {
               Tremendous opportunities for market expansion and networking with
               merchants, with the latest payments technology by your side.
             </div>
-            <div className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
+            <div
+              onClick={() => setDemoPopup(true)}
+              className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20"
+            >
               Request a demo
             </div>
           </div>
@@ -319,10 +326,10 @@ export default function Partner() {
                   Country
                 </div>
                 <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 global-input pb-5">
-                  <option className="bg-525252" value="India">
+                  <option className="global-option" value="India">
                     India
                   </option>
-                  <option className="bg-525252" value="Usa">
+                  <option className="global-option" value="Usa">
                     Usa
                   </option>
                 </select>
@@ -355,7 +362,7 @@ export default function Partner() {
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>
-          <div className="flex justify-center items-center w-100% py-50 px-150 pb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -364,22 +371,27 @@ export default function Partner() {
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
-                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  )
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
+                  );
                 return (
-                  <button onClick={onClick} disabled={isEdge} className="h-120">
+                  <button
+                    onClick={onClick}
+                    disabled={isEdge}
+                    className="h-120 laptop:h-140"
+                  >
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="h-230 mobile:h-170 mobile:278 sliderItem pt-30 pb-50 carousel-shadow"
+                    // className="h-240 mobile:h-170 mobile:278 sliderItem "
+                    className="h-230 mobile:h-170 mobile:278 sliderItem pt-35"
                   >
                     <Image
                       src={item.BankLogo}
@@ -387,17 +399,17 @@ export default function Partner() {
                       height={130}
                       className="grayscale h-53 colorImage m-auto"
                     />
-                    <div className="">
-                      <div className="comunityContent hidden mt-30 text-center text-s20l30">
+                    <div className="pt-20">
+                      <div className="comunityContent hidden text-s20l30 text-center">
                         {item.BankInfo}
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
-          <div className="px-20">
+          <div className="px-20 desktop:hidden laptop:hidden">
             <Carousel
               itemsToShow={1}
               // verticalMode
@@ -410,7 +422,7 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
+                      const isActivePage = activePage === page;
                       return (
                         <div
                           className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
@@ -420,10 +432,10 @@ export default function Partner() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -431,7 +443,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -462,6 +474,9 @@ export default function Partner() {
           </div>
         </Modal>
       ) : null}
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </>
-  )
+  );
 }

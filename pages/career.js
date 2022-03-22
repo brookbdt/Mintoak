@@ -5,11 +5,13 @@ import { consts } from "react-elastic-carousel";
 import { Chrono } from "react-chrono";
 import { API, endpoints } from "../components/helpers/API";
 import { Row, Col, Input, Select, Pagination } from "antd";
+import Request_Demo from "./request_demo";
 
 export default function Career() {
   const { Option } = Select;
   const [homeBannerResp, setHomeBannerResp] = useState({});
   const [searchJob, setSearchJob] = useState("");
+  const [demoPopup, setDemoPopup] = useState(false);
   const [onBoardData, setOnBoardData] = useState([
     {
       title: "Conference Day",
@@ -91,6 +93,9 @@ export default function Career() {
       }
     });
   }, []);
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
@@ -112,8 +117,11 @@ export default function Career() {
             Explore various opportunities for enthusiastic, innovative and
             dedicated individuals to join our team.
           </div>
-          <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20">
-            Request A Demo
+          <div
+            onClick={() => setDemoPopup(true)}
+            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20"
+          >
+            Explore Jobs
           </div>
         </div>
         <Image
@@ -374,6 +382,9 @@ export default function Career() {
           </Carousel>
         </div>
       </div>
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
   );
 }

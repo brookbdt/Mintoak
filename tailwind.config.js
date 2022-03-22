@@ -4,6 +4,7 @@ const colors = {
   525252: "#525252",
   252525: "#252525",
   F1F1F1: "#F1F1F1",
+  "95C11F": "#95C11F",
   FFFFFF: "#FFFFFF",
   E0EFD4: "#E0EFD4",
   "8FC055": "rgba(143,192,85,0.2)",
@@ -155,6 +156,7 @@ module.exports = {
         faqs_bg:
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
         bg_reel: "url(/images/backgrounds/reel-img.svg)",
+        bg_contact: "url(/images/backgrounds/contact-background.svg)",
         we_offer_bg:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
       },
