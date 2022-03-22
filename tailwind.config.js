@@ -7,6 +7,7 @@ const colors = {
   FFFFFF: "#FFFFFF",
   E0EFD4: "#E0EFD4",
   "8FC055": "rgba(143,192,85,0.2)",
+  "8FC0551": "rgba(143,192,85,1)",
   A8FC055: "#8FC055",
   "8CC63E": "#8CC63E",
   A4D77A: "#A4D77A",
@@ -157,6 +158,8 @@ module.exports = {
         bg_reel: "url(/images/backgrounds/reel-img.svg)",
         we_offer_bg:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
+          "linear-;gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
+        contact_us: "url(/images/backgrounds/contact-us-bg.svg)"
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
