@@ -8,7 +8,8 @@ import { API, endpoints } from "../components/helpers/API"
 export default function Partner() {
   const [modalvisible, setmodalVisible] = useState(false)
   const [comunityCard, setComunityCard] = useState([])
-
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
   useEffect(() => {
     // Community card
     API({
@@ -19,6 +20,23 @@ export default function Partner() {
         setComunityCard(resp)
       }
     })
+    API({
+      url: endpoints.partner_with_us_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp")
+        setPartnerWithUsBanner(resp)
+      }
+    })
+    API({
+      url: endpoints.partner_with_us_new_heights,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp")
+        setPartnerWithUsNewHeights(resp)
+      }
+    })
+
   }, [])
 
   return (
@@ -28,25 +46,24 @@ export default function Partner() {
         <div className="relative desktop:pb-101 laptop:pb-101 top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
           <div className="desktop:w-50% laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
-              Begin your
+              {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
-              exclusive partnership
+              {/* exclusive partnership */}
             </div>
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
-              with mintoak
+              {/* with mintoak */}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
-              Tremendous opportunities for market expansion and networking with
-              merchants, with the latest payments technology by your side.
+              {partnerWithUsBanner?.Description}
             </div>
             <div className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
-              Request a demo
+              {partnerWithUsBanner?.CTA}
             </div>
           </div>
           <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
             <Image
-              src="/images/backgrounds/group-2.svg"
+              src={partnerWithUsBanner?.ilustration[0]}
               width={550}
               height={550}
             />
@@ -55,17 +72,16 @@ export default function Partner() {
         {/* Take your business  */}
         <div className="desktop:flex laptop:flex flex-col p-80 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 desktop:pt-78 laptop:pt-78 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
-            Take your business to new heights with mintoak
+            {partnerWithUsNewHeights?.Title}
           </div>
           <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
-            In this era of rampant digitization and rule of the internet, banks
-            and financial institutions with less access to advanced technology
-            are the ones falling behind.
+            {partnerWithUsNewHeights?.Description}
+
             <br className="desktop:hidden laptop:hidden" />
             <br className="desktop:hidden laptop:hidden" />
-            At Mintoak, our comprehensive range of services and financial
+            {/* At Mintoak, our comprehensive range of services and financial
             products ensure that you can serve your customers with the best
-            tools by your side.
+            tools by your side. */}
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">

@@ -8,7 +8,7 @@ export default function Contact() {
       </div>
       <div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
-          Detailed terms and conditions
+          We value your trust in Mintoak
         </div>
         <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
           This Privacy Policy describes the information Mintoak Innovations
@@ -59,9 +59,12 @@ export default function Contact() {
           "Information" means any information that relates to a natural or legal
           person, which, either directly or indirectly, in combination with
           other information available or likely to be available with a body
-          corporate, is capable of identifying such person/s. "Sensitive
-          personal data or information" of a person means such personal
-          information which consists of information relating to :
+          corporate, is capable of identifying such person/s.
+
+          <div className="pt-10">
+            "Sensitive personal data or information" of a person means such personal
+            information which consists of information relating to :
+          </div>
         </div>
         <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 text-525252">
           <ul>
@@ -262,7 +265,7 @@ export default function Contact() {
               Privacy Policy at: privacy@mintoak.com addressed to Rama Tadepalli
               (Grievance Officer, Mintoak).
             </div>
-            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14">
+            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14 desktop:pb-150 laptop:pb-150">
               At Mintoak, we value your relationship and will always strive to
               ensure your privacy.
             </div>

@@ -9,6 +9,9 @@ import { Row, Col, Input, Select, Pagination } from "antd";
 export default function Career() {
   const { Option } = Select;
   const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [careersBannerResp, setCareersBannerResp] = useState(null);
+  const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] = useState(null);
+  const [careerListingValuePropositionResp, setCareerListingValuePropositionResp] = useState(null);
   const [searchJob, setSearchJob] = useState("");
   const [onBoardData, setOnBoardData] = useState([
     {
@@ -90,6 +93,28 @@ export default function Career() {
         setHomeBannerResp(resp);
       }
     });
+    API({
+      url: endpoints.careers_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCareersBannerResp(resp);
+      }
+    });
+    API({
+      url: endpoints.career_page_life_mintoak,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCareerPageLifeMintoakResp(resp);
+      }
+    });
+    API({
+      url: endpoints.career_listing_value_proposition,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCareerListingValuePropositionResp(resp);
+      }
+    });
+    // career_listing_value_proposition
   }, []);
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
@@ -100,20 +125,21 @@ export default function Career() {
         />
         <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
-            Give your career
+            {careersBannerResp?.Title}
           </div>
           <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0">
-            a new direction
+            {/* a new direction */}
           </div>
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
-            with Mintoak
+            {/* with Mintoak */}
           </div>
           <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">
-            Explore various opportunities for enthusiastic, innovative and
-            dedicated individuals to join our team.
+            {careersBannerResp?.Description}
+            {/* Explore various opportunities for enthusiastic, innovative and
+            dedicated individuals to join our team. */}
           </div>
           <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20">
-            Request A Demo
+            {careersBannerResp?.CTA}
           </div>
         </div>
         <Image
@@ -129,54 +155,21 @@ export default function Career() {
             Why join Mintoak?
           </div>
           <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-around desktop:justify-around  mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
-              <div className="flex justify-center align-center">
-                <Image
-                  src="/images/icons/stethoscope.svg"
-                  className="mobile:w-40 desktop:w-72 laptop:w-72"
-                  type="img"
-                />
+            {careerListingValuePropositionResp && careerListingValuePropositionResp.map((item) => (
+              <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
+                {console.log('wsdzx', item)}
+                <div className="flex justify-center align-center">
+                  <Image
+                    src={item.icon}
+                    className="mobile:w-40 desktop:w-72 laptop:w-72"
+                    type="img"
+                  />
+                </div>
+                <div className="text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                  {item.Description}
+                </div>
               </div>
-              <div className="text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-212 laptop:w-212 mobile:text-s16l24 mobile:pr-30">
-                Healthcare and wellness coverage
-              </div>
-            </div>
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justfiy-center mobile:justify-flex-start items-center mobile:py-15 ">
-              <div className="flex justify-center align-center">
-                <Image
-                  src="/images/icons/umbrella.svg"
-                  className="mobile:w-40 desktop:w-72 laptop:w-72"
-                  type="img"
-                />
-              </div>
-              <div className="desktop:m-auto laptop:m-auto text-s24l36 font-bold w-176 desktop:text-center  mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-212 laptop:w-170 laptop:text-center mobile:text-s16l24">
-                Paid time off and holidays
-              </div>
-            </div>
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center  laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
-              <div className="flex justify-center align-center">
-                <Image
-                  src="/images/icons/network.svg"
-                  className="mobile:w-40 desktop:w-72 laptop:w-72"
-                  type="img"
-                />
-              </div>
-              <div className="desktop:m-auto laptop:m-auto text-s24l36 w-228 desktop:text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-212 laptop:w-212 laptop:text-center mobile:text-s16l24">
-                Employee assistance program
-              </div>
-            </div>
-            <div className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 ">
-              <div className="flex justify-center align-center">
-                <Image
-                  src="/images/icons/bulb.svg"
-                  className="mobile:w-40 desktop:w-72 laptop:w-72"
-                  type="img"
-                />
-              </div>
-              <div className="desktop:m-auto laptop:m-auto text-s24l36 w-273 desktop:text-center font-bold mobile:pl-19 desktop:pt-49 laptop:pt-49 desktop:w-260 laptop:w-260 laptop:text-center mobile:text-s16l24">
-                Learning and development resources
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -189,11 +182,7 @@ export default function Career() {
             </div>
             <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left">
               <span className="font-normal text-s20l30 text-F1F1F1 ">
-                At Mintoak, we are a team of energetic and driven individuals,
-                led by three talented professionals with a vision. We are always
-                on the lookout for passionate individuals, who wish to help
-                small businesses through innovative, dynamic and tech-oriented
-                products.
+                {careerPageLifeMintoakResp?.Description}
               </span>
             </div>
           </div>

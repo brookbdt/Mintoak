@@ -48,6 +48,11 @@ const endpoints = {
   merchant_page_mock_up2: "merchant-page-mock-up2",
   merchant_page_mock_up3: "merchant-page-mock-up3",
   merchant_banner: "merchant-page-banner",
+  partner_with_us_banner: "partner-with-us-banner",
+  partner_with_us_new_heights: "partner-with-us-new-heights",
+  careers_banner: "careers-banner",
+  career_page_life_mintoak: "career-page-life-mintoak",
+  career_listing_value_proposition: "career-listing-value-propositions"
 };
 
 export { API, endpoints, domain };
