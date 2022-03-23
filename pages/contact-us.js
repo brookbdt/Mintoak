@@ -7,11 +7,7 @@ export default function Contact() {
   const [modalvisible, setmodalVisible] = useState(false);
   return (
     <>
-<<<<<<< HEAD
       <div className="w-100% bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50">
-=======
-      <div className="w-100% bg-contact_us mobile:px-20 flex mobile:flex-col mobile:pt-50">
->>>>>>> b9a93cce4aa5d45c1432c20268f2758b03b839d7
         <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100%">
           <div>
             <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:px-33">

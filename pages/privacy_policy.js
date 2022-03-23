@@ -262,7 +262,7 @@ export default function Contact() {
               Privacy Policy at: privacy@mintoak.com addressed to Rama Tadepalli
               (Grievance Officer, Mintoak).
             </div>
-            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14">
+            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-150 mobile:pb-14">
               At Mintoak, we value your relationship and will always strive to
               ensure your privacy.
             </div>

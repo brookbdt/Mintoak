@@ -27,9 +27,9 @@ export default function Partner() {
   };
   return (
     <>
-      <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
+      <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative desktop:pb-101 laptop:pb-101 top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
+        <div className="relative desktop:pb-101 bg-bg_partner laptop:pb-101 top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
           <div className="desktop:w-50% laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               Begin your
@@ -52,11 +52,11 @@ export default function Partner() {
             </div>
           </div>
           <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
-            <Image
+            {/* <Image
               src="/images/backgrounds/group-2.svg"
               width={550}
               height={550}
-            />
+            /> */}
           </div>
         </div>
         {/* Take your business  */}
@@ -150,6 +150,8 @@ export default function Partner() {
               src="/images/backgrounds/customization-img.svg"
               height={297}
               width={1049}
+              type="img"
+              className="h-297 laptop:w-1049  desktop:w-100%"
             />
           </div>
           <div className="flex w-100% justify-center desktop:hidden laptop:hidden">
@@ -159,29 +161,29 @@ export default function Partner() {
               width={217}
             />
           </div>
-          <div className="flex w-100% items-center justify-evenly text-center mobile:hidden">
-            <div className="flex flex-col w-100% items-center px-30">
+          <div className="flex w-100% items-center justify-evenly desktop:pt-48 text-center mobile:hidden">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center">
                 Custom branding & design
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 ">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Our platform can be re-branded with respect to your brand image
                 & guidelines
               </div>
             </div>
-            <div className="flex flex-col w-100% items-center px-20">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-20 desktop:m-auto">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
                 Modular product stack
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 ">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Choose different modules from a range of products available
               </div>
             </div>
-            <div className="flex flex-col w-100% items-center px-30">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pr-130">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
                 Subscription pricing
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Pay only for the features you have selected from our pack
               </div>
             </div>
@@ -362,7 +364,7 @@ export default function Partner() {
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>
-          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 pb-150 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -425,8 +427,9 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

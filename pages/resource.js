@@ -12,7 +12,7 @@ export default function Resources() {
   return (
     <div>
       <div className="w-100%">
-        <div className="flex mobile:flex-col relative top-bg-container bg-bg_resource h-fit laptop:w-fit bg-origin-content">
+        <div className="flex mobile:flex-col relative top-bg-container bg-bg_resource bg-cover h-fit laptop:w-fit bg-origin-content">
           {/* <Image
                         src="/images/backgrounds/resource-bg.svg"
                         className="w-100% h-100%  absolute z-minus1 mobile:hidden"
@@ -22,7 +22,7 @@ export default function Resources() {
                     // type="img"
 
                     /> */}
-          <div className="desktop:w-50% desktop:p-100 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+          <div className="desktop:w-50% desktop:py-100  desktop:pl-180 laptop:py-100 laptop:pl-180  laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
             <div className="text-s44l120 mobile:text-s20l24 text-FFFFFF shrink-0">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
@@ -35,16 +35,16 @@ export default function Resources() {
                 onClick={() => setDemoPopup(true)}
                 className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20"
               >
-                Request A Demo
+                Read More
               </div>
             </div>
           </div>
           <div className="desktop:w-50% desktop:p-100 mobile:justify-around laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
-            <div className="cursor-pointer btn rounded-md mobile:hidden">
+            <div className="cursor-pointer mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
-                width={128}
-                height={84}
+                type="img"
+                className="h-84 w-128"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -54,11 +54,11 @@ export default function Resources() {
                 height={130}
               />
             </div>
-            <div className="cursor-pointer btn pb-16 rounded-md mobile:hidden">
+            <div className="cursor-pointer btn mb-16 rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
-                width={128}
-                height={84}
+                type="img"
+                className="h-84 w-128"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -68,11 +68,11 @@ export default function Resources() {
                 height={130}
               />
             </div>
-            <div className="cursor-pointer btn pb-16 rounded-md mobile:hidden">
+            <div className="cursor-pointer btn mb-16 rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
-                width={128}
-                height={84}
+                type="img"
+                className="h-84 w-128"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -82,11 +82,11 @@ export default function Resources() {
                 height={130}
               />
             </div>
-            <div className="cursor-pointer btn pb-16 rounded-md mobile:hidden">
+            <div className="cursor-pointer btn  rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
-                width={128}
-                height={84}
+                type="img"
+                className="h-84 w-128"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -103,7 +103,7 @@ export default function Resources() {
         <div className="desktop:pt-80 laptop:pt-80 mobile:pt-40  font-bold text-s44l66 desktop:pb-60 laptop:pb-60 mobile:pb-30 mobile:text-s22l33 mobile:text-000000">
           In the media
         </div>
-        <div className="flex desktop:py-42 items-center">
+        <div className="flex items-center">
           <div className="w-100%">
             <input
               className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-70 text-s20l24"
@@ -228,9 +228,9 @@ export default function Resources() {
         <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10">
           Showing 55 Blogs
         </div>
-        <div className="pt-24">
-          <div className="bg-FFFFFF flex shadow-bankbox ">
-            <div className="p-15 mobile:hidden">
+        <div className="pb-80 w-100%">
+          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
               <Image
                 src="/images/backgrounds/blog1.svg"
                 height={296}
@@ -246,7 +246,7 @@ export default function Resources() {
               // layout="fill"
             />
 
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-53 laptop:pt-22 mobile:pt-10">
+            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
               <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
                 6 min read
               </div>
@@ -254,25 +254,28 @@ export default function Resources() {
                 Get your money in seconds — 24/7 — with instant transfer
               </div>
               <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150">
-                  By Raman Kahnduja | Sept 13, 2021
+                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                  By <span className="font-extrabold">Raman Kahnduja </span>|
+                  Sept 13, 2021
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14">Economic Times</div>
+                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                  Economic Times
+                </div>
               </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden">
+              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
                 is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s...
               </div>
             </div>
-            <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+            <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
         </div>
-        <div className="pt-24">
-          <div className="bg-FFFFFF flex shadow-bankbox ">
-            <div className="p-15 mobile:hidden">
+        <div className="pb-80 w-100%">
+          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
               <Image
                 src="/images/backgrounds/blog1.svg"
                 height={296}
@@ -280,13 +283,15 @@ export default function Resources() {
                 // layout="fill"
               />
             </div>
+
             <Image
               src="/images/backgrounds/blog-img.svg"
               type="img"
               className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
               // layout="fill"
             />
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-53 laptop:pt-22 mobile:pt-10">
+
+            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
               <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
                 6 min read
               </div>
@@ -294,25 +299,28 @@ export default function Resources() {
                 Get your money in seconds — 24/7 — with instant transfer
               </div>
               <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150">
-                  By Raman Kahnduja | Sept 13, 2021
+                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                  By <span className="font-extrabold">Raman Kahnduja </span>|
+                  Sept 13, 2021
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14">Economic Times</div>
+                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                  Economic Times
+                </div>
               </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden">
+              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
                 is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s...
               </div>
             </div>
-            <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+            <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
         </div>
-        <div className="pt-24">
-          <div className="bg-FFFFFF flex shadow-bankbox ">
-            <div className="p-15 mobile:hidden">
+        <div className="pb-80 w-100%">
+          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
               <Image
                 src="/images/backgrounds/blog1.svg"
                 height={296}
@@ -320,13 +328,15 @@ export default function Resources() {
                 // layout="fill"
               />
             </div>
+
             <Image
               src="/images/backgrounds/blog-img.svg"
               type="img"
               className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
               // layout="fill"
             />
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-53 laptop:pt-22 mobile:pt-10">
+
+            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
               <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
                 6 min read
               </div>
@@ -334,25 +344,28 @@ export default function Resources() {
                 Get your money in seconds — 24/7 — with instant transfer
               </div>
               <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150">
-                  By Raman Kahnduja | Sept 13, 2021
+                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                  By <span className="font-extrabold">Raman Kahnduja </span>|
+                  Sept 13, 2021
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14">Economic Times</div>
+                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                  Economic Times
+                </div>
               </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden">
+              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
                 is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s...
               </div>
             </div>
-            <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+            <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
         </div>
-        <div className="pt-24">
-          <div className="bg-FFFFFF flex shadow-bankbox ">
-            <div className="p-15 mobile:hidden">
+        <div className="pb-80 w-100%">
+          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
               <Image
                 src="/images/backgrounds/blog1.svg"
                 height={296}
@@ -360,13 +373,15 @@ export default function Resources() {
                 // layout="fill"
               />
             </div>
+
             <Image
               src="/images/backgrounds/blog-img.svg"
               type="img"
               className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
               // layout="fill"
             />
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-53 laptop:pt-22 mobile:pt-10">
+
+            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
               <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
                 6 min read
               </div>
@@ -374,25 +389,28 @@ export default function Resources() {
                 Get your money in seconds — 24/7 — with instant transfer
               </div>
               <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150">
-                  By Raman Kahnduja | Sept 13, 2021
+                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                  By <span className="font-extrabold">Raman Kahnduja </span>|
+                  Sept 13, 2021
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14">Economic Times</div>
+                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                  Economic Times
+                </div>
               </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden">
+              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
                 is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s...
               </div>
             </div>
-            <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+            <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
         </div>
-        <div className="pt-24">
-          <div className="bg-FFFFFF flex shadow-bankbox ">
-            <div className="p-15 mobile:hidden">
+        <div className=" w-100%">
+          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
               <Image
                 src="/images/backgrounds/blog1.svg"
                 height={296}
@@ -400,13 +418,15 @@ export default function Resources() {
                 // layout="fill"
               />
             </div>
+
             <Image
               src="/images/backgrounds/blog-img.svg"
               type="img"
               className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
               // layout="fill"
             />
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-53 laptop:pt-22 mobile:pt-10">
+
+            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
               <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
                 6 min read
               </div>
@@ -414,19 +434,22 @@ export default function Resources() {
                 Get your money in seconds — 24/7 — with instant transfer
               </div>
               <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150">
-                  By Raman Kahnduja | Sept 13, 2021
+                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                  By <span className="font-extrabold">Raman Kahnduja </span>|
+                  Sept 13, 2021
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14">Economic Times</div>
+                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                  Economic Times
+                </div>
               </div>
-              <div className="text-s20l24 text-525252  laptop:text-s16l19 mobile:hidden">
+              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
                 is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s...
               </div>
             </div>
-            <div className="flex justify-end items-end">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
+            <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
         </div>
