@@ -1,52 +1,76 @@
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { useEffect, useState } from "react"
-import { consts } from "react-elastic-carousel"
-import { Modal } from "antd"
-import { API, endpoints } from "../components/helpers/API"
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState } from "react";
+import { consts } from "react-elastic-carousel";
+import { Modal } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
 
 export default function Partner() {
-  const [modalvisible, setmodalVisible] = useState(false)
-  const [comunityCard, setComunityCard] = useState([])
-
+  const [modalvisible, setmodalVisible] = useState(false);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
   useEffect(() => {
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setComunityCard(resp)
+        console.log(resp, "resp");
+        setComunityCard(resp);
       }
-    })
-  }, [])
+    });
 
+    API({
+      url: endpoints.partner_with_us_banner,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setPartnerWithUsBanner(resp);
+      }
+    });
+    API({
+      url: endpoints.partner_with_us_new_heights,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setPartnerWithUsNewHeights(resp);
+      }
+    });
+  }, []);
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
   return (
     <>
-      <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
+      <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative desktop:pb-101 laptop:pb-101 top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
-          <div className="desktop:w-50% laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
+        <div className="relative  top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
+          <div className="desktop:w-50% desktop:pb-101 laptop:pb-101 laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
-              Begin your
+              {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
-              exclusive partnership
+              {/* exclusive partnership */}
             </div>
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
-              with mintoak
+              {/* with mintoak */}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
-              Tremendous opportunities for market expansion and networking with
-              merchants, with the latest payments technology by your side.
+              {partnerWithUsBanner?.Description}
             </div>
-            <div className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
-              Request a demo
+            <div
+              onClick={() => setDemoPopup(true)}
+              className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20"
+            >
+              {partnerWithUsBanner?.CTA}
             </div>
           </div>
           <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
             <Image
-              src="/images/backgrounds/group-2.svg"
+              src={partnerWithUsBanner?.ilustration[0]}
               width={550}
               height={550}
             />
@@ -55,17 +79,16 @@ export default function Partner() {
         {/* Take your business  */}
         <div className="desktop:flex laptop:flex flex-col p-80 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 desktop:pt-78 laptop:pt-78 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
-            Take your business to new heights with mintoak
+            {partnerWithUsNewHeights?.Title}
           </div>
           <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
-            In this era of rampant digitization and rule of the internet, banks
-            and financial institutions with less access to advanced technology
-            are the ones falling behind.
+            {partnerWithUsNewHeights?.Description}
+
             <br className="desktop:hidden laptop:hidden" />
             <br className="desktop:hidden laptop:hidden" />
-            At Mintoak, our comprehensive range of services and financial
+            {/* At Mintoak, our comprehensive range of services and financial
             products ensure that you can serve your customers with the best
-            tools by your side.
+            tools by your side. */}
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
             <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
@@ -143,6 +166,8 @@ export default function Partner() {
               src="/images/backgrounds/customization-img.svg"
               height={297}
               width={1049}
+              type="img"
+              className="h-297 laptop:w-1049  desktop:w-100%"
             />
           </div>
           <div className="flex w-100% justify-center desktop:hidden laptop:hidden">
@@ -152,29 +177,29 @@ export default function Partner() {
               width={217}
             />
           </div>
-          <div className="flex w-100% items-center justify-evenly text-center mobile:hidden">
-            <div className="flex flex-col w-100% items-center px-30">
+          <div className="flex w-100% items-center justify-evenly desktop:pt-48 text-center mobile:hidden">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center">
                 Custom branding & design
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 ">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Our platform can be re-branded with respect to your brand image
                 & guidelines
               </div>
             </div>
-            <div className="flex flex-col w-100% items-center px-20">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-20 desktop:m-auto">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
                 Modular product stack
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 ">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Choose different modules from a range of products available
               </div>
             </div>
-            <div className="flex flex-col w-100% items-center px-30">
+            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pr-130">
               <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
                 Subscription pricing
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8">
+              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
                 Pay only for the features you have selected from our pack
               </div>
             </div>
@@ -319,10 +344,10 @@ export default function Partner() {
                   Country
                 </div>
                 <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 global-input pb-5">
-                  <option className="bg-525252" value="India">
+                  <option className="global-option" value="India">
                     India
                   </option>
-                  <option className="bg-525252" value="Usa">
+                  <option className="global-option" value="Usa">
                     Usa
                   </option>
                 </select>
@@ -355,7 +380,7 @@ export default function Partner() {
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>
-          <div className="flex justify-center items-center w-100% py-50 px-150 pb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 pb-150 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -364,22 +389,27 @@ export default function Partner() {
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
-                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  )
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
+                  );
                 return (
-                  <button onClick={onClick} disabled={isEdge} className="h-120">
+                  <button
+                    onClick={onClick}
+                    disabled={isEdge}
+                    className="h-120 laptop:h-140"
+                  >
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="h-230 mobile:h-170 mobile:278 sliderItem pt-30 pb-50 carousel-shadow"
+                    // className="h-240 mobile:h-170 mobile:278 sliderItem "
+                    className="h-230 mobile:h-170 mobile:278 sliderItem pt-35"
                   >
                     <Image
                       src={item.BankLogo}
@@ -387,17 +417,17 @@ export default function Partner() {
                       height={130}
                       className="grayscale h-53 colorImage m-auto"
                     />
-                    <div className="">
-                      <div className="comunityContent hidden mt-30 text-center text-s20l30">
+                    <div className="pt-20">
+                      <div className="comunityContent hidden text-s20l30 text-center">
                         {item.BankInfo}
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
-          <div className="px-20">
+          <div className="px-20 desktop:hidden laptop:hidden">
             <Carousel
               itemsToShow={1}
               // verticalMode
@@ -410,19 +440,20 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
+                      const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -430,7 +461,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -461,6 +492,9 @@ export default function Partner() {
           </div>
         </Modal>
       ) : null}
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </>
-  )
+  );
 }

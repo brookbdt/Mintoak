@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="w-100% desktop:px-180 mobile:px-20 bg-home-top">
+    <div className="w-100% desktop:px-180 mobile:px-20 bg-home-top desktop:pr-582 laptop:px-100">
       <div className="w-100%">
         <div className="desktop:text-s56l67 mobile:text-s22l26_4 text-252525 desktop:py-150 mobile:py-30">
           Privacy Policy
@@ -8,7 +8,7 @@ export default function Contact() {
       </div>
       <div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
-          Detailed terms and conditions
+          We value your trust in Mintoak
         </div>
         <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
           This Privacy Policy describes the information Mintoak Innovations
@@ -18,7 +18,7 @@ export default function Contact() {
           “Mintoak Services” or “Services” or “Account”), including through an
           EDC terminal (called, “POS terminal” or “Device”) and mobile
           application and software (called, “App”) or visits
-          http://www.mintoak.com (called, “Website”). This Privacy Policy
+          <span className="text-A8FC055">http://www.mintoak.com</span> (called, “Website”). This Privacy Policy
           explains how we collect, use and share your personal information. By
           applying or signing up for a Mintoak Account online, including through
           the Device or mobile or computer and using our device and services,
@@ -37,7 +37,7 @@ export default function Contact() {
         <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
           All persons or business, whose information is either collected/
           received/ possessed/ stored/ dealt in/ handled by Mintoak and who
-          visit the site http://www.mintoak.com and provide information to
+          visit the site <span className="text-A8FC055">http://www.mintoak.com</span> and provide information to
           Mintoak online are covered under this Policy.
         </div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
@@ -59,12 +59,15 @@ export default function Contact() {
           "Information" means any information that relates to a natural or legal
           person, which, either directly or indirectly, in combination with
           other information available or likely to be available with a body
-          corporate, is capable of identifying such person/s. "Sensitive
-          personal data or information" of a person means such personal
-          information which consists of information relating to :
+          corporate, is capable of identifying such person/s.
+
+          <div className="pt-10">
+            "Sensitive personal data or information" of a person means such personal
+            information which consists of information relating to :
+          </div>
         </div>
         <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 text-525252">
-          <ul>
+          <ul className="provacy_policy_bullets">
             <li>Password</li>
             <li> Financial information </li>
             <li>Bank account and card details</li>
@@ -73,7 +76,7 @@ export default function Contact() {
             <li>Contact details</li>
           </ul>
         </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-20 mobile:pb-12 desktop:pb-40">
+        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 mobile:pb-12 desktop:pb-80 laptop:pb-40">
           Documents issued by Government /Government departments/Agencies/PSUs
           for identification and documents evidencing proof of address issued by
           Government / PSUs / telecom / electricity / local bodies; provided
@@ -212,12 +215,17 @@ export default function Contact() {
               non-personal (Browser, ISP, OS, Clickstream information etc) and
               profiling information (age, gender, income etc). While cookies
               have unique identification nos, personal information (name, a/c
-              no, contact nos etc) SHALL NOT be stored on the cookies. We will
-              use the information stored in the cookies to improve visitor
+              no, contact nos etc) SHALL NOT be stored on the cookies.
+              <br />
+              <br />
+              We will use the information stored in the cookies to improve visitor
               experience through throwing up relevant content where possible. We
               will also use the cookies to store visitor preferences to ease
-              visitor navigation on the site. We may in the future implement
-              encryption of the cookies.
+              visitor navigation on the site.
+              <br />
+              <br />
+              We may in the future implement encryption of the cookies.
+
             </div>
             <div className="desktop:text-s24l45 desktop:text-252525 mobile:text-s14l21 mobile:text-000000 desktop:pb-20 mobile:pb-8 font-semibold">
               Safeguards :
@@ -262,13 +270,17 @@ export default function Contact() {
               Privacy Policy at: privacy@mintoak.com addressed to Rama Tadepalli
               (Grievance Officer, Mintoak).
             </div>
-            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14">
+<<<<<<< HEAD
+            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-150 mobile:pb-14">
+=======
+            <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14 desktop:pb-150 laptop:pb-150">
+>>>>>>> 20262d8d04d8ca2e7b1d499a74040db277926100
               At Mintoak, we value your relationship and will always strive to
               ensure your privacy.
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
