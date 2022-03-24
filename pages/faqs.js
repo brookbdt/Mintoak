@@ -139,12 +139,13 @@ export default function Contact() {
         </div>
 
         {/* accordian  */}
-        <div className="pt-40 desktop:pt-81 laptop:pt-81 mobile:w-100%">
+        <div className="pt-40 desktop:pt-81 laptop:pt-81 mobile:w-100% global-collapse">
           <div className="text-s20l24 text-828282 pb-20">
             Need help ? We got you covered.
           </div>
           <div className="border-2 border-8CC63E mobile:w-100% border-b-0">
             <Collapse
+              accordion
               expandIcon={({ isActive }) =>
                 isActive ? (
                   <i className="fa fa-angle-up text-262626" />

@@ -91,60 +91,52 @@ export default function Partner() {
             tools by your side. */}
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
-            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
+            <div className="flex desktop:h-231 justify-around items-center flex-col w-25% mobile:flex-row mobile:w-100%">
               <div>
                 <Image
                   src="/images/icons/financial-service-icon.svg"
-                  width={54}
-                  height={101}
                   type="img"
                   className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
                 />
               </div>
-              <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-20 laptop:px-20 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
                 Tailored financial products
               </div>
             </div>
-            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
+            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
               <div>
                 <Image
                   src="/images/icons/devices-icon.svg"
-                  width={65}
-                  height={95}
                   type="img"
-                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-28 mobile:h-51"
+                  className="desktop:w-65 desktop:h-101 laptop:w-65 laptop:h-101 mobile:w-28 mobile:h-51"
                 />
               </div>
 
-              <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-30 laptop:px-30 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
                 Platform-as-a-service model
               </div>
             </div>
-            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
+            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
               <div>
                 <Image
                   src="/images/icons/lamp-icon.svg"
-                  width={68}
-                  height={95}
                   type="img"
-                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-27 mobile:h-40"
+                  className="desktop:w-68 desktop:h-101 laptop:w-68 laptop:h-101 mobile:w-27 mobile:h-40"
                 />
               </div>
-              <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-50 laptop:px-50 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
                 Innovative functionality
               </div>
             </div>
-            <div className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%">
+            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
               <div>
                 <Image
                   src="/images/icons/cart-icon.svg"
-                  width={101}
-                  height={97}
                   type="img"
-                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-39 mobile:h-48"
+                  className="desktop:w-101 desktop:h-101 laptop:w-101 laptop:h-101 mobile:w-39 mobile:h-48"
                 />
               </div>
-              <div className="text-s24l36 desktop:text-252525 laptop:text-252525 font-bold py-37 text-center desktop:px-50 laptop:px-50 mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-medium">
+              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
                 Cross-selling platform
               </div>
             </div>
@@ -231,7 +223,7 @@ export default function Partner() {
           <div className="w-100% desktop:text-center laptop:text-center mobile:text-s22l33 mobile:text-000000 desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 desktop:font-medium laptop:font-medium mobile:font-bold pl-33">
             The Mintoak effect
           </div>
-          <div className="flex mobile:flex-col items-center justify-center mobile:pt-23 desktop:pt-60 laptop:pt-60 mobile:w-100%">
+          <div className="flex desktop:px-150 mobile:flex-col items-center justify-around mobile:pt-23 desktop:pt-60 laptop:pt-60 mobile:w-100%">
             <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50">
               <div className="flex">
                 <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
@@ -239,7 +231,7 @@ export default function Partner() {
                   25%
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-20 laptop:pt-20">
+              <div className=" mobile:pl-15 desktop:w-200 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
                 Increased activation rates
               </div>
             </div>
@@ -250,7 +242,7 @@ export default function Partner() {
                   50%
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-20 laptop:pt-20">
+              <div className=" mobile:pl-15 desktop:w-200 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
                 Increased digital transactions
               </div>
             </div>
@@ -261,7 +253,7 @@ export default function Partner() {
                   35%
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-20 laptop:pt-20">
+              <div className=" mobile:pl-15 desktop:w-250 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
                 Increased throughout payment
               </div>
             </div>
@@ -272,7 +264,7 @@ export default function Partner() {
                   60%
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-20 laptop:pt-20">
+              <div className=" mobile:pl-15 desktop:w-100 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
                 Increased multi-fold
               </div>
             </div>

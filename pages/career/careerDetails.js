@@ -195,7 +195,6 @@ export default function CareerDetails() {
                     <Input
                       addonBefore={prefixSelector}
                       style={{ width: "100%" }}
-                      className="global-input "
                     />
                   </Form.Item>
                 </Col>
@@ -263,15 +262,15 @@ export default function CareerDetails() {
         </div>
       </div>
 
-      <div className="desktop:px-180 laptop:px-50 py-150 pt-0 mobile:py-80">
+      <div className="py-150 pt-0 mobile:py-80">
         <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44">
           View similar roles
         </div>
-        <div className="custom-row mobile:px-20">
+        <div className="custom-row mobile:px-20 w-100% flex flex-col items-center">
           <Row gutter={24}>
             {jobOpenings.map((data, index) => (
-              <Col xs={24} md={8} className="mb-30" key={index}>
-                <div className="py-20 px-20 carrer-detail-card hover:bg-8FC055 drop-shadow border border-8FC055 w-full cursor-pointer">
+              <Col key={index} className="mb-40">
+                <div className="py-20 px-20 carrer-detail-card mx-24  hover:bg-8FC055 drop-shadow border border-8FC055 w-488 cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
                       <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s12l18 text-8FC0551 font-normal">
