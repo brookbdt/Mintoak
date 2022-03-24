@@ -146,7 +146,7 @@ export default function About() {
                   />
                 </div>
                 <div
-                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold  desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium `}
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold  desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium laptop:pt-45 desktop:pt-45`}
                 >
                   {/* <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9  text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium"> */}
                   {item.Description}
@@ -204,12 +204,12 @@ export default function About() {
         <div className="flex desktop:justify-around laptop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 laptop:pt-80 laptop:pb-60 mobile:pb-25">
           Our principles
         </div>
-        <div className="flex mobile:flex-col items-center w-100% desktop desktop:px-200 desktop:justify-around laptop:justify-around laptop:px-100 mobile:px-13">
+        <div className="flex mobile:flex-col items-center w-100% desktop:justify-center laptop:justify-center desktop desktop:px-200 laptop:px-100 mobile:px-13">
           {principalResp &&
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
                   index != principalResp.length - 1 && ""
                 } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >

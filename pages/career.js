@@ -126,7 +126,7 @@ export default function Career() {
     setDemoPopup(false);
   };
   return (
-    <div className="desktop:h-fit laptop:h-fit w-100% bg-8FC055 mobile:w-100%">
+    <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <Image
           src={homeBannerResp?.Illustration}
@@ -192,7 +192,7 @@ export default function Career() {
               <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:pb-40 laptop:pb-40 mobile:pb-30 pt-40">
                 Life at Mintoak
               </div>
-              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left">
+              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-230">
                 <span className="font-normal text-s20l30 text-F1F1F1 ">
                   {careerPageLifeMintoakResp?.Description}
                 </span>
