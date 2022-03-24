@@ -1,7 +1,14 @@
-import React from "react"
-import Image from "../helpers/Image"
+import React from "react";
+import Image from "../helpers/Image";
+import Request_Demo from "../../pages/request_demo";
+import { useState } from "react";
 
 export default function DesktopFooter() {
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
+  const [demoPopup, setDemoPopup] = useState(false);
+
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
       <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
@@ -9,7 +16,9 @@ export default function DesktopFooter() {
           Ready to begin your journey with us?
           <br /> Get onboard!
         </div>
-        <div className="button w-216 h-54">Request A Demo</div>
+        <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
+          Request A Demo
+        </div>
       </div>
 
       <div className="w-100% h-1 bg-E0E0E0" />
@@ -147,6 +156,9 @@ export default function DesktopFooter() {
           </div>
         </div>
       </div>
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
-  )
+  );
 }

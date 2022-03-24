@@ -1,17 +1,17 @@
-import Image from "../components/helpers/Image"
-import { Checkbox, Collapse } from "antd"
-import { Pagination } from "antd"
-import { Input } from "antd"
-import { Modal } from "antd"
-import { useState } from "react"
+import Image from "../components/helpers/Image";
+import { Checkbox, Collapse } from "antd";
+import { Pagination } from "antd";
+import { Input } from "antd";
+import { Modal } from "antd";
+import { useState } from "react";
 
-const { TextArea } = Input
+const { TextArea } = Input;
 
-const { Panel } = Collapse
+const { Panel } = Collapse;
 
 export default function Contact() {
-  const [modalvisible, setmodalVisible] = useState(false)
-  const [modalquerievisible, setmodalquerieVisible] = useState(false)
+  const [modalvisible, setmodalVisible] = useState(false);
+  const [modalquerievisible, setmodalquerieVisible] = useState(false);
 
   return (
     <>
@@ -154,7 +154,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-            // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
             >
               <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
@@ -284,7 +284,7 @@ export default function Contact() {
                 width={480}
               />
             </div>
-            <div className="py-32 custom-textaria">
+            <div className="pt-32 pb-50 custom-textaria">
               <TextArea
                 rows={4}
                 placeholder="Enter your thoughts or suggestions"
@@ -767,5 +767,5 @@ export default function Contact() {
         </Modal>
       ) : null}
     </>
-  )
+  );
 }

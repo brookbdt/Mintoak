@@ -18,18 +18,18 @@ export default function Contact() {
           “Mintoak Services” or “Services” or “Account”), including through an
           EDC terminal (called, “POS terminal” or “Device”) and mobile
           application and software (called, “App”) or visits
-          <span className="text-A8FC055">http://www.mintoak.com</span> (called, “Website”). This Privacy Policy
-          explains how we collect, use and share your personal information. By
-          applying or signing up for a Mintoak Account online, including through
-          the Device or mobile or computer and using our device and services,
-          you accept the terms of this Privacy Policy and agree to our
-          collection, use, sharing and storing of your information as described
-          herein. If you do not agree to the terms of this Privacy Policy,
-          please do not use or access our Website/Device and/or services. By
-          mere use of or access to our Website/Device and/or services, you
-          expressly consent to our use and disclosure of your personal
-          information in accordance with this Privacy Policy. This Privacy
-          Policy is incorporated into and subject to the Terms of Use
+          <span className="text-A8FC055">http://www.mintoak.com</span> (called,
+          “Website”). This Privacy Policy explains how we collect, use and share
+          your personal information. By applying or signing up for a Mintoak
+          Account online, including through the Device or mobile or computer and
+          using our device and services, you accept the terms of this Privacy
+          Policy and agree to our collection, use, sharing and storing of your
+          information as described herein. If you do not agree to the terms of
+          this Privacy Policy, please do not use or access our Website/Device
+          and/or services. By mere use of or access to our Website/Device and/or
+          services, you expressly consent to our use and disclosure of your
+          personal information in accordance with this Privacy Policy. This
+          Privacy Policy is incorporated into and subject to the Terms of Use
         </div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
           Who is covered in the policy
@@ -37,8 +37,9 @@ export default function Contact() {
         <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
           All persons or business, whose information is either collected/
           received/ possessed/ stored/ dealt in/ handled by Mintoak and who
-          visit the site <span className="text-A8FC055">http://www.mintoak.com</span> and provide information to
-          Mintoak online are covered under this Policy.
+          visit the site{" "}
+          <span className="text-A8FC055">http://www.mintoak.com</span> and
+          provide information to Mintoak online are covered under this Policy.
         </div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
           Information covered by this policy
@@ -60,10 +61,9 @@ export default function Contact() {
           person, which, either directly or indirectly, in combination with
           other information available or likely to be available with a body
           corporate, is capable of identifying such person/s.
-
           <div className="pt-10">
-            "Sensitive personal data or information" of a person means such personal
-            information which consists of information relating to :
+            "Sensitive personal data or information" of a person means such
+            personal information which consists of information relating to :
           </div>
         </div>
         <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 text-525252">
@@ -218,14 +218,13 @@ export default function Contact() {
               no, contact nos etc) SHALL NOT be stored on the cookies.
               <br />
               <br />
-              We will use the information stored in the cookies to improve visitor
-              experience through throwing up relevant content where possible. We
-              will also use the cookies to store visitor preferences to ease
-              visitor navigation on the site.
+              We will use the information stored in the cookies to improve
+              visitor experience through throwing up relevant content where
+              possible. We will also use the cookies to store visitor
+              preferences to ease visitor navigation on the site.
               <br />
               <br />
               We may in the future implement encryption of the cookies.
-
             </div>
             <div className="desktop:text-s24l45 desktop:text-252525 mobile:text-s14l21 mobile:text-000000 desktop:pb-20 mobile:pb-8 font-semibold">
               Safeguards :
@@ -277,6 +276,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div >
-  );
+    </div>
+  )
 }

@@ -4,6 +4,7 @@ const colors = {
   525252: "#525252",
   252525: "#252525",
   F1F1F1: "#F1F1F1",
+  "95C11F": "#95C11F",
   FFFFFF: "#FFFFFF",
   E0EFD4: "#E0EFD4",
   "8FC055": "rgba(143,192,85,0.2)",
@@ -45,22 +46,21 @@ const colors = {
   828282: "#828282",
   D1E6BA: "#D1E6BA",
   393939: "#393939",
-
   // For testing
   red: "red",
   green: "green",
   blue: "blue",
-}
+};
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {}
+const spacing2000px = {};
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`
-})
+  spacing2000px[n] = `${n}px`;
+});
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {}
+const spacing100Percentage = {};
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`
-})
+  spacing100Percentage[`${n}%`] = `${n}%`;
+});
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -149,16 +149,20 @@ module.exports = {
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%);",
-        bg_resource: "url(/images/backgrounds/resource-bg.svg)",
+        bg_resource: "url(/images/backgrounds/resource-bg-img.svg)",
         form: " linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%);",
         mintoak_effect:
           "linear-gradient(163.57deg, #A7CD7E 11.39%, rgba(123, 205, 37, 0) 95.33%)",
         faqs_bg:
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
         bg_reel: "url(/images/backgrounds/reel-img.svg)",
+        bg_contact: "url(/images/backgrounds/contact-background.svg)",
+        bg_partner: "url(/images/backgrounds/partner-with-us-img.svg)",
         we_offer_bg:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
         contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
+        privecy_bg:
+          "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
@@ -180,4 +184,4 @@ module.exports = {
     },
   },
   // plugins: [],
-}
+};

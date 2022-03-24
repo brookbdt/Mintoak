@@ -1,14 +1,23 @@
-import React from "react"
-import Image from "../helpers/Image"
+import React from "react";
+import Image from "../helpers/Image";
+import Request_Demo from "../../pages/request_demo";
+import { useEffect, useState } from "react";
 
 export default function MiniFooter() {
+  const [demoPopup, setDemoPopup] = useState(false);
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
   return (
     <div className="flex desktop:hidden laptop:hidden flex-col items-center pb-60 w-100%">
       <div className="p-36 pb-0 w-100% flex flex-col items-center mobile:p-20">
         <div className="text-F1F1F1 text-s18l27">
           Ready to begin your journey with us? Get onboard!
         </div>
-        <div className="mobile-button h-40 w-300 m-30  mobile:w-166 mobile:h-40">
+        <div
+          onClick={() => setDemoPopup(true)}
+          className="mobile-button h-40 w-300 m-30  mobile:w-166 mobile:h-40"
+        >
           Request A Demo
         </div>
 
@@ -60,6 +69,9 @@ export default function MiniFooter() {
       <div className="mt-70 text-FAFAFA text-s12l24">
         © Mintoak, Inc. {new Date().getFullYear()}.{" "}
       </div>
+      {demoPopup && (
+        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+      )}
     </div>
-  )
+  );
 }

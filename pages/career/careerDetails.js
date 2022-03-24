@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
-import Image from "../../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
-import { API, endpoints } from "../../components/helpers/API"
-import { Row, Col, Input, Select, Form, Upload, Button } from "antd"
+import { useEffect, useState } from "react";
+import Image from "../../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { Chrono } from "react-chrono";
+import { API, endpoints } from "../../components/helpers/API";
+import { Row, Col, Input, Select, Form, Upload, Button } from "antd";
 
 export default function CareerDetails() {
-  const { Option } = Select
+  const { Option } = Select;
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -26,7 +26,7 @@ export default function CareerDetails() {
       timing: "Full Time",
       location: "Mimbai",
     },
-  ])
+  ]);
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -38,7 +38,7 @@ export default function CareerDetails() {
         <Option value="91">+91</Option>
       </Select>
     </Form.Item>
-  )
+  );
   return (
     <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
       {/* Top layout with resp */}
@@ -133,7 +133,8 @@ export default function CareerDetails() {
                 Ability to quickly adapt to most current technology
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Should be comfortable with Agile methodology and using Agile tools
+                Should be comfortable with Agile methodology and using Agile
+                tools
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good verbal and written communication skills
@@ -142,7 +143,6 @@ export default function CareerDetails() {
                 Good problem-solving skills
               </li>
             </ul>
-
           </div>
         </div>
       </div>
@@ -169,17 +169,18 @@ export default function CareerDetails() {
           <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16">
             Senior Software Developer
           </div>
-          <div className="job-app-form pt-40">
+          <div className=" pt-40">
             <Form>
               <Row gutter={24}>
                 <Col xs={24} md={8}>
-                  <Form.Item>
+                  <Form.Item className="job-app-form">
                     <label className="text-s20l24 text-C4C4C4">Full Name</label>
                     <Input placeholder="Full Name" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
                   <Form.Item
+                    className="job-app-form"
                     name="phone"
                     rules={[
                       {
@@ -199,8 +200,8 @@ export default function CareerDetails() {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
-                  <Form.Item>
-                    <label className="text-s20l24 text-C4C4C4">
+                  <Form.Item className="global-career">
+                    <label className="text-s20l24 text-C4C4C4 career-label">
                       Key Skills
                     </label>
                     <Select placeholder="Select key skills">
@@ -216,7 +217,7 @@ export default function CareerDetails() {
               </Row>
               <Row gutter={24}>
                 <Col xs={24} md={8}>
-                  <Form.Item>
+                  <Form.Item className="job-app-form">
                     <label className="text-s20l24 text-C4C4C4">
                       Email Address
                     </label>
@@ -224,14 +225,14 @@ export default function CareerDetails() {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
-                  <Form.Item>
+                  <Form.Item className="job-app-form">
                     <label className="text-s20l24 text-C4C4C4">Location</label>
                     <Input placeholder="Enter location" />
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
-                  <Form.Item>
-                    <label className="text-s20l24 text-C4C4C4">
+                  <Form.Item className="global-career">
+                    <label className="text-s20l24 text-C4C4C4 career-label">
                       Qualifications
                     </label>
                     <Select placeholder="B.Tech from XYZ College">
@@ -244,9 +245,11 @@ export default function CareerDetails() {
                 Resume (.pdf, .doc, .docx upto 2mb)
               </div>
               <div className="pt-58">
-                <Form.Item>
+                <Form.Item className="job-app-form">
                   <Upload>
-                    <Button icon={false} ><span className="text-F1F1F1">Tap here to upload</span></Button>
+                    <Button icon={false}>
+                      <span className="text-F1F1F1">Tap here to upload</span>
+                    </Button>
                   </Upload>
                 </Form.Item>
               </div>
@@ -302,5 +305,5 @@ export default function CareerDetails() {
         </div>
       </div>
     </div>
-  )
+  );
 }
