@@ -1,83 +1,86 @@
-import { useEffect, useState, useRef } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { API, endpoints } from "../components/helpers/API";
+import React, { useEffect, useState, useRef } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { API, endpoints } from "../components/helpers/API"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Mousewheel, Pagination } from "swiper"
+
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({});
-  const [storyResp, setStoryResp] = useState({});
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const founder = useRef();
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({})
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
+  const [activeTab, setActiveTab] = useState(0)
+  const founder = useRef()
   useEffect(() => {
     // about_banner
     API({
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp);
+        setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp);
+        setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp);
+        setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp);
+        setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp);
+        setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp);
+        setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp);
+        setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp);
+        setTeamInfoResp(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -354,41 +357,64 @@ export default function About() {
       </div>
 
       {/* Our founders */}
-      {/* <div
+      <div
         id="founder"
-        className="w-100%  bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-976 overflow-scroll laptop:h-976"
+        className="w-100%  bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-976 overflow-hidden laptop:h-976"
       >
-        <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden">
-          Our founders
-        </div>
-        {founderResp.map((item, index) => (
-          <div
-            key={index}
-            id={`founders${index}`}
-            className="flex flex-col desktop:w-70% mobile:w-100%"
-            onLoadStart={() => {
-              console.log("first")
+        <div className=" flex flex-col">
+          <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
+            Our founders
+          </div>
+          <Swiper
+            direction={"vertical"}
+            slidesPerView={1}
+            spaceBetween={30}
+            mousewheel={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Mousewheel]}
+            className="mySwiper overflow-scroll"
+            onSlideChange={(e) => {
+              setActiveTab(e.activeIndex)
+              console.log(e.activeIndex, "sliderchange")
             }}
           >
-            <div className="flex mobile:flex-col">
-              <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
-                <Image src={item?.FounderImage} height={660} width={529} />
-              </div>
-              <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
-                <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
-                  {item?.Name}
+            {founderResp.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  id={`founders${index}`}
+                  className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
+                  data-swiper-parallax="-23%"
+                  onLoadStart={() => {
+                    console.log("first")
+                  }}
+                >
+                  <div className="flex mobile:flex-col">
+                    <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
+                      <Image
+                        src={item?.FounderImage}
+                        height={660}
+                        width={529}
+                      />
+                    </div>
+                    <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
+                      <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
+                        {item?.Name}
+                      </div>
+                      <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
+                        {item?.Designation}
+                      </div>
+                      <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
+                        {item?.Description}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
-                  {item?.Designation}
-                </div>
-                <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
-                  {item?.Description}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <div className="w-30% pt-80 flex flex-col itmes-center justify-center mobile:hidden sticky top-0">
           <div className="h-700 flex flex-col">
             {founderResp &&
@@ -437,7 +463,7 @@ export default function About() {
           <div>Raman Khanduja</div>
           <div>Chief Executive</div>
         </div>
-      </div> */}
+      </div>
     </div>
-  );
+  )
 }
