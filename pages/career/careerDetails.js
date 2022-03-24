@@ -195,6 +195,7 @@ export default function CareerDetails() {
                     <Input
                       addonBefore={prefixSelector}
                       style={{ width: "100%" }}
+                      className="global-input "
                     />
                   </Form.Item>
                 </Col>
@@ -285,11 +286,11 @@ export default function CareerDetails() {
                     </div>
                   </div>
                   <div className="flex items-center pt-46">
-                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14">
+                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14 w-120">
                       <Image src="/images/icons/bag.svg" type="img" />
                       <span className="pl-5">{data.timing}</span>
                     </span>
-                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center">
+                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center w-120">
                       <Image src="/images/icons/location.svg" type="img" />
                       <span className="pl-5">{data.location}</span>
                     </span>
