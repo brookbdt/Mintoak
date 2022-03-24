@@ -1,12 +1,13 @@
 import Image from "../components/helpers/Image";
-import { Modal } from "antd";
+import { Modal, Select } from "antd";
 import { useState } from "react";
 
 export default function Contact() {
+  const { Option } = Select;
   const [modalvisible, setmodalVisible] = useState(false);
   return (
     <>
-      <div className="w-100% bg-contact_us mobile:px-20 flex mobile:flex-col mobile:pt-50">
+      <div className="w-100% bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50">
         <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100%">
           <div>
             <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:px-33">
@@ -99,14 +100,20 @@ export default function Contact() {
                 className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
               />
             </div>
-            <div className="pb-40">
+            <div className="pb-40 global-select">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Domain
               </div>
-              <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5">
+              <Select
+                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
+                style={{ fontWeight: "bold" }}
+              >
+                <Option>Select</Option>
+              </Select>
+              {/* <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5">
                 <option value="India">India</option>
                 <option value="Usa">Usa</option>
-              </select>
+              </select> */}
             </div>
             <div className="pb-40">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
