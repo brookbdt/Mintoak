@@ -903,3 +903,17 @@ button[disabled] {
   list-style: disc;
   margin-left: 26px;
 }
+.global-img {
+  opacity: 0.5;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+.bg-button_bg {
+  background: linear-gradient(
+    180deg,
+    #88cd37 -48.55%,
+    rgba(143, 192, 85, 0) 244.44%
+  );
+  border: 1px solid #87bd25;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
