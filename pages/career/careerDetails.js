@@ -169,7 +169,7 @@ export default function CareerDetails() {
           <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16">
             Senior Software Developer
           </div>
-          <div className=" pt-40">
+          <div className=" global-dropdown pt-40">
             <Form>
               <Row gutter={24}>
                 <Col xs={24} md={8}>

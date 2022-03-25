@@ -181,36 +181,23 @@ export default function Merchant() {
           <div className="laptop:hidden mobile:hidden m-auto flex justify-center">
             <Image
               src="/images/icons/merchant-bussiness-transaction.svg"
-              width={1000}
-              height={500}
               type="img"
-              className="w-100% h-300"
+              className="w-1500 h-300"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center  m-auto pb-122 justify-around mobile:hidden desktop:px-90 laptop:px-90">
-            <div className="w-300 text-s24l36 font-semibold pr-70">
-              No more clunky legacy systems
-            </div>
-            <div className="w-300 text-s24l36 font-semibold ml-25">
-              Say no to fragmented and scattered businesses
-            </div>
-            <div className="w-300 text-s24l36 font-semibold pl-70">
-              Stay away from digital confusion
-            </div>
+          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-between pb-122 desktop:px-30 mobile:hidden laptop:px-30">
+            {merchantBenefits3?.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="w-300 text-s24l36 font-semibold m-auto"
+                >
+                  {item.Title}
+                </div>
+              );
+            })}
           </div>
         </div>
-        {/* <div className="pt-51 laptop:mx-200 text-F1F1F1 flex text-center m-auto pb-122 justify-center">
-          <div className="pl-135 desktop:w-417 mobile:text-s14l17 mobile:pl-0">
-            No more clunky legacy systems
-          </div>
-          <div className="w-300 desktop:w-417 mobile:text-s14l17">
-            <div>Say no to fragmented and</div>
-            scattered businesses
-          </div>
-          <div className="w-300 desktop:w-417 mobile:text-s14l17">
-            Stay away from digital confusion
-          </div>
-        </div> */}
       </div>
       {/* Time to Get Onboard with Mintoak */}
       <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">

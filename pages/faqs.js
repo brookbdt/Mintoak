@@ -2,8 +2,9 @@ import Image from "../components/helpers/Image";
 import { Checkbox, Collapse } from "antd";
 import { Pagination } from "antd";
 import { Input } from "antd";
+import { API, endpoints } from "../components/helpers/API";
 import { Modal } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const { TextArea } = Input;
 
@@ -12,6 +13,18 @@ const { Panel } = Collapse;
 export default function Contact() {
   const [modalvisible, setmodalVisible] = useState(false);
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
+  const [faqs, setFaqs] = useState([]);
+
+  useEffect(() => {
+    API({
+      url: endpoints.faq,
+    }).then((resp) => {
+      if (!resp.message) {
+        setFaqs(resp);
+        console.log("sadjunsafysahgsadd", faqs);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -157,17 +170,20 @@ export default function Contact() {
               bordered={false}
               // defaultActiveKey={["1"]}
             >
-              <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="1"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel>
-              <Panel
+              {faqs?.map((items, index) => {
+                return (
+                  <Panel
+                    className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+                    header={items.Question}
+                    key={index}
+                  >
+                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                      {items.Answer}
+                    </p>
+                  </Panel>
+                );
+              })}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="2"
@@ -176,8 +192,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="3"
@@ -186,8 +202,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="4"
@@ -196,8 +212,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="5"
@@ -206,8 +222,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="6"
@@ -216,8 +232,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="7"
@@ -226,8 +242,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="8"
@@ -236,8 +252,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="9"
@@ -246,8 +262,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="10"
@@ -256,8 +272,8 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
-              <Panel
+              </Panel> */}
+              {/* <Panel
                 className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
                 header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
                 key="11"
@@ -266,7 +282,7 @@ export default function Contact() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
-              </Panel>
+              </Panel> */}
             </Collapse>
           </div>
           <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
@@ -370,12 +386,12 @@ export default function Contact() {
                     </div>
                     <div className="w-153 mobile:hidden ">
                       <div className="text-s16l19 text-525252 popup-content">
-                        nstant merchant onboarding & management
+                        instant merchant onboarding & management
                       </div>
                     </div>
                     <div className="w-163 desktop:hidden laptop:hidden">
                       <div className="text-s12l14 text-525252">
-                        nstant merchant onboarding & management
+                        instant merchant onboarding & management
                       </div>
                     </div>
                   </div>
