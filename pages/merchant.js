@@ -126,7 +126,7 @@ export default function Merchant() {
             Benefits for the Merchants
           </div>
         </div>
-        <div className="flex pt-40 mobile:block justify-center w-100% mobile:px-20 mobile:hidden">
+        <div className="flex pt-40 mobile:block justify-center items-center npm w-100% mobile:px-20 mobile:hidden">
           {merchantBenefitsResp?.map((item, index) => {
             return (
               <div
@@ -140,7 +140,7 @@ export default function Merchant() {
                     className="desktop:h-114 desktop:w-92 laptop:h-114 laptop:w-92"
                   />
                 </div>
-                <div className="w-100% text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center p-5 desktop:pt-40 laptop:pt-30 laptop:text-s20l30 desktop:font-bold laptop:font-bold">
+                <div className="w-100% text-s24l36 mobile:text-s16l19 mobile:w-100% mobile:px-40 text-center p-5 desktop:pt-52 laptop:pt-30 laptop:text-s20l30 font-extrabold">
                   {item.Title}
                 </div>
               </div>
@@ -358,6 +358,7 @@ export default function Merchant() {
                   Handle all types of digital payments on a single platform
                 </div>
               </div>
+
               <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
                 <Image
                   src="/images/icons/pay-later.svg"

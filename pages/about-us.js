@@ -1,27 +1,27 @@
-import { useEffect, useState, useRef } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Mousewheel, Pagination } from "swiper"
+import { useEffect, useState, useRef } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper";
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({})
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [matricsResp, setMatricsResp] = useState([])
-  const [visionResp, setVisionResp] = useState({})
-  const [missionResp, setMissionResp] = useState({})
-  const [principalResp, setPrincipalResp] = useState([])
-  const [founderResp, setFounderResp] = useState([])
-  const [teamInfoResp, setTeamInfoResp] = useState({})
-  const [activeTab, setActiveTab] = useState(0)
-  const founder = useRef()
+  const [aboutBannerResp, setAboutBannerResp] = useState({});
+  const [storyResp, setStoryResp] = useState({});
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [activeTab, setActiveTab] = useState(0);
+  const founder = useRef();
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     // about_banner
@@ -29,65 +29,65 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp)
+        setAboutBannerResp(resp);
       }
-    })
+    });
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp)
+        setStoryResp(resp);
       }
-    })
+    });
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp)
+        setMatricsResp(resp);
       }
-    })
+    });
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp)
+        setMissionResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp)
+        setVisionResp(resp);
       }
-    })
+    });
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp)
+        setPrincipalResp(resp);
       }
-    })
+    });
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp)
+        setFounderResp(resp);
       }
-    })
+    });
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp)
+        setTeamInfoResp(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -148,7 +148,7 @@ export default function About() {
                   />
                 </div>
                 <div
-                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold  desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium `}
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold  desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium laptop:pt-45 desktop:pt-45`}
                 >
                   {/* <div className="text-s24l36 ls-0_2 text-000000 font-bold py-42 desktop:pb-9  text-center desktop:px-50 laptop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium"> */}
                   {item.Description}
@@ -206,12 +206,12 @@ export default function About() {
         <div className="flex desktop:justify-around laptop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 laptop:pt-80 laptop:pb-60 mobile:pb-25">
           Our principles
         </div>
-        <div className="flex mobile:flex-col items-center w-100% desktop desktop:px-200 desktop:justify-around laptop:justify-around laptop:px-100 mobile:px-13">
+        <div className="flex mobile:flex-col items-center w-100% desktop:justify-center laptop:justify-center desktop desktop:px-200 laptop:px-100 mobile:px-13">
           {principalResp &&
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
                   index != principalResp.length - 1 && ""
                 } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
@@ -386,8 +386,8 @@ export default function About() {
             modules={[Mousewheel]}
             className="mySwiper overflow-scroll"
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex)
-              console.log(e.activeIndex, "sliderchange")
+              setActiveTab(e.activeIndex);
+              console.log(e.activeIndex, "sliderchange");
             }}
           >
             {founderResp.map((item, index) => (
@@ -397,7 +397,7 @@ export default function About() {
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
                   onLoadStart={() => {
-                    console.log("first")
+                    console.log("first");
                   }}
                 >
                   <div className="flex mobile:flex-col">
@@ -431,7 +431,7 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index)
+                    setActiveTab(index);
                   }}
                   key={index}
                 >
@@ -442,7 +442,7 @@ export default function About() {
                   >
                     {founderResp[index]?.Name}
                   </span>
-                  <span className="items-center flex flex-col mt-minus-22">
+                  <span className="items-center flex flex-col mt-minus-22 ">
                     <span
                       className={`${
                         activeTab == index
@@ -478,5 +478,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
