@@ -1,13 +1,25 @@
 import { Modal, Select } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "../components/helpers/Image";
+import { API, endpoints } from "../components/helpers/API";
 
 export default function Request_Demo(props) {
   const { Option } = Select;
-
+  const [countryList, setCountryList] = useState(null);
+  const [productList, setProductList] = useState(null);
   const [modalvisible, setmodalVisible] = useState(props.triger);
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
-
+  useEffect(() => {
+    API({
+      url: endpoints.dropdown,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCountryList(resp[0]);
+        setProductList(resp[1])
+      }
+    });
+  }, []);
+  // console.log('wqsaXZ', dropdown)
   return (
     <>
       <Modal
@@ -69,7 +81,12 @@ export default function Request_Demo(props) {
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
                 style={{ fontWeight: "bold" }}
               >
-                <Option>Select</Option>
+                {
+                  countryList && countryList.Data.map((item) => (
+
+                    <Option>{item.name}</Option>
+                  ))
+                }
               </Select>
             </div>
             <div className="pb-40 w-360 mobile:w-100%">
@@ -102,7 +119,9 @@ export default function Request_Demo(props) {
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
                   style={{ fontWeight: "bold" }}
                 >
-                  <Option>Select</Option>
+                  {productList && productList.Data.map((item) => (
+                    <Option>{item.title}</Option>
+                  ))}
                 </Select>
               </div>
             </div>

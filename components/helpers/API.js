@@ -52,7 +52,14 @@ const endpoints = {
   partner_with_us_new_heights: "partner-with-us-new-heights",
   careers_banner: "careers-banner",
   career_page_life_mintoak: "career-page-life-mintoak",
-  career_listing_value_proposition: "career-listing-value-propositions"
+  career_listing_value_proposition: "career-listing-value-propositions",
+  home_page_blogs: "home-page-blogs",
+  partner_with_us_new_heights2: "partner-with-us-new-heights-2-s",
+  about_us_customization_2: "about-us-customization-2-s",
+  about_us_customization: "about-us-customization",
+  partner_with_us_mintoak_effect: "partner-with-us-mintoak-effects",
+  resources_blog_list: "resources-blog-lists",
+  dropdown: "dropdowns"
 };
 
 export { API, endpoints, domain };

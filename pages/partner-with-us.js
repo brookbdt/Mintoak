@@ -12,6 +12,10 @@ export default function Partner() {
   const [demoPopup, setDemoPopup] = useState(false);
   const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
   const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null);
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
+  const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] = useState(null)
   useEffect(() => {
     // Community card
     API({
@@ -39,6 +43,39 @@ export default function Partner() {
         setPartnerWithUsNewHeights(resp);
       }
     });
+    API({
+      url: endpoints.partner_with_us_new_heights2,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setPartnerWithUsNewHeights2(resp);
+      }
+    });
+    API({
+      url: endpoints.about_us_customization_2,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setAboutUsCustomization2(resp);
+      }
+    });
+    API({
+      url: endpoints.about_us_customization,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setAboutUsCustomization(resp);
+      }
+    });
+    API({
+      url: endpoints.partner_with_us_mintoak_effect,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setPartnerWithUsMintoakEffect(resp);
+      }
+    });
+
   }, []);
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -91,67 +128,30 @@ export default function Partner() {
             tools by your side. */}
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
-            <div className="flex desktop:h-231 justify-around items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
-                <Image
-                  src="/images/icons/financial-service-icon.svg"
-                  type="img"
-                  className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
-                />
-              </div>
-              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
-                Tailored financial products
-              </div>
-            </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
-                <Image
-                  src="/images/icons/devices-icon.svg"
-                  type="img"
-                  className="desktop:w-65 desktop:h-101 laptop:w-65 laptop:h-101 mobile:w-28 mobile:h-51"
-                />
+            {partnerWithUsNewHeights2 && partnerWithUsNewHeights2.map((item, index) => (
+              <div className="flex desktop:h-231 justify-around items-center flex-col w-25% mobile:flex-row mobile:w-100%" key={index}>
+                <div>
+                  <Image
+                    src={item.Icon[0]}
+                    type="img"
+                    className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
+                  />
+                </div>
+                <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
+                  {item.Functions}
+                </div>
               </div>
 
-              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
-                Platform-as-a-service model
-              </div>
-            </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
-                <Image
-                  src="/images/icons/lamp-icon.svg"
-                  type="img"
-                  className="desktop:w-68 desktop:h-101 laptop:w-68 laptop:h-101 mobile:w-27 mobile:h-40"
-                />
-              </div>
-              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
-                Innovative functionality
-              </div>
-            </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
-                <Image
-                  src="/images/icons/cart-icon.svg"
-                  type="img"
-                  className="desktop:w-101 desktop:h-101 laptop:w-101 laptop:h-101 mobile:w-39 mobile:h-48"
-                />
-              </div>
-              <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
-                Cross-selling platform
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         {/* Customization on the go! */}
         <div className="desktop:flex flex-col laptop:flex desktop:py-80 laptop:py-80 mobile:pt-39 justify-center items-center mobile:px-20 bg-footer">
           <div className="desktop:text-s44l52 laptop:text-s44l52 desktop:text-F1F1F1 laptop:text-F1F1F1 font-bold text-center mobile:text-s22l26_4 mobile:text-FFFFFF">
-            Customization on the go!
+            {aboutUsCustomization?.Title}
           </div>
           <div className="desktop:text-s20l30 laptop:text-s20l30 desktop:text-F1F1F1 laptop:text-F1F1F1 text-center desktop:py-40 laptop:py-40 desktop:px-170 laptop:px-170 mobile:pt-39 mobile: w-100% mobile:pb-32 mobile:text-F1F1F1 mobile:text-s14l21 mobile:px-20">
-            Our robust and flexible platform can be remodeled both partially and
-            completely, as per your specific requirements. The result is a
-            cloud-native, agile, one-stop solution powered by valuable data
-            analytics and exhaustive service management.
+            {aboutUsCustomization?.Description}
           </div>
           <div className="flex w-100% justify-center mobile:hidden">
             <Image
@@ -170,31 +170,17 @@ export default function Partner() {
             />
           </div>
           <div className="flex w-100% items-center justify-evenly desktop:pt-48 text-center mobile:hidden">
-            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70">
-              <div className="text-s24l29 text-FFFFFF font-semibold text-center">
-                Custom branding & design
+
+            {aboutUsCustomization2 && aboutUsCustomization2.map((item, index) => (
+              <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70" key={index}>
+                <div className="text-s24l29 text-FFFFFF font-semibold text-center">
+                  {item?.Title}
+                </div>
+                <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
+                  {item?.Description}
+                </div>
               </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
-                Our platform can be re-branded with respect to your brand image
-                & guidelines
-              </div>
-            </div>
-            <div className="flex flex-col w-100% desktop:w-400 items-center px-20 desktop:m-auto">
-              <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
-                Modular product stack
-              </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
-                Choose different modules from a range of products available
-              </div>
-            </div>
-            <div className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pr-130">
-              <div className="text-s24l29 text-FFFFFF font-semibold text-center ">
-                Subscription pricing
-              </div>
-              <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
-                Pay only for the features you have selected from our pack
-              </div>
-            </div>
+            ))}
           </div>
           <div className="desktop:hidden laptop:hidden w-100%">
             <div className="w-100% text-center items-center justify-center flex">
@@ -224,50 +210,20 @@ export default function Partner() {
             The Mintoak effect
           </div>
           <div className="flex desktop:px-150 mobile:flex-col items-center justify-around mobile:pt-23 desktop:pt-60 laptop:pt-60 mobile:w-100%">
-            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50">
-              <div className="flex">
-                <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
-                <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
-                  25%
+            {partnerWithUsMintoakEffect && partnerWithUsMintoakEffect.map((item, index) => (
+              <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50" key={index}>
+                <div className="flex">
+                  <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
+                  <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
+                    {item?.Count}
+                  </div>
+                </div>
+                <div className=" mobile:pl-15 desktop:w-200 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
+                  {item?.Title}
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:w-200 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
-                Increased activation rates
-              </div>
-            </div>
-            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pt-20">
-              <div className="flex">
-                <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
-                <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
-                  50%
-                </div>
-              </div>
-              <div className=" mobile:pl-15 desktop:w-200 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
-                Increased digital transactions
-              </div>
-            </div>
-            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pt-20">
-              <div className="flex">
-                <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
-                <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
-                  35%
-                </div>
-              </div>
-              <div className=" mobile:pl-15 desktop:w-250 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
-                Increased throughout payment
-              </div>
-            </div>
-            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pt-20">
-              <div className="flex">
-                <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
-                <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
-                  60%
-                </div>
-              </div>
-              <div className=" mobile:pl-15 desktop:w-100 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
-                Increased multi-fold
-              </div>
-            </div>
+
+            ))}
           </div>
         </div>
         {/* Partner with us form */}
@@ -435,9 +391,8 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-active" : ""
-                          }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -459,34 +414,38 @@ export default function Partner() {
           </div>
         </div>
       </div>
-      {modalvisible ? (
-        <Modal
-          bodyStyle={{
-            background:
-              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-          }}
-          centered
-          visible={modalvisible}
-          onCancel={() => setmodalVisible(false)}
-          footer={null}
-        >
-          <div className="w-100%">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+      {
+        modalvisible ? (
+          <Modal
+            bodyStyle={{
+              background:
+                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            }}
+            centered
+            visible={modalvisible}
+            onCancel={() => setmodalVisible(false)}
+            footer={null}
+          >
+            <div className="w-100%">
+              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+                Thank you for getting in touch. We will get back to you shortly.
+              </div>
             </div>
-            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-              Thank you for getting in touch. We will get back to you shortly.
-            </div>
-          </div>
-        </Modal>
-      ) : null}
-      {demoPopup && (
-        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
-      )}
+          </Modal>
+        ) : null
+      }
+      {
+        demoPopup && (
+          <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+        )
+      }
     </>
   );
 }
