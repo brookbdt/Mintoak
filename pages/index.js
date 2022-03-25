@@ -641,13 +641,13 @@ export default function Home() {
                       />
                     </div>
                     <div div className="flex flex-col items-start">
-                      <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                      <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 pt-10 pb-26 px-20 font-semibold text-s24l31">
+                      <div className="text-252525 pt-10 pb-26 pr-20 pl-15 font-semibold text-s24l31">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 px-20  text-s20l24">
+                      <div className="text-525252 pr-20 pl-15 text-s20l24">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
@@ -746,14 +746,14 @@ export default function Home() {
                     className="grayscale colorImage"
                   />
                 </div>
-                <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                <div className="flex flex-col items-start text-left">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                     6 min read
                   </div>
-                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
+                  <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
+                  <div className="text-525252 pr-20 pl-15 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -781,13 +781,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                     6 min read
                   </div>
-                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
+                  <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
+                  <div className="text-525252 pr-20 pl-15 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -815,13 +815,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                     6 min read
                   </div>
-                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
+                  <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
                     The tango between banks and fintechs: Rivals turn partners
                   </div>
-                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
+                  <div className="text-525252 pr-20 pl-15 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -849,13 +849,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                     6 min read
                   </div>
-                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
+                  <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
                     How to standout in digital payments business space
                   </div>
-                  <div className="text-525252 px-20 laptop:pt-26  text-s20l24">
+                  <div className="text-525252 pr-20 pl-15 laptop:pt-26  text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -883,13 +883,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="text-83B449 text-s20l24 pt-34 pb-10 px-20">
+                  <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
                     6 min read
                   </div>
-                  <div className="text-252525 px-20 h-100 font-semibold text-s24l31">
+                  <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
                     How to fix recurring payments under new RBI guidelines
                   </div>
-                  <div className="text-525252 px-20 laptop:pt-26 text-s20l24">
+                  <div className="text-525252 pr-20 pl-15 laptop:pt-26 text-s20l24">
                     By <span className="font-bold">Raman Kahnduja</span>
                     <br />
                     Sept 13, 2021
@@ -1092,7 +1092,7 @@ export default function Home() {
 
         {/* FAQs */}
         <div className="px-180 py-150 mobile:px-0 mobile:py-0">
-          <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60">
+          <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60 global-collapse">
             <div className="mb-40 ml-40 mt-50 mobile:ml-0">
               <div className="text-252525 text-s45l54 font-bold mobile:text-s20l150 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
                 FAQ's
@@ -1103,6 +1103,7 @@ export default function Home() {
             </div>
 
             <Collapse
+              accordion
               expandIcon={({ isActive }) =>
                 isActive ? (
                   <i className="fa fa-angle-up text-262626" />

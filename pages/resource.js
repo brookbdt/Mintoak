@@ -47,32 +47,18 @@ export default function Resources() {
                 className="h-84 w-128"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
+            <div className="cursor-pointer btn  rounded-md desktop:hidden laptop:hidden">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
                 width={84}
                 height={130}
               />
             </div>
-            <div className="cursor-pointer btn mb-16 rounded-md mobile:hidden ">
+            <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
                 type="img"
-                className="h-84 w-128"
-              />
-            </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
-              <Image
-                src="/images/backgrounds/resource-bg.svg"
-                width={84}
-                height={130}
-              />
-            </div>
-            <div className="cursor-pointer btn mb-16 rounded-md mobile:hidden ">
-              <Image
-                src="/images/backgrounds/resource-bg.svg"
-                type="img"
-                className="h-84 w-128"
+                className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -82,11 +68,25 @@ export default function Resources() {
                 height={130}
               />
             </div>
-            <div className="cursor-pointer btn  rounded-md mobile:hidden ">
+            <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
                 type="img"
-                className="h-84 w-128"
+                className="h-84 w-128 rounded-md global-img"
+              />
+            </div>
+            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
+              <Image
+                src="/images/backgrounds/resource-bg.svg"
+                width={84}
+                height={130}
+              />
+            </div>
+            <div className="cursor-pointer btn bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
+              <Image
+                src="/images/backgrounds/resource-bg.svg"
+                type="img"
+                className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
@@ -125,7 +125,7 @@ export default function Resources() {
         <div className="flex desktop:pb-80 laptop:pb-80 mobile:pb-40 mobile:pt-21 desktop:pt-41 laptop:pt-41">
           <div className="flex w-100% overf whitespace-nowrap pb-20">
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-faqs_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div className="shadow-md flex inline-block items-center justify-center bg-button_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/bank-icon.svg"
@@ -156,7 +156,7 @@ export default function Resources() {
               <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
-                    src="/images/icons/payment-blog.svg"
+                    src="/images/icons/payment-bank.svg"
                     height={21}
                     width={32}
                   />

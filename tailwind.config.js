@@ -46,6 +46,7 @@ const colors = {
   828282: "#828282",
   D1E6BA: "#D1E6BA",
   393939: "#393939",
+  "100F0F": "#100F0F",
   // For testing
   red: "red",
   green: "green",
