@@ -184,10 +184,10 @@ export default function Merchant() {
               width={1000}
               height={500}
               type="img"
-              className="w-4000 h-200"
+              className="w-100% h-300"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center justify-center m-auto pb-122 justify-center mobile:hidden">
+          <div className="pt-51 text-F1F1F1 flex text-center items-center  m-auto pb-122 justify-around mobile:hidden desktop:px-90 laptop:px-90">
             <div className="w-300 text-s24l36 font-semibold pr-70">
               No more clunky legacy systems
             </div>

@@ -73,6 +73,8 @@ export default function Partner() {
               src={partnerWithUsBanner?.ilustration[0]}
               width={550}
               height={550}
+              type="img"
+              className="w-100%"
             />
           </div>
         </div>

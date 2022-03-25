@@ -40,7 +40,7 @@ export default function CareerDetails() {
     </Form.Item>
   );
   return (
-    <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
+    <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33">

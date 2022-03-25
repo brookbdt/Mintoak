@@ -20,13 +20,15 @@ export default function Contact() {
           application and software (called, “App”) or visits
           <span className="text-A8FC055">http://www.mintoak.com</span> (called,
           “Website”). This Privacy Policy explains how we collect, use and share
-          your personal information. By applying or signing up for a Mintoak
-          Account online, including through the Device or mobile or computer and
-          using our device and services, you accept the terms of this Privacy
-          Policy and agree to our collection, use, sharing and storing of your
-          information as described herein. If you do not agree to the terms of
-          this Privacy Policy, please do not use or access our Website/Device
-          and/or services. By mere use of or access to our Website/Device and/or
+          your personal information.
+          <br />
+          <br /> By applying or signing up for a Mintoak Account online,
+          including through the Device or mobile or computer and using our
+          device and services, you accept the terms of this Privacy Policy and
+          agree to our collection, use, sharing and storing of your information
+          as described herein. If you do not agree to the terms of this Privacy
+          Policy, please do not use or access our Website/Device and/or
+          services. By mere use of or access to our Website/Device and/or
           services, you expressly consent to our use and disclosure of your
           personal information in accordance with this Privacy Policy. This
           Privacy Policy is incorporated into and subject to the Terms of Use
@@ -99,20 +101,26 @@ export default function Contact() {
               transactions; Displaying historical transactions; Developing new
               products and Services; and delivering the information and support
               you request, including technical notices, security alerts, and
-              support and administrative messages. We may use information about
-              you to improve, personalize and facilitate your use of our
-              Services. For example, when you sign up for a Mintoak account, we
-              may associate certain information with your new account, such as
-              information about other accounts you had or currently have with
-              Mintoak, and prior transactions you made using our Services. We
-              also may use information about you to measure, customize, and
-              enhance our Services, including the design, content, and
-              functionality of our applications, devices and websites, or to
-              track and analyse trends and usage in connection with our
-              Services. We may use information you provide to connect you with
-              your customers/buyers and people you already know Mintoak may
-              utilize the information collected to facilitate the Merchant to
-              use the customer information for its loyalty marketing programs
+              support and administrative messages.
+              <br />
+              <br /> We may use information about you to improve, personalize
+              and facilitate your use of our Services. For example, when you
+              sign up for a Mintoak account, we may associate certain
+              information with your new account, such as information about other
+              accounts you had or currently have with Mintoak, and prior
+              transactions you made using our Services. We also may use
+              information about you to measure, customize, and enhance our
+              Services, including the design, content, and functionality of our
+              applications, devices and websites, or to track and analyse trends
+              and usage in connection with our Services.
+              <br />
+              <br /> We may use information you provide to connect you with your
+              customers/buyers and people you already know
+              <br />
+              <br /> Mintoak may utilize the information collected to facilitate
+              the Merchant to use the customer information for its loyalty
+              marketing programs <br />
+              <br />
               All Information collected by Mintoak, including from customers, in
               the course of our payment services/aggregation business, shall be
               used for the relevant lawful purposes connected with various
@@ -124,13 +132,14 @@ export default function Contact() {
               requests, transactions and/or maintain records as per
               internal/legal/regulatory requirements and shall be used to
               provide the Concerned Person with the best possible
-              services/products as also to protect interests of Mintoak. Mintoak
-              also may disclose information about you as permitted or required
-              by regulatory agencies and law. About the information collected
-              from visitors of the website online (“visitor”), Mintoak will use
-              the Information to improve the Covered Persons experience on the
-              site and make subsequent offers to the visitor on products which
-              may be of interest to him / her, if so agreed while giving
+              services/products as also to protect interests of Mintoak. <br />
+              <br />
+              Mintoak also may disclose information about you as permitted or
+              required by regulatory agencies and law. About the information
+              collected from visitors of the website online (“visitor”), Mintoak
+              will use the Information to improve the Covered Persons experience
+              on the site and make subsequent offers to the visitor on products
+              which may be of interest to him / her, if so agreed while giving
               information.
             </div>
             <div className="desktop:text-s24l45 desktop:text-252525 mobile:text-s14l21 mobile:text-000000 desktop:pb-20 mobile:pb-8 font-semibold">
@@ -149,22 +158,27 @@ export default function Contact() {
               Government/court/other relevant authority’s directions/orders.
               Needless to add, confidentiality norms as applicable shall be
               adhered to. Mintoak may also share Information to provide you with
-              superior services and a range of offers. We may also share your
-              Information, without obtaining your prior written consent, with
-              government agencies mandated under the law to obtain information
-              for verification of identity, or for prevention, detection,
-              investigation including cyber incidents, prosecution, and
-              punishment of offences, or where disclosure is necessary for
-              compliance of a legal obligation. Any Information may be required
-              to be disclosed to any third party by us by an order under the law
-              for the time being in force. In this regard, it may be necessary
-              to disclose the Covered Persons information to one or more agents,
-              partners and contractors of Mintoak and their sub-contractors, but
-              such agents, contractors, and sub-contractors will be required to
-              agree to use the information obtained from Mintoak only for these
-              purposes. Mintoak may share the “information” collected with its
-              sponsoring bank/s for transaction processing and settlement of
-              payments due to the Merchant.
+              superior services and a range of offers.
+              <br />
+              <br /> We may also share your Information, without obtaining your
+              prior written consent, with government agencies mandated under the
+              law to obtain information for verification of identity, or for
+              prevention, detection, investigation including cyber incidents,
+              prosecution, and punishment of offences, or where disclosure is
+              necessary for compliance of a legal obligation. Any Information
+              may be required to be disclosed to any third party by us by an
+              order under the law for the time being in force.
+              <br />
+              <br /> In this regard, it may be necessary to disclose the Covered
+              Persons information to one or more agents, partners and
+              contractors of Mintoak and their sub-contractors, but such agents,
+              contractors, and sub-contractors will be required to agree to use
+              the information obtained from Mintoak only for these purposes.
+              <br />
+              <br />
+              Mintoak may share the “information” collected with its sponsoring
+              bank/s for transaction processing and settlement of payments due
+              to the Merchant.
             </div>
             <div className="desktop:text-s24l45 desktop:text-252525 mobile:text-s14l21 mobile:text-000000 desktop:pb-20 mobile:pb-8 font-semibold">
               Retention :
