@@ -833,10 +833,39 @@ button[disabled] {
   .career-label {
     font-size: 20px;
   }
+  .ant-select-dropdown-hidden {
+    /* display: none; */
+    background: black;
+  }
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background: brown;
+    /* background-color: #f5f5f5; */
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background: linear-gradient(
+      126.9deg,
+      #3f3f3f -3.96%,
+      #000000 136.6%
+    ) !important;
+    border: 1px solid #9f9fa0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+  }
   .ant-select-arrow {
     top: 65%;
     color: white;
     font-size: 15px;
+  }
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background: linear-gradient(
+      126.9deg,
+      #3f3f3f -3.96%,
+      #000000 136.6%
+    ) !important;
+    border: 1px solid #9f9fa0 !important;
+    box-sizing: border-box !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: transparent;

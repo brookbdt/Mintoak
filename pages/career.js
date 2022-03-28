@@ -129,7 +129,8 @@ export default function Career() {
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <Image
-          src={homeBannerResp?.Illustration}
+          src="/images/backgrounds/career-top-img.svg"
+          type="img"
           className="absolute z-minus1 mobile:hidden"
         />
         <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
