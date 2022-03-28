@@ -26,8 +26,8 @@ export default function DesktopFooter() {
       <div className="flex justify-between items-baseline px-180 pt-130 laptop:px-50">
         <div className="pb-175">
           <Image src="/images/logo_white.svg" width={250} height={50} />
-          <div className="mt-20 text-F5FBF3 text-s20l24">Find us on</div>
-          <div className="flex mt-15 w-150 justify-between cursor-pointer h-40">
+          <div className="mt-35 text-F5FBF3 text-s20l24">Find us on</div>
+          <div className="flex mt-19 w-150 justify-between cursor-pointer h-40">
             <svg
               width="35"
               height="35"
@@ -84,12 +84,12 @@ export default function DesktopFooter() {
               />
             </svg>
           </div>
-          <div className="mt-40 text-FAFAFA text-s20l24">
+          <div className="mt-30 text-FAFAFA text-s20l24">
             © Mintoak, Inc. {new Date().getFullYear()}.{" "}
           </div>
         </div>
         <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-20 laptop:mb-35">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
             Company
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -103,7 +103,7 @@ export default function DesktopFooter() {
           </div>
         </div>
         <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-20 laptop:mb-35">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
             Offerings
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -117,7 +117,7 @@ export default function DesktopFooter() {
           </div>
         </div>
         <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-20 laptop:mb-35">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
             Legal
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -131,7 +131,7 @@ export default function DesktopFooter() {
           </div>
         </div>
         <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-20 laptop:mb-35">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
             Resources
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -145,7 +145,7 @@ export default function DesktopFooter() {
           </div>
         </div>
         <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-20 laptop:mb-35">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
             Support
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">

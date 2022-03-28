@@ -42,7 +42,7 @@ const endpoints = {
   about_us_meet_the_team_1: "about-us-meet-the-team-1",
   merchant_page_benefits: "merchant-page-benefits",
   merchant_page_benefits_2: "merchant-page-benefits-2",
-  merchant_page_benefits_3: "merchant-page-benefits-3",
+  merchant_page_benefits_3: "merchant-page-benefits-3-s",
   merchant_page_assured_by_banks: "merchant-page-assured-by-banks",
   merchant_page_onboarding: "merchant-page-onboarding",
   merchant_page_mock_up2: "merchant-page-mock-up2",

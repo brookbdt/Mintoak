@@ -40,7 +40,7 @@ export default function CareerDetails() {
     </Form.Item>
   );
   return (
-    <div className="desktop:h-fit w-100% bg-8FC055 mobile:w-100%">
+    <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33">
@@ -169,7 +169,7 @@ export default function CareerDetails() {
           <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16">
             Senior Software Developer
           </div>
-          <div className=" pt-40">
+          <div className=" global-dropdown pt-40">
             <Form>
               <Row gutter={24}>
                 <Col xs={24} md={8}>
