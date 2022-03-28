@@ -2,7 +2,7 @@ import Image from "../components/helpers/Image";
 import Carousel from "react-elastic-carousel";
 import { useEffect, useState } from "react";
 import { consts } from "react-elastic-carousel";
-import { Modal } from "antd";
+import { Modal, Select } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Request_Demo from "./request_demo";
 
@@ -12,6 +12,8 @@ export default function Partner() {
   const [demoPopup, setDemoPopup] = useState(false);
   const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
   const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
+  const { Option } = Select;
+
   useEffect(() => {
     // Community card
     API({
@@ -93,8 +95,8 @@ export default function Partner() {
             tools by your side. */}
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
-            <div className="flex desktop:h-231 justify-around items-center flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+            <div className="flex desktop:h-231 justify-around mobile:justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40">
+              <div className="p-5">
                 <Image
                   src="/images/icons/financial-service-icon.svg"
                   type="img"
@@ -105,8 +107,8 @@ export default function Partner() {
                 Tailored financial products
               </div>
             </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+            <div className="flex desktop:h-231 items-center justify-around mobile:justify-start flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40">
+              <div className="p-5">
                 <Image
                   src="/images/icons/devices-icon.svg"
                   type="img"
@@ -118,8 +120,8 @@ export default function Partner() {
                 Platform-as-a-service model
               </div>
             </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+            <div className="flex desktop:h-231 items-center justify-around mobile:justify-start flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40">
+              <div className="p-5">
                 <Image
                   src="/images/icons/lamp-icon.svg"
                   type="img"
@@ -130,8 +132,8 @@ export default function Partner() {
                 Innovative functionality
               </div>
             </div>
-            <div className="flex desktop:h-231 items-center justify-around flex-col w-25% mobile:flex-row mobile:w-100%">
-              <div>
+            <div className="flex desktop:h-231 items-center justify-around mobile:justify-start flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-7">
+              <div className="">
                 <Image
                   src="/images/icons/cart-icon.svg"
                   type="img"
@@ -200,10 +202,10 @@ export default function Partner() {
           </div>
           <div className="desktop:hidden laptop:hidden w-100%">
             <div className="w-100% text-center items-center justify-center flex">
-              <div className="text-s12l18 text-FFFFFF text-center px-50">
+              <div className="text-s12l18 text-FFFFFF text-center px-20">
                 Custom branding & design
               </div>
-              <div className="text-s12l18 text-FFFFFF text-center px-50">
+              <div className="text-s12l18 text-FFFFFF text-center px-20">
                 Subscription pricing
               </div>
             </div>
@@ -248,14 +250,14 @@ export default function Partner() {
                 Increased digital transactions
               </div>
             </div>
-            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pt-20">
+            <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-20 mobile:pt-20">
               <div className="flex">
                 <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
                 <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
                   35%
                 </div>
               </div>
-              <div className=" mobile:pl-15 desktop:w-250 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
+              <div className="text-left mobile:pl-15 desktop:w-250 desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-252525 mobile:text-s16l19 desktop:text-0D0D0D laptop:text-0D0D0D desktop:pt-31 laptop:pt-31 font-medium">
                 Increased throughout payment
               </div>
             </div>
@@ -277,7 +279,7 @@ export default function Partner() {
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 ">
+          <div className="w-100% flex mobile:flex-col mobile:px-20 global-partner">
             <div className="desktop:px-100 laptop:px-100 w-100%">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -333,18 +335,31 @@ export default function Partner() {
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                 />
               </div>
-              <div className="pb-40">
+              <div className="pb-40 w-100%">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-10">
                   Country
                 </div>
-                <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 global-input pb-5">
-                  <option className="global-option" value="India">
-                    India
-                  </option>
-                  <option className="global-option" value="Usa">
-                    Usa
-                  </option>
-                </select>
+                <Select
+                  className="w-100%"
+                  dropdownStyle={{
+                    border: "1px solid #9F9FA0",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background:
+                      "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
+                  }}
+                  placeholder="Select"
+                >
+                  <Option
+                    className="global-option-career"
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                    value="Select."
+                  >
+                    Select
+                  </Option>
+                </Select>
               </div>
             </div>
           </div>

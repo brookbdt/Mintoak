@@ -203,9 +203,21 @@ export default function CareerDetails() {
                     <label className="text-s20l24 text-C4C4C4 career-label">
                       Key Skills
                     </label>
-                    <Select placeholder="Select key skills">
+                    <Select
+                      dropdownStyle={{
+                        border: "1px solid #9F9FA0",
+                        boxSizing: "border-box",
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                        background:
+                          "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
+                      }}
+                      placeholder="Select key skills"
+                    >
                       <Option
-                        style={{ width: "100%" }}
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
                         value="Frontend Developer"
                       >
                         Frontend Developer
@@ -234,8 +246,43 @@ export default function CareerDetails() {
                     <label className="text-s20l24 text-C4C4C4 career-label">
                       Qualifications
                     </label>
-                    <Select placeholder="B.Tech from XYZ College">
-                      <Option value="B.Tech.">B.Tech.</Option>
+                    <Select
+                      dropdownStyle={{
+                        border: "1px solid #9F9FA0",
+                        boxSizing: "border-box",
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                        background:
+                          "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
+                      }}
+                      placeholder="B.Tech from XYZ College"
+                    >
+                      <Option
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        value="B.Tech."
+                      >
+                        B.Tech.
+                      </Option>
+                      <Option
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        value="B.Tech."
+                      >
+                        B.Tech.
+                      </Option>
+                      <Option
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        value="B.Tech."
+                      >
+                        B.Tech.
+                      </Option>
                     </Select>
                   </Form.Item>
                 </Col>
@@ -269,9 +316,12 @@ export default function CareerDetails() {
         <div className="custom-row mobile:px-20 w-100% flex flex-col items-center">
           <Row gutter={24}>
             {jobOpenings.map((data, index) => (
-              <Col key={index} className="mb-40">
-                <div className="py-20 px-20 carrer-detail-card mx-24  hover:bg-8FC055 drop-shadow border border-8FC055 w-488 cursor-pointer">
-                  <div className="flex justify-between items-center">
+              <Col
+                key={index}
+                className="mb-40 mobile:flex items-center mobile:w-100%"
+              >
+                <div className="py-20 px-20 carrer-detail-card desktop:mx-24 hover:bg-8FC055 drop-shadow border border-8FC055 desktop:w-488 mobile:w-100% cursor-pointer">
+                  <div className="desktop:flex mobile:flex-col justify-between items-center">
                     <div>
                       <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s12l18 text-8FC0551 font-normal">
                         {data.department}
@@ -280,7 +330,7 @@ export default function CareerDetails() {
                         {data.designation}
                       </div>
                     </div>
-                    <div>
+                    <div className="mobile:hidden">
                       <Image src="/images/icons/file.svg" type="img" />
                     </div>
                   </div>

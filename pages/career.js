@@ -4,7 +4,7 @@ import Carousel from "react-elastic-carousel";
 import { consts } from "react-elastic-carousel";
 import { Chrono } from "react-chrono";
 import { API, endpoints } from "../components/helpers/API";
-import { Row, Col, Input, Select, Pagination } from "antd";
+import { Row, Col, Input, Select, Pagination, Checkbox } from "antd";
 import Request_Demo from "./request_demo";
 
 export default function Career() {
@@ -235,7 +235,13 @@ export default function Career() {
                   placeholder="All job title"
                   style={{ fontWeight: "bold" }}
                 >
-                  <Option>Select</Option>
+                  <Option
+                    style={{ backgroundColor: "transparent" }}
+                    className="w-100% career-selector"
+                  >
+                    Select
+                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                  </Option>
                 </Select>
               </div>
             </Col>
@@ -245,7 +251,13 @@ export default function Career() {
                   placeholder="All Location"
                   style={{ fontWeight: "bold" }}
                 >
-                  <Option>Select</Option>
+                  <Option
+                    style={{ backgroundColor: "transparent" }}
+                    className="w-100% career-selector"
+                  >
+                    Select
+                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                  </Option>
                 </Select>
               </div>
             </Col>
@@ -254,8 +266,34 @@ export default function Career() {
                 <Select
                   placeholder="All Departments"
                   style={{ fontWeight: "bold" }}
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                  }}
                 >
-                  <Option>Select</Option>
+                  <Option
+                    style={{ backgroundColor: "transparent" }}
+                    className="w-100% career-selector"
+                  >
+                    Select
+                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                  </Option>
+                  <Option
+                    style={{ backgroundColor: "transparent" }}
+                    className="w-100% career-selector"
+                  >
+                    Select
+                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                  </Option>
+                  <Option
+                    style={{ backgroundColor: "transparent" }}
+                    className="w-100% career-selector"
+                  >
+                    Select
+                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                  </Option>
                 </Select>
               </div>
             </Col>

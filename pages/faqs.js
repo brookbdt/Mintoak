@@ -761,14 +761,7 @@ export default function Contact() {
         >
           <div className="w-100%">
             <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <div className="desktop:hidden">
-                <Image
-                  src="/images/icons/thumb-icon.svg"
-                  width={135}
-                  height={135}
-                />
-              </div>
-              <div className="laptop:hidden">
+              <div className="desktop:hidden laptop:hidden">
                 <Image
                   src="/images/icons/thumb-icon.svg"
                   width={135}
