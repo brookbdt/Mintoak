@@ -181,7 +181,7 @@ export default function Career() {
                         type="img"
                       />
                     </div>
-                    <div className="text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="laptop:text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description}
                     </div>
                   </div>
@@ -197,7 +197,7 @@ export default function Career() {
                 Life at Mintoak
               </div>
               <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-230">
-                <span className="font-normal text-s20l30 text-F1F1F1 ">
+                <span className="font-normal text-s20l30 text-F1F1F1 mobile:text-s14l21 ">
                   {careerPageLifeMintoakResp?.Description}
                 </span>
               </div>
@@ -215,7 +215,7 @@ export default function Career() {
         </div>
 
         <div className="desktop:px-180 laptop:px-180 mt-150 mobile:px-20 mobile:my-80">
-          <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l33 mobile:px-50">
+          <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l33 mobile:px-50 mobile:pb-40">
             Explore opportunities suited for you
           </div>
           <div className="search-input mobile:my-12">

@@ -116,11 +116,11 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col p-80 justify-center items-center mobile:px-20 ">
+        <div className="desktop:flex laptop:flex flex-col p-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 desktop:pt-78 laptop:pt-78 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
-          <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
+          <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50 mobile:text-left">
             {partnerWithUsNewHeights?.Description}
 
             <br className="desktop:hidden laptop:hidden" />
@@ -131,7 +131,7 @@ export default function Partner() {
           </div>
           <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
             {partnerWithUsNewHeights2 && partnerWithUsNewHeights2.map((item, index) => (
-              <div className="flex desktop:h-231 justify-around items-center flex-col w-25% mobile:flex-row mobile:w-100%" key={index}>
+              <div className="flex desktop:h-231 justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40" key={index}>
                 <div>
                   <Image
                     src={item.Icon[0]}
@@ -139,7 +139,7 @@ export default function Partner() {
                     className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
                   />
                 </div>
-                <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold">
+                <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold mobile:text-left">
                   {item.Functions}
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function Partner() {
           </div>
           <div className="flex desktop:px-150 mobile:flex-col items-center justify-around mobile:pt-23 desktop:pt-60 laptop:pt-60 mobile:w-100%">
             {partnerWithUsMintoakEffect && partnerWithUsMintoakEffect.map((item, index) => (
-              <div className="flex desktop:flex-col laptop:flex-col text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50" key={index}>
+              <div className="flex desktop:flex-col laptop:flex-col desktop:text-center laptop:text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pb-20" key={index}>
                 <div className="flex">
                   <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
                   <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">

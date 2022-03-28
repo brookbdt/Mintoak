@@ -946,3 +946,9 @@ button[disabled] {
   box-sizing: border-box;
   border-radius: 8px;
 }
+
+.custom-align .rec-carousel-item-2, .rec-carousel-item-0{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
