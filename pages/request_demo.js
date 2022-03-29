@@ -117,17 +117,59 @@ export default function Request_Demo(props) {
                     boxSizing: "border-box",
                     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
                     background: "#DFEFD4",
+                    padding: "20px",
                   }}
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
                   <Option
+                    value={"AIM"}
                     className="global-option-demo"
                     style={{
                       backgroundColor: "transparent",
                     }}
                   >
-                    Select
+                    AIM
+                  </Option>
+                  <Option
+                    value={"Acorn"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    Acorn
+                  </Option>
+                  <Option
+                    value={"SAM"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    SAM
+                  </Option>
+                  <Option
+                    value={"PAM"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    PAM
+                  </Option>
+                  <Option
+                    value={"IKU"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    IKU
                   </Option>
                 </Select>
               </div>
