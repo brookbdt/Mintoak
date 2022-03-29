@@ -75,7 +75,7 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
+            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden mt-276">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
                 width={84}
@@ -239,11 +239,11 @@ export default function Resources() {
           </div>
         </div>
         {/* blogs */}
-        <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10">
+        <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10 mobile:text-s14l16_8">
           Showing 55 Blogs
         </div>
         {resourcesBlogList && resourcesBlogList.map((item, index) => (
-          <div className="pb-80 w-100%" key={index}>
+          <div className="pb-80 w-100% mobile:pb-25" key={index}>
             <div className="bg-FFFFFF flex shadow-bankbox h-100%">
               <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
                 <Image
@@ -279,7 +279,7 @@ export default function Resources() {
                   {item?.ArticleGist}
                 </div>
               </div>
-              <div className="flex flex-row-reverse justify-end items-end pl-50">
+              <div className="flex flex-row-reverse justify-end items-end desktop:pl-50 laptop:pl-50">
                 <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
               </div>
             </div>

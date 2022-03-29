@@ -33,13 +33,13 @@ export default function Request_Demo(props) {
         footer={null}
         width={983}
       >
-        <div className="bg-form mobile:px-40 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+        <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
             Request A Demo
           </div>
           <div className="w-100% flex mobile:flex-col justify-between">
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Full Name
               </div>
               <input
@@ -47,7 +47,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
               />
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Contact Number
               </div>
@@ -62,7 +62,7 @@ export default function Request_Demo(props) {
           </div>
           <div>
             <div className="pb-40">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Business Email
               </div>
               <input
@@ -73,7 +73,7 @@ export default function Request_Demo(props) {
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
             <div className="pb-40 global-select w-360 mobile:w-100%">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Country
               </div>
               <Select
@@ -89,7 +89,7 @@ export default function Request_Demo(props) {
                 }
               </Select>
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Bank Name
               </div>
@@ -100,8 +100,8 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Job Title
               </div>
               <input
@@ -109,9 +109,9 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
               />
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="pb-40 global-select w-360 mobile:w-100%">
-                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Choose Products
                 </div>
                 <Select

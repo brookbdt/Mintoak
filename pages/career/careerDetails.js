@@ -48,16 +48,16 @@ export default function CareerDetails() {
             <div className="text-s44l52_8 mobile:text-s24l31_92  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
               Senior Software Developer
             </div>
-            <div className="desktop:pt-16 laptop:pt-16 flex items-center mobile:pt-16 mobile:flex-wrap">
-              <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14">
-                <span className="pl-5">Mumbai</span>
+            <div className="desktop:pt-16 laptop:pt-16 flex items-center mobile:pt-16 mobile:flex-wrap text-525252">
+              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center mr-14">
+                <span className="pl-5 mobile:text-s16l32">Mumbai</span>
               </span>
-              <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center desktop:mr-14">
-                <span className="pl-5">Full Time</span>
+              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14">
+                <span className="pl-5 mobile:text-s16l32">Full Time</span>
               </span>
               <div className="mobile:flex mobile:justify-between mobile:items-center mobile:w-100%">
-                <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center desktop:mr-14 mobile:mt-14">
-                  <span className="pl-5">Technology & Development</span>
+                <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14 mobile:mt-14">
+                  <span className="pl-5 mobile:text-s16l32">Technology & Development</span>
                 </span>
                 <Image
                   src="/images/icons/share.svg"
@@ -68,7 +68,7 @@ export default function CareerDetails() {
             </div>
           </div>
           <div>
-            <div className="button w-163 mobile:w-166 py-30 mobile:px-30 mt-40 mobile:mt-15 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
+            <div className="button w-163 mobile:w-166 py-30 mobile:px-30 mt-40 mobile:mt-15 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20 font-bold">
               Apply Now
             </div>
             <div className="flex items-center justify-between pt-20 mobile:hidden">
@@ -85,7 +85,7 @@ export default function CareerDetails() {
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Job description
             </div>
-            <ul className="pt-24 list-disc mobile:px-20">
+            <ul className="pt-24 list-disc mobile:px-20 mobile:text-525252">
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Design overall architecture of the application.
               </li>
@@ -116,7 +116,7 @@ export default function CareerDetails() {
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Technical skills
             </div>
-            <ul className="pt-24 list-disc mobile:px-20">
+            <ul className="pt-24 list-disc mobile:px-20 mobile:text-525252">
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Minimum 6-9 years
               </li>
@@ -152,7 +152,7 @@ export default function CareerDetails() {
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Qualifications
             </div>
-            <ul className="pt-24 list-disc mobile:px-20">
+            <ul className="pt-24 list-disc mobile:px-20 mobile:text-525252">
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 BTech, BE, MCA or higher
               </li>
@@ -174,7 +174,7 @@ export default function CareerDetails() {
               <Row gutter={24}>
                 <Col xs={24} md={8}>
                   <Form.Item className="job-app-form">
-                    <label className="text-s20l24 text-C4C4C4">Full Name</label>
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">Full Name</label>
                     <Input placeholder="Full Name" />
                   </Form.Item>
                 </Col>
@@ -189,7 +189,7 @@ export default function CareerDetails() {
                       },
                     ]}
                   >
-                    <label className="text-s20l24 text-C4C4C4">
+                    <label className="text-s20l24 text-C4C4C4  mobile:text-s12l14_4">
                       Contact Number
                     </label>
                     <Input
@@ -200,7 +200,7 @@ export default function CareerDetails() {
                 </Col>
                 <Col xs={24} md={8}>
                   <Form.Item className="global-career">
-                    <label className="text-s20l24 text-C4C4C4 career-label">
+                    <label className="text-s20l24 text-C4C4C4 career-label mobile:text-s12l14_4">
                       Key Skills
                     </label>
                     <Select placeholder="Select key skills">
@@ -217,7 +217,7 @@ export default function CareerDetails() {
               <Row gutter={24}>
                 <Col xs={24} md={8}>
                   <Form.Item className="job-app-form">
-                    <label className="text-s20l24 text-C4C4C4">
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
                       Email Address
                     </label>
                     <Input placeholder="Enter email address" />
@@ -231,7 +231,7 @@ export default function CareerDetails() {
                 </Col>
                 <Col xs={24} md={8}>
                   <Form.Item className="global-career">
-                    <label className="text-s20l24 text-C4C4C4 career-label">
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
                       Qualifications
                     </label>
                     <Select placeholder="B.Tech from XYZ College">
@@ -240,20 +240,20 @@ export default function CareerDetails() {
                   </Form.Item>
                 </Col>
               </Row>
-              <div className="text-s20l24 text-C4C4C4 pt-48">
+              <div className="text-s20l24 text-C4C4C4 pt-48  mobile:text-s12l14_4">
                 Resume (.pdf, .doc, .docx upto 2mb)
               </div>
               <div className="pt-58">
                 <Form.Item className="job-app-form">
                   <Upload>
                     <Button icon={false}>
-                      <span className="text-F1F1F1">Tap here to upload</span>
+                      <span className="text-F1F1F1 mobile:text-s12l14_4">Tap here to upload</span>
                     </Button>
                   </Upload>
                 </Form.Item>
               </div>
               <div>
-                <div className="button w-359 mobile:w-166 py-30 mobile:px-30 mt-40 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
+                <div className="button w-359 mobile:w-100% py-30 mobile:px-30 mt-40 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20">
                   Submit
                 </div>
               </div>
@@ -262,15 +262,15 @@ export default function CareerDetails() {
         </div>
       </div>
 
-      <div className="py-150 pt-0 mobile:py-80">
+      <div className="py-150 pt-0 mobile:py-80 mobile:pb-66">
         <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44">
           View similar roles
         </div>
         <div className="custom-row mobile:px-20 w-100% flex flex-col items-center">
           <Row gutter={24}>
             {jobOpenings.map((data, index) => (
-              <Col key={index} className="mb-40">
-                <div className="py-20 px-20 carrer-detail-card mx-24  hover:bg-8FC055 drop-shadow border border-8FC055 w-488 cursor-pointer">
+              <Col key={index} className="mb-40 mobile:mb-24">
+                <div className="py-20 px-20 carrer-detail-card mx-24  hover:bg-8FC055 drop-shadow border border-8FC055 cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
                       <div className="desktop:text-s20l30 laptop:text-s20l30 mobile:text-s12l18 text-8FC0551 font-normal">
@@ -280,11 +280,11 @@ export default function CareerDetails() {
                         {data.designation}
                       </div>
                     </div>
-                    <div>
+                    <div className="mobile:hidden">
                       <Image src="/images/icons/file.svg" type="img" />
                     </div>
                   </div>
-                  <div className="flex items-center pt-46">
+                  <div className="flex items-center pt-46 mobile:pt-30 mobile:text-s12l24">
                     <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14 w-120">
                       <Image src="/images/icons/bag.svg" type="img" />
                       <span className="pl-5">{data.timing}</span>

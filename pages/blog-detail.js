@@ -198,7 +198,7 @@ export default function BlogDetail() {
             <div className="pt-150 mobile:pt-80 desktop:px-180 laptop:px-180 mobile:pr-16 laptop:px-50 ">
                 <div className="flex mobile:pl-21 text-s44l66 mobile:text-s22l33 font-bold desktop:justify-center laptop:justify-center mobile:justify-between">
                     Related blogs
-                    <div className="mobile:text-s12l18 text-8DBF52 desktop:hidden laptop:hidden ">View all</div>
+                    <div className="mobile:text-s12l18 text-8DBF52 desktop:hidden laptop:hidden border-b h-auto">View all</div>
                 </div>
                 <div className="pt-39 desktop:hidden laptop:hidden pb-80">
                     <Carousel
@@ -217,13 +217,13 @@ export default function BlogDetail() {
                                 />
                             </div>
                             <div div className="flex flex-col items-start">
-                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 mobile:text-s11_14l13_37">
                                     6 min read
                                 </div>
-                                <div className="text-252525 px-10 font-bold text-s14l16_8">
+                                <div className="text-252525 px-10 font-bold text-s14l16_8 mobile:pt-5">
                                     How to standout in digital payments business space
                                 </div>
-                                <div className="text-525252 px-10 pb-0 text-s12l14">
+                                <div className="text-525252 px-10 pb-0 text-s12l14 mobile:text-s11_14l13_37 mobile:pt-20">
                                     By <span className="font-bold">Raman Kahnduja</span>
                                     <br />
                                     Sept 13, 2021
@@ -242,13 +242,13 @@ export default function BlogDetail() {
                                 />
                             </div>
                             <div div className="flex flex-col items-start">
-                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 mobile:text-s11_14l13_37">
                                     6 min read
                                 </div>
-                                <div className="text-252525 px-10 font-bold text-s14l16_8">
+                                <div className="text-252525 px-10 font-bold text-s14l16_8 mobile:pt-5">
                                     How to fix recurring payments under new RBI guidelines
                                 </div>
-                                <div className="text-525252 px-10 pb-0 text-s12l14">
+                                <div className="text-525252 px-10 pb-0 text-s12l14 mobile:text-s11_14l13_37 mobile:pt-20">
                                     By <span className="font-bold">Raman Kahnduja</span>
                                     <br />
                                     Sept 13, 2021
@@ -267,13 +267,13 @@ export default function BlogDetail() {
                                 />
                             </div>
                             <div div className="flex flex-col items-start">
-                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 mobile:text-s11_14l13_37">
                                     6 min read
                                 </div>
-                                <div className="text-252525 px-10 font-bold text-s14l16_8">
+                                <div className="text-252525 px-10 font-bold text-s14l16_8 mobile:pt-5">
                                     The tango between banks and fintechs: Rivals turn partners
                                 </div>
-                                <div className="text-525252 px-10 pb-0 text-s12l14">
+                                <div className="text-525252 px-10 pb-0 text-s12l14 mobile:text-s11_14l13_37 mobile:pt-20">
                                     By <span className="font-bold">Raman Kahnduja</span>
                                     <br />
                                     Sept 13, 2021
@@ -292,13 +292,13 @@ export default function BlogDetail() {
                                 />
                             </div>
                             <div div className="flex flex-col items-start">
-                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 mobile:text-s11_14l13_37">
                                     6 min read
                                 </div>
-                                <div className="text-252525 px-10 font-bold text-s14l16_8">
+                                <div className="text-252525 px-10 font-bold text-s14l16_8 mobile:pt-5">
                                     How to standout in digital payments business space
                                 </div>
-                                <div className="text-525252 px-10 pb-0 text-s12l14">
+                                <div className="text-525252 px-10 pb-0 text-s12l14 mobile:text-s11_14l13_37 mobile:pt-20">
                                     By <span className="font-bold">Raman Kahnduja</span>
                                     <br />
                                     Sept 13, 2021
@@ -317,13 +317,13 @@ export default function BlogDetail() {
                                 />
                             </div>
                             <div div className="flex flex-col items-start">
-                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10">
+                                <div className="text-83B449 text-s14l16_8 pt-5 pl-10 mobile:text-s11_14l13_37">
                                     6 min read
                                 </div>
-                                <div className="text-252525 px-10 font-bold text-s14l16_8">
+                                <div className="text-252525 px-10 font-bold text-s14l16_8 mobile:pt-5">
                                     How to fix recurring payments under new RBI guidelines
                                 </div>
-                                <div className="text-525252 px-10 pb-0 text-s12l14">
+                                <div className="text-525252 px-10 pb-0 text-s12l14 mobile:s11_14l13_37 mobile:pt-20">
                                     By <span className="font-bold">Raman Kahnduja</span>
                                     <br />
                                     Sept 13, 2021
