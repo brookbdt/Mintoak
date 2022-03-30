@@ -34,7 +34,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantBenefitsResp(resp);
-        console.log("dasdasdasdasdasdasds", resp);
+        // console.log("dasdasdasdasdasdasds", resp);
       }
     });
     API({
@@ -42,7 +42,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantBenefits2(resp);
-        console.log("asdasifasofjaksjd", resp);
+        // console.log("asdasifasofjaksjd", resp);
       }
     });
     API({
@@ -50,7 +50,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantBenefits3(resp);
-        console.log("asfsasdffsdafsadf", resp);
+        // console.log("asfsasdffsdafsadf", resp);
       }
     });
     API({
@@ -58,7 +58,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantAssuredByBanks(resp);
-        console.log("Aasgdjahgsduasgd", resp);
+        // console.log("Aasgdjahgsduasgd", resp);
       }
     });
     API({
@@ -66,7 +66,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantPageOnboarding(resp);
-        console.log("ASDksljsbsadvasgdashd", resp);
+        // console.log("ASDksljsbsadvasgdashd", resp);
       }
     });
     API({
@@ -74,7 +74,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantPageMockUp2(resp);
-        console.log("askduasbdywebnsdhgsds", resp);
+        // console.log("askduasbdywebnsdhgsds", resp);
       }
     });
     API({
@@ -82,7 +82,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantPageMockUp3(resp);
-        console.log("asjklasfdsfhkjhfkjdhfa", resp);
+        // console.log("asjklasfdsfhkjhfkjdhfa", resp);
       }
     });
   }, []);
