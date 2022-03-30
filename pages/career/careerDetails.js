@@ -1,32 +1,32 @@
-import { useEffect, useState } from "react";
-import Image from "../../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { Chrono } from "react-chrono";
-import { API, endpoints } from "../../components/helpers/API";
-import { Row, Col, Input, Select, Form, Upload, Button } from "antd";
+import { useEffect, useState } from "react"
+import Image from "../../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { Chrono } from "react-chrono"
+import { API, endpoints } from "../../components/helpers/API"
+import { Row, Col, Input, Select, Form, Upload, Button } from "antd"
 
 export default function CareerDetails() {
-  const { Option } = Select;
+  const { Option } = Select
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
-  ]);
+  ])
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -38,7 +38,7 @@ export default function CareerDetails() {
         <Option value="91">+91</Option>
       </Select>
     </Form.Item>
-  );
+  )
   return (
     <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
@@ -57,7 +57,9 @@ export default function CareerDetails() {
               </span>
               <div className="mobile:flex mobile:justify-between mobile:items-center mobile:w-100%">
                 <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14 mobile:mt-14">
-                  <span className="pl-5 mobile:text-s16l32">Technology & Development</span>
+                  <span className="pl-5 mobile:text-s16l32">
+                    Technology & Development
+                  </span>
                 </span>
                 <Image
                   src="/images/icons/share.svg"
@@ -174,7 +176,9 @@ export default function CareerDetails() {
               <Row gutter={24}>
                 <Col xs={24} md={8}>
                   <Form.Item className="job-app-form">
-                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">Full Name</label>
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
+                      Full Name
+                    </label>
                     <Input placeholder="Full Name" />
                   </Form.Item>
                 </Col>
@@ -294,7 +298,9 @@ export default function CareerDetails() {
                 <Form.Item className="job-app-form">
                   <Upload>
                     <Button icon={false}>
-                      <span className="text-F1F1F1 mobile:text-s12l14_4">Tap here to upload</span>
+                      <span className="text-F1F1F1 mobile:text-s12l14_4">
+                        Tap here to upload
+                      </span>
                     </Button>
                   </Upload>
                 </Form.Item>
@@ -354,5 +360,5 @@ export default function CareerDetails() {
         </div>
       </div>
     </div>
-  );
+  )
 }
