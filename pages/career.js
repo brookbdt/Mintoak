@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { consts } from "react-elastic-carousel";
-import { Chrono } from "react-chrono";
-import { API, endpoints } from "../components/helpers/API";
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd";
-import Request_Demo from "./request_demo";
+import { useEffect, useState } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { consts } from "react-elastic-carousel"
+import { Chrono } from "react-chrono"
+import { API, endpoints } from "../components/helpers/API"
+import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
+import Request_Demo from "./request_demo"
 
 export default function Career() {
-  const { Option } = Select;
-  const [homeBannerResp, setHomeBannerResp] = useState({});
-  const [careersBannerResp, setCareersBannerResp] = useState(null);
+  const { Option } = Select
+  const [homeBannerResp, setHomeBannerResp] = useState({})
+  const [careersBannerResp, setCareersBannerResp] = useState(null)
   const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] =
-    useState(null);
+    useState(null)
   const [
     careerListingValuePropositionResp,
     setCareerListingValuePropositionResp,
-  ] = useState(null);
-  const [searchJob, setSearchJob] = useState("");
-  const [demoPopup, setDemoPopup] = useState(false);
+  ] = useState(null)
+  const [searchJob, setSearchJob] = useState("")
+  const [demoPopup, setDemoPopup] = useState(false)
   const [onBoardData, setOnBoardData] = useState([
     {
       title: "Conference Day",
@@ -45,7 +45,7 @@ export default function Career() {
       description:
         "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
     },
-  ]);
+  ])
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -89,42 +89,42 @@ export default function Career() {
       timing: "Full Time",
       location: "Mimbai",
     },
-  ]);
+  ])
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp);
+        setHomeBannerResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.careers_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setCareersBannerResp(resp);
+        setCareersBannerResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.career_page_life_mintoak,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerPageLifeMintoakResp(resp);
+        setCareerPageLifeMintoakResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.career_listing_value_proposition,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerListingValuePropositionResp(resp);
+        setCareerListingValuePropositionResp(resp)
       }
-    });
+    })
     // career_listing_value_proposition
-  }, []);
+  }, [])
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
@@ -166,12 +166,12 @@ export default function Career() {
             <div className="desktop:text-s44l45 laptop:text-s44l45 mobile:text-s22l33 font-bold flex justify-center">
               Why join Mintoak?
             </div>
-            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-around desktop:justify-around  mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
+            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-center desktop:justify-center mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
               {careerListingValuePropositionResp &&
                 careerListingValuePropositionResp.map((item, index) => (
                   <div
                     key={index}
-                    className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 "
+                    className="desktop:flex-column desktop:mx-70 laptop:mx-70 laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-start items-center mobile:py-15 "
                   >
                     {console.log("wsdzx", item)}
                     <div className="flex justify-center align-center">
@@ -181,8 +181,14 @@ export default function Career() {
                         type="img"
                       />
                     </div>
-                    <div className="laptop:text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description}
+                    </div>
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                      {item.Description2}
+                    </div>
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                      {item.Description3}
                     </div>
                   </div>
                 ))}
@@ -264,6 +270,8 @@ export default function Career() {
             <Col xs={24} md={8} className="mobile:my-12">
               <div className="filter-selection">
                 <Select
+                  mode="multiple"
+                  showArrow={true}
                   placeholder="All Departments"
                   style={{ fontWeight: "bold" }}
                   dropdownStyle={{
@@ -274,25 +282,28 @@ export default function Career() {
                   }}
                 >
                   <Option
+                    value={"Java"}
                     style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    className="w-100% career-selector "
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    All
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                   <Option
+                    value={"PhP"}
                     style={{ backgroundColor: "transparent" }}
                     className="w-100% career-selector"
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    Tech & Development
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                   <Option
+                    value={"Kotlin"}
                     style={{ backgroundColor: "transparent" }}
                     className="w-100% career-selector"
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    Product
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                 </Select>
               </div>
@@ -328,7 +339,9 @@ export default function Career() {
                     <div className="flex items-center desktop:pt-46 laptop:pt-30 mobile:text-s12l24">
                       <span className="bg-8FC055 py-9 rounded-lg border-box px-13 flex items-center mr-14">
                         <Image src="/images/icons/bag.svg" type="img" />
-                        <span className="pl-5 mobile:text-s12l24">{data.timing}</span>
+                        <span className="pl-5 mobile:text-s12l24">
+                          {data.timing}
+                        </span>
                       </span>
                       <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center">
                         <Image src="/images/icons/location.svg" type="img" />
@@ -362,12 +375,12 @@ export default function Career() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {onBoardData.map((data, index) => (
@@ -399,19 +412,27 @@ export default function Career() {
               outerSpacing={0}
               showArrows={false}
               pagination={true}
-              renderPagination={({ type, pages, activePage, onClick, isEdge }) => {
-                const pointer = <>
-                  <div className="flex">
-                    <i className="mr-16 fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  </div>
-                </>
-                // ); 
+              renderPagination={({
+                type,
+                pages,
+                activePage,
+                onClick,
+                isEdge,
+              }) => {
+                const pointer = (
+                  <>
+                    <div className="flex">
+                      <i className="mr-16 fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                      <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    </div>
+                  </>
+                )
+                // );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
                 // return (
                 // <div className="flex">
                 //   {pages.map((page) => {
@@ -455,5 +476,5 @@ export default function Career() {
         )}
       </div>
     </div>
-  );
+  )
 }

@@ -84,7 +84,7 @@ export default function Partner() {
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative  top-bg-container flex w-100% border border-A4D77A mobile:flex-col">
+        <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <div className="desktop:w-50% desktop:pb-101 laptop:pb-101 laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
