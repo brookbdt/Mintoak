@@ -181,7 +181,7 @@ export default function Career() {
                         type="img"
                       />
                     </div>
-                    <div className="text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="laptop:text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description}
                     </div>
                   </div>
@@ -197,7 +197,7 @@ export default function Career() {
                 Life at Mintoak
               </div>
               <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-230">
-                <span className="font-normal text-s20l30 text-F1F1F1 ">
+                <span className="font-normal text-s20l30 text-F1F1F1 mobile:text-s14l21 ">
                   {careerPageLifeMintoakResp?.Description}
                 </span>
               </div>
@@ -215,7 +215,7 @@ export default function Career() {
         </div>
 
         <div className="desktop:px-180 laptop:px-180 mt-150 mobile:px-20 mobile:my-80">
-          <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l33 mobile:px-50">
+          <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l33 mobile:px-50 mobile:pb-40">
             Explore opportunities suited for you
           </div>
           <div className="search-input mobile:my-12">
@@ -299,7 +299,7 @@ export default function Career() {
             </Col>
           </Row>
           {/* </div> */}
-          <div className="text-s18l21_6 font-normal text-525252 pb-20">
+          <div className="text-s18l21_6 font-normal text-525252 pb-20 mobile:text-s14l16_8">
             Showing 55 job openings in Mumbai
           </div>
           {/* <div className="flex w-full justify-between"> */}
@@ -325,10 +325,10 @@ export default function Career() {
                         <Image src="/images/icons/file.svg" type="img" />
                       </div>
                     </div>
-                    <div className="flex items-center desktop:pt-46 laptop:pt-30">
+                    <div className="flex items-center desktop:pt-46 laptop:pt-30 mobile:text-s12l24">
                       <span className="bg-8FC055 py-9 rounded-lg border-box px-13 flex items-center mr-14">
                         <Image src="/images/icons/bag.svg" type="img" />
-                        <span className="pl-5">{data.timing}</span>
+                        <span className="pl-5 mobile:text-s12l24">{data.timing}</span>
                       </span>
                       <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center">
                         <Image src="/images/icons/location.svg" type="img" />
@@ -392,13 +392,43 @@ export default function Career() {
               ))}
             </Carousel>
           </div>
-          <div className="w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
+          <div className="mb-80 w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
             <Carousel
               itemPadding={[0, 15]}
-              itemsToShow={1.3}
+              itemsToShow={1}
               outerSpacing={0}
               showArrows={false}
-              pagination={false}
+              pagination={true}
+              renderPagination={({ type, pages, activePage, onClick, isEdge }) => {
+                const pointer = <>
+                  <div className="flex">
+                    <i className="mr-16 fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  </div>
+                </>
+                // ); 
+                return (
+                  <button onClick={onClick} disabled={isEdge}>
+                    {pointer}
+                  </button>
+                );
+                // return (
+                // <div className="flex">
+                //   {pages.map((page) => {
+                //     const isActivePage = activePage === page;
+                //     return (
+                //       <div
+                //         className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                //           }`}
+                //         key={page}
+                //         onClick={() => onClick(page)}
+                //         active={isActivePage}
+                //       ></div>
+                //     );
+                //   })}
+                // </div>
+                // );
+              }}
             >
               {onBoardData.map((data, index) => (
                 <div className="bg-FFFFFF shadow-lg my-21" key={index}>

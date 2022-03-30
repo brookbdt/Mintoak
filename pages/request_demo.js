@@ -1,13 +1,25 @@
 import { Modal, Select } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "../components/helpers/Image";
+import { API, endpoints } from "../components/helpers/API";
 
 export default function Request_Demo(props) {
   const { Option } = Select;
-
+  const [countryList, setCountryList] = useState(null);
+  const [productList, setProductList] = useState(null);
   const [modalvisible, setmodalVisible] = useState(props.triger);
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
-
+  useEffect(() => {
+    API({
+      url: endpoints.dropdown,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCountryList(resp[0]);
+        setProductList(resp[1])
+      }
+    });
+  }, []);
+  // console.log('wqsaXZ', dropdown)
   return (
     <>
       <Modal
@@ -21,13 +33,13 @@ export default function Request_Demo(props) {
         footer={null}
         width={983}
       >
-        <div className="bg-form mobile:px-40 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+        <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
             Request A Demo
           </div>
           <div className="w-100% flex mobile:flex-col justify-between">
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Full Name
               </div>
               <input
@@ -35,7 +47,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
               />
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Contact Number
               </div>
@@ -50,7 +62,7 @@ export default function Request_Demo(props) {
           </div>
           <div>
             <div className="pb-40">
-              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+              <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Business Email
               </div>
               <input
@@ -60,33 +72,24 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className="pb-40 global-demo w-360 mobile:w-100%">
-                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                  Country
-                </div>
-                <Select
-                  dropdownStyle={{
-                    border: "1px solid #DFEFD4",
-                    boxSizing: "border-box",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                    background: "#DFEFD4",
-                  }}
-                  placeholder="Select"
-                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
-                >
-                  <Option
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                    }}
-                  >
-                    Select
-                  </Option>
-                </Select>
+            <div className="pb-40 global-select w-360 mobile:w-100%">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
+                Country
               </div>
+              <Select
+                defaultValue={"Select"}
+                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
+                style={{ fontWeight: "bold" }}
+              >
+                {
+                  countryList && countryList.Data.map((item) => (
+
+                    <Option>{item.name}</Option>
+                  ))
+                }
+              </Select>
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Bank Name
               </div>
@@ -97,8 +100,8 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Job Title
               </div>
               <input
@@ -106,9 +109,9 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
               />
             </div>
-            <div className="pb-40 w-360 mobile:w-100%">
-              <div className="pb-40 global-demo w-360 mobile:w-100%">
-                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+            <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
+              <div className="pb-40 global-select w-360 mobile:w-100%">
+                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Choose Products
                 </div>
                 <Select
@@ -122,55 +125,9 @@ export default function Request_Demo(props) {
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-                  <Option
-                    value={"AIM"}
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                    }}
-                  >
-                    AIM
-                  </Option>
-                  <Option
-                    value={"Acorn"}
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "22px",
-                    }}
-                  >
-                    Acorn
-                  </Option>
-                  <Option
-                    value={"SAM"}
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "22px",
-                    }}
-                  >
-                    SAM
-                  </Option>
-                  <Option
-                    value={"PAM"}
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "22px",
-                    }}
-                  >
-                    PAM
-                  </Option>
-                  <Option
-                    value={"IKU"}
-                    className="global-option-demo"
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "22px",
-                    }}
-                  >
-                    IKU
-                  </Option>
+                  {productList && productList.Data.map((item) => (
+                    <Option>{item.title}</Option>
+                  ))}
                 </Select>
               </div>
             </div>
