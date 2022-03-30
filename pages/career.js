@@ -268,7 +268,7 @@ export default function Career() {
               </div>
             </Col>
             <Col xs={24} md={8} className="mobile:my-12">
-              <div className="filter-selection">
+              <div className="filter-selection ">
                 <Select
                   mode="multiple"
                   showArrow={true}
