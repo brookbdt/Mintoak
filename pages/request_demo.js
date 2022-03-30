@@ -60,17 +60,31 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 global-select w-360 mobile:w-100%">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                Country
+            <div className="pb-40 w-360 mobile:w-100%">
+              <div className="pb-40 global-demo w-360 mobile:w-100%">
+                <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+                  Country
+                </div>
+                <Select
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                  }}
+                  placeholder="Select"
+                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                >
+                  <Option
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    Select
+                  </Option>
+                </Select>
               </div>
-              <Select
-                defaultValue={"Select"}
-                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
-                style={{ fontWeight: "bold" }}
-              >
-                <Option>Select</Option>
-              </Select>
             </div>
             <div className="pb-40 w-360 mobile:w-100%">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
@@ -93,22 +107,76 @@ export default function Request_Demo(props) {
               />
             </div>
             <div className="pb-40 w-360 mobile:w-100%">
-              <div className="pb-40 global-select w-360 mobile:w-100%">
+              <div className="pb-40 global-demo w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                   Choose Products
                 </div>
                 <Select
-                  defaultValue={"Select"}
-                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
-                  style={{ fontWeight: "bold" }}
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                    padding: "20px",
+                  }}
+                  placeholder="Select"
+                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-                  <Option>Select</Option>
+                  <Option
+                    value={"AIM"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    AIM
+                  </Option>
+                  <Option
+                    value={"Acorn"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    Acorn
+                  </Option>
+                  <Option
+                    value={"SAM"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    SAM
+                  </Option>
+                  <Option
+                    value={"PAM"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    PAM
+                  </Option>
+                  <Option
+                    value={"IKU"}
+                    className="global-option-demo"
+                    style={{
+                      backgroundColor: "transparent",
+                      paddingTop: "22px",
+                    }}
+                  >
+                    IKU
+                  </Option>
                 </Select>
               </div>
             </div>
           </div>
           <div className="w-100% flex justify-between">
-            <div className="border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
+            <div className="cursor-pointer border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
               Clear All Fields
             </div>
             <div
