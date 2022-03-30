@@ -66,7 +66,7 @@ export default function Contact() {
             <div className="w-100%">
               <input
                 type="text"
-                className="outline-none border border-8FC055 bg-DFEFD4 h-48 w-100% pl-50 text-s20l24"
+                className="outline-none border border-8FC055 bg-DFEFD4 h-48 w-100% pl-50 desktop:text-s20l24 laptop:text-s20l24"
                 placeholder="Enter your query here"
               />
             </div>
@@ -77,7 +77,7 @@ export default function Contact() {
                 height={22.67}
               />
             </div>
-            <div className="button w-54 text-s22l26_4 px-18">
+            <div className="button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18">
               <i className="fa-solid fa-arrow-right-long"></i>
             </div>
             <div
@@ -93,7 +93,7 @@ export default function Contact() {
           </div>
           {/* scroll buttons */}
           <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20">
-            <div className="pr-21 w-auto whitespace-nowrap">
+            <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18 rounded-lg border border-87BD25 inline-block cursor-pointer  " +
@@ -108,12 +108,12 @@ export default function Contact() {
                     width={19}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pl-10 laptop:pl-10">
+                <div className="text-s20l40 text-252525 desktop:pl-10 laptop:pl-10 mobile:text-s12l24">
                   For Banks
                 </div>
               </div>
             </div>
-            <div className="pr-21 w-auto whitespace-nowrap">
+            <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
@@ -128,12 +128,12 @@ export default function Contact() {
                     width={19.23}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pl-10 laptop:pl-10">
+                <div className="text-s20l40 text-252525 desktop:pl-10 laptop:pl-10 mobile:text-s12l24">
                   For Merchants
                 </div>
               </div>
             </div>
-            <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
+            <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10 desktop:hidden laptop:hidden">
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
@@ -148,12 +148,12 @@ export default function Contact() {
                     width={19.23}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pl-10">
+                <div className="text-s20l40 text-252525 desktop:pl-10 mobile:text-s12l24">
                   How to get started
                 </div>
               </div>
             </div>
-            <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
+            <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10 desktop:hidden laptop:hidden">
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
@@ -168,7 +168,7 @@ export default function Contact() {
                     width={19.23}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pl-10 ">
+                <div className="text-s20l40 text-252525 desktop:pl-10 mobile:text-s12l24">
                   Payments
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function Contact() {
 
         {/* accordian  */}
         <div className="pt-40 desktop:pt-81 laptop:pt-81 mobile:w-100% global-collapse">
-          <div className="text-s20l24 text-828282 pb-20">
+          <div className="text-s20l24 text-828282 pb-20 mobile:text-s14l16_8 mobile:pb-10">
             Need help ? We got you covered.
           </div>
           <div className="border-2 border-8CC63E mobile:w-100% border-b-0">
@@ -193,7 +193,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-              // defaultActiveKey={["1"]}
+            // defaultActiveKey={["1"]}
             >
               {faqs?.map((items, index) => {
                 return (
@@ -226,10 +226,18 @@ export default function Contact() {
                 width={480}
               />
             </div>
-            <div className="pt-32 pb-50 custom-textaria">
+            <div className="pt-32 pb-50 custom-textaria mobile:hidden">
               <TextArea
                 rows={4}
                 placeholder="Enter your thoughts or suggestions"
+                bordered={false}
+                style={{ height: "132px" }}
+              />
+            </div>
+            <div className="pt-32 pb-50 custom-mobile-textaria laptop:hidden desktop:laptop">
+              <TextArea
+                rows={4}
+                placeholder="Ask a question.."
                 bordered={false}
                 style={{ height: "132px" }}
               />
@@ -238,7 +246,7 @@ export default function Contact() {
             <div>
               <div
                 onClick={() => setmodalquerieVisible(true)}
-                className="button desktop:w-124 laptop:w-124 mobile:w-100% desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-s14l16_8 px-28 desktop:py-13 laptop:py-13 mobile:py-10"
+                className="button desktop:w-124 laptop:w-124 mobile:w-100% desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-s14l16_8 px-28 desktop:py-13 laptop:py-13 mobile:py-10 font-bold"
               >
                 Submit
               </div>
