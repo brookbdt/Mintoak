@@ -193,14 +193,16 @@ export default function Request_Demo(props) {
           bodyStyle={{
             background:
               "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            transform: "rotate(-180deg)",
           }}
           centered
           visible={modalquerievisible}
           onCancel={() => setmodalquerieVisible(false)}
           footer={null}
           width={665}
+          className="shadow-popupShadow"
         >
-          <div className="w-100%">
+          <div className="w-100% rotate-180">
             <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
               <Image
                 src="/images/icons/thumb-icon.svg"

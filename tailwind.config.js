@@ -169,6 +169,7 @@ module.exports = {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
+        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
       },
       zIndex: {
         minus1: -1,
