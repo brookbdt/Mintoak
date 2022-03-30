@@ -14,6 +14,7 @@ export default function Contact() {
   const [modalvisible, setmodalVisible] = useState(false);
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
   const [faqs, setFaqs] = useState([]);
+  const [isBORM, setIsBORM] = useState("b");
 
   useEffect(() => {
     API({
@@ -93,7 +94,13 @@ export default function Contact() {
           {/* scroll buttons */}
           <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20">
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-faqs_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md-faq flex inline-block items-center justify-center px-18 rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isBORM === "b" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsBORM("b")}
+              >
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/bank-icon.svg"
@@ -107,7 +114,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isBORM === "m" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsBORM("m")}
+              >
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -121,7 +134,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
-              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isBORM === "c" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsBORM("c")}
+              >
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -135,7 +154,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap desktop:hidden laptop:hidden">
-              <div className="shadow-md-faq flex inline-block items-center justify-center px-18 bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isBORM === "d" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsBORM("d")}
+              >
                 <div className="pt-5 mobile:hidden">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -183,106 +208,6 @@ export default function Contact() {
                   </Panel>
                 );
               })}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="2"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="3"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="4"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="5"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="6"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="7"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="8"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="9"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="10"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
-              {/* <Panel
-                className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?  "
-                key="11"
-              >
-                <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna.
-                </p>
-              </Panel> */}
             </Collapse>
           </div>
           <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
@@ -330,6 +255,7 @@ export default function Contact() {
       </div>
       {modalvisible ? (
         <Modal
+          className="close-btn"
           bodyStyle={{
             background:
               "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
@@ -349,7 +275,7 @@ export default function Contact() {
             </div>
             <div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 mobile:pt-35">
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image
                       src="/images/icons/omni.svg"
@@ -376,7 +302,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/mom.svg" height={48} width={48} />
                   </div>
@@ -399,7 +325,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image
                       src="/images/icons/pay_later.svg"
@@ -426,7 +352,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image
                       src="/images/icons/acorn.svg"
@@ -455,7 +381,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image
                       src="/images/icons/connect.svg"
@@ -482,7 +408,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/aim.svg" height={48} width={48} />
                   </div>
@@ -505,7 +431,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/iku.svg" height={48} width={48} />
                   </div>
@@ -528,7 +454,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/oar.svg" height={48} width={48} />
                   </div>
@@ -553,7 +479,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 ">
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/far.svg" height={48} width={48} />
                   </div>
@@ -576,7 +502,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/bat.svg" height={48} width={48} />
                   </div>
@@ -599,7 +525,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/sam.svg" height={48} width={48} />
                   </div>
@@ -622,7 +548,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/pam.svg" height={48} width={48} />
                   </div>
@@ -647,7 +573,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/uam.svg" height={48} width={48} />
                   </div>
@@ -670,7 +596,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/mac.svg" height={48} width={48} />
                   </div>
@@ -693,7 +619,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/xsm.svg" height={48} width={48} />
                   </div>
@@ -716,7 +642,7 @@ export default function Contact() {
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer desktop:border-2 laptop:border-2 mobile:w-100% desktop:border-8FC055 laptop:border-8FC055 mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
                   <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
                     <Image src="/images/icons/pam.svg" height={48} width={48} />
                   </div>
@@ -761,14 +687,7 @@ export default function Contact() {
         >
           <div className="w-100%">
             <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <div className="desktop:hidden">
-                <Image
-                  src="/images/icons/thumb-icon.svg"
-                  width={135}
-                  height={135}
-                />
-              </div>
-              <div className="laptop:hidden">
+              <div>
                 <Image
                   src="/images/icons/thumb-icon.svg"
                   width={135}

@@ -115,9 +115,15 @@ export default function Request_Demo(props) {
                   Choose Products
                 </div>
                 <Select
-                  defaultValue={"Select"}
-                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
-                  style={{ fontWeight: "bold" }}
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                    padding: "20px",
+                  }}
+                  placeholder="Select"
+                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
                   {productList && productList.Data.map((item) => (
                     <Option>{item.title}</Option>
@@ -127,7 +133,7 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex justify-between">
-            <div className="border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
+            <div className="cursor-pointer border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
               Clear All Fields
             </div>
             <div

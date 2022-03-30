@@ -2,7 +2,7 @@ import Image from "../components/helpers/Image";
 import Carousel from "react-elastic-carousel";
 import { useEffect, useState } from "react";
 import { consts } from "react-elastic-carousel";
-import { Modal } from "antd";
+import { Modal, Select } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Request_Demo from "./request_demo";
 
@@ -186,10 +186,10 @@ export default function Partner() {
           </div>
           <div className="desktop:hidden laptop:hidden w-100%">
             <div className="w-100% text-center items-center justify-center flex">
-              <div className="text-s12l18 text-FFFFFF text-center px-50">
+              <div className="text-s12l18 text-FFFFFF text-center px-20">
                 Custom branding & design
               </div>
-              <div className="text-s12l18 text-FFFFFF text-center px-50">
+              <div className="text-s12l18 text-FFFFFF text-center px-20">
                 Subscription pricing
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function Partner() {
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 ">
+          <div className="w-100% flex mobile:flex-col mobile:px-20 global-partner">
             <div className="desktop:px-100 laptop:px-100 w-100%">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -289,18 +289,31 @@ export default function Partner() {
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                 />
               </div>
-              <div className="pb-40">
+              <div className="pb-40 w-100%">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-10">
                   Country
                 </div>
-                <select className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 global-input pb-5">
-                  <option className="global-option" value="India">
-                    India
-                  </option>
-                  <option className="global-option" value="Usa">
-                    Usa
-                  </option>
-                </select>
+                <Select
+                  className="w-100%"
+                  dropdownStyle={{
+                    border: "1px solid #9F9FA0",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background:
+                      "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
+                  }}
+                  placeholder="Select"
+                >
+                  <Option
+                    className="global-option-career"
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                    value="Select."
+                  >
+                    Select
+                  </Option>
+                </Select>
               </div>
             </div>
           </div>
