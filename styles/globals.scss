@@ -1093,14 +1093,56 @@ button[disabled] {
     letter-spacing: 4%;
   }
 }
+
 .career-selector {
+  .ant-select-arrow .anticon {
+    color: #252525;
+    font-size: 15px;
+  }
   .ant-select-item-option-content {
     display: flex;
     justify-content: space-between;
   }
-}
+  .ant-select-item-option-active {
+    background: #c5e39d;
+    border: 1px solid #46ac34 !important;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
 
-.career-selector {
+  .ant-select-item-option-state,
+  .anticon .anticon-check {
+    color: #46ac34 !important;
+  }
+  .ant-select-item-option-state,
+  .anticon .anticon-check {
+    background: #c5e39d;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dammi-space {
+    background: transparent;
+    border: 1px solid #46ac34 !important;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .anticon .anticon-check {
+    background: #c5e39d;
+    border: 1px solid #46ac34 !important;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
   .ant-select-item-option-content {
     color: #828282;
     font-size: 20px;

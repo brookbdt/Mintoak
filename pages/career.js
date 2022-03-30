@@ -166,12 +166,12 @@ export default function Career() {
             <div className="desktop:text-s44l45 laptop:text-s44l45 mobile:text-s22l33 font-bold flex justify-center">
               Why join Mintoak?
             </div>
-            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-around desktop:justify-around  mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
+            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-center desktop:justify-center mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
               {careerListingValuePropositionResp &&
                 careerListingValuePropositionResp.map((item, index) => (
                   <div
                     key={index}
-                    className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 "
+                    className="desktop:flex-column desktop:mx-70 laptop:mx-70 laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-start items-center mobile:py-15 "
                   >
                     {console.log("wsdzx", item)}
                     <div className="flex justify-center align-center">
@@ -181,8 +181,14 @@ export default function Career() {
                         type="img"
                       />
                     </div>
-                    <div className="text-center text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description}
+                    </div>
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                      {item.Description2}
+                    </div>
+                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                      {item.Description3}
                     </div>
                   </div>
                 ))}
@@ -264,6 +270,8 @@ export default function Career() {
             <Col xs={24} md={8} className="mobile:my-12">
               <div className="filter-selection">
                 <Select
+                  mode="multiple"
+                  showArrow={true}
                   placeholder="All Departments"
                   style={{ fontWeight: "bold" }}
                   dropdownStyle={{
@@ -274,25 +282,28 @@ export default function Career() {
                   }}
                 >
                   <Option
+                    value={"Java"}
                     style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    className="w-100% career-selector "
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    All
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                   <Option
+                    value={"PhP"}
                     style={{ backgroundColor: "transparent" }}
                     className="w-100% career-selector"
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    Tech & Development
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                   <Option
+                    value={"Kotlin"}
                     style={{ backgroundColor: "transparent" }}
                     className="w-100% career-selector"
                   >
-                    Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    Product
+                    <div className="dammi-space absolute left-425"></div>
                   </Option>
                 </Select>
               </div>
