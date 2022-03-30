@@ -45,14 +45,22 @@ const endpoints = {
   merchant_page_benefits_3: "merchant-page-benefits-3-s",
   merchant_page_assured_by_banks: "merchant-page-assured-by-banks",
   merchant_page_onboarding: "merchant-page-onboarding",
-  merchant_page_mock_up2: "merchant-page-mock-up2",
-  merchant_page_mock_up3: "merchant-page-mock-up3",
+  merchant_page_mock_up2: "merchant-page-mock-up-2-s",
+  merchant_page_mock_up3: "merchant-page-mock-up-3-s",
   merchant_banner: "merchant-page-banner",
   partner_with_us_banner: "partner-with-us-banner",
   partner_with_us_new_heights: "partner-with-us-new-heights",
   careers_banner: "careers-banner",
   career_page_life_mintoak: "career-page-life-mintoak",
   career_listing_value_proposition: "career-listing-value-propositions",
+  home_page_blogs: "home-page-blogs",
+  partner_with_us_new_heights2: "partner-with-us-new-heights-2-s",
+  about_us_customization_2: "about-us-customization-2-s",
+  about_us_customization: "about-us-customization",
+  partner_with_us_mintoak_effect: "partner-with-us-mintoak-effects",
+  resources_blog_list: "resources-blog-lists",
+  dropdown: "dropdowns",
+  contact_us_find_us_at: "contact-us-find-us-at"
 };
 
 export { API, endpoints, domain };

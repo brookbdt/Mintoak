@@ -6,9 +6,23 @@ import { Pagination } from "antd";
 
 export default function Resources() {
   const [demoPopup, setDemoPopup] = useState(false);
+  const [resourcesBlogList, setResourcesBlogList] = useState(null);
   const TogglePopup = () => {
     setDemoPopup(false);
   };
+  useEffect(() => {
+    // resources_blog_list
+    API({
+      url: endpoints.resources_blog_list,
+    }).then((resp) => {
+      if (!resp.message) {
+        console.log(resp, "resp");
+        setResourcesBlogList(resp);
+      }
+    });
+  }, [])
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Oct', 'Nov', 'Dec'];
+
   return (
     <div>
       <div className="w-100%">
@@ -61,7 +75,7 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
+            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden mt-276">
               <Image
                 src="/images/backgrounds/resource-bg.svg"
                 width={84}
@@ -225,234 +239,53 @@ export default function Resources() {
           </div>
         </div>
         {/* blogs */}
-        <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10">
+        <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10 mobile:text-s14l16_8">
           Showing 55 Blogs
         </div>
-        <div className="pb-80 w-100%">
-          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
-              <Image
-                src="/images/backgrounds/blog1.svg"
-                height={296}
-                width={388}
+        {resourcesBlogList && resourcesBlogList.map((item, index) => (
+          <div className="pb-80 w-100% mobile:pb-25" key={index}>
+            <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+              <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
+                <Image
+                  src="/images/backgrounds/blog1.svg"
+                  height={296}
+                  width={388}
                 // layout="fill"
-              />
-            </div>
-
-            <Image
-              src="/images/backgrounds/blog-img.svg"
-              type="img"
-              className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
+                />
+              </div>
+              <Image
+                src="/images/backgrounds/blog-img.svg"
+                type="img"
+                className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
               // layout="fill"
-            />
-
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-              <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                6 min read
-              </div>
-              <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                Get your money in seconds — 24/7 — with instant transfer
-              </div>
-              <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                  By <span className="font-extrabold">Raman Kahnduja </span>|
-                  Sept 13, 2021
+              />
+              <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
+                <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
+                  {item?.ReadTime}
                 </div>
-                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                  Economic Times
+                <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
+                  {item?.Title}
+                </div>
+                <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
+                  <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                    By <span className="font-extrabold">{item?.Author} </span>|
+                    {month[new Date(item?.Date).getMonth()]} {" "}{new Date(item?.Date).getDate()}th {" "}{new Date(item?.Date).getFullYear()}
+                  </div>
+                  <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                    {item?.PublicationName}
+                  </div>
+                </div>
+                <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
+                  {item?.ArticleGist}
                 </div>
               </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s...
+              <div className="flex flex-row-reverse justify-end items-end desktop:pl-50 laptop:pl-50">
+                <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
               </div>
-            </div>
-            <div className="flex flex-row-reverse justify-end items-end pl-50">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
             </div>
           </div>
-        </div>
-        <div className="pb-80 w-100%">
-          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
-              <Image
-                src="/images/backgrounds/blog1.svg"
-                height={296}
-                width={388}
-                // layout="fill"
-              />
-            </div>
+        ))}
 
-            <Image
-              src="/images/backgrounds/blog-img.svg"
-              type="img"
-              className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-              // layout="fill"
-            />
-
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-              <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                6 min read
-              </div>
-              <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                Get your money in seconds — 24/7 — with instant transfer
-              </div>
-              <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                  By <span className="font-extrabold">Raman Kahnduja </span>|
-                  Sept 13, 2021
-                </div>
-                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                  Economic Times
-                </div>
-              </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s...
-              </div>
-            </div>
-            <div className="flex flex-row-reverse justify-end items-end pl-50">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
-            </div>
-          </div>
-        </div>
-        <div className="pb-80 w-100%">
-          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
-              <Image
-                src="/images/backgrounds/blog1.svg"
-                height={296}
-                width={388}
-                // layout="fill"
-              />
-            </div>
-
-            <Image
-              src="/images/backgrounds/blog-img.svg"
-              type="img"
-              className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-              // layout="fill"
-            />
-
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-              <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                6 min read
-              </div>
-              <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                Get your money in seconds — 24/7 — with instant transfer
-              </div>
-              <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                  By <span className="font-extrabold">Raman Kahnduja </span>|
-                  Sept 13, 2021
-                </div>
-                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                  Economic Times
-                </div>
-              </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s...
-              </div>
-            </div>
-            <div className="flex flex-row-reverse justify-end items-end pl-50">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
-            </div>
-          </div>
-        </div>
-        <div className="pb-80 w-100%">
-          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
-              <Image
-                src="/images/backgrounds/blog1.svg"
-                height={296}
-                width={388}
-                // layout="fill"
-              />
-            </div>
-
-            <Image
-              src="/images/backgrounds/blog-img.svg"
-              type="img"
-              className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-              // layout="fill"
-            />
-
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-              <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                6 min read
-              </div>
-              <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                Get your money in seconds — 24/7 — with instant transfer
-              </div>
-              <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                  By <span className="font-extrabold">Raman Kahnduja </span>|
-                  Sept 13, 2021
-                </div>
-                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                  Economic Times
-                </div>
-              </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s...
-              </div>
-            </div>
-            <div className="flex flex-row-reverse justify-end items-end pl-50">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
-            </div>
-          </div>
-        </div>
-        <div className=" w-100%">
-          <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-            <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
-              <Image
-                src="/images/backgrounds/blog1.svg"
-                height={296}
-                width={388}
-                // layout="fill"
-              />
-            </div>
-
-            <Image
-              src="/images/backgrounds/blog-img.svg"
-              type="img"
-              className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-              // layout="fill"
-            />
-
-            <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-              <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                6 min read
-              </div>
-              <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                Get your money in seconds — 24/7 — with instant transfer
-              </div>
-              <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                  By <span className="font-extrabold">Raman Kahnduja </span>|
-                  Sept 13, 2021
-                </div>
-                <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                  Economic Times
-                </div>
-              </div>
-              <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s...
-              </div>
-            </div>
-            <div className="flex flex-row-reverse justify-end items-end pl-50">
-              <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
-            </div>
-          </div>
-        </div>
         <div className="flex justify-center desktop:pt-60 laptop:pt-60  laptop:pb-150 desktop:pb-150 mobile:pt-24 mobile:pb-80 custom-pagination">
           <Pagination defaultCurrent={1} total={30} />
         </div>

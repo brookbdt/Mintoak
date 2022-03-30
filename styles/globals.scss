@@ -1061,6 +1061,16 @@ button[disabled] {
   box-sizing: border-box;
   border-radius: 8px;
 }
+
+.custom-align .rec-carousel-item-2, .rec-carousel-item-0{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-8fc0554d {
+  background-color: #8fc0554d;
+}
 .global-option-career {
   .ant-select-item-option-content {
     color: #c4c4c4;

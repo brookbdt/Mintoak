@@ -120,7 +120,7 @@ export default function Merchant() {
       {/* border */}
       <div className="border border-1 border-A4D77A w-100%"></div>
       {/* Benefits for the Merchants */}
-      <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-250">
+      <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-250 mobile:pb-44">
         <div className="pt-157 mobile:pt-81">
           <div className="font-bold text-s45l67 mobile:text-s20l24 text-center">
             Benefits for the Merchants
@@ -147,7 +147,7 @@ export default function Merchant() {
             );
           })}
         </div>
-        <div className="px-26 desktop:hidden laptop:hidden flex justify-center  pt-40 mobile:block justify-around mobile:px-20">
+        <div className="px-26 desktop:hidden laptop:hidden flex justify-center pt-40 mobile:pt-46 mobile:block justify-around mobile:px-20">
           {merchantBenefitsResp?.map((item, index) => {
             return (
               <div key={index} className="flex items-center pb-42">
@@ -164,7 +164,7 @@ export default function Merchant() {
       </div>
       {/* Decluttering Business Transactions with Reduced Friction */}
       <div className="merchant-liner-bg mobile:pb-150">
-        <div className="pt-100 flex justify-center text-center m-auto text-s44l52_8 mobile:text-s20l24 text-F1F1F1 w-714 mobile:w-301 mobile:pt-40 desktop:font-bold laptop:font-bold">
+        <div className="pt-100 flex justify-center text-center desktop:m-auto laptop:m-auto text-s44l52_8 mobile:text-s22l26_4 text-F1F1F1 desktop:w-714 laptop:w-714 mobile:pt-40 font-bold mobile:px-13">
           {merchantBenefits2?.Title}
         </div>
         <div className="my-40 text-s20l30 font-normal text-F1F1F1 text-center m-auto w-885 mobile:text-s14l21 mobile:w-315">
@@ -260,12 +260,12 @@ export default function Merchant() {
               also offers benefits of real-time analytics and complete
               flexibility.
             </div>
-            <div className="pt-45 m-auto">
+            <div className="flex justify-center pt-45 m-auto">
               <Image
                 src="/images/backgrounds/onboard_merchant.svg"
                 type="img"
                 height={500}
-                width={300}
+                width={270}
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
@@ -279,12 +279,12 @@ export default function Merchant() {
               including transactions and payments, customer experience and
               reach.
             </div>
-            <div className="pt-45 m-auto">
+            <div className="flex justify-center pt-45 m-auto">
               <Image
                 src="/images/backgrounds/merchant-mobile.svg"
                 type="img"
                 height={500}
-                width={300}
+                width={270}
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
@@ -295,12 +295,12 @@ export default function Merchant() {
               segmentation and merchant loyalty plans, there are several
               benefits for SMEs and merchants to explore and gain on Mintoak.{" "}
             </div>
-            <div className="pt-45 m-auto">
+            <div className="flex justify-center pt-45 m-auto">
               <Image
                 src="/images/backgrounds/mybrid.svg"
                 type="img"
                 height={500}
-                width={300}
+                width={270}
               />
             </div>
           </div>
@@ -390,9 +390,8 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-active" : ""
-                          }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -449,7 +448,7 @@ export default function Merchant() {
       {/* Get Assured By Your Bank Today! */}
       <div className="w-100% px-100 merchant-bg mobile:px-0">
         <div className="flex w-100% mobile:block mobile:pt-80">
-          <div className="w-50% flex flex-col justify-end pb-70 mobile:w-100% desktop:block desktop:pt-268 laptop:block laptop:pt-268">
+          <div className="w-50% flex flex-col justify-end pb-70 mobile:pb-21 mobile:w-100% desktop:block desktop:pt-268 laptop:block laptop:pt-268">
             <div className="font-bold text-s45l45 laptop:text-s32l38 mobile:text-s22l33 pb-40 mobile:pl-15 mobile:w-252">
               {merchantAssuredByBanks?.Title}
             </div>
@@ -550,9 +549,8 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                              isActivePage ? "bg-active" : ""
-                            }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                              }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}

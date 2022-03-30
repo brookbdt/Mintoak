@@ -1,10 +1,23 @@
 import Image from "../components/helpers/Image";
 import { Modal, Select } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { API, endpoints } from "../components/helpers/API";
 
 export default function Contact() {
   const { Option } = Select;
   const [modalvisible, setmodalVisible] = useState(false);
+  const [contactUsFindUsAt, setContactUsFindUsAt] = useState(null);
+
+  useEffect(() => {
+    API({
+      url: endpoints.contact_us_find_us_at,
+    }).then((resp) => {
+      if (!resp.message) {
+        setContactUsFindUsAt(resp);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50">
@@ -14,9 +27,7 @@ export default function Contact() {
               Find us at
             </div>
             <div className="mobile:text-s14l21 desktop:text-s20l30 laptop:text-s20l30 mobile:px-33 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:pt-16 desktop:pt-41 laptop:pt-41 desktop:pr-300 laptop:pr-300 text-left">
-              Mintoak Innovations Private Limited OFFICE 01A110, WeWork
-              Chromium, Jogeshwari - Vikhroli Link Rd, Raje Sambhaji Nagar, next
-              to L&T flyover, Andheri East, Mumbai, Maharashtra 400076
+              {contactUsFindUsAt?.Address}
             </div>
           </div>
           <div>
@@ -29,7 +40,7 @@ export default function Contact() {
                 />
               </div>
               <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-29">
-                +91 8884445843
+                {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
             <div className="desktop:pl-106 laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
@@ -41,7 +52,7 @@ export default function Contact() {
                 />
               </div>
               <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-29">
-                help@mintoak.com
+                {contactUsFindUsAt?.BussinessEmail}
               </div>
             </div>
           </div>
