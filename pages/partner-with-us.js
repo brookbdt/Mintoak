@@ -7,6 +7,8 @@ import { API, endpoints } from "../components/helpers/API";
 import Request_Demo from "./request_demo";
 
 export default function Partner() {
+  const { Option } = Select;
+
   const [modalvisible, setmodalVisible] = useState(false);
   const [comunityCard, setComunityCard] = useState([]);
   const [demoPopup, setDemoPopup] = useState(false);
@@ -16,6 +18,7 @@ export default function Partner() {
   const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
   const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] = useState(null)
+  const [countryList, setCountryList] = useState(null);
   useEffect(() => {
     // Community card
     API({
@@ -75,11 +78,18 @@ export default function Partner() {
         setPartnerWithUsMintoakEffect(resp);
       }
     });
-
+    API({
+      url: endpoints.dropdown,
+    }).then((resp) => {
+      if (!resp.message) {
+        setCountryList(resp[0]);
+      }
+    });
   }, []);
   const TogglePopup = () => {
     setDemoPopup(false);
   };
+  // console.log('countery', countryList)
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -100,7 +110,7 @@ export default function Partner() {
             </div>
             <div
               onClick={() => setDemoPopup(true)}
-              className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20"
+              className="button w-216 mobile:w-166 py-30 mobile:px-30 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20 font-bold"
             >
               {partnerWithUsBanner?.CTA}
             </div>
@@ -304,15 +314,19 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                 >
-                  <Option
-                    className="global-option-career"
-                    style={{
-                      backgroundColor: "transparent",
-                    }}
-                    value="Select."
-                  >
-                    Select
-                  </Option>
+                  {
+                    countryList && countryList.Data.map((item) => (
+                      <Option
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        value="Select."
+                      >
+                        {item.name}
+                      </Option>
+                    ))
+                  }
                 </Select>
               </div>
             </div>
@@ -406,7 +420,7 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
                             }`}
                           key={page}
                           onClick={() => onClick(page)}
