@@ -193,7 +193,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-            // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
             >
               {faqs?.map((items, index) => {
                 return (
@@ -235,7 +235,7 @@ export default function Contact() {
                 style={{ height: "132px" }}
               />
             </div>
-            <div className="pt-32 pb-50 custom-mobile-textaria laptop:hidden desktop:laptop">
+            <div className="pt-32 pb-50 custom-textaria-m laptop:hidden desktop:hidden">
               <TextArea
                 rows={4}
                 placeholder="Ask a question.."

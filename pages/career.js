@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
-import { API, endpoints } from "../components/helpers/API"
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
-import Request_Demo from "./request_demo"
+import { useEffect, useState } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
+import { Chrono } from "react-chrono";
+import { API, endpoints } from "../components/helpers/API";
+import { Row, Col, Input, Select, Pagination, Checkbox } from "antd";
+import Request_Demo from "./request_demo";
 
 export default function Career() {
-  const { Option } = Select
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [careersBannerResp, setCareersBannerResp] = useState(null)
+  const { Option } = Select;
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [careersBannerResp, setCareersBannerResp] = useState(null);
   const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] =
-    useState(null)
+    useState(null);
   const [
     careerListingValuePropositionResp,
     setCareerListingValuePropositionResp,
-  ] = useState(null)
-  const [searchJob, setSearchJob] = useState("")
-  const [demoPopup, setDemoPopup] = useState(false)
+  ] = useState(null);
+  const [searchJob, setSearchJob] = useState("");
+  const [demoPopup, setDemoPopup] = useState(false);
   const [onBoardData, setOnBoardData] = useState([
     {
       title: "Conference Day",
@@ -45,7 +45,7 @@ export default function Career() {
       description:
         "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
     },
-  ])
+  ]);
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -89,42 +89,42 @@ export default function Career() {
       timing: "Full Time",
       location: "Mimbai",
     },
-  ])
+  ]);
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.careers_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setCareersBannerResp(resp)
+        setCareersBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_page_life_mintoak,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerPageLifeMintoakResp(resp)
+        setCareerPageLifeMintoakResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_listing_value_proposition,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerListingValuePropositionResp(resp)
+        setCareerListingValuePropositionResp(resp);
       }
-    })
+    });
     // career_listing_value_proposition
-  }, [])
+  }, []);
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
@@ -238,15 +238,29 @@ export default function Career() {
             <Col xs={24} md={8} className="mobile:my-12">
               <div className="filter-selection">
                 <Select
+                  showArrow={true}
+                  mode="multiple"
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                  }}
                   placeholder="All job title"
                   style={{ fontWeight: "bold" }}
                 >
                   <Option
-                    style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    value={"All"}
+                    style={{
+                      backgroundColor: "transparent",
+                      overflow: "hidden",
+                    }}
+                    className="w-100% career-selector p-0"
                   >
                     Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    <div className="w-100% flex justify-end absolute pr-24 ">
+                      <div className="dammi-space "></div>
+                    </div>
                   </Option>
                 </Select>
               </div>
@@ -254,15 +268,29 @@ export default function Career() {
             <Col xs={24} md={8} className="mobile:my-12">
               <div className="filter-selection">
                 <Select
+                  showArrow={true}
+                  mode="multiple"
+                  dropdownStyle={{
+                    border: "1px solid #DFEFD4",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background: "#DFEFD4",
+                  }}
                   placeholder="All Location"
                   style={{ fontWeight: "bold" }}
                 >
                   <Option
-                    style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    value={"All"}
+                    style={{
+                      backgroundColor: "transparent",
+                      overflow: "hidden",
+                    }}
+                    className="w-100% career-selector p-0"
                   >
                     Select
-                    <Checkbox className="flex w-100% justify-between flex-row-reverse"></Checkbox>
+                    <div className="w-100% flex justify-end absolute pr-24 ">
+                      <div className="dammi-space "></div>
+                    </div>
                   </Option>
                 </Select>
               </div>
@@ -282,28 +310,43 @@ export default function Career() {
                   }}
                 >
                   <Option
-                    value={"Java"}
-                    style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector "
+                    value={"All"}
+                    style={{
+                      backgroundColor: "transparent",
+                      overflow: "hidden",
+                    }}
+                    className="w-100% career-selector p-0"
                   >
                     All
-                    <div className="dammi-space absolute left-425"></div>
+                    <div className="w-100% flex justify-end absolute pr-24 ">
+                      <div className="dammi-space "></div>
+                    </div>
                   </Option>
                   <Option
-                    value={"PhP"}
-                    style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    value={"Tech & Development"}
+                    style={{
+                      backgroundColor: "transparent",
+                      overflow: "hidden",
+                    }}
+                    className="w-100% career-selector p-0"
                   >
                     Tech & Development
-                    <div className="dammi-space absolute left-425"></div>
+                    <div className="w-100% flex justify-end absolute pr-24">
+                      <div className="dammi-space "></div>
+                    </div>
                   </Option>
                   <Option
-                    value={"Kotlin"}
-                    style={{ backgroundColor: "transparent" }}
-                    className="w-100% career-selector"
+                    value={"Product"}
+                    style={{
+                      backgroundColor: "transparent",
+                      overflow: "hidden",
+                    }}
+                    className="w-100% career-selector p-0"
                   >
                     Product
-                    <div className="dammi-space absolute left-425"></div>
+                    <div className="w-100% flex justify-end absolute pr-24">
+                      <div className="dammi-space "></div>
+                    </div>
                   </Option>
                 </Select>
               </div>
@@ -375,12 +418,12 @@ export default function Career() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {onBoardData.map((data, index) => (
@@ -426,13 +469,13 @@ export default function Career() {
                       <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                     </div>
                   </>
-                )
+                );
                 // );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
                 // return (
                 // <div className="flex">
                 //   {pages.map((page) => {
@@ -476,5 +519,5 @@ export default function Career() {
         )}
       </div>
     </div>
-  )
+  );
 }

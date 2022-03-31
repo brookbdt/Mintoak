@@ -19,13 +19,9 @@ export default function Partner() {
     useState(null);
   const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
   const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
-<<<<<<< HEAD
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
     useState(null);
-=======
-  const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] = useState(null)
   const [countryList, setCountryList] = useState(null);
->>>>>>> 8dbf1b05c76d9161c57cf10cb8f552f904399694
   useEffect(() => {
     // Community card
     API({
@@ -85,8 +81,6 @@ export default function Partner() {
         setPartnerWithUsMintoakEffect(resp);
       }
     });
-<<<<<<< HEAD
-=======
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
@@ -94,7 +88,6 @@ export default function Partner() {
         setCountryList(resp[0]);
       }
     });
->>>>>>> 8dbf1b05c76d9161c57cf10cb8f552f904399694
   }, []);
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -333,8 +326,8 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                 >
-                  {
-                    countryList && countryList.Data.map((item) => (
+                  {countryList &&
+                    countryList.Data.map((item) => (
                       <Option
                         className="global-option-career"
                         style={{
@@ -344,8 +337,7 @@ export default function Partner() {
                       >
                         {item.name}
                       </Option>
-                    ))
-                  }
+                    ))}
                 </Select>
               </div>
             </div>
@@ -439,14 +431,9 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-<<<<<<< HEAD
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-active" : ""
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
                           }`}
-=======
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
->>>>>>> 8dbf1b05c76d9161c57cf10cb8f552f904399694
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
