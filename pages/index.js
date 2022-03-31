@@ -833,7 +833,7 @@ export default function Home() {
         </div>
 
         {/* FAQs */}
-        <div className="px-180 py-150 mobile:px-0 mobile:py-0">
+        {/* <div className="px-180 py-150 mobile:px-0 mobile:py-0">
           <div className="border-2 border-b-0 border-8CC63E mobile:border-0 mobile:pb-60 global-collapse">
             <div className="mb-40 ml-40 mt-50 mobile:ml-0 mobile:mt-80">
               <div className="text-252525 text-s45l54 font-bold mobile:text-s22l26_4 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
@@ -880,7 +880,7 @@ export default function Home() {
               View all
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />

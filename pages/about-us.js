@@ -1,31 +1,31 @@
-import { useEffect, useState, useRef } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
+import { useEffect, useState, useRef } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
 
-SwiperCore.use([Mousewheel, Pagination])
+SwiperCore.use([Mousewheel, Pagination]);
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({})
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [matricsResp, setMatricsResp] = useState([])
-  const [visionResp, setVisionResp] = useState({})
-  const [missionResp, setMissionResp] = useState({})
-  const [principalResp, setPrincipalResp] = useState([])
-  const [founderResp, setFounderResp] = useState([])
-  const [teamInfoResp, setTeamInfoResp] = useState({})
-  const [activeTab, setActiveTab] = useState(0)
-  const [swiperInstance, setSwiperInstance] = useState()
-  const founder = useRef(null)
-  const swiper = useSwiper()
+  const [aboutBannerResp, setAboutBannerResp] = useState({});
+  const [storyResp, setStoryResp] = useState({});
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const founder = useRef(null);
+  const swiper = useSwiper();
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     // about_banner
@@ -33,65 +33,65 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp)
+        setAboutBannerResp(resp);
       }
-    })
+    });
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp)
+        setStoryResp(resp);
       }
-    })
+    });
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp)
+        setMatricsResp(resp);
       }
-    })
+    });
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp)
+        setMissionResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp)
+        setVisionResp(resp);
       }
-    })
+    });
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp)
+        setPrincipalResp(resp);
       }
-    })
+    });
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp)
+        setFounderResp(resp);
       }
-    })
+    });
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp)
+        setTeamInfoResp(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   function goToPage(numberPage) {}
 
@@ -104,11 +104,11 @@ export default function About() {
           className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
         <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-65  laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
+          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
           </div>
-          <div className="ls--3 text-s56l67 mobile:text-s36l43  font-bold text-252525 shrink-0 desktop:pt-6 laptop:pt-6 mobile:pt-10">
+          <div className="ls--3 text-s56l67 mobile:text-s35l43 font-bold text-252525 shrink-0 desktop:pt-6 laptop:pt-6 mobile:pt-10">
             New-age Businesses
           </div>
           <div className="text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 desktop:pb-40 laptop:pb-40 desktop:w-453 laptop:w-453  mobile:py-16 pr-75 text-525252 shrink-0">
@@ -130,11 +130,11 @@ export default function About() {
       <div className="border border-A4D77A w-100% global-border"></div>
 
       {/* The Mintoak Story */}
-      <div className="desktop:flex laptop:flex flex-col p-80 desktop:pt-152 laptop:pt-152 justify-center items-center mobile:px-20 ">
+      <div className="desktop:flex laptop:flex flex-col p-80 mobile:pb-30 desktop:pt-152 laptop:pt-152 justify-center items-center mobile:px-20 ">
         <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile:text-left mobile:text-s22l33">
           {storyResp?.Title}
         </div>
-        <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-335 laptop:px-100 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
+        <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-335 laptop:px-100 mobile:pt-24 mobile:pb-50 mobile:w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
           {storyResp?.Description}
         </div>
         <div className="flex w-100% justify-center desktop:px-100 laptop:px-70 desktop:py-49 laptop:py-49 mobile:w-100% mobile:flex-col">
@@ -142,7 +142,7 @@ export default function About() {
             matricsResp.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100%"
+                className="flex items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-50"
               >
                 <div>
                   <Image
@@ -160,7 +160,7 @@ export default function About() {
                   {item.Description}
                 </div>
                 <div
-                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-23 mobile:text-s16l24 mobile:font-medium `}
+                  className={`desktop:text-s24l36 laptop:text-s24l36 ls-0_2 text-000000 font-bold desktop:pb-9 laptop:pb-9 desktop:text-center laptop:text-center desktop:px-50 mobile:pl-5 mobile:text-s16l24 mobile:font-medium `}
                 >
                   {item.Description2}
                 </div>
@@ -395,8 +395,8 @@ export default function About() {
             className="mySwiper overflow-scroll"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex)
-              console.log(e.activeIndex, "sliderchange")
+              setActiveTab(e.activeIndex);
+              console.log(e.activeIndex, "sliderchange");
             }}
           >
             {founderResp.map((item, index) => (
@@ -406,7 +406,7 @@ export default function About() {
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
                   onLoadStart={() => {
-                    console.log("first")
+                    console.log("first");
                   }}
                 >
                   <div className="flex mobile:flex-col">
@@ -440,8 +440,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index)
-                    founder.current?.swiper.slideTo(index)
+                    setActiveTab(index);
+                    founder.current?.swiper.slideTo(index);
                     // founder.swiper
                   }}
                   key={index}
@@ -478,14 +478,33 @@ export default function About() {
                       )}
                     </div>
                   </div>
+                  <span
+                    className={`${
+                      activeTab == index ? "text-F1F1F1" : "text-848484"
+                    } text-s18l33`}
+                  >
+                    {founderResp[index]?.Name}
+                  </span>
+                  <span className="items-center flex flex-col mt-minus-22 ">
+                    <span
+                      className={`${
+                        activeTab == index
+                          ? "w-22 h-22 bg-F1F1F1 p-11"
+                          : "w-14 h-14 bg-848484 p-7"
+                      } rounded-md bg-opacity-100`}
+                    ></span>
+                    {founderResp && founderResp.length - 1 != index && (
+                      <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
+                    )}
+                  </span>
                 </div>
               ))}
           </div>
         </div>
       </div>
-      <div className="desktop:hidden mobile:flex flex-col">
+      <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
-        <div className="flex ">
+        <div className="flex">
           {founderResp &&
             founderResp.map((item, index) => (
               <div key={index}>
@@ -502,5 +521,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
