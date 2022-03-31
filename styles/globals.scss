@@ -1219,3 +1219,6 @@ button[disabled] {
     letter-spacing: 4%;
   }
 }
+.mySwiper::-webkit-scrollbar {
+  display: none;
+}
