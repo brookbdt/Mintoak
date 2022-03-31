@@ -253,8 +253,11 @@ button[disabled] {
   box-shadow: 0px 0px 11.8511px rgba(0, 0, 0, 0.1);
 }
 // time line
-.mt-minus-22 {
-  margin-top: -22px;
+.mt-minus-107 {
+  margin-top: -107px;
+}
+.mt-minus-4 {
+  margin-top: -4px;
 }
 // ============== CONTACT-US INPUT CUSTOMIZATION START ==============
 
@@ -1108,6 +1111,17 @@ button[disabled] {
   box-sizing: border-box;
   border-radius: 8px;
 }
+
+.custom-align .rec-carousel-item-2,
+.rec-carousel-item-0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-8fc0554d {
+  background-color: #8fc0554d;
+}
 .global-option-career {
   .ant-select-item-option-content {
     color: #c4c4c4;
@@ -1143,7 +1157,7 @@ button[disabled] {
 
 .career-selector {
   .ant-select-arrow .anticon {
-    color: #252525;
+    color: #252525 !important;
     font-size: 15px;
   }
   .ant-select-item-option-content {
@@ -1151,7 +1165,7 @@ button[disabled] {
     justify-content: space-between;
   }
   .ant-select-item-option-active {
-    background: #c5e39d;
+    background: #c5e39d !important;
     border: 1px solid #46ac34 !important;
     box-sizing: border-box;
     border-radius: 2px;
@@ -1163,7 +1177,7 @@ button[disabled] {
   }
   .ant-select-item-option-state,
   .anticon .anticon-check {
-    background: #c5e39d;
+    background: #c5e39d !important;
     box-sizing: border-box;
     border-radius: 2px;
     padding: 0;
@@ -1185,20 +1199,20 @@ button[disabled] {
     align-items: center;
   }
   .anticon .anticon-check {
-    background: #c5e39d;
+    background: #c5e39d !important;
     border: 1px solid #46ac34 !important;
     box-sizing: border-box;
     border-radius: 2px;
   }
   .ant-select-item-option-content {
-    color: #828282;
+    color: #828282 !important;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 4%;
   }
   .ant-select-item-option-content:hover {
-    color: #46ac34;
+    color: #46ac34 !important;
     font-size: 20px;
     font-weight: 500;
     line-height: 30px;

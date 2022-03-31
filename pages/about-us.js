@@ -1,27 +1,31 @@
-import { useEffect, useState, useRef } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination } from "swiper";
+import { useEffect, useState, useRef } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useSwiper } from "swiper/react"
+
+SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({});
-  const [storyResp, setStoryResp] = useState({});
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const founder = useRef();
-
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({})
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
+  const [activeTab, setActiveTab] = useState(0)
+  const [swiperInstance, setSwiperInstance] = useState()
+  const founder = useRef(null)
+  const swiper = useSwiper()
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   useEffect(() => {
     // about_banner
@@ -29,65 +33,67 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp);
+        setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp);
+        setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp);
+        setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp);
+        setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp);
+        setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp);
+        setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp);
+        setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp);
+        setTeamInfoResp(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
+
+  function goToPage(numberPage) {}
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -369,7 +375,7 @@ export default function About() {
       {/* Our founders */}
       <div
         id="founder"
-        className="w-100%  bg-footer desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-976 overflow-hidden laptop:h-976"
+        className="w-100%  bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
       >
         <div className=" flex flex-col">
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
@@ -378,16 +384,19 @@ export default function About() {
           <Swiper
             direction={"vertical"}
             slidesPerView={1}
+            tag="section"
             spaceBetween={30}
             mousewheel={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Mousewheel]}
+            ref={founder}
+            modules={[Mousewheel, Pagination]}
             className="mySwiper overflow-scroll"
+            onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex);
-              console.log(e.activeIndex, "sliderchange");
+              setActiveTab(e.activeIndex)
+              console.log(e.activeIndex, "sliderchange")
             }}
           >
             {founderResp.map((item, index) => (
@@ -397,7 +406,7 @@ export default function About() {
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
                   onLoadStart={() => {
-                    console.log("first");
+                    console.log("first")
                   }}
                 >
                   <div className="flex mobile:flex-col">
@@ -425,35 +434,50 @@ export default function About() {
             ))}
           </Swiper>
         </div>
-        <div className="w-30% pt-80 flex flex-col itmes-center justify-center mobile:hidden sticky top-0">
+        <div className="w-18% absolute pt-142 flex flex-col itmes-center justify-center mobile:hidden right-50">
           <div className="h-700 flex flex-col">
             {founderResp &&
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index);
+                    setActiveTab(index)
+                    founder.current?.swiper.slideTo(index)
+                    // founder.swiper
                   }}
                   key={index}
                 >
-                  <span
-                    className={`${
-                      activeTab == index ? "text-F1F1F1" : "text-848484"
-                    } text-s18l33`}
-                  >
-                    {founderResp[index]?.Name}
-                  </span>
-                  <span className="items-center flex flex-col mt-minus-22 ">
-                    <span
-                      className={`${
-                        activeTab == index
-                          ? "w-22 h-22 bg-F1F1F1 p-11"
-                          : "w-14 h-14 bg-848484 p-7"
-                      } rounded-md bg-opacity-100`}
-                    ></span>
-                    {founderResp && founderResp.length - 1 != index && (
-                      <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
-                    )}
-                  </span>
+                  <div className="flex h-190">
+                    <div className="w-55% text-right">
+                      <div
+                        className={`${
+                          activeTab == index ? "text-s24l150" : "text-s20l150"
+                        } text-s20l30 text-F1F1F1`}
+                      >
+                        {founderResp[index]?.Name}
+                      </div>
+                      <div
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150`}
+                      >
+                        {founderResp[index]?.Designation}
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center w-30% pt-5">
+                      <div className="w-27 h-27 flex justify-center">
+                        <div
+                          className={`${
+                            activeTab == index
+                              ? "w-27 h-27 bg-F1F1F1 "
+                              : "w-17 h-16 bg-949494"
+                          } rounded-full bg-opacity-100 `}
+                        ></div>
+                      </div>
+                      {founderResp && founderResp.length - 1 != index && (
+                        <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
           </div>
@@ -478,5 +502,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }
