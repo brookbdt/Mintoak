@@ -214,6 +214,7 @@ export default function Contact() {
             <Pagination defaultCurrent={1} total={30} />
           </div>
         </div>
+        {/* more queries */}
         <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 mobile:pt-20 mobile:pb-28">
           <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">
             <div className="desktop:text-s45l45 laptop:text-s45l45 mobile:text-s22l33 font-bold text-252525 pb-16">

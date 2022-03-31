@@ -175,6 +175,7 @@ module.exports = {
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
         popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
+        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2);",
       },
       zIndex: {
         minus1: -1,
