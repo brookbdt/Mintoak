@@ -250,15 +250,17 @@ export default function Merchant() {
         <div className="laptop:hidden desktop:hidden">
           <div className="pt-80 px-30 pl-20 pr-25 pb-65">
             <div className="mobile:text-s22l33 font-bold w-245">
-              Time to Get Onboard with Mintoak
+              {/* Time to Get Onboard with Mintoak */}
+              {merchantPageOnboarding?.Title}
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              Not all small businesses and merchants have the right built-in
+              {merchantPageOnboarding?.Description}
+              {/* Not all small businesses and merchants have the right built-in
               technological resources to foster digital advancements and ease of
               transactions for them. Bringing this much-needed virtual
               interface, speed and innovation to SME business finance, Mintoak
               also offers benefits of real-time analytics and complete
-              flexibility.
+              flexibility. */}
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
@@ -269,15 +271,12 @@ export default function Merchant() {
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              <div>Real-time updates on</div>
-              <div>business performance and</div>
-              transactions
+              <div className="w-270">
+                {merchantPageMockUp2?.Title}
+              </div>
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              Get empowered with Mintoak’s advantage of real-time information
-              access to understand your business performance from all aspects,
-              including transactions and payments, customer experience and
-              reach.
+              {merchantPageMockUp2?.Description}
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
@@ -288,12 +287,11 @@ export default function Merchant() {
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              Myriad benefits to explore!
+              {merchantPageMockUp3?.Title}
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              From customer recognition based on robust analytics to
-              segmentation and merchant loyalty plans, there are several
-              benefits for SMEs and merchants to explore and gain on Mintoak.{" "}
+              {merchantPageMockUp3?.Description}
+              {" "}
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image

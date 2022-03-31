@@ -22,7 +22,7 @@ export default function Contact() {
     }).then((resp) => {
       if (!resp.message) {
         setFaqs(resp);
-        console.log("sadjunsafysahgsadd", faqs);
+        // console.log("sadjunsafysahgsadd", faqs);
       }
     });
   }, []);

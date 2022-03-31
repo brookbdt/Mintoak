@@ -173,7 +173,7 @@ export default function Career() {
                     key={index}
                     className="desktop:flex-column laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-flex-start items-center mobile:py-15 "
                   >
-                    {console.log("wsdzx", item)}
+                    {/* {console.log("wsdzx", item)} */}
                     <div className="flex justify-center align-center">
                       <Image
                         src={item.icon}
