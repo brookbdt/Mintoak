@@ -271,9 +271,7 @@ export default function Merchant() {
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              <div className="w-270">
-                {merchantPageMockUp2?.Title}
-              </div>
+              <div className="w-270">{merchantPageMockUp2?.Title}</div>
             </div>
             <div className="mobile:text-s14l21 pt-18">
               {merchantPageMockUp2?.Description}
@@ -290,8 +288,7 @@ export default function Merchant() {
               {merchantPageMockUp3?.Title}
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              {merchantPageMockUp3?.Description}
-              {" "}
+              {merchantPageMockUp3?.Description}{" "}
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
@@ -370,6 +367,86 @@ export default function Merchant() {
                   Perform instant customer recognition and segmentation
                 </div>
               </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/mintoak-omni.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak OMNI
+                </div>
+                <div className="w-100% text-DFDFDF text-center mt-30 text-s20l30">
+                  Handle all types of digital payments on a single platform
+                </div>
+              </div>
+
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/pay-later.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Pay Later
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30">
+                  Track customer dues on a robust digital register
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4">
+                <Image
+                  src="/images/icons/customer.svg"
+                  height={148}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak IKU
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30 ls--1_5">
+                  Perform instant customer recognition and segmentation
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/mintoak-omni.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak OMNI
+                </div>
+                <div className="w-100% text-DFDFDF text-center mt-30 text-s20l30">
+                  Handle all types of digital payments on a single platform
+                </div>
+              </div>
+
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/pay-later.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Pay Later
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30">
+                  Track customer dues on a robust digital register
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4">
+                <Image
+                  src="/images/icons/customer.svg"
+                  height={148}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak IKU
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30 ls--1_5">
+                  Perform instant customer recognition and segmentation
+                </div>
+              </div>
             </Carousel>
           </div>
           <div className=" desktop:hidden laptop:hidden">
@@ -388,8 +465,9 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -547,8 +625,9 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                              }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                              isActivePage ? "bg-525252" : ""
+                            }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}

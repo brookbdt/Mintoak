@@ -103,7 +103,7 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-65  laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-136 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for

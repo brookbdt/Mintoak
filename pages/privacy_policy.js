@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="w-100% desktop:px-180 mobile:px-20 bg-home-top">
+    <div className="w-100% desktop:pl-180 desktop:pr-582 mobile:px-20 bg-home-top">
       <div className="w-100%">
         <div className="desktop:text-s56l67 mobile:text-s22l26_4 text-252525 desktop:py-150 mobile:py-30">
           Privacy Policy
@@ -78,7 +78,7 @@ export default function Contact() {
             <li>Contact details</li>
           </ul>
         </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-20 mobile:pb-12 desktop:pb-40">
+        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-12 desktop:pb-40">
           Documents issued by Government /Government departments/Agencies/PSUs
           for identification and documents evidencing proof of address issued by
           Government / PSUs / telecom / electricity / local bodies; provided
