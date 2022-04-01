@@ -51,17 +51,17 @@ const colors = {
   red: "red",
   green: "green",
   blue: "blue",
-};
+}
 // Adding dynamic pixels to Tailwind
-const spacing2000px = {};
+const spacing2000px = {}
 Array.from(Array(2000).keys()).forEach((n) => {
-  spacing2000px[n] = `${n}px`;
-});
+  spacing2000px[n] = `${n}px`
+})
 // Adding dynamic percentages to Tailwind
-const spacing100Percentage = {};
+const spacing100Percentage = {}
 Array.from(Array(101).keys()).forEach((n) => {
-  spacing100Percentage[`${n}%`] = `${n}%`;
-});
+  spacing100Percentage[`${n}%`] = `${n}%`
+})
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -151,7 +151,7 @@ module.exports = {
       colors,
       backgroundImage: {
         "home-top":
-          "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 0.82%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
+          "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 20.10%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
         button:
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:
@@ -175,6 +175,8 @@ module.exports = {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
+        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
+        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2);",
       },
       zIndex: {
         minus1: -1,
@@ -191,4 +193,4 @@ module.exports = {
     },
   },
   // plugins: [],
-};
+}

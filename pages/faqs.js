@@ -193,7 +193,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-            // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
             >
               {faqs?.map((items, index) => {
                 return (
@@ -214,6 +214,7 @@ export default function Contact() {
             <Pagination defaultCurrent={1} total={30} />
           </div>
         </div>
+        {/* more queries */}
         <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 mobile:pt-20 mobile:pb-28">
           <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">
             <div className="desktop:text-s45l45 laptop:text-s45l45 mobile:text-s22l33 font-bold text-252525 pb-16">
@@ -234,7 +235,7 @@ export default function Contact() {
                 style={{ height: "132px" }}
               />
             </div>
-            <div className="pt-32 pb-50 custom-mobile-textaria laptop:hidden desktop:laptop">
+            <div className="pt-32 pb-50 custom-textaria-m laptop:hidden desktop:hidden">
               <TextArea
                 rows={4}
                 placeholder="Ask a question.."
@@ -283,15 +284,13 @@ export default function Contact() {
             </div>
             <div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 mobile:pt-35">
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image
-                      src="/images/icons/omni.svg"
-                      height={48}
-                      width={48}
-                    />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12  items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/omni.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       OMNI
                     </div>
@@ -300,21 +299,24 @@ export default function Contact() {
                         Omni channel transactions with all payment modes
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Omni channel transactions with all payment modes
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/mom.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/mom.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       MOM
                     </div>
@@ -323,25 +325,24 @@ export default function Contact() {
                         instant merchant onboarding & management
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         instant merchant onboarding & management
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image
-                      src="/images/icons/pay_later.svg"
-                      height={48}
-                      width={48}
-                    />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/pay_later.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       Pay Later
                     </div>
@@ -350,25 +351,24 @@ export default function Contact() {
                         Digital register for customer payment dues
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Digital register for customer payment dues
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image
-                      src="/images/icons/acorn.svg"
-                      height={48}
-                      width={48}
-                    />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/acorn.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       Acorn
                     </div>
@@ -377,27 +377,26 @@ export default function Contact() {
                         Platform for all the processing
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Platform for all the processing
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image
-                      src="/images/icons/connect.svg"
-                      height={48}
-                      width={48}
-                    />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/connect.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       Connect
                     </div>
@@ -406,44 +405,24 @@ export default function Contact() {
                         Payment and billing integrations
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Payment and billing integrations
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/aim.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
-                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
-                      AIM
-                    </div>
-                    <div className="w-153 mobile:hidden ">
-                      <div className="text-s16l19 text-525252 popup-content">
-                        Business analytics, insights and metrics
-                      </div>
-                    </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
-                      <div className="text-s12l14 text-525252">
-                        Business analytics, insights and metrics
-                      </div>
-                    </div>
-                  </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
-                    <Checkbox />
-                  </div>
-                </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/iku.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/iku.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       IKU
                     </div>
@@ -452,21 +431,24 @@ export default function Contact() {
                         Instant customer segmentation & recognition
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Instant customer segmentation & recognition
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox  ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/oar.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/oar.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100  w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       OAR
                     </div>
@@ -475,23 +457,24 @@ export default function Contact() {
                         Offers and rewards for customers
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Offers and rewards for customers
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox  ">
                     <Checkbox />
                   </div>
                 </div>
-              </div>
-              <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 ">
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/far.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/far.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       FAR
                     </div>
@@ -500,21 +483,26 @@ export default function Contact() {
                         Customer feedback & ratings
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Customer feedback & ratings
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/bat.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+              </div>
+              <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 ">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/bat.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       BAT
                     </div>
@@ -523,69 +511,24 @@ export default function Contact() {
                         Badges, awards and trophies for merchants
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Badges, awards and trophies for merchants
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/sam.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
-                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
-                      SAM
-                    </div>
-                    <div className="w-153 mobile:hidden ">
-                      <div className="text-s16l19 text-525252 popup-content">
-                        Service analytics and management
-                      </div>
-                    </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
-                      <div className="text-s12l14 text-525252">
-                        Service analytics and management
-                      </div>
-                    </div>
-                  </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
-                    <Checkbox />
-                  </div>
-                </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/pam.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
-                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
-                      PAM
-                    </div>
-                    <div className="w-153 mobile:hidden ">
-                      <div className="text-s16l19 text-525252 popup-content">
-                        Portfolio analytics and management
-                      </div>
-                    </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
-                      <div className="text-s12l14 text-525252">
-                        Portfolio analytics and management
-                      </div>
-                    </div>
-                  </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
-                    <Checkbox />
-                  </div>
-                </div>
-              </div>
-              <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/uam.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/uam.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       UAM
                     </div>
@@ -594,44 +537,130 @@ export default function Contact() {
                         User access and profile management
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         User access and profile management
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/mac.svg" height={48} width={48} />
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/aim.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
+                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
+                      AIM
+                    </div>
+                    <div className="w-153 mobile:hidden ">
+                      <div className="text-s16l19 text-525252 popup-content">
+                        Business analytics, insights and metrics
+                      </div>
+                    </div>
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
+                      <div className="text-s12l14 text-525252">
+                        Business analytics, insights and metrics
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
+                    <Checkbox />
+                  </div>
+                </div>
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/mac.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       MAC
                     </div>
                     <div className="w-153 mobile:hidden ">
-                      <div className="text-s16l19 text-525252 popup-content">
+                      <div className="text-s16l19 text-525252 popup-content ">
                         Marketing and campaigns for latest trends
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Marketing and campaigns for latest trends
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/xsm.svg" height={48} width={48} />
+              </div>
+              <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/pam.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
+                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
+                      PAM
+                    </div>
+                    <div className="w-153 mobile:hidden ">
+                      <div className="text-s16l19 text-525252 popup-content">
+                        Portfolio analytics and management
+                      </div>
+                    </div>
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
+                      <div className="text-s12l14 text-525252">
+                        Portfolio analytics and management
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox">
+                    <Checkbox />
+                  </div>
+                </div>
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/sam.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
+                    <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
+                      SAM
+                    </div>
+                    <div className="w-153 mobile:hidden ">
+                      <div className="text-s16l19 text-525252 popup-content">
+                        Service analytics and management
+                      </div>
+                    </div>
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
+                      <div className="text-s12l14 text-525252">
+                        Service analytics and management
+                      </div>
+                    </div>
+                  </div>
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
+                    <Checkbox />
+                  </div>
+                </div>
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/xsm.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       XSM
                     </div>
@@ -640,21 +669,24 @@ export default function Contact() {
                         Cross- sell to merchants
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Cross- sell to merchants
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
-                <div className="flex mobile:mb-12 items-start cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-20 desktop:px-20 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
-                  <div className="desktop:h-100 laptop:h-100 flex items-center justify-center mobile:pt-17">
-                    <Image src="/images/icons/pam.svg" height={48} width={48} />
-                  </div>
-                  <div className="flex flex-col desktop:h-100 laptop:h-100 justify-center pl-22 mobile:pt-13">
+                <div className="flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup desktop:hover:bg-8FC055 laptop:hover:bg-8FC055">
+                  <Image
+                    src="/images/icons/xsc.svg"
+                    type="img"
+                    className="desktop:h-72 desktop:w-72 laptop:h-72 laptop:w-72 mobile:h-50 mobile:w-50"
+                  />
+
+                  <div className="flex flex-col desktop:h-100 laptop:h-100 w-100% justify-center pl-15 mobile:py-10">
                     <div className="mobile:text-s16l19 desktop:text-s20l24 laptop:text-s20l24 text-252525 font-bold ">
                       XSC
                     </div>
@@ -663,20 +695,21 @@ export default function Contact() {
                         Cross- sell to customers
                       </div>
                     </div>
-                    <div className="w-163 desktop:hidden laptop:hidden">
+                    <div className="w-163 desktop:hidden laptop:hidden pt-5">
                       <div className="text-s12l14 text-525252">
                         Cross- sell to customers
                       </div>
                     </div>
                   </div>
-                  <div className="desktop:hidden laptop:hidden custom-checkbox w-100 pl-60 ">
+                  <div className="desktop:hidden laptop:hidden custom-checkbox ">
                     <Checkbox />
                   </div>
                 </div>
               </div>
-
               <div className="w-100% desktop:pt-48 laptop:pt-48 desktop:pb-40 laptop:pt-48 mobile:pt-40 mobile:pb-28 flex items-center justify-center">
-                <div className="button w-206 text-s22l26_4 py-15">Submit</div>
+                <div className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10">
+                  Submit
+                </div>
               </div>
             </div>
           </div>
@@ -687,14 +720,16 @@ export default function Contact() {
           bodyStyle={{
             background:
               "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            transform: "rotate(-180deg)",
           }}
           centered
           visible={modalquerievisible}
           onCancel={() => setmodalquerieVisible(false)}
           footer={null}
+          className="shadow-popupShadow"
         >
-          <div className="w-100%">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+          <div className="w-100% rotate-180">
+            <div className="w-100% flex justify-center  mobile:pt-9 desktop:pt-42 laptop:pt-42">
               <div>
                 <Image
                   src="/images/icons/thumb-icon.svg"

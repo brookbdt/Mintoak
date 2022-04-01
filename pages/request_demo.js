@@ -15,7 +15,7 @@ export default function Request_Demo(props) {
     }).then((resp) => {
       if (!resp.message) {
         setCountryList(resp[0]);
-        setProductList(resp[1])
+        setProductList(resp[1]);
       }
     });
   }, []);
@@ -72,21 +72,32 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 global-select w-360 mobile:w-100%">
+            <div className="pb-40 global-demo w-360 mobile:w-100%">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Country
               </div>
               <Select
+                dropdownStyle={{
+                  border: "1px solid #DFEFD4",
+                  boxSizing: "border-box",
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                  background: "#DFEFD4",
+                  padding: "20px",
+                }}
                 defaultValue={"Select"}
-                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
+                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 style={{ fontWeight: "bold" }}
               >
-                {
-                  countryList && countryList.Data.map((item, index) => (
-
-                    <Option value={index}>{item.name}</Option>
-                  ))
-                }
+                {countryList &&
+                  countryList.Data.map((item, index) => (
+                    <Option
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                      key={index}
+                    >
+                      {item.name}
+                    </Option>
+                  ))}
               </Select>
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
@@ -110,7 +121,7 @@ export default function Request_Demo(props) {
               />
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
-              <div className="pb-40 global-select w-360 mobile:w-100%">
+              <div className="pb-40 global-demo w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Choose Products
                 </div>
@@ -125,13 +136,21 @@ export default function Request_Demo(props) {
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-                  {productList && productList.Data.map((item, index) => (
-                    <Option value={index}>{item.title}</Option>
-                  ))}
-                </Select>
-              </div>
-            </div>
-          </div>
+
+                  {productList &&
+                    productList.Data.map((item, index) => (
+                      <Option
+                        className="global-option-demo"
+                        style={{ background: "transparent" }}
+                        key={index}
+                      >
+                        {item.title}
+                      </Option>
+                    ))}
+                </Select >
+              </div >
+            </div >
+          </div >
           <div className="w-100% flex justify-between">
             <div className="cursor-pointer border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
               Clear All Fields
@@ -143,35 +162,39 @@ export default function Request_Demo(props) {
               Submit
             </div>
           </div>
-        </div>
-      </Modal>
-      {modalquerievisible ? (
-        <Modal
-          bodyStyle={{
-            background:
-              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-          }}
-          centered
-          visible={modalquerievisible}
-          onCancel={() => setmodalquerieVisible(false)}
-          footer={null}
-          width={665}
-        >
-          <div className="w-100%">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+        </div >
+      </Modal >
+      {
+        modalquerievisible ? (
+          <Modal
+            bodyStyle={{
+              background:
+                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+              transform: "rotate(-180deg)",
+            }}
+            centered
+            visible={modalquerievisible}
+            onCancel={() => setmodalquerieVisible(false)
+            }
+            footer={null}
+            width={665}
+            className="shadow-popupShadow"
+          >
+            <div className="w-100% rotate-180">
+              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+                Thank you! for your interest!
+                <br /> Our team will get back to you shortly.
+              </div>
             </div>
-            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-              Thank you! for your interest!
-              <br /> Our team will get back to you shortly.
-            </div>
-          </div>
-        </Modal>
-      ) : null}
+          </Modal >
+        ) : null}
     </>
   );
 }
