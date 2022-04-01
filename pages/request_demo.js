@@ -15,7 +15,7 @@ export default function Request_Demo(props) {
     }).then((resp) => {
       if (!resp.message) {
         setCountryList(resp[0]);
-        setProductList(resp[1])
+        setProductList(resp[1]);
       }
     });
   }, []);
@@ -72,21 +72,31 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 global-select w-360 mobile:w-100%">
+            <div className="pb-40 global-demo w-360 mobile:w-100%">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Country
               </div>
               <Select
+                dropdownStyle={{
+                  border: "1px solid #DFEFD4",
+                  boxSizing: "border-box",
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                  background: "#DFEFD4",
+                  padding: "20px",
+                }}
                 defaultValue={"Select"}
-                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 global-input pb-5"
+                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 style={{ fontWeight: "bold" }}
               >
-                {
-                  countryList && countryList.Data.map((item) => (
-
-                    <Option>{item.name}</Option>
-                  ))
-                }
+                {countryList &&
+                  countryList.Data.map((item) => (
+                    <Option
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      {item.name}
+                    </Option>
+                  ))}
               </Select>
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
@@ -110,7 +120,7 @@ export default function Request_Demo(props) {
               />
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
-              <div className="pb-40 global-select w-360 mobile:w-100%">
+              <div className="pb-40 global-demo w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Choose Products
                 </div>
@@ -125,9 +135,15 @@ export default function Request_Demo(props) {
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-                  {productList && productList.Data.map((item) => (
-                    <Option>{item.title}</Option>
-                  ))}
+                  {productList &&
+                    productList.Data.map((item) => (
+                      <Option
+                        className="global-option-demo"
+                        style={{ background: "transparent" }}
+                      >
+                        {item.title}
+                      </Option>
+                    ))}
                 </Select>
               </div>
             </div>
@@ -150,14 +166,16 @@ export default function Request_Demo(props) {
           bodyStyle={{
             background:
               "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            transform: "rotate(-180deg)",
           }}
           centered
           visible={modalquerievisible}
           onCancel={() => setmodalquerieVisible(false)}
           footer={null}
           width={665}
+          className="shadow-popupShadow"
         >
-          <div className="w-100%">
+          <div className="w-100% rotate-180">
             <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
               <Image
                 src="/images/icons/thumb-icon.svg"
