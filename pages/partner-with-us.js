@@ -315,13 +315,14 @@ export default function Partner() {
                   placeholder="Select"
                 >
                   {
-                    countryList && countryList.Data.map((item) => (
+                    countryList && countryList.Data.map((item, index) => (
                       <Option
                         className="global-option-career"
                         style={{
                           backgroundColor: "transparent",
                         }}
                         value="Select."
+                        key={index}
                       >
                         {item.name}
                       </Option>

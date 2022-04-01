@@ -82,9 +82,9 @@ export default function Request_Demo(props) {
                 style={{ fontWeight: "bold" }}
               >
                 {
-                  countryList && countryList.Data.map((item) => (
+                  countryList && countryList.Data.map((item, index) => (
 
-                    <Option>{item.name}</Option>
+                    <Option value={index}>{item.name}</Option>
                   ))
                 }
               </Select>
@@ -125,8 +125,8 @@ export default function Request_Demo(props) {
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-                  {productList && productList.Data.map((item) => (
-                    <Option>{item.title}</Option>
+                  {productList && productList.Data.map((item, index) => (
+                    <Option value={index}>{item.title}</Option>
                   ))}
                 </Select>
               </div>
