@@ -7,6 +7,7 @@ import { Pagination } from "antd";
 export default function Resources() {
   const [demoPopup, setDemoPopup] = useState(false);
   const [resourcesBlogList, setResourcesBlogList] = useState(null);
+  const [isClicked, setIsClicked] = useState("b");
   const TogglePopup = () => {
     setDemoPopup(false);
   };
@@ -20,8 +21,21 @@ export default function Resources() {
         setResourcesBlogList(resp);
       }
     });
-  }, [])
-  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Oct', 'Nov', 'Dec'];
+  }, []);
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   return (
     <div>
@@ -139,7 +153,13 @@ export default function Resources() {
         <div className="flex desktop:pb-80 laptop:pb-80 mobile:pb-40 mobile:pt-21 desktop:pt-41 laptop:pt-41">
           <div className="flex w-100% overf whitespace-nowrap pb-20">
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-button_bg rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "b" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("b")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/bank-icon.svg"
@@ -153,7 +173,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "c" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("c")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/merchants-icon.svg"
@@ -167,7 +193,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "d" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("d")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/payment-bank.svg"
@@ -181,7 +213,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "e" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("e")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/finance.svg"
@@ -195,7 +233,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "f" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("f")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/product.svg"
@@ -209,7 +253,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "g" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("g")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/fintech.svg"
@@ -223,7 +273,13 @@ export default function Resources() {
               </div>
             </div>
             <div className="pr-21 w-auto whitespace-nowrap">
-              <div className="shadow-md flex inline-block items-center justify-center bg-DFEFD4 rounded-lg border border-87BD25 inline-block cursor-pointer">
+              <div
+                className={
+                  "shadow-md flex inline-block items-center justify-center rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  (isClicked === "h" ? "bg-faqs_bg" : "bg-DFEFD4")
+                }
+                onClick={() => setIsClicked("h")}
+              >
                 <div className="mobile:hidden w-50 flex justify-center">
                   <Image
                     src="/images/icons/growth.svg"
@@ -242,49 +298,52 @@ export default function Resources() {
         <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10 mobile:text-s14l16_8">
           Showing 55 Blogs
         </div>
-        {resourcesBlogList && resourcesBlogList.map((item, index) => (
-          <div className="pb-80 w-100% mobile:pb-25" key={index}>
-            <div className="bg-FFFFFF flex shadow-bankbox h-100%">
-              <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
+        {resourcesBlogList &&
+          resourcesBlogList.map((item, index) => (
+            <div className="pb-80 w-100% mobile:pb-25" key={index}>
+              <div className="bg-FFFFFF flex shadow-bankbox h-100%">
+                <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
+                  <Image
+                    src="/images/backgrounds/blog1.svg"
+                    height={296}
+                    width={388}
+                    // layout="fill"
+                  />
+                </div>
                 <Image
-                  src="/images/backgrounds/blog1.svg"
-                  height={296}
-                  width={388}
-                // layout="fill"
+                  src="/images/backgrounds/blog-img.svg"
+                  type="img"
+                  className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
+                  // layout="fill"
                 />
-              </div>
-              <Image
-                src="/images/backgrounds/blog-img.svg"
-                type="img"
-                className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-              // layout="fill"
-              />
-              <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
-                <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
-                  {item?.ReadTime}
-                </div>
-                <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
-                  {item?.Title}
-                </div>
-                <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
-                  <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
-                    By <span className="font-extrabold">{item?.Author} </span>|
-                    {month[new Date(item?.Date).getMonth()]} {" "}{new Date(item?.Date).getDate()}th {" "}{new Date(item?.Date).getFullYear()}
+                <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
+                  <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
+                    {item?.ReadTime}
                   </div>
-                  <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
-                    {item?.PublicationName}
+                  <div className="font-semibold desktop:text-s34l42 laptop:text-s24l40_8 mobile:text-s16l19 desktop:pb-31 mobile:pb-19 laptop:pb-15 ">
+                    {item?.Title}
+                  </div>
+                  <div className="flex desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l18 desktop:pb-31 laptop:pb-15 mobile:pb-10">
+                    <div className="desktop:w-200 laptop:w-200 mobile:w-150 font-bold">
+                      By <span className="font-extrabold">{item?.Author} </span>
+                      |{month[new Date(item?.Date).getMonth()]}{" "}
+                      {new Date(item?.Date).getDate()}th{" "}
+                      {new Date(item?.Date).getFullYear()}
+                    </div>
+                    <div className="desktop:pl-14 laptop:pl-14 font-extrabold">
+                      {item?.PublicationName}
+                    </div>
+                  </div>
+                  <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
+                    {item?.ArticleGist}
                   </div>
                 </div>
-                <div className="text-s20l24 text-525252 laptop:text-s16l19 mobile:hidden desktop:w-845 desktop:mb-34">
-                  {item?.ArticleGist}
+                <div className="flex flex-row-reverse justify-end items-end desktop:pl-50 laptop:pl-50">
+                  <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
                 </div>
-              </div>
-              <div className="flex flex-row-reverse justify-end items-end desktop:pl-50 laptop:pl-50">
-                <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
         <div className="flex justify-center desktop:pt-60 laptop:pt-60  laptop:pb-150 desktop:pb-150 mobile:pt-24 mobile:pb-80 custom-pagination">
           <Pagination defaultCurrent={1} total={30} />

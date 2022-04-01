@@ -90,6 +90,7 @@ export default function Request_Demo(props) {
                 {countryList &&
                   countryList.Data.map((item) => (
                     <Option
+                      value={item.name}
                       className="global-option-demo"
                       style={{ background: "transparent" }}
                     >
@@ -138,6 +139,7 @@ export default function Request_Demo(props) {
                   {productList &&
                     productList.Data.map((item) => (
                       <Option
+                        value={item.title}
                         className="global-option-demo"
                         style={{ background: "transparent" }}
                       >
