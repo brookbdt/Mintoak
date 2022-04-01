@@ -128,6 +128,7 @@ module.exports = {
       s32l45: ["32px", "45px"],
       s32l42: ["32px", "42px"],
       s34l42: ["34px", "42px"],
+      s35l43: ["35px", "43px"],
       s36l43: ["36px", "43px"],
       s36l54: ["36px", "54px"],
       s40l60: ["40px", "60px"],
@@ -175,6 +176,7 @@ module.exports = {
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
         popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
+        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2);",
       },
       zIndex: {
         minus1: -1,

@@ -120,7 +120,7 @@ export default function Resources() {
         <div className="flex items-center">
           <div className="w-100%">
             <input
-              className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-70 text-s20l24"
+              className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-70 desktop:text-s20l24 laptop:text-s20l24"
               placeholder="Ex. Future of banking..."
             />
           </div>
@@ -130,7 +130,7 @@ export default function Resources() {
           <div className="mobile:hidden button w-206 mobile:w-100% mobile:h-40 h-54 cursor-pointer z-20">
             Search
           </div>
-          <div className="desktop:hidden laptop:hidden button px-20 py-15">
+          <div className="desktop:hidden laptop:hidden button px-20 py-15 ">
             <i className="fa-solid fa-arrow-right-long"></i>
           </div>
         </div>
