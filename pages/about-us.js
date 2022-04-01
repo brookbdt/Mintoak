@@ -6,7 +6,7 @@ import Request_Demo from "./request_demo"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Mousewheel, Pagination } from "swiper"
 import { useSwiper } from "swiper/react"
-
+import Sticky from "react-sticky-el"
 SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {
@@ -373,6 +373,7 @@ export default function About() {
       </div>
 
       {/* Our founders */}
+      {/* <Sticky disabled={activeTab + 1 == founderResp.length ? true : false}> */}
       <div
         id="founder"
         className="w-100%  bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
@@ -483,6 +484,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      {/* </Sticky> */}
       <div className="desktop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
         <div className="flex ">
