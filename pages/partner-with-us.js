@@ -326,14 +326,15 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                 >
-                  {countryList &&
-                    countryList.Data.map((item) => (
+                  {
+                    countryList && countryList.Data.map((item, index) => (
                       <Option
                         className="global-option-career"
                         style={{
                           backgroundColor: "transparent",
                         }}
                         value="Select."
+                        key={index}
                       >
                         {item.name}
                       </Option>
@@ -431,9 +432,8 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-525252" : ""
-                          }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

@@ -89,10 +89,11 @@ export default function Request_Demo(props) {
                 style={{ fontWeight: "bold" }}
               >
                 {countryList &&
-                  countryList.Data.map((item) => (
+                  countryList.Data.map((item, index) => (
                     <Option
                       className="global-option-demo"
                       style={{ background: "transparent" }}
+                      key={index}
                     >
                       {item.name}
                     </Option>
@@ -135,19 +136,21 @@ export default function Request_Demo(props) {
                   placeholder="Select"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
+
                   {productList &&
-                    productList.Data.map((item) => (
+                    productList.Data.map((item, index) => (
                       <Option
                         className="global-option-demo"
                         style={{ background: "transparent" }}
+                        key={index}
                       >
                         {item.title}
                       </Option>
                     ))}
-                </Select>
-              </div>
-            </div>
-          </div>
+                </Select >
+              </div >
+            </div >
+          </div >
           <div className="w-100% flex justify-between">
             <div className="cursor-pointer border-2 border-95C11F border-solid text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13">
               Clear All Fields
@@ -159,37 +162,39 @@ export default function Request_Demo(props) {
               Submit
             </div>
           </div>
-        </div>
-      </Modal>
-      {modalquerievisible ? (
-        <Modal
-          bodyStyle={{
-            background:
-              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-            transform: "rotate(-180deg)",
-          }}
-          centered
-          visible={modalquerievisible}
-          onCancel={() => setmodalquerieVisible(false)}
-          footer={null}
-          width={665}
-          className="shadow-popupShadow"
-        >
-          <div className="w-100% rotate-180">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+        </div >
+      </Modal >
+      {
+        modalquerievisible ? (
+          <Modal
+            bodyStyle={{
+              background:
+                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+              transform: "rotate(-180deg)",
+            }}
+            centered
+            visible={modalquerievisible}
+            onCancel={() => setmodalquerieVisible(false)
+            }
+            footer={null}
+            width={665}
+            className="shadow-popupShadow"
+          >
+            <div className="w-100% rotate-180">
+              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+                Thank you! for your interest!
+                <br /> Our team will get back to you shortly.
+              </div>
             </div>
-            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-              Thank you! for your interest!
-              <br /> Our team will get back to you shortly.
-            </div>
-          </div>
-        </Modal>
-      ) : null}
+          </Modal >
+        ) : null}
     </>
   );
 }
