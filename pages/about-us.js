@@ -93,7 +93,7 @@ export default function About() {
     })
   }, [])
 
-  function goToPage(numberPage) {}
+  function goToPage(numberPage) { }
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -217,9 +217,8 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
-                  index != principalResp.length - 1 && ""
-                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
+                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -450,16 +449,14 @@ export default function About() {
                   <div className="flex h-190">
                     <div className="w-55% text-right">
                       <div
-                        className={`${
-                          activeTab == index ? "text-s24l150" : "text-s20l150"
-                        } text-s20l30 text-F1F1F1`}
+                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
+                          } text-s20l30 text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${
-                          activeTab == index ? "text-F1F1F1" : "text-949494"
-                        } text-s20l150`}
+                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
+                          } text-s20l150`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -467,11 +464,10 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${
-                            activeTab == index
+                          className={`${activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
-                          } rounded-full bg-opacity-100 `}
+                            } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
@@ -480,19 +476,17 @@ export default function About() {
                     </div>
                   </div>
                   <span
-                    className={`${
-                      activeTab == index ? "text-F1F1F1" : "text-848484"
-                    } text-s18l33`}
+                    className={`${activeTab == index ? "text-F1F1F1" : "text-848484"
+                      } text-s18l33`}
                   >
                     {founderResp[index]?.Name}
                   </span>
                   <span className="items-center flex flex-col mt-minus-22 ">
                     <span
-                      className={`${
-                        activeTab == index
+                      className={`${activeTab == index
                           ? "w-22 h-22 bg-F1F1F1 p-11"
                           : "w-14 h-14 bg-848484 p-7"
-                      } rounded-md bg-opacity-100`}
+                        } rounded-md bg-opacity-100`}
                     ></span>
                     {founderResp && founderResp.length - 1 != index && (
                       <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
@@ -504,7 +498,7 @@ export default function About() {
         </div>
       </div>
       {/* </Sticky> */}
-      <div className="desktop:hidden mobile:flex flex-col">
+      <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
         <div className="flex">
           {founderResp &&

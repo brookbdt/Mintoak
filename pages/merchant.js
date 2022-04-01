@@ -315,7 +315,7 @@ export default function Merchant() {
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
-              pagination={true}
+              pagination={false}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
