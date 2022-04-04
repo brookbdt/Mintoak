@@ -177,18 +177,18 @@ export default function Home() {
           <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TittleTop}
           </div>
-          <div className="text-s56l124_5 laptop:text-s40l60 mobile:text-s34l42 font-bold text-252525 mobile:ls--3 shrink-0">
+          <div className="mobile:mt-2 text-s56l124_5 laptop:text-s40l60 mobile:text-s34l42 font-bold text-252525 mobile:ls--3 shrink-0">
             {homeBannerResp?.TitleMiddle}
           </div>
-          <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
+          <div className="mobile:mt-2 text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TitleBottom}
           </div>
-          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l21 text-525252 shrink-0 mt-37">
+          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l21 text-525252 shrink-0 mt-37 mobile:mt-16">
             {homeBannerResp?.Description}
           </div>
           <div
             onClick={() => setDemoPopup(true)}
-            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-20"
+            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-16"
           >
             {homeBannerResp?.Button}
           </div>
@@ -263,7 +263,7 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-35 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
+        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-15 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
           The Mintoak Advantages
         </div>
         <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150 mobile:mb-80">
@@ -285,7 +285,7 @@ export default function Home() {
                   <div className="font-bold text-s24l29 laptop:text-s18l33 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5 responsive-title-text">
                     {item.Tittle}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l21  laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left laptop:text-s13l18 responsive-desc-text">
+                  <div className="text-s20l150 mobile:text-s14l21  laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-8 mobile:text-left laptop:text-s13l18 responsive-desc-text">
                     {item.Description}
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export default function Home() {
                     <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                       {homeForBanksResp?.Description1}
                     </div>
-                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20 mobile:mb-16">
                       {homeForBanksResp?.Title2}
                     </div>
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
@@ -384,7 +384,7 @@ export default function Home() {
                   <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                     {homeForMerchant?.Description1}
                   </div>
-                  <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                  <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20 mobile:mb-16">
                     {homeForMerchant?.Title2}
                   </div>
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
@@ -487,7 +487,7 @@ export default function Home() {
         </div>
 
         {/* Building a global community */}
-        <div className="text-s44l120 mobile:text-s22l33 text-252525 mb-30 font-bold text-center">
+        <div className="text-s44l120 mobile:text-s22l33 text-252525 mb-30 mobile:mb-37 font-bold text-center">
           Building A Global Community
         </div>
         <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
@@ -639,7 +639,7 @@ export default function Home() {
         </div>
 
         {/* In the media */}
-        <div className="w-100% flex-col justify-center items-center my-150 mobile:mb-80">
+        <div className="w-100% flex-col justify-center items-center my-150  mobile:my-80">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s22l33 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>In The Media</span>
             <span className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
@@ -703,7 +703,7 @@ export default function Home() {
           <div className="w-100% block items-center desktop:hidden laptop:hidden">
             <Carousel
               itemPadding={[0, 15]}
-              itemsToShow={1.3}
+              itemsToShow={1.4}
               outerSpacing={0}
               showArrows={false}
               pagination={false}
@@ -749,8 +749,8 @@ export default function Home() {
         </div>
 
         {/* Most popular blogs */}
-        <div className="w-100% flex-col justify-center items-center mt-100">
-          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+        <div className="w-100% flex-col justify-center items-center mt-100 mobile:pb-57">
+          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-32 w-100%">
             <span>Most Popular Blogs</span>
             <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
               View all

@@ -103,8 +103,8 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% laptop:w-50% desktop:px-100 desktop:pt-100 desktop:pb-136 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold">
+        <div className="desktop:w-50% laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
           </div>
@@ -170,8 +170,8 @@ export default function About() {
       </div>
 
       {/* Vision & Mission */}
-      <div className="flex w-100% bg-footer desktop:px-94 mobile:flex-col desktop:h-412 laptop:h-412">
-        <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:px-86 laptop:px-86 desktop:pt-84 laptop:pt-84 desktop:pb-94 laptop:pb-94 mobile:border-b desktop:border-r laptop:border-r border-8B8B8B">
+      <div className="flex w-100% bg-footer mobile:flex-col">
+        <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-190 desktop:pr-114 laptop:px-86 desktop:pt-84 laptop:pt-84 desktop:pb-94 laptop:pb-94 mobile:border-b desktop:border-r laptop:border-r border-8B8B8B">
           <div className="flex flex-row w-100% items-center desktop:pb-6 mobile:pt-27 mobile:pb-25">
             <div>
               <Image
@@ -184,11 +184,11 @@ export default function About() {
               {visionResp?.Title}
             </div>
           </div>
-          <div className="ls-2 text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-19 laptop:pt-19 mobile:pb-14 mobile:pr-15">
+          <div className="ls-2 text-F1F1F1 text-s20l30 mobile:text-s14l21 desktop:pt-19 laptop:pt-19 mobile:pb-14 mobile:pr-15 ">
             {visionResp?.Description}
           </div>
         </div>
-        <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-169 laptop:pl-86 desktop:pr-177 laptop:pr-177 desktop:pt-85 laptop:pt-85 desktop:pb-94 laptop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
+        <div className="flex mobile:w-100% desktop:w-50% laptop:w-50% flex-col  mobile:py-20 mobile:pl-20 mobile:pr-25 desktop:pl-169 laptop:pl-86 desktop:pr-177 laptop:pr-177 desktop:pt-85 laptop:pt-85 desktop:pb-120 laptop:pb-94 mobile:border-t desktop:border-l laptop:border-l border-8B8B8B">
           <div className="flex flex-row w-100% items-center desktop:pb-6 mobile:pt-27 mobile:pb-25">
             <div>
               <Image
@@ -505,25 +505,6 @@ export default function About() {
                       )}
                     </div>
                   </div>
-                  <span
-                    className={`${
-                      activeTab == index ? "text-F1F1F1" : "text-848484"
-                    } text-s18l33`}
-                  >
-                    {founderResp[index]?.Name}
-                  </span>
-                  <span className="items-center flex flex-col mt-minus-22 ">
-                    <span
-                      className={`${
-                        activeTab == index
-                          ? "w-22 h-22 bg-F1F1F1 p-11"
-                          : "w-14 h-14 bg-848484 p-7"
-                      } rounded-md bg-opacity-100`}
-                    ></span>
-                    {founderResp && founderResp.length - 1 != index && (
-                      <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
-                    )}
-                  </span>
                 </div>
               ))}
           </div>

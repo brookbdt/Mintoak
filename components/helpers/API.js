@@ -1,13 +1,13 @@
 // STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / EÛ8×^û
 
-import axios from "axios";
-import { Notification } from "./utils";
+import axios from "axios"
+import { Notification } from "./utils"
 
-const domain = "http://uat-content.mintoak.com";
-const slug = "/";
-const host = domain + slug;
+const domain = "http://uat-content.mintoak.com"
+const slug = "/"
+const host = domain + slug
 
-axios.defaults.baseURL = host;
+axios.defaults.baseURL = host
 
 const API = ({ url, method = "get", body = {}, headers = {} }) =>
   axios[method](url, headers, body)
@@ -17,9 +17,9 @@ const API = ({ url, method = "get", body = {}, headers = {} }) =>
         type: "error",
         message: "Opps, Something went wrong!",
         description: err.message,
-      });
-      return err;
-    });
+      })
+      return err
+    })
 
 // API ENDPOINTS
 const endpoints = {
@@ -33,7 +33,7 @@ const endpoints = {
   homepage_media_cards: "homepage-media-cards",
   faq: "faq-s",
   about_us_banner: "about-us-banner",
-  mintoak_story: "mintoak-story",
+  mintoak_story: "mintoak-story?sort=order",
   about_us_metrics: "about-us-metrics",
   about_us_mission: "about-us-mission",
   about_us_vision: "about-us-vision",
@@ -60,7 +60,14 @@ const endpoints = {
   partner_with_us_mintoak_effect: "partner-with-us-mintoak-effects",
   resources_blog_list: "resources-blog-lists",
   dropdown: "dropdowns",
-  contact_us_find_us_at: "contact-us-find-us-at"
-};
+  contact_us_find_us_at: "contact-us-find-us-at",
+  product_page_demo: "product-page-demo",
+  product_page_aim: "product-page-aim",
+  product_page: "product-page",
+  product_page_value_proposition: "product-page-value-propositions",
+  product_page_features: "product-page-features",
+  product_page_feature2: "product-page-feature2",
+  product_page_feature3: "product-page-feature3",
+}
 
-export { API, endpoints, domain };
+export { API, endpoints, domain }
