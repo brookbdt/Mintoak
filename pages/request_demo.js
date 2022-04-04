@@ -84,13 +84,13 @@ export default function Request_Demo(props) {
                   background: "#DFEFD4",
                   padding: "20px",
                 }}
-                defaultValue={"Select"}
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 style={{ fontWeight: "bold" }}
               >
                 {countryList &&
                   countryList.Data.map((item, index) => (
                     <Option
+                      value={item.name}
                       className="global-option-demo"
                       style={{ background: "transparent" }}
                       key={index}
@@ -116,6 +116,7 @@ export default function Request_Demo(props) {
                 Job Title
               </div>
               <input
+                placeholder="Enter Your Job Title"
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
               />
@@ -133,13 +134,14 @@ export default function Request_Demo(props) {
                     background: "#DFEFD4",
                     padding: "20px",
                   }}
-                  placeholder="Select"
+                  placeholder="Choose Products"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
 
                   {productList &&
                     productList.Data.map((item, index) => (
                       <Option
+                        value={item.title}
                         className="global-option-demo"
                         style={{ background: "transparent" }}
                         key={index}

@@ -1,31 +1,31 @@
-import { useEffect, useState, useRef } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
-import Sticky from "react-sticky-el"
-SwiperCore.use([Mousewheel, Pagination])
+import { useEffect, useState, useRef } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+import Sticky from "react-sticky-el";
+SwiperCore.use([Mousewheel, Pagination]);
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({})
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [matricsResp, setMatricsResp] = useState([])
-  const [visionResp, setVisionResp] = useState({})
-  const [missionResp, setMissionResp] = useState({})
-  const [principalResp, setPrincipalResp] = useState([])
-  const [founderResp, setFounderResp] = useState([])
-  const [teamInfoResp, setTeamInfoResp] = useState({})
-  const [activeTab, setActiveTab] = useState(0)
-  const [swiperInstance, setSwiperInstance] = useState()
-  const founder = useRef(null)
-  const swiper = useSwiper()
+  const [aboutBannerResp, setAboutBannerResp] = useState({});
+  const [storyResp, setStoryResp] = useState({});
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const founder = useRef(null);
+  const swiper = useSwiper();
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     // about_banner
@@ -33,65 +33,65 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp)
+        setAboutBannerResp(resp);
       }
-    })
+    });
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp)
+        setStoryResp(resp);
       }
-    })
+    });
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp)
+        setMatricsResp(resp);
       }
-    })
+    });
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp)
+        setMissionResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp)
+        setVisionResp(resp);
       }
-    })
+    });
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp)
+        setPrincipalResp(resp);
       }
-    })
+    });
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp)
+        setFounderResp(resp);
       }
-    })
+    });
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp)
+        setTeamInfoResp(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   function goToPage(numberPage) { }
 
@@ -250,119 +250,145 @@ export default function About() {
         <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
           <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 ">
             <Carousel
-              itemsToShow={7}
-              itemPadding={[0, 7]}
+              itemsToShow={6.5}
               showArrows={false}
               enableAutoPlay={false}
-              className="flex itmes-center justify-center bg-bg_reel bg-no-repeat h-439"
+              className="flex itmes-center justify-center h-439"
               pagination={false}
+              style={{
+                background: "url(/images/backgrounds/reel-img.svg)",
+              }}
             >
-              <div className="flex flex-col items-center justify-center">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/megha.svg"
-                    type="img"
-                    className="h-299 w-100%"
-                  />
+              <div className="flex flex-col items-center justify-center ">
+                <Image
+                  src="/images/backgrounds/megha.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl "
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center ">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/janine.svg"
-                    height={299}
-                    width={229}
-                    type="img"
-                    className="h-299 w-229"
-                  />
+                <Image
+                  src="/images/backgrounds/janine.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center ">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/kunal.svg"
-                    height={299}
-                    width={229}
-                    type="img"
-                    className="h-299 w-229"
-                  />
+                <Image
+                  src="/images/backgrounds/kunal.svg "
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center ">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/Abhishek.svg"
-                    type="img"
-                    className="h-299 w-229"
-                  />
+                <Image
+                  src="/images/backgrounds/Abhishek.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/Sharad.svg"
-                    type="img"
-                    className="h-299 w-229"
-                  />
+                <Image
+                  src="/images/backgrounds/Sharad.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/megha.jpg"
-                    height={299}
-                    width={229}
-                  />
+                <Image
+                  src="/images/backgrounds/amit.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <div className="">
-                  <Image
-                    src="/images/backgrounds/megha.jpg"
-                    height={299}
-                    width={229}
-                  />
+                <Image
+                  src="/images/backgrounds/Image.svg"
+                  type="img"
+                  className="h-299 w-229 object-cover rounded-xl"
+                />
+                <div
+                  className="w-229 absolute h-60 bottom-0"
+                  style={{
+                    backgroundImage: "linear-gradient(#fff0, #252525)",
+                  }}
+                ></div>
+                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
                 </div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute desktop:pt-225 laptop:pt-225 mobile:pt-100">
-                  Name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute desktop:pt-275 laptop:pt-275 mobile:pt-140">
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
                 </div>
               </div>
@@ -395,8 +421,8 @@ export default function About() {
             className="mySwiper overflow-scroll"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex)
-              console.log(e.activeIndex, "sliderchange")
+              setActiveTab(e.activeIndex);
+              console.log(e.activeIndex, "sliderchange");
             }}
           >
             {founderResp.map((item, index) => (
@@ -406,7 +432,7 @@ export default function About() {
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
                   onLoadStart={() => {
-                    console.log("first")
+                    console.log("first");
                   }}
                 >
                   <div className="flex mobile:flex-col">
@@ -440,8 +466,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index)
-                    founder.current?.swiper.slideTo(index)
+                    setActiveTab(index);
+                    founder.current?.swiper.slideTo(index);
                     // founder.swiper
                   }}
                   key={index}
@@ -465,8 +491,8 @@ export default function About() {
                       <div className="w-27 h-27 flex justify-center">
                         <div
                           className={`${activeTab == index
-                              ? "w-27 h-27 bg-F1F1F1 "
-                              : "w-17 h-16 bg-949494"
+                            ? "w-27 h-27 bg-F1F1F1 "
+                            : "w-17 h-16 bg-949494"
                             } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
@@ -475,23 +501,6 @@ export default function About() {
                       )}
                     </div>
                   </div>
-                  <span
-                    className={`${activeTab == index ? "text-F1F1F1" : "text-848484"
-                      } text-s18l33`}
-                  >
-                    {founderResp[index]?.Name}
-                  </span>
-                  <span className="items-center flex flex-col mt-minus-22 ">
-                    <span
-                      className={`${activeTab == index
-                          ? "w-22 h-22 bg-F1F1F1 p-11"
-                          : "w-14 h-14 bg-848484 p-7"
-                        } rounded-md bg-opacity-100`}
-                    ></span>
-                    {founderResp && founderResp.length - 1 != index && (
-                      <span className="h-90 border-1 border-848484 py-45 min-h-90 border w-1 mt-16"></span>
-                    )}
-                  </span>
                 </div>
               ))}
           </div>
@@ -517,5 +526,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
