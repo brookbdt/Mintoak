@@ -14,7 +14,7 @@ export default function Contact() {
   const [modalvisible, setmodalVisible] = useState(false);
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
   const [faqs, setFaqs] = useState([]);
-  const [isBORM, setIsBORM] = useState("b");
+  const [isClicked, setIsClicked] = useState("b");
 
   useEffect(() => {
     API({
@@ -97,9 +97,9 @@ export default function Contact() {
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18 rounded-lg border border-87BD25 inline-block cursor-pointer  " +
-                  (isBORM === "b" ? "bg-faqs_bg" : "bg-DFEFD4")
+                  (isClicked === "b" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
-                onClick={() => setIsBORM("b")}
+                onClick={() => setIsClicked("b")}
               >
                 <div className="pt-5 mobile:hidden">
                   <Image
@@ -117,9 +117,9 @@ export default function Contact() {
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
-                  (isBORM === "m" ? "bg-faqs_bg" : "bg-DFEFD4")
+                  (isClicked === "m" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
-                onClick={() => setIsBORM("m")}
+                onClick={() => setIsClicked("m")}
               >
                 <div className="pt-5 mobile:hidden">
                   <Image
@@ -137,9 +137,9 @@ export default function Contact() {
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
-                  (isBORM === "c" ? "bg-faqs_bg" : "bg-DFEFD4")
+                  (isClicked === "c" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
-                onClick={() => setIsBORM("c")}
+                onClick={() => setIsClicked("c")}
               >
                 <div className="pt-5 mobile:hidden">
                   <Image
@@ -157,9 +157,9 @@ export default function Contact() {
               <div
                 className={
                   "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
-                  (isBORM === "d" ? "bg-faqs_bg" : "bg-DFEFD4")
+                  (isClicked === "d" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
-                onClick={() => setIsBORM("d")}
+                onClick={() => setIsClicked("d")}
               >
                 <div className="pt-5 mobile:hidden">
                   <Image
@@ -726,7 +726,7 @@ export default function Contact() {
           visible={modalquerievisible}
           onCancel={() => setmodalquerieVisible(false)}
           footer={null}
-          className="shadow-popupShadow"
+          className="shadow-popupShadow close-btn"
         >
           <div className="w-100% rotate-180">
             <div className="w-100% flex justify-center  mobile:pt-9 desktop:pt-42 laptop:pt-42">
