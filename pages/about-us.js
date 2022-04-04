@@ -404,7 +404,7 @@ export default function About() {
         id="founder"
         className="w-100%  bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
       >
-        <div className=" flex flex-col">
+        <div className="flex flex-col">
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
             Our founders
           </div>

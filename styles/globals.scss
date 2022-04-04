@@ -950,6 +950,7 @@ button[disabled] {
     top: 65%;
     color: white;
     font-size: 15px;
+    padding-bottom: 10px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: transparent;
@@ -1138,4 +1139,12 @@ button[disabled] {
 }
 .shadoff{
   transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.swiper-slide.swiper-slide-active {
+  height: 850px !important;
+}
+.progress-bar .ant-progress-circle{
+background: linear-gradient(163.57deg, #A7CD7E 11.39%, rgba(123, 205, 37, 0) 95.33%);
+border-radius: 50%;
+
 }

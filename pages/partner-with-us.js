@@ -2,7 +2,7 @@ import Image from "../components/helpers/Image";
 import Carousel from "react-elastic-carousel";
 import { useEffect, useState } from "react";
 import { consts } from "react-elastic-carousel";
-import { Modal, Select } from "antd";
+import { Modal, Select, Progress } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Request_Demo from "./request_demo";
 
@@ -121,10 +121,8 @@ export default function Partner() {
           <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
             <Image
               src={partnerWithUsBanner?.ilustration[0]}
-              width={550}
-              height={550}
               type="img"
-              className="w-100%"
+              className="w-100% h-100%"
             />
           </div>
         </div>
@@ -326,14 +324,14 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                 >
-                  {
-                    countryList && countryList.Data.map((item, index) => (
+                  {countryList &&
+                    countryList.Data.map((item, index) => (
                       <Option
                         className="global-option-career"
                         style={{
                           backgroundColor: "transparent",
                         }}
-                        value="Select."
+                        value={item.name}
                         key={index}
                       >
                         {item.name}
@@ -432,8 +430,9 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

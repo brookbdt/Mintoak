@@ -1,17 +1,26 @@
 import Image from "../components/helpers/Image";
+import { useRef } from "react";
 import { Chrono } from "react-chrono";
 import { Collapse, Input } from "antd";
 import Carousel from "react-elastic-carousel";
 import { consts } from "react-elastic-carousel";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+import Sticky from "react-sticky-el";
+
+SwiperCore.use([Mousewheel, Pagination]);
 
 const { Panel } = Collapse;
 const { TextArea } = Input;
 
 export default function Product() {
   const [activeindex, setActiveIndex] = useState();
-
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
   const itemsToShow = 1;
+  const founder = useRef(null);
 
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -70,7 +79,7 @@ export default function Product() {
                   className="h-120 w-120 mobile:h-72 mobile:w-72"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-370 mobile:w-268 font-semibold">
+              <div className="text-252525 desktop:text-s24l36  mobile:text-s16l24 pl-16  w-100% mobile:w-268 font-semibold">
                 Multi-location Consolidated View & Location-level Drill Down
               </div>
             </div>
@@ -78,111 +87,192 @@ export default function Product() {
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">
-        <div className="flex w-100% mobile:hidden pl-180 laptop:pl-100">
-          <div className="w-33% mt-251">
-            <div className="text-s45l45 font-bold">
-              Track your business progress with our interactive dashboard:
-            </div>
-            <div className="pt-32 text-s20l30">
-              Get real time updates on your business, such as total sales,
-              transaction history, one view across payment modes, customizable
-              transaction reports, insights on new and repeat customers and also
-              customer feedback. Get performance trends to see how your business
-              has performed over a period of time.
-            </div>
-          </div>
-          <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
-            <Image
-              src="/images/backgrounds/merchant-mobile.svg"
-              type="img"
-              height={600}
-              width={500}
-            />
-          </div>
-          <div className="w-33% mt-232 flex justify-center pr-50">
-            <Chrono
-              cardWidth={250}
-              cardHeight={120}
-              theme={{
-                primary: "#848484",
-                secondary: "#F1F1F1",
-                cardBgColor: "footer",
-                outline: "red",
-              }}
-              flipLayout={true}
-              mode="VERTICAL"
-              hideControls={true}
-              itemWidth={900}
-            >
-              <div className="text-right">
-                <div className="text-252525 text-s28l42 pt-42">Onboarding</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-43">Updates</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-60 pl-40">
-                  Recognition
+      <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
+        <div className="flex flex-col">
+          <Swiper
+            direction={"vertical"}
+            slidesPerView={1}
+            tag="section"
+            spaceBetween={30}
+            mousewheel={true}
+            ref={founder}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Mousewheel, Pagination]}
+            className="mySwiper overflow-scroll"
+            onSwiper={setSwiperInstance}
+            onSlideChange={(e) => {
+              setActiveTab(e.activeIndex);
+              console.log(e.activeIndex, "sliderchange");
+            }}
+          >
+            <SwiperSlide key={0}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Track your business progress with our interactive dashboard:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Get real time updates on your business, such as total sales,
+                    transaction history, one view across payment modes,
+                    customizable transaction reports, insights on new and repeat
+                    customers and also customer feedback. Get performance trends
+                    to see how your business has performed over a period of
+                    time.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-1.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
                 </div>
               </div>
-            </Chrono>
-          </div>
+            </SwiperSlide>
+            <SwiperSlide key={1}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Multi-location Consolidated View & Location-level Drill
+                    Down:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Have more than one outlet? We have got you covered. You can
+                    get a consolidated view across all outlets in one place. A
+                    comparative view of outlets helps you understand how each
+                    outlet is performing. Get in-depth insights on the
+                    performance of a particular outlet or a group of outlets.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-2.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide key={2}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Credit-to-Bank information:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Get a quick consolidated and outlet level view of merchant
+                    payout details from the settlement or credit-to-bank
+                    section. You can see the total amount credited for
+                    transactions completed successfully. You get a transparent
+                    view of gross amount, transaction fees if any and the net
+                    amount.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-3.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <div className="laptop:hidden desktop:hidden">
-          <div className="pt-92 px-30 pl-20 pr-25 pb-65">
-            <div className="mobile:text-s22l33 font-bold w-245">
-              Track your business progress with our interactive dashboard:
+        <div className="w-18% absolute flex flex-col itmes-center justify-center mobile:hidden right-50 pr-80 pt-65">
+          <div className="h-850 justify-center flex flex-col ">
+            <div
+              onClick={() => {
+                setActiveTab(0);
+                founder.current?.swiper.slideTo(0);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 0 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Interactive Dashboard
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-5">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 0
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
+
+                <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
+              </div>
             </div>
-            <div className="mobile:text-s14l21 pt-18">
-              Get real time updates on your business, such as total sales,
-              transaction history, one view across payment modes, customizable
-              transaction reports, insights on new and repeat customers and also
-              customer feedback. Get performance trends to see how your business
-              has performed over a period of time.
+            <div
+              onClick={() => {
+                setActiveTab(1);
+                founder.current?.swiper.slideTo(1);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 1 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Consolidated View
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-5">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 1
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
+
+                <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
+              </div>
             </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/onboard_merchant.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
-            </div>
-            <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              <div>Real-time updates on</div>
-              <div>business performance and</div>
-              transactions
-            </div>
-            <div className="mobile:text-s14l21 pt-18">
-              Get empowered with Mintoak’s advantage of real-time information
-              access to understand your business performance from all aspects,
-              including transactions and payments, customer experience and
-              reach.
-            </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/merchant-mobile.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
-            </div>
-            <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              Myriad benefits to explore!
-            </div>
-            <div className="mobile:text-s14l21 pt-18">
-              From customer recognition based on robust analytics to
-              segmentation and merchant loyalty plans, there are several
-              benefits for SMEs and merchants to explore and gain on Mintoak.{" "}
-            </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/mybrid.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
+            <div
+              onClick={() => {
+                setActiveTab(2);
+                founder.current?.swiper.slideTo(2);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 2 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Credit to Bank
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-9">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 2
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
