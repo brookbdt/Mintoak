@@ -78,7 +78,7 @@ export default function Contact() {
             <li>Contact details</li>
           </ul>
         </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-12 desktop:pb-40">
+        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-12 laptop:pb-60">
           Documents issued by Government /Government departments/Agencies/PSUs
           for identification and documents evidencing proof of address issued by
           Government / PSUs / telecom / electricity / local bodies; provided

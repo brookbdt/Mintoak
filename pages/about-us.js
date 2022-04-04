@@ -507,6 +507,9 @@ export default function About() {
         </div>
       </div>
       {/* </Sticky> */}
+      <div className=" border-F1F1F1 border-t">
+
+      </div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
         <div className="text-s22l33 text-000000">Our founders</div>
         <div className="flex">
