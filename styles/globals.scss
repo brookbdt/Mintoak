@@ -529,7 +529,7 @@ button[disabled] {
   .ant-modal-close-x {
     color: #252525;
     font-size: 21px;
-    margin: 20px;
+    margin: -3px;
     font-weight: bold;
   }
 }
@@ -1132,4 +1132,10 @@ button[disabled] {
 }
 .mySwiper::-webkit-scrollbar {
   display: none;
+}
+.border-rounded{
+  border-radius: 50%;
+}
+.shadoff{
+  transform: matrix(1, 0, 0, -1, 0, 0);
 }

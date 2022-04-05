@@ -100,18 +100,18 @@ export default function Merchant() {
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>
-          <div className="text-s56l124_5 mobile:text-s36l43 font-bold text-252525 shrink-0">
+          <div className="text-s56l124_5 mobile:text-s36l43 font-bold text-252525 shrink-0 mobile:pt-2">
             business needs
           </div>
-          <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
+          <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-2">
             on a single destination
           </div>
-          <div className="text-s24l26 mobile:text-s14l24 text-525252 shrink-0 mt-37 desktop:w-500 laptop:w-400">
+          <div className="text-s24l26 mobile:text-s14l24 text-525252 shrink-0 mt-37 desktop:w-500 laptop:w-400 mobile:mt-16">
             {merchantBannerResp.Description}
           </div>
           <div
             onClick={() => setDemoPopup(true)}
-            className="button w-216 mobile:w-166 mobile:text-s14l16_8 mobile:h-40 h-54 mt-40 cursor-pointer z-20 font-bold"
+            className="button w-216 mobile:w-166 mobile:text-s14l16_8 mobile:h-40 h-54 mt-40 mobile:mt-16 cursor-pointer z-20 font-bold"
           >
             {merchantBannerResp.CTA}
           </div>
@@ -122,7 +122,7 @@ export default function Merchant() {
       {/* Benefits for the Merchants */}
       <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-250 mobile:pb-44">
         <div className="pt-157 mobile:pt-81">
-          <div className="font-bold text-s45l67 mobile:text-s20l24 text-center">
+          <div className="font-bold text-s45l67 mobile:text-s20l24 desktop:text-center laptop:text-center mobile:px-20">
             Benefits for the Merchants
           </div>
         </div>
@@ -271,9 +271,7 @@ export default function Merchant() {
               />
             </div>
             <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              <div className="w-270">
-                {merchantPageMockUp2?.Title}
-              </div>
+              <div className="w-270">{merchantPageMockUp2?.Title}</div>
             </div>
             <div className="mobile:text-s14l21 pt-18">
               {merchantPageMockUp2?.Description}
@@ -290,8 +288,7 @@ export default function Merchant() {
               {merchantPageMockUp3?.Title}
             </div>
             <div className="mobile:text-s14l21 pt-18">
-              {merchantPageMockUp3?.Description}
-              {" "}
+              {merchantPageMockUp3?.Description}{" "}
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
@@ -306,7 +303,7 @@ export default function Merchant() {
       </div>
       {/* Features We Offer */}
       <div className="h-670 bg-we_offer_bg px-125 mobile:px-10 mobile:h-auto">
-        <div className="text-F1F1F1 ls--1_5 text-s44l52_8 mobile:text-s20l24 font-bold pt-81 pb-60 flex justify-center">
+        <div className="text-F1F1F1 ls--1_5 text-s44l52_8 mobile:text-s20l24 font-bold pt-81 pb-60 flex justify-center mobile:pt-40 mobile:pb-34">
           Features We Offer
         </div>
         <div className="pb-60">
@@ -370,6 +367,86 @@ export default function Merchant() {
                   Perform instant customer recognition and segmentation
                 </div>
               </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/mintoak-omni.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak OMNI
+                </div>
+                <div className="w-100% text-DFDFDF text-center mt-30 text-s20l30">
+                  Handle all types of digital payments on a single platform
+                </div>
+              </div>
+
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/pay-later.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Pay Later
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30">
+                  Track customer dues on a robust digital register
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4">
+                <Image
+                  src="/images/icons/customer.svg"
+                  height={148}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak IKU
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30 ls--1_5">
+                  Perform instant customer recognition and segmentation
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/mintoak-omni.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak OMNI
+                </div>
+                <div className="w-100% text-DFDFDF text-center mt-30 text-s20l30">
+                  Handle all types of digital payments on a single platform
+                </div>
+              </div>
+
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
+                <Image
+                  src="/images/icons/pay-later.svg"
+                  height={110}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Pay Later
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30">
+                  Track customer dues on a robust digital register
+                </div>
+              </div>
+              <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4">
+                <Image
+                  src="/images/icons/customer.svg"
+                  height={148}
+                  width={273}
+                />
+                <div className="font-semibold text-DFDFDF text-center text-s24l29 mt-24">
+                  Mintoak IKU
+                </div>
+                <div className="text-DFDFDF text-center mt-30 text-s20l30 ls--1_5">
+                  Perform instant customer recognition and segmentation
+                </div>
+              </div>
             </Carousel>
           </div>
           <div className=" desktop:hidden laptop:hidden">
@@ -388,8 +465,9 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -447,7 +525,7 @@ export default function Merchant() {
       <div className="w-100% px-100 merchant-bg mobile:px-0">
         <div className="flex w-100% mobile:block mobile:pt-80">
           <div className="w-50% flex flex-col justify-end pb-70 mobile:pb-21 mobile:w-100% desktop:block desktop:pt-268 laptop:block laptop:pt-268">
-            <div className="font-bold text-s45l45 laptop:text-s32l38 mobile:text-s22l33 pb-40 mobile:pl-15 mobile:w-252">
+            <div className="font-bold text-s45l45 laptop:text-s32l38 mobile:text-s22l33 pb-40 mobile:pb-16 mobile:pl-15 mobile:w-252">
               {merchantAssuredByBanks?.Title}
             </div>
             <div className="text-s20l30 laptop:text-s16l19 mobile:text-s14l21 mobile:pl-20 mobile:pr-25 font-normal">
@@ -469,7 +547,7 @@ export default function Merchant() {
             />
           </div>
         </div>
-        <div className="pt-154 mobile:pt-80">
+        <div className="pt-154 mobile:py-80">
           <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
@@ -530,7 +608,7 @@ export default function Merchant() {
               </div>
             </Carousel>
           </div>
-          <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 desktop:hidden laptop:hidden">
+          <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:pb-0 desktop:hidden laptop:hidden">
             <div className="px-20">
               <Carousel
                 itemsToShow={1}
@@ -547,8 +625,9 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                              }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                              isActivePage ? "bg-525252" : ""
+                            }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}
@@ -597,12 +676,6 @@ export default function Merchant() {
               </Carousel>
             </div>
           </div>
-        </div>
-        <div className="desktop:hidden laptop:hidden pt-80">
-          {/* <div className="text-s20l24 flex justify-center font-bold">
-            Hear from our users themselves!
-          </div> */}
-          <div></div>
         </div>
       </div>
       {demoPopup && (

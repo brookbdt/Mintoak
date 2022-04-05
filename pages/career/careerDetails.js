@@ -43,9 +43,9 @@ export default function CareerDetails() {
     <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
-        <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33">
+        <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33 mobile:pb-28">
           <div>
-            <div className="text-s44l52_8 mobile:text-s24l31_92  font-bold text-252525 shrink-0 desktop:pt-6 mobile:pt-10">
+            <div className="text-s44l52_8 mobile:text-s24l31_92  font-bold text-252525 shrink-0 desktop:pt-6 ">
               Senior Software Developer
             </div>
             <div className="desktop:pt-16 laptop:pt-16 flex items-center mobile:pt-16 mobile:flex-wrap text-525252">
@@ -83,11 +83,11 @@ export default function CareerDetails() {
       </div>
       <div className="flex items-center justify-between laptop:p-50 pt-100 mobile:pt-40 px-180 mobile:px-20">
         <div className="desktop:flex laptop:flex items-center justify-between w-100% ">
-          <div className="w-50% desktop:pr-14 mobile:w-100% mobile:py-20">
+          <div className="w-50% desktop:pr-14 mobile:w-100%">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Job description
             </div>
-            <ul className="pt-24 list-disc mobile:px-20 mobile:text-525252">
+            <ul className="pt-24 mobile:pt-12 list-disc mobile:px-20 mobile:text-525252">
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Design overall architecture of the application.
               </li>
@@ -114,11 +114,11 @@ export default function CareerDetails() {
               </li>
             </ul>
           </div>
-          <div className="w-50% desktop:pl-14 mobile:w-100% mobile:py-20">
+          <div className="w-50% desktop:pl-14 mobile:w-100% mobile:py-40">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Technical skills
             </div>
-            <ul className="pt-24 list-disc mobile:px-20 mobile:text-525252">
+            <ul className="pt-24 mobile:pt-12 list-disc mobile:px-20 mobile:text-525252">
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Minimum 6-9 years
               </li>
@@ -148,9 +148,9 @@ export default function CareerDetails() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between laptop:p-100 desktop:pt-60 px-180 mobile:px-20">
+      <div className="flex items-center justify-between laptop:p-100 desktop:pt-60 px-180 mobile:px-20 mobile:pb-46">
         <div className="flex items-center justify-between w-100%">
-          <div className="w-50% desktop:pr-14 mobile:w-100% mobile:py-20">
+          <div className="w-50% desktop:pr-14 mobile:w-100% mobile:pb-20">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Qualifications
             </div>
@@ -168,7 +168,7 @@ export default function CareerDetails() {
           <div className="text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1">
             Job application
           </div>
-          <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16">
+          <div className="font-normal text-s32l38_4 text-A8FC055 opacity-100 mobile:text-s14l16_8 text-opacity-100 pt-16 mobile:pt-10">
             Senior Software Developer
           </div>
           <div className="global-dropdown pt-40">
@@ -316,7 +316,7 @@ export default function CareerDetails() {
       </div>
 
       <div className="py-150 pt-0 mobile:py-80 mobile:pb-66">
-        <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44">
+        <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44 mobile:pb-24">
           View similar roles
         </div>
         <div className="custom-row mobile:px-20 w-100% flex flex-col items-center">
@@ -324,7 +324,7 @@ export default function CareerDetails() {
             {jobOpenings.map((data, index) => (
               <Col
                 key={index}
-                className="mb-40 mobile:flex items-center mobile:w-100%"
+                className="mb-40 mobile:mb-24 mobile:flex items-center mobile:w-100%"
               >
                 <div className="py-20 px-20 carrer-detail-card desktop:mx-24 hover:bg-8FC055 drop-shadow border border-8FC055 desktop:w-488 mobile:w-100% cursor-pointer">
                   <div className="desktop:flex mobile:flex-col justify-between items-center">

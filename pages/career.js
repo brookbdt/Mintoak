@@ -149,20 +149,20 @@ export default function Career() {
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             {careersBannerResp?.Title}
           </div>
-          <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0">
+          <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0 mobile:pt-2">
             {/* a new direction */}
           </div>
-          <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
+          <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0 mobile:pt-2">
             {/* with Mintoak */}
           </div>
-          <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37">
+          <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37 mobile:mt-16">
             {careersBannerResp?.Description}
             {/* Explore various opportunities for enthusiastic, innovative and
             dedicated individuals to join our team. */}
           </div>
           <div
             onClick={() => setDemoPopup(true)}
-            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20"
+            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mobile:mt-16 cursor-pointer z-20"
           >
             {careersBannerResp?.CTA}
           </div>
@@ -178,7 +178,7 @@ export default function Career() {
             <div className="desktop:text-s44l45 laptop:text-s44l45 mobile:text-s22l33 font-bold flex justify-center">
               Why join Mintoak?
             </div>
-            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-center desktop:justify-center mobile:py-25 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
+            <div className="desktop:flex laptop:flex desktop:pt-69 laptop:pt-69 laptop:justify-center desktop:justify-center mobile:pt-40 mobile:px-25 w-100% desktop:px-100 laptop:px-100">
               {careerListingValuePropositionResp &&
                 careerListingValuePropositionResp.map((item, index) => (
                   <div
@@ -193,14 +193,17 @@ export default function Career() {
                         type="img"
                       />
                     </div>
-                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="mobile:hidden text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 laptop:pt-49 desktop:pt-49 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description}
                     </div>
-                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="mobile:hidden text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description2}
                     </div>
-                    <div className="text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                    <div className="mobile:hidden text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
                       {item.Description3}
+                    </div>
+                    <div className="desktop:hidden laptop:hidden text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
+                      {item.Description}{" "} {item.Description2}{" "}{item.Description3}
                     </div>
                   </div>
                 ))}
@@ -246,7 +249,7 @@ export default function Career() {
             />
           </div>
           {/* <div className="custom-row"> */}
-          <Row gutter={24} className="my-30">
+          <Row gutter={24} className="my-30 mobile:mt-12 mobile:mb-16">
             <Col xs={24} md={8} className="mobile:my-12">
               <div className="filter-selection">
                 <Select
@@ -365,7 +368,7 @@ export default function Career() {
             </Col>
           </Row>
           {/* </div> */}
-          <div className="text-s18l21_6 font-normal text-525252 pb-20 mobile:text-s14l16_8">
+          <div className="text-s18l21_6 font-normal text-525252 pb-20 mobile:pb-10 mobile:text-s14l16_8">
             Showing 55 job openings in Mumbai
           </div>
           {/* <div className="flex w-full justify-between"> */}
@@ -392,13 +395,13 @@ export default function Career() {
                       </div>
                     </div>
                     <div className="flex items-center desktop:pt-46 laptop:pt-30 mobile:text-s12l24">
-                      <span className="bg-8FC055 py-9 rounded-lg border-box px-13 flex items-center mr-14">
+                      <span className="bg-8FC055 py-9 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
                         <Image src="/images/icons/bag.svg" type="img" />
                         <span className="pl-5 mobile:text-s12l24">
                           {data.timing}
                         </span>
                       </span>
-                      <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center">
+                      <span className="bg-8FC055 py-9 mobile:py-6 mobile:px-9 rounded-lg px-13 flex items-center">
                         <Image src="/images/icons/location.svg" type="img" />
                         <span className="pl-5">{data.location}</span>
                       </span>
@@ -415,7 +418,7 @@ export default function Career() {
         </div>
 
         <div className="desktop:px-180 laptop:px-180 desktop:py-150 laptop:py-150 w-100%">
-          <div className="text-center font-bold mobile:text-s22l33 desktop:text-s44l45 laptop:text-s44l45 pb-60 mobile:pb-40 mx-70">
+          <div className="text-center font-bold mobile:text-s22l33 desktop:text-s44l45 laptop:text-s44l45 pb-60 mobile:pb-20 mx-70">
             There’s a lot on board for our employees!
           </div>
           <div className="flex justify-center items-center mobile:px-0 mobile:mb-0 mobile:hidden">
@@ -516,7 +519,7 @@ export default function Career() {
                     />
                   </div>
                   <div className="p-20">
-                    <div className="desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12">
+                    <div className="font-semibold desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12">
                       {data.title}
                     </div>
                     <div className="text-s18l25">{data.description}</div>

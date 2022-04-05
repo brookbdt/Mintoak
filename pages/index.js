@@ -22,7 +22,20 @@ export default function Home() {
   const [homepageMediaCards, setHomepageMediaCards] = useState([]);
   const [faq, setFaq] = useState([]);
   const [homePageBlogs, setHomePageBlogs] = useState([]);
-  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -164,18 +177,18 @@ export default function Home() {
           <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TittleTop}
           </div>
-          <div className="text-s56l124_5 laptop:text-s40l60 mobile:text-s34l42 font-bold text-252525 mobile:ls--3 shrink-0">
+          <div className="mobile:mt-2 text-s56l124_5 laptop:text-s40l60 mobile:text-s34l42 font-bold text-252525 mobile:ls--3 shrink-0">
             {homeBannerResp?.TitleMiddle}
           </div>
-          <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
+          <div className="mobile:mt-2 text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TitleBottom}
           </div>
-          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l21 text-525252 shrink-0 mt-37">
+          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l21 text-525252 shrink-0 mt-37 mobile:mt-16">
             {homeBannerResp?.Description}
           </div>
           <div
             onClick={() => setDemoPopup(true)}
-            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-20"
+            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-16"
           >
             {homeBannerResp?.Button}
           </div>
@@ -250,7 +263,7 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-35 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
+        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-15 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
           The Mintoak Advantages
         </div>
         <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150 mobile:mb-80">
@@ -258,7 +271,9 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"}  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
+                className={`mobile:flex mobile:pt-${
+                  index != 0 ? "30" : "10"
+                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
               >
                 <Image
                   src={item.Icon}
@@ -270,7 +285,7 @@ export default function Home() {
                   <div className="font-bold text-s24l29 laptop:text-s18l33 mobile:text-s16l19 text-252525 mt-30 text-center mobile:text-left mobile:mt-5 responsive-title-text">
                     {item.Tittle}
                   </div>
-                  <div className="text-s20l150 mobile:text-s14l21  laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-10 mobile:text-left laptop:text-s13l18 responsive-desc-text">
+                  <div className="text-s20l150 mobile:text-s14l21  laptop:text-s18l27 text-525252 mt-15 text-center mobile:mt-8 mobile:text-left laptop:text-s13l18 responsive-desc-text">
                     {item.Description}
                   </div>
                 </div>
@@ -290,8 +305,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -313,8 +329,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -336,7 +353,7 @@ export default function Home() {
                     <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                       {homeForBanksResp?.Description1}
                     </div>
-                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20 mobile:mb-16">
                       {homeForBanksResp?.Title2}
                     </div>
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
@@ -367,7 +384,7 @@ export default function Home() {
                   <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
                     {homeForMerchant?.Description1}
                   </div>
-                  <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20">
+                  <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20 mobile:mb-16">
                     {homeForMerchant?.Title2}
                   </div>
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
@@ -420,7 +437,8 @@ export default function Home() {
                 </span>
               </div>
               <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
-                {" "}{homeForBanksResp?.CTA2}
+                {" "}
+                {homeForBanksResp?.CTA2}
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
                 <Image
@@ -469,7 +487,7 @@ export default function Home() {
         </div>
 
         {/* Building a global community */}
-        <div className="text-s44l120 mobile:text-s22l33 text-252525 mb-30 font-bold text-center">
+        <div className="text-s44l120 mobile:text-s22l33 text-252525 mb-30 mobile:mb-37 font-bold text-center">
           Building A Global Community
         </div>
         <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 mb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
@@ -621,7 +639,7 @@ export default function Home() {
         </div>
 
         {/* In the media */}
-        <div className="w-100% flex-col justify-center items-center my-150 mobile:mb-80">
+        <div className="w-100% flex-col justify-center items-center my-150  mobile:my-80">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s22l33 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>In The Media</span>
             <span className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
@@ -641,7 +659,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="px-16 pt-16">
                       <Image
@@ -651,14 +669,14 @@ export default function Home() {
                         className="grayscale colorImage"
                       />
                     </div>
-                    <div div className="flex flex-col items-start">
-                      <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
+                    <div div className="flex flex-col items-start ">
+                      <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-37">
                         {item.ReadTime}
                       </div>
-                      <div className="text-252525 pt-10 pb-26 pr-20 pl-15 font-semibold text-s24l31">
+                      <div className="text-252525 pb-26 pr-20 pl-37 font-semibold text-s24l31">
                         {item.ArticleTitle}
                       </div>
-                      <div className="text-525252 pr-20 pl-15 text-s20l24">
+                      <div className="text-525252 pr-20 pl-37 text-s20l24">
                         <span className="font-bold">{item.Author}</span>
                         <br />
                         {item.ArticleDate}
@@ -685,7 +703,7 @@ export default function Home() {
           <div className="w-100% block items-center desktop:hidden laptop:hidden">
             <Carousel
               itemPadding={[0, 15]}
-              itemsToShow={1.3}
+              itemsToShow={1.4}
               outerSpacing={0}
               showArrows={false}
               pagination={false}
@@ -731,8 +749,8 @@ export default function Home() {
         </div>
 
         {/* Most popular blogs */}
-        <div className="w-100% flex-col justify-center items-center mt-100">
-          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-40 w-100%">
+        <div className="w-100% flex-col justify-center items-center mt-100 mobile:pb-57">
+          <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-32 w-100%">
             <span>Most Popular Blogs</span>
             <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
               View all
@@ -747,43 +765,49 @@ export default function Home() {
               pagination={false}
               renderArrow={blackCarouselArrows}
             >
-              {homePageBlogs && homePageBlogs.map((item, index) => (
-                <div className="w-88% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow" key={index}>
-                  <div className="px-16 pt-16">
-                    <Image
-                      src="/images/backgrounds/img-4.svg"
-                      height={265}
-                      width={"100%"}
-                      type="img"
-                      className="grayscale colorImage"
-                    />
-                  </div>
-                  <div className="flex flex-col items-start text-left">
-                    <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-15">
-                      6 min read
-                    </div>
-                    <div className="text-252525 pr-20 pl-15 h-100 font-semibold text-s24l31">
-                      {item?.Title}
-                    </div>
-                    <div className="text-525252 pr-20 pl-15 laptop:pt-26 text-s20l24">
-                      By <span className="font-bold">{item?.Author}</span>
-                      <br />
-                      {/* {item?.Date} */}
-                      {new Date(item?.Date).getFullYear()} {"-"}{new Date(item?.Date).getMonth()} {"-"}{new Date(item?.Date).getDate()}
-                    </div>
-                  </div>
-                  <div className="w-full flex items-center justify-end">
-                    <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+              {homePageBlogs &&
+                homePageBlogs.map((item, index) => (
+                  <div
+                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    key={index}
+                  >
+                    <div className="px-16 pt-16">
                       <Image
-                        src="/images/icons/arrow.svg"
+                        src="/images/backgrounds/img-4.svg"
+                        height={265}
+                        width={"100%"}
                         type="img"
-                        height={40}
-                        width={40}
+                        className="grayscale colorImage"
                       />
                     </div>
+                    <div className="flex flex-col items-start text-left">
+                      <div className="text-83B449 text-s20l24 pt-34 pb-10 pl-37">
+                        6 min read
+                      </div>
+                      <div className="text-252525 pr-20 pl-37 pb-26 h-100 font-semibold text-s24l31">
+                        {item?.Title}
+                      </div>
+                      <div className="text-525252 pr-20 pl-37 text-s20l24">
+                        By <span className="font-bold">{item?.Author}</span>
+                        <br />
+                        {/* {item?.Date} */}
+                        {new Date(item?.Date).getFullYear()} {"-"}
+                        {new Date(item?.Date).getMonth()} {"-"}
+                        {new Date(item?.Date).getDate()}
+                      </div>
+                    </div>
+                    <div className="w-full flex items-center justify-end">
+                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
+                        <Image
+                          src="/images/icons/arrow.svg"
+                          type="img"
+                          height={40}
+                          width={40}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">
               View all
@@ -797,37 +821,42 @@ export default function Home() {
               showArrows={false}
               pagination={false}
             >
-              {homePageBlogs && homePageBlogs.map((item, index) => (
-                <div className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow" key={index}>
-                  <div className="px-10 pb-18">
-                    <Image
-                      src="/images/backgrounds/img-4.svg"
-                      height={150}
-                      width={216}
-                      className="grayscale colorImage h-fit"
-                      type="img"
-                    />
-                  </div>
-                  <div div className="flex flex-col items-start">
-                    <div className="text-83B449 text-s14l16_8  pl-20 pb-4 mobile:text-s11_14l13_37">
-                      6 min read
+              {homePageBlogs &&
+                homePageBlogs.map((item, index) => (
+                  <div
+                    className="w-234 h-100% pt-8  flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    key={index}
+                  >
+                    <div className="px-10 pb-18">
+                      <Image
+                        src="/images/backgrounds/img-4.svg"
+                        height={150}
+                        width={216}
+                        className="grayscale colorImage h-fit"
+                        type="img"
+                      />
                     </div>
-                    <div className="text-252525 px-10 font-bold text-s14l16_62 pb-15 pl-20">
-                      {item?.Title}
+                    <div div className="flex flex-col items-start">
+                      <div className="text-83B449 text-s14l16_8  pl-20 pb-4 mobile:text-s11_14l13_37">
+                        6 min read
+                      </div>
+                      <div className="text-252525 px-10 font-bold text-s14l16_62 pb-15 pl-20">
+                        {item?.Title}
+                      </div>
+                      <div className="text-525252 px-10 pb-0 text-s12l14 pl-20 mobile:text-s11_14l13_37">
+                        <span className="font-bold">By {item?.Author}</span>
+                        <br />
+                        {/* {item?.Date} */}
+                        {month[new Date(item?.Date).getMonth()]}{" "}
+                        {new Date(item?.Date).getDate()}th{" "}
+                        {new Date(item?.Date).getFullYear()}
+                      </div>
                     </div>
-                    <div className="text-525252 px-10 pb-0 text-s12l14 pl-20 mobile:text-s11_14l13_37">
-                      <span className="font-bold">By {item?.Author}</span>
-                      <br />
-                      {/* {item?.Date} */}
-                      {month[new Date(item?.Date).getMonth()]} {" "}{new Date(item?.Date).getDate()}th {" "}{new Date(item?.Date).getFullYear()}
-
+                    <div className="w-full flex items-center justify-end">
+                      <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
-                  <div className="w-full flex items-center justify-end">
-                    <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
-                  </div>
-                </div>
-              ))}
+                ))}
             </Carousel>
           </div>
         </div>
