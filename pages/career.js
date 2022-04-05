@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { consts } from "react-elastic-carousel";
-import { Chrono } from "react-chrono";
-import { API, endpoints } from "../components/helpers/API";
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd";
-import Request_Demo from "./request_demo";
+import { useEffect, useState } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { consts } from "react-elastic-carousel"
+import { Chrono } from "react-chrono"
+import { API, endpoints } from "../components/helpers/API"
+import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
+import Request_Demo from "./request_demo"
 
 export default function Career() {
-  const { Option } = Select;
-  const [homeBannerResp, setHomeBannerResp] = useState({});
-  const [careersBannerResp, setCareersBannerResp] = useState(null);
+  const { Option } = Select
+  const [homeBannerResp, setHomeBannerResp] = useState({})
+  const [careersBannerResp, setCareersBannerResp] = useState(null)
   const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] =
-    useState(null);
+    useState(null)
   const [
     careerListingValuePropositionResp,
     setCareerListingValuePropositionResp,
-  ] = useState(null);
-  const [searchJob, setSearchJob] = useState("");
-  const [demoPopup, setDemoPopup] = useState(false);
+  ] = useState(null)
+  const [searchJob, setSearchJob] = useState("")
+  const [demoPopup, setDemoPopup] = useState(false)
   const [onBoardData, setOnBoardData] = useState([
     {
       title: "Conference Day",
@@ -45,91 +45,103 @@ export default function Career() {
       description:
         "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
     },
-  ]);
+  ])
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
     {
       designation: "Java Developer",
       department: "Tech & Development",
       timing: "Full Time",
-      location: "Mimbai",
+      location: "Mumbai",
     },
-  ]);
+    {
+      designation: "Java Developer",
+      department: "Tech & Development",
+      timing: "Full Time",
+      location: "Mumbai",
+    },
+    {
+      designation: "Java Developer",
+      department: "Tech & Development",
+      timing: "Full Time",
+      location: "Mumbai",
+    },
+  ])
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp);
+        setHomeBannerResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.careers_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setCareersBannerResp(resp);
+        setCareersBannerResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.career_page_life_mintoak,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerPageLifeMintoakResp(resp);
+        setCareerPageLifeMintoakResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.career_listing_value_proposition,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerListingValuePropositionResp(resp);
+        setCareerListingValuePropositionResp(resp)
       }
-    });
+    })
     // career_listing_value_proposition
-  }, []);
+  }, [])
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <Image
-          src="/images/backgrounds/career-top-img.svg"
+          src={careersBannerResp?.banner}
           type="img"
           className="absolute z-minus1 mobile:hidden"
         />
@@ -418,12 +430,12 @@ export default function Career() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {onBoardData.map((data, index) => (
@@ -469,13 +481,13 @@ export default function Career() {
                       <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                     </div>
                   </>
-                );
+                )
                 // );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
                 // return (
                 // <div className="flex">
                 //   {pages.map((page) => {
@@ -519,5 +531,5 @@ export default function Career() {
         )}
       </div>
     </div>
-  );
+  )
 }
