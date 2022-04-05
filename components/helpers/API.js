@@ -61,13 +61,13 @@ const endpoints = {
   resources_blog_list: "resources-blog-lists",
   dropdown: "dropdowns",
   contact_us_find_us_at: "contact-us-find-us-at",
-  product_page_demo: "product-page-demo",
-  product_page_aim: "product-page-aim",
+  product_page_demo: "product-page-demos",
+  product_page_aim: "product-page-aims",
   product_page: "product-page",
   product_page_value_proposition: "product-page-value-propositions",
   product_page_features: "product-page-features",
-  product_page_feature2: "product-page-feature2",
-  product_page_feature3: "product-page-feature3",
-}
+  product_page_feature2: "product-page-feature-2",
+  product_page_feature3: "product-page-feature-3",
+};
 
 export { API, endpoints, domain }

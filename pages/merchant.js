@@ -454,7 +454,7 @@ export default function Merchant() {
         <div className="text-F1F1F1 ls--1_5 text-s44l52_8 mobile:text-s20l24 font-bold pt-81 pb-60 flex justify-center mobile:pt-40 mobile:pb-34">
           Features We Offer
         </div>
-        <div className="pb-60">
+        <div className="">
           <div className="mobile:hidden desktop:px-105 laptop:px-0 cust-pagination">
             <Carousel
               itemsToShow={3}

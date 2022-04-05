@@ -25,8 +25,9 @@ export default function BlogDetail() {
             <div className="relative top-bg-container h-640 bg-contain desktop-blog-detail-banner mobile:hidden">
                 <Image
                     src="/images/backgrounds/blog-detail-bg.svg"
-                    className="absolute z-minus1 mobile:hidden"
-                    layout="fill"
+                    className="absolute z-minus1 mobile:hidden bg-cover w-100% h-fit"
+                    // layout="fill"
+                    type="img"
                 />
                 <div className="pl-181 pt-158 z-10">
                     <div className="text-s20l24 mobile:text-s20l24 text-C4C4C4 shrink-0">
@@ -42,7 +43,7 @@ export default function BlogDetail() {
                             <Image src="/images/icons/instagram.svg" width={35} height={35} className="text-F1F1F1" type="img" />
                         </div>
                         <div>
-                            <Image src="/images/icons/facebook.svg" width={35} height={35} className="text-F1F1F1" type="img" />
+                            <Image src="/images/icons/facebook1.svg" width={35} height={35} className="text-F1F1F1" type="img" />
                         </div>
                         <div>
                             <Image src="/images/icons/twitter.svg" width={35} height={35} className="text-F1F1F1" type="img" />
@@ -195,7 +196,7 @@ export default function BlogDetail() {
                     </div>
                 </div>
             </div>
-            <div className="pt-150 mobile:pt-80 desktop:px-180 laptop:px-180 mobile:pr-16 laptop:px-50 ">
+            <div className="pt-150 mobile:pt-80 desktop:px-180 mobile:pr-16 laptop:px-50 ">
                 <div className="flex mobile:pl-21 text-s44l66 mobile:text-s22l33 font-bold desktop:justify-center laptop:justify-center mobile:justify-between">
                     Related blogs
                     <div className="mobile:text-s12l18 text-8DBF52 desktop:hidden laptop:hidden border-b h-auto">View all</div>

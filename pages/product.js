@@ -79,7 +79,7 @@ export default function Product() {
                   className="h-120 w-120 mobile:h-72 mobile:w-72"
                 />
               </div>
-              <div className="text-252525 desktop:text-s24l36  mobile:text-s16l24 pl-16  w-100% mobile:w-268 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200 font-semibold">
                 Multi-location Consolidated View & Location-level Drill Down
               </div>
             </div>
@@ -277,6 +277,7 @@ export default function Product() {
           </div>
         </div>
       </div>
+
       {/* accordian  */}
       <div className=" desktop:pt-81 laptop:pt-81 px-181 mobile:px-20 mobile:w-100% global-collapse-p">
         <div className="desktop:pb-58 desktop:pl-40 desktop:pt-50 mobile:ml-0 mobile:mt-96 border border-A4D77A border-b-0 mobile:border-0">

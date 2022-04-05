@@ -34,9 +34,10 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">OMNI</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">OMNI</div>
                   <div className="text-s16l19 text-525252">
-                    Omni channel transactions with all payment modes
+                    Omni channel transactions
+                    <div>with all payment modes</div>
                   </div>
                 </div>
               </div>
@@ -47,9 +48,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">MOM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">MOM</div>
                   <div className="text-s16l19 text-525252">
-                    Instant merchant onboarding & management
+                    Instant merchant onboarding <div>& management</div>
                   </div>
                 </div>
               </div>
@@ -60,9 +61,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">Pay Later</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Pay Later</div>
                   <div className="text-s16l19 text-525252">
-                    Digital register for customer payment dues
+                    Digital register for <div>customer payment dues</div>
                   </div>
                 </div>
               </div>
@@ -73,9 +74,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">Acorn</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Acorn</div>
                   <div className="text-s16l19 text-525252">
-                    Platform for all the processing
+                    Platform for all <div>the processing</div>
                   </div>
                 </div>
               </div>
@@ -86,9 +87,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">Connect</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Connect</div>
                   <div className="text-s16l19 text-525252">
-                    Payment and billing integrations
+                    Payment and billing <div>
+                      integrations
+                    </div>
                   </div>
                 </div>
               </div>
@@ -107,9 +110,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">IKU</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">IKU</div>
                   <div className="text-s16l19 text-525252">
-                    Instant customer segmentation & recognition
+                    Instant customer <div>
+                      segmentation & recognition
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,9 +125,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">OAR</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">OAR</div>
                   <div className="text-s16l19 text-525252">
-                    Offers and rewards for customers
+                    Offers and rewards <div>for customers</div>
                   </div>
                 </div>
               </div>
@@ -133,9 +138,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">FAR</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">FAR</div>
                   <div className="text-s16l19 text-525252">
-                    Customer feedback & ratings
+                    Customer feedback <div>& ratings</div>
                   </div>
                 </div>
               </div>
@@ -146,9 +151,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">BAT</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">BAT</div>
                   <div className="text-s16l19 text-525252">
-                    Badges, awards and trophies for merchants
+                    Badges, awards and <div>trophies for merchants</div>
                   </div>
                 </div>
               </div>
@@ -159,9 +164,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">UAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">UAM</div>
                   <div className="text-s16l19 text-525252">
-                    User access and profile management
+                    User access and <div>profile management</div>
                   </div>
                 </div>
               </div>
@@ -172,9 +177,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">AIM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">AIM</div>
                   <div className="text-s16l19 text-525252">
-                    Business analytics, insights and metrics
+                    Business analytics, <div>
+                      insights and metrics
+                    </div>
                   </div>
                 </div>
               </div>
@@ -185,9 +192,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">MAC</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">MAC</div>
                   <div className="text-s16l19 text-525252">
-                    Marketing and campaigns for latest trends
+                    Marketing and campaigns <div>
+                      for latest trends
+                    </div>
                   </div>
                 </div>
               </div>
@@ -198,9 +207,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">SAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">SAM</div>
                   <div className="text-s16l19 text-525252">
-                    Service analytics and management
+                    Service analytics <div>
+                      and management
+                    </div>
                   </div>
                 </div>
               </div>
@@ -211,9 +222,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">PAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">PAM</div>
                   <div className="text-s16l19 text-525252">
-                    Portfolio analytics and management
+                    Portfolio analytics <div>
+                      and management
+                    </div>
                   </div>
                 </div>
               </div>
@@ -221,7 +234,7 @@ export default function Header() {
           </div>
           <div className="w-100% my-32 h-1 bg-A4D77A opacity-50" />
           <div className="pl-65">
-            <div className="text-525252 text-s18l21_6 mb-9">Lending Stack</div>
+            <div className="text-525252 text-s18l21_6 mb-9 font-semibold">Lending Stack</div>
             <div className="flex flex-wrap">
               <div className="flex w-20% items-start cursor-pointer p-15 hover:bg-8FC055_O20 hover:bg-D1E6BA">
                 <Image
@@ -230,9 +243,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">XSM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">XSM</div>
                   <div className="text-s16l19 text-525252">
-                    Cross- sell to merchants
+                    Cross- sell to <div>merchants</div>
                   </div>
                 </div>
               </div>
@@ -243,9 +256,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5">XSC</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">XSC</div>
                   <div className="text-s16l19 text-525252">
-                    Cross- sell to customers
+                    Cross- sell to <div>customers</div>
                   </div>
                 </div>
               </div>
@@ -349,10 +362,10 @@ export default function Header() {
       {activeDesktopMenu === "products"
         ? renderProducts()
         : activeDesktopMenu === "resources"
-        ? renderResources()
-        : activeDesktopMenu === "support"
-        ? renderSupport()
-        : null}
+          ? renderResources()
+          : activeDesktopMenu === "support"
+            ? renderSupport()
+            : null}
     </>
   )
 }
