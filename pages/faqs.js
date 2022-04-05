@@ -202,7 +202,7 @@ export default function Contact() {
                     header={items.Question}
                     key={index}
                   >
-                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal pr-460 ">
                       {items.Answer}
                     </p>
                   </Panel>

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
-import Image from "../../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
-import { API, endpoints } from "../../components/helpers/API"
-import { Row, Col, Input, Select, Form, Upload, Button } from "antd"
+import { useEffect, useState } from "react";
+import Image from "../../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { Chrono } from "react-chrono";
+import { API, endpoints } from "../../components/helpers/API";
+import { Row, Col, Input, Select, Form, Upload, Button } from "antd";
 
 export default function CareerDetails() {
-  const { Option } = Select
+  const { Option } = Select;
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -26,7 +26,7 @@ export default function CareerDetails() {
       timing: "Full Time",
       location: "Mumbai",
     },
-  ])
+  ]);
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -38,7 +38,7 @@ export default function CareerDetails() {
         <Option value="91">+91</Option>
       </Select>
     </Form.Item>
-  )
+  );
   return (
     <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
@@ -82,7 +82,7 @@ export default function CareerDetails() {
         </div>
       </div>
       <div className="flex items-center justify-between laptop:p-50 pt-100 mobile:pt-40 px-180 mobile:px-20">
-        <div className="desktop:flex laptop:flex items-center justify-between w-100% ">
+        <div className="desktop:flex laptop:flex items-start justify-between w-100% ">
           <div className="w-50% desktop:pr-14 mobile:w-100%">
             <div className="text-s32l45 font-semibold mobile:text-s22l44">
               Job description
@@ -363,5 +363,5 @@ export default function CareerDetails() {
         </div>
       </div>
     </div>
-  )
+  );
 }

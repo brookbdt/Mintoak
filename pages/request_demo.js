@@ -32,6 +32,7 @@ export default function Request_Demo(props) {
         onCancel={() => props.handleClose()}
         footer={null}
         width={983}
+        className="close-btn shadow-popupShadow"
       >
         <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
@@ -137,7 +138,6 @@ export default function Request_Demo(props) {
                   placeholder="Choose Products"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
-
                   {productList &&
                     productList.Data.map((item, index) => (
                       <Option
@@ -149,10 +149,10 @@ export default function Request_Demo(props) {
                         {item.title}
                       </Option>
                     ))}
-                </Select >
-              </div >
-            </div >
-          </div >
+                </Select>
+              </div>
+            </div>
+          </div>
           <div className="py-18 flex">
             <Image src="/images/backgrounds/warn.svg" height={20} width={18} />
             <div className="text-EC5F22 text-s18l22 pl-10">
@@ -160,8 +160,10 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex justify-between">
-            <div className="cursor-pointer rounded-sm text-center text-525252 desktop:text-s22l26_4 w-360 mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn">
-              Clear All Fields
+            <div className="bg-button pr-3 pl-3 pt-3 pb-2 w-360 flex items-center justify-center">
+              <div className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn">
+                Clear All Fields
+              </div>
             </div>
             <div
               onClick={() => setmodalquerieVisible(true)}
@@ -170,39 +172,37 @@ export default function Request_Demo(props) {
               Submit
             </div>
           </div>
-        </div >
-      </Modal >
-      {
-        modalquerievisible ? (
-          <Modal
-            bodyStyle={{
-              background:
-                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-              transform: "rotate(-180deg)",
-            }}
-            centered
-            visible={modalquerievisible}
-            onCancel={() => setmodalquerieVisible(false)
-            }
-            footer={null}
-            width={665}
-            className="shadow-popupShadow close-btn"
-          >
-            <div className="w-100% rotate-180">
-              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-                <Image
-                  src="/images/icons/thumb-icon.svg"
-                  width={135}
-                  height={135}
-                />
-              </div>
-              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-                Thank you! for your interest!
-                <br /> Our team will get back to you shortly.
-              </div>
+        </div>
+      </Modal>
+      {modalquerievisible ? (
+        <Modal
+          bodyStyle={{
+            background:
+              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            transform: "rotate(-180deg)",
+          }}
+          centered
+          visible={modalquerievisible}
+          onCancel={() => setmodalquerieVisible(false)}
+          footer={null}
+          width={665}
+          className="shadow-popupShadow close-btn"
+        >
+          <div className="w-100% rotate-180">
+            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+              <Image
+                src="/images/icons/thumb-icon.svg"
+                width={135}
+                height={135}
+              />
             </div>
-          </Modal >
-        ) : null}
+            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+              Thank you! for your interest!
+              <br /> Our team will get back to you shortly.
+            </div>
+          </div>
+        </Modal>
+      ) : null}
     </>
   );
 }

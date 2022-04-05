@@ -475,15 +475,16 @@ export default function Product() {
             <Carousel
               itemsToShow={itemsToShow}
               // verticalMode
-              itemPadding={[0, 0, 30, 0]}
+              itemPadding={[0, 0, 0, 0]}
               enableMouseSwipe={true}
               pagination={true}
               initialActiveIndex={1}
               showArrows={false}
               outerSpacing={0}
+              style={{ width: "100%" }}
               renderPagination={({ pages, activePage, onClick }) => {
                 return (
-                  <div className="flex">
+                  <div className="flex pageindex">
                     {pages.map((page) => {
                       const isActivePage = activePage === page;
                       setActiveIndex(activePage);
@@ -504,10 +505,10 @@ export default function Product() {
             >
               <div
                 key={activeindex}
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${
                   activeindex === 0
-                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                    : ""
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : "left-280 bottom-0 opacity-60 mobile:h-180 top-15"
                 }`}
               >
                 <Image src="/images/icons/omni.svg" height={110} width={273} />
@@ -519,10 +520,12 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${
                   activeindex === 1
-                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                    : ""
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : activeindex === 0
+                    ? "z-minus1 left-220 opacity-60 mobile:h-180 top-15"
+                    : "z-minus1 right-220 opacity-60 mobile:h-180 top-15"
                 }`}
               >
                 <Image
@@ -538,10 +541,10 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 absolute ${
                   activeindex === 2
-                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                    : ""
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : "right-280 bottom-0 z-minus1 opacity-60 mobile:h-180 top-15"
                 }`}
               >
                 <Image src="/images/icons/iku.svg" height={148} width={273} />
