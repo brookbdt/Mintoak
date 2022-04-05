@@ -1,228 +1,290 @@
 import Image from "../components/helpers/Image";
+import { useRef } from "react";
 import { Chrono } from "react-chrono";
 import { Collapse, Input } from "antd";
 import Carousel from "react-elastic-carousel";
 import { consts } from "react-elastic-carousel";
 import { useEffect, useState } from "react";
-import { API, endpoints } from "../components/helpers/API";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+import Sticky from "react-sticky-el";
+
+SwiperCore.use([Mousewheel, Pagination]);
 
 const { Panel } = Collapse;
 const { TextArea } = Input;
 
 export default function Product() {
   const [activeindex, setActiveIndex] = useState();
-  const [productPageDemo, setProductPageDemo] = useState(null);
-  const [productPageAim, setProductPageAim] = useState(null);
-  // const [productPage, setProductPage] = useState(null);
-  // const [productPageValueProposition, setProductPageValueProposition] = useState(null);
-  // const [productPageFeatures, setProductPageFeatures] = useState(null);
-  const [productPageFeatures2, setProductPageFeatures2] = useState(null);
-  const [productPageFeatures3, setProductPageFeatures3] = useState(null);
-  const [faq, setFaq] = useState(null);
-
-  useEffect(() => {
-    API({
-      url: endpoints.product_page_demo,
-    }).then((resp) => {
-      if (!resp.message) {
-        console.log(resp, "resp");
-        setProductPageDemo(resp);
-      }
-    });
-
-    API({
-      url: endpoints.product_page_aim,
-    }).then((resp) => {
-      if (!resp.message) {
-        console.log(resp, "resp");
-        setProductPageAim(resp);
-      }
-    });
-    API({
-      url: endpoints.product_page_feature2,
-    }).then((resp) => {
-      if (!resp.message) {
-        setProductPageFeatures2(resp);
-        // console.log("askduasbdywebnsdhgsds", resp);
-      }
-    });
-    API({
-      url: endpoints.product_page_feature3,
-    }).then((resp) => {
-      if (!resp.message) {
-        setProductPageFeatures3(resp);
-        // console.log("asjklasfdsfhkjhfkjdhfa", resp);
-      }
-    });
-
-    // Faq
-    API({
-      url: endpoints.faq,
-    }).then((resp) => {
-      if (!resp.message) {
-        console.log(resp, "resp");
-        setFaq(resp);
-      }
-    });
-  }, []);
-
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
   const itemsToShow = 1;
-  console.log('grdbhjnm', productPageAim)
+  const founder = useRef(null);
+
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
-        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 laptop:pt-70 z-10 mobile:w-100% mobile:p-20 ">
+        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 z-10 mobile:w-100% mobile:p-20 ">
           <div className="w-100%">
             <Image
               src="/images/icons/aim.svg"
               type="img"
-              className="h-150 w-150 desktop:ml-161 laptop:ml-100 mobile:ml-0 mobile:h-67 mobile:w-67"
+              className="h-150 w-150 ml-161 mobile:ml-0 mobile:h-67 mobile:w-67"
             />
           </div>
-          <div className="pl-181 laptop:pl-120 mobile:pl-10 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-45 laptop:pt-45 mobile:pt-10">
-            {productPageDemo && productPageDemo[1]?.ProductName}
+          <div className="pl-181 mobile:pl-10 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-45 laptop:pt-45 mobile:pt-10">
+            Mintoak AIM
           </div>
-          <div className="pl-181 laptop:pl-120 mobile:pl-10 desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-16 text-252525 shrink-0">
-            {productPageDemo && productPageDemo[1]?.Banner?.subtitle}
+          <div className="pl-181 mobile:pl-10 desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-16 text-252525 shrink-0">
+            Analytics, Insights & Metrics
           </div>
-          <div className="pl-181 laptop:pl-120 mobile:pl-10 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 laptop:pr-10 mobile:pr-0 text-525252 shrink-0">
-            {productPageDemo && productPageDemo[1]?.Banner?.description}
+          <div className="pl-181 mobile:pl-10 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 mobile:pr-0 text-525252 shrink-0">
+            A real time interactive business performance dashboard for the
+            business owner.
           </div>
         </div>
-        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:px-50 desktop:pt-175 laptop:pt-70 desktop:pb-90 mobile:w-100%">
-          <div className="flex flex-col justify-between h-100% mobile:h-270 w-100% mobile:px-20 laptop:pt-50 laptop:pb-100">
-
-            {
-              productPageDemo && productPageDemo[1]?.Banner?.valueproposition && productPageDemo[1]?.Banner?.valueproposition.map((item, index) => (
-                <div className="flex items-center" key={index}>
-                  <div>
-                    <Image
-                      src="/images/icons/aim.svg"
-                      type="img"
-                      className="h-120 w-120 mobile:h-72 mobile:w-72"
-                    />
-                  </div>
-                  <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-300 mobile:w-142 font-semibold">
-                    {item.name}
-                  </div>
-                </div>
-
-              ))
-            }
+        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:px-50 desktop:pt-175 desktop:pb-90 mobile:w-100%">
+          <div className="flex flex-col justify-between h-100% mobile:h-270 w-100% mobile:px-20">
+            <div className="flex items-center ">
+              <div>
+                <Image
+                  src="/images/icons/aim.svg"
+                  type="img"
+                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                />
+              </div>
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-300 mobile:w-142 font-semibold">
+                Credit-to-Bank Information
+              </div>
+            </div>
+            <div className="flex items-center ">
+              <div>
+                <Image
+                  src="/images/icons/aim.svg"
+                  type="img"
+                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                />
+              </div>
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200 font-semibold">
+                Interactive Dashboards & Business Insights
+              </div>
+            </div>
+            <div className="flex items-center ">
+              <div>
+                <Image
+                  src="/images/icons/aim.svg"
+                  type="img"
+                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                />
+              </div>
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200 font-semibold">
+                Multi-location Consolidated View & Location-level Drill Down
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0 laptop:pb-20">
-        <div className="flex w-100% mobile:hidden pl-180 laptop:pl-100">
-          <div className="w-33% mt-251 laptop:mt-100">
-            <div className="text-s45l45 font-bold">
-              {productPageAim && productPageAim[0] && productPageAim[0].Title}
-            </div>
-            <div className="pt-32 text-s20l30">
-              {
-                productPageAim && productPageAim[0] && productPageAim[0].Description
-              }
-            </div>
-          </div>
-          <div className="w-33% mt-113 laptop:mt-50 ml-100 flex justify-end desktop:items-baseline">
-            <Image
-              src="/images/backgrounds/merchant-mobile.svg"
-              type="img"
-              height={600}
-              width={500}
-            />
-          </div>
-          <div className="w-33% mt-232 laptop:mt-100 flex justify-center pr-50">
-            <Chrono
-              scrollable={{ scrollbar: true }}
-              cardWidth={250}
-              cardHeight={120}
-              theme={{
-                primary: "#848484",
-                secondary: "#F1F1F1",
-                cardBgColor: "footer",
-                outline: "red",
-              }}
-              flipLayout={true}
-              mode="VERTICAL"
-              hideControls={true}
-              itemWidth={900}
-            >
-              <div className="text-right">
-                <div className="text-252525 text-s28l42 pt-42">Onboarding</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-43">Updates</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-60 pl-40">
-                  Recognition
+      <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
+        <div className="flex flex-col">
+          <Swiper
+            direction={"vertical"}
+            slidesPerView={1}
+            tag="section"
+            spaceBetween={30}
+            mousewheel={true}
+            ref={founder}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Mousewheel, Pagination]}
+            className="mySwiper overflow-scroll"
+            onSwiper={setSwiperInstance}
+            onSlideChange={(e) => {
+              setActiveTab(e.activeIndex);
+              console.log(e.activeIndex, "sliderchange");
+            }}
+          >
+            <SwiperSlide key={0}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Track your business progress with our interactive dashboard:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Get real time updates on your business, such as total sales,
+                    transaction history, one view across payment modes,
+                    customizable transaction reports, insights on new and repeat
+                    customers and also customer feedback. Get performance trends
+                    to see how your business has performed over a period of
+                    time.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-1.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
                 </div>
               </div>
-            </Chrono>
-          </div>
+            </SwiperSlide>
+            <SwiperSlide key={1}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Multi-location Consolidated View & Location-level Drill
+                    Down:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Have more than one outlet? We have got you covered. You can
+                    get a consolidated view across all outlets in one place. A
+                    comparative view of outlets helps you understand how each
+                    outlet is performing. Get in-depth insights on the
+                    performance of a particular outlet or a group of outlets.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-2.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide key={2}>
+              <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="w-33% mt-251">
+                  <div className="text-s44l57_2 font-bold">
+                    Credit-to-Bank information:
+                  </div>
+                  <div className="pt-40 text-s20l30 text-525252">
+                    Get a quick consolidated and outlet level view of merchant
+                    payout details from the settlement or credit-to-bank
+                    section. You can see the total amount credited for
+                    transactions completed successfully. You get a transparent
+                    view of gross amount, transaction fees if any and the net
+                    amount.
+                  </div>
+                </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/onboarding-3.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <div className="laptop:hidden desktop:hidden">
-          <div className="pt-92 px-30 pl-20 pr-25 pb-65">
-            <div className="mobile:text-s22l33 font-bold w-245">
-              {productPageAim && productPageAim[0] && productPageAim[0].Title}
+        <div className="w-18% absolute flex flex-col itmes-center justify-center mobile:hidden right-50 pr-80 pt-65">
+          <div className="h-850 justify-center flex flex-col ">
+            <div
+              onClick={() => {
+                setActiveTab(0);
+                founder.current?.swiper.slideTo(0);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 0 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Interactive Dashboard
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-5">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 0
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
 
-            </div>
-            <div className="mobile:text-s14l21 pt-18">
-              {
-                productPageAim && productPageAim[0] && productPageAim[0].Description
-              }
-            </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/onboard_merchant.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
-            </div>
-            <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              <div className="w-270">
-                {productPageFeatures2?.Title}
+                <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
               </div>
             </div>
-            <div className="mobile:text-s14l21 pt-18">
-              {productPageFeatures2?.Description}
+            <div
+              onClick={() => {
+                setActiveTab(1);
+                founder.current?.swiper.slideTo(1);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 1 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Consolidated View
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-5">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 1
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
+
+                <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
+              </div>
             </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/merchant-mobile.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
-            </div>
-            <div className="pt-65 mobile:text-s22l33 font-bold w-314">
-              {productPageFeatures3?.Title}
-            </div>
-            <div className="mobile:text-s14l21 pt-18">
-              {productPageFeatures3?.Description} {" "}
-            </div>
-            <div className="flex justify-center pt-45 m-auto">
-              <Image
-                src="/images/backgrounds/mybrid.svg"
-                type="img"
-                height={500}
-                width={270}
-              />
+            <div
+              onClick={() => {
+                setActiveTab(2);
+                founder.current?.swiper.slideTo(2);
+                // founder.swiper
+              }}
+              className="flex h-190 cursor-pointer"
+            >
+              <div className="w-100% text-right">
+                <div
+                  className={`text-s28l42 ${
+                    activeTab == 2 ? "text-252525" : "text-848484"
+                  }`}
+                >
+                  Credit to Bank
+                </div>
+              </div>
+              <div className="flex flex-col items-center w-30% pt-9">
+                <div className="w-27 h-27 flex justify-center items-center">
+                  <div
+                    className={`${
+                      activeTab == 2
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* accordian  */}
       <div className=" desktop:pt-81 laptop:pt-81 px-181 mobile:px-20 mobile:w-100% global-collapse-p">
-        <div className="desktop:pb-58 desktop:pl-40 desktop:pt-50 laptop::pb-58 laptop:pl-40 laptop:pt-50 mobile:ml-0 mobile:mt-96 border border-A4D77A border-b-0 mobile:border-0">
+        <div className="desktop:pb-58 desktop:pl-40 desktop:pt-50 mobile:ml-0 mobile:mt-96 border border-A4D77A border-b-0 mobile:border-0">
           <div className="text-252525 text-s45l54 font-bold mobile:text-s22l26_4 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
             FAQ's
           </div>
-          <div className="font-semibold text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 laptop:mb-0 mt-20 mobile:mt-20 mobile:mb-0 mobile:font-semibold">
+          <div className="font-semibold text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:mt-20 mobile:mb-0 mobile:font-semibold">
             Curious about Mintoak? We’ve got you covered.
           </div>
         </div>
@@ -238,24 +300,63 @@ export default function Product() {
             }
             expandIconPosition={"right"}
             bordered={false}
-          // defaultActiveKey={["1"]}
+            // defaultActiveKey={["1"]}
           >
-            {
-              faq && faq.map((item, index) => (
-                <Panel
-                  className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                  header={
-                    item.Question
-                  }
-                  key={index}
-                >
-                  <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                    {item.Answer}
-                  </p>
-                </Panel>
-
-              ))
-            }
+            <Panel
+              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+              header={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              }
+            >
+              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt?
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+              header={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              }
+            >
+              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt?
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+              header={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              }
+            >
+              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt?
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+              header={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              }
+            >
+              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt?
+              </p>
+            </Panel>
+            <Panel
+              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+              header={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
+              }
+            >
+              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt?
+              </p>
+            </Panel>
           </Collapse>
         </div>
         <div className="flex items-center justify-center mt-40 mobile:mt-22">
@@ -288,7 +389,7 @@ export default function Product() {
               style={{ height: "132px" }}
             />
           </div>
-          <div className="pt-32 pb-50 custom-textaria-m desktop:hidden laptop:hidden">
+          <div className="pt-32 pb-50 custom-textaria-m desktop:hidden">
             <TextArea
               rows={4}
               placeholder="Enter your thoughts or suggestions"
@@ -312,7 +413,7 @@ export default function Product() {
         </div>
       </div>
       {/* Features We Offer */}
-      <div className="h-670 bg-current px-181 laptop:px-80 mobile:px-10 mobile:h-auto">
+      <div className="h-670 bg-current px-181 mobile:px-10 mobile:h-auto">
         <div className="text-252525 ls--1_5 text-s44l52_8 mobile:text-s20l24 font-bold pt-80 mobile:pb-40 pb-60 flex justify-center">
           Features We Offer
         </div>
@@ -321,7 +422,7 @@ export default function Product() {
             <Carousel
               itemsToShow={3}
               enableMouseSwipe={false}
-              pagination={false}
+              pagination={true}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
@@ -388,8 +489,9 @@ export default function Product() {
                       setActiveIndex(activePage);
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -402,10 +504,11 @@ export default function Product() {
             >
               <div
                 key={activeindex}
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${activeindex === 0
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                  : ""
-                  }`}
+                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                  activeindex === 0
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
+                    : ""
+                }`}
               >
                 <Image src="/images/icons/omni.svg" height={110} width={273} />
                 <div className="font-bold text-252525 mobile:text-s16l19 text-center text-s24l29 mt-24">
@@ -416,10 +519,11 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${activeindex === 1
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                  : ""
-                  }`}
+                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                  activeindex === 1
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
+                    : ""
+                }`}
               >
                 <Image
                   src="/images/icons/pay_later.svg"
@@ -434,10 +538,11 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${activeindex === 2
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
-                  : ""
-                  }`}
+                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 ${
+                  activeindex === 2
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow"
+                    : ""
+                }`}
               >
                 <Image src="/images/icons/iku.svg" height={148} width={273} />
                 <div className="font-bold text-252525 mobile:text-s16l19 text-center text-s24l29 mt-24">
