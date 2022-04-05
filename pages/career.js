@@ -203,7 +203,7 @@ export default function Career() {
                       {item.Description3}
                     </div>
                     <div className="desktop:hidden laptop:hidden text-center mobile:text-left text-s24l36 font-semibold mobile:pl-19 desktop:text-center desktop:w-270 laptop:w-260 mobile:text-s16l24 mobile:pr-30">
-                      {item.Description}{" "} {item.Description2}{" "}{item.Description3}
+                      {item.Description} {item.Description2} {item.Description3}
                     </div>
                   </div>
                 ))}
@@ -213,7 +213,7 @@ export default function Career() {
 
         <div className="flex flex-col bg-footer mb-100 mobile:mb-0 w-100%">
           <div className="desktop:flex laptop:flex items-center w-100%  mobile:px-20">
-            <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center desktop:pl-100 laptop:pl-100 desktop:py-100 laptop:py-100 desktop:pr-50 laptop:pr-50">
+            <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center desktop:pl-180 laptop:pl-100 desktop:py-100 laptop:py-100 desktop:pr-50 laptop:pr-50">
               <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:pb-40 laptop:pb-40 mobile:pb-30 pt-40">
                 Life at Mintoak
               </div>

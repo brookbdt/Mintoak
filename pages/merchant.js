@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { API, endpoints } from "../components/helpers/API";
 import Image from "../components/helpers/Image";
 import { Chrono } from "react-chrono";
@@ -8,7 +8,9 @@ import Request_Demo from "./request_demo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import { useSwiper } from "swiper/react";
+import Sticky from "react-sticky-el";
 
+SwiperCore.use([Mousewheel, Pagination]);
 export default function Merchant() {
   const [demoPopup, setDemoPopup] = useState(false);
   const [merchantBannerResp, setMerchantBannerResp] = useState({});
@@ -18,7 +20,10 @@ export default function Merchant() {
   const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState();
   const [merchantPageOnboarding, setMerchantPageOnboarding] = useState();
   const [merchantPageMockUp2, setMerchantPageMockUp2] = useState();
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
   const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
+  const founder = useRef(null);
 
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -204,51 +209,190 @@ export default function Merchant() {
       </div>
       {/* Time to Get Onboard with Mintoak */}
       <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">
-        <div className="flex w-100% mobile:hidden pl-180 laptop:pl-100">
-          <div className="w-33% mt-275">
-            <div className="text-s45l45 font-bold">
-              {merchantPageOnboarding?.Title}
-            </div>
-            <div className="pt-40 text-s20l30">
-              {merchantPageOnboarding?.Description}
-            </div>
-          </div>
-          <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
-            <Image
-              src="/images/backgrounds/qr-code.svg"
-              type="img"
-              height={600}
-              width={588}
-            />
-          </div>
-          <div className="w-33% mt-232 flex justify-center pr-50">
-
-            <Chrono
-              cardWidth={250}
-              cardHeight={120}
-              theme={{
-                primary: "#848484",
-                secondary: "#F1F1F1",
-                cardBgColor: "footer",
-                outline: "red",
+        <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
+          <div className="flex flex-col">
+            <Swiper
+              direction={"vertical"}
+              slidesPerView={1}
+              tag="section"
+              spaceBetween={30}
+              mousewheel={true}
+              ref={founder}
+              pagination={{
+                clickable: true,
               }}
-              flipLayout={true}
-              mode="VERTICAL"
-              hideControls={true}
-              itemWidth={900}
+              modules={[Mousewheel, Pagination]}
+              className="mySwiper overflow-scroll"
+              onSwiper={setSwiperInstance}
+              onSlideChange={(e) => {
+                setActiveTab(e.activeIndex);
+                console.log(e.activeIndex, "sliderchange");
+              }}
             >
-              <div className="text-right">
-                <div className="text-252525 text-s28l42 pt-42">Onboarding</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-43">Updates</div>
-              </div>
-              <div className="text-right pr-20">
-                <div className="text-848484 text-s20l30 pt-60 pl-40">
-                  Recognition
+              <SwiperSlide key={0}>
+                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                  <div className="w-33% mt-251">
+                    <div className="text-s44l57_2 font-bold">
+                      Time to get onboard with Mintoak
+                    </div>
+                    <div className="pt-40 text-s20l30 text-525252">
+                      Not all small businesses and merchants have the right
+                      built-in technological resources to foster digital
+                      advancements and ease of transactions for them. Bringing
+                      this much-needed virtual interface, speed and innovation
+                      to SME business finance, Mintoak also offers benefits of
+                      real-time analytics and complete flexibility.
+                    </div>
+                  </div>
+                  <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                    <Image
+                      src="/images/backgrounds/onboarding-1.svg"
+                      type="img"
+                      className="w-400 h-588"
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide key={1}>
+                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                  <div className="w-33% mt-251">
+                    <div className="text-s44l57_2 font-bold">
+                      Real-time updates on business performance and transactions
+                    </div>
+                    <div className="pt-40 text-s20l30 text-525252">
+                      Get empowered with Mintoak’s advantage of real-time
+                      information access to understand your business performance
+                      from all aspects, including transactions and payments,
+                      customer experience and reach.
+                    </div>
+                  </div>
+                  <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                    <Image
+                      src="/images/backgrounds/onboarding-2.svg"
+                      type="img"
+                      className="w-400 h-588"
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide key={2}>
+                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                  <div className="w-33% mt-251">
+                    <div className="text-s44l57_2 font-bold">
+                      Myriad benefits to explore!
+                    </div>
+                    <div className="pt-40 text-s20l30 text-525252">
+                      From customer recognition based on robust analytics to
+                      segmentation and merchant loyalty plans, there are several
+                      benefits for SMEs and merchants to explore and gain on
+                      Mintoak.
+                    </div>
+                  </div>
+                  <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                    <Image
+                      src="/images/backgrounds/onboarding-3.svg"
+                      type="img"
+                      className="w-400 h-588"
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className="w-18% absolute flex flex-col itmes-center justify-center mobile:hidden right-50 pr-80 pt-65">
+            <div className="h-850 justify-center flex flex-col ">
+              <div
+                onClick={() => {
+                  setActiveTab(0);
+                  founder.current?.swiper.slideTo(0);
+                  // founder.swiper
+                }}
+                className="flex h-190 cursor-pointer"
+              >
+                <div className="w-100% text-right">
+                  <div
+                    className={`text-s28l42 ${
+                      activeTab == 0 ? "text-252525" : "text-848484"
+                    }`}
+                  >
+                    Onboarding
+                  </div>
+                </div>
+                <div className="flex flex-col items-center w-30% pt-5">
+                  <div className="w-27 h-27 flex justify-center items-center">
+                    <div
+                      className={`${
+                        activeTab == 0
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
+                    ></div>
+                  </div>
+
+                  <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
                 </div>
               </div>
-            </Chrono>
+              <div
+                onClick={() => {
+                  setActiveTab(1);
+                  founder.current?.swiper.slideTo(1);
+                  // founder.swiper
+                }}
+                className="flex h-190 cursor-pointer"
+              >
+                <div className="w-100% text-right">
+                  <div
+                    className={`text-s28l42 ${
+                      activeTab == 1 ? "text-252525" : "text-848484"
+                    }`}
+                  >
+                    Real-time information
+                  </div>
+                </div>
+                <div className="flex flex-col items-center w-30% pt-5">
+                  <div className="w-27 h-27 flex justify-center items-center">
+                    <div
+                      className={`${
+                        activeTab == 1
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
+                    ></div>
+                  </div>
+
+                  <div className="border-1 border-848484 border w-1 h-109 m-auto"></div>
+                </div>
+              </div>
+              <div
+                onClick={() => {
+                  setActiveTab(2);
+                  founder.current?.swiper.slideTo(2);
+                  // founder.swiper
+                }}
+                className="flex h-190 cursor-pointer"
+              >
+                <div className="w-100% text-right">
+                  <div
+                    className={`text-s28l42 ${
+                      activeTab == 2 ? "text-252525" : "text-848484"
+                    }`}
+                  >
+                    Benefits
+                  </div>
+                </div>
+                <div className="flex flex-col items-center w-30% pt-9">
+                  <div className="w-27 h-27 flex justify-center items-center">
+                    <div
+                      className={`${
+                        activeTab == 2
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="laptop:hidden desktop:hidden">
@@ -310,13 +454,13 @@ export default function Merchant() {
         <div className="text-F1F1F1 ls--1_5 text-s44l52_8 mobile:text-s20l24 font-bold pt-81 pb-60 flex justify-center mobile:pt-40 mobile:pb-34">
           Features We Offer
         </div>
-        <div className="pb-60">
+        <div className="">
           <div className="mobile:hidden desktop:px-105 laptop:px-0 cust-pagination">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
-              pagination={false}
+              pagination={true}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
@@ -469,8 +613,9 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -628,8 +773,9 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                              }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                              isActivePage ? "bg-525252" : ""
+                            }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}
