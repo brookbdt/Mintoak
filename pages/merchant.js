@@ -5,6 +5,9 @@ import { Chrono } from "react-chrono";
 import Carousel from "react-elastic-carousel";
 import { consts } from "react-elastic-carousel";
 import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
 
 export default function Merchant() {
   const [demoPopup, setDemoPopup] = useState(false);
@@ -212,13 +215,14 @@ export default function Merchant() {
           </div>
           <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
             <Image
-              src="/images/backgrounds/merchant-mobile.svg"
+              src="/images/backgrounds/qr-code.svg"
               type="img"
               height={600}
-              width={500}
+              width={588}
             />
           </div>
           <div className="w-33% mt-232 flex justify-center pr-50">
+
             <Chrono
               cardWidth={250}
               cardHeight={120}
@@ -312,7 +316,7 @@ export default function Merchant() {
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
-              pagination={true}
+              pagination={false}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
@@ -465,9 +469,8 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-active" : ""
-                          }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -625,9 +628,8 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                              isActivePage ? "bg-525252" : ""
-                            }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                              }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}

@@ -1139,3 +1139,6 @@ button[disabled] {
 .shadoff{
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
+.clear-all-btn{
+  background: linear-gradient(84deg, rgba(149, 193, 31, 0.3) -3.78%, rgba(119, 184, 42, 0.3) 28.26%, rgba(91, 176, 48, 0.3) 143.37%, rgba(70, 172, 52, 0.3) 146.27%, rgba(62, 171, 53, 0.3) 182.49%, rgba(58, 170, 53, 0.3) 264.13%);
+}

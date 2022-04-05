@@ -47,6 +47,7 @@ const colors = {
   D1E6BA: "#D1E6BA",
   393939: "#393939",
   "100F0F": "#100F0F",
+  "EC5F22": "#EC5F22",
   // For testing
   red: "red",
   green: "green",
@@ -94,6 +95,7 @@ module.exports = {
       s16l32: ["16px", "32px"],
       s16l33: ["16px", "33px"],
       s18l21_6: ["18px", "21.6px"],
+      s18l22: ["18px", "22px"],
       s18l27: ["18px", "27px"],
       s18l33: ["18px", "33px"],
       s20l24: ["20px", "24px"],
