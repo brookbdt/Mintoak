@@ -1,103 +1,106 @@
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { useEffect, useState } from "react";
-import { consts } from "react-elastic-carousel";
-import { Modal, Select } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { useEffect, useState } from "react"
+import { consts } from "react-elastic-carousel"
+import { Modal, Select } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
 
-const Option = Select;
+const Option = Select
 export default function Partner() {
-  const { Option } = Select;
+  const { Option } = Select
 
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [comunityCard, setComunityCard] = useState([]);
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
-  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
-  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] =
-    useState(null);
-  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
-  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [comunityCard, setComunityCard] = useState([])
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null)
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null)
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null)
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null)
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null);
-  const [countryList, setCountryList] = useState(null);
+    useState(null)
+  const [countryList, setCountryList] = useState(null)
   useEffect(() => {
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setComunityCard(resp);
+        console.log(resp, "resp")
+        setComunityCard(resp)
       }
-    });
+    })
 
     API({
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsBanner(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsBanner(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsNewHeights(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsNewHeights(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsNewHeights2(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsNewHeights2(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setAboutUsCustomization2(resp);
+        console.log(resp, "resp")
+        setAboutUsCustomization2(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setAboutUsCustomization(resp);
+        console.log(resp, "resp")
+        setAboutUsCustomization(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsMintoakEffect(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsMintoakEffect(resp)
       }
-    });
+    })
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
+        setCountryList(resp[0])
       }
-    });
-  }, []);
+    })
+  }, [])
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
   // console.log('countery', countryList)
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
         <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
+          <Image
+            src={partnerWithUsBanner?.ilustration[0]}
+            className="absolute z-minus1 mobile:hidden w-100% h-100%"
+          />
           <div className="desktop:w-50% desktop:pb-101 laptop:pb-101 laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
@@ -123,8 +126,7 @@ export default function Partner() {
               src={partnerWithUsBanner?.ilustration[0]}
               width={550}
               height={550}
-              type="img"
-              className="w-100%"
+              className=" block relative desktop:hidden laptop:hidden"
             />
           </div>
         </div>
@@ -328,8 +330,8 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                 >
-                  {
-                    countryList && countryList.Data.map((item, index) => (
+                  {countryList &&
+                    countryList.Data.map((item, index) => (
                       <Option
                         className="global-option-career"
                         style={{
@@ -383,7 +385,7 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button
                     onClick={onClick}
@@ -392,7 +394,7 @@ export default function Partner() {
                   >
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -414,7 +416,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -431,19 +433,20 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page;
+                      const isActivePage = activePage === page
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      );
+                      )
                     })}
                   </div>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -451,7 +454,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -486,5 +489,5 @@ export default function Partner() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </>
-  );
+  )
 }
