@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="w-100% desktop:pl-180 desktop:pr-582 mobile:px-20 bg-home-top">
+    <div className="w-100% desktop:pl-180 desktop:pr-540 mobile:px-20 bg-home-top">
       <div className="w-100%">
         <div className="desktop:text-s56l67 mobile:text-s22l26_4 text-252525 desktop:py-150 mobile:py-30">
           Privacy Policy
@@ -17,7 +17,7 @@ export default function Contact() {
           applies or signs up for Mintoak Account (called, “Merchant Account” or
           “Mintoak Services” or “Services” or “Account”), including through an
           EDC terminal (called, “POS terminal” or “Device”) and mobile
-          application and software (called, “App”) or visits
+          application and software (called, “App”) or visits{" "}
           <span className="text-A8FC055">http://www.mintoak.com</span> (called,
           “Website”). This Privacy Policy explains how we collect, use and share
           your personal information.

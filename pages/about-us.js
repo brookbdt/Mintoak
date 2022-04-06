@@ -259,7 +259,7 @@ export default function About() {
                 background: "url(/images/backgrounds/reel-img.svg)",
               }}
             >
-              <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center px-5">
                 <Image
                   src="/images/backgrounds/megha.svg"
                   type="img"
@@ -278,7 +278,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center  px-5">
                 <Image
                   src="/images/backgrounds/janine.svg"
                   type="img"
@@ -297,7 +297,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center  px-5">
                 <Image
                   src="/images/backgrounds/kunal.svg "
                   type="img"
@@ -316,7 +316,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center  px-5">
                 <Image
                   src="/images/backgrounds/Abhishek.svg"
                   type="img"
@@ -335,7 +335,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center px-5">
                 <Image
                   src="/images/backgrounds/Sharad.svg"
                   type="img"
@@ -354,7 +354,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center px-5">
                 <Image
                   src="/images/backgrounds/amit.svg"
                   type="img"
@@ -373,7 +373,7 @@ export default function About() {
                   Designation
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center px-5">
                 <Image
                   src="/images/backgrounds/Image.svg"
                   type="img"
@@ -441,6 +441,8 @@ export default function About() {
                         src={item?.FounderImage}
                         height={660}
                         width={529}
+                        type="img"
+                        className="shadow-2xl"
                       />
                     </div>
                     <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
@@ -450,7 +452,7 @@ export default function About() {
                       <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5 desktop:pb-30 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41">
+                      <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF  desktop:py-20 desktop:pr-40 mobile:pr-41 opacity-70">
                         {item?.Description}
                       </div>
                     </div>

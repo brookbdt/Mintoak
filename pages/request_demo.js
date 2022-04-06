@@ -32,6 +32,7 @@ export default function Request_Demo(props) {
         onCancel={() => props.handleClose()}
         footer={null}
         width={983}
+        className="close-btn"
       >
         <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
