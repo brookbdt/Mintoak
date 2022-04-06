@@ -155,6 +155,8 @@ module.exports = {
       backgroundImage: {
         "home-top":
           "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 20.10%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
+        "mobile-home-top":
+          "linear-gradient(173.18deg, #E6F0DF 19.15%, rgba(247, 255, 236, 0.1) 49.55%);",
         button:
           "linear-gradient(84deg, #95c11f -3.78%, #77b82a 28.26%, #5bb030 143.37%, #46ac34 146.27%, #3eab35 182.49%, #3aaa35 264.13%)",
         footer:

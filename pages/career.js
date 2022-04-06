@@ -217,7 +217,7 @@ export default function Career() {
               <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:pb-40 laptop:pb-40 mobile:pb-30 pt-40">
                 Life at Mintoak
               </div>
-              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-230">
+              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-80">
                 <span className="font-normal text-s20l30 text-F1F1F1 mobile:text-s14l21 ">
                   {careerPageLifeMintoakResp?.Description}
                 </span>
@@ -390,9 +390,9 @@ export default function Career() {
                           {data.designation}
                         </div>
                       </div>
-                      <div>
+                      {/* <div>
                         <Image src="/images/icons/file.svg" type="img" />
-                      </div>
+                      </div> */}
                     </div>
                     <div className="flex items-center desktop:pt-46 laptop:pt-30 mobile:text-s12l24">
                       <span className="bg-8FC055 py-9 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">

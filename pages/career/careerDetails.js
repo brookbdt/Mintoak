@@ -43,7 +43,7 @@ export default function CareerDetails() {
     <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
-        <div className="desktop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33 mobile:pb-28">
+        <div className="desktop:flex laptop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33 mobile:pb-28">
           <div>
             <div className="text-s44l52_8 mobile:text-s24l31_92  font-bold text-252525 shrink-0 desktop:pt-6 ">
               Senior Software Developer
@@ -56,14 +56,14 @@ export default function CareerDetails() {
                 <span className="pl-5 mobile:text-s16l32">Full Time</span>
               </span>
               <div className="mobile:flex mobile:justify-between mobile:items-center mobile:w-100%">
-                <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14 mobile:mt-14">
+                <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14 laptop:ml-16 mobile:mt-14">
                   <span className="pl-5 mobile:text-s16l32">
                     Technology & Development
                   </span>
                 </span>
                 <Image
                   src="/images/icons/share.svg"
-                  className="desktop:hidden"
+                  className="desktop:hidden laptop:hidden"
                   type="img"
                 />
               </div>
@@ -339,9 +339,9 @@ export default function CareerDetails() {
                         {data.designation}
                       </div>
                     </div>
-                    <div className="mobile:hidden">
+                    {/* <div className="mobile:hidden">
                       <Image src="/images/icons/file.svg" type="img" />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="flex items-center pt-46 mobile:pt-30 mobile:text-s12l24">
                     <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14 w-120">

@@ -168,7 +168,7 @@ export default function Home() {
   return (
     <div className="h-fit w-100% bg-home-top">
       {/* Top layout with resp */}
-      <div className="relative top-bg-container">
+      <div className="relative desktop:top-bg-container laptop:top-bg-container mobile:bg-mobile-home-top">
         <Image
           src={homeBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden"
@@ -237,7 +237,7 @@ export default function Home() {
             renderPagination={mobileCarouselPagination}
           >
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.Merchants}
+              {metricsResp?.Merchants}{" "}
               <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 Merchants
@@ -245,15 +245,15 @@ export default function Home() {
             </div>
             <div className="text-center text-s36l43 mobile:text-s20l24 text-252525">
               <span className="mobile:font-semibold">
-                {metricsResp?.TransactionsAnnually}
-                <span className="text-A4D77A">+</span>
+                {metricsResp?.TransactionsAnnually}{" "}
+                <span className="text-A4D77A"> +</span>
               </span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
                 Transactions Annually
               </div>
             </div>
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.GMVAnnuals}
+              {metricsResp?.GMVAnnuals}{" "}
               <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 GMV Annuals
@@ -271,9 +271,8 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${
-                  index != 0 ? "30" : "10"
-                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
+                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"
+                  }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
               >
                 <Image
                   src={item.Icon}
@@ -305,9 +304,8 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "b" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -329,9 +327,8 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "m" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -442,14 +439,16 @@ export default function Home() {
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
                 <Image
-                  src={homeForBanksResp?.BankIllustration}
+                  src='/images/backgrounds/mobile-bank.svg'
                   height={650}
                   width={500}
                 />
               </div>
             </div>
+          </div>
+          <div className="p-0 border-b border-8B8B8B"></div>
+          <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
 
-            <div className="p-0 border-b border-8B8B8B"></div>
             <div
               className={
                 "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
@@ -478,7 +477,7 @@ export default function Home() {
                 {homeForMerchant?.CTA2}
               </div>
               <Image
-                src={homeForMerchant?.MerchantIllustration}
+                src='/images/backgrounds/mobile-merchat.svg'
                 height={650}
                 width={500}
               />
