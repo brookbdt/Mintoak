@@ -1141,3 +1141,9 @@ border-radius: 50%;
 .fPDpuU {
   margin: 0 0px !important;
 }
+
+textarea {
+  resize: none;
+  white-space: nowrap;
+  overflow-x: scroll; /* or hidden */
+}
