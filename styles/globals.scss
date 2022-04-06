@@ -627,6 +627,14 @@ button[disabled] {
     color: #252525;
     outline: none;
     border: 1px solid #525252;
+    resize: none;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+  .ant-input::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 5px;
   }
   .ant-input:hover {
     font-size: 20px;
@@ -1140,4 +1148,7 @@ border-radius: 50%;
 
 .fPDpuU {
   margin: 0 0px !important;
+}
+.anime{
+  transition: all 0.5s;
 }

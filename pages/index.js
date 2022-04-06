@@ -650,7 +650,7 @@ export default function Home() {
             <Carousel
               itemsToShow={3}
               outerSpacing={0}
-              itemPadding={[15, 0, 15, 0]}
+              itemPadding={[15, 30, 15, 30]}
               enableMouseSwipe={false}
               pagination={false}
               renderArrow={blackCarouselArrows}
@@ -659,7 +659,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    className="w-100% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                   >
                     <div className="px-16 pt-16">
                       <Image
@@ -682,14 +682,9 @@ export default function Home() {
                         {item.ArticleDate}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF px-15 py-10 flex items-center justify-center cursor-pointer">
-                        <Image
-                          src="/images/icons/arrow.svg"
-                          type="img"
-                          height={40}
-                          width={40}
-                        />
+                    <div className="w-100% flex items-center justify-end ">
+                      <div className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                        <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
                   </div>
@@ -760,7 +755,7 @@ export default function Home() {
             <Carousel
               itemsToShow={3}
               outerSpacing={0}
-              itemPadding={[15, 0, 15, 0]}
+              itemPadding={[15, 30, 15, 30]}
               enableMouseSwipe={false}
               pagination={false}
               renderArrow={blackCarouselArrows}
@@ -768,7 +763,7 @@ export default function Home() {
               {homePageBlogs &&
                 homePageBlogs.map((item, index) => (
                   <div
-                    className="w-80% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
+                    className="w-100% flex flex-col justify-center items-center bg-FFFFFF custom-shaddow"
                     key={index}
                   >
                     <div className="px-16 pt-16">
@@ -797,13 +792,8 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-full flex items-center justify-end">
-                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF h-60 w-70 flex items-center justify-center cursor-pointer">
-                        <Image
-                          src="/images/icons/arrow.svg"
-                          type="img"
-                          height={40}
-                          width={40}
-                        />
+                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                        <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
                   </div>
