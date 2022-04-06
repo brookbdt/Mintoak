@@ -193,7 +193,7 @@ export default function Contact() {
               }
               expandIconPosition={"right"}
               bordered={false}
-              // defaultActiveKey={["1"]}
+            // defaultActiveKey={["1"]}
             >
               {faqs?.map((items, index) => {
                 return (
@@ -707,7 +707,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="w-100% desktop:pt-48 laptop:pt-48 desktop:pb-40 laptop:pt-48 mobile:pt-40 mobile:pb-28 flex items-center justify-center">
-                <div className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10">
+                <div className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40">
                   Submit
                 </div>
               </div>
@@ -726,7 +726,7 @@ export default function Contact() {
           visible={modalquerievisible}
           onCancel={() => setmodalquerieVisible(false)}
           footer={null}
-          className="shadow-popupShadow close-btn"
+          className="shadow-popupShadow close-btn faq-submit-bg"
         >
           <div className="w-100% rotate-180">
             <div className="w-100% flex justify-center  mobile:pt-9 desktop:pt-42 laptop:pt-42">
