@@ -217,7 +217,7 @@ export default function Career() {
               <div className="flex items-center desktop:text-s36l43 laptop:text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1 desktop:pb-40 laptop:pb-40 mobile:pb-30 pt-40">
                 Life at Mintoak
               </div>
-              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-230">
+              <div className="laptop:text-s20l30 desktop:text-s20l30 mobile:text-s14l24 text-F1F1F1 laptop:text-left desktop:pr-80">
                 <span className="font-normal text-s20l30 text-F1F1F1 mobile:text-s14l21 ">
                   {careerPageLifeMintoakResp?.Description}
                 </span>
