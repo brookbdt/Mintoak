@@ -1152,3 +1152,8 @@ border-radius: 50%;
 .anime{
   transition: all 0.5s;
 }
+textarea {
+  resize: none;
+  white-space: nowrap;
+  overflow-x: scroll; /* or hidden */
+}
