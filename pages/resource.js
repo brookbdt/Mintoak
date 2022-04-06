@@ -51,7 +51,7 @@ export default function Resources() {
 
                     /> */}
           <div className="desktop:w-50% desktop:py-100  desktop:pl-180 laptop:py-100 laptop:pl-180  laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-            <div className="text-s44l120 mobile:text-s20l24 text-FFFFFF shrink-0">
+            <div className="text-s44l120 mobile:text-s20l24 text-FFFFFF shrink-0 pr-50">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
             <div className="text-s24l36 mobile:text-s14l24 mobile:text-center text-FFFFFF shrink-0 mt-37">

@@ -17,8 +17,13 @@ export default function Contact() {
           applies or signs up for Mintoak Account (called, “Merchant Account” or
           “Mintoak Services” or “Services” or “Account”), including through an
           EDC terminal (called, “POS terminal” or “Device”) and mobile
+<<<<<<< HEAD
+          application and software (called, “App”) or visits
+          <span className="text-8CC63E">http://www.mintoak.com</span> (called,
+=======
           application and software (called, “App”) or visits{" "}
           <span className="text-A8FC055">http://www.mintoak.com</span> (called,
+>>>>>>> abc20fb22237b25bf754e174203e2836bc23fb13
           “Website”). This Privacy Policy explains how we collect, use and share
           your personal information.
           <br />
@@ -40,7 +45,7 @@ export default function Contact() {
           All persons or business, whose information is either collected/
           received/ possessed/ stored/ dealt in/ handled by Mintoak and who
           visit the site{" "}
-          <span className="text-A8FC055">http://www.mintoak.com</span> and
+          <span className="text-8CC63E">http://www.mintoak.com</span> and
           provide information to Mintoak online are covered under this Policy.
         </div>
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
