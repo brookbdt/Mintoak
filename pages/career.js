@@ -380,7 +380,7 @@ export default function Career() {
               )
               ?.map((data, index) => (
                 <Col xs={24} md={8} className="mb-30" key={index}>
-                  <div className="p-20 shadow-sm hover:bg-8FC055 drop-shadow border border-8FC055 w-100% cursor-pointer">
+                  <div className="p-20 shadow-sm hover:bg-8FC055 drop-shadow border border-A8FC055 w-100% cursor-pointer">
                     <div className="flex justify-between items-center">
                       <div>
                         <div className="desktop:text-s20l30 laptop:text-s20l24 mobile:text-s12l18 text-A8FC055">
