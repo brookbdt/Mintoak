@@ -120,15 +120,22 @@ a {
   }
   .ant-input {
     background-color: #dfefd4;
+    font-size: 20px;
+    line-height: 24px;
 
     &::placeholder {
       color: #525252;
+      font-size: 20px;
+      line-height: 24px;
     }
   }
   .ant-input-prefix > img {
     color: #252525;
     height: 26.21px;
     width: 26.21px;
+  }
+  .ant-input-prefix {
+    padding-right: 26px;
   }
 }
 
@@ -143,6 +150,9 @@ a {
     display: flex;
     align-items: center;
     color: #525252;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 20px;
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     height: 60px;
@@ -1146,4 +1156,8 @@ textarea {
   resize: none;
   white-space: nowrap;
   overflow-x: scroll; /* or hidden */
+}
+.shad{
+  box-shadow: 0px 0px 11.8511px
+  rgb(0, 0, 0, 0.1);
 }

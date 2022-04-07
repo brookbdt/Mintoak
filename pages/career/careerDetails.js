@@ -135,14 +135,10 @@ export default function CareerDetails() {
                 Ability to quickly adapt to most current technology
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Should be comfortable with Agile methodology and using Agile
-                tools
+                Should be comfortable with Agile methodology and using Agile tools
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good verbal and written communication skills
-              </li>
-              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Good problem-solving skills
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good problem-solving skills

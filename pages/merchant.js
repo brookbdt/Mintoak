@@ -193,7 +193,7 @@ export default function Merchant() {
               className="w-1500 h-300"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-between pb-122 desktop:px-30 mobile:hidden laptop:px-30">
+          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-between pb-122 desktop:px-30 desktop:pl-80 mobile:hidden laptop:px-30">
             {merchantBenefits3?.map((item, index) => {
               return (
                 <div
