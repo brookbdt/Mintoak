@@ -202,7 +202,7 @@ export default function Contact() {
                     header={items.Question}
                     key={index}
                   >
-                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal pr-460 ">
+                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal desktop:pr-460 laptop:pr-100">
                       {items.Answer}
                     </p>
                   </Panel>
@@ -233,6 +233,7 @@ export default function Contact() {
                 placeholder="Enter your thoughts or suggestions"
                 bordered={false}
                 style={{ height: "132px" }}
+                className="resize-none"
               />
             </div>
             <div className="pt-32 pb-50 custom-textaria-m laptop:hidden desktop:hidden">
@@ -241,6 +242,7 @@ export default function Contact() {
                 placeholder="Ask a question.."
                 bordered={false}
                 style={{ height: "132px" }}
+                className="resize-none"
               />
             </div>
             <div></div>

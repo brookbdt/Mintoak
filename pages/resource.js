@@ -187,7 +187,7 @@ export default function Resources() {
                     width={19}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   For Merchants
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function Resources() {
                     width={32}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   Payments
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function Resources() {
                     width={24}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   Finance Trends
                 </div>
               </div>
@@ -247,7 +247,7 @@ export default function Resources() {
                     width={20}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   Products
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function Resources() {
                     width={22}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   Fintech
                 </div>
               </div>
@@ -287,7 +287,7 @@ export default function Resources() {
                     width={19}
                   />
                 </div>
-                <div className="text-s20l40 text-252525 desktop:pr-15 laptop:pr-15 mobile:px-15">
+                <div className="text-s20l40 text-525252 desktop:pr-15 laptop:pr-15 mobile:px-15">
                   Growth Strategy
                 </div>
               </div>
@@ -307,14 +307,14 @@ export default function Resources() {
                     src="/images/backgrounds/blog1.svg"
                     height={296}
                     width={388}
-                    // layout="fill"
+                  // layout="fill"
                   />
                 </div>
                 <Image
                   src="/images/backgrounds/blog-img.svg"
                   type="img"
                   className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-                  // layout="fill"
+                // layout="fill"
                 />
                 <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
                   <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
