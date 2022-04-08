@@ -13,6 +13,7 @@ export default function Partner() {
   const [modalvisible, setmodalVisible] = useState(false);
   const [comunityCard, setComunityCard] = useState([]);
   const [anime, setAnime] = useState("");
+  const [customizclick, setCustomizClick] = useState(1)
   const [demoPopup, setDemoPopup] = useState(false);
   const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
   const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
@@ -23,7 +24,12 @@ export default function Partner() {
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
     useState(null);
   const [countryList, setCountryList] = useState(null);
-
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
+  const [temp, setTemp] = useState(null);
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
+  console.log('esdxtgvhbjn', desc, aboutUsCustomization2)
   useEffect(() => {
     // Community card
     API({
@@ -63,15 +69,19 @@ export default function Partner() {
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
+        console.log(resp, "dasdsasfdfsdfe");
         setAboutUsCustomization2(resp);
+        setDesc(resp[1].Description)
+        setVal0(resp[0])
+        setVal1(resp[1])
+        setVal2(resp[2])
       }
     });
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
+        console.log(resp, "resp 23");
         setAboutUsCustomization(resp);
       }
     });
@@ -95,6 +105,34 @@ export default function Partner() {
     setDemoPopup(false);
   };
   // console.log('countery', countryList)
+
+  const handleData = (num) => {
+    if (num == 2) {
+      let t = val2;
+      setVal2(val1);
+      setVal1(t);
+      // aboutUsCustomization2.map((item) => {
+      //   console.log('esdtxghbnmsaxz123', item.Title, t)
+      //   if (item.Title == val2) {
+      //     console.log('esdtxghbnmsaxz')
+      //     setDesc(item.Description);
+      //   }
+      // })
+    }
+    if (num == 0) {
+      let t = val0;
+      setVal0(val1);
+      setVal1(t);
+      aboutUsCustomization2.map((item) => {
+        console.log('esdtxghbnmsaxz123', item.Title, t)
+        if (item.Title == val0) {
+          console.log('esdtxghbnmsaxz')
+          setDesc(item.Description);
+        }
+      })
+    }
+  }
+  console.log(val0, val1, val2)
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -173,33 +211,34 @@ export default function Partner() {
           <div className="desktop:text-s44l52 laptop:text-s44l52 desktop:text-F1F1F1 laptop:text-F1F1F1 font-bold text-center mobile:text-s22l26_4 mobile:text-FFFFFF">
             {aboutUsCustomization?.Title}
           </div>
-          <div className="desktop:text-s20l30 laptop:text-s20l30 desktop:text-F1F1F1 laptop:text-F1F1F1 text-center desktop:py-40 laptop:py-40 desktop:px-170 laptop:px-170 mobile:pt-39 mobile: w-100% mobile:pb-32 mobile:text-F1F1F1 mobile:text-s14l21 mobile:px-20">
+          <div className="desktop:text-s20l30 laptop:text-s20l30 desktop:text-F1F1F1 laptop:text-F1F1F1 text-center desktop:py-40 laptop:py-40 desktop:w-885 laptop:w-885 px-30 mobile:pt-39 mobile:w-100% mobile:pb-32 mobile:text-F1F1F1 mobile:text-s14l21 mobile:px-25">
             {aboutUsCustomization?.Description}
           </div>
-          <div className="flex w-100% justify-center mobile:hidden">
-            <Image
-              src="/images/backgrounds/customization-img.svg"
-              height={297}
-              width={1049}
-              type="img"
-              className="h-297 laptop:w-1049  desktop:w-100%"
-            />
-          </div>
-          <div className="flex w-100% justify-center desktop:hidden laptop:hidden">
+
+          <Image
+            src="/images/backgrounds/line-bg.svg"
+            type="img"
+            className="w-1049 h-67 mobile:hidden"
+          />
+
+          {/* <div className="flex w-100% justify-center desktop:hidden laptop:hidden ">
             <Image
               src="/images/backgrounds/customization-img-mobile.svg"
               height={151}
               width={217}
             />
-          </div>
-          <div className="flex w-100% items-center justify-evenly desktop:pt-48 text-center mobile:hidden">
+          </div> */}
+          <div className="flex w-100% px-175 desktop:pt-48 text-center mobile:hidden">
             {aboutUsCustomization2 &&
               aboutUsCustomization2.map((item, index) => (
                 <div
-                  className="flex flex-col w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70"
+                  className="flex flex-col  w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70"
                   key={index}
                 >
-                  <div className="text-s24l29 text-FFFFFF font-semibold text-center">
+
+                  <Image type="img" src={item?.Illustration[0]} className="object-cover h-174 w-249" />
+
+                  <div className="text-s24l29 text-FFFFFF font-semibold text-center pt-48">
                     {item?.Title}
                   </div>
                   <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
@@ -208,25 +247,40 @@ export default function Partner() {
                 </div>
               ))}
           </div>
-          <div className="desktop:hidden laptop:hidden w-100%">
-            <div className="w-100% text-center items-center justify-center flex">
-              <div className="text-s12l18 text-FFFFFF text-center px-20">
-                Custom branding & design
+          <div className="w-100% desktop:hidden laptop:hidden">
+            <div className="w-100% flex justify-center">
+              <div className="w-244 border-t-2 border-C4C4C4"></div>
+            </div>
+            <div className="flex justify-around">
+              <div className="flex flex-col items-center w-100%">
+                <div className="h-39 border-r-2 border-C4C4C4">
+                </div>
+                <div onClick={() => { setCustomizClick(0); handleData(0); }} className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"></div>
+                <div className="w-92 text-s12l18 text-FFFFFF text-center mt-15">{val0?.Title}</div>
               </div>
-              <div className="text-s12l18 text-FFFFFF text-center px-20">
-                Subscription pricing
+              <div className="flex flex-col items-center w-100%">
+                <div className="h-101 border-r-2 border-C4C4C4">
+                </div>
+                <div className="h-12 w-12 bg-B0D472 rounded-full  absolute mt-100"></div>
+                <div className="w-150 text-s18l27 text-F1F1F1 text-center mt-15">{val1?.Title}</div>
+              </div>
+              <div className="flex flex-col items-center w-100%">
+                <div className="h-39 border-r-2 border-C4C4C4">
+                </div>
+                <div onClick={() => { setCustomizClick(2); handleData(2); }} className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"></div>
+                <div className="w-92 text-s12l18 text-FFFFFF text-center mt-15">{val2?.Title}</div>
               </div>
             </div>
-            <div className="flex flex-col items-center pt-16 px-90">
-              <div className="text-s14l21 text-center text-F1F1F1 ">
-                Choose different modules from a range of products available
-              </div>
-              <div className="pt-41 pb-25">
-                <Image
-                  src="/images/backgrounds/product-stock.svg"
-                  height={128.35}
-                  width={145.78}
-                />
+            <div className="pt-16 h-270">
+              <div
+                className="flex flex-col w-100% items-center"
+
+              >
+                <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
+
+                  {val1?.Description}
+                </div>
+                {aboutUsCustomization2 && <Image type="img" src={val1?.Illustration[0]} className="h-128 w-145" />}
               </div>
             </div>
           </div>
@@ -239,17 +293,10 @@ export default function Partner() {
             {partnerWithUsMintoakEffect &&
               partnerWithUsMintoakEffect.map((item, index) => (
                 <div
-                  className="flex desktop:flex-col laptop:flex-col desktop:text-center laptop:text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-33 mobile:pr-50 mobile:pb-20"
+                  className="flex desktop:flex-col laptop:flex-col desktop:text-center laptop:text-center items-center desktop:px-50 laptop:px-50 mobile:w-100% mobile:pl-20 mobile:pr-50 mobile:pb-20"
                   key={index}
                 >
-                  {/* <div className="rounded-full p-10">
-                    <div className="flex">
-                      <div className="desktop:h-130 laptop:h-130 desktop:w-130 laptop:w-130 mobile:w-50 mobile:h-50 bg-mintoak_effect rounded-full"></div>
-                      <div className="absolute mobile:pl-12 mobile:pt-14 desktop:pl-30 laptop:pl-30 desktop:pt-35 laptop:pt-35 desktop:text-s36l54 laptop:text-s36l54 mobile:text-s14l21 mobile:text-000000 desktop:text-252525 laptop:text-252525 font-bold">
-                        {item?.Count}
-                      </div>
-                    </div>
-                  </div> */}
+
                   <CircularProgress
                     size={250}
                     strokeWidth={20}
@@ -269,7 +316,7 @@ export default function Partner() {
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 global-partner">
+          <div className="w-100% flex mobile:flex-col mobile:px-20 ">
             <div className="desktop:px-100 laptop:px-100 w-100%">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -296,7 +343,8 @@ export default function Partner() {
                   <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 w-100% desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                     Contact Number
                   </div>
-                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B border-r border-C4C4C4 pr-5 absolute mobile:pt-3">
+
+                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
                     +91
                   </span>
                   <input
@@ -325,8 +373,8 @@ export default function Partner() {
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                 />
               </div>
-              <div className="pb-40 w-100%">
-                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-10">
+              <div className="pb-40 w-100% mobile:text-s12l14 mobile:global-partner-m  global-partner">
+                <div className="mobile:text-s12l14  desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-10">
                   Country
                 </div>
                 <Select
@@ -469,34 +517,38 @@ export default function Partner() {
           </div>
         </div>
       </div>
-      {modalvisible ? (
-        <Modal
-          bodyStyle={{
-            background:
-              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-          }}
-          centered
-          visible={modalvisible}
-          onCancel={() => setmodalVisible(false)}
-          footer={null}
-        >
-          <div className="w-100%">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+      {
+        modalvisible ? (
+          <Modal
+            bodyStyle={{
+              background:
+                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            }}
+            centered
+            visible={modalvisible}
+            onCancel={() => setmodalVisible(false)}
+            footer={null}
+          >
+            <div className="w-100%">
+              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+                Thank you for getting in touch. We will get back to you shortly.
+              </div>
             </div>
-            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-              Thank you for getting in touch. We will get back to you shortly.
-            </div>
-          </div>
-        </Modal>
-      ) : null}
-      {demoPopup && (
-        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
-      )}
+          </Modal>
+        ) : null
+      }
+      {
+        demoPopup && (
+          <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+        )
+      }
     </>
   );
 }
