@@ -387,7 +387,7 @@ export default function Career() {
             )
             ?.map((data, index) => (
               <Col xs={24} md={8} className="mb-30" key={index}>
-                <div className="p-20 shadow-sm hover:bg-8FC055 drop-shadow border border-A8FC055 w-100% cursor-pointer">
+                <div className="px-20 pt-20 shadow-sm hover:bg-8FC055 drop-shadow border border-A8FC055 w-100% h-100% cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
                       <div className="desktop:text-s20l30 laptop:text-s20l24 mobile:text-s12l18 text-A8FC055">
@@ -401,16 +401,16 @@ export default function Career() {
                         <Image src="/images/icons/file.svg" type="img" />
                       </div> */}
                   </div>
-                  <div className="flex items-center desktop:pt-46 laptop:pt-30 mobile:text-s12l24">
-                    <span className="bg-8FC055 py-9 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
-                      <Image src="/images/icons/bag.svg" type="img" />
-                      <span className="pl-5 mobile:text-s12l24">
+                  <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-488">
+                    <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
+                      <Image src="/images/icons/bag.svg" type="img" className="h-25 w-25" />
+                      <span className="pl-5 mobile:text-s12l24 text-s20l40">
                         {data.timing}
                       </span>
                     </span>
-                    <span className="bg-8FC055 py-9 mobile:py-6 mobile:px-9 rounded-lg px-13 flex items-center">
-                      <Image src="/images/icons/location.svg" type="img" />
-                      <span className="pl-5">{data.location}</span>
+                    <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg px-13 flex items-center">
+                      <Image src="/images/icons/location.svg" type="img" className="h-25 w-25" />
+                      <span className="pl-5 text-s20l40">{data.location}</span>
                     </span>
                   </div>
                 </div>
