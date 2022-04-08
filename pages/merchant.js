@@ -104,7 +104,7 @@ export default function Merchant() {
           className="absolute z-minus1 mobile:hidden"
           layout="fill"
         />
-        <div className="desktop:w-50% desktop:p-100 desktop:pt-150 laptop:pt-150 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>
@@ -193,12 +193,12 @@ export default function Merchant() {
               className="w-1500 h-300"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-between pb-122 desktop:px-30 desktop:pl-80 mobile:hidden laptop:px-30">
+          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-around pb-122 mobile:hidden m-auto pl-45">
             {merchantBenefits3?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="w-300 text-s24l36 font-semibold m-auto"
+                  className="w-100% desktop:w-300 text-s24l36 font-semibold px-15"
                 >
                   {item.Title}
                 </div>
@@ -311,9 +311,8 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${
-                      activeTab == 0 ? "text-252525" : "text-848484"
-                    }`}
+                    className={`text-s28l42 ${activeTab == 0 ? "text-252525" : "text-848484"
+                      }`}
                   >
                     Onboarding
                   </div>
@@ -321,11 +320,10 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-5">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${
-                        activeTab == 0
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                      className={`${activeTab == 0
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                        } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
 
@@ -342,9 +340,8 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${
-                      activeTab == 1 ? "text-252525" : "text-848484"
-                    }`}
+                    className={`text-s28l42 ${activeTab == 1 ? "text-252525" : "text-848484"
+                      }`}
                   >
                     Real-time information
                   </div>
@@ -352,11 +349,10 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-5">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${
-                        activeTab == 1
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                      className={`${activeTab == 1
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                        } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
 
@@ -373,9 +369,8 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${
-                      activeTab == 2 ? "text-252525" : "text-848484"
-                    }`}
+                    className={`text-s28l42 ${activeTab == 2 ? "text-252525" : "text-848484"
+                      }`}
                   >
                     Benefits
                   </div>
@@ -383,11 +378,10 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-9">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${
-                        activeTab == 2
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                      className={`${activeTab == 2
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                        } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
                 </div>
@@ -613,9 +607,8 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-active" : ""
-                          }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -773,9 +766,8 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                              isActivePage ? "bg-525252" : ""
-                            }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                              }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}

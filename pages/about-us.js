@@ -93,7 +93,7 @@ export default function About() {
     });
   }, []);
 
-  function goToPage(numberPage) {}
+  function goToPage(numberPage) { }
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -217,9 +217,8 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
-                  index != principalResp.length - 1 && ""
-                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
+                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -253,7 +252,7 @@ export default function About() {
             <Carousel
               itemsToShow={6.5}
               showArrows={false}
-              itemPadding={[0, 10, 0, 0]}
+              itemPadding={[0, 4, 0, 0]}
               enableAutoPlay={false}
               className="flex itmes-center justify-center h-439 p-0"
               pagination={false}
@@ -263,7 +262,7 @@ export default function About() {
             >
               <div className="flex flex-col items-center justify-center px-5">
                 <Image
-                  src="/images/backgrounds/megha.svg"
+                  src="/images/backgrounds/Megha.svg"
                   type="img"
                   className="h-299 w-229 object-cover rounded-xl "
                 />
@@ -282,7 +281,7 @@ export default function About() {
               </div>
               <div className="flex flex-col items-center justify-center  px-5">
                 <Image
-                  src="/images/backgrounds/janine.svg"
+                  src="/images/backgrounds/Janine.svg"
                   type="img"
                   className="h-299 w-229 object-cover rounded-xl"
                 />
@@ -477,16 +476,14 @@ export default function About() {
                   <div className="flex h-190">
                     <div className="w-55% text-right">
                       <div
-                        className={`${
-                          activeTab == index ? "text-s24l150" : "text-s20l150"
-                        } text-s20l30 text-F1F1F1`}
+                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
+                          } text-s20l30 text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${
-                          activeTab == index ? "text-F1F1F1" : "text-949494"
-                        } text-s20l150`}
+                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
+                          } text-s20l150`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -494,11 +491,10 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${
-                            activeTab == index
-                              ? "w-27 h-27 bg-F1F1F1 "
-                              : "w-17 h-16 bg-949494"
-                          } rounded-full bg-opacity-100 `}
+                          className={`${activeTab == index
+                            ? "w-27 h-27 bg-F1F1F1 "
+                            : "w-17 h-16 bg-949494"
+                            } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (

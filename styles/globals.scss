@@ -112,56 +112,46 @@ a {
 }
 
 // search input in career
-.search-input {
-  .ant-input-affix-wrapper {
-    height: 60px;
-    background-color: #dfefd4;
-    border: 1px solid #8fc055;
-  }
-  .ant-input {
-    background-color: #dfefd4;
-    font-size: 20px;
-    line-height: 24px;
+// .search-input {
+//   .ant-input-affix-wrapper {
+//     height: 60px;
+//     background-color: #dfefd4;
+//     border: 1px solid #8fc055;
+//   }
+//   .ant-input {
+//     background-color: #dfefd4;
 
-    &::placeholder {
-      color: #525252;
-      font-size: 20px;
-      line-height: 24px;
-    }
-  }
-  .ant-input-prefix > img {
-    color: #252525;
-    height: 26.21px;
-    width: 26.21px;
-  }
-  .ant-input-prefix {
-    padding-right: 26px;
-  }
-}
+//     &::placeholder {
+//       color: #525252;
+//     }
+//   }
+//   .ant-input-prefix > img {
+//     color: #252525;
+//     height: 26.21px;
+//     width: 26.21px;
+//   }
+// }
 
 // filter inputs css of career job filtering
-.filter-selection {
-  .ant-select,
-  .ant-select-selector {
-    height: 60px !important;
-    width: 100%;
-  }
-  .ant-select-selection-placeholder {
-    display: flex;
-    align-items: center;
-    color: #525252;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 20px;
-  }
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
-    height: 60px;
-  }
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    background-color: #dfefd4;
-    border: 1px solid #8fc055;
-  }
-}
+// .filter-selection {
+//   .ant-select,
+//   .ant-select-selector {
+//     height: 60px !important;
+//     width: 100%;
+//   }
+//   .ant-select-selection-placeholder {
+//     display: flex;
+//     align-items: center;
+//     color: #525252;
+//   }
+//   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+//     height: 60px;
+//   }
+//   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+//     background-color: #dfefd4;
+//     border: 1px solid #8fc055;
+//   }
+// }
 
 // antd row and column
 .custom-row {
@@ -294,17 +284,26 @@ button[disabled] {
     background-color: #dfefd4;
     border: 1px solid #8fc055;
   }
+  
   .ant-input {
     background-color: #dfefd4;
+    font-size: 20px;
+    line-height: 24px;
 
     &::placeholder {
       color: #525252;
+      font-size: 20px;
+      line-height: 24px;
     }
   }
   .ant-input-prefix > img {
     color: #252525;
     height: 26.21px;
     width: 26.21px;
+  }
+  .ant-input-prefix{
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -319,6 +318,9 @@ button[disabled] {
     display: flex;
     align-items: center;
     color: #525252;
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 25px;
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     height: 60px;
@@ -326,6 +328,11 @@ button[disabled] {
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: #dfefd4;
     border: 1px solid #8fc055;
+  }
+  .ant-select-arrow{
+    color: black;
+    font-size: 16px;
+    padding-right: 14px;
   }
 }
 
@@ -559,6 +566,7 @@ button[disabled] {
   font-size: 20px;
   line-height: 36px;
   background-color: transparent;
+  border-color: #252525;
 }
 
 .custom-pagination .ant-pagination-item-active {
@@ -608,23 +616,39 @@ button[disabled] {
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  
 }
+.custom-pagination .ant-pagination-next{
+  border-color: #252525;
+  color: #252525;
+}
+.custom-pagination .ant-pagination-prev{
+  border-color: #252525;
+  color: #252525;
+}
+
+.custom-pagination .ant-pagination-disabled, .ant-pagination-disabled:hover{
+  color: rgba(0, 0, 0, 0.25);
+  border-color: #d9d9d9;
+  cursor: not-allowed;
+  }
 
 .custom-pagination .ant-pagination-prev,
 .ant-pagination-next,
 .ant-pagination-jump-prev,
 .ant-pagination-jump-next {
   height: auto !important;
+  
 }
 
 .custom-pagination .ant-pagination-prev .ant-pagination-item-link:hover {
-  border-color: #46ac34;
-  color: #46ac34;
+  color: rgba(0, 0, 0, 0.25);
+  border:none;
 }
 
 .custom-pagination .ant-pagination-next .ant-pagination-item-link:hover {
-  border-color: #46ac34;
-  color: #46ac34;
+  color: rgba(0, 0, 0, 0.25);
+  border:none;
 }
 // ================== FAQ CUSTOM PAGINATION START ================
 
@@ -637,6 +661,14 @@ button[disabled] {
     color: #252525;
     outline: none;
     border: 1px solid #525252;
+    resize: none;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+  .ant-input::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 5px;
   }
   .ant-input:hover {
     font-size: 20px;
@@ -1151,13 +1183,18 @@ border-radius: 50%;
 .fPDpuU {
   margin: 0 0px !important;
 }
-
+.anime{
+  transition: all 0.5s;
+}
 textarea {
   resize: none;
   white-space: nowrap;
   overflow-x: scroll; /* or hidden */
 }
-.shad{
-  box-shadow: 0px 0px 11.8511px
-  rgb(0, 0, 0, 0.1);
+.jytZFe{
+  width: 1510px;
+}
+
+.board-shadow{
+  box-shadow: 0px 0px 11.8511px rgb(0,0,0,0.1);
 }

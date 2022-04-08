@@ -68,12 +68,12 @@ export default function Contact() {
             personal information which consists of information relating to :
           </div>
         </div>
-        <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 text-525252">
-          <ul>
+        <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 text-525252 pl-30">
+          <ul className="list-disc">
             <li>Password</li>
-            <li> Financial information </li>
+            <li>Financial information</li>
             <li>Bank account and card details</li>
-            <li>Biometric information </li>
+            <li>Biometric information</li>
             <li>address, profile, date of birth</li>
             <li>Contact details</li>
           </ul>
