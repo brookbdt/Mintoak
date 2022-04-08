@@ -144,9 +144,6 @@ export default function CareerDetails() {
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good problem-solving skills
               </li>
-              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Good problem-solving skills
-              </li>
             </ul>
           </div>
         </div>

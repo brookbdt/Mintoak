@@ -22,7 +22,7 @@ export default function DesktopFooter() {
   console.log('esdftzyxgbhjnk', slug)
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
-      <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
+      {/* <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
         <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
           {slug == "resource" || slug == 'blog-detail' ? <>
             Ready to join our community?
@@ -34,7 +34,7 @@ export default function DesktopFooter() {
         <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
           Request A Demo
         </div>
-      </div>
+      </div> */}
 
       <div className="w-100% h-1 bg-E0E0E0" />
 
