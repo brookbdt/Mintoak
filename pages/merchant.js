@@ -208,7 +208,7 @@ export default function Merchant() {
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">
+      <div className=" w-100% mobile:mt-0 mobile:pb-0">
         <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
           <div className="flex flex-col">
             <Swiper
@@ -222,7 +222,7 @@ export default function Merchant() {
                 clickable: true,
               }}
               modules={[Mousewheel, Pagination]}
-              className="mySwiper overflow-scroll"
+              className="mySwiper overflow-scroll bg-reel_img_bg"
               onSwiper={setSwiperInstance}
               onSlideChange={(e) => {
                 setActiveTab(e.activeIndex);
@@ -230,7 +230,7 @@ export default function Merchant() {
               }}
             >
               <SwiperSlide key={0}>
-                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100 ">
                   <div className="w-33% mt-251">
                     <div className="text-s44l57_2 font-bold">
                       Time to get onboard with Mintoak

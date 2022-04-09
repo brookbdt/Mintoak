@@ -272,12 +272,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center  px-5">
                 <Image
@@ -291,12 +291,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center  px-5">
                 <Image
@@ -310,12 +310,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center  px-5">
                 <Image
@@ -329,12 +329,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center px-5">
                 <Image
@@ -348,12 +348,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center px-5">
                 <Image
@@ -367,12 +367,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col items-center justify-center px-5">
                 <Image
@@ -386,12 +386,12 @@ export default function About() {
                     backgroundImage: "linear-gradient(#fff0, #252525)",
                   }}
                 ></div>
-                <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
                   Name name name
                 </div>
                 <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div>
+                </div> */}
               </div>
             </Carousel>
           </div>
