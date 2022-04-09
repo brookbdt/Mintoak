@@ -12,7 +12,7 @@ const CircularProgress = ({ size, strokeWidth, percentage }) => {
   const dash = (progress * circumference) / 100;
 
   return (
-    <svg width={150} height={150} viewBox={viewBox}>
+    <svg className="desktop:h-150 desktop:w-150 laptop:h-150 laptop:w-150 mobile:h-65 mobile:w-65" viewBox={viewBox}>
       <defs>
         <linearGradient id="MyGradient" gradientTransform="rotateX(45)">
           <stop offset="11.39%" stopColor="#A7CD7E" />
