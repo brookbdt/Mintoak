@@ -49,15 +49,17 @@ const endpoints = {
   merchant_page_mock_up3: "merchant-page-mock-up-3",
   merchant_banner: "merchant-page-banner",
   partner_with_us_banner: "partner-with-us-banner",
-  partner_with_us_new_heights: "partner-with-us-new-heights",
+  partner_with_us_new_heights: "partner-with-us-new-heights?_sort=id:ASC",
   careers_banner: "careers-banner",
   career_page_life_mintoak: "career-page-life-mintoak",
-  career_listing_value_proposition: "career-listing-value-propositions",
+  career_listing_value_proposition:
+    "career-listing-value-propositions?_sort=order:ASC",
   home_page_blogs: "home-page-blogs",
   partner_with_us_new_heights2: "partner-with-us-new-heights-2-s",
   about_us_customization_2: "about-us-customization-2-s",
   about_us_customization: "about-us-customization",
-  partner_with_us_mintoak_effect: "partner-with-us-mintoak-effects",
+  partner_with_us_mintoak_effect:
+    "partner-with-us-mintoak-effects?_sort=id:ASC",
   resources_blog_list: "resources-blog-lists",
   dropdown: "dropdowns",
   contact_us_find_us_at: "contact-us-find-us-at",
@@ -68,6 +70,6 @@ const endpoints = {
   product_page_features: "product-page-features",
   product_page_feature2: "product-page-feature-2",
   product_page_feature3: "product-page-feature-3",
-};
+}
 
 export { API, endpoints, domain }

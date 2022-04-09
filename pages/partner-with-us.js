@@ -1,28 +1,27 @@
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { useEffect, useState } from "react";
-import { consts } from "react-elastic-carousel";
-import { Modal, Select } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import CircularProgress from "../components/helpers/Prograssbar";
-const Option = Select;
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { useEffect, useState } from "react"
+import { consts } from "react-elastic-carousel"
+import { Modal, Select } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import CircularProgress from "../components/helpers/Prograssbar"
+const Option = Select
 export default function Partner() {
-  const { Option } = Select;
+  const { Option } = Select
 
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [comunityCard, setComunityCard] = useState([]);
-  const [anime, setAnime] = useState("");
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
-  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
-  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] =
-    useState(null);
-  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
-  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [comunityCard, setComunityCard] = useState([])
+  const [anime, setAnime] = useState("")
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null)
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null)
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null)
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null)
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null);
-  const [countryList, setCountryList] = useState(null);
+    useState(null)
+  const [countryList, setCountryList] = useState(null)
 
   useEffect(() => {
     // Community card
@@ -30,70 +29,70 @@ export default function Partner() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setComunityCard(resp);
+        console.log(resp, "resp")
+        setComunityCard(resp)
       }
-    });
+    })
 
     API({
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsBanner(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsBanner(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsNewHeights(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsNewHeights(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsNewHeights2(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsNewHeights2(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setAboutUsCustomization2(resp);
+        console.log(resp, "resp")
+        setAboutUsCustomization2(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setAboutUsCustomization(resp);
+        console.log(resp, "resp")
+        setAboutUsCustomization(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
-        setPartnerWithUsMintoakEffect(resp);
+        console.log(resp, "resp")
+        setPartnerWithUsMintoakEffect(resp)
       }
-    });
+    })
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
+        setCountryList(resp[0])
       }
-    });
-  }, []);
+    })
+  }, [])
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
   // console.log('countery', countryList)
   return (
     <>
@@ -134,8 +133,8 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col p-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
-          <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 desktop:pt-78 laptop:pt-78 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
+        <div className="desktop:flex laptop:flex flex-col py-150 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+          <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
           <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50 mobile:text-left">
@@ -147,7 +146,7 @@ export default function Partner() {
             products ensure that you can serve your customers with the best
             tools by your side. */}
           </div>
-          <div className="flex w-100% justify-center items-center desktop:py-42 laptop:py-42 desktop:px-30 laptop:px-30  mobile:w-100% mobile:flex-col">
+          <div className="flex w-100% justify-center items-center desktop:pt-60 laptop:pt-60  mobile:w-100% mobile:flex-col">
             {partnerWithUsNewHeights2 &&
               partnerWithUsNewHeights2.map((item, index) => (
                 <div
@@ -161,7 +160,7 @@ export default function Partner() {
                       className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
                     />
                   </div>
-                  <div className="text-s24l36 desktop:px-100 desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold mobile:text-left">
+                  <div className="text-s24l36 desktop:pt-37 desktop:px-50  desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold mobile:text-left">
                     {item.Functions}
                   </div>
                 </div>
@@ -395,7 +394,7 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button
                     onClick={onClick}
@@ -404,7 +403,7 @@ export default function Partner() {
                   >
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -426,7 +425,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -443,19 +442,20 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page;
+                      const isActivePage = activePage === page
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      );
+                      )
                     })}
                   </div>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -463,7 +463,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -498,5 +498,5 @@ export default function Partner() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </>
-  );
+  )
 }

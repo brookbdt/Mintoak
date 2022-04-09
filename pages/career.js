@@ -157,10 +157,10 @@ export default function Career() {
             {careersBannerResp?.Title}
           </div>
           <div className="text-s56l124_5 mobile:text-s34l42 font-bold text-252525 shrink-0 mobile:pt-2">
-            {/* a new direction */}
+            {careersBannerResp?.title2}
           </div>
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0 mobile:pt-2">
-            {/* with Mintoak */}
+            {careersBannerResp?.title3}
           </div>
           <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37 mobile:mt-16">
             {careersBannerResp?.Description}
@@ -252,7 +252,13 @@ export default function Career() {
             // className="h-60 bg-DFEFD4"
             value={searchJob}
             onChange={(e) => setSearchJob(e.target.value)}
-            prefix={<Image src="/images/icons/search-icon.svg" type="img" className="h-26 w-26" />}
+            prefix={
+              <Image
+                src="/images/icons/search-icon.svg"
+                type="img"
+                className="h-26 w-26"
+              />
+            }
           />
         </div>
         {/* <div className="custom-row"> */}
@@ -464,7 +470,9 @@ export default function Career() {
                   <div className="desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12 font-semibold">
                     {data.title}
                   </div>
-                  <div className="text-s18l25 w-100% pr-80">{data.description}</div>
+                  <div className="text-s18l25 w-100% pr-80">
+                    {data.description}
+                  </div>
                 </div>
               </div>
             ))}
@@ -539,7 +547,6 @@ export default function Career() {
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
-
     </div>
   )
 }
