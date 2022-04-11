@@ -1,115 +1,116 @@
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { useEffect, useState } from "react"
-import { consts } from "react-elastic-carousel"
-import { Modal, Select } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import CircularProgress from "../components/helpers/Prograssbar"
-const Option = Select
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState } from "react";
+import { consts } from "react-elastic-carousel";
+import { Modal, Select } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import CircularProgress from "../components/helpers/Prograssbar";
+const Option = Select;
 export default function Partner() {
-  const { Option } = Select
+  const { Option } = Select;
 
-  const [modalvisible, setmodalVisible] = useState(false)
-  const [comunityCard, setComunityCard] = useState([])
-  const [anime, setAnime] = useState("")
-  const [customizclick, setCustomizClick] = useState(1)
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null)
-  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
-  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null)
-  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null)
-  const [aboutUsCustomization, setAboutUsCustomization] = useState(null)
+  const [modalvisible, setmodalVisible] = useState(false);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [anime, setAnime] = useState("");
+  const [customizclick, setCustomizClick] = useState(1);
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] =
+    useState(null);
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null)
-  const [countryList, setCountryList] = useState(null)
-  const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
-  const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
-  const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
-  const [temp, setTemp] = useState(null)
-  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
-  console.log("esdxtgvhbjn", desc, aboutUsCustomization2)
+    useState(null);
+  const [countryList, setCountryList] = useState(null);
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
+  const [temp, setTemp] = useState(null);
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
+  console.log("esdxtgvhbjn", desc, aboutUsCustomization2);
   useEffect(() => {
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setComunityCard(resp)
+        console.log(resp, "resp");
+        setComunityCard(resp);
       }
-    })
+    });
 
     API({
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setPartnerWithUsBanner(resp)
+        console.log(resp, "resp sadjskjdfklsdjfsldf");
+        setPartnerWithUsBanner(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setPartnerWithUsNewHeights(resp)
+        console.log(resp, "resp");
+        setPartnerWithUsNewHeights(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setPartnerWithUsNewHeights2(resp)
+        console.log(resp, "resp");
+        setPartnerWithUsNewHeights2(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "dasdsasfdfsdfe")
-        setAboutUsCustomization2(resp)
-        setDesc(resp[1].Description)
-        setVal0(resp[0])
-        setVal1(resp[1])
-        setVal2(resp[2])
+        console.log(resp, "dasdsasfdfsdfe");
+        setAboutUsCustomization2(resp);
+        setDesc(resp[1].Description);
+        setVal0(resp[0]);
+        setVal1(resp[1]);
+        setVal2(resp[2]);
       }
-    })
+    });
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp 23")
-        setAboutUsCustomization(resp)
+        console.log(resp, "resp 23");
+        setAboutUsCustomization(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
-        setPartnerWithUsMintoakEffect(resp)
+        console.log(resp, "resp");
+        setPartnerWithUsMintoakEffect(resp);
       }
-    })
+    });
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0])
+        setCountryList(resp[0]);
       }
-    })
-  }, [])
+    });
+  }, []);
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   // console.log('countery', countryList)
 
   const handleData = (num) => {
     if (num == 2) {
-      let t = val2
-      setVal2(val1)
-      setVal1(t)
+      let t = val2;
+      setVal2(val1);
+      setVal1(t);
       // aboutUsCustomization2.map((item) => {
       //   console.log('esdtxghbnmsaxz123', item.Title, t)
       //   if (item.Title == val2) {
@@ -119,19 +120,19 @@ export default function Partner() {
       // })
     }
     if (num == 0) {
-      let t = val0
-      setVal0(val1)
-      setVal1(t)
+      let t = val0;
+      setVal0(val1);
+      setVal1(t);
       aboutUsCustomization2.map((item) => {
-        console.log("esdtxghbnmsaxz123", item.Title, t)
+        console.log("esdtxghbnmsaxz123", item.Title, t);
         if (item.Title == val0) {
-          console.log("esdtxghbnmsaxz")
-          setDesc(item.Description)
+          console.log("esdtxghbnmsaxz");
+          setDesc(item.Description);
         }
-      })
+      });
     }
-  }
-  console.log(val0, val1, val2)
+  };
+  console.log(val0, val1, val2);
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -139,7 +140,7 @@ export default function Partner() {
         <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
-            className="absolute z-minus1 mobile:hidden w-100% h-100%"
+            className="absolute z-minus1 mobile:hidden w-90% left-191 object-cover h-100%"
           />
           <div className="desktop:w-50% desktop:pb-101 laptop:pb-101 laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
@@ -147,8 +148,10 @@ export default function Partner() {
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
               {/* exclusive partnership */}
+              {partnerWithUsBanner?.Title2}
             </div>
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
+              {partnerWithUsBanner?.Title3}
               {/* with mintoak */}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
@@ -171,7 +174,7 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col py-150 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+        <div className="desktop:flex laptop:flex flex-col desktop:py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
@@ -220,13 +223,6 @@ export default function Partner() {
             className="w-1049 h-67 mobile:hidden"
           />
 
-          {/* <div className="flex w-100% justify-center desktop:hidden laptop:hidden ">
-            <Image
-              src="/images/backgrounds/customization-img-mobile.svg"
-              height={151}
-              width={217}
-            />
-          </div> */}
           <div className="flex w-100% px-175 desktop:pt-48 text-center mobile:hidden">
             {aboutUsCustomization2 &&
               aboutUsCustomization2.map((item, index) => (
@@ -258,8 +254,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(0)
-                    handleData(0)
+                    setCustomizClick(0);
+                    handleData(0);
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -278,8 +274,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(2)
-                    handleData(2)
+                    setCustomizClick(2);
+                    handleData(2);
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -353,6 +349,14 @@ export default function Partner() {
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                 />
+                <div className="flex pt-20">
+                  <div className="circle-check h-23 w-23 flex justify-center items-center rounded-full">
+                    <i className="fa-solid text-FFFFFF fa-check"></i>
+                  </div>
+                  <span className="text-s20l24 text-F1F1F1 pl-8">
+                    Customise Your Product
+                  </span>
+                </div>
               </div>
             </div>
             <div className="desktop:pr-100 laptop:pr-100 w-100%">
@@ -461,7 +465,7 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button
                     onClick={onClick}
@@ -470,7 +474,7 @@ export default function Partner() {
                   >
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -492,7 +496,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -509,7 +513,7 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
+                      const isActivePage = activePage === page;
                       return (
                         <div
                           className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
@@ -519,10 +523,10 @@ export default function Partner() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -530,7 +534,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -565,5 +569,5 @@ export default function Partner() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </>
-  )
+  );
 }

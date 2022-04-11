@@ -20,18 +20,18 @@ export default function Contact() {
 
   return (
     <>
-      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50">
+      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50 desktop:px-180 laptop:px-180">
         <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100%">
           <div>
-            <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:px-33">
+            <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 mobile:px-33">
               Find us at
             </div>
-            <div className="mobile:text-s14l21 desktop:text-s20l30 laptop:text-s20l30 mobile:px-33 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:pt-16 desktop:pt-41 laptop:pt-41 desktop:pr-300 laptop:pr-300 text-left">
+            <div className="mobile:text-s14l21 desktop:text-s20l30 laptop:text-s20l30 mobile:px-33 text-F1F1F1 mobile:pt-16 desktop:pt-41 laptop:pt-41 desktop:pr-300 laptop:pr-300 text-left">
               {contactUsFindUsAt?.Address}
             </div>
           </div>
           <div>
-            <div className="desktop:pl-106 laptop:pl-106 pt-40 w-100% flex mobile:px-33">
+            <div className="pt-40 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/call-icon.svg"
@@ -40,10 +40,11 @@ export default function Contact() {
                 />
               </div>
               <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-29">
+                <span className="pr-10">+91</span>
                 {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
-            <div className="desktop:pl-106 laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
+            <div className="mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/mail-icon.svg"
@@ -57,7 +58,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="mobile:w-100% mobile:pb-80 desktop:w-50% laptop:w-50% flex items-center flex-col mobile:pt-129 desktop:py-80 laptop:py-80 desktop:pr-100 laptop:pr-100">
+        <div className="mobile:w-100% mobile:pb-80 desktop:w-50% laptop:w-50% flex items-end flex-col mobile:pt-129 desktop:py-80 laptop:py-80">
           {/* form */}
           <div className="bg-form mobile:p-40 desktop:py-40 laptop:py-40 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-75% laptop:w-100%">
             <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">

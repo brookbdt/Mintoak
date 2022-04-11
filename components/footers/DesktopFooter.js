@@ -2,40 +2,43 @@ import React from "react";
 import Image from "../helpers/Image";
 import Request_Demo from "../../pages/request_demo";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 
 export default function DesktopFooter() {
-  const router = useRouter()
+  const router = useRouter();
 
   const TogglePopup = () => {
     setDemoPopup(false);
   };
   const [demoPopup, setDemoPopup] = useState(false);
-  const [slug, setSlug] = useState('');
+  const [slug, setSlug] = useState("");
 
   useEffect(() => {
     let url = window.location.href;
-    let slug = url.split('/').pop();
+    let slug = url.split("/").pop();
     setSlug(slug);
-  }, [])
+  }, []);
 
-  console.log('esdftzyxgbhjnk', slug)
+  console.log("esdftzyxgbhjnk", slug);
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
-      {/* <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
-        <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
-          {slug == "resource" || slug == 'blog-detail' ? <>
-            Ready to join our community?
-          </> : <>
-            Ready to begin your journey with us?
-            <br /> Get onboard!
-          </>}
+      {slug == "faqs" || slug == "career" ? null : (
+        <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
+          <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
+            {slug == "resource" || slug == "blog-detail" ? (
+              <>Ready to join our community?</>
+            ) : (
+              <>
+                Ready to begin your journey with us?
+                <br /> Get onboard!
+              </>
+            )}
+          </div>
+          <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
+            Request A Demo
+          </div>
         </div>
-        <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
-          Request A Demo
-        </div>
-      </div> */}
-
+      )}
       <div className="w-100% h-1 bg-E0E0E0" />
 
       <div className="flex justify-between px-180  laptop:px-50">
@@ -49,7 +52,6 @@ export default function DesktopFooter() {
               viewBox="0 0 35 35"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-
             >
               <path
                 className="hover:fill-hover"
@@ -109,13 +111,28 @@ export default function DesktopFooter() {
             Company
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/about-us")}>About Us</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/about-us")}
+            >
+              About Us
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/partner-with-us")}>Partner With Us</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/partner-with-us")}
+            >
+              Partner With Us
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/career")}>Careers</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/career")}
+            >
+              Careers
+            </span>
           </div>
         </div>
         <div className="pb-175 pt-186">
@@ -123,13 +140,23 @@ export default function DesktopFooter() {
             Offerings
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/product")}>Products</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/product")}
+            >
+              Products
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">Customise</span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className=" hover-border" onClick={() => router.push("/merchant")}>For Merchants</span>
+            <span
+              className=" hover-border"
+              onClick={() => router.push("/merchant")}
+            >
+              For Merchants
+            </span>
           </div>
         </div>
         <div className="pb-175 pt-186">
@@ -137,13 +164,23 @@ export default function DesktopFooter() {
             Legal
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/privacy_policy")}>Privacy</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/privacy_policy")}
+            >
+              Privacy
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">Website terms of use</span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/terms_and_condition")}>T & C</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/terms_and_condition")}
+            >
+              T & C
+            </span>
           </div>
         </div>
         <div className="pb-175 pt-186">
@@ -151,7 +188,12 @@ export default function DesktopFooter() {
             Resources
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/resource")}>Blogs</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/resource")}
+            >
+              Blogs
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">Case Studies</span>
@@ -165,10 +207,17 @@ export default function DesktopFooter() {
             Support
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/faqs")}>FAQs</span>
+            <span className="hover-border" onClick={() => router.push("/faqs")}>
+              FAQs
+            </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border" onClick={() => router.push("/contact-us")}>Contact Us</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/contact-us")}
+            >
+              Contact Us
+            </span>
           </div>
         </div>
       </div>

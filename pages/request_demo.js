@@ -83,9 +83,8 @@ export default function Request_Demo(props) {
                   boxSizing: "border-box",
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
                   background: "#DFEFD4",
-                  padding: "20px",
                 }}
-                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 pb-5"
                 style={{ fontWeight: "bold" }}
               >
                 {countryList &&
@@ -133,10 +132,9 @@ export default function Request_Demo(props) {
                     boxSizing: "border-box",
                     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
                     background: "#DFEFD4",
-                    padding: "20px",
                   }}
                   placeholder="Choose Products"
-                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525"
                 >
                   {productList &&
                     productList.Data.map((item, index) => (
@@ -160,14 +158,13 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex justify-between">
-            <div className="bg-button pr-3 pl-3 pt-3 pb-2 w-360 flex items-center justify-center">
-              <div className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn">
-                Clear All Fields
-              </div>
+            <div className="cursor-pointer w-46% rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn">
+              Clear All Fields
             </div>
+
             <div
               onClick={() => setmodalquerieVisible(true)}
-              className="button desktop:text-s22l26_4 w-360 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 mobile:w-110 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
+              className="button desktop:text-s22l26_4 w-46% laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 mobile:w-110 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
             >
               Submit
             </div>

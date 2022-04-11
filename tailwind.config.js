@@ -47,8 +47,8 @@ const colors = {
   D1E6BA: "#D1E6BA",
   393939: "#393939",
   "100F0F": "#100F0F",
-  "EC5F22": "#EC5F22",
-  "B0D472": "#B0D472",
+  EC5F22: "#EC5F22",
+  B0D472: "#B0D472",
   // For testing
   red: "red",
   green: "green",
@@ -176,14 +176,16 @@ module.exports = {
         contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
-        reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)"
+        reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)",
+        read_more:
+          "linear-gradient(360deg, #F3FBF6 0%, rgba(244, 251, 243, 0.9) 37.42%, rgba(248, 252, 243, 0.5) 67.65%, rgba(248, 252, 243, 0) 100%)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
-        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
-        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
-        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2);",
+        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
+        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5)",
+        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2)",
       },
       zIndex: {
         minus1: -1,
