@@ -104,7 +104,7 @@ export default function Merchant() {
           className="absolute z-minus1 mobile:hidden"
           layout="fill"
         />
-        <div className="desktop:w-50% desktop:p-100 desktop:pt-150 laptop:pt-150 laptop:p-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>
@@ -193,12 +193,12 @@ export default function Merchant() {
               className="w-1500 h-300"
             />
           </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-between pb-122 desktop:px-30 mobile:hidden laptop:px-30">
+          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-around pb-122 mobile:hidden m-auto pl-45">
             {merchantBenefits3?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="w-300 text-s24l36 font-semibold m-auto"
+                  className="w-100% desktop:w-300 text-s24l36 font-semibold px-15"
                 >
                   {item.Title}
                 </div>
@@ -208,7 +208,7 @@ export default function Merchant() {
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className="pb-140 w-100% mobile:mt-0 mobile:pb-0">
+      <div className=" w-100% mobile:mt-0 mobile:pb-0">
         <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
           <div className="flex flex-col">
             <Swiper
@@ -222,7 +222,7 @@ export default function Merchant() {
                 clickable: true,
               }}
               modules={[Mousewheel, Pagination]}
-              className="mySwiper overflow-scroll"
+              className="mySwiper overflow-scroll bg-reel_img_bg"
               onSwiper={setSwiperInstance}
               onSlideChange={(e) => {
                 setActiveTab(e.activeIndex);
@@ -230,7 +230,7 @@ export default function Merchant() {
               }}
             >
               <SwiperSlide key={0}>
-                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100">
+                <div className="flex w-100% mobile:hidden pl-80 laptop:pl-100 ">
                   <div className="w-33% mt-251">
                     <div className="text-s44l57_2 font-bold">
                       Time to get onboard with Mintoak
@@ -321,8 +321,8 @@ export default function Merchant() {
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
                       className={`${activeTab == 0
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
                         } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
@@ -350,8 +350,8 @@ export default function Merchant() {
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
                       className={`${activeTab == 1
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
                         } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
@@ -379,8 +379,8 @@ export default function Merchant() {
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
                       className={`${activeTab == 2
-                          ? "w-22 h-21 bg-252525 "
-                          : "w-14 h-14 bg-848484"
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
                         } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>

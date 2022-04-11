@@ -22,7 +22,7 @@ export default function DesktopFooter() {
   console.log('esdftzyxgbhjnk', slug)
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
-      <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
+      {/* <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
         <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
           {slug == "resource" || slug == 'blog-detail' ? <>
             Ready to join our community?
@@ -34,21 +34,22 @@ export default function DesktopFooter() {
         <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
           Request A Demo
         </div>
-      </div>
+      </div> */}
 
       <div className="w-100% h-1 bg-E0E0E0" />
 
-      <div className="flex justify-between items-baseline px-180 pt-130 laptop:px-50">
-        <div className="pb-175">
+      <div className="flex justify-between px-180  laptop:px-50">
+        <div className="pb-175 pt-139">
           <Image src="/images/logo_white.svg" width={250} height={50} />
-          <div className="mt-35 text-F5FBF3 text-s20l24">Find us on</div>
-          <div className="flex mt-19 w-150 justify-between cursor-pointer h-40">
+          <div className="mt-58 text-F5FBF3 text-s20l24">Find us on</div>
+          <div className="flex mt-19 w-150 justify-between  cursor-pointer h-40">
             <svg
               width="35"
               height="35"
               viewBox="0 0 35 35"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+
             >
               <path
                 className="hover:fill-hover"
@@ -99,12 +100,12 @@ export default function DesktopFooter() {
               />
             </svg>
           </div>
-          <div className="mt-30 text-FAFAFA text-s20l24">
+          <div className="mt-40 text-FAFAFA text-s20l24">
             © Mintoak, Inc. {new Date().getFullYear()}.{" "}
           </div>
         </div>
-        <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
+        <div className="pb-175 pt-186">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-37 laptop:mb-35">
             Company
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -117,8 +118,8 @@ export default function DesktopFooter() {
             <span className="hover-border" onClick={() => router.push("/career")}>Careers</span>
           </div>
         </div>
-        <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
+        <div className="pb-175 pt-186">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-37 laptop:mb-35">
             Offerings
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -131,8 +132,8 @@ export default function DesktopFooter() {
             <span className=" hover-border" onClick={() => router.push("/merchant")}>For Merchants</span>
           </div>
         </div>
-        <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
+        <div className="pb-175 pt-186">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-37 laptop:mb-35">
             Legal
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -145,8 +146,8 @@ export default function DesktopFooter() {
             <span className="hover-border" onClick={() => router.push("/terms_and_condition")}>T & C</span>
           </div>
         </div>
-        <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
+        <div className="pb-175 pt-186">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-37 laptop:mb-35">
             Resources
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
@@ -159,8 +160,8 @@ export default function DesktopFooter() {
             <span className="hover-border">News & Media</span>
           </div>
         </div>
-        <div>
-          <div className="text-FAFAFA text-s22l140_62 font-bold mb-24 laptop:mb-35">
+        <div className="pb-175 pt-186">
+          <div className="text-FAFAFA text-s22l140_62 font-bold mb-37 laptop:mb-35">
             Support
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">

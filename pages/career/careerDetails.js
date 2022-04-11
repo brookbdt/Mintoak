@@ -74,9 +74,9 @@ export default function CareerDetails() {
               Apply Now
             </div>
             <div className="flex items-center justify-between pt-20 mobile:hidden">
-              <Image src="/images/icons/whatsapp.svg" className="" type="img" />
-              <Image src="/images/icons/facebook.svg" className="" type="img" />
-              <Image src="/images/icons/email.svg" className="" type="img" />
+              <Image src="/images/icons/career-wp.svg" className="" type="img" />
+              <Image src="/images/icons/career-fb.svg" className="" type="img" />
+              <Image src="/images/icons/career-email.svg" className="" type="img" />
             </div>
           </div>
         </div>
@@ -140,9 +140,6 @@ export default function CareerDetails() {
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good verbal and written communication skills
-              </li>
-              <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Good problem-solving skills
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good problem-solving skills
