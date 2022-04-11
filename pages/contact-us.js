@@ -23,15 +23,15 @@ export default function Contact() {
       <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50">
         <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100%">
           <div>
-            <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:px-33">
+            <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 desktop:pl-180 laptop:pl-106 mobile:px-33">
               Find us at
             </div>
-            <div className="mobile:text-s14l21 desktop:text-s20l30 laptop:text-s20l30 mobile:px-33 text-F1F1F1 desktop:pl-106 laptop:pl-106 mobile:pt-16 desktop:pt-41 laptop:pt-41 desktop:pr-300 laptop:pr-300 text-left">
+            <div className="mobile:text-s14l21 desktop:text-s20l30 laptop:text-s20l30 mobile:px-33 text-F1F1F1 desktop:pl-180 laptop:pl-106 mobile:pt-16 desktop:pt-41 laptop:pt-41 desktop:pr-300 laptop:pr-300 text-left">
               {contactUsFindUsAt?.Address}
             </div>
           </div>
           <div>
-            <div className="desktop:pl-106 laptop:pl-106 pt-40 w-100% flex mobile:px-33">
+            <div className="desktop:pl-180 laptop:pl-106 pt-40 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/call-icon.svg"
@@ -43,7 +43,7 @@ export default function Contact() {
                 {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
-            <div className="desktop:pl-106 laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
+            <div className="desktop:pl-180 laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/mail-icon.svg"

@@ -45,41 +45,41 @@ export default function Product() {
             business owner.
           </div>
         </div>
-        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:px-50 desktop:pt-175 desktop:pb-90 mobile:w-100%">
+        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:pl-300 desktop:pr-200 desktop:pt-175 desktop:pb-90 mobile:w-100%">
           <div className="flex flex-col justify-between h-100% mobile:h-270 w-100% mobile:px-20">
             <div className="flex items-center ">
               <div>
                 <Image
-                  src="/images/icons/aim.svg"
+                  src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-300 mobile:w-142 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24  w-300 mobile:w-142 font-semibold">
                 Credit-to-Bank Information
               </div>
             </div>
             <div className="flex items-center ">
               <div>
                 <Image
-                  src="/images/icons/aim.svg"
+                  src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24  w-355 mobile:w-200 font-semibold">
                 Interactive Dashboards & Business Insights
               </div>
             </div>
             <div className="flex items-center ">
               <div>
                 <Image
-                  src="/images/icons/aim.svg"
+                  src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-120 w-120 mobile:h-72 mobile:w-72"
+                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24  w-355 mobile:w-200 font-semibold">
                 Multi-location Consolidated View & Location-level Drill Down
               </div>
             </div>

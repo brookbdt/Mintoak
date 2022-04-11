@@ -48,6 +48,7 @@ const colors = {
   393939: "#393939",
   "100F0F": "#100F0F",
   "EC5F22": "#EC5F22",
+  "B0D472": "#B0D472",
   // For testing
   red: "red",
   green: "green",
@@ -175,6 +176,7 @@ module.exports = {
         contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
+        reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)"
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
