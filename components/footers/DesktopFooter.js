@@ -172,7 +172,7 @@ export default function DesktopFooter() {
             </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border">Website terms of use</span>
+            <span className="hover-border" onClick={() => router.push("/terms_of_use")}>Website terms of use</span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span

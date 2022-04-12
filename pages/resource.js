@@ -3,11 +3,16 @@ import { API, endpoints } from "../components/helpers/API";
 import Image from "../components/helpers/Image";
 import Request_Demo from "./request_demo";
 import { Pagination } from "antd";
+import { useRouter } from "next/router"
 
 export default function Resources() {
+  const router = useRouter()
   const [demoPopup, setDemoPopup] = useState(false);
   const [resourcesBlogList, setResourcesBlogList] = useState(null);
+  const [allList, setAllList] = useState(null);
   const [isClicked, setIsClicked] = useState("b");
+  const [search, setSearch] = useState(null);
+
   const TogglePopup = () => {
     setDemoPopup(false);
   };
@@ -19,9 +24,20 @@ export default function Resources() {
       if (!resp.message) {
         console.log(resp, "resp");
         setResourcesBlogList(resp);
+        setAllList(resp);
       }
     });
   }, []);
+
+  useEffect(() => {
+    if (search && search.length) {
+      let list = resourcesBlogList.filter((rList) => rList.Title.toLowerCase().includes(search.toLowerCase()));
+      setResourcesBlogList(list)
+    } else {
+      setResourcesBlogList(allList);
+    }
+  }, [search]);
+
   const month = [
     "Jan",
     "Feb",
@@ -136,6 +152,8 @@ export default function Resources() {
             <input
               className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-70 desktop:text-s20l24 laptop:text-s20l24"
               placeholder="Ex. Future of banking..."
+              value={search}
+              onChange={(e) => { setSearch(e.target.value) }}
             />
           </div>
           <div className="text-252525 absolute pl-27 pt-8">
@@ -300,7 +318,8 @@ export default function Resources() {
         </div>
         {resourcesBlogList &&
           resourcesBlogList.map((item, index) => (
-            <div className="pb-80 w-100% mobile:pb-25" key={index}>
+            <div className="pb-80 w-100% mobile:pb-25" key={index} onClick={() => router.push("/blog-detail")}>
+
               <div className="bg-FFFFFF flex shadow-bankbox h-100%">
                 <div className="p-15 mobile:hidden h-290 flex items-center pt-50">
                   <Image
@@ -342,6 +361,7 @@ export default function Resources() {
                   <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer rounded-sm"></i>
                 </div>
               </div>
+
             </div>
           ))}
 

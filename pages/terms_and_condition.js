@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <div className="w-100% desktop:px-180 desktop:pr-540 laptop:pl-100 laptop:pr-300 mobile:px-20 bg-home-top">
       <div className="w-100%">
-        <div className="desktop:text-s56l67 laptop:text-s35l43 mobile:text-s24l29 text-252525 desktop:py-150 laptop:py-80 mobile:py-30">
+        <div className="desktop:text-s56l67 laptop:text-s35l43 mobile:text-s24l29 text-252525 desktop:py-150 laptop:py-80 mobile:py-30 ">
           Terms And Conditions
         </div>
         <div className="mobile:text-s14l21 desktop:text-s24l36 laptop:s18l22 text-525252 pb-50 desktop:pb-80 laptop:pb-80">

@@ -403,9 +403,9 @@ export default function Career() {
                         {data.designation}
                       </div>
                     </div>
-                    {/* <div>
-                        <Image src="/images/icons/file.svg" type="img" />
-                      </div> */}
+                    <div>
+                      <Image src="/images/icons/file.svg" type="img" />
+                    </div>
                   </div>
                   <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-488">
                     <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
