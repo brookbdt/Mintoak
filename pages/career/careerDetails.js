@@ -74,9 +74,21 @@ export default function CareerDetails() {
               Apply Now
             </div>
             <div className="flex items-center justify-between pt-20 mobile:hidden">
-              <Image src="/images/icons/career-wp.svg" className="" type="img" />
-              <Image src="/images/icons/career-fb.svg" className="" type="img" />
-              <Image src="/images/icons/career-email.svg" className="" type="img" />
+              <Image
+                src="/images/icons/career-wp.svg"
+                className=""
+                type="img"
+              />
+              <Image
+                src="/images/icons/career-fb.svg"
+                className=""
+                type="img"
+              />
+              <Image
+                src="/images/icons/career-email.svg"
+                className=""
+                type="img"
+              />
             </div>
           </div>
         </div>

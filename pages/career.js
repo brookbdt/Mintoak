@@ -407,7 +407,7 @@ export default function Career() {
                       <Image src="/images/icons/file.svg" type="img" />
                     </div>
                   </div>
-                  <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-488">
+                  <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-100%">
                     <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
                       <Image
                         src="/images/icons/bag.svg"
@@ -424,7 +424,9 @@ export default function Career() {
                         type="img"
                         className="h-25 w-25"
                       />
-                      <span className="pl-5 text-s20l40">{data.location}</span>
+                      <span className="pl-5 mobile:text-s12l24 text-s20l40">
+                        {data.location}
+                      </span>
                     </span>
                   </div>
                 </div>

@@ -206,7 +206,7 @@ export default function Request_Demo(props) {
               />
             </div>
             <div className="w-360 mobile:w-100% mobile:pb-24">
-              <div className="global-demo w-360 mobile:w-100%">
+              <div className="global-demo dropdown_font w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Business Category
                 </div>
@@ -309,7 +309,7 @@ export default function Request_Demo(props) {
             )}
           </div>
           <div className="w-100% flex justify-between">
-            <div className="bg-button pr-3 pl-3 pt-3 pb-2 w-360 flex items-center justify-center">
+            <div className="bg-button pr-3 pl-3 pt-3 pb-3 desktop:w-360 flex items-center justify-center">
               <div
                 className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
                 onClick={() => {

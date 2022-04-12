@@ -115,8 +115,6 @@ export default function Partner() {
   const TogglePopup = () => {
     setDemoPopup(false);
   };
-  setDemoPopup(false);
-
   useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
 
   // console.log('countery', countryList)
@@ -387,7 +385,7 @@ export default function Partner() {
                   <CircularProgress
                     size={250}
                     strokeWidth={20}
-                    percentage={item?.Count.replace("%", "")}
+                    percentage={item?.Count}
                     color="green"
                     animation={anime}
                   />

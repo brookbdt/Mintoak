@@ -11,6 +11,7 @@ const { Panel } = Collapse;
 
 export default function Home() {
   const [demoPopup, setDemoPopup] = useState(false);
+  const [activeindex, setActiveIndex] = useState();
   const [isBORM, setIsBORM] = useState("b");
   const [homeBannerResp, setHomeBannerResp] = useState({});
   const [metricsResp, setMetricsResp] = useState({});
@@ -237,8 +238,7 @@ export default function Home() {
             renderPagination={mobileCarouselPagination}
           >
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.Merchants}{" "}
-              <span className="text-A4D77A">+</span>
+              {metricsResp?.Merchants} <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 Merchants
               </div>
@@ -253,8 +253,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.GMVAnnuals}{" "}
-              <span className="text-A4D77A">+</span>
+              {metricsResp?.GMVAnnuals} <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 GMV Annuals
               </div>
@@ -271,8 +270,9 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"
-                  }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
+                className={`mobile:flex mobile:pt-${
+                  index != 0 ? "30" : "10"
+                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
               >
                 <Image
                   src={item.Icon}
@@ -304,8 +304,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -327,8 +328,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -439,7 +441,7 @@ export default function Home() {
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
                 <Image
-                  src='/images/backgrounds/mobile-bank.svg'
+                  src="/images/backgrounds/mobile-bank.svg"
                   height={650}
                   width={500}
                 />
@@ -448,7 +450,6 @@ export default function Home() {
           </div>
           <div className="p-0 border-b border-8B8B8B"></div>
           <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
-
             <div
               className={
                 "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
@@ -477,7 +478,7 @@ export default function Home() {
                 {homeForMerchant?.CTA2}
               </div>
               <Image
-                src='/images/backgrounds/mobile-merchat.svg'
+                src="/images/backgrounds/mobile-merchat.svg"
                 height={650}
                 width={500}
               />
@@ -543,10 +544,10 @@ export default function Home() {
                 key={index}
                 className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
               >
-                <div className="flex justify-center items-center  w-100%">
-                  <Image src={item.BankLogo} className="w-150 h-100" />
+                <div className="flex justify-center items-center w-150 h-100% py-30">
+                  <Image src={item.BankLogo} className=" object-cover" />
                 </div>
-                <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
+                <div className="items-center pb-23 flex text-s12l18 justify-center w-100% text-center">
                   {item.BankInfo}
                 </div>
               </div>
@@ -555,8 +556,8 @@ export default function Home() {
         </div>
 
         {/* Our achievements */}
-        <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120 mobile:p-0 mobile:pt-40">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:p-0 mobile:mb-40">
+        <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120  mobile:p-0">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
             Our Achievements
           </div>
           <div className="flex items-center w-100% pt-50  mobile:px-0 mobile:py-0 mobile:hidden">
@@ -603,7 +604,7 @@ export default function Home() {
               })}
             </Carousel>
           </div>
-          <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
+          <div className="flex items-center w-100% py-40 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
             <Carousel
               itemsToShow={1}
               itemPadding={[0, 0]}
@@ -611,23 +612,43 @@ export default function Home() {
               pagination={true}
               showArrows={false}
               outerSpacing={0}
-              renderPagination={mobileCarouselPagination}
+              renderPagination={({ pages, activePage, onClick }) => {
+                return (
+                  <div className="flex pageindex">
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
+                      setActiveIndex(activePage);
+                      return (
+                        <div
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
+                          key={page}
+                          onClick={() => onClick(page)}
+                          active={isActivePage}
+                        ></div>
+                      );
+                    })}
+                  </div>
+                );
+              }}
             >
               {homepageAchievements.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4"
+                    className="flex flex-col items-center bg-313131 h-221 w-280 border border-C4C4C4 pt-30 pb-27"
                   >
                     <Image
                       src={item.CertificateIcon}
-                      height={110}
-                      width={273}
+                      type="img"
+                      className="w-175 h-80"
                     />
-                    <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
+
+                    <div className="font-bold text-DFDFDF text-center text-s16l19 pt-18">
                       {item?.Title}
                     </div>
-                    <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
+                    <div className="text-DFDFDF text-center mt-12 text-s12l18 px-50">
                       {item?.Description}
                     </div>
                   </div>
