@@ -34,7 +34,7 @@ export default function DesktopHeader(headerProps) {
             }
           />
         </div>
-        <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA">
+        <div className="flex px-26 h-full items-center cursor-pointer text-s20l24 text-0D0D0D hover:bg-D1E6BA" onClick={() => router.push("/partner-with-us")}>
           Partner With Us
         </div>
         <div

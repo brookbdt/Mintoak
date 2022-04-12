@@ -24,6 +24,12 @@ export default function Merchant() {
   const [swiperInstance, setSwiperInstance] = useState();
   const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
   const founder = useRef(null);
+  const [val0, setVal0] = useState(merchantBenefits3?.[0]);
+  const [val1, setVal1] = useState(merchantBenefits3?.[1]);
+  const [val2, setVal2] = useState(merchantBenefits3?.[2]);
+  const [temp, setTemp] = useState(null);
+  const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description);
+  const [customizclick, setCustomizClick] = useState(1);
 
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -50,7 +56,7 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantBenefits2(resp);
-        // console.log("asdasifasofjaksjd", resp);
+        console.log("asdasifasofjaksjd", resp);
       }
     });
     API({
@@ -58,7 +64,11 @@ export default function Merchant() {
     }).then((resp) => {
       if (!resp.message) {
         setMerchantBenefits3(resp);
-        // console.log("asfsasdffsdafsadf", resp);
+        setDesc(resp[1].Description);
+        setVal0(resp[0]);
+        setVal1(resp[1]);
+        setVal2(resp[2]);
+        console.log("asfsasdffsdafsadf", resp);
       }
     });
     API({
@@ -94,15 +104,40 @@ export default function Merchant() {
       }
     });
   }, []);
-
+  const handleData = (num) => {
+    if (num == 2) {
+      let t = val2;
+      setVal2(val1);
+      setVal1(t);
+      // aboutUsCustomization2.map((item) => {
+      //   console.log('esdtxghbnmsaxz123', item.Title, t)
+      //   if (item.Title == val2) {
+      //     console.log('esdtxghbnmsaxz')
+      //     setDesc(item.Description);
+      //   }
+      // })
+    }
+    if (num == 0) {
+      let t = val0;
+      setVal0(val1);
+      setVal1(t);
+      merchantBenefits3.map((item) => {
+        console.log("esdtxghbnmsaxz123", item.Title, t);
+        if (item.Title == val0) {
+          console.log("esdtxghbnmsaxz");
+          setDesc(item.Description);
+        }
+      });
+    }
+  };
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
       <div className="relative top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
-          className="absolute z-minus1 mobile:hidden"
-          layout="fill"
+          className="absolute z-minus1 mobile:hidden object-cover"
+          type="img"
         />
         <div className="desktop:w-50% desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
@@ -171,44 +206,99 @@ export default function Merchant() {
         </div>
       </div>
       {/* Decluttering Business Transactions with Reduced Friction */}
-      <div className="merchant-liner-bg mobile:pb-150">
+      <div className="merchant-liner-bg mobile:pb-150 desktop:pb-122 mobile:px-20 w-100%">
         <div className="pt-100 flex justify-center text-center desktop:m-auto laptop:m-auto text-s44l52_8 mobile:text-s22l26_4 text-F1F1F1 desktop:w-714 laptop:w-714 mobile:pt-40 font-bold mobile:px-13">
           {merchantBenefits2?.Title}
         </div>
         <div className="my-40 text-s20l30 font-normal text-F1F1F1 text-center m-auto w-885 mobile:text-s14l21 mobile:w-315">
           {merchantBenefits2?.Description}
         </div>
-        <div className="desktop:mx-100 m-auto laptop:mx-200">
-          <div className="desktop:hidden m-auto mobile:hidden">
-            <Image
-              src="/images/icons/merchant-bussiness-transaction.svg"
-              width={1000}
-              height={200}
-            />
-          </div>
-          <div className="laptop:hidden mobile:hidden m-auto flex justify-center">
-            <Image
-              src="/images/icons/merchant-bussiness-transaction.svg"
-              type="img"
-              className="w-1500 h-300"
-            />
-          </div>
-          <div className="pt-51 text-F1F1F1 flex text-center items-center w-100% justify-around pb-122 mobile:hidden m-auto pl-45">
-            {merchantBenefits3?.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="w-100% desktop:w-300 text-s24l36 font-semibold px-15"
-                >
-                  {item.Title}
+        <div className="w-100% flex justify-center">
+          <Image
+            src="/images/backgrounds/line-bg.svg"
+            type="img"
+            className="w-1049 h-67 mobile:hidden"
+          />
+        </div>
+        <div className="flex w-100% px-185 desktop:pt-48 text-center items-center justify-center mobile:hidden">
+          {merchantBenefits3 &&
+            merchantBenefits3.map((item, index) => (
+              <div
+                className="flex flex-col items-center w-100% desktop:w-400 desktop:m-auto px-50"
+                key={index}
+              >
+                {/* <Image
+                  type="img"
+                  src={item?.Illustration[0]}
+                  className="object-cover h-174 w-249"
+                /> */}
+
+                <div className="text-s24l36 text-F1F1F1 font-semibold text-center pt-48">
+                  {item?.Title}
                 </div>
-              );
-            })}
+                <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
+                  {item?.Description}
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className="w-100% desktop:hidden laptop:hidden">
+          <div className="w-100% flex justify-center">
+            <div className="w-244 border-t-2 border-C4C4C4"></div>
           </div>
+          <div className="flex justify-around">
+            <div className="flex flex-col items-center w-100%">
+              <div className="h-39 border-r-2 border-C4C4C4"></div>
+              <div
+                onClick={() => {
+                  setCustomizClick(0);
+                  handleData(0);
+                }}
+                className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
+              ></div>
+              <div className="w-92 text-s12l18 text-FFFFFF text-center mt-15">
+                {val0?.Title}
+              </div>
+            </div>
+            <div className="flex flex-col items-center w-100%">
+              <div className="h-101 border-r-2 border-C4C4C4"></div>
+              <div className="h-12 w-12 bg-B0D472 rounded-full  absolute mt-100"></div>
+              <div className="w-150 text-s18l27 text-F1F1F1 text-center mt-15">
+                {val1?.Title}
+              </div>
+            </div>
+            <div className="flex flex-col items-center w-100%">
+              <div className="h-39 border-r-2 border-C4C4C4"></div>
+              <div
+                onClick={() => {
+                  setCustomizClick(2);
+                  handleData(2);
+                }}
+                className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
+              ></div>
+              <div className="w-92 text-s12l18 text-FFFFFF text-center mt-15">
+                {val2?.Title}
+              </div>
+            </div>
+          </div>
+          {/* <div className="pt-16 h-270">
+            <div className="flex flex-col w-100% items-center">
+              <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
+                {val1?.Description}
+              </div>
+              {merchantBenefits3 && (
+                <Image
+                  type="img"
+                  src={val1?.Illustration[0]}
+                  className="h-128 w-145"
+                />
+              )}
+            </div>
+          </div> */}
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className=" w-100% mobile:mt-0 mobile:pb-0">
+      <div className=" w-100% mobile:mt-0 mobile:pb-0 bg-E0EFD4">
         <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
           <div className="flex flex-col">
             <Swiper
@@ -311,8 +401,9 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${activeTab == 0 ? "text-252525" : "text-848484"
-                      }`}
+                    className={`text-s28l42 ${
+                      activeTab == 0 ? "text-252525" : "text-848484"
+                    }`}
                   >
                     Onboarding
                   </div>
@@ -320,10 +411,11 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-5">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${activeTab == 0
-                        ? "w-22 h-21 bg-252525 "
-                        : "w-14 h-14 bg-848484"
-                        } rounded-full bg-opacity-100 `}
+                      className={`${
+                        activeTab == 0
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
 
@@ -340,8 +432,9 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${activeTab == 1 ? "text-252525" : "text-848484"
-                      }`}
+                    className={`text-s28l42 ${
+                      activeTab == 1 ? "text-252525" : "text-848484"
+                    }`}
                   >
                     Real-time information
                   </div>
@@ -349,10 +442,11 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-5">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${activeTab == 1
-                        ? "w-22 h-21 bg-252525 "
-                        : "w-14 h-14 bg-848484"
-                        } rounded-full bg-opacity-100 `}
+                      className={`${
+                        activeTab == 1
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
 
@@ -369,8 +463,9 @@ export default function Merchant() {
               >
                 <div className="w-100% text-right">
                   <div
-                    className={`text-s28l42 ${activeTab == 2 ? "text-252525" : "text-848484"
-                      }`}
+                    className={`text-s28l42 ${
+                      activeTab == 2 ? "text-252525" : "text-848484"
+                    }`}
                   >
                     Benefits
                   </div>
@@ -378,10 +473,11 @@ export default function Merchant() {
                 <div className="flex flex-col items-center w-30% pt-9">
                   <div className="w-27 h-27 flex justify-center items-center">
                     <div
-                      className={`${activeTab == 2
-                        ? "w-22 h-21 bg-252525 "
-                        : "w-14 h-14 bg-848484"
-                        } rounded-full bg-opacity-100 `}
+                      className={`${
+                        activeTab == 2
+                          ? "w-22 h-21 bg-252525 "
+                          : "w-14 h-14 bg-848484"
+                      } rounded-full bg-opacity-100 `}
                     ></div>
                   </div>
                 </div>
@@ -607,8 +703,9 @@ export default function Merchant() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -766,8 +863,9 @@ export default function Merchant() {
                         const isActivePage = activePage === page;
                         return (
                           <div
-                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                              }`}
+                            className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                              isActivePage ? "bg-525252" : ""
+                            }`}
                             key={page}
                             onClick={() => onClick(page)}
                             active={isActivePage}
