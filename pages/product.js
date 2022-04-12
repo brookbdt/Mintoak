@@ -17,11 +17,24 @@ const { TextArea } = Input;
 
 export default function Product() {
   const [activeindex, setActiveIndex] = useState();
+  const [activeindex2, setActiveIndex2] = useState();
   const [activeTab, setActiveTab] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState();
-  const itemsToShow = 1;
+  const [page, setPage] = useState();
+  const itemsToShow = 3;
   const founder = useRef(null);
 
+  // const handleData = () => {
+  //   if (activeindex2 === 1) {
+  //     setPage(false);
+  //   } else {
+  //     setPage(true);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   handleData;
+  // }, [activeindex2]);
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
@@ -45,9 +58,9 @@ export default function Product() {
             business owner.
           </div>
         </div>
-        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:px-50 desktop:pt-175 desktop:pb-90 mobile:w-100%">
-          <div className="flex flex-col justify-between h-100% mobile:h-270 w-100% mobile:px-20">
-            <div className="flex items-center ">
+        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:pl-50 pr-200 desktop:pt-175 desktop:pb-90 mobile:w-100%">
+          <div className="flex flex-col justify-between items-end h-100% mobile:h-270 w-100% mobile:px-20">
+            <div className="flex items-center">
               <div>
                 <Image
                   src="/images/icons/aim.svg"
@@ -55,7 +68,7 @@ export default function Product() {
                   className="h-120 w-120 mobile:h-72 mobile:w-72"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-300 mobile:w-142 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 font-semibold">
                 Credit-to-Bank Information
               </div>
             </div>
@@ -277,97 +290,6 @@ export default function Product() {
           </div>
         </div>
       </div>
-
-      {/* accordian  */}
-      <div className=" desktop:pt-81 laptop:pt-81 px-181 mobile:px-20 mobile:w-100% global-collapse-p">
-        <div className="desktop:pb-58 desktop:pl-40 desktop:pt-50 mobile:ml-0 mobile:mt-96 border border-A4D77A border-b-0 mobile:border-0">
-          <div className="text-252525 text-s45l54 font-bold mobile:text-s22l26_4 mobile:align-center mobile:flex mobile:justify-center mobile:font-bold">
-            FAQ's
-          </div>
-          <div className="font-semibold text-000000 text-s30l36 mobile:text-s14l24  mobile:align-center mobile:flex mobile:justify-center mb-48 mt-20 mobile:mt-20 mobile:mb-0 mobile:font-semibold">
-            Curious about Mintoak? We’ve got you covered.
-          </div>
-        </div>
-        <div className="border border-A4D77A border-t-0 mobile:w-100% border-b-0 mobile:border-t">
-          <Collapse
-            accordion
-            expandIcon={({ isActive }) =>
-              isActive ? (
-                <i className="fa fa-angle-up text-262626" />
-              ) : (
-                <i className="fa fa-angle-down text-262626" />
-              )
-            }
-            expandIconPosition={"right"}
-            bordered={false}
-            // defaultActiveKey={["1"]}
-          >
-            <Panel
-              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-              header={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              }
-            >
-              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt?
-              </p>
-            </Panel>
-            <Panel
-              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-              header={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              }
-            >
-              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt?
-              </p>
-            </Panel>
-            <Panel
-              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-              header={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              }
-            >
-              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt?
-              </p>
-            </Panel>
-            <Panel
-              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-              header={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              }
-            >
-              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt?
-              </p>
-            </Panel>
-            <Panel
-              className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-              header={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt? "
-              }
-            >
-              <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt?
-              </p>
-            </Panel>
-          </Collapse>
-        </div>
-        <div className="flex items-center justify-center mt-40 mobile:mt-22">
-          <div className="text-s24l29 text-6B6B6B mobile:text-s14l16_8">
-            Still have unanswered questions?
-          </div>
-          <div className="text-s22l26_4 text-46AC34 mobile:text-8DBF52 mobile:text-s12l18 border-b border-46AC34 ml-10 cursor-pointer font-bold">
-            View all
-          </div>
-        </div>
-      </div>
       {/* more queries */}
       <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 px-181 mobile:px-20 mobile:pt-81">
         <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">
@@ -420,15 +342,43 @@ export default function Product() {
         <div className="pb-60">
           <div className="mobile:hidden cust-pagination">
             <Carousel
-              itemsToShow={3}
+              itemsToShow={itemsToShow}
               enableMouseSwipe={false}
-              pagination={true}
+              pagination={page}
+              initialActiveIndex={1}
+              renderPagination={({ pages, activePage, onClick }) => {
+                return (
+                  <div className="flex pageindex">
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
+                      setActiveIndex2(pages);
+                      console.log("sddssadsdaw", activeindex2);
+                      console.log("skdjhaskjdhasduw", activeindex2?.length);
+                      if (activeindex2 == 0) {
+                        setPage(false);
+                      } else {
+                        setPage(true);
+                      }
+                      return (
+                        <div
+                          className={`mt-60 w-10 h-10 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : "bg-active"
+                          }`}
+                          key={page}
+                          onClick={() => onClick(page)}
+                          active={isActivePage}
+                        ></div>
+                      );
+                    })}
+                  </div>
+                );
+              }}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
-                    <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
                   ) : (
-                    <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-right text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
                   );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
@@ -437,8 +387,12 @@ export default function Product() {
                 );
               }}
             >
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 hover:shadow-mediaCard flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
-                <Image src="/images/icons/omni.svg" height={110} width={273} />
+              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+                <Image
+                  src="/images/icons/product-omni.svg"
+                  height={110}
+                  width={273}
+                />
                 <div className="font-semibold text-252525 text-center text-s24l29 mt-24">
                   Mintoak OMNI
                 </div>
@@ -447,9 +401,9 @@ export default function Product() {
                 </div>
               </div>
 
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 hover:shadow-mediaCard flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
                 <Image
-                  src="/images/icons/pay_later.svg"
+                  src="/images/icons/product-pay_later.svg"
                   height={110}
                   width={273}
                 />
@@ -460,8 +414,12 @@ export default function Product() {
                   Track customer dues on a robust digital register
                 </div>
               </div>
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 hover:shadow-mediaCard flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
-                <Image src="/images/icons/iku.svg" height={148} width={273} />
+              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
+                <Image
+                  src="/images/icons/product-iku.svg"
+                  height={148}
+                  width={273}
+                />
                 <div className="font-semibold text-252525 text-center text-s24l29 mt-24">
                   Mintoak IKU
                 </div>
@@ -473,7 +431,7 @@ export default function Product() {
           </div>
           <div className=" desktop:hidden laptop:hidden">
             <Carousel
-              itemsToShow={itemsToShow}
+              itemsToShow={1}
               // verticalMode
               itemPadding={[0, 0, 0, 0]}
               enableMouseSwipe={true}
@@ -511,7 +469,11 @@ export default function Product() {
                     : "left-280 bottom-0 opacity-60 mobile:h-180 top-15"
                 }`}
               >
-                <Image src="/images/icons/omni.svg" height={110} width={273} />
+                <Image
+                  src="/images/icons/product-omni.svg"
+                  height={110}
+                  width={273}
+                />
                 <div className="font-bold text-252525 mobile:text-s16l19 text-center text-s24l29 mt-24">
                   Mintoak OMNI
                 </div>
@@ -529,7 +491,7 @@ export default function Product() {
                 }`}
               >
                 <Image
-                  src="/images/icons/pay_later.svg"
+                  src="/images/icons/product-pay_later.svg"
                   height={110}
                   width={273}
                 />
@@ -547,7 +509,11 @@ export default function Product() {
                     : "right-280 bottom-0 z-minus1 opacity-60 mobile:h-180 top-15"
                 }`}
               >
-                <Image src="/images/icons/iku.svg" height={148} width={273} />
+                <Image
+                  src="/images/icons/product-iku.svg"
+                  height={148}
+                  width={273}
+                />
                 <div className="font-bold text-252525 mobile:text-s16l19 text-center text-s24l29 mt-24">
                   Mintoak IKU
                 </div>

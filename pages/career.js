@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
-import { API, endpoints } from "../components/helpers/API"
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
-import Request_Demo from "./request_demo"
+import { useEffect, useState } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
+import { Chrono } from "react-chrono";
+import { API, endpoints } from "../components/helpers/API";
+import { Row, Col, Input, Select, Pagination, Checkbox } from "antd";
+import Request_Demo from "./request_demo";
 
 export default function Career() {
-  const { Option } = Select
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [careersBannerResp, setCareersBannerResp] = useState(null)
+  const { Option } = Select;
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [careersBannerResp, setCareersBannerResp] = useState(null);
   const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] =
-    useState(null)
+    useState(null);
   const [
     careerListingValuePropositionResp,
     setCareerListingValuePropositionResp,
-  ] = useState(null)
-  const [searchJob, setSearchJob] = useState("")
-  const [demoPopup, setDemoPopup] = useState(false)
+  ] = useState(null);
+  const [searchJob, setSearchJob] = useState("");
+  const [demoPopup, setDemoPopup] = useState(false);
   const [onBoardData, setOnBoardData] = useState([
     {
       url: "/images/backgrounds/img-11.svg",
@@ -50,7 +50,7 @@ export default function Career() {
       description:
         "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
     },
-  ])
+  ]);
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -106,42 +106,42 @@ export default function Career() {
       timing: "Full Time",
       location: "Mumbai",
     },
-  ])
+  ]);
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.careers_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setCareersBannerResp(resp)
+        setCareersBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_page_life_mintoak,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerPageLifeMintoakResp(resp)
+        setCareerPageLifeMintoakResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_listing_value_proposition,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerListingValuePropositionResp(resp)
+        setCareerListingValuePropositionResp(resp);
       }
-    })
+    });
     // career_listing_value_proposition
-  }, [])
+  }, []);
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b border-A4D77A">
@@ -393,7 +393,7 @@ export default function Career() {
             )
             ?.map((data, index) => (
               <Col xs={24} md={8} className="mb-30" key={index}>
-                <div className="px-20 pt-20 shadow-sm hover:bg-8FC055 drop-shadow border border-A8FC055 w-100% h-100% cursor-pointer">
+                <div className="px-20 pt-20 shadow-sm hover:bg-8FC055 card-shadow-career border border-A8FC055 w-100% h-100% cursor-pointer">
                   <div className="flex justify-between items-center">
                     <div>
                       <div className="desktop:text-s20l30 laptop:text-s20l24 mobile:text-s12l18 text-A8FC055">
@@ -409,13 +409,21 @@ export default function Career() {
                   </div>
                   <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-488">
                     <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
-                      <Image src="/images/icons/bag.svg" type="img" className="h-25 w-25" />
+                      <Image
+                        src="/images/icons/bag.svg"
+                        type="img"
+                        className="h-25 w-25"
+                      />
                       <span className="pl-5 mobile:text-s12l24 text-s20l40">
                         {data.timing}
                       </span>
                     </span>
                     <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg px-13 flex items-center">
-                      <Image src="/images/icons/location.svg" type="img" className="h-25 w-25" />
+                      <Image
+                        src="/images/icons/location.svg"
+                        type="img"
+                        className="h-25 w-25"
+                      />
                       <span className="pl-5 text-s20l40">{data.location}</span>
                     </span>
                   </div>
@@ -446,12 +454,12 @@ export default function Career() {
                   <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 ) : (
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                )
+                );
               return (
                 <button onClick={onClick} disabled={isEdge}>
                   {pointer}
                 </button>
-              )
+              );
             }}
           >
             {onBoardData.map((data, index) => (
@@ -499,13 +507,13 @@ export default function Career() {
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   </div>
                 </>
-              )
+              );
               // );
               return (
                 <button onClick={onClick} disabled={isEdge}>
                   {pointer}
                 </button>
-              )
+              );
               // return (
               // <div className="flex">
               //   {pages.map((page) => {
@@ -548,5 +556,5 @@ export default function Career() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
