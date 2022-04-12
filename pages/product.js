@@ -39,7 +39,7 @@ export default function Product() {
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
-        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 z-10 mobile:w-100% mobile:p-20 ">
+        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">
           <div className="w-100%">
             <Image
               src="/images/icons/aim.svg"
@@ -58,17 +58,17 @@ export default function Product() {
             business owner.
           </div>
         </div>
-        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:pl-50 pr-200 desktop:pt-175 desktop:pb-90 mobile:w-100%">
-          <div className="flex flex-col justify-between items-end h-100% mobile:h-270 w-100% mobile:px-20">
+        <div className="desktop:w-50% laptop:w-50% flex items-start justify-center desktop:pl-50 pr-200  mobile:pr-0 desktop:pt-175 desktop:pb-90 mobile:w-100%">
+          <div className="flex flex-col justify-between items-end  mobile:items-start h-100% mobile:h-270 w-100% mobile:px-20">
             <div className="flex items-center">
               <div>
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
+                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 mobile:font-normal font-semibold">
                 Credit-to-Bank Information
               </div>
             </div>
@@ -77,10 +77,10 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
+                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24  w-355 mobile:w-200 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200  mobile:font-normal font-semibold">
                 Interactive Dashboards & Business Insights
               </div>
             </div>
@@ -89,10 +89,10 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-72 mobile:w-72 desktop:mr-32"
+                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24  w-355 mobile:w-200 font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-260 mobile:font-normal font-semibold">
                 Multi-location Consolidated View & Location-level Drill Down
               </div>
             </div>

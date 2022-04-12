@@ -237,8 +237,7 @@ export default function Home() {
             renderPagination={mobileCarouselPagination}
           >
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.Merchants}{" "}
-              <span className="text-A4D77A">+</span>
+              {metricsResp?.Merchants} <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 Merchants
               </div>
@@ -253,8 +252,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center text-s36l43 mobile:text-s14l17 text-252525">
-              {metricsResp?.GMVAnnuals}{" "}
-              <span className="text-A4D77A">+</span>
+              {metricsResp?.GMVAnnuals} <span className="text-A4D77A">+</span>
               <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10 mobile:hidden">
                 GMV Annuals
               </div>
@@ -271,8 +269,9 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"
-                  }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0 mobile:pr-29 mobile:pl-9`}
+                className={`mobile:flex mobile:pt-${
+                  index != 0 ? "30" : "10"
+                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0 mobile:pr-29 mobile:pl-9`}
               >
                 <Image
                   src={item.Icon}
@@ -304,8 +303,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -327,8 +327,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -439,7 +440,7 @@ export default function Home() {
               </div>
               <div className="w-50% mobile:w-100% flex items-center justify-center">
                 <Image
-                  src='/images/backgrounds/mobile-bank.svg'
+                  src="/images/backgrounds/mobile-bank.svg"
                   height={650}
                   width={500}
                 />
@@ -448,7 +449,6 @@ export default function Home() {
           </div>
           <div className="p-0 border-b border-8B8B8B"></div>
           <div className="flex mobile:block w-100% desktop:hidden laptop:hidden mobile:px-20">
-
             <div
               className={
                 "flex items-center text-F1F1F1 w-50% mobile:w-100% pt-40 cursor-pointer "
@@ -477,7 +477,7 @@ export default function Home() {
                 {homeForMerchant?.CTA2}
               </div>
               <Image
-                src='/images/backgrounds/mobile-merchat.svg'
+                src="/images/backgrounds/mobile-merchat.svg"
                 height={650}
                 width={500}
               />
@@ -541,7 +541,7 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
+                className=" mobile:w-290 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
               >
                 <div className="flex justify-center items-center  w-100%">
                   <Image src={item.BankLogo} className="w-150 h-100" />
