@@ -7,6 +7,14 @@ export default function Contact() {
   const { Option } = Select;
   const [modalvisible, setmodalVisible] = useState(false);
   const [contactUsFindUsAt, setContactUsFindUsAt] = useState(null);
+  const [fullName, setFullName] = useState(null)
+  const [contactNo, setContactNo] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [domain, setDomain] = useState(null);
+  const [msg, setMsg] = useState(null);
+  const [bankName, setBankName] = useState(null);
+  const [validate, setValidate] = useState(true);
+  const [title, setTitle] = useState(null)
 
   useEffect(() => {
     API({
@@ -17,6 +25,61 @@ export default function Contact() {
       }
     });
   }, []);
+
+  const handleSubmit = () => {
+    let tempVal = true;
+    if (fullName === null || fullName === '') {
+      setValidate(false);
+      tempVal = false;
+      console.log(1);
+    }
+    if (contactNo === null || contactNo === '') {
+      tempVal = false;
+      console.log(2);
+      setValidate(false);
+    }
+    if (email === null || email === '') {
+      tempVal = false;
+      console.log(3);
+      setValidate(false);
+    } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      tempVal = false;
+      console.log(4);
+      setValidate(false);
+    }
+    if (domain === null || domain === '') {
+      setValidate(false);
+      console.log(5);
+      tempVal = false;
+    }
+    // if (bankName === null || bankName === '') {
+    //   setValidate(false);
+    //   tempVal = false;
+    // }
+    if (msg === null || msg === '') {
+      setValidate(false);
+      console.log(6);
+      tempVal = false;
+    }
+    // if (title === null || title === '') {
+    //   setValidate(false);
+    //   console.log(7);
+    //   tempVal = false;
+    // }
+    if (tempVal) {
+      setValidate(true);
+      handleClearAll();
+      setmodalVisible(true);
+    }
+  }
+
+  const handleClearAll = () => {
+    setFullName('');
+    setEmail('');
+    setContactNo('');
+    setDomain('');
+    setMsg('');
+  }
 
   return (
     <>
@@ -70,6 +133,8 @@ export default function Contact() {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
+                value={fullName}
+                onChange={(e) => { setFullName(e.target.value); }}
               />
             </div>
             <div className="pb-40">
@@ -79,6 +144,8 @@ export default function Contact() {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); }}
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
@@ -88,6 +155,8 @@ export default function Contact() {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={bankName}
+                onChange={(e) => { setBankName(e.target.value); }}
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
@@ -97,6 +166,8 @@ export default function Contact() {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={title}
+                onChange={(e) => { setTitle(e.target.value); }}
               />
             </div>
             <div className="pb-40">
@@ -109,6 +180,8 @@ export default function Contact() {
               <input
                 type="number"
                 className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                value={contactNo}
+                onChange={(e) => { setContactNo(e.target.value); }}
               />
             </div>
             <div className="pb-40 global-demo">
@@ -124,6 +197,8 @@ export default function Contact() {
                 }}
                 placeholder="Select"
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                value={domain}
+                onChange={(e) => { setDomain(e.target) }}
               >
                 <Option
                   className="global-option-demo"
@@ -133,9 +208,18 @@ export default function Contact() {
                 >
                   Select
                 </Option>
+                <Option
+                  className="global-option-demo"
+                  style={{
+                    backgroundColor: "transparent",
+                  }}
+                  value="test"
+                >
+                  Test
+                </Option>
               </Select>
             </div>
-            <div className="pb-40">
+            <div className="pb-20">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Message
               </div>
@@ -143,10 +227,21 @@ export default function Contact() {
                 type="text"
                 placeholder="Enter your message"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={msg}
+                onChange={(e) => { setMsg(e.target.value) }}
               />
             </div>
+            <div className="py-18 flex">
+              {validate === false && <>
+                <Image src="/images/backgrounds/warn.svg" height={20} width={18} />
+                <div className="text-EC5F22 text-s18l22 pl-10">
+                  Please enter all the necessary details to submit the form.
+                </div>
+
+              </>}
+            </div>
             <div
-              onClick={() => setmodalVisible(true)}
+              onClick={() => { handleSubmit(); }}
               className="button desktop:text-s22l26_4 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10 mobile:px-98 desktop:py-15 desktop:px-176 laptop:py-15 laptop:px-176"
             >
               Submit

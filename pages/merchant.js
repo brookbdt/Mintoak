@@ -208,7 +208,7 @@ export default function Merchant() {
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
-      <div className=" w-100% mobile:mt-0 mobile:pb-0">
+      <div className=" w-100% mobile:mt-0 mobile:pb-0 bg-E0EFD4">
         <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
           <div className="flex flex-col">
             <Swiper
