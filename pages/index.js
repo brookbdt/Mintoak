@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Carousel from "react-elastic-carousel";
 import Image from "../components/helpers/Image";
 import Request_Demo from "./request_demo";
@@ -6,12 +6,19 @@ import { consts } from "react-elastic-carousel";
 import { Collapse } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Item from "antd/lib/list/Item";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+import "swiper/css";
+
+import Sticky from "react-sticky-el";
+SwiperCore.use([Mousewheel, Pagination]);
 
 const { Panel } = Collapse;
 
 export default function Home() {
   const [demoPopup, setDemoPopup] = useState(false);
-  const [activeindex, setActiveIndex] = useState();
+  const [activeindex, setActiveIndex] = useState(1);
   const [isBORM, setIsBORM] = useState("b");
   const [homeBannerResp, setHomeBannerResp] = useState({});
   const [metricsResp, setMetricsResp] = useState({});
@@ -23,6 +30,9 @@ export default function Home() {
   const [homepageMediaCards, setHomepageMediaCards] = useState([]);
   const [faq, setFaq] = useState([]);
   const [homePageBlogs, setHomePageBlogs] = useState([]);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const founder = useRef(null);
+  const swiper = useSwiper();
   const month = [
     "Jan",
     "Feb",
@@ -604,8 +614,70 @@ export default function Home() {
               })}
             </Carousel>
           </div>
-          <div className="flex items-center w-100% py-40 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
-            <Carousel
+          <div className="flex achievement-swiper items-center w-100% py-40 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
+            <Swiper
+              slidesPerView={2}
+              ref={founder}
+              pagination={{
+                clickable: true,
+              }}
+              initialSlide={1}
+              refs={founder}
+              centeredSlides={true}
+              grabCursor={true}
+              modules={[Mousewheel, Pagination]}
+              onSwiper={setSwiperInstance}
+              onSlideChange={(e) => {
+                // setActiveTab(e.activeIndex);
+                setActiveIndex(e.activeIndex);
+                // console.log(e.activeIndex, "sliderchange");
+              }}
+            >
+              {homepageAchievements.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    onClick={() => {
+                      setActiveIndex(index);
+                      founder.current?.swiper.slideTo(index);
+                      // founder.swiper
+                    }}
+                  >
+                    <div
+                      className={`flex flex-col items-center bg-313131 ${
+                        activeindex == index
+                          ? "pt-30 pb-27 w-280 h-221 z-minus1 shadow-achievement border border-C4C4C4"
+                          : "pt-19 pb-20 h-170 w-210 border-t border-b border-C4C4C4 opacity-50"
+                      }`}
+                    >
+                      <Image
+                        src={item.CertificateIcon}
+                        type="img"
+                        className={`${
+                          activeindex == index ? "w-175 h-80" : "w-147 h-37"
+                        }`}
+                      />
+
+                      <div
+                        className={`font-bold text-DFDFDF text-center text-s16l19 ${
+                          activeindex == index ? "pt-18" : "pt-13"
+                        }`}
+                      >
+                        {item?.Title}
+                      </div>
+                      <div
+                        className={`text-DFDFDF text-center mt-12 text-s12l18 ${
+                          activeindex == index ? "px-50" : "px-20"
+                        }`}
+                      >
+                        {item?.Description}
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            {/* <Carousel
               itemsToShow={1}
               itemPadding={[0, 0]}
               enableMouseSwipe={true}
@@ -654,7 +726,7 @@ export default function Home() {
                   </div>
                 );
               })}
-            </Carousel>
+            </Carousel> */}
           </div>
         </div>
 

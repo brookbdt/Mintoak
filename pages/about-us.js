@@ -6,6 +6,7 @@ import Request_Demo from "./request_demo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import { useSwiper } from "swiper/react";
+import "swiper/css";
 import Sticky from "react-sticky-el";
 SwiperCore.use([Mousewheel, Pagination]);
 
@@ -20,8 +21,10 @@ export default function About() {
   const [founderResp, setFounderResp] = useState([]);
   const [teamInfoResp, setTeamInfoResp] = useState({});
   const [activeTab, setActiveTab] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState();
   const founder = useRef(null);
+  const founderRes = useRef(null);
   const swiper = useSwiper();
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -93,7 +96,7 @@ export default function About() {
     });
   }, []);
 
-  function goToPage(numberPage) { }
+  function goToPage(numberPage) {}
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -217,8 +220,9 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
-                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                  index != principalResp.length - 1 && ""
+                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -248,13 +252,13 @@ export default function About() {
           </div>
         </div>
         <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
-          <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 ">
+          <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 mobile:hidden">
             <Carousel
               itemsToShow={6.5}
               showArrows={false}
               itemPadding={[0, 4, 0, 0]}
               enableAutoPlay={false}
-              className="flex itmes-center justify-center h-439 p-0"
+              className="flex itmes-center justify-center desktop:h-439 mobile:h-169 p-0"
               pagination={false}
               style={{
                 background: "url(/images/backgrounds/reel-img.svg)",
@@ -396,13 +400,84 @@ export default function About() {
             </Carousel>
           </div>
         </div>
+        <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 desktop:hidden laptop:hidden">
+          <Carousel
+            itemsToShow={3}
+            showArrows={false}
+            itemPadding={[0, 0, 0, 0]}
+            enableAutoPlay={false}
+            className="flex itmes-center justify-center h-169 p-0"
+            pagination={false}
+            style={{
+              background: "url(/images/backgrounds/reel-bg-mobile.svg)",
+            }}
+          >
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/Megha.svg"
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl "
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/Janine.svg"
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl"
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/kunal.svg "
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl"
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+          </Carousel>
+        </div>
       </div>
 
       {/* Our founders */}
       {/* <Sticky disabled={activeTab + 1 == founderResp.length ? true : false}> */}
       <div
         id="founder"
-        className="w-100%  bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
+        className="mobile:hidden w-100% bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
       >
         <div className="flex flex-col">
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
@@ -476,14 +551,16 @@ export default function About() {
                   <div className="flex h-190">
                     <div className="w-55% text-right">
                       <div
-                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
-                          } text-s20l30 text-F1F1F1`}
+                        className={`${
+                          activeTab == index ? "text-s24l150" : "text-s20l150"
+                        } text-s20l30 text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
-                          } text-s20l150`}
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -491,10 +568,11 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${activeTab == index
-                            ? "w-27 h-27 bg-F1F1F1 "
-                            : "w-17 h-16 bg-949494"
-                            } rounded-full bg-opacity-100 `}
+                          className={`${
+                            activeTab == index
+                              ? "w-27 h-27 bg-F1F1F1 "
+                              : "w-17 h-16 bg-949494"
+                          } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
@@ -507,23 +585,180 @@ export default function About() {
           </div>
         </div>
       </div>
-      {/* </Sticky> */}
-      <div className=" border-F1F1F1 border-t"></div>
-      <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s22l33 text-000000">Our founders</div>
-        <div className="flex">
-          {founderResp &&
-            founderResp.map((item, index) => (
-              <div key={index}>
-                <Image src={item.FounderImage} height={660} width={529} />
-              </div>
-            ))}
+      <div className="w-100% flex flex-col items-center pl-20 pr-45 bg-footer py-35 desktop:hidden laptop:hidden">
+        <div className="py-5">
+          <Image
+            src="/images/backgrounds/raman khanduja.svg"
+            height={660}
+            width={529}
+            type="img"
+          />
         </div>
-        <div>
-          <div>Raman Khanduja</div>
-          <div>Chief Executive</div>
+        <div className="flex w-100% flex-col py-20 text-left">
+          <span className="text-s20l24 text-FFFFFF font-bold pb-10">
+            Raman Khanduja
+          </span>
+          <span className="text-s16l19 text-FFFFFF font-medium">
+            Chief Executive
+          </span>
+        </div>
+        <div className="text-s14l21 text-FFFFFF text-left tracking-widest opacity-80">
+          Raman has over 19 years of corporate experience in financial services
+          and payments. Before taking the entrepreneurial leap, Raman was head
+          of Business Development at Visa and worked with leading financial
+          institutions in India. Prior to Visa, Raman has experience in retail
+          strategy, portfolio management, analytics and consulting across HDFC
+          Bank, Centurion Bank, American Express and Pricewaterhouse Coopers.
+          Raman has an MBA from Indian Institute of Management, Calcutta and a
+          Bachelor in Mechanical Engineering from T.I.E.T, Patiala
         </div>
       </div>
+      {/* </Sticky> */}
+      <div className=" border-F1F1F1 border-t"></div>
+      {/* <div className="desktop:hidden laptop:hidden">
+        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-5">
+          Our founders
+        </div>
+        <div className="mobile_swiper">
+          <Swiper
+            slidesPerView={4}
+            ref={founderRes}
+            initialSlide={1}
+            pagination={{ clickable: true }}
+            centeredSlides={true}
+            grabCursor={true}
+            modules={[Mousewheel, Pagination]}
+            onSwiper={setSwiperInstance}
+            onSlideChange={(e) => {
+              // setActiveTab(e.activeIndex);
+              setActiveIndex(e.activeIndex);
+              // console.log(e.activeIndex, "sliderchange");
+            }}
+          >
+            <SwiperSlide
+              key={0}
+              onClick={() => {
+                setActiveIndex(0);
+                founderRes.current?.swiper.slideTo(0);
+                // founder.swiper
+              }}
+            >
+              <div className={`py-5 ${activeIndex == 0 ? "" : ""}`}>
+                <div className="bg-525252">
+                  <Image
+                    src="/images/backgrounds/founder-img.svg"
+                    type="img"
+                    className={`h-205 w-201 object-cover
+                            ${
+                              activeIndex == 0
+                                ? "shadow-img-slide"
+                                : "h-163 w-158 opacity-40"
+                            }`}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide
+              key={1}
+              onClick={() => {
+                setActiveIndex(1);
+                founderRes.current?.swiper.slideTo(1);
+                // founder.swiper
+              }}
+            >
+              <div className={`py-5 ${activeIndex == 1 ? "" : ""}`}>
+                <div className="bg-525252">
+                  <Image
+                    src="/images/backgrounds/raman khanduja.svg"
+                    type="img"
+                    className={`h-205 w-201
+                            object-cover ${
+                              activeIndex == 1
+                                ? "shadow-img-slide "
+                                : "h-163 w-158 opacity-40"
+                            }`}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide
+              key={2}
+              onClick={() => {
+                setActiveIndex(2);
+                founderRes.current?.swiper.slideTo(2);
+                // founder.swiper
+              }}
+            >
+              <div className={`py-5 ${activeIndex == 2 ? "" : ""}`}>
+                <div className="bg-525252">
+                  <Image
+                    src="/images/backgrounds/Kabir-img.svg"
+                    type="img"
+                    className={`h-205 w-201 object-cover
+                            ${
+                              activeIndex == 2
+                                ? "shadow-img-slide "
+                                : "h-163 w-158 opacity-40"
+                            }`}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide
+              key={3}
+              onClick={() => {
+                setActiveIndex(3);
+                founderRes.current?.swiper.slideTo(3);
+                // founder.swiper
+              }}
+            >
+              <div className={`py-5 ${activeIndex == 3 ? "" : ""}`}>
+                <div className="bg-525252">
+                  <Image
+                    src="/images/backgrounds/founder-img.svg"
+                    type="img"
+                    className={`h-205 w-201 object-cover
+                            ${
+                              activeIndex == 3
+                                ? "shadow-img-slide "
+                                : "h-163 w-158 opacity-40"
+                            }`}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide
+              key={4}
+              onClick={() => {
+                setActiveIndex(4);
+                founderRes.current?.swiper.slideTo(4);
+                // founder.swiper
+              }}
+            >
+              <div className={`py-5 ${activeIndex == 4 ? "" : ""}`}>
+                <div className="bg-525252">
+                  <Image
+                    src="/images/backgrounds/raman khanduja.svg"
+                    type="img"
+                    className={`h-205 w-201
+                            object-cover ${
+                              activeIndex == 4
+                                ? "shadow-img-slide "
+                                : "h-163 w-158 opacity-40"
+                            }`}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className="flex flex-col items-center pb-80">
+          <span className="text-s17l25 text-252525 font-bold">
+            Raman Khanduja
+          </span>
+          <span className="text-s16l24 text-525252 ">Chief Executive</span>
+        </div>
+      </div> */}
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}

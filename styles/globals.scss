@@ -888,6 +888,26 @@ button[disabled] {
   }
 }
 .global-demo {
+  @media only screen and (min-width: 1366px) {
+    .ant-select-selection-item {
+      font-size: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+  
+    .ant-select-selection-item {
+      font-size: 14px;
+    }
+  
+    .ant-select-selection-placeholder {
+      font-size: 14px;
+    }
+  
+    .ant-select-arrow {
+      font-size: 14px;
+    }
+  }
   .career-label {
     font-size: 130%;
   }
@@ -988,17 +1008,7 @@ button[disabled] {
     font-size: 120%;
   }
 
-  @media only screen and (min-width: 1366px) {
-    .ant-select-selection-item{
-      font-size: 20px;
-    }
-  }
-  @media only screen and (max-width: 400px) {
-   
-    .ant-select-selection-item{
-      font-size: 14px;
-    }
-  }
+  
   .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
     border: none;
     border-bottom: 2px solid #a4d77a;
@@ -1161,15 +1171,91 @@ height: 100% !important;
 .mySwiper::-webkit-scrollbar {
   display: none;
 }
+.mySwiper{
+.swiper-slide.swiper-slide-active {
+  height: 850px !important;
+}
+}
+.mobile_swiper{
+  .swiper {
+    width: 100%;
+    height: 276px;
+    display: flex;
+    justify-content: center;
+ 
+  }
+  .swiper-wrapper{
+    margin-left: -110px;
+  }
+  .swiper-slide {
+    // text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .swiper-slide.swiper-slide-active {
+    width: 201px !important;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
+.achievement-swiper{
+  .swiper {
+    width: 100%;
+    height: 276px;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .swiper-wrapper {
+    margin-left: -100px;
+  }
+  
+  .swiper-slide {
+    // text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide.swiper-slide-active {
+    width: 280px !important;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
 .border-rounded {
   border-radius: 50%;
 }
 .shadoff {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
-.swiper-slide.swiper-slide-active {
-  height: 850px !important;
-}
+
 .progress-bar .ant-progress-circle {
   background: linear-gradient(163.57deg, #a7cd7e 11.39%, rgba(123, 205, 37, 0) 95.33%);
   border-radius: 50%;
@@ -1244,6 +1330,9 @@ textarea {
 padding-top: 0px !important;
 padding-bottom: 0px !important;
 }
-.shadow-bankbox{
-  box-shadow: 0px 0px 7.67398px rgb(37 37 37 / 8%);
+.shadow-img-slide{
+  box-shadow: 0px 5px 11px 0px rgb(0 0 0 / 50%);
+}
+.shadow-achievement{
+  box-shadow: 1.41026px 7.05128px 7.05128px rgba(0, 0, 0, 0.1);
 }

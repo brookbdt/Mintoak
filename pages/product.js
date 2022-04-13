@@ -429,7 +429,7 @@ export default function Product() {
               </div>
             </Carousel>
           </div>
-          <div className=" desktop:hidden laptop:hidden">
+          <div className="desktop:hidden laptop:hidden">
             <Carousel
               itemsToShow={1}
               // verticalMode
