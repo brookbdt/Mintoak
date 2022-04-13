@@ -9,55 +9,52 @@ export default function Contact() {
           Privacy Policy
         </div>
       </div>
-      <div>
-        <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
-          We value your trust in Mintoak
-        </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
-          This Privacy Policy describes the information Mintoak Innovations
-          Private Limited (called, “Mintoak” or “we” or “us) collect when a
-          person or business (called “covered person” “ or “you” and “your”)
-          applies or signs up for Mintoak Account (called, “Merchant Account” or
-          “Mintoak Services” or “Services” or “Account”), including through an
-          EDC terminal (called, “POS terminal” or “Device”) and mobile
-          application and software (called, “App”) or visits{""}
-          <div className="text-8CC63E">http://www.mintoak.com</div> (called,
-          “Website”). This Privacy Policy explains how we collect, use and share
-          your personal information.
-          <br />
-          <br /> By applying or signing up for a Mintoak Account online,
-          including through the Device or mobile or computer and using our
-          device and services, you accept the terms of this Privacy Policy and
-          agree to our collection, use, sharing and storing of your information
-          as described herein. If you do not agree to the terms of this Privacy
-          Policy, please do not use or access our Website/Device and/or
-          services. By mere use of or access to our Website/Device and/or
-          services, you expressly consent to our use and disclosure of your
-          personal information in accordance with this Privacy Policy. This
-          Privacy Policy is incorporated into and subject to the Terms of Use
-        </div>
-        <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
-          Who is covered in the policy
-        </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
-          All persons or business, whose information is either collected/
-          received/ possessed/ stored/ dealt in/ handled by Mintoak and who
-          visit the site{" "}
-          <span className="text-8CC63E">http://www.mintoak.com</span> and
-          provide information to Mintoak online are covered under this Policy.
-        </div>
-        <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
-          Information covered by this policy
-        </div>
-        <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
-          This Policy seeks to cover “information”, of the Covered Persons,
-          provided to Mintoak as also any information collected by the Mintoak
-          server from the visitors browser or through the Mintoak
-          Device/applications. The ("Information"), i.e. any of the following:
-          Personal/private/financial/business/demographic information of the
-          covered persons, during signing up process or when you apply or sign
-          up for our Services. Sensitive personal data or information.
-        </div>
+      <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
+        We value your trust in Mintoak
+      </div>
+      <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
+        This Privacy Policy describes the information Mintoak Innovations
+        Private Limited (called, “Mintoak” or “we” or “us) collect when a person
+        or business (called “covered person” “ or “you” and “your”) applies or
+        signs up for Mintoak Account (called, “Merchant Account” or “Mintoak
+        Services” or “Services” or “Account”), including through an EDC terminal
+        (called, “POS terminal” or “Device”) and mobile application and software
+        (called, “App”) or visits{""}
+        <div className="text-8CC63E">http://www.mintoak.com</div> (called,
+        “Website”). This Privacy Policy explains how we collect, use and share
+        your personal information.
+        <br />
+        <br /> By applying or signing up for a Mintoak Account online, including
+        through the Device or mobile or computer and using our device and
+        services, you accept the terms of this Privacy Policy and agree to our
+        collection, use, sharing and storing of your information as described
+        herein. If you do not agree to the terms of this Privacy Policy, please
+        do not use or access our Website/Device and/or services. By mere use of
+        or access to our Website/Device and/or services, you expressly consent
+        to our use and disclosure of your personal information in accordance
+        with this Privacy Policy. This Privacy Policy is incorporated into and
+        subject to the Terms of Use
+      </div>
+      <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
+        Who is covered in the policy
+      </div>
+      <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
+        All persons or business, whose information is either collected/
+        received/ possessed/ stored/ dealt in/ handled by Mintoak and who visit
+        the site <span className="text-8CC63E">http://www.mintoak.com</span> and
+        provide information to Mintoak online are covered under this Policy.
+      </div>
+      <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
+        Information covered by this policy
+      </div>
+      <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 mobile:pb-40">
+        This Policy seeks to cover “information”, of the Covered Persons,
+        provided to Mintoak as also any information collected by the Mintoak
+        server from the visitors browser or through the Mintoak
+        Device/applications. The ("Information"), i.e. any of the following:
+        Personal/private/financial/business/demographic information of the
+        covered persons, during signing up process or when you apply or sign up
+        for our Services. Sensitive personal data or information.
         <div className="mobile:text-s16l24 desktop:text-s32l45 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 mobile:pb-12 font-semibold">
           Definitions used in this policy
         </div>

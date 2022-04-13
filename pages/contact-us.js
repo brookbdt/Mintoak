@@ -7,14 +7,14 @@ export default function Contact() {
   const { Option } = Select;
   const [modalvisible, setmodalVisible] = useState(false);
   const [contactUsFindUsAt, setContactUsFindUsAt] = useState(null);
-  const [fullName, setFullName] = useState(null)
+  const [fullName, setFullName] = useState(null);
   const [contactNo, setContactNo] = useState(null);
   const [email, setEmail] = useState(null);
   const [domain, setDomain] = useState(null);
   const [msg, setMsg] = useState(null);
   const [bankName, setBankName] = useState(null);
   const [validate, setValidate] = useState(true);
-  const [title, setTitle] = useState(null)
+  const [title, setTitle] = useState(null);
 
   useEffect(() => {
     API({
@@ -28,17 +28,17 @@ export default function Contact() {
 
   const handleSubmit = () => {
     let tempVal = true;
-    if (fullName === null || fullName === '') {
+    if (fullName === null || fullName === "") {
       setValidate(false);
       tempVal = false;
       console.log(1);
     }
-    if (contactNo === null || contactNo === '') {
+    if (contactNo === null || contactNo === "") {
       tempVal = false;
       console.log(2);
       setValidate(false);
     }
-    if (email === null || email === '') {
+    if (email === null || email === "") {
       tempVal = false;
       console.log(3);
       setValidate(false);
@@ -47,7 +47,7 @@ export default function Contact() {
       console.log(4);
       setValidate(false);
     }
-    if (domain === null || domain === '') {
+    if (domain === null || domain === "") {
       setValidate(false);
       console.log(5);
       tempVal = false;
@@ -56,7 +56,7 @@ export default function Contact() {
     //   setValidate(false);
     //   tempVal = false;
     // }
-    if (msg === null || msg === '') {
+    if (msg === null || msg === "") {
       setValidate(false);
       console.log(6);
       tempVal = false;
@@ -71,15 +71,15 @@ export default function Contact() {
       handleClearAll();
       setmodalVisible(true);
     }
-  }
+  };
 
   const handleClearAll = () => {
-    setFullName('');
-    setEmail('');
-    setContactNo('');
-    setDomain('');
-    setMsg('');
-  }
+    setFullName("");
+    setEmail("");
+    setContactNo("");
+    setDomain("");
+    setMsg("");
+  };
 
   return (
     <>
@@ -94,7 +94,7 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <div className="pt-40 w-100% flex mobile:px-33">
+            <div className="desktop:pl-180 laptop:pl-106 pt-40 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/call-icon.svg"
@@ -107,7 +107,7 @@ export default function Contact() {
                 {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
-            <div className="mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
+            <div className="desktop:pl-180 laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/mail-icon.svg"
@@ -135,7 +135,9 @@ export default function Contact() {
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
                 value={fullName}
-                onChange={(e) => { setFullName(e.target.value); }}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40">
@@ -146,7 +148,9 @@ export default function Contact() {
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={email}
-                onChange={(e) => { setEmail(e.target.value); }}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
@@ -157,7 +161,9 @@ export default function Contact() {
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={bankName}
-                onChange={(e) => { setBankName(e.target.value); }}
+                onChange={(e) => {
+                  setBankName(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40 desktop:hidden laptop:hidden">
@@ -168,7 +174,9 @@ export default function Contact() {
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={title}
-                onChange={(e) => { setTitle(e.target.value); }}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40">
@@ -182,7 +190,9 @@ export default function Contact() {
                 type="number"
                 className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
                 value={contactNo}
-                onChange={(e) => { setContactNo(e.target.value); }}
+                onChange={(e) => {
+                  setContactNo(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40 global-demo">
@@ -199,7 +209,9 @@ export default function Contact() {
                 placeholder="Select"
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 value={domain}
-                onChange={(e) => { setDomain(e.target) }}
+                onChange={(e) => {
+                  setDomain(e.target);
+                }}
               >
                 <Option
                   className="global-option-demo"
@@ -229,20 +241,29 @@ export default function Contact() {
                 placeholder="Enter your message"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={msg}
-                onChange={(e) => { setMsg(e.target.value) }}
+                onChange={(e) => {
+                  setMsg(e.target.value);
+                }}
               />
             </div>
             <div className="py-18 flex">
-              {validate === false && <>
-                <Image src="/images/backgrounds/warn.svg" height={20} width={18} />
-                <div className="text-EC5F22 text-s18l22 pl-10">
-                  Please enter all the necessary details to submit the form.
-                </div>
-
-              </>}
+              {validate === false && (
+                <>
+                  <Image
+                    src="/images/backgrounds/warn.svg"
+                    height={20}
+                    width={18}
+                  />
+                  <div className="text-EC5F22 text-s18l22 pl-10">
+                    Please enter all the necessary details to submit the form.
+                  </div>
+                </>
+              )}
             </div>
             <div
-              onClick={() => { handleSubmit(); }}
+              onClick={() => {
+                handleSubmit();
+              }}
               className="button desktop:text-s22l26_4 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10 mobile:px-98 desktop:py-15 desktop:px-176 laptop:py-15 laptop:px-176"
             >
               Submit

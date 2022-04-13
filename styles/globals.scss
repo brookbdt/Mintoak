@@ -106,7 +106,6 @@ a {
 .merchant-liner-bg {
   background-image: linear-gradient(to top left, #19191a, #353537, #575757, #797979);
 }
-
 .merchant-bg {
   background-color: #f4fbf3;
 }
@@ -284,7 +283,6 @@ button[disabled] {
     background-color: #dfefd4;
     border: 1px solid #8fc055;
   }
-
   .ant-input {
     background-color: #dfefd4;
     font-size: 20px;
@@ -618,6 +616,7 @@ button[disabled] {
   border-color: #525252;
   justify-content: center;
   background-color: transparent;
+  
 }
 .custom-pagination .ant-pagination-next {
   border-color: #525252;
@@ -658,6 +657,7 @@ button[disabled] {
 .ant-pagination-jump-prev,
 .ant-pagination-jump-next {
   height: auto !important;
+  
 }
 // ================== FAQ CUSTOM PAGINATION START ================
 
