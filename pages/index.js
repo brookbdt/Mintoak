@@ -361,7 +361,7 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12" onClick={() => { router.push('/partner-with-us') }}>
                       {homeForBanksResp?.CTA2}
                     </div>
                   </div>
@@ -433,7 +433,7 @@ export default function Home() {
                   {homeForBanksResp?.CTA1}
                 </span>
               </div>
-              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40" onClick={() => { router.push('/partner-with-us') }}>
                 {" "}
                 {homeForBanksResp?.CTA2}
               </div>

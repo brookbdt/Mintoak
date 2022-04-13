@@ -294,7 +294,7 @@ export default function BlogDetail() {
             </div>
           </div>
         </div>
-        <div className="pt-20 flex justify-end w-100% mobile:hidden">
+        <div className="pt-20 flex justify-end w-100% mobile:hidden pl-80">
           <div>
             <div>
               <Image
@@ -307,7 +307,7 @@ export default function BlogDetail() {
               </div>
             </div>
             <div className="mt-24 flex justify-center">
-              <div className="px-13 border border-2 border-C4C4C4 w-26"></div>
+              <div className="px-13 border border-2 border-solid rounded-sm bg-C4C4C4 border-C4C4C4 w-26"></div>
             </div>
             <div className="pt-24">
               <Image
@@ -320,7 +320,7 @@ export default function BlogDetail() {
               </div>
             </div>
             <div className="mt-24 flex justify-center">
-              <div className="px-13 border border-2 border-C4C4C4 w-26"></div>
+              <div className="px-13 border border-2  border-solid rounded-sm bg-C4C4C4 border-C4C4C4 w-26"></div>
             </div>
             <div className="pt-24">
               <Image
@@ -333,7 +333,7 @@ export default function BlogDetail() {
               </div>
             </div>
             <div className="mt-24 flex justify-center">
-              <div className="px-13 border border-2 border-C4C4C4 w-26"></div>
+              <div className="px-13 border border-2  border-solid rounded-sm bg-C4C4C4 border-C4C4C4 w-26"></div>
             </div>
           </div>
         </div>
