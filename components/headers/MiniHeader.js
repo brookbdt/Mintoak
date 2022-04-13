@@ -1,11 +1,17 @@
-import React, { useState } from "react"
-import Image from "../helpers/Image"
+import React, { useState } from "react";
+import Image from "../helpers/Image";
+import { useRouter } from "next/router";
 
 export default function MiniHeader(headerProps) {
-  const iconSize = 20
-  const { showMobileMenu, setShowMobileMenu } = headerProps
-  const [activeMenu, setActiveMenu] = useState("menu")
-  const [activeProductsMenu, setActiveProductsMenu] = useState("")
+  const iconSize = 20;
+  const { showMobileMenu, setShowMobileMenu } = headerProps;
+  const [activeMenu, setActiveMenu] = useState("menu");
+  const [activeProductsMenu, setActiveProductsMenu] = useState("");
+  const router = useRouter();
+
+  const TogglePopup = () => {
+    setDemoPopup(false);
+  };
 
   const renderPaymentsStack = () => {
     return (
@@ -211,13 +217,16 @@ export default function MiniHeader(headerProps) {
 
         <div className="w-100% h-1 bg-8CC63E opacity-20" />
       </>
-    )
-  }
+    );
+  };
 
   const renderResources = () => {
     return (
       <>
-        <div className="flex pl-8 py-9 pt-15 items-center cursor-pointer">
+        <div
+          className="flex pl-8 py-9 pt-15 items-center cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/images/icons/blog.svg"
             height={iconSize}
@@ -226,7 +235,10 @@ export default function MiniHeader(headerProps) {
           <div className="text-s12l14 text-252525 shrink-0 ml-8">Blog</div>
         </div>
 
-        <div className="flex pl-8 py-9 items-center cursor-pointer">
+        <div
+          className="flex pl-8 py-9 items-center cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/images/icons/case_studies.svg"
             height={iconSize}
@@ -237,7 +249,10 @@ export default function MiniHeader(headerProps) {
           </div>
         </div>
 
-        <div className="flex pl-8 py-9 items-center cursor-pointer">
+        <div
+          className="flex pl-8 py-9 items-center cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/images/icons/in_the_media.svg"
             height={iconSize}
@@ -248,8 +263,8 @@ export default function MiniHeader(headerProps) {
           </div>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const renderSupport = () => {
     return (
@@ -274,8 +289,8 @@ export default function MiniHeader(headerProps) {
           </div>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -299,8 +314,8 @@ export default function MiniHeader(headerProps) {
           <i
             className="fa-solid fa-xmark cursor-pointer mr-20 w-13 h-13 font-bold text-252525 text-s18l22"
             onClick={() => {
-              setShowMobileMenu(false)
-              setActiveMenu("menu")
+              setShowMobileMenu(false);
+              setActiveMenu("menu");
             }}
           />
         </div>
@@ -310,8 +325,8 @@ export default function MiniHeader(headerProps) {
           <div
             className="flex items-center cursor-pointer"
             onClick={() => {
-              setActiveMenu("menu")
-              setActiveProductsMenu("")
+              setActiveMenu("menu");
+              setActiveProductsMenu("");
             }}
           >
             {activeMenu !== "menu" && (
@@ -323,7 +338,10 @@ export default function MiniHeader(headerProps) {
           </div>
 
           {/* Menu items */}
-          <div className="flex pl-8 py-15 items-center justify-between cursor-pointer">
+          <div
+            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
+            onClick={() => router.push("/about-us")}
+          >
             <div className="text-s14l17 text-0D0D0D">About Us</div>
           </div>
 
@@ -339,7 +357,10 @@ export default function MiniHeader(headerProps) {
 
           <div className="w-100% h-1 bg-8CC63E opacity-20" />
 
-          <div className="flex pl-8 py-15 items-center justify-between cursor-pointer">
+          <div
+            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
+            onClick={() => router.push("/partner-with-us")}
+          >
             <div className="text-s14l17 text-0D0D0D">Partner With Us</div>
           </div>
 
@@ -355,7 +376,10 @@ export default function MiniHeader(headerProps) {
 
           <div className="w-100% h-1 bg-8CC63E opacity-20" />
 
-          <div className="flex pl-8 py-15 items-center justify-between cursor-pointer">
+          <div
+            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
+            onClick={() => router.push("/career")}
+          >
             <div className="text-s14l17 text-0D0D0D">Careers</div>
           </div>
 
@@ -389,5 +413,5 @@ export default function MiniHeader(headerProps) {
         </div>
       </div>
     </>
-  )
+  );
 }
