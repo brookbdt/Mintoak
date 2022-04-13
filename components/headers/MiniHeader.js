@@ -299,7 +299,7 @@ export default function MiniHeader(headerProps) {
       </div>
 
       <i
-        className="fa-solid fa-bars flex desktop:hidden laptop:hidden cursor-pointer"
+        className="fa-solid fa-bars flex desktop:hidden laptop:hidden cursor-pointer h-20 w-20 text-s20l24"
         onClick={() => setShowMobileMenu(true)}
       />
 
@@ -312,7 +312,7 @@ export default function MiniHeader(headerProps) {
       >
         <div className="flex h-54 w-100% justify-end items-center">
           <i
-            className="fa-solid fa-xmark cursor-pointer mr-20 h-13 w-13 font-bold text-lg"
+            className="fa-solid fa-xmark cursor-pointer mr-20 w-13 h-13 font-bold text-252525 text-s18l22"
             onClick={() => {
               setShowMobileMenu(false);
               setActiveMenu("menu");
@@ -406,10 +406,10 @@ export default function MiniHeader(headerProps) {
           {activeMenu === "products"
             ? renderPaymentsStack()
             : activeMenu === "resources"
-            ? renderResources()
-            : activeMenu === "support"
-            ? renderSupport()
-            : null}
+              ? renderResources()
+              : activeMenu === "support"
+                ? renderSupport()
+                : null}
         </div>
       </div>
     </>

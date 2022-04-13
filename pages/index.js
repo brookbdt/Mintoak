@@ -6,10 +6,12 @@ import { consts } from "react-elastic-carousel";
 import { Collapse } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Item from "antd/lib/list/Item";
+import { useRouter } from "next/router"
 
 const { Panel } = Collapse;
 
 export default function Home() {
+  const router = useRouter()
   const [demoPopup, setDemoPopup] = useState(false);
   const [isBORM, setIsBORM] = useState("b");
   const [homeBannerResp, setHomeBannerResp] = useState({});
@@ -156,10 +158,10 @@ export default function Home() {
   const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
     return (
       <>
-        <span className="flex w-30 justify-between mt-20 mobile:mt-0">
-          <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100 pr-6"></span>
-          <span className="w-6 h-6 bg-525252 rounded-md bg-opacity-100 pr-6"></span>
-          <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
+        <span className="flex w-30 justify-between mt-20">
+          {pages.map((page) => (
+            <span className={`w-6 h-6 ${page == activePage ? "bg-C4C4C4" : "bg-525252"}  rounded-md bg-opacity-100 pr-6`}></span>
+          ))}
         </span>
       </>
     );
@@ -269,9 +271,8 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${
-                  index != 0 ? "30" : "10"
-                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0 mobile:pr-29 mobile:pl-9`}
+                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"
+                  }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0 mobile:pr-29 mobile:pl-9`}
               >
                 <Image
                   src={item.Icon}
@@ -303,9 +304,8 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "b" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -327,9 +327,8 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${
-                  isBORM === "m" ? "selected" : "unselected"
-                }.svg`}
+                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
+                  }.svg`}
                 height={49}
                 width={49}
               />
@@ -470,10 +469,10 @@ export default function Home() {
                 {homeForMerchant?.Description2}
                 <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
                   {" "}
-                  Learn More
+                  {/* Learn More */}
                 </span>
               </div>
-              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40" onClick={() => { router.push('merchant') }}>
                 {homeForMerchant?.CTA2}
               </div>
               <Image
@@ -605,7 +604,7 @@ export default function Home() {
           </div>
           <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
             <Carousel
-              itemsToShow={1}
+              itemsToShow={2}
               itemPadding={[0, 0]}
               enableMouseSwipe={true}
               pagination={true}
@@ -641,7 +640,7 @@ export default function Home() {
         <div className="w-100% flex-col justify-center items-center my-150  mobile:my-80">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s22l33 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>In The Media</span>
-            <span className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden mobile:mt-4">
+            <span className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden" onClick={() => { router.push('/resource') }}>
               View all
             </span>
           </div>
@@ -729,7 +728,7 @@ export default function Home() {
                         {item.ArticleDate}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div className="w-full flex items-center justify-end" onClick={() => { router.push('blog-detail') }}>
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
@@ -746,7 +745,7 @@ export default function Home() {
         <div className="w-100% flex-col justify-center items-center mt-100 mobile:pb-57 mobile:mt-78">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-32 w-100%">
             <span>Most Popular Blogs</span>
-            <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden mobile:mt-4">
+            <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden" onClick={() => { router.push('/resource') }}>
               View all
             </span>
           </div>
@@ -790,7 +789,7 @@ export default function Home() {
                         {new Date(item?.Date).getDate()}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div className="w-full flex items-center justify-end" onClick={() => { router.push('blog-detail') }}>
                       <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
@@ -841,7 +840,7 @@ export default function Home() {
                         {new Date(item?.Date).getFullYear()}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div className="w-full flex items-center justify-end" onClick={() => { router.push('blog-detail') }}>
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
