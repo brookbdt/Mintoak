@@ -125,7 +125,7 @@ export default function Request_Demo(props) {
             <div className="w-360 mobile:w-100% mobile:pb-24">
               <div className="global-demo w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
-                  Choose Products
+                  Business Category
                 </div>
                 <Select
                   dropdownStyle={{
@@ -135,7 +135,7 @@ export default function Request_Demo(props) {
                     background: "#DFEFD4",
                     padding: "20px",
                   }}
-                  placeholder="Choose Products"
+                  placeholder="Choose Productsnp"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 >
                   {productList &&

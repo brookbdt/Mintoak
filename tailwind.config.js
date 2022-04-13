@@ -47,8 +47,8 @@ const colors = {
   D1E6BA: "#D1E6BA",
   393939: "#393939",
   "100F0F": "#100F0F",
-  "EC5F22": "#EC5F22",
-  "B0D472": "#B0D472",
+  EC5F22: "#EC5F22",
+  B0D472: "#B0D472",
   // For testing
   red: "red",
   green: "green",
@@ -100,6 +100,7 @@ module.exports = {
       s18l27: ["18px", "27px"],
       s18l33: ["18px", "33px"],
       s20l24: ["20px", "24px"],
+      s20l26_6: ["20px", "26.6px"],
       s20l30: ["20px", "30px"],
       s20l40: ["20px", "40px"],
       s20l33: ["20px", "33px"],
@@ -141,6 +142,7 @@ module.exports = {
       s44l52_8: ["44px", "52.8px"],
       s44l66: ["44px", "66px"],
       s44l52: ["44px", "52px"],
+      s44l52_5: ["44px", "52.5px"],
       s44l120: ["44px", "120%"],
       s45l45: ["45px", "45px"],
       s45l33: ["45px", "33px"],
@@ -155,7 +157,7 @@ module.exports = {
       colors,
       backgroundImage: {
         "home-top":
-          "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 20.10%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
+          "linear-gradient(173.18deg, #E6F0DF 19.15%, rgba(247, 255, 236, 0.1) 49.55%);",
         "mobile-home-top":
           "linear-gradient(173.18deg, #E6F0DF 19.15%, rgba(247, 255, 236, 0.1) 49.55%);",
         button:
@@ -176,14 +178,16 @@ module.exports = {
         contact_us: "url(/images/backgrounds/contact-us-bg.svg)",
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
-        reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)"
+        reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)",
+        read_more:
+          "linear-gradient(360deg, #F3FBF6 0%, rgba(244, 251, 243, 0.9) 37.42%, rgba(248, 252, 243, 0.5) 67.65%, rgba(248, 252, 243, 0) 100%)",
       },
       boxShadow: {
         headerBoxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
         bankbox: "0px 0px 7.67398px rgba(37, 37, 37, 0.08)",
-        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1);",
-        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5);",
-        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2);",
+        mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
+        popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5)",
+        slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2)",
       },
       zIndex: {
         minus1: -1,

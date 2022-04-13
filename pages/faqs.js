@@ -15,6 +15,8 @@ export default function Contact() {
   const [modalquerievisible, setmodalquerieVisible] = useState(false);
   const [faqs, setFaqs] = useState([]);
   const [isClicked, setIsClicked] = useState("b");
+  const [search, setSearch] = useState(null);
+  const [allFaqs, setAllFaqs] = useState(null);
 
   useEffect(() => {
     API({
@@ -22,10 +24,20 @@ export default function Contact() {
     }).then((resp) => {
       if (!resp.message) {
         setFaqs(resp);
+        setAllFaqs(resp);
         // console.log("sadjunsafysahgsadd", faqs);
       }
     });
   }, []);
+
+  useEffect(() => {
+    if (search && search.length) {
+      let list = allFaqs.filter((rList) => rList.Question.toLowerCase().includes(search.toLowerCase()));
+      setFaqs(list)
+    } else {
+      setFaqs(allFaqs);
+    }
+  }, [search]);
 
   return (
     <>
@@ -40,6 +52,8 @@ export default function Contact() {
                 type="text"
                 className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-90 text-s20l24"
                 placeholder="Ex. What is pay later?"
+                onChange={(e) => { setSearch(e.target.value); }}
+                value={search}
               />
             </div>
             <div className="absolute pl-27 pt-10">
@@ -210,9 +224,11 @@ export default function Contact() {
               })}
             </Collapse>
           </div>
-          <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
-            <Pagination defaultCurrent={1} total={30} />
-          </div>
+          {faqs && faqs.length > 0 &&
+            <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
+              <Pagination defaultCurrent={1} total={30} />
+            </div>
+          }
         </div>
         {/* more queries */}
         <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 mobile:pt-20 mobile:pb-28">
@@ -709,7 +725,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="w-100% desktop:pt-48 laptop:pt-48 desktop:pb-40 laptop:pt-48 mobile:pt-40 mobile:pb-28 flex items-center justify-center">
-                <div className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40">
+                <div className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40" onClick={() => { setmodalquerieVisible(true); setmodalVisible(false) }}>
                   Submit
                 </div>
               </div>

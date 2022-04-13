@@ -276,7 +276,7 @@ export default function Header() {
         onMouseEnter={() => setActiveDesktopMenu("resources")}
         onMouseLeave={() => setActiveDesktopMenu("")}
       >
-        <div className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA">
+        <div className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA" onClick={() => router.push("/resource")}>
           <Image
             src="/images/icons/blog.svg"
             height={iconSize}
@@ -350,7 +350,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative flex items-center justify-between px-18 z-50 shadow-headerBoxShadow desktop:px-80 laptop:px-80 laptop:h-111 h-54 desktop:h-111 bg-E0EFD4">
+      <div className="relative flex items-center justify-between px-18 z-50 shadow-headerBoxShadow desktop:px-80 laptop:px-50 laptop:h-111 h-54 desktop:h-111 bg-E0EFD4">
         {/* For desktop size */}
         <DesktopHeader {...headerProps} />
 
