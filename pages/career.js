@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import Image from "../components/helpers/Image"
 import Carousel from "react-elastic-carousel"
 import { consts } from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
 import { API, endpoints } from "../components/helpers/API"
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
+import { Row, Col, Input, Select, Pagination } from "antd"
 import Request_Demo from "./request_demo"
 
 export default function Career() {
@@ -149,10 +148,10 @@ export default function Career() {
           <Image
             src={careersBannerResp?.banner}
             type="img"
-            className="absolute z-minus1 object-cover mobile:hidden h-100% w-100% border-b border-A4D77A"
+            className="absolute object-cover mobile:hidden h-100% w-100% border-b border-A4D77A"
           />
         </div>
-        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             {careersBannerResp?.Title}
           </div>

@@ -6,10 +6,9 @@ import { Modal, Select } from "antd"
 import { API, endpoints } from "../components/helpers/API"
 import Request_Demo from "./request_demo"
 import CircularProgress from "../components/helpers/Prograssbar"
-const Option = Select
+
 export default function Partner() {
   const { Option } = Select
-
   const [modalvisible, setmodalVisible] = useState(false)
   const [comunityCard, setComunityCard] = useState([])
   const [anime, setAnime] = useState("")
@@ -26,7 +25,6 @@ export default function Partner() {
   const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
   const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
   const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
-  const [temp, setTemp] = useState(null)
   const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
 
   useEffect(() => {
@@ -127,9 +125,9 @@ export default function Partner() {
         <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
-            className="absolute z-minus1 mobile:hidden w-100% h-100%"
+            className="absolute  mobile:hidden w-100% h-100%"
           />
-          <div className="desktop:w-50% desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
+          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>

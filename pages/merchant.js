@@ -1,14 +1,11 @@
 import { useEffect, useState, useRef } from "react"
 import { API, endpoints } from "../components/helpers/API"
 import Image from "../components/helpers/Image"
-import { Chrono } from "react-chrono"
 import Carousel from "react-elastic-carousel"
 import { consts } from "react-elastic-carousel"
 import Request_Demo from "./request_demo"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
-import Sticky from "react-sticky-el"
 
 SwiperCore.use([Mousewheel, Pagination])
 export default function Merchant() {
@@ -27,7 +24,6 @@ export default function Merchant() {
   const [val0, setVal0] = useState(merchantBenefits3?.[0])
   const [val1, setVal1] = useState(merchantBenefits3?.[1])
   const [val2, setVal2] = useState(merchantBenefits3?.[2])
-  const [temp, setTemp] = useState(null)
   const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description)
   const [customizclick, setCustomizClick] = useState(1)
 
@@ -125,10 +121,10 @@ export default function Merchant() {
       <div className="relative top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
-          className="absolute z-minus1 mobile:hidden object-cover"
+          className="absolute mobile:hidden object-cover"
           type="img"
         />
-        <div className="desktop:w-50% desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
+        <div className="desktop:w-50% relative desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>

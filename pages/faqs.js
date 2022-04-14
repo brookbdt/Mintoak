@@ -5,9 +5,7 @@ import { Input } from "antd"
 import { API, endpoints } from "../components/helpers/API"
 import { Modal } from "antd"
 import { useEffect, useState } from "react"
-
 const { TextArea } = Input
-
 const { Panel } = Collapse
 
 export default function Contact() {

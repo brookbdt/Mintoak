@@ -1,18 +1,13 @@
 import Image from "../components/helpers/Image"
 import { useRef } from "react"
-import { Chrono } from "react-chrono"
-import { Collapse, Input } from "antd"
+import { Input } from "antd"
 import Carousel from "react-elastic-carousel"
 import { consts } from "react-elastic-carousel"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
-import Sticky from "react-sticky-el"
 
 SwiperCore.use([Mousewheel, Pagination])
-
-const { Panel } = Collapse
 const { TextArea } = Input
 
 export default function Product() {
