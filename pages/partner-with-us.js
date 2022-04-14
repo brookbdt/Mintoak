@@ -95,7 +95,7 @@ export default function Partner() {
   const TogglePopup = () => {
     setDemoPopup(false);
   };
-  useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
+  // useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
 
   // console.log('countery', countryList)
 
