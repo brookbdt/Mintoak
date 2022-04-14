@@ -40,7 +40,7 @@ export default function CareerDetails() {
     </Form.Item>
   );
   return (
-    <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
+    <div className="desktop:h-fit w-100% bg-home-top  mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <div className="desktop:flex laptop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33 mobile:pb-28">
@@ -147,8 +147,7 @@ export default function CareerDetails() {
                 Ability to quickly adapt to most current technology
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Should be comfortable with Agile methodology and using Agile
-                tools
+                Should be comfortable with Agile methodology and using Agile tools
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good verbal and written communication skills

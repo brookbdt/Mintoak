@@ -101,6 +101,7 @@ module.exports = {
       s18l27: ["18px", "27px"],
       s18l33: ["18px", "33px"],
       s20l24: ["20px", "24px"],
+      s20l26_6: ["20px", "26.6px"],
       s20l30: ["20px", "30px"],
       s20l40: ["20px", "40px"],
       s20l33: ["20px", "33px"],
@@ -142,6 +143,7 @@ module.exports = {
       s44l52_8: ["44px", "52.8px"],
       s44l66: ["44px", "66px"],
       s44l52: ["44px", "52px"],
+      s44l52_5: ["44px", "52.5px"],
       s44l120: ["44px", "120%"],
       s45l45: ["45px", "45px"],
       s45l33: ["45px", "33px"],
@@ -156,7 +158,7 @@ module.exports = {
       colors,
       backgroundImage: {
         "home-top":
-          "linear-gradient(91.09deg, rgba(57,181,101, 0.09) 20.10%, rgba(67,185,60, 0.06) 49.92%, rgba(140,198,62, 0.08) 98.95%);",
+          "linear-gradient(173.18deg, #E6F0DF 19.15%, rgba(247, 255, 236, 0.1) 49.55%);",
         "mobile-home-top":
           "linear-gradient(173.18deg, #E6F0DF 19.15%, rgba(247, 255, 236, 0.1) 49.55%);",
         button:

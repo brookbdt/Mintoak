@@ -10,8 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import { useSwiper } from "swiper/react";
 import "swiper/css";
-
-import Sticky from "react-sticky-el";
+import { useRouter } from "next/router";
 SwiperCore.use([Mousewheel, Pagination]);
 
 const { Panel } = Collapse;
@@ -168,9 +167,14 @@ export default function Home() {
     return (
       <>
         <span className="flex w-30 justify-between mt-20">
-          <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100 pr-6"></span>
-          <span className="w-6 h-6 bg-525252 rounded-md bg-opacity-100 pr-6"></span>
-          <span className="w-6 h-6 bg-C4C4C4 rounded-md bg-opacity-100"></span>
+          {pages.map((page, index) => (
+            <span
+              key={index}
+              className={`w-6 h-6 ${
+                page == activePage ? "bg-C4C4C4" : "bg-525252"
+              }  rounded-md bg-opacity-100 pr-6`}
+            ></span>
+          ))}
         </span>
       </>
     );
@@ -199,7 +203,7 @@ export default function Home() {
           </div>
           <div
             onClick={() => setDemoPopup(true)}
-            className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-16"
+            className="button w-216 mobile:w-166 mobile:mt-20 mobile:h-40 mobile:text-s14l17 h-54 mt-40 cursor-pointer z-20 font-bold mobile:mt-16"
           >
             {homeBannerResp?.Button}
           </div>
@@ -225,7 +229,7 @@ export default function Home() {
               {metricsResp?.TransactionsAnnually}
               <span className="text-A4D77A">+</span>
             </span>
-            <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-10">
+            <div className="text-s20l24 mobile:text-s14l17 text-525252 mt-12 mobile:mt-4.33">
               Transactions Annually
             </div>
           </div>
@@ -272,7 +276,7 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-15 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
+        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-20 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
           The Mintoak Advantages
         </div>
         <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150 mobile:mb-80">
@@ -359,10 +363,10 @@ export default function Home() {
               <>
                 <div className="flex mobile:block flex-col w-50% mobile:w-100% justify-center">
                   <div className=" flex flex-col  mobile:w-100% justify-center">
-                    <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-99">
+                    <div className="text-s24l36 laptop:text-s20l33 tracking-wide mobile:text-s14l24 text-F1F1F1 mb-110">
                       {homeForBanksResp?.Description1}
                     </div>
-                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-20 mobile:mb-16">
+                    <div className="flex items-center text-s36l43 laptop:text-s28l42 mobile:text-s16l19 font-bold text-F1F1F1 mb-24 mobile:mb-16">
                       {homeForBanksResp?.Title2}
                     </div>
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
@@ -436,7 +440,7 @@ export default function Home() {
               <div className="text-s24l29 mobile:text-s14l21 ls-2 text-F1F1F1 mb-40">
                 {homeForBanksResp?.Description1}
               </div>
-              <div className="flex items-center text-s36l43 mobile:text-s16l24 font-bold text-F1F1F1 mb-20">
+              <div className="flex items-center text-s36l43 mobile:text-s16l24 font-bold text-F1F1F1 mb-16">
                 {homeForBanksResp?.Title2}
               </div>
               <div className="text-s20l150 mobile:text-s14l21 text-F1F1F1">
@@ -474,17 +478,22 @@ export default function Home() {
               <div className="text-s24l29 mobile:text-s14l21 ls-2  text-F1F1F1 mb-40">
                 {homeForMerchant?.Description1}
               </div>
-              <div className="flex items-center text-s36l43 mobile:text-s16l24 font-bold text-F1F1F1 mb-20">
+              <div className="flex items-center text-s36l43 mobile:text-s16l24 font-bold text-F1F1F1 mb-20 mobile:mb-16">
                 {homeForMerchant?.Title2}
               </div>
               <div className="text-s20l150 mobile:text-s14l21 ls-2 text-F1F1F1">
                 {homeForMerchant?.Description2}
                 <span className="text-s20l150 mobile:text-s14l24 text-8CC63E cursor-pointer">
                   {" "}
-                  Learn More
+                  {/* Learn More */}
                 </span>
               </div>
-              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              <div
+                className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40"
+                onClick={() => {
+                  router.push("merchant");
+                }}
+              >
                 {homeForMerchant?.CTA2}
               </div>
               <Image
@@ -552,7 +561,7 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className=" mobile:w-278 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
+                className=" mobile:w-290 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
               >
                 <div className="flex justify-center items-center w-150 h-100% py-30">
                   <Image src={item.BankLogo} className=" object-cover" />
@@ -570,7 +579,7 @@ export default function Home() {
           <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
             Our Achievements
           </div>
-          <div className="flex items-center w-100% pt-50  mobile:px-0 mobile:py-0 mobile:hidden">
+          <div className="flex items-center w-100% pt-60  mobile:px-0 mobile:py-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -724,7 +733,7 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel> */}
           </div>
@@ -734,7 +743,12 @@ export default function Home() {
         <div className="w-100% flex-col justify-center items-center my-150  mobile:my-80">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s22l33 text-252525 mb-60 mobile:mb-40 w-100%">
             <span>In The Media</span>
-            <span className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+            <span
+              className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden"
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </span>
           </div>
@@ -783,7 +797,7 @@ export default function Home() {
                 );
               })}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold">
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold">
               View all
             </div>
           </div>
@@ -822,24 +836,34 @@ export default function Home() {
                         {item.ArticleDate}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div
+                      className="w-full flex items-center justify-end"
+                      onClick={() => {
+                        router.push("blog-detail");
+                      }}
+                    >
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
                 );
               })}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-25 cursor-pointer font-bold mobile:hidden">
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold mobile:hidden">
               View all
             </div>
           </div>
         </div>
 
         {/* Most popular blogs */}
-        <div className="w-100% flex-col justify-center items-center mt-100 mobile:pb-57">
+        <div className="w-100% flex-col justify-center items-center mt-100 mobile:pb-57 mobile:mt-78">
           <div className="mobile:pl-21 desktop:text-center laptop:text-center font-bold text-s44l66 mobile:text-s20l150 text-252525 mb-60 mobile:mb-32 w-100%">
             <span>Most Popular Blogs</span>
-            <span className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden">
+            <span
+              className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden"
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </span>
           </div>
@@ -883,7 +907,12 @@ export default function Home() {
                         {new Date(item?.Date).getDate()}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div
+                      className="w-full flex items-center justify-end"
+                      onClick={() => {
+                        router.push("blog-detail");
+                      }}
+                    >
                       <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
@@ -891,7 +920,7 @@ export default function Home() {
                   </div>
                 ))}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-25 cursor-pointer font-bold">
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold">
               View all
             </div>
           </div>
@@ -934,7 +963,12 @@ export default function Home() {
                         {new Date(item?.Date).getFullYear()}
                       </div>
                     </div>
-                    <div className="w-full flex items-center justify-end">
+                    <div
+                      className="w-full flex items-center justify-end"
+                      onClick={() => {
+                        router.push("blog-detail");
+                      }}
+                    >
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>

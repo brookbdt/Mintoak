@@ -6,7 +6,6 @@ import Request_Demo from "./request_demo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import { useSwiper } from "swiper/react";
-import "swiper/css";
 import Sticky from "react-sticky-el";
 SwiperCore.use([Mousewheel, Pagination]);
 
@@ -21,10 +20,9 @@ export default function About() {
   const [founderResp, setFounderResp] = useState([]);
   const [teamInfoResp, setTeamInfoResp] = useState({});
   const [activeTab, setActiveTab] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState();
+  const [curruntindex, setCurruntIndex] = useState();
   const founder = useRef(null);
-  const founderRes = useRef(null);
   const swiper = useSwiper();
   const TogglePopup = () => {
     setDemoPopup(false);
@@ -477,9 +475,9 @@ export default function About() {
       {/* <Sticky disabled={activeTab + 1 == founderResp.length ? true : false}> */}
       <div
         id="founder"
-        className="mobile:hidden w-100% bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
+        className="w-100% bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080  overflow-hidden laptop:h-976"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col mobile:h-745">
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
             Our founders
           </div>
@@ -494,7 +492,7 @@ export default function About() {
             }}
             ref={founder}
             modules={[Mousewheel, Pagination]}
-            className="mySwiper overflow-scroll"
+            className="mySwiper overflow-scroll mobile:h-845"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
               setActiveTab(e.activeIndex);
@@ -516,7 +514,7 @@ export default function About() {
                       <Image
                         src={item?.FounderImage}
                         type="img"
-                        className="h-660 w-529 founder-shadow"
+                        className="h-660 w-529 mobile:h-368 founder-shadow"
                       />
                     </div>
                     <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
@@ -526,7 +524,7 @@ export default function About() {
                       <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5  desktop:pb-30 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 mobile:pr-41">
+                      <div className="mobile:tracking-widest desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 mobile:pr-41">
                         {item?.Description}
                       </div>
                     </div>
@@ -585,180 +583,38 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="w-100% flex flex-col items-center pl-20 pr-45 bg-footer py-35 desktop:hidden laptop:hidden">
-        <div className="py-5">
-          <Image
-            src="/images/backgrounds/raman khanduja.svg"
-            height={660}
-            width={529}
-            type="img"
-          />
-        </div>
-        <div className="flex w-100% flex-col py-20 text-left">
-          <span className="text-s20l24 text-FFFFFF font-bold pb-10">
-            Raman Khanduja
-          </span>
-          <span className="text-s16l19 text-FFFFFF font-medium">
-            Chief Executive
-          </span>
-        </div>
-        <div className="text-s14l21 text-FFFFFF text-left tracking-widest opacity-80">
-          Raman has over 19 years of corporate experience in financial services
-          and payments. Before taking the entrepreneurial leap, Raman was head
-          of Business Development at Visa and worked with leading financial
-          institutions in India. Prior to Visa, Raman has experience in retail
-          strategy, portfolio management, analytics and consulting across HDFC
-          Bank, Centurion Bank, American Express and Pricewaterhouse Coopers.
-          Raman has an MBA from Indian Institute of Management, Calcutta and a
-          Bachelor in Mechanical Engineering from T.I.E.T, Patiala
-        </div>
-      </div>
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
-      {/* <div className="desktop:hidden laptop:hidden">
-        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-5">
+      <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
+        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
           Our founders
         </div>
-        <div className="mobile_swiper">
-          <Swiper
-            slidesPerView={4}
-            ref={founderRes}
-            initialSlide={1}
-            pagination={{ clickable: true }}
-            centeredSlides={true}
-            grabCursor={true}
-            modules={[Mousewheel, Pagination]}
-            onSwiper={setSwiperInstance}
-            onSlideChange={(e) => {
-              // setActiveTab(e.activeIndex);
-              setActiveIndex(e.activeIndex);
-              // console.log(e.activeIndex, "sliderchange");
-            }}
-          >
-            <SwiperSlide
-              key={0}
-              onClick={() => {
-                setActiveIndex(0);
-                founderRes.current?.swiper.slideTo(0);
-                // founder.swiper
-              }}
-            >
-              <div className={`py-5 ${activeIndex == 0 ? "" : ""}`}>
-                <div className="bg-525252">
-                  <Image
-                    src="/images/backgrounds/founder-img.svg"
-                    type="img"
-                    className={`h-205 w-201 object-cover
-                            ${
-                              activeIndex == 0
-                                ? "shadow-img-slide"
-                                : "h-163 w-158 opacity-40"
-                            }`}
-                  />
+        <div className="w-100% flex justify-center">
+          <div className="flex w-360 overflow-x-scroll">
+            {founderResp &&
+              founderResp.map((item, index) => (
+                <div
+                  className="w-205 whitespace-nowrap"
+                  onScroll={() => setCurruntIndex(index)}
+                >
+                  <div key={index} className="w-205">
+                    <Image
+                      src={item.FounderImage}
+                      type="img"
+                      className="h-205 w-201"
+                    />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              key={1}
-              onClick={() => {
-                setActiveIndex(1);
-                founderRes.current?.swiper.slideTo(1);
-                // founder.swiper
-              }}
-            >
-              <div className={`py-5 ${activeIndex == 1 ? "" : ""}`}>
-                <div className="bg-525252">
-                  <Image
-                    src="/images/backgrounds/raman khanduja.svg"
-                    type="img"
-                    className={`h-205 w-201
-                            object-cover ${
-                              activeIndex == 1
-                                ? "shadow-img-slide "
-                                : "h-163 w-158 opacity-40"
-                            }`}
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              key={2}
-              onClick={() => {
-                setActiveIndex(2);
-                founderRes.current?.swiper.slideTo(2);
-                // founder.swiper
-              }}
-            >
-              <div className={`py-5 ${activeIndex == 2 ? "" : ""}`}>
-                <div className="bg-525252">
-                  <Image
-                    src="/images/backgrounds/Kabir-img.svg"
-                    type="img"
-                    className={`h-205 w-201 object-cover
-                            ${
-                              activeIndex == 2
-                                ? "shadow-img-slide "
-                                : "h-163 w-158 opacity-40"
-                            }`}
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              key={3}
-              onClick={() => {
-                setActiveIndex(3);
-                founderRes.current?.swiper.slideTo(3);
-                // founder.swiper
-              }}
-            >
-              <div className={`py-5 ${activeIndex == 3 ? "" : ""}`}>
-                <div className="bg-525252">
-                  <Image
-                    src="/images/backgrounds/founder-img.svg"
-                    type="img"
-                    className={`h-205 w-201 object-cover
-                            ${
-                              activeIndex == 3
-                                ? "shadow-img-slide "
-                                : "h-163 w-158 opacity-40"
-                            }`}
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              key={4}
-              onClick={() => {
-                setActiveIndex(4);
-                founderRes.current?.swiper.slideTo(4);
-                // founder.swiper
-              }}
-            >
-              <div className={`py-5 ${activeIndex == 4 ? "" : ""}`}>
-                <div className="bg-525252">
-                  <Image
-                    src="/images/backgrounds/raman khanduja.svg"
-                    type="img"
-                    className={`h-205 w-201
-                            object-cover ${
-                              activeIndex == 4
-                                ? "shadow-img-slide "
-                                : "h-163 w-158 opacity-40"
-                            }`}
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+              ))}
+          </div>
         </div>
-        <div className="flex flex-col items-center pb-80">
-          <span className="text-s17l25 text-252525 font-bold">
+        <div className="w-100% flex flex-col items-center pt-16">
+          <div className="text-252525 text-s17l25 font-bold pb-10">
             Raman Khanduja
-          </span>
-          <span className="text-s16l24 text-525252 ">Chief Executive</span>
+          </div>
+          <div className="text-525252 text-s16l24">Chief Executive</div>
         </div>
-      </div> */}
+      </div>
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
