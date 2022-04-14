@@ -1,25 +1,25 @@
-import { Modal, Select } from "antd";
-import { useState, useEffect } from "react";
-import Image from "../components/helpers/Image";
-import { API, endpoints } from "../components/helpers/API";
+import { Modal, Select } from "antd"
+import { useState, useEffect } from "react"
+import Image from "../components/helpers/Image"
+import { API, endpoints } from "../components/helpers/API"
 
 export default function Request_Demo(props) {
-  const { Option } = Select;
-  const [countryList, setCountryList] = useState(null);
-  const [productList, setProductList] = useState(null);
-  const [modalvisible, setmodalVisible] = useState(props.triger);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
+  const { Option } = Select
+  const [countryList, setCountryList] = useState(null)
+  const [productList, setProductList] = useState(null)
+  const [modalvisible, setmodalVisible] = useState(props.triger)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
   useEffect(() => {
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
-        setProductList(resp[1]);
+        setCountryList(resp[0])
+        setProductList(resp[1])
       }
-    });
-  }, []);
-  // console.log('wqsaXZ', dropdown)
+    })
+  }, [])
+
   return (
     <>
       <Modal
@@ -176,37 +176,35 @@ export default function Request_Demo(props) {
           </div>
         </div>
       </Modal>
-      {
-        modalquerievisible ? (
-          <Modal
-            bodyStyle={{
-              background:
-                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-              transform: "rotate(-180deg)",
-            }}
-            centered
-            visible={modalquerievisible}
-            onCancel={() => setmodalquerieVisible(false)}
-            footer={null}
-            width={665}
-            className="shadow-popupShadow close-btn"
-          >
-            <div className="w-100% rotate-180">
-              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-                <Image
-                  src="/images/icons/thumb-icon.svg"
-                  width={135}
-                  height={135}
-                />
-              </div>
-              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-                Thank you! for your interest!
-                <br /> Our team will get back to you shortly.
-              </div>
+      {modalquerievisible ? (
+        <Modal
+          bodyStyle={{
+            background:
+              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            transform: "rotate(-180deg)",
+          }}
+          centered
+          visible={modalquerievisible}
+          onCancel={() => setmodalquerieVisible(false)}
+          footer={null}
+          width={665}
+          className="shadow-popupShadow close-btn"
+        >
+          <div className="w-100% rotate-180">
+            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+              <Image
+                src="/images/icons/thumb-icon.svg"
+                width={135}
+                height={135}
+              />
             </div>
-          </Modal>
-        ) : null
-      }
+            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-10 laptop:px-10 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+              Thank you! for your interest!
+              <br /> Our team will get back to you shortly.
+            </div>
+          </div>
+        </Modal>
+      ) : null}
     </>
-  );
+  )
 }

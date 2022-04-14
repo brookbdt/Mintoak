@@ -75,7 +75,6 @@ export default function Home() {
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setHomeAdvantagesCard(resp)
       }
     })
@@ -85,7 +84,6 @@ export default function Home() {
       url: endpoints.homepage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setHomeForMerchant(resp)
       }
     })
@@ -95,7 +93,6 @@ export default function Home() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setComunityCard(resp)
       }
     })
@@ -105,7 +102,6 @@ export default function Home() {
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setHomepageAchievements(resp)
       }
     })
@@ -115,7 +111,6 @@ export default function Home() {
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setHomepageMediaCards(resp)
       }
     })
@@ -125,7 +120,6 @@ export default function Home() {
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setFaq(resp)
       }
     })
@@ -135,7 +129,6 @@ export default function Home() {
       url: endpoints.home_page_blogs,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp")
         setHomePageBlogs(resp)
       }
     })
@@ -369,7 +362,12 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12" onClick={() => { router.push('/partner-with-us') }}>
+                    <div
+                      className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12"
+                      onClick={() => {
+                        router.push("/partner-with-us")
+                      }}
+                    >
                       {homeForBanksResp?.CTA2}
                     </div>
                   </div>
@@ -441,7 +439,12 @@ export default function Home() {
                   {homeForBanksResp?.CTA1}
                 </span>
               </div>
-              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40" onClick={() => { router.push('/partner-with-us') }}>
+              <div
+                className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40"
+                onClick={() => {
+                  router.push("/partner-with-us")
+                }}
+              >
                 {" "}
                 {homeForBanksResp?.CTA2}
               </div>

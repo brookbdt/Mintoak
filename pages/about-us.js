@@ -1,31 +1,31 @@
-import { useEffect, useState, useRef } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
-import { useSwiper } from "swiper/react";
-import Sticky from "react-sticky-el";
-SwiperCore.use([Mousewheel, Pagination]);
+import { useEffect, useState, useRef } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useSwiper } from "swiper/react"
+import Sticky from "react-sticky-el"
+SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({});
-  const [storyResp, setStoryResp] = useState({});
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState();
-  const founder = useRef(null);
-  const swiper = useSwiper();
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({})
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
+  const [activeTab, setActiveTab] = useState(0)
+  const [swiperInstance, setSwiperInstance] = useState()
+  const founder = useRef(null)
+  const swiper = useSwiper()
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   useEffect(() => {
     // about_banner
@@ -33,67 +33,67 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp);
+        setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp);
+        setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp);
+        setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp);
+        setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp);
+        setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp);
+        setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp);
+        setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp);
+        setTeamInfoResp(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
-  function goToPage(numberPage) { }
+  function goToPage(numberPage) {}
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -103,8 +103,8 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute z-minus1 mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
-          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold">
+        <div className="desktop:w-50% laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 z-10">
+          <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold mobile:w-285">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
           </div>
@@ -122,7 +122,7 @@ export default function About() {
           </div>
         </div>
         <Image
-          src="/images/backgrounds/mobile_home_banner.png"
+          src="/images/backgrounds/about-us.png"
           className=" block relative desktop:hidden laptop:hidden"
           type="img"
         />
@@ -175,9 +175,9 @@ export default function About() {
           <div className="flex flex-row w-100% items-center desktop:pb-6 mobile:pt-27 mobile:pb-25">
             <div>
               <Image
-                src="/images/icons/vision.svg"
+                src="/images/icons/as-vision.svg"
                 type="img"
-                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-29 mobile:w-29"
+                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-40 mobile:w-40"
               />
             </div>
             <div className="ls--1_5 text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 laptop:px-25 mobile:px-8 ">
@@ -194,7 +194,7 @@ export default function About() {
               <Image
                 src="/images/icons/mission.svg"
                 type="img"
-                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-29 mobile:w-29"
+                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-40 mobile:w-40"
               />
             </div>
             <div className="ls--1_5 text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 laptop:px-25 mobile:px-8 ">
@@ -217,8 +217,9 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
-                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                  index != principalResp.length - 1 && ""
+                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -247,7 +248,7 @@ export default function About() {
             {teamInfoResp?.Description}
           </div>
         </div>
-        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
+        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-90">
           <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 ">
             <Carousel
               itemsToShow={6.5}
@@ -422,8 +423,7 @@ export default function About() {
             className="mySwiper overflow-scroll"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex);
-              console.log(e.activeIndex, "sliderchange");
+              setActiveTab(e.activeIndex)
             }}
           >
             {founderResp.map((item, index) => (
@@ -432,9 +432,6 @@ export default function About() {
                   id={`founders${index}`}
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
-                  onLoadStart={() => {
-                    console.log("first");
-                  }}
                 >
                   <div className="flex mobile:flex-col">
                     <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
@@ -467,8 +464,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index);
-                    founder.current?.swiper.slideTo(index);
+                    setActiveTab(index)
+                    founder.current?.swiper.slideTo(index)
                     // founder.swiper
                   }}
                   key={index}
@@ -476,14 +473,16 @@ export default function About() {
                   <div className="flex h-190">
                     <div className="w-55% text-right">
                       <div
-                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
-                          } text-s20l30 text-F1F1F1`}
+                        className={`${
+                          activeTab == index ? "text-s24l150" : "text-s20l150"
+                        } text-s20l30 text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
-                          } text-s20l150`}
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -491,10 +490,11 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${activeTab == index
-                            ? "w-27 h-27 bg-F1F1F1 "
-                            : "w-17 h-16 bg-949494"
-                            } rounded-full bg-opacity-100 `}
+                          className={`${
+                            activeTab == index
+                              ? "w-27 h-27 bg-F1F1F1 "
+                              : "w-17 h-16 bg-949494"
+                          } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
@@ -528,5 +528,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }
