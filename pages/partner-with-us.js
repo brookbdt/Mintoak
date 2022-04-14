@@ -287,7 +287,7 @@ export default function Partner() {
                   <Image
                     type="img"
                     src={val1?.Illustration[0]}
-                    className="h-128 w-145"
+                    className="h-128 w-175"
                   />
                 )}
               </div>
