@@ -2,9 +2,11 @@ import React from "react";
 import Image from "../helpers/Image";
 import Request_Demo from "../../pages/request_demo";
 import { useEffect, useState } from "react";
-
+import { useRouter } from "next/router";
 export default function MiniFooter() {
   const [demoPopup, setDemoPopup] = useState(false);
+  const [dropdownTab, setDropDownTab] = useState(null);
+  const router = useRouter();
   const TogglePopup = () => {
     setDemoPopup(false);
   };
@@ -22,37 +24,98 @@ export default function MiniFooter() {
         </div>
 
         <div className="w-100%">
-          <div className="flex items-center justify-between cursor-pointer py-15">
+          <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'company' ? null : 'company'); }}>
             <div className="text-FAFAFA text-s14l17">Company</div>
-            <i className="fa-solid fa-angle-down text-F1F1F1" />
+            <i className={`fa-solid fa-angle-${dropdownTab == 'company' ? 'up' : 'down'} text-F1F1F1`} />
+          </div>
+          <div className={`pl-20 ${dropdownTab == 'company' ? '' : 'hidden'}`}>
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/about-us') }}>
+              <div className="text-FAFAFA text-s14l17">About us</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/partner-with-us') }}>
+              <div className="text-FAFAFA text-s14l17">Partner with us</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/career') }}>
+              <div className="text-FAFAFA text-s14l17">Careers</div>
+            </div>
           </div>
 
           <div className="w-100% h-1 bg-8B8B8B" />
 
-          <div className="flex items-center justify-between cursor-pointer py-15">
+          <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'Offerings' ? null : 'Offerings'); }}>
             <div className="text-FAFAFA text-s14l17">Offerings</div>
-            <i className="fa-solid fa-angle-down text-F1F1F1" />
+            <i className={`fa-solid fa-angle-${dropdownTab == 'Offerings' ? 'up' : 'down'} text-F1F1F1`} />
+          </div>
+          <div className={`pl-20 ${dropdownTab == 'Offerings' ? '' : 'hidden'}`}>
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/product') }}>
+              <div className="text-FAFAFA text-s14l17">Products</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8">
+              <div className="text-FAFAFA text-s14l17">Customize</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/merchant') }}>
+              <div className="text-FAFAFA text-s14l17">For Merchants</div>
+            </div>
           </div>
 
           <div className="w-100% h-1 bg-8B8B8B" />
 
-          <div className="flex items-center justify-between cursor-pointer py-15">
+          <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'Legals' ? null : 'Legals'); }}>
             <div className="text-FAFAFA text-s14l17">Legals</div>
-            <i className="fa-solid fa-angle-down text-F1F1F1" />
+            <i className={`fa-solid fa-angle-${dropdownTab == 'Legals' ? 'up' : 'down'} text-F1F1F1`} />
+          </div>
+          <div className={`pl-20 ${dropdownTab == 'Legals' ? '' : 'hidden'}`}>
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/privacy_policy') }}>
+              <div className="text-FAFAFA text-s14l17">Privacy</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8">
+              <div className="text-FAFAFA text-s14l17">Website terms of use</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/terms_and_condition') }}>
+              <div className="text-FAFAFA text-s14l17">T & C</div>
+            </div>
           </div>
 
           <div className="w-100% h-1 bg-8B8B8B" />
 
-          <div className="flex items-center justify-between cursor-pointer py-15">
+          <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'Resources' ? null : 'Resources'); }}>
             <div className="text-FAFAFA text-s14l17">Resources</div>
-            <i className="fa-solid fa-angle-down text-F1F1F1" />
+            <i className={`fa-solid fa-angle-${dropdownTab == 'Resources' ? 'up' : 'down'} text-F1F1F1`} />
+          </div>
+          <div className={`pl-20 ${dropdownTab == 'Resources' ? '' : 'hidden'}`}>
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/resource') }}>
+              <div className="text-FAFAFA text-s14l17">Blogs</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8">
+              <div className="text-FAFAFA text-s14l17">Case Studies</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8">
+              <div className="text-FAFAFA text-s14l17">News & Media</div>
+            </div>
           </div>
 
           <div className="w-100% h-1 bg-8B8B8B" />
 
-          <div className="flex items-center justify-between cursor-pointer py-15">
+          <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'Support' ? null : 'Support'); }}>
             <div className="text-FAFAFA text-s14l17">Support</div>
-            <i className="fa-solid fa-angle-down text-F1F1F1" />
+            <i className={`fa-solid fa-angle-${dropdownTab == 'Support' ? 'up' : 'down'} text-F1F1F1`} />
+          </div>
+          <div className={`pl-20 ${dropdownTab == 'Support' ? '' : 'hidden'}`}>
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/faqs') }}>
+              <div className="text-FAFAFA text-s14l17">FAQ's</div>
+            </div>
+            <div className="w-100% h-1 bg-8B8B8B" />
+            <div className="items-center cursor-pointer py-8" onClick={() => { router.push('/contact-us') }}>
+              <div className="text-FAFAFA text-s14l17">Contact Us</div>
+            </div>
           </div>
         </div>
       </div>

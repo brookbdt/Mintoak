@@ -305,7 +305,7 @@ export default function Partner() {
             </div>
           </div>
         </div>
-        <div className="desktop:py-150 laptop:py-150 mobile:py-80 w-100%">
+        <div className="desktop:py-150 laptop:py-150 mobile:py-80 w-100% bg-E0EFD4">
           <div className="w-100% desktop:text-center laptop:text-center mobile:text-s22l33 mobile:text-000000 desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 desktop:font-medium laptop:font-medium mobile:font-bold pl-33">
             The Mintoak effect
           </div>
@@ -446,7 +446,7 @@ export default function Partner() {
           </div>
         </div>
         {/* our partners */}
-        <div className="mobile:py-80">
+        <div className="mobile:py-80 bg-E0EFD4">
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>
@@ -513,9 +513,8 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-525252" : ""
-                          }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
