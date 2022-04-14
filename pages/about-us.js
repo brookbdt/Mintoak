@@ -1,31 +1,31 @@
-import { useEffect, useState, useRef } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
-import { useSwiper } from "swiper/react";
-import Sticky from "react-sticky-el";
-SwiperCore.use([Mousewheel, Pagination]);
+import { useEffect, useState, useRef } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useSwiper } from "swiper/react"
+import Sticky from "react-sticky-el"
+SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({});
-  const [storyResp, setStoryResp] = useState({});
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState();
-  const founder = useRef(null);
-  const swiper = useSwiper();
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({})
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
+  const [activeTab, setActiveTab] = useState(0)
+  const [swiperInstance, setSwiperInstance] = useState()
+  const founder = useRef(null)
+  const swiper = useSwiper()
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   useEffect(() => {
     // about_banner
@@ -33,65 +33,65 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp);
+        setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp);
+        setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp);
+        setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp);
+        setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp);
+        setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp);
+        setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp);
+        setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp);
+        setTeamInfoResp(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   function goToPage(numberPage) {}
 
@@ -423,8 +423,7 @@ export default function About() {
             className="mySwiper overflow-scroll"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex);
-              console.log(e.activeIndex, "sliderchange");
+              setActiveTab(e.activeIndex)
             }}
           >
             {founderResp.map((item, index) => (
@@ -433,9 +432,6 @@ export default function About() {
                   id={`founders${index}`}
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
-                  onLoadStart={() => {
-                    console.log("first");
-                  }}
                 >
                   <div className="flex mobile:flex-col">
                     <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
@@ -468,8 +464,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index);
-                    founder.current?.swiper.slideTo(index);
+                    setActiveTab(index)
+                    founder.current?.swiper.slideTo(index)
                     // founder.swiper
                   }}
                   key={index}
@@ -532,5 +528,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }

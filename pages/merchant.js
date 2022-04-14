@@ -1,135 +1,124 @@
-import { useEffect, useState, useRef } from "react";
-import { API, endpoints } from "../components/helpers/API";
-import Image from "../components/helpers/Image";
-import { Chrono } from "react-chrono";
-import Carousel from "react-elastic-carousel";
-import { consts } from "react-elastic-carousel";
-import Request_Demo from "./request_demo";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
-import { useSwiper } from "swiper/react";
-import Sticky from "react-sticky-el";
+import { useEffect, useState, useRef } from "react"
+import { API, endpoints } from "../components/helpers/API"
+import Image from "../components/helpers/Image"
+import { Chrono } from "react-chrono"
+import Carousel from "react-elastic-carousel"
+import { consts } from "react-elastic-carousel"
+import Request_Demo from "./request_demo"
+import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useSwiper } from "swiper/react"
+import Sticky from "react-sticky-el"
 
-SwiperCore.use([Mousewheel, Pagination]);
+SwiperCore.use([Mousewheel, Pagination])
 export default function Merchant() {
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [merchantBannerResp, setMerchantBannerResp] = useState({});
-  const [merchantBenefitsResp, setMerchantBenefitsResp] = useState();
-  const [merchantBenefits2, setMerchantBenefits2] = useState();
-  const [merchantBenefits3, setMerchantBenefits3] = useState();
-  const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState();
-  const [merchantPageOnboarding, setMerchantPageOnboarding] = useState();
-  const [merchantPageMockUp2, setMerchantPageMockUp2] = useState();
-  const [activeTab, setActiveTab] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState();
-  const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
-  const founder = useRef(null);
-  const [val0, setVal0] = useState(merchantBenefits3?.[0]);
-  const [val1, setVal1] = useState(merchantBenefits3?.[1]);
-  const [val2, setVal2] = useState(merchantBenefits3?.[2]);
-  const [temp, setTemp] = useState(null);
-  const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description);
-  const [customizclick, setCustomizClick] = useState(1);
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [merchantBannerResp, setMerchantBannerResp] = useState({})
+  const [merchantBenefitsResp, setMerchantBenefitsResp] = useState()
+  const [merchantBenefits2, setMerchantBenefits2] = useState()
+  const [merchantBenefits3, setMerchantBenefits3] = useState()
+  const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState()
+  const [merchantPageOnboarding, setMerchantPageOnboarding] = useState()
+  const [merchantPageMockUp2, setMerchantPageMockUp2] = useState()
+  const [activeTab, setActiveTab] = useState(0)
+  const [swiperInstance, setSwiperInstance] = useState()
+  const [merchantPageMockUp3, setMerchantPageMockUp3] = useState()
+  const founder = useRef(null)
+  const [val0, setVal0] = useState(merchantBenefits3?.[0])
+  const [val1, setVal1] = useState(merchantBenefits3?.[1])
+  const [val2, setVal2] = useState(merchantBenefits3?.[2])
+  const [temp, setTemp] = useState(null)
+  const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description)
+  const [customizclick, setCustomizClick] = useState(1)
 
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   useEffect(() => {
     API({
       url: endpoints.merchant_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBannerResp(resp);
+        setMerchantBannerResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_benefits,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefitsResp(resp);
-        // console.log("dasdasdasdasdasdasds", resp);
+        setMerchantBenefitsResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_benefits_2,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefits2(resp);
-        console.log("asdasifasofjaksjd", resp);
+        setMerchantBenefits2(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_benefits_3,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefits3(resp);
-        setDesc(resp[1].Description);
-        setVal0(resp[0]);
-        setVal1(resp[1]);
-        setVal2(resp[2]);
-        console.log("asfsasdffsdafsadf", resp);
+        setMerchantBenefits3(resp)
+        setDesc(resp[1].Description)
+        setVal0(resp[0])
+        setVal1(resp[1])
+        setVal2(resp[2])
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_assured_by_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantAssuredByBanks(resp);
-        // console.log("Aasgdjahgsduasgd", resp);
+        setMerchantAssuredByBanks(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_onboarding,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageOnboarding(resp);
-        // console.log("ASDksljsbsadvasgdashd", resp);
+        setMerchantPageOnboarding(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_mock_up2,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageMockUp2(resp);
-        // console.log("askduasbdywebnsdhgsds", resp);
+        setMerchantPageMockUp2(resp)
       }
-    });
+    })
     API({
       url: endpoints.merchant_page_mock_up3,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageMockUp3(resp);
-        // console.log("asjklasfdsfhkjhfkjdhfa", resp);
+        setMerchantPageMockUp3(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
   const handleData = (num) => {
     if (num == 2) {
-      let t = val2;
-      setVal2(val1);
-      setVal1(t);
+      let t = val2
+      setVal2(val1)
+      setVal1(t)
       // aboutUsCustomization2.map((item) => {
-      //   console.log('esdtxghbnmsaxz123', item.Title, t)
       //   if (item.Title == val2) {
-      //     console.log('esdtxghbnmsaxz')
       //     setDesc(item.Description);
       //   }
       // })
     }
     if (num == 0) {
-      let t = val0;
-      setVal0(val1);
-      setVal1(t);
+      let t = val0
+      setVal0(val1)
+      setVal1(t)
       merchantBenefits3.map((item) => {
-        console.log("esdtxghbnmsaxz123", item.Title, t);
         if (item.Title == val0) {
-          console.log("esdtxghbnmsaxz");
-          setDesc(item.Description);
+          setDesc(item.Description)
         }
-      });
+      })
     }
-  };
+  }
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
@@ -187,7 +176,7 @@ export default function Merchant() {
                   {item.Title}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
         <div className="px-26 desktop:hidden laptop:hidden flex justify-center pt-40 mobile:pt-46 mobile:block justify-around mobile:px-20">
@@ -201,7 +190,7 @@ export default function Merchant() {
                   {item.Title}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -251,8 +240,8 @@ export default function Merchant() {
               <div className="h-39 border-r-2 border-C4C4C4"></div>
               <div
                 onClick={() => {
-                  setCustomizClick(0);
-                  handleData(0);
+                  setCustomizClick(0)
+                  handleData(0)
                 }}
                 className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
               ></div>
@@ -271,8 +260,8 @@ export default function Merchant() {
               <div className="h-39 border-r-2 border-C4C4C4"></div>
               <div
                 onClick={() => {
-                  setCustomizClick(2);
-                  handleData(2);
+                  setCustomizClick(2)
+                  handleData(2)
                 }}
                 className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
               ></div>
@@ -315,8 +304,7 @@ export default function Merchant() {
               className="mySwiper overflow-scroll bg-reel_img_bg"
               onSwiper={setSwiperInstance}
               onSlideChange={(e) => {
-                setActiveTab(e.activeIndex);
-                console.log(e.activeIndex, "sliderchange");
+                setActiveTab(e.activeIndex)
               }}
             >
               <SwiperSlide key={0}>
@@ -393,8 +381,8 @@ export default function Merchant() {
             <div className="h-850 justify-center flex flex-col ">
               <div
                 onClick={() => {
-                  setActiveTab(0);
-                  founder.current?.swiper.slideTo(0);
+                  setActiveTab(0)
+                  founder.current?.swiper.slideTo(0)
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -424,8 +412,8 @@ export default function Merchant() {
               </div>
               <div
                 onClick={() => {
-                  setActiveTab(1);
-                  founder.current?.swiper.slideTo(1);
+                  setActiveTab(1)
+                  founder.current?.swiper.slideTo(1)
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -455,8 +443,8 @@ export default function Merchant() {
               </div>
               <div
                 onClick={() => {
-                  setActiveTab(2);
-                  founder.current?.swiper.slideTo(2);
+                  setActiveTab(2)
+                  founder.current?.swiper.slideTo(2)
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -557,12 +545,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
@@ -700,7 +688,7 @@ export default function Merchant() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page;
+                      const isActivePage = activePage === page
                       return (
                         <div
                           className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
@@ -710,10 +698,10 @@ export default function Merchant() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      );
+                      )
                     })}
                   </div>
-                );
+                )
               }}
             >
               <div className="w-256 h-211 bg-393939 flex flex-col items-center w-311 mobile:h-191 p-28 border border-C4C4C4">
@@ -801,12 +789,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button onClick={onClick} disabled={isEdge} className="h-120">
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               <div className="">
@@ -860,7 +848,7 @@ export default function Merchant() {
                   return (
                     <div className="flex">
                       {pages.map((page) => {
-                        const isActivePage = activePage === page;
+                        const isActivePage = activePage === page
                         return (
                           <div
                             className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
@@ -870,10 +858,10 @@ export default function Merchant() {
                             onClick={() => onClick(page)}
                             active={isActivePage}
                           ></div>
-                        );
+                        )
                       })}
                     </div>
-                  );
+                  )
                 }}
               >
                 <div className="">
@@ -920,5 +908,5 @@ export default function Merchant() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }

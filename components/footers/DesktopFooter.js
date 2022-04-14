@@ -19,7 +19,6 @@ export default function DesktopFooter() {
     setSlug(slug)
   }, [])
 
-  console.log("esdftzyxgbhjnk", slug)
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
       {slug == "faqs" || slug == "career" ? null : (
