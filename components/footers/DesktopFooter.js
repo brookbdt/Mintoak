@@ -1,25 +1,25 @@
-import React from "react";
-import Image from "../helpers/Image";
-import Request_Demo from "../../pages/request_demo";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react"
+import Image from "../helpers/Image"
+import Request_Demo from "../../pages/request_demo"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
 
 export default function DesktopFooter() {
-  const router = useRouter();
+  const router = useRouter()
 
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [slug, setSlug] = useState("");
+    setDemoPopup(false)
+  }
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [slug, setSlug] = useState("")
 
   useEffect(() => {
-    let url = window.location.href;
-    let slug = url.split("/").pop();
-    setSlug(slug);
-  }, []);
+    let url = window.location.href
+    let slug = url.split("/").pop()
+    setSlug(slug)
+  }, [])
 
-  console.log("esdftzyxgbhjnk", slug);
+  console.log("esdftzyxgbhjnk", slug)
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
       {slug == "faqs" || slug == "career" ? null : (
@@ -230,5 +230,5 @@ export default function DesktopFooter() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }
