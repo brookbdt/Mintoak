@@ -159,8 +159,9 @@ export default function Home() {
     return (
       <>
         <span className="flex w-30 justify-between mt-20">
-          {pages.map((page) => (
+          {pages.map((page, index) => (
             <span
+              key={index}
               className={`w-6 h-6 ${
                 page == activePage ? "bg-C4C4C4" : "bg-525252"
               }  rounded-md bg-opacity-100 pr-6`}

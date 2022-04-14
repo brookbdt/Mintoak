@@ -142,15 +142,15 @@ export default function Partner() {
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute z-minus1 mobile:hidden w-100% h-100%"
           />
-          <div className="desktop:w-50% desktop:pb-101 laptop:pb-101 laptop:w-50% pl-100 pr-50 pt-100 z-10 mobile: w-100% mobile:p-20 ">
+          <div className="desktop:w-50% desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
-              {/* exclusive partnership */}
+              {partnerWithUsBanner?.Title2}
             </div>
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
-              {/* with mintoak */}
+              {partnerWithUsBanner?.Title3}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
               {partnerWithUsBanner?.Description}
