@@ -1,4 +1,5 @@
 export default function Contact() {
+
   return (
     <div className="w-100% desktop:px-180 mobile:px-20 bg-home-top">
       <div className="desktop:text-s56l63 text-252525  mobile:text-s24l29 desktop:pb-70 desktop:pt-150 mobile:pb-30 font-bold mobile:pt-30">

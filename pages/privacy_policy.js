@@ -3,7 +3,6 @@ import { useState } from "react";
 export default function Contact() {
   const [clickStatus, setClickStatus] = useState(false);
   return (
-
     <>
       <div className="w-100% desktop:pl-180 laptop:pl-70 laptop:pr-200 desktop:pr-540 mobile:px-20 bg-home-top">
         <div className="w-100%">

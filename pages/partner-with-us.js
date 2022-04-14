@@ -6,10 +6,9 @@ import { Modal, Select } from "antd";
 import { API, endpoints } from "../components/helpers/API";
 import Request_Demo from "./request_demo";
 import CircularProgress from "../components/helpers/Prograssbar";
-const Option = Select;
+
 export default function Partner() {
   const { Option } = Select;
-
   const [modalvisible, setmodalVisible] = useState(false);
   const [comunityCard, setComunityCard] = useState([]);
   const [anime, setAnime] = useState("");
@@ -27,16 +26,14 @@ export default function Partner() {
   const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
   const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
   const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
-  const [temp, setTemp] = useState(null);
   const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
-  console.log("esdxtgvhbjn", desc, aboutUsCustomization2);
+
   useEffect(() => {
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setComunityCard(resp);
       }
     });
@@ -45,7 +42,6 @@ export default function Partner() {
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setPartnerWithUsBanner(resp);
       }
     });
@@ -53,7 +49,6 @@ export default function Partner() {
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setPartnerWithUsNewHeights(resp);
       }
     });
@@ -61,7 +56,6 @@ export default function Partner() {
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setPartnerWithUsNewHeights2(resp);
       }
     });
@@ -69,7 +63,6 @@ export default function Partner() {
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "dasdsasfdfsdfe");
         setAboutUsCustomization2(resp);
         setDesc(resp[1].Description);
         setVal0(resp[0]);
@@ -81,7 +74,6 @@ export default function Partner() {
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp 23");
         setAboutUsCustomization(resp);
       }
     });
@@ -89,7 +81,6 @@ export default function Partner() {
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setPartnerWithUsMintoakEffect(resp);
       }
     });
@@ -114,9 +105,7 @@ export default function Partner() {
       setVal2(val1);
       setVal1(t);
       // aboutUsCustomization2.map((item) => {
-      //   console.log('esdtxghbnmsaxz123', item.Title, t)
       //   if (item.Title == val2) {
-      //     console.log('esdtxghbnmsaxz')
       //     setDesc(item.Description);
       //   }
       // })
@@ -126,15 +115,13 @@ export default function Partner() {
       setVal0(val1);
       setVal1(t);
       aboutUsCustomization2.map((item) => {
-        console.log("esdtxghbnmsaxz123", item.Title, t);
         if (item.Title == val0) {
-          console.log("esdtxghbnmsaxz");
           setDesc(item.Description);
         }
       });
     }
   };
-  console.log(val0, val1, val2);
+
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -142,9 +129,9 @@ export default function Partner() {
         <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
-            className="absolute z-minus1 mobile:hidden w-100% h-100%"
+            className="absolute  mobile:hidden w-100% h-100%"
           />
-          <div className="desktop:w-50% desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
+          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
@@ -307,7 +294,7 @@ export default function Partner() {
             </div>
           </div>
         </div>
-        <div className="desktop:py-150 laptop:py-150 mobile:py-80 w-100%">
+        <div className="desktop:py-150 laptop:py-150 mobile:py-80 w-100% bg-E0EFD4">
           <div className="w-100% desktop:text-center laptop:text-center mobile:text-s22l33 mobile:text-000000 desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 desktop:font-medium laptop:font-medium mobile:font-bold pl-33">
             The Mintoak effect
           </div>
@@ -448,7 +435,7 @@ export default function Partner() {
           </div>
         </div>
         {/* our partners */}
-        <div className="mobile:py-80">
+        <div className="mobile:py-80 bg-E0EFD4">
           <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
             Our partners
           </div>

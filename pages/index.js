@@ -83,7 +83,6 @@ export default function Home() {
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setHomeAdvantagesCard(resp);
       }
     });
@@ -93,7 +92,6 @@ export default function Home() {
       url: endpoints.homepage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setHomeForMerchant(resp);
       }
     });
@@ -103,7 +101,6 @@ export default function Home() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setComunityCard(resp);
       }
     });
@@ -113,7 +110,6 @@ export default function Home() {
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setHomepageAchievements(resp);
       }
     });
@@ -123,7 +119,6 @@ export default function Home() {
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setHomepageMediaCards(resp);
       }
     });
@@ -133,7 +128,6 @@ export default function Home() {
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setFaq(resp);
       }
     });
@@ -143,7 +137,6 @@ export default function Home() {
       url: endpoints.home_page_blogs,
     }).then((resp) => {
       if (!resp.message) {
-        console.log(resp, "resp");
         setHomePageBlogs(resp);
       }
     });
@@ -186,9 +179,9 @@ export default function Home() {
       <div className="relative desktop:top-bg-container laptop:top-bg-container mobile:bg-mobile-home-top">
         <Image
           src={homeBannerResp?.Illustration}
-          className="absolute z-minus1 mobile:hidden"
+          className="absolute mobile:hidden"
         />
-        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TittleTop}
           </div>
@@ -377,7 +370,12 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    <div
+                      className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12"
+                      onClick={() => {
+                        router.push("/partner-with-us");
+                      }}
+                    >
                       {homeForBanksResp?.CTA2}
                     </div>
                   </div>
@@ -449,7 +447,12 @@ export default function Home() {
                   {homeForBanksResp?.CTA1}
                 </span>
               </div>
-              <div className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40">
+              <div
+                className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40"
+                onClick={() => {
+                  router.push("/partner-with-us");
+                }}
+              >
                 {" "}
                 {homeForBanksResp?.CTA2}
               </div>

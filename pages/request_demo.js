@@ -1,25 +1,24 @@
-import { Modal, Select } from "antd";
-import { useState, useEffect } from "react";
-import Image from "../components/helpers/Image";
-import { API, endpoints } from "../components/helpers/API";
+import { Modal, Select } from "antd"
+import { useState, useEffect } from "react"
+import Image from "../components/helpers/Image"
+import { API, endpoints } from "../components/helpers/API"
 
 export default function Request_Demo(props) {
-  const { Option } = Select;
-  const [countryList, setCountryList] = useState(null);
-  const [productList, setProductList] = useState(null);
-  const [modalvisible, setmodalVisible] = useState(props.triger);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
+  const { Option } = Select
+  const [countryList, setCountryList] = useState(null)
+  const [productList, setProductList] = useState(null)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
   useEffect(() => {
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
-        setProductList(resp[1]);
+        setCountryList(resp[0])
+        setProductList(resp[1])
       }
-    });
-  }, []);
-  // console.log('wqsaXZ', dropdown)
+    })
+  }, [])
+
   return (
     <>
       <Modal
@@ -31,8 +30,10 @@ export default function Request_Demo(props) {
         visible={props.triger}
         onCancel={() => props.handleClose()}
         footer={null}
-        width={983}
+        // width={983}
         className="close-btn shadow-popupShadow"
+        width="85%"
+        wrapClassName="pt-100"
       >
         <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
@@ -155,7 +156,7 @@ export default function Request_Demo(props) {
           </div>
           <div className="py-18 flex">
             <Image src="/images/backgrounds/warn.svg" height={20} width={18} />
-            <div className="text-EC5F22 text-s18l22 pl-10">
+            <div className="text-EC5F22 text-s18l22 mobile:text-s14l17 pl-10">
               Please enter all the necessary details to submit the form.
             </div>
           </div>
@@ -209,5 +210,5 @@ export default function Request_Demo(props) {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }
