@@ -1,14 +1,11 @@
 import { useEffect, useState, useRef } from "react"
 import { API, endpoints } from "../components/helpers/API"
 import Image from "../components/helpers/Image"
-import { Chrono } from "react-chrono"
 import Carousel from "react-elastic-carousel"
 import { consts } from "react-elastic-carousel"
 import Request_Demo from "./request_demo"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
-import Sticky from "react-sticky-el"
 
 SwiperCore.use([Mousewheel, Pagination])
 export default function Merchant() {
@@ -27,7 +24,6 @@ export default function Merchant() {
   const [val0, setVal0] = useState(merchantBenefits3?.[0])
   const [val1, setVal1] = useState(merchantBenefits3?.[1])
   const [val2, setVal2] = useState(merchantBenefits3?.[2])
-  const [temp, setTemp] = useState(null)
   const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description)
   const [customizclick, setCustomizClick] = useState(1)
 

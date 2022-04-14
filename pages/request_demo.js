@@ -7,7 +7,6 @@ export default function Request_Demo(props) {
   const { Option } = Select
   const [countryList, setCountryList] = useState(null)
   const [productList, setProductList] = useState(null)
-  const [modalvisible, setmodalVisible] = useState(props.triger)
   const [modalquerievisible, setmodalquerieVisible] = useState(false)
   useEffect(() => {
     API({

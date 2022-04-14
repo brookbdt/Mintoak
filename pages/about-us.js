@@ -6,7 +6,6 @@ import Request_Demo from "./request_demo"
 import { Swiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Mousewheel, Pagination } from "swiper"
 import { useSwiper } from "swiper/react"
-import Sticky from "react-sticky-el"
 SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {

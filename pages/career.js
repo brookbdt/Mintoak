@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import Image from "../components/helpers/Image"
 import Carousel from "react-elastic-carousel"
 import { consts } from "react-elastic-carousel"
-import { Chrono } from "react-chrono"
 import { API, endpoints } from "../components/helpers/API"
-import { Row, Col, Input, Select, Pagination, Checkbox } from "antd"
+import { Row, Col, Input, Select, Pagination } from "antd"
 import Request_Demo from "./request_demo"
 
 export default function Career() {

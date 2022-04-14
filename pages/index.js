@@ -7,7 +7,6 @@ import { Collapse } from "antd"
 import { API, endpoints } from "../components/helpers/API"
 import Item from "antd/lib/list/Item"
 import { useRouter } from "next/router"
-
 const { Panel } = Collapse
 
 export default function Home() {

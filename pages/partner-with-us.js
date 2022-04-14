@@ -6,10 +6,9 @@ import { Modal, Select } from "antd"
 import { API, endpoints } from "../components/helpers/API"
 import Request_Demo from "./request_demo"
 import CircularProgress from "../components/helpers/Prograssbar"
-const Option = Select
+
 export default function Partner() {
   const { Option } = Select
-
   const [modalvisible, setmodalVisible] = useState(false)
   const [comunityCard, setComunityCard] = useState([])
   const [anime, setAnime] = useState("")
@@ -26,7 +25,6 @@ export default function Partner() {
   const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
   const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
   const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
-  const [temp, setTemp] = useState(null)
   const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
 
   useEffect(() => {

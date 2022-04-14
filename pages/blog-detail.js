@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import Carousel from "react-elastic-carousel";
 import Image from "../components/helpers/Image";
 import { consts } from "react-elastic-carousel";
-import { Collapse } from "antd";
-import { API, endpoints } from "../components/helpers/API";
 
 export default function BlogDetail() {
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
