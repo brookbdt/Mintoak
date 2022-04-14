@@ -122,19 +122,19 @@ export default function Partner() {
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
+        <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute  mobile:hidden w-100% h-100%"
           />
-          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
+          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 desktop:pt-150 z-10 mobile: w-100% mobile:px-20 ">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-40 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
-            <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
+            <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-2">
               {partnerWithUsBanner?.Title2}
             </div>
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 mobile:pt-2 text-252525 shrink-0">
               {partnerWithUsBanner?.Title3}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
@@ -147,17 +147,17 @@ export default function Partner() {
               {partnerWithUsBanner?.CTA}
             </div>
           </div>
-          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
+          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
-              src={partnerWithUsBanner?.ilustration[0]}
-              width={550}
-              height={550}
-              className=" block relative desktop:hidden laptop:hidden"
+              src={partnerWithUsBanner?.mobilebanner}
+
+              type="img"
+              className=" h-fit w-100% block relative desktop:hidden laptop:hidden object-cover"
             />
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col py-150 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+        <div className="desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
@@ -498,9 +498,8 @@ export default function Partner() {
                       const isActivePage = activePage === page
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-525252" : ""
-                          }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
