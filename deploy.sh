@@ -5,10 +5,10 @@ git pull
 if [ $? -eq 0 ]; then
     echo 'Git pulled successfully'
     echo 'Rebuilding Project...'
-    # rm -rf node_modules/
-    # rm -rf .next/
-    # npm install
-    # npm run build
+    rm -rf node_modules/
+    rm -rf .next/
+    npm install
+    npm run build
 
     echo 'Restarting PM2...'
     pm2 restart mintOak
