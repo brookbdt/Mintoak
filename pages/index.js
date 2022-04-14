@@ -170,9 +170,9 @@ export default function Home() {
       <div className="relative desktop:top-bg-container laptop:top-bg-container mobile:bg-mobile-home-top">
         <Image
           src={homeBannerResp?.Illustration}
-          className="absolute z-minus1 mobile:hidden"
+          className="absolute mobile:hidden"
         />
-        <div className="desktop:w-50%  laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TittleTop}
           </div>

@@ -121,10 +121,10 @@ export default function Merchant() {
       <div className="relative top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
-          className="absolute z-minus1 mobile:hidden object-cover"
+          className="absolute mobile:hidden object-cover"
           type="img"
         />
-        <div className="desktop:w-50% desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
+        <div className="desktop:w-50% relative desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>

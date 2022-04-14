@@ -125,9 +125,9 @@ export default function Partner() {
         <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
-            className="absolute z-minus1 mobile:hidden w-100% h-100%"
+            className="absolute  mobile:hidden w-100% h-100%"
           />
-          <div className="desktop:w-50% desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
+          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 pt-150 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
