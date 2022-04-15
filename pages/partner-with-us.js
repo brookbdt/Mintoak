@@ -1,11 +1,11 @@
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { useEffect, useState } from "react";
-import { consts } from "react-elastic-carousel";
-import { Modal, Select } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import CircularProgress from "../components/helpers/Prograssbar";
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { useEffect, useState, useRef } from "react"
+import { consts } from "react-elastic-carousel"
+import { Modal, Select } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import CircularProgress from "../components/helpers/Prograssbar"
 
 export default function Partner() {
   const { Option } = Select;
@@ -21,13 +21,25 @@ export default function Partner() {
   const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
   const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null);
-  const [countryList, setCountryList] = useState(null);
-  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
-  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
-  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
-  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
+    useState(null)
+  const [countryList, setCountryList] = useState(null)
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
+  const [fullName, setFullName] = useState(null);
+  const [contactNo, setContactNo] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [bankName, setBankName] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [msg, setMsg] = useState(null);
+  const [validate, setValidate] = useState(true);
+  const scrollPoint = useRef(null);
 
+  const scrollToBottom = () => {
+    scrollPoint.current.scrollIntoView({ behavior: "smooth" });
+  };
   useEffect(() => {
     // Community card
     API({
@@ -120,25 +132,91 @@ export default function Partner() {
         }
       });
     }
+  }
+  const handleSubmit = () => {
+    let tempVal = true;
+    if (fullName === null || fullName === "") {
+      setValidate(false);
+      console.log(1);
+      tempVal = false;
+    }
+    if (contactNo === null || contactNo === "") {
+      tempVal = false;
+      console.log(2);
+      setValidate(false);
+    }
+    if (email === null || email === "") {
+      tempVal = false;
+      console.log(3);
+      setValidate(false);
+    } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      tempVal = false;
+      console.log(4);
+      setValidate(false);
+    }
+
+    if (bankName === null || bankName === "") {
+      setValidate(false);
+      tempVal = false;
+    }
+    if (msg === null || msg === "") {
+      setValidate(false);
+      console.log(6);
+      tempVal = false;
+    }
+    if (title === null || title === "") {
+      setValidate(false);
+      console.log(7);
+      tempVal = false;
+    }
+    if (country === null || country === "") {
+      setValidate(false);
+      console.log(7);
+      tempVal = false;
+    }
+    if (tempVal) {
+      setValidate(true);
+      handleClearAll();
+      setmodalVisible(true);
+    }
   };
+
+  const handleClearAll = () => {
+    setFullName("");
+    setEmail("");
+    setContactNo("");
+    setBankName("");
+    setTitle("");
+    setCountry("");
+    setMsg("");
+  };
+
+
+  useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
+
 
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative  top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
+        <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
           />
+<<<<<<< HEAD
           <div className="desktop:w-50% relative desktop:pb-107 laptop:pb-107 laptop:w-50% pl-176 laptop:pl-100 pr-0 pt-150 laptop:pt-41 z-10 mobile: w-100% mobile:p-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
+=======
+          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 desktop:pt-150 z-10 mobile: w-100% mobile:px-20 ">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-40 text-252525 shrink-0">
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
               {partnerWithUsBanner?.Title}
             </div>
-            <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-10">
+            <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-2">
               {partnerWithUsBanner?.Title2}
             </div>
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 text-252525 shrink-0">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-10 mobile:pt-2 text-252525 shrink-0">
               {partnerWithUsBanner?.Title3}
             </div>
             <div className="text-s20l30 mobile:text-s14l24 desktop:py-32 laptop:py-32 mobile:py-16 pr-75 text-525252 shrink-0">
@@ -151,17 +229,21 @@ export default function Partner() {
               {partnerWithUsBanner?.CTA}
             </div>
           </div>
-          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center px-50 pt-50 pb-20 mobile:w-100%">
+          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
-              src={partnerWithUsBanner?.ilustration[0]}
-              width={550}
-              height={550}
-              className=" block relative desktop:hidden laptop:hidden"
+              src={partnerWithUsBanner?.mobilebanner}
+
+              type="img"
+              className=" h-fit w-100% block relative desktop:hidden laptop:hidden object-cover"
             />
           </div>
         </div>
         {/* Take your business  */}
+<<<<<<< HEAD
         <div className="desktop:flex laptop:flex flex-col py-150 desktop:px-333 laptop:py-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
+=======
+        <div className="desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
@@ -321,6 +403,7 @@ export default function Partner() {
         </div>
         {/* Partner with us form */}
         <div className="w-100%  bg-footer">
+          <div ref={scrollPoint} />
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
@@ -422,6 +505,11 @@ export default function Partner() {
                 <input
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                  }}
+                  value={fullName}
+
                 />
               </div>
               <div className="pb-40 ">
@@ -431,6 +519,11 @@ export default function Partner() {
                 <input
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  onChange={(e) => {
+                    setBankName(e.target.value);
+                  }}
+                  value={bankName}
+
                 />
               </div>
               <div>
@@ -444,12 +537,17 @@ export default function Partner() {
                     Contact Number
                   </div>
 
-                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
+                  <span className="desktop:text-s20l24 border-r border-C4C4C4 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
                     +91
                   </span>
                   <input
                     type="number"
                     className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% mobile:pl-35 desktop:pl-50 laptop:pl-50 global-input pb-3"
+                    onChange={(e) => {
+                      setContactNo(e.target.value);
+                    }}
+                    value={contactNo}
+
                   />
                 </div>
               </div>
@@ -460,6 +558,11 @@ export default function Partner() {
                 <input
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
+                  value={title}
+
                 />
               </div>
             </div>
@@ -471,6 +574,11 @@ export default function Partner() {
                 <input
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  value={email}
+
                 />
               </div>
               <div className="pb-40 w-100% mobile:text-s12l14 mobile:global-partner-m  global-partner">
@@ -487,6 +595,11 @@ export default function Partner() {
                       "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
                   }}
                   placeholder="Select"
+                  onChange={(e) => {
+                    setCountry(e.target);
+                  }}
+                  value={country}
+
                 >
                   {countryList &&
                     countryList.Data.map((item, index) => (
@@ -514,12 +627,32 @@ export default function Partner() {
                 type="text"
                 placeholder="Type here"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 w-100% global-input pb-5"
+                value={msg}
+                onChange={(e) => {
+                  setMsg(e.target.value);
+                }}
+
               />
             </div>
           </div>
+          {validate === false && (
+            <>
+              <div className="py-18 flex desktop:px-100 laptop:px-100 w-100%">
+                <Image
+                  src="/images/backgrounds/warn.svg"
+                  height={20}
+                  width={18}
+                />
+                <div className="text-EC5F22 text-s18l22 pl-10">
+                  Please enter all the necessary details to submit the form.
+                </div>
+              </div>
+            </>
+          )}
+
           <div className="desktop:pl-100 laptop:pl-100 w-100% pb-100 mobile:flex mobile:items-center mobile:justify-center">
             <div
-              onClick={() => setmodalVisible(true)}
+              onClick={() => handleSubmit()}
               className="mobile:w-320 desktop:w-359 laptop:w-359 button desktop:text-s22l26_4 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10 mobile:px-98 desktop:py-15 laptop:py-15 desktop:px-176 laptop:px-176"
             >
               Submit
@@ -594,9 +727,8 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-525252" : ""
-                          }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

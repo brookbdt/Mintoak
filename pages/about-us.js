@@ -101,7 +101,7 @@ export default function About() {
     });
   }, []);
 
-  function goToPage(numberPage) {}
+  function goToPage(numberPage) { }
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -130,7 +130,7 @@ export default function About() {
           </div>
         </div>
         <Image
-          src="/images/backgrounds/about-us.png"
+          src={aboutBannerResp?.mobilebanner}
           className=" block relative desktop:hidden laptop:hidden"
           type="img"
         />
@@ -225,9 +225,8 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
-                  index != principalResp.length - 1 && ""
-                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
+                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -552,18 +551,28 @@ export default function About() {
                   <div className="flex h-190 laptop:h-150 laptop:pr-50">
                     <div className="w-55% laptop:w-400 text-right laptop:pr-20">
                       <div
+<<<<<<< HEAD
                         className={`${
                           activeTab == index
                             ? "text-s24l150 laptop:text-s20l24"
                             : "text-s20l150 laptop:text-s18l21_6"
                         } text-F1F1F1`}
+=======
+                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
+                          } text-s20l30 text-F1F1F1`}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
+<<<<<<< HEAD
                         className={`${
                           activeTab == index ? "text-F1F1F1" : "text-949494"
                         } text-s20l150 laptop:text-s17l25`}
+=======
+                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
+                          } text-s20l150`}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -571,11 +580,18 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
+<<<<<<< HEAD
                           className={`${
                             activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
                           } rounded-full bg-opacity-100`}
+=======
+                          className={`${activeTab == index
+                            ? "w-27 h-27 bg-F1F1F1 "
+                            : "w-17 h-16 bg-949494"
+                            } rounded-full bg-opacity-100 `}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (

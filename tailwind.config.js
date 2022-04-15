@@ -183,6 +183,7 @@ module.exports = {
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
         reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)",
+        partner_mobile: "url(http://uat-content.mintoak.com/uploads/Group_163266_c480074a91.svg)",
         read_more:
           "linear-gradient(360deg, #F3FBF6 0%, rgba(244, 251, 243, 0.9) 37.42%, rgba(248, 252, 243, 0.5) 67.65%, rgba(248, 252, 243, 0) 100%)",
       },
