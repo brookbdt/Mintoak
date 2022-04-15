@@ -1,103 +1,103 @@
-import { useEffect, useState, useRef } from "react"
-import { API, endpoints } from "../components/helpers/API"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
-import Request_Demo from "./request_demo"
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useEffect, useState, useRef } from "react";
+import { API, endpoints } from "../components/helpers/API";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
+import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
 
-SwiperCore.use([Mousewheel, Pagination])
+SwiperCore.use([Mousewheel, Pagination]);
 export default function Merchant() {
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [merchantBannerResp, setMerchantBannerResp] = useState({})
-  const [merchantBenefitsResp, setMerchantBenefitsResp] = useState()
-  const [merchantBenefits2, setMerchantBenefits2] = useState()
-  const [merchantBenefits3, setMerchantBenefits3] = useState()
-  const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState()
-  const [merchantPageOnboarding, setMerchantPageOnboarding] = useState()
-  const [merchantPageMockUp2, setMerchantPageMockUp2] = useState()
-  const [activeTab, setActiveTab] = useState(0)
-  const [swiperInstance, setSwiperInstance] = useState()
-  const [merchantPageMockUp3, setMerchantPageMockUp3] = useState()
-  const founder = useRef(null)
-  const [val0, setVal0] = useState(merchantBenefits3?.[0])
-  const [val1, setVal1] = useState(merchantBenefits3?.[1])
-  const [val2, setVal2] = useState(merchantBenefits3?.[2])
-  const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description)
-  const [customizclick, setCustomizClick] = useState(1)
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [merchantBannerResp, setMerchantBannerResp] = useState({});
+  const [merchantBenefitsResp, setMerchantBenefitsResp] = useState();
+  const [merchantBenefits2, setMerchantBenefits2] = useState();
+  const [merchantBenefits3, setMerchantBenefits3] = useState();
+  const [merchantAssuredByBanks, setMerchantAssuredByBanks] = useState();
+  const [merchantPageOnboarding, setMerchantPageOnboarding] = useState();
+  const [merchantPageMockUp2, setMerchantPageMockUp2] = useState();
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const [merchantPageMockUp3, setMerchantPageMockUp3] = useState();
+  const founder = useRef(null);
+  const [val0, setVal0] = useState(merchantBenefits3?.[0]);
+  const [val1, setVal1] = useState(merchantBenefits3?.[1]);
+  const [val2, setVal2] = useState(merchantBenefits3?.[2]);
+  const [desc, setDesc] = useState(merchantBenefits3?.[1]?.Description);
+  const [customizclick, setCustomizClick] = useState(1);
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     API({
       url: endpoints.merchant_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBannerResp(resp)
+        setMerchantBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_benefits,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefitsResp(resp)
+        setMerchantBenefitsResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_benefits_2,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefits2(resp)
+        setMerchantBenefits2(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_benefits_3,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantBenefits3(resp)
-        setDesc(resp[1].Description)
-        setVal0(resp[0])
-        setVal1(resp[1])
-        setVal2(resp[2])
+        setMerchantBenefits3(resp);
+        setDesc(resp[1].Description);
+        setVal0(resp[0]);
+        setVal1(resp[1]);
+        setVal2(resp[2]);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_assured_by_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantAssuredByBanks(resp)
+        setMerchantAssuredByBanks(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_onboarding,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageOnboarding(resp)
+        setMerchantPageOnboarding(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_mock_up2,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageMockUp2(resp)
+        setMerchantPageMockUp2(resp);
       }
-    })
+    });
     API({
       url: endpoints.merchant_page_mock_up3,
     }).then((resp) => {
       if (!resp.message) {
-        setMerchantPageMockUp3(resp)
+        setMerchantPageMockUp3(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
   const handleData = (num) => {
     if (num == 2) {
-      let t = val2
-      setVal2(val1)
-      setVal1(t)
+      let t = val2;
+      setVal2(val1);
+      setVal1(t);
       // aboutUsCustomization2.map((item) => {
       //   if (item.Title == val2) {
       //     setDesc(item.Description);
@@ -105,23 +105,23 @@ export default function Merchant() {
       // })
     }
     if (num == 0) {
-      let t = val0
-      setVal0(val1)
-      setVal1(t)
+      let t = val0;
+      setVal0(val1);
+      setVal1(t);
       merchantBenefits3.map((item) => {
         if (item.Title == val0) {
-          setDesc(item.Description)
+          setDesc(item.Description);
         }
-      })
+      });
     }
-  }
+  };
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
       <div className="relative top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
-          className="absolute mobile:hidden object-cover"
+          className="absolute mobile:hidden object-cover h-100% w-100% laptop:h-666 laptop:w-1366"
           type="img"
         />
         <div className="desktop:w-50% relative desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
@@ -172,7 +172,7 @@ export default function Merchant() {
                   {item.Title}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
         <div className="px-26 desktop:hidden laptop:hidden flex justify-center pt-40 mobile:pt-46 mobile:block justify-around mobile:px-20">
@@ -186,12 +186,12 @@ export default function Merchant() {
                   {item.Title}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
       {/* Decluttering Business Transactions with Reduced Friction */}
-      <div className="merchant-liner-bg mobile:pb-150 desktop:pb-122 mobile:px-20 w-100%">
+      <div className="merchant-liner-bg desktop:pb-122 mobile:px-20 w-100%">
         <div className="pt-100 flex justify-center text-center desktop:m-auto laptop:m-auto text-s44l52_8 mobile:text-s22l26_4 text-F1F1F1 desktop:w-714 laptop:w-714 mobile:pt-40 font-bold mobile:px-13">
           {merchantBenefits2?.Title}
         </div>
@@ -202,27 +202,28 @@ export default function Merchant() {
           <Image
             src="/images/backgrounds/line-bg.svg"
             type="img"
-            className="w-1049 h-67 mobile:hidden"
+            className="w-1049 h-67 mobile:hidden laptop:w-949"
           />
         </div>
-        <div className="flex w-100% px-185 desktop:pt-48 text-center items-center justify-center mobile:hidden">
+        <div className="flex w-100% desktop:px-185 desktop:pt-48 text-center items-center justify-center mobile:hidden">
           {merchantBenefits3 &&
             merchantBenefits3.map((item, index) => (
               <div
-                className="flex flex-col items-center w-100% desktop:w-400 desktop:m-auto px-50"
+                className="flex flex-col items-center w-100% desktop:w-400 desktop:m-auto desktop:px-50 laptop:pt-53 laptop:pb-100"
                 key={index}
               >
                 <Image
                   type="img"
                   src={item?.Icon[0]}
+<<<<<<< HEAD
+                  className="desktop:object-cover h-174 w-249 laptop:h-140"
+=======
                   className="object-cover h-174 w-249"
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                 />
 
-                <div className="text-s24l36 text-F1F1F1 font-semibold text-center pt-48">
+                <div className="text-s24l36 text-F1F1F1 font-semibold text-center pt-48 laptop:w-300">
                   {item?.Title}
-                </div>
-                <div className="text-s20l30 text-F1F1F1 text-center pt-8 desktop:w-400">
-                  {item?.Description}
                 </div>
               </div>
             ))}
@@ -236,8 +237,8 @@ export default function Merchant() {
               <div className="h-39 border-r-2 border-C4C4C4"></div>
               <div
                 onClick={() => {
-                  setCustomizClick(0)
-                  handleData(0)
+                  setCustomizClick(0);
+                  handleData(0);
                 }}
                 className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
               ></div>
@@ -247,8 +248,8 @@ export default function Merchant() {
             </div>
             <div className="flex flex-col items-center w-100%">
               <div className="h-101 border-r-2 border-C4C4C4"></div>
-              <div className="h-12 w-12 bg-B0D472 rounded-full  absolute mt-100"></div>
-              <div className="w-150 text-s18l27 text-F1F1F1 text-center mt-15">
+              <div className="h-12 w-12 bg-B0D472 rounded-full absolute mt-100"></div>
+              <div className="w-150 h-100 text-s18l27 text-F1F1F1 text-center mt-15">
                 {val1?.Title}
               </div>
             </div>
@@ -256,8 +257,8 @@ export default function Merchant() {
               <div className="h-39 border-r-2 border-C4C4C4"></div>
               <div
                 onClick={() => {
-                  setCustomizClick(2)
-                  handleData(2)
+                  setCustomizClick(2);
+                  handleData(2);
                 }}
                 className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
               ></div>
@@ -266,26 +267,22 @@ export default function Merchant() {
               </div>
             </div>
           </div>
-          {/* <div className="pt-16 h-270">
-            <div className="flex flex-col w-100% items-center">
-              <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
+          <div className="pt-50 h-256">
+            <div className="flex flex-col w-100% items-center ">
+              {/* <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
                 {val1?.Description}
-              </div>
+              </div> */}
               {merchantBenefits3 && (
-                <Image
-                  type="img"
-                  src={val1?.Illustration[0]}
-                  className="h-128 w-145"
-                />
+                <Image type="img" src={val1?.Icon[0]} className="w-228 h-131" />
               )}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
       <div className=" w-100% mobile:mt-0 mobile:pb-0 bg-E0EFD4">
-        <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-976">
-          <div className="flex flex-col">
+        <div className="w-100% relative desktop:px-100 mobile:hidden mobile:pb-35 bg-currunt flex mobile:flex-col desktop:h-850 overflow-hidden laptop:h-745">
+          <div className="flex flex-col laptop:h-745 ">
             <Swiper
               direction={"vertical"}
               slidesPerView={1}
@@ -297,10 +294,10 @@ export default function Merchant() {
                 clickable: true,
               }}
               modules={[Mousewheel, Pagination]}
-              className="mySwiper overflow-scroll bg-reel_img_bg"
+              className="mySwiper overflow-scroll bg-reel_img_bg bg-cover"
               onSwiper={setSwiperInstance}
               onSlideChange={(e) => {
-                setActiveTab(e.activeIndex)
+                setActiveTab(e.activeIndex);
               }}
             >
               <SwiperSlide key={0}>
@@ -373,12 +370,12 @@ export default function Merchant() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="w-18% absolute flex flex-col itmes-center justify-center mobile:hidden right-50 pr-80 pt-65">
+          <div className="w-18% absolute flex flex-col itmes-center justify-center mobile:hidden right-50 desktop:pr-80 laptop:pr-20 pt-65">
             <div className="h-850 justify-center flex flex-col ">
               <div
                 onClick={() => {
-                  setActiveTab(0)
-                  founder.current?.swiper.slideTo(0)
+                  setActiveTab(0);
+                  founder.current?.swiper.slideTo(0);
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -406,8 +403,8 @@ export default function Merchant() {
               </div>
               <div
                 onClick={() => {
-                  setActiveTab(1)
-                  founder.current?.swiper.slideTo(1)
+                  setActiveTab(1);
+                  founder.current?.swiper.slideTo(1);
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -435,8 +432,8 @@ export default function Merchant() {
               </div>
               <div
                 onClick={() => {
-                  setActiveTab(2)
-                  founder.current?.swiper.slideTo(2)
+                  setActiveTab(2);
+                  founder.current?.swiper.slideTo(2);
                   // founder.swiper
                 }}
                 className="flex h-190 cursor-pointer"
@@ -535,12 +532,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               <div className="bg-393939 flex flex-col items-center w-311 h-334 p-28 border border-C4C4C4 ">
@@ -669,16 +666,16 @@ export default function Merchant() {
             <Carousel
               itemsToShow={1}
               // verticalMode
-              itemPadding={[0, 0, 30, 0]}
+              itemPadding={[0, 0, 20, 0]}
               enableMouseSwipe={true}
               pagination={true}
               showArrows={false}
               outerSpacing={0}
               renderPagination={({ pages, activePage, onClick }) => {
                 return (
-                  <div className="flex">
+                  <div className="flex pb-42">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
+                      const isActivePage = activePage === page;
                       return (
                         <div
                           className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
@@ -687,13 +684,13 @@ export default function Merchant() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
-              <div className="w-256 h-211 bg-393939 flex flex-col items-center w-311 mobile:h-191 p-28 border border-C4C4C4">
+              <div className="w-256 h-211 bg-393939 flex flex-col items-center w-311 mobile:h-191 p-20 border border-C4C4C4">
                 <Image
                   src="/images/icons/mintoak-omni.svg"
                   height={110}
@@ -706,7 +703,7 @@ export default function Merchant() {
                   Handle all types of digital payments on a single platform
                 </div>
               </div>
-              <div className="flex flex-col items-center w-311 mobile:h-191 p-28 border border-C4C4C4">
+              <div className="flex flex-col items-center w-256 h-211 mobile:h-191 p-20 border border-C4C4C4">
                 <Image
                   src="/images/icons/pay-later.svg"
                   height={110}
@@ -719,7 +716,7 @@ export default function Merchant() {
                   Track customer dues on a robust digital register
                 </div>
               </div>
-              <div className="flex flex-col items-center w-311  mobile:h-191 p-28 border border-C4C4C4">
+              <div className="flex flex-col items-center w-256 h-211 mobile:h-191 p-20 border border-C4C4C4">
                 <Image
                   src="/images/icons/customer.svg"
                   height={148}
@@ -762,11 +759,11 @@ export default function Merchant() {
             />
           </div>
         </div>
-        <div className="pt-154 mobile:py-80">
+        <div className="pt-154 laptop:pt-50 mobile:py-80">
           <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
-          <div className="flex mobile:block justify-center items-center w-100% pt-50 pb-169 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex mobile:block justify-center items-center w-100% pt-50 pb-169 laptop:pb-100 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={5}
               itemPadding={[0, 20, 0, 20]}
@@ -778,12 +775,12 @@ export default function Merchant() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge} className="h-120">
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               <div className="">
@@ -837,7 +834,7 @@ export default function Merchant() {
                   return (
                     <div className="flex">
                       {pages.map((page) => {
-                        const isActivePage = activePage === page
+                        const isActivePage = activePage === page;
                         return (
                           <div
                             className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
@@ -846,10 +843,10 @@ export default function Merchant() {
                             onClick={() => onClick(page)}
                             active={isActivePage}
                           ></div>
-                        )
+                        );
                       })}
                     </div>
-                  )
+                  );
                 }}
               >
                 <div className="">
@@ -896,5 +893,5 @@ export default function Merchant() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }

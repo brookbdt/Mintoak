@@ -36,6 +36,8 @@ const colors = {
   F4FBF4: "#F4FBF4",
   e0efd4: "#e0efd4",
   464646: "#464646",
+  F6FAF2: "#F6FAF2",
+
   // DFEFD4: "#DFEFD4",
   "87BD25": "#87BD25",
   // 828282: "#828282",
@@ -47,6 +49,7 @@ const colors = {
   D1E6BA: "#D1E6BA",
   393939: "#393939",
   "100F0F": "#100F0F",
+  e9f2dd: "#e9f2dd",
   EC5F22: "#EC5F22",
   B0D472: "#B0D472",
   // For testing

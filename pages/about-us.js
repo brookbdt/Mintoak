@@ -19,6 +19,7 @@ export default function About() {
   const [founderResp, setFounderResp] = useState([]);
   const [teamInfoResp, setTeamInfoResp] = useState({});
   const [activeTab, setActiveTab] = useState(0);
+  const [itemView, setItemView] = useState();
   const [swiperInstance, setSwiperInstance] = useState();
   const founder = useRef(null);
   const swiper = useSwiper();
@@ -26,7 +27,15 @@ export default function About() {
     setDemoPopup(false);
   };
 
+  const getScreen = () => {
+    if (window.innerWidth <= 1366) {
+      setItemView(5);
+    } else {
+      setItemView(6.5);
+    }
+  };
   useEffect(() => {
+    getScreen();
     // about_banner
     API({
       url: endpoints.about_us_banner,
@@ -102,7 +111,7 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 laptop:pt-10 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 z-10">
+        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 laptop:py-60 z-10">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold mobile:w-285">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
@@ -129,14 +138,14 @@ export default function About() {
       <div className="border border-A4D77A w-100% global-border"></div>
 
       {/* The Mintoak Story */}
-      <div className="desktop:flex laptop:flex flex-col p-80 mobile:pb-30 desktop:pt-152 laptop:pt-152 justify-center items-center mobile:px-20 ">
+      <div className="desktop:flex laptop:flex flex-col p-80 mobile:pb-30 desktop:pt-152 laptop:pt-100   justify-center items-center mobile:px-20 ">
         <div className="ls-0_2 text-s44l45 text-000000 font-bold mobile:text-left mobile:text-s22l33">
           {storyResp?.Title}
         </div>
         <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-335 laptop:px-100 mobile:pt-24 mobile:pb-50 mobile:w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50">
           {storyResp?.Description}
         </div>
-        <div className="flex w-100% justify-center desktop:px-100 laptop:px-70 desktop:py-49 laptop:py-49 mobile:w-100% mobile:flex-col">
+        <div className="flex w-100% justify-center desktop:px-100 laptop:px-70 desktop:py-49 laptop:py-30 mobile:w-100% mobile:flex-col">
           {matricsResp &&
             matricsResp.map((item, index) => (
               <div
@@ -207,7 +216,7 @@ export default function About() {
       </div>
 
       {/* Our Principles */}
-      <div className="desktop:w-100% laptop:w-100% desktop:py-70 laptop:py-70 mobile:w-100%">
+      <div className="desktop:w-100% laptop:w-100% desktop:py-70  mobile:w-100%">
         <div className="flex desktop:justify-around laptop:justify-around font-bold text-252525 mobile:pl-30 text-s44l120 mobile:text-s22l33 mobile:pt-80 desktop:pt-80 desktop:pb-60 laptop:pt-80 laptop:pb-60 mobile:pb-25">
           Our principles
         </div>
@@ -246,14 +255,14 @@ export default function About() {
             {teamInfoResp?.Description}
           </div>
         </div>
-        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
+        <div className="w-100% desktop:px-215 laptop:px-130 laptop:pb-40 desktop:pb-150">
           <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 mobile:hidden">
             <Carousel
-              itemsToShow={6.5}
+              itemsToShow={itemView}
               showArrows={false}
               itemPadding={[0, 4, 0, 0]}
               enableAutoPlay={false}
-              className="flex itmes-center justify-center desktop:h-439 mobile:h-169 p-0"
+              className="flex itmes-center justify-center desktop:h-439 mobile:h-169 laptop:h-444 p-0"
               pagination={false}
               style={{
                 background: "url(/images/backgrounds/reel-img.svg)",
@@ -475,7 +484,7 @@ export default function About() {
         className="w-100% bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080  overflow-hidden laptop:h-976"
       >
         <div className="flex flex-col mobile:h-745">
-          <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
+          <div className="text-s45l33 text-F1F1F1 font-bold desktop:px-40 pt-142 pb-50 mobile:hidden w-100% laptop:pl-70">
             Our founders
           </div>
           <Swiper
@@ -502,7 +511,7 @@ export default function About() {
                   className="flex flex-col desktop:w-70% mobile:w-100% parallax-bg"
                   data-swiper-parallax="-23%"
                 >
-                  <div className="flex mobile:flex-col">
+                  <div className="flex mobile:flex-col pl-70">
                     <div className="mobile:pl-20 mobile:pt-40 mobile:pb-40 mobile:pr-45 desktop:p-40 desktop:w-50% mobile:w-100%">
                       <Image
                         src={item?.FounderImage}
@@ -510,14 +519,14 @@ export default function About() {
                         className="h-660 w-529 mobile:h-368 founder-shadow"
                       />
                     </div>
-                    <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
-                      <div className="desktop:text-s30l45 desktop:text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
+                    <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end laptop:justify-center laptop:w-50% desktop:w-50% mobile:w-100% laptop:pl-50">
+                      <div className="text-s30l45 text-F1F1F1 mobile:text-s20l24 mobile:text-FFFFFF font-bold pb-5">
                         {item?.Name}
                       </div>
-                      <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5  desktop:pb-30 mobile:pb-20">
+                      <div className="mobile:text-s16l19 text-s24l36  mobile:text-FFFFFF text-F1F1F1 pt-5 desktop:pb-30 laptop:pb-15 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="mobile:tracking-widest desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 mobile:pr-41">
+                      <div className="mobile:tracking-widest text-s20l30 mobile:s14l21 text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 laptop:w-400 mobile:pr-41">
                         {item?.Description}
                       </div>
                     </div>
@@ -527,7 +536,7 @@ export default function About() {
             ))}
           </Swiper>
         </div>
-        <div className="w-18% absolute pt-142 flex flex-col itmes-center justify-center mobile:hidden right-50">
+        <div className="w-18% absolute pt-142 flex flex-col laptop:pt-240 itmes-center justify-center mobile:hidden right-50 laptop:right-5">
           <div className="h-700 flex flex-col">
             {founderResp &&
               founderResp.map((item, index) => (
@@ -539,17 +548,31 @@ export default function About() {
                   }}
                   key={index}
                 >
-                  <div className="flex h-190">
-                    <div className="w-55% text-right">
+                  <div className="flex h-190 laptop:h-150 laptop:pr-50">
+                    <div className="w-55% laptop:w-400 text-right laptop:pr-20">
                       <div
+<<<<<<< HEAD
+                        className={`${
+                          activeTab == index
+                            ? "text-s24l150 laptop:text-s20l24"
+                            : "text-s20l150 laptop:text-s18l21_6"
+                        } text-F1F1F1`}
+=======
                         className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
                           } text-s20l30 text-F1F1F1`}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
+<<<<<<< HEAD
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150 laptop:text-s17l25`}
+=======
                         className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
                           } text-s20l150`}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -557,10 +580,18 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
+<<<<<<< HEAD
+                          className={`${
+                            activeTab == index
+                              ? "w-27 h-27 bg-F1F1F1 "
+                              : "w-17 h-16 bg-949494"
+                          } rounded-full bg-opacity-100`}
+=======
                           className={`${activeTab == index
                             ? "w-27 h-27 bg-F1F1F1 "
                             : "w-17 h-16 bg-949494"
                             } rounded-full bg-opacity-100 `}
+>>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
