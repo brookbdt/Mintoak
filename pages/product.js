@@ -1,23 +1,23 @@
-import Image from "../components/helpers/Image"
-import { useRef } from "react"
-import { Input } from "antd"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
-import { useState } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import Image from "../components/helpers/Image";
+import { useRef } from "react";
+import { Input } from "antd";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
 
-SwiperCore.use([Mousewheel, Pagination])
-const { TextArea } = Input
+SwiperCore.use([Mousewheel, Pagination]);
+const { TextArea } = Input;
 
 export default function Product() {
-  const [activeindex, setActiveIndex] = useState()
-  const [activeindex2, setActiveIndex2] = useState()
-  const [activeTab, setActiveTab] = useState(0)
-  const [swiperInstance, setSwiperInstance] = useState()
-  const [page, setPage] = useState()
-  const itemsToShow = 3
-  const founder = useRef(null)
+  const [activeindex, setActiveIndex] = useState();
+  const [activeindex2, setActiveIndex2] = useState();
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const [page, setPage] = useState();
+  const itemsToShow = 3;
+  const founder = useRef(null);
 
   // const handleData = () => {
   //   if (activeindex2 === 1) {
@@ -111,7 +111,7 @@ export default function Product() {
             className="mySwiper overflow-scroll"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex)
+              setActiveTab(e.activeIndex);
             }}
           >
             <SwiperSlide key={0}>
@@ -192,8 +192,8 @@ export default function Product() {
           <div className="h-850 justify-center flex flex-col ">
             <div
               onClick={() => {
-                setActiveTab(0)
-                founder.current?.swiper.slideTo(0)
+                setActiveTab(0);
+                founder.current?.swiper.slideTo(0);
                 // founder.swiper
               }}
               className="flex h-190 cursor-pointer"
@@ -223,8 +223,8 @@ export default function Product() {
             </div>
             <div
               onClick={() => {
-                setActiveTab(1)
-                founder.current?.swiper.slideTo(1)
+                setActiveTab(1);
+                founder.current?.swiper.slideTo(1);
                 // founder.swiper
               }}
               className="flex h-190 cursor-pointer"
@@ -254,8 +254,8 @@ export default function Product() {
             </div>
             <div
               onClick={() => {
-                setActiveTab(2)
-                founder.current?.swiper.slideTo(2)
+                setActiveTab(2);
+                founder.current?.swiper.slideTo(2);
                 // founder.swiper
               }}
               className="flex h-190 cursor-pointer"
@@ -344,12 +344,12 @@ export default function Product() {
                 return (
                   <div className="flex pageindex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
-                      setActiveIndex2(pages)
+                      const isActivePage = activePage === page;
+                      setActiveIndex2(pages);
                       if (activeindex2 == 0) {
-                        setPage(false)
+                        setPage(false);
                       } else {
-                        setPage(true)
+                        setPage(true);
                       }
                       return (
                         <div
@@ -360,10 +360,10 @@ export default function Product() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
@@ -371,15 +371,15 @@ export default function Product() {
                     <i className="fa fa-angle-left text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
                 <Image
                   src="/images/icons/product-omni.svg"
                   height={110}
@@ -393,7 +393,7 @@ export default function Product() {
                 </div>
               </div>
 
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
                 <Image
                   src="/images/icons/product-pay_later.svg"
                   height={110}
@@ -406,7 +406,7 @@ export default function Product() {
                   Track customer dues on a robust digital register
                 </div>
               </div>
-              <div className="bg-current hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
+              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
                 <Image
                   src="/images/icons/product-iku.svg"
                   height={148}
@@ -421,7 +421,7 @@ export default function Product() {
               </div>
             </Carousel>
           </div>
-          <div className=" desktop:hidden laptop:hidden">
+          <div className="desktop:hidden laptop:hidden">
             <Carousel
               itemsToShow={1}
               // verticalMode
@@ -436,8 +436,8 @@ export default function Product() {
                 return (
                   <div className="flex pageindex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
-                      setActiveIndex(activePage)
+                      const isActivePage = activePage === page;
+                      setActiveIndex(activePage);
                       return (
                         <div
                           className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
@@ -447,10 +447,10 @@ export default function Product() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               <div
@@ -518,5 +518,5 @@ export default function Product() {
         </div>
       </div>
     </div>
-  )
+  );
 }
