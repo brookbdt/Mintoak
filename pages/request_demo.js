@@ -14,7 +14,7 @@ export default function Request_Demo(props) {
   const [country, setCountry] = useState(null);
   const [bankName, setBankName] = useState(null);
   const [title, setTitle] = useState(null);
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState("Choose Products");
   const [validate, setValidate] = useState(true);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Request_Demo(props) {
       tempVal = false;
       setValidate(false);
     }
-    if (product === null || product === "") {
+    if (product === null || product === "" || product === "Choose Products") {
       tempVal = false;
       setValidate(false);
     }
@@ -74,7 +74,7 @@ export default function Request_Demo(props) {
     setCountry(null);
     setBankName("");
     setTitle("");
-    setProduct(null);
+    setProduct("Choose Products");
   };
 
   return (
@@ -88,12 +88,12 @@ export default function Request_Demo(props) {
         visible={props.triger}
         onCancel={() => props.handleClose()}
         footer={null}
-        width={window.innerWidth <= 400 ? "85%" : 983}
+        width={window.innerWidth <= 400 ? 320 : 983}
         className="close-btn shadow-popupShadow"
         // width="85%"
-        wrapClassName="mobile:pt-100"
+        wrapClassName="mobile:py-20"
       >
-        <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+        <div className="bg-form mobile:px-16 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
             Request A Demo
           </div>
@@ -129,7 +129,7 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div>
-            <div className="pb-40">
+            <div className="pb-40 mobile:pb-24">
               <div className=" laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Business Email
               </div>
@@ -144,7 +144,7 @@ export default function Request_Demo(props) {
             </div>
           </div>
           <div className="w-100% flex mobile:flex-col  justify-between">
-            <div className="pb-40 global-demo w-360 mobile:w-100%">
+            <div className="pb-40 mobile:pb-24 global-demo w-360 mobile:w-100%">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                 Country
               </div>
@@ -225,6 +225,13 @@ export default function Request_Demo(props) {
                     setProduct(e.target);
                   }}
                 >
+                  <Option
+                    value="Choose Products"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Choose Products
+                  </Option>
                   <Option
                     value="Apparel"
                     className="global-option-demo"
@@ -307,9 +314,9 @@ export default function Request_Demo(props) {
             )}
           </div>
           <div className="w-100% flex justify-between">
-            <div className="bg-button pr-3 pl-3 pt-3 pb-3 desktop:w-360 flex items-center justify-center">
+            <div className="bg-button mobile:w-110 w-363 flex items-center justify-center">
               <div
-                className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
+                className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
                 onClick={() => {
                   handleClearAll();
                 }}
@@ -321,7 +328,7 @@ export default function Request_Demo(props) {
               onClick={() => {
                 handleSubmit();
               }}
-              className="button desktop:text-s22l26_4 w-360 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 mobile:w-110 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
+              className="button desktop:text-s22l26_4 mobile:w-110 w-363 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
             >
               Submit
             </div>

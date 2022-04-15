@@ -279,6 +279,11 @@ button[disabled] {
 
 // search input in career
 .search-input {
+  .ant-input-affix-wrapper:focus,
+  .ant-input-affix-wrapper-focused{
+    border-color: #87BD28 !important;
+    box-shadow: 0 0 0 1px #87BD28 !important;
+  }
   .ant-input-affix-wrapper {
     height: 60px;
     background-color: #dfefd4;
@@ -309,6 +314,10 @@ button[disabled] {
 
 // filter inputs css of career job filtering
 .filter-selection {
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    border-color: #87BD28 !important;
+    box-shadow: 0 0 0 1px #87BD28 !important;
+  }
   .ant-select,
   .ant-select-selector {
     height: 60px !important;
@@ -899,13 +908,15 @@ button[disabled] {
     .ant-select-selection-item {
       font-size: 14px;
     }
-  
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+    padding-left: 0px !important;
+  }
     .ant-select-selection-placeholder {
       font-size: 14px;
     }
   
     .ant-select-arrow {
-      font-size: 14px;
+      font-size: 14px !important;
     }
   }
   .career-label {
@@ -967,8 +978,31 @@ button[disabled] {
   }
 }
 .global-partner {
+@media only screen and (min-width: 1366px) {
+  .ant-select-selection-item {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+}
 
+@media only screen and (max-width: 400px) {
 
+  .ant-select-selection-item {
+    font-size: 14px;
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding-left: 0px !important;
+  }
+
+  .ant-select-selection-placeholder {
+    font-size: 14px;
+  }
+
+  .ant-select-arrow {
+    font-size: 14px !important;
+  }
+}
   .career-label {
   }
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
@@ -1308,7 +1342,6 @@ textarea {
 
 .card-shadow-career:hover{
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
 }
 .circle-check{
   background: linear-gradient(187.63deg, #A7CD7E 35.24%, rgba(123, 205, 37, 0) 165.22%);
@@ -1318,7 +1351,7 @@ textarea {
   
 }
 .clear-all-btn {
-  border-width: 3px;
+  border-width: 2px;
   border-style: solid;
   border-image: linear-gradient(to right, #95C11F,#77B82A,#46AC34,#3EAB35,#3AAA35) 1;
 }
