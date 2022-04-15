@@ -202,7 +202,7 @@ export default function Partner() {
         <div className="mobile:h-595 relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
-            className="absolute  mobile:hidden w-100% h-100%"
+            className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
           />
           <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 desktop:pt-150 z-10 mobile: w-100% mobile:px-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-40 text-252525 shrink-0">
@@ -234,11 +234,12 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className=" desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+
+        <div className="desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
-          <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-50 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50 mobile:text-left">
+          <div className="desktop:text-s24l36 laptop:text-s24l36 text-525252 text-center desktop:py-40 laptop:py-40 desktop:px-50 laptop:px-120 mobile: py-24 mobile: w-100% mobile:text-left mobile:text-525252 mobile:text-s14l21 mobile:pr-50 mobile:text-left">
             {partnerWithUsNewHeights?.Description}
 
             <br className="desktop:hidden laptop:hidden" />
@@ -251,17 +252,17 @@ export default function Partner() {
             {partnerWithUsNewHeights2 &&
               partnerWithUsNewHeights2.map((item, index) => (
                 <div
-                  className="flex desktop:h-231 justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40"
+                  className="flex desktop:h-231 laptop:px-100 justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40"
                   key={index}
                 >
                   <div>
                     <Image
                       src={item.Icon[0]}
                       type="img"
-                      className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-101 mobile:w-24 mobile:h-48"
+                      className="desktop:w-54 desktop:h-101 laptop:w-54 laptop:h-80 mobile:w-24 mobile:h-48"
                     />
                   </div>
-                  <div className="text-s24l36 desktop:pt-37 desktop:px-50  desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold mobile:text-left">
+                  <div className="text-s24l36 laptop:text-s20l24 laptop:pt-37 desktop:pt-37 desktop:px-50  desktop:text-252525 laptop:text-252525 font-bold text-center mobile:text-000000 mobile:pl-23 mobile:text-s16l24 mobile:font-bold mobile:text-left">
                     {item.Functions}
                   </div>
                 </div>
@@ -280,7 +281,7 @@ export default function Partner() {
           <Image
             src="/images/backgrounds/line-bg.svg"
             type="img"
-            className="w-1049 h-67 mobile:hidden"
+            className="w-1049 laptop:w-790 h-67 mobile:hidden"
           />
 
           {/* <div className="flex w-100% justify-center desktop:hidden laptop:hidden ">
@@ -290,17 +291,17 @@ export default function Partner() {
               width={217}
             />
           </div> */}
-          <div className="flex w-100% px-175 desktop:pt-48 text-center mobile:hidden">
+          <div className="flex w-100% px-175 laptop:px-100 desktop:pt-48 text-center mobile:hidden">
             {aboutUsCustomization2 &&
               aboutUsCustomization2.map((item, index) => (
                 <div
-                  className="flex flex-col  w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70"
+                  className="flex flex-col laptop:pt-30 w-100% desktop:w-400 items-center px-30 desktop:m-auto desktop:pl-70"
                   key={index}
                 >
                   <Image
                     type="img"
                     src={item?.Illustration[0]}
-                    className="object-cover h-174 w-249"
+                    className="desktop:object-cover h-174 w-249 laptop:h-140 laptop:w-150"
                   />
 
                   <div className="text-s24l29 text-FFFFFF font-semibold text-center pt-48">
@@ -367,7 +368,7 @@ export default function Partner() {
             </div>
           </div>
         </div>
-        <div className="desktop:py-150 laptop:py-150 mobile:py-80 w-100% bg-E0EFD4">
+        <div className="desktop:py-150 laptop:py-100 mobile:py-80 w-100% bg-E0EFD4">
           <div className="w-100% desktop:text-center laptop:text-center mobile:text-s22l33 mobile:text-000000 desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 desktop:font-medium laptop:font-medium mobile:font-bold pl-33">
             The Mintoak effect
           </div>
@@ -398,7 +399,96 @@ export default function Partner() {
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 ">
+          <div className="w-100% flex mobile:flex-col mobile:px-20 laptop:hidden desktop:hidden">
+            <div className="desktop:px-100 laptop:px-100 w-100%">
+              <div className="pb-40 ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+                  Full Name
+                </div>
+                <input
+                  type="text"
+                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                />
+              </div>
+              <div className="w-100% ">
+                <div className="pb-40 ">
+                  <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 w-100% desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+                    Contact Number
+                  </div>
+
+                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
+                    +91
+                  </span>
+                  <input
+                    type="number"
+                    className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% mobile:pl-35 desktop:pl-50 laptop:pl-50 global-input pb-3"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+              <div className="pb-40 w-100% ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+                  Business Email
+                </div>
+                <input
+                  type="text"
+                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                />
+              </div>
+              <div className="pb-40 ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+                  Bank Name
+                </div>
+                <input
+                  type="text"
+                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                />
+              </div>
+            </div>
+            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+              <div className="pb-40 ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+                  Job Title
+                </div>
+                <input
+                  type="text"
+                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                />
+              </div>
+              <div className="pb-40 w-100% mobile:text-s12l14 mobile:global-partner-m  global-partner">
+                <div className="mobile:text-s12l14  desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-10">
+                  Country
+                </div>
+                <Select
+                  className="w-100%"
+                  dropdownStyle={{
+                    border: "1px solid #9F9FA0",
+                    boxSizing: "border-box",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                    background:
+                      "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
+                  }}
+                  placeholder="Select"
+                >
+                  {countryList &&
+                    countryList.Data.map((item, index) => (
+                      <Option
+                        className="global-option-career"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        value={item.name}
+                        key={index}
+                      >
+                        {item.name}
+                      </Option>
+                    ))}
+                </Select>
+              </div>
+            </div>
+          </div>
+          <div className="w-100% flex mobile:flex-col mobile:px-20 mobile:hidden">
             <div className="desktop:px-100 laptop:px-100 w-100%">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -427,6 +517,9 @@ export default function Partner() {
                   value={bankName}
 
                 />
+              </div>
+              <div>
+                <div></div>
               </div>
             </div>
             <div className="desktop:pr-100 laptop:pr-100 w-100%">
@@ -560,10 +653,10 @@ export default function Partner() {
         </div>
         {/* our partners */}
         <div className="mobile:py-80 bg-E0EFD4">
-          <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-150">
+          <div className="text-s44l120 mobile:text-s20l150 text-252525 mb-30 font-bold text-center desktop:pt-150 laptop:pt-80">
             Our partners
           </div>
-          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 pb-150 mobile:px-0 mobile:mb-0 mobile:hidden">
+          <div className="flex justify-center items-center w-100% py-50 laptop:px-90 px-180 pb-150 laptop:pb-80 mobile:px-0 mobile:mb-0 mobile:hidden">
             <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
@@ -649,34 +742,38 @@ export default function Partner() {
           </div>
         </div>
       </div>
-      {modalvisible ? (
-        <Modal
-          bodyStyle={{
-            background:
-              "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
-          }}
-          centered
-          visible={modalvisible}
-          onCancel={() => setmodalVisible(false)}
-          footer={null}
-        >
-          <div className="w-100%">
-            <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
-              <Image
-                src="/images/icons/thumb-icon.svg"
-                width={135}
-                height={135}
-              />
+      {
+        modalvisible ? (
+          <Modal
+            bodyStyle={{
+              background:
+                "linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%)",
+            }}
+            centered
+            visible={modalvisible}
+            onCancel={() => setmodalVisible(false)}
+            footer={null}
+          >
+            <div className="w-100%">
+              <div className="w-100% flex justify-center mobile:pt-9 desktop:pt-42 laptop:pt-42">
+                <Image
+                  src="/images/icons/thumb-icon.svg"
+                  width={135}
+                  height={135}
+                />
+              </div>
+              <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
+                Thank you for getting in touch. We will get back to you shortly.
+              </div>
             </div>
-            <div className="w-100% text-center mobile:text-s16l24 desktop:text-s22l33 laptop:text-s22l33 text-252525 mobile:38 desktop:px-50 laptop:px-50 mobile:pb-29 desktop:pb-35 laptop:pb-35 font-bold">
-              Thank you for getting in touch. We will get back to you shortly.
-            </div>
-          </div>
-        </Modal>
-      ) : null}
-      {demoPopup && (
-        <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
-      )}
+          </Modal>
+        ) : null
+      }
+      {
+        demoPopup && (
+          <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
+        )
+      }
     </>
   );
 }
