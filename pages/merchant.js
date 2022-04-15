@@ -266,7 +266,7 @@ export default function Merchant() {
               </div>
             </div>
           </div>
-          {/* <div className="pt-16 h-270">
+          <div className="pt-16 h-270">
             <div className="flex flex-col w-100% items-center">
               <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
                 {val1?.Description}
@@ -274,12 +274,12 @@ export default function Merchant() {
               {merchantBenefits3 && (
                 <Image
                   type="img"
-                  src={val1?.Illustration[0]}
+                  src={val1?.Title[0]}
                   className="h-128 w-145"
                 />
               )}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
       {/* Time to Get Onboard with Mintoak */}
@@ -494,7 +494,7 @@ export default function Merchant() {
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
-                src="/images/backgrounds/merchant-mobile.svg"
+                src="/images/backgrounds/mechent_real_time.svg"
                 type="img"
                 height={500}
                 width={270}
@@ -763,7 +763,7 @@ export default function Merchant() {
           </div>
         </div>
         <div className="pt-154 mobile:py-80">
-          <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
+          <div className="flex justify-center font-bold text-s44l66 mobile:text-s22l33 mobile:px-34">
             Customers Onboard
           </div>
           <div className="flex mobile:block justify-center items-center w-100% pt-50 pb-169 mobile:px-0 mobile:mb-0 mobile:hidden">
@@ -826,7 +826,7 @@ export default function Merchant() {
           <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:pb-0 desktop:hidden laptop:hidden">
             <div className="px-20">
               <Carousel
-                itemsToShow={1}
+                itemsToShow={1.3}
                 // verticalMode
                 itemPadding={[0, 0, 28, 0]}
                 enableMouseSwipe={true}

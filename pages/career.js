@@ -151,7 +151,10 @@ export default function Career() {
             className="absolute object-cover mobile:hidden h-100% w-100% border-b border-A4D77A"
           />
         </div>
+
+        {console.log("sjhagshagsjasd", careersBannerResp)}
         <div className="desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             {careersBannerResp?.Title}
           </div>
@@ -172,12 +175,9 @@ export default function Career() {
           >
             {careersBannerResp?.CTA}
           </div>
-          <Image
-            src={homeBannerResp?.mobilebanner}
-            className=" block relative desktop:hidden laptop:hidden "
-            type="img"
-          />
+
         </div>
+
       </div>
       <div className="py-156 mobile:py-80 flex justify-center items-center">
         <div className="w-full">
@@ -503,7 +503,7 @@ export default function Career() {
               const pointer = (
                 <>
                   <div className="flex">
-                    <i className="mr-16 fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   </div>
                 </>
