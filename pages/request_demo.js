@@ -1,23 +1,81 @@
-import { Modal, Select } from "antd"
-import { useState, useEffect } from "react"
-import Image from "../components/helpers/Image"
-import { API, endpoints } from "../components/helpers/API"
+import { Modal, Select } from "antd";
+import { useState, useEffect } from "react";
+import Image from "../components/helpers/Image";
+import { API, endpoints } from "../components/helpers/API";
 
 export default function Request_Demo(props) {
-  const { Option } = Select
-  const [countryList, setCountryList] = useState(null)
-  const [productList, setProductList] = useState(null)
-  const [modalquerievisible, setmodalquerieVisible] = useState(false)
+  const { Option } = Select;
+  const [countryList, setCountryList] = useState(null);
+  const [productList, setProductList] = useState(null);
+  const [modalquerievisible, setmodalquerieVisible] = useState(false);
+  const [fullName, setFullName] = useState(null);
+  const [contactNo, setContactNo] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [bankName, setBankName] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [product, setProduct] = useState(null);
+  const [validate, setValidate] = useState(true);
+
   useEffect(() => {
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0])
-        setProductList(resp[1])
+        setCountryList(resp[0]);
+        setProductList(resp[1]);
       }
-    })
-  }, [])
+    });
+  }, []);
+  const handleSubmit = () => {
+    let tempVal = true;
+    if (fullName === null || fullName === "") {
+      setValidate(false);
+      tempVal = false;
+    }
+    if (contactNo === null || contactNo === "") {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (email === null || email === "") {
+      tempVal = false;
+      setValidate(false);
+    } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (country === null || country === "") {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (bankName === null || bankName === "") {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (title === null || title === "") {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (product === null || product === "") {
+      tempVal = false;
+      setValidate(false);
+    }
+    if (tempVal) {
+      setValidate(true);
+      handleClearAll();
+      setmodalquerieVisible(true);
+    }
+  };
+
+  const handleClearAll = () => {
+    setFullName("");
+    setContactNo("");
+    setEmail("");
+    setCountry(null);
+    setBankName("");
+    setTitle("");
+    setProduct(null);
+  };
 
   return (
     <>
@@ -30,10 +88,10 @@ export default function Request_Demo(props) {
         visible={props.triger}
         onCancel={() => props.handleClose()}
         footer={null}
-        // width={983}
+        width={window.innerWidth <= 400 ? "85%" : 983}
         className="close-btn shadow-popupShadow"
-        width="85%"
-        wrapClassName="pt-100"
+        // width="85%"
+        wrapClassName="mobile:pt-100"
       >
         <div className="bg-form mobile:px-20 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
@@ -47,6 +105,10 @@ export default function Request_Demo(props) {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
+                value={fullName}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
               />
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
@@ -59,6 +121,10 @@ export default function Request_Demo(props) {
               <input
                 type="number"
                 className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                value={contactNo}
+                onChange={(e) => {
+                  setContactNo(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -70,6 +136,10 @@ export default function Request_Demo(props) {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -88,6 +158,10 @@ export default function Request_Demo(props) {
                 }}
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 style={{ fontWeight: "bold" }}
+                value={country}
+                onChange={(e) => {
+                  setCountry(e.target);
+                }}
               >
                 {countryList &&
                   countryList.Data.map((item, index) => (
@@ -109,6 +183,10 @@ export default function Request_Demo(props) {
               <input
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={bankName}
+                onChange={(e) => {
+                  setBankName(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -121,10 +199,14 @@ export default function Request_Demo(props) {
                 placeholder="Enter Your Job Title"
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
               />
             </div>
             <div className="w-360 mobile:w-100% mobile:pb-24">
-              <div className="global-demo w-360 mobile:w-100%">
+              <div className="global-demo dropdown_font w-360 mobile:w-100%">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Business Category
                 </div>
@@ -136,38 +218,109 @@ export default function Request_Demo(props) {
                     background: "#DFEFD4",
                     padding: "20px",
                   }}
-                  placeholder="Choose Productsnp"
+                  placeholder="Choose Products"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                  value={product}
+                  onChange={(e) => {
+                    setProduct(e.target);
+                  }}
                 >
-                  {productList &&
-                    productList.Data.map((item, index) => (
-                      <Option
-                        value={item.title}
-                        className="global-option-demo"
-                        style={{ background: "transparent" }}
-                        key={index}
-                      >
-                        {item.title}
-                      </Option>
-                    ))}
+                  <Option
+                    value="Apparel"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Apparel
+                  </Option>
+                  <Option
+                    value="Automobile"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Automobile
+                  </Option>
+                  <Option
+                    value="Hotel"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Hotel
+                  </Option>
+                  <Option
+                    value="Telecom"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Telecom
+                  </Option>
+                  <Option
+                    value="Restaurant"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Restaurant
+                  </Option>
+                  <Option
+                    value="Bakery"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Bakery
+                  </Option>
+                  <Option
+                    value="General_store"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    General Store
+                  </Option>
+                  <Option
+                    value="Aviation"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Aviation
+                  </Option>
+                  <Option
+                    value="Other"
+                    className="global-option-demo"
+                    style={{ background: "transparent" }}
+                  >
+                    Other
+                  </Option>
                 </Select>
               </div>
             </div>
           </div>
           <div className="py-18 flex">
-            <Image src="/images/backgrounds/warn.svg" height={20} width={18} />
-            <div className="text-EC5F22 text-s18l22 mobile:text-s14l17 pl-10">
-              Please enter all the necessary details to submit the form.
-            </div>
+            {validate === false && (
+              <>
+                <Image
+                  src="/images/backgrounds/warn.svg"
+                  height={20}
+                  width={18}
+                />
+                <div className="text-EC5F22 text-s18l22 mobile:text-s14l17 pl-10">
+                  Please enter all the necessary details to submit the form.
+                </div>
+              </>
+            )}
           </div>
           <div className="w-100% flex justify-between">
-            <div className="bg-button pr-3 pl-3 pt-3 pb-2 w-360 flex items-center justify-center">
-              <div className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn">
+            <div className="bg-button pr-3 pl-3 pt-3 pb-3 desktop:w-360 flex items-center justify-center">
+              <div
+                className="cursor-pointer w-100% bg-form rounded-sm text-center text-525252 desktop:text-s22l26_4  mobile:w-110 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
+                onClick={() => {
+                  handleClearAll();
+                }}
+              >
                 Clear All Fields
               </div>
             </div>
             <div
-              onClick={() => setmodalquerieVisible(true)}
+              onClick={() => {
+                handleSubmit();
+              }}
               className="button desktop:text-s22l26_4 w-360 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 mobile:w-110 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
             >
               Submit
@@ -205,5 +358,5 @@ export default function Request_Demo(props) {
         </Modal>
       ) : null}
     </>
-  )
+  );
 }

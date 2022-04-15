@@ -1,30 +1,30 @@
-import { useEffect, useState, useRef } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Mousewheel, Pagination } from "swiper"
-import { useSwiper } from "swiper/react"
-SwiperCore.use([Mousewheel, Pagination])
+import { useEffect, useState, useRef } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+SwiperCore.use([Mousewheel, Pagination]);
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({})
-  const [storyResp, setStoryResp] = useState({})
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [matricsResp, setMatricsResp] = useState([])
-  const [visionResp, setVisionResp] = useState({})
-  const [missionResp, setMissionResp] = useState({})
-  const [principalResp, setPrincipalResp] = useState([])
-  const [founderResp, setFounderResp] = useState([])
-  const [teamInfoResp, setTeamInfoResp] = useState({})
-  const [activeTab, setActiveTab] = useState(0)
-  const [swiperInstance, setSwiperInstance] = useState()
-  const founder = useRef(null)
-  const swiper = useSwiper()
+  const [aboutBannerResp, setAboutBannerResp] = useState({});
+  const [storyResp, setStoryResp] = useState({});
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [matricsResp, setMatricsResp] = useState([]);
+  const [visionResp, setVisionResp] = useState({});
+  const [missionResp, setMissionResp] = useState({});
+  const [principalResp, setPrincipalResp] = useState([]);
+  const [founderResp, setFounderResp] = useState([]);
+  const [teamInfoResp, setTeamInfoResp] = useState({});
+  const [activeTab, setActiveTab] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const founder = useRef(null);
+  const swiper = useSwiper();
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
 
   useEffect(() => {
     // about_banner
@@ -32,65 +32,65 @@ export default function About() {
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp)
+        setAboutBannerResp(resp);
       }
-    })
+    });
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp)
+        setStoryResp(resp);
       }
-    })
+    });
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp)
+        setMatricsResp(resp);
       }
-    })
+    });
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp)
+        setMissionResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp)
+        setVisionResp(resp);
       }
-    })
+    });
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp)
+        setPrincipalResp(resp);
       }
-    })
+    });
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp)
+        setFounderResp(resp);
       }
-    })
+    });
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp)
+        setTeamInfoResp(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   function goToPage(numberPage) { }
 
@@ -246,14 +246,14 @@ export default function About() {
             {teamInfoResp?.Description}
           </div>
         </div>
-        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-90">
-          <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 ">
+        <div className="w-100% desktop:px-215 laptop:px-215 laptop:pb-150 desktop:pb-150">
+          <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 mobile:hidden">
             <Carousel
               itemsToShow={6.5}
               showArrows={false}
               itemPadding={[0, 4, 0, 0]}
               enableAutoPlay={false}
-              className="flex itmes-center justify-center h-439 p-0"
+              className="flex itmes-center justify-center desktop:h-439 mobile:h-169 p-0"
               pagination={false}
               style={{
                 background: "url(/images/backgrounds/reel-img.svg)",
@@ -395,15 +395,86 @@ export default function About() {
             </Carousel>
           </div>
         </div>
+        <div className="w-100% pb-60 desktop:pt-40 laptop:pt-40 desktop:hidden laptop:hidden">
+          <Carousel
+            itemsToShow={3}
+            showArrows={false}
+            itemPadding={[0, 0, 0, 0]}
+            enableAutoPlay={false}
+            className="flex itmes-center justify-center h-169 p-0"
+            pagination={false}
+            style={{
+              background: "url(/images/backgrounds/reel-bg-mobile.svg)",
+            }}
+          >
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/Megha.svg"
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl "
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/Janine.svg"
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl"
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/backgrounds/kunal.svg "
+                type="img"
+                className="h-114 w-114 object-cover rounded-xl"
+              />
+              <div
+                className="w-120 h-38 absolute bottom-0"
+                style={{
+                  backgroundImage: "linear-gradient(#fff0, #252525)",
+                }}
+              ></div>
+              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
+                  Name name name
+                </div>
+                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                  Designation
+                </div> */}
+            </div>
+          </Carousel>
+        </div>
       </div>
 
       {/* Our founders */}
       {/* <Sticky disabled={activeTab + 1 == founderResp.length ? true : false}> */}
       <div
         id="founder"
-        className="w-100%  bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080 overflow-hidden laptop:h-976"
+        className="w-100% bg-footer relative desktop:px-100 mobile:pb-35 desktop:pb-70 flex mobile:flex-col desktop:h-1080  overflow-hidden laptop:h-976"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col mobile:h-745">
           <div className="text-s45l33 text-F1F1F1 font-bold px-40 pt-142 pb-50 mobile:hidden w-100%">
             Our founders
           </div>
@@ -418,10 +489,10 @@ export default function About() {
             }}
             ref={founder}
             modules={[Mousewheel, Pagination]}
-            className="mySwiper overflow-scroll"
+            className="mySwiper overflow-scroll mobile:h-845"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex)
+              setActiveTab(e.activeIndex);
             }}
           >
             {founderResp.map((item, index) => (
@@ -436,7 +507,7 @@ export default function About() {
                       <Image
                         src={item?.FounderImage}
                         type="img"
-                        className="h-660 w-529 founder-shadow"
+                        className="h-660 w-529 mobile:h-368 founder-shadow"
                       />
                     </div>
                     <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end desktop:w-50% mobile:w-100%">
@@ -446,7 +517,7 @@ export default function About() {
                       <div className="mobile:text-s16l19 desktop:text-s24l36 mobile:text-FFFFFF desktop:text-F1F1F1 pt-5  desktop:pb-30 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 mobile:pr-41">
+                      <div className="mobile:tracking-widest desktop:text-s20l30 mobile:s14l21 desktop:text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 mobile:pr-41">
                         {item?.Description}
                       </div>
                     </div>
@@ -462,8 +533,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index)
-                    founder.current?.swiper.slideTo(index)
+                    setActiveTab(index);
+                    founder.current?.swiper.slideTo(index);
                     // founder.swiper
                   }}
                   key={index}
@@ -505,23 +576,38 @@ export default function About() {
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s22l33 text-000000">Our founders</div>
-        <div className="flex">
-          {founderResp &&
-            founderResp.map((item, index) => (
-              <div key={index}>
-                <Image src={item.FounderImage} height={660} width={529} />
-              </div>
-            ))}
+        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
+          Our founders
         </div>
-        <div>
-          <div>Raman Khanduja</div>
-          <div>Chief Executive</div>
+        <div className="w-100% flex justify-center">
+          <div className="flex w-360 overflow-x-scroll">
+            {founderResp &&
+              founderResp.map((item, index) => (
+                <div
+                  className="w-205 whitespace-nowrap"
+                  onScroll={() => setCurruntIndex(index)}
+                >
+                  <div key={index} className="w-205">
+                    <Image
+                      src={item.FounderImage}
+                      type="img"
+                      className="h-205 w-201"
+                    />
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="w-100% flex flex-col items-center pt-16">
+          <div className="text-252525 text-s17l25 font-bold pb-10">
+            Raman Khanduja
+          </div>
+          <div className="text-525252 text-s16l24">Chief Executive</div>
         </div>
       </div>
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }

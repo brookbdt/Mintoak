@@ -95,6 +95,7 @@ module.exports = {
       s16l24: ["16px", "24px"],
       s16l32: ["16px", "32px"],
       s16l33: ["16px", "33px"],
+      s17l25: ["17px", "25px"],
       s18l21_6: ["18px", "21.6px"],
       s18l22: ["18px", "22px"],
       s18l27: ["18px", "27px"],
@@ -189,6 +190,7 @@ module.exports = {
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
         popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5)",
         slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2)",
+        productShadow: "0px 1px 11.8511px rgba(0, 0, 0, 0.2)",
       },
       zIndex: {
         minus1: -1,

@@ -1,28 +1,37 @@
-import { useEffect, useState } from "react"
-import Carousel from "react-elastic-carousel"
-import Image from "../components/helpers/Image"
-import Request_Demo from "./request_demo"
-import { consts } from "react-elastic-carousel"
-import { Collapse } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Item from "antd/lib/list/Item"
-import { useRouter } from "next/router"
-const { Panel } = Collapse
+import { useEffect, useState, useRef } from "react";
+import Carousel from "react-elastic-carousel";
+import Image from "../components/helpers/Image";
+import Request_Demo from "./request_demo";
+import { consts } from "react-elastic-carousel";
+import { Collapse } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Item from "antd/lib/list/Item";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import { useSwiper } from "swiper/react";
+import "swiper/css";
+import { useRouter } from "next/router";
+SwiperCore.use([Mousewheel, Pagination]);
+
+const { Panel } = Collapse;
 
 export default function Home() {
-  const router = useRouter()
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [isBORM, setIsBORM] = useState("b")
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [metricsResp, setMetricsResp] = useState({})
-  const [homeForBanksResp, setHomeForBanksResp] = useState({})
-  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([])
-  const [homeForMerchant, setHomeForMerchant] = useState([])
-  const [comunityCard, setComunityCard] = useState([])
-  const [homepageAchievements, setHomepageAchievements] = useState([])
-  const [homepageMediaCards, setHomepageMediaCards] = useState([])
-  const [faq, setFaq] = useState([])
-  const [homePageBlogs, setHomePageBlogs] = useState([])
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [activeindex, setActiveIndex] = useState(1);
+  const [isBORM, setIsBORM] = useState("b");
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [metricsResp, setMetricsResp] = useState({});
+  const [homeForBanksResp, setHomeForBanksResp] = useState({});
+  const [homeAdvantagesCard, setHomeAdvantagesCard] = useState([]);
+  const [homeForMerchant, setHomeForMerchant] = useState([]);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [homepageAchievements, setHomepageAchievements] = useState([]);
+  const [homepageMediaCards, setHomepageMediaCards] = useState([]);
+  const [faq, setFaq] = useState([]);
+  const [homePageBlogs, setHomePageBlogs] = useState([]);
+  const [swiperInstance, setSwiperInstance] = useState();
+  const founder = useRef(null);
+  const swiper = useSwiper();
   const month = [
     "Jan",
     "Feb",
@@ -36,102 +45,102 @@ export default function Home() {
     "Oct",
     "Nov",
     "Dec",
-  ]
+  ];
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
 
     // metrics
     API({
       url: endpoints.metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMetricsResp(resp)
+        setMetricsResp(resp);
       }
-    })
+    });
 
     // homepage_for_banks
     API({
       url: endpoints.homepage_for_banks,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeForBanksResp(resp)
+        setHomeForBanksResp(resp);
       }
-    })
+    });
 
     // Advantages Card
     API({
       url: endpoints.homepage_advantage_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeAdvantagesCard(resp)
+        setHomeAdvantagesCard(resp);
       }
-    })
+    });
 
     // Home page for merchant
     API({
       url: endpoints.homepage_for_merchant,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeForMerchant(resp)
+        setHomeForMerchant(resp);
       }
-    })
+    });
 
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setComunityCard(resp)
+        setComunityCard(resp);
       }
-    })
+    });
 
     // Homepage Our Achievements
     API({
       url: endpoints.homepage_achievements,
     }).then((resp) => {
       if (!resp.message) {
-        setHomepageAchievements(resp)
+        setHomepageAchievements(resp);
       }
-    })
+    });
 
     // Homepage Media Cards
     API({
       url: endpoints.homepage_media_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setHomepageMediaCards(resp)
+        setHomepageMediaCards(resp);
       }
-    })
+    });
 
     // Faq
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        setFaq(resp)
+        setFaq(resp);
       }
-    })
+    });
 
     //blogs
     API({
       url: endpoints.home_page_blogs,
     }).then((resp) => {
       if (!resp.message) {
-        setHomePageBlogs(resp)
+        setHomePageBlogs(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -139,13 +148,13 @@ export default function Home() {
         <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
       ) : (
         <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-      )
+      );
     return (
       <button onClick={onClick} disabled={isEdge}>
         {pointer}
       </button>
-    )
-  }
+    );
+  };
 
   const mobileCarouselPagination = ({ pages, activePage, onClick }) => {
     return (
@@ -161,8 +170,8 @@ export default function Home() {
           ))}
         </span>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div className="h-fit w-100% bg-home-top">
@@ -270,7 +279,7 @@ export default function Home() {
                 key={index}
                 className={`mobile:flex mobile:pt-${
                   index != 0 ? "30" : "10"
-                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0 mobile:pr-29 mobile:pl-9`}
+                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
               >
                 <Image
                   src={item.Icon}
@@ -287,7 +296,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -364,7 +373,7 @@ export default function Home() {
                     <div
                       className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12"
                       onClick={() => {
-                        router.push("/partner-with-us")
+                        router.push("/partner-with-us");
                       }}
                     >
                       {homeForBanksResp?.CTA2}
@@ -441,7 +450,7 @@ export default function Home() {
               <div
                 className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40"
                 onClick={() => {
-                  router.push("/partner-with-us")
+                  router.push("/partner-with-us");
                 }}
               >
                 {" "}
@@ -485,7 +494,7 @@ export default function Home() {
               <div
                 className="button w-216 mobile:w-166 mobile:h-40 mobile:text-s14l17 h-54 mt-40 mb-40"
                 onClick={() => {
-                  router.push("merchant")
+                  router.push("merchant");
                 }}
               >
                 {homeForMerchant?.CTA2}
@@ -515,7 +524,7 @@ export default function Home() {
                   <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                 ) : (
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                )
+                );
               return (
                 <button
                   onClick={onClick}
@@ -524,7 +533,7 @@ export default function Home() {
                 >
                   {pointer}
                 </button>
-              )
+              );
             }}
           >
             {comunityCard.map((item, index) => {
@@ -546,7 +555,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </Carousel>
         </div>
@@ -557,20 +566,20 @@ export default function Home() {
                 key={index}
                 className=" mobile:w-290 bg-FFFFFF flex flex-col items-center px-21 mb-20 shadow-bankbox"
               >
-                <div className="flex justify-center items-center  w-100%">
-                  <Image src={item.BankLogo} className="w-150 h-100" />
+                <div className="flex justify-center items-center w-150 h-100% py-30">
+                  <Image src={item.BankLogo} className=" object-cover" />
                 </div>
-                <div className="items-center py-23 flex text-s12l18 justify-center w-100% text-center">
+                <div className="items-center pb-23 flex text-s12l18 justify-center w-100% text-center">
                   {item.BankInfo}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
         {/* Our achievements */}
-        <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120 mobile:p-0 mobile:pt-40">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:p-0 mobile:mb-40">
+        <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120  mobile:p-0">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
             Our Achievements
           </div>
           <div className="flex items-center w-100% pt-60  mobile:px-0 mobile:py-0 mobile:hidden">
@@ -585,12 +594,12 @@ export default function Home() {
                     <i className="fa fa-angle-left text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {homepageAchievements.map((item, index) => {
@@ -613,41 +622,123 @@ export default function Home() {
                       {item?.Description}
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
-          <div className="flex items-center w-100% py-50 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
-            <Carousel
-              itemsToShow={2}
+          <div className="flex achievement-swiper items-center w-100% py-40 px-100 mobile:px-0 mobile:py-0 desktop:hidden laptop:hidden mb-40">
+            <Swiper
+              slidesPerView={2}
+              ref={founder}
+              pagination={{
+                clickable: true,
+              }}
+              initialSlide={1}
+              refs={founder}
+              centeredSlides={true}
+              grabCursor={true}
+              modules={[Mousewheel, Pagination]}
+              onSwiper={setSwiperInstance}
+              onSlideChange={(e) => {
+                // setActiveTab(e.activeIndex);
+                setActiveIndex(e.activeIndex);
+                // console.log(e.activeIndex, "sliderchange");
+              }}
+            >
+              {homepageAchievements.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    onClick={() => {
+                      setActiveIndex(index);
+                      founder.current?.swiper.slideTo(index);
+                      // founder.swiper
+                    }}
+                  >
+                    <div
+                      className={`flex flex-col items-center bg-313131 ${
+                        activeindex == index
+                          ? "pt-30 pb-27 w-280 h-221 z-minus1 shadow-achievement border border-C4C4C4"
+                          : "pt-19 pb-20 h-170 w-210 border-t border-b border-C4C4C4 opacity-50"
+                      }`}
+                    >
+                      <Image
+                        src={item.CertificateIcon}
+                        type="img"
+                        className={`${
+                          activeindex == index ? "w-175 h-80" : "w-147 h-37"
+                        }`}
+                      />
+
+                      <div
+                        className={`font-bold text-DFDFDF text-center text-s16l19 ${
+                          activeindex == index ? "pt-18" : "pt-13"
+                        }`}
+                      >
+                        {item?.Title}
+                      </div>
+                      <div
+                        className={`text-DFDFDF text-center mt-12 text-s12l18 ${
+                          activeindex == index ? "px-50" : "px-20"
+                        }`}
+                      >
+                        {item?.Description}
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            {/* <Carousel
+              itemsToShow={1}
               itemPadding={[0, 0]}
               enableMouseSwipe={true}
               pagination={true}
               showArrows={false}
               outerSpacing={0}
-              renderPagination={mobileCarouselPagination}
+              renderPagination={({ pages, activePage, onClick }) => {
+                return (
+                  <div className="flex pageindex">
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
+                      setActiveIndex(activePage);
+                      return (
+                        <div
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
+                          key={page}
+                          onClick={() => onClick(page)}
+                          active={isActivePage}
+                        ></div>
+                      );
+                    })}
+                  </div>
+                );
+              }}
             >
               {homepageAchievements.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-313131 w-88% p-40 border border-C4C4C4"
+                    className="flex flex-col items-center bg-313131 h-221 w-280 border border-C4C4C4 pt-30 pb-27"
                   >
                     <Image
                       src={item.CertificateIcon}
-                      height={110}
-                      width={273}
+                      type="img"
+                      className="w-175 h-80"
                     />
-                    <div className="font-bold text-DFDFDF text-center text-s32l38 mobile:text-s22l26_4 mt-24">
+
+                    <div className="font-bold text-DFDFDF text-center text-s16l19 pt-18">
                       {item?.Title}
                     </div>
-                    <div className="text-DFDFDF text-center mt-12 text-s20l150 mobile:text-s12l14">
+                    <div className="text-DFDFDF text-center mt-12 text-s12l18 px-50">
                       {item?.Description}
                     </div>
                   </div>
                 )
               })}
-            </Carousel>
+            </Carousel> */}
           </div>
         </div>
 
@@ -658,7 +749,7 @@ export default function Home() {
             <span
               className="float-right mr-17 text-s12l18 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden"
               onClick={() => {
-                router.push("/resource")
+                router.push("/resource");
               }}
             >
               View all
@@ -706,7 +797,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold">
@@ -751,13 +842,13 @@ export default function Home() {
                     <div
                       className="w-full flex items-center justify-end"
                       onClick={() => {
-                        router.push("blog-detail")
+                        router.push("blog-detail");
                       }}
                     >
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
             <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold mobile:hidden">
@@ -773,7 +864,7 @@ export default function Home() {
             <span
               className="float-right mr-17 text-s12l14 text-46AC34 border-b border-46AC34 cursor-pointer font-bold desktop:hidden laptop:hidden"
               onClick={() => {
-                router.push("/resource")
+                router.push("/resource");
               }}
             >
               View all
@@ -822,7 +913,7 @@ export default function Home() {
                     <div
                       className="w-full flex items-center justify-end"
                       onClick={() => {
-                        router.push("blog-detail")
+                        router.push("blog-detail");
                       }}
                     >
                       <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
@@ -878,7 +969,7 @@ export default function Home() {
                     <div
                       className="w-full flex items-center justify-end"
                       onClick={() => {
-                        router.push("blog-detail")
+                        router.push("blog-detail");
                       }}
                     >
                       <i className="fa fa-arrow-right-long bg-button text-FFFFFF mobile:px-8 mobile:py-15 desktop:px-20 desktop:py-25 laptop:px-20 laptop:py-25 flex items-center justify-center fa-lg cursor-pointer"></i>
@@ -943,5 +1034,5 @@ export default function Home() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }

@@ -8,17 +8,18 @@ import Request_Demo from "./request_demo"
 import CircularProgress from "../components/helpers/Prograssbar"
 
 export default function Partner() {
-  const { Option } = Select
-  const [modalvisible, setmodalVisible] = useState(false)
-  const [comunityCard, setComunityCard] = useState([])
-  const [anime, setAnime] = useState("")
-  const [customizclick, setCustomizClick] = useState(1)
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null)
-  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
-  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null)
-  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null)
-  const [aboutUsCustomization, setAboutUsCustomization] = useState(null)
+  const { Option } = Select;
+  const [modalvisible, setmodalVisible] = useState(false);
+  const [comunityCard, setComunityCard] = useState([]);
+  const [anime, setAnime] = useState("");
+  const [customizclick, setCustomizClick] = useState(1);
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] =
+    useState(null);
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
     useState(null)
   const [countryList, setCountryList] = useState(null)
@@ -45,73 +46,76 @@ export default function Partner() {
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setComunityCard(resp)
+        setComunityCard(resp);
       }
-    })
+    });
 
     API({
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsBanner(resp)
+        setPartnerWithUsBanner(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsNewHeights(resp)
+        setPartnerWithUsNewHeights(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsNewHeights2(resp)
+        setPartnerWithUsNewHeights2(resp);
       }
-    })
+    });
     API({
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutUsCustomization2(resp)
-        setDesc(resp[1].Description)
-        setVal0(resp[0])
-        setVal1(resp[1])
-        setVal2(resp[2])
+        setAboutUsCustomization2(resp);
+        setDesc(resp[1].Description);
+        setVal0(resp[0]);
+        setVal1(resp[1]);
+        setVal2(resp[2]);
       }
-    })
+    });
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutUsCustomization(resp)
+        setAboutUsCustomization(resp);
       }
-    })
+    });
     API({
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsMintoakEffect(resp)
+        setPartnerWithUsMintoakEffect(resp);
       }
-    })
+    });
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0])
+        setCountryList(resp[0]);
       }
-    })
-  }, [])
+    });
+  }, []);
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
+  // useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
+
+  // console.log('countery', countryList)
 
   const handleData = (num) => {
     if (num == 2) {
-      let t = val2
-      setVal2(val1)
-      setVal1(t)
+      let t = val2;
+      setVal2(val1);
+      setVal1(t);
       // aboutUsCustomization2.map((item) => {
       //   if (item.Title == val2) {
       //     setDesc(item.Description);
@@ -119,14 +123,14 @@ export default function Partner() {
       // })
     }
     if (num == 0) {
-      let t = val0
-      setVal0(val1)
-      setVal1(t)
+      let t = val0;
+      setVal0(val1);
+      setVal1(t);
       aboutUsCustomization2.map((item) => {
         if (item.Title == val0) {
-          setDesc(item.Description)
+          setDesc(item.Description);
         }
-      })
+      });
     }
   }
   const handleSubmit = () => {
@@ -317,8 +321,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(0)
-                    handleData(0)
+                    setCustomizClick(0);
+                    handleData(0);
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -337,8 +341,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(2)
-                    handleData(2)
+                    setCustomizClick(2);
+                    handleData(2);
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -356,7 +360,7 @@ export default function Partner() {
                   <Image
                     type="img"
                     src={val1?.Illustration[0]}
-                    className="h-128 w-145"
+                    className="h-128 w-175"
                   />
                 )}
               </div>
@@ -377,7 +381,7 @@ export default function Partner() {
                   <CircularProgress
                     size={250}
                     strokeWidth={20}
-                    percentage={item?.Count.replace("%", "")}
+                    percentage={item?.Count}
                     color="green"
                     animation={anime}
                   />
@@ -571,7 +575,7 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                  )
+                  );
                 return (
                   <button
                     onClick={onClick}
@@ -580,7 +584,7 @@ export default function Partner() {
                   >
                     {pointer}
                   </button>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -602,7 +606,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -619,7 +623,7 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page
+                      const isActivePage = activePage === page;
                       return (
                         <div
                           className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
@@ -628,10 +632,10 @@ export default function Partner() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      )
+                      );
                     })}
                   </div>
-                )
+                );
               }}
             >
               {comunityCard.map((item, index) => {
@@ -639,7 +643,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                )
+                );
               })}
             </Carousel>
           </div>
@@ -674,5 +678,5 @@ export default function Partner() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </>
-  )
+  );
 }
