@@ -1,81 +1,83 @@
-import { Modal, Select } from "antd";
-import { useState, useEffect } from "react";
-import Image from "../components/helpers/Image";
-import { API, endpoints } from "../components/helpers/API";
+import { Modal, Select } from "antd"
+import { useState, useEffect } from "react"
+import Image from "../components/helpers/Image"
+import { API, endpoints } from "../components/helpers/API"
+import { useWindowSize } from "../components/helpers/utils"
 
 export default function Request_Demo(props) {
-  const { Option } = Select;
-  const [countryList, setCountryList] = useState(null);
-  const [productList, setProductList] = useState(null);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
-  const [fullName, setFullName] = useState(null);
-  const [contactNo, setContactNo] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [country, setCountry] = useState(null);
-  const [bankName, setBankName] = useState(null);
-  const [title, setTitle] = useState(null);
-  const [product, setProduct] = useState("Choose Products");
-  const [validate, setValidate] = useState(true);
+  const { Option } = Select
+  const [countryList, setCountryList] = useState(null)
+  const [productList, setProductList] = useState(null)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
+  const [fullName, setFullName] = useState(null)
+  const [contactNo, setContactNo] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [country, setCountry] = useState(null)
+  const [bankName, setBankName] = useState(null)
+  const [title, setTitle] = useState(null)
+  const [product, setProduct] = useState("Choose Products")
+  const [validate, setValidate] = useState(true)
+  const { width } = useWindowSize()
 
   useEffect(() => {
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
-        setProductList(resp[1]);
+        setCountryList(resp[0])
+        setProductList(resp[1])
       }
-    });
-  }, []);
+    })
+  }, [])
   const handleSubmit = () => {
-    let tempVal = true;
+    let tempVal = true
     if (fullName === null || fullName === "") {
-      setValidate(false);
-      tempVal = false;
+      setValidate(false)
+      tempVal = false
     }
     if (contactNo === null || contactNo === "") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (email === null || email === "") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (country === null || country === "") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (bankName === null || bankName === "") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (title === null || title === "") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (product === null || product === "" || product === "Choose Products") {
-      tempVal = false;
-      setValidate(false);
+      tempVal = false
+      setValidate(false)
     }
     if (tempVal) {
-      setValidate(true);
-      handleClearAll();
-      setmodalquerieVisible(true);
+      setValidate(true)
+      handleClearAll()
+      setmodalquerieVisible(true)
     }
-  };
+  }
 
   const handleClearAll = () => {
-    setFullName("");
-    setContactNo("");
-    setEmail("");
-    setCountry(null);
-    setBankName("");
-    setTitle("");
-    setProduct("Choose Products");
-  };
+    setFullName("")
+    setContactNo("")
+    setEmail("")
+    setCountry(null)
+    setBankName("")
+    setTitle("")
+    setProduct("Choose Products")
+  }
 
   return (
     <>
@@ -88,7 +90,7 @@ export default function Request_Demo(props) {
         visible={props.triger}
         onCancel={() => props.handleClose()}
         footer={null}
-        width={window.innerWidth <= 400 ? 320 : 983}
+        width={width <= 400 ? 320 : 983}
         className="close-btn shadow-popupShadow"
         // width="85%"
         wrapClassName="mobile:py-20"
@@ -107,7 +109,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
                 value={fullName}
                 onChange={(e) => {
-                  setFullName(e.target.value);
+                  setFullName(e.target.value)
                 }}
               />
             </div>
@@ -123,7 +125,7 @@ export default function Request_Demo(props) {
                 className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
                 value={contactNo}
                 onChange={(e) => {
-                  setContactNo(e.target.value);
+                  setContactNo(e.target.value)
                 }}
               />
             </div>
@@ -138,7 +140,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={email}
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setEmail(e.target.value)
                 }}
               />
             </div>
@@ -160,7 +162,7 @@ export default function Request_Demo(props) {
                 style={{ fontWeight: "bold" }}
                 value={country}
                 onChange={(e) => {
-                  setCountry(e.target);
+                  setCountry(e.target)
                 }}
               >
                 {countryList &&
@@ -185,7 +187,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={bankName}
                 onChange={(e) => {
-                  setBankName(e.target.value);
+                  setBankName(e.target.value)
                 }}
               />
             </div>
@@ -201,7 +203,7 @@ export default function Request_Demo(props) {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={title}
                 onChange={(e) => {
-                  setTitle(e.target.value);
+                  setTitle(e.target.value)
                 }}
               />
             </div>
@@ -222,7 +224,7 @@ export default function Request_Demo(props) {
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                   value={product}
                   onChange={(e) => {
-                    setProduct(e.target);
+                    setProduct(e.target)
                   }}
                 >
                   <Option
@@ -318,7 +320,7 @@ export default function Request_Demo(props) {
               <div
                 className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
                 onClick={() => {
-                  handleClearAll();
+                  handleClearAll()
                 }}
               >
                 Clear All Fields
@@ -326,7 +328,7 @@ export default function Request_Demo(props) {
             </div>
             <div
               onClick={() => {
-                handleSubmit();
+                handleSubmit()
               }}
               className="button desktop:text-s22l26_4 mobile:w-110 w-363 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
             >
@@ -365,5 +367,5 @@ export default function Request_Demo(props) {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }
