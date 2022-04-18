@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react"
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { consts } from "react-elastic-carousel"
-import { API, endpoints } from "../components/helpers/API"
-import { Row, Col, Input, Select, Pagination } from "antd"
-import Request_Demo from "./request_demo"
+import { useEffect, useState } from "react";
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { consts } from "react-elastic-carousel";
+import { API, endpoints } from "../components/helpers/API";
+import { Row, Col, Input, Select, Pagination } from "antd";
+import Request_Demo from "./request_demo";
 
 export default function Career() {
-  const { Option } = Select
-  const [homeBannerResp, setHomeBannerResp] = useState({})
-  const [careersBannerResp, setCareersBannerResp] = useState(null)
+  const { Option } = Select;
+  const [homeBannerResp, setHomeBannerResp] = useState({});
+  const [careersBannerResp, setCareersBannerResp] = useState(null);
   const [careerPageLifeMintoakResp, setCareerPageLifeMintoakResp] =
-    useState(null)
+    useState(null);
   const [
     careerListingValuePropositionResp,
     setCareerListingValuePropositionResp,
-  ] = useState(null)
-  const [searchJob, setSearchJob] = useState("")
-  const [demoPopup, setDemoPopup] = useState(false)
+  ] = useState(null);
+  const [searchJob, setSearchJob] = useState("");
+  const [demoPopup, setDemoPopup] = useState(false);
   const [onBoardData, setOnBoardData] = useState([
     {
       url: "/images/backgrounds/img-11.svg",
@@ -49,7 +49,7 @@ export default function Career() {
       description:
         "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
     },
-  ])
+  ]);
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -105,42 +105,42 @@ export default function Career() {
       timing: "Full Time",
       location: "Mumbai",
     },
-  ])
+  ]);
   useEffect(() => {
     // home_banner
     API({
       url: endpoints.home_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setHomeBannerResp(resp)
+        setHomeBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.careers_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setCareersBannerResp(resp)
+        setCareersBannerResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_page_life_mintoak,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerPageLifeMintoakResp(resp)
+        setCareerPageLifeMintoakResp(resp);
       }
-    })
+    });
     API({
       url: endpoints.career_listing_value_proposition,
     }).then((resp) => {
       if (!resp.message) {
-        setCareerListingValuePropositionResp(resp)
+        setCareerListingValuePropositionResp(resp);
       }
-    })
+    });
     // career_listing_value_proposition
-  }, [])
+  }, []);
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b border-A4D77A">
@@ -150,8 +150,13 @@ export default function Career() {
             type="img"
             className="absolute object-cover mobile:hidden h-100% w-100% border-b border-A4D77A"
           />
+          <Image
+            src={careersBannerResp?.mobile_banner}
+            className="absolute desktop:hidden laptop:hidden "
+            type="img"
+          />
         </div>
-        <div className="desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+        <div className="mobile:h-585 desktop:w-50% relative laptop:w-55% desktop:py-150 desktop:px-100 laptop:p-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
           <div className="text-s44l120 mobile:text-s24l28_8 text-252525 shrink-0">
             {careersBannerResp?.Title}
           </div>
@@ -172,12 +177,8 @@ export default function Career() {
           >
             {careersBannerResp?.CTA}
           </div>
-          <Image
-            src={homeBannerResp?.mobilebanner}
-            className=" block relative desktop:hidden laptop:hidden "
-            type="img"
-          />
         </div>
+
       </div>
       <div className="py-156 mobile:py-80 flex justify-center items-center">
         <div className="w-full">
@@ -240,7 +241,7 @@ export default function Career() {
         </div>
       </div>
 
-      <div className="desktop:px-180 laptop:px-180 mt-150 mobile:px-20 mobile:my-80">
+      <div className="desktop:px-180 laptop:px-180 mt-150 mobile:px-20 mobile:py-80 bg-F6FAF2">
         <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l33 mobile:px-50 mobile:pb-40">
           Explore opportunities suited for you
         </div>
@@ -374,13 +375,39 @@ export default function Career() {
                     <div className="dammi-space "></div>
                   </div>
                 </Option>
+                <Option
+                  value={"Finance"}
+                  style={{
+                    backgroundColor: "transparent",
+                    overflow: "hidden",
+                  }}
+                  className="w-100% career-selector p-0"
+                >
+                  Finance
+                  <div className="w-100% flex justify-end absolute pr-24">
+                    <div className="dammi-space "></div>
+                  </div>
+                </Option>
+                <Option
+                  value={"Client Delivery"}
+                  style={{
+                    backgroundColor: "transparent",
+                    overflow: "hidden",
+                  }}
+                  className="w-100% career-selector p-0"
+                >
+                  Client Delivery
+                  <div className="w-100% flex justify-end absolute pr-24">
+                    <div className="dammi-space "></div>
+                  </div>
+                </Option>
               </Select>
             </div>
           </Col>
         </Row>
         {/* </div> */}
         <div className="text-s18l21_6 font-normal text-525252 pb-20 mobile:pb-10 mobile:text-s14l16_8">
-          Showing 55 job openings in Mumbai
+          Showing 18 job openings in Mumbai
         </div>
         {/* <div className="flex w-full justify-between"> */}
         {/* <div className="custom-row"> */}
@@ -405,7 +432,7 @@ export default function Career() {
                       <Image src="/images/icons/file.svg" type="img" />
                     </div>
                   </div>
-                  <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-488">
+                  <div className="flex items-center desktop:pt-46 laptop:pt-30 pb-20 mobile:text-s12l24 w-100%">
                     <span className="bg-8FC055 py-6 mobile:py-6 mobile:px-9 rounded-lg border-box px-13 flex items-center mr-14">
                       <Image
                         src="/images/icons/bag.svg"
@@ -422,7 +449,9 @@ export default function Career() {
                         type="img"
                         className="h-25 w-25"
                       />
-                      <span className="pl-5 text-s20l40">{data.location}</span>
+                      <span className="pl-5 mobile:text-s12l24 text-s20l40">
+                        {data.location}
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -436,7 +465,7 @@ export default function Career() {
         {/* </div> */}
       </div>
 
-      <div className="desktop:px-180 laptop:px-180 desktop:py-150 laptop:py-150 w-100%">
+      <div className="desktop:px-180 laptop:px-180 desktop:py-150 laptop:py-150 w-100% bg-F6FAF2">
         <div className="text-center font-bold mobile:text-s22l33 desktop:text-s44l45 laptop:text-s44l45 pb-60 mobile:pb-20 mx-70">
           There’s a lot on board for our employees!
         </div>
@@ -452,12 +481,12 @@ export default function Career() {
                   <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                 ) : (
                   <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                )
+                );
               return (
                 <button onClick={onClick} disabled={isEdge}>
                   {pointer}
                 </button>
-              )
+              );
             }}
           >
             {onBoardData.map((data, index) => (
@@ -484,7 +513,7 @@ export default function Career() {
             ))}
           </Carousel>
         </div>
-        <div className="mb-80 w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
+        <div className="pb-80 w-100% flex flex-col items-center justify-around desktop:hidden laptop:hidden">
           <Carousel
             itemPadding={[0, 15]}
             itemsToShow={1}
@@ -501,17 +530,17 @@ export default function Career() {
               const pointer = (
                 <>
                   <div className="flex">
-                    <i className="mr-16 fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
                   </div>
                 </>
-              )
+              );
               // );
               return (
                 <button onClick={onClick} disabled={isEdge}>
                   {pointer}
                 </button>
-              )
+              );
               // return (
               // <div className="flex">
               //   {pages.map((page) => {
@@ -534,7 +563,7 @@ export default function Career() {
               <div className="bg-FFFFFF shadow-lg my-21" key={index}>
                 <div className="pt-10 px-12">
                   <Image
-                    src="/images/backgrounds/img-11.png"
+                    src="/images/backgrounds/img-11.svg"
                     width={"100%"}
                     type="img"
                   />
@@ -554,5 +583,5 @@ export default function Career() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }

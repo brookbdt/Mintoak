@@ -36,6 +36,8 @@ const colors = {
   F4FBF4: "#F4FBF4",
   e0efd4: "#e0efd4",
   464646: "#464646",
+  F6FAF2: "#F6FAF2",
+
   // DFEFD4: "#DFEFD4",
   "87BD25": "#87BD25",
   // 828282: "#828282",
@@ -47,6 +49,7 @@ const colors = {
   D1E6BA: "#D1E6BA",
   393939: "#393939",
   "100F0F": "#100F0F",
+  e9f2dd: "#e9f2dd",
   EC5F22: "#EC5F22",
   B0D472: "#B0D472",
   // For testing
@@ -95,6 +98,7 @@ module.exports = {
       s16l24: ["16px", "24px"],
       s16l32: ["16px", "32px"],
       s16l33: ["16px", "33px"],
+      s17l25: ["17px", "25px"],
       s18l21_6: ["18px", "21.6px"],
       s18l22: ["18px", "22px"],
       s18l27: ["18px", "27px"],
@@ -179,6 +183,7 @@ module.exports = {
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
         reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)",
+        partner_mobile: "url(http://uat-content.mintoak.com/uploads/Group_163266_c480074a91.svg)",
         read_more:
           "linear-gradient(360deg, #F3FBF6 0%, rgba(244, 251, 243, 0.9) 37.42%, rgba(248, 252, 243, 0.5) 67.65%, rgba(248, 252, 243, 0) 100%)",
       },
@@ -188,6 +193,7 @@ module.exports = {
         mediaCard: " 0px 0px 11.8511px rgba(0, 0, 0, 0.1)",
         popupShadow: " 0px 10px 20px rgba(0, 0, 0, 0.5)",
         slideShadow: " 0px 10px 20px rgba(0, 0, 0, 0.2)",
+        productShadow: "0px 1px 11.8511px rgba(0, 0, 0, 0.2)",
       },
       zIndex: {
         minus1: -1,
