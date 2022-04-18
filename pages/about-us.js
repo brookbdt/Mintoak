@@ -1,107 +1,107 @@
-import { useEffect, useState, useRef } from "react";
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
-import { useSwiper } from "swiper/react";
-SwiperCore.use([Mousewheel, Pagination]);
+import { useEffect, useState, useRef } from "react"
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Mousewheel, Pagination } from "swiper"
+import { useSwiper } from "swiper/react"
+SwiperCore.use([Mousewheel, Pagination])
 
 export default function About() {
-  const [aboutBannerResp, setAboutBannerResp] = useState({});
-  const [storyResp, setStoryResp] = useState({});
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [matricsResp, setMatricsResp] = useState([]);
-  const [visionResp, setVisionResp] = useState({});
-  const [missionResp, setMissionResp] = useState({});
-  const [principalResp, setPrincipalResp] = useState([]);
-  const [founderResp, setFounderResp] = useState([]);
-  const [teamInfoResp, setTeamInfoResp] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const [itemView, setItemView] = useState();
-  const [swiperInstance, setSwiperInstance] = useState();
-  const founder = useRef(null);
-  const swiper = useSwiper();
+  const [aboutBannerResp, setAboutBannerResp] = useState({})
+  const [storyResp, setStoryResp] = useState({})
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [matricsResp, setMatricsResp] = useState([])
+  const [visionResp, setVisionResp] = useState({})
+  const [missionResp, setMissionResp] = useState({})
+  const [principalResp, setPrincipalResp] = useState([])
+  const [founderResp, setFounderResp] = useState([])
+  const [teamInfoResp, setTeamInfoResp] = useState({})
+  const [activeTab, setActiveTab] = useState(0)
+  const [itemView, setItemView] = useState()
+  const [swiperInstance, setSwiperInstance] = useState()
+  const founder = useRef(null)
+  const swiper = useSwiper()
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   const getScreen = () => {
     if (window.innerWidth <= 1366) {
-      setItemView(5);
+      setItemView(5)
     } else {
-      setItemView(6.5);
+      setItemView(6.5)
     }
-  };
+  }
   useEffect(() => {
-    getScreen();
+    getScreen()
     // about_banner
     API({
       url: endpoints.about_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutBannerResp(resp);
+        setAboutBannerResp(resp)
       }
-    });
+    })
     // story
     API({
       url: endpoints.mintoak_story,
     }).then((resp) => {
       if (!resp.message) {
-        setStoryResp(resp);
+        setStoryResp(resp)
       }
-    });
+    })
     // matrics
     API({
       url: endpoints.about_us_metrics,
     }).then((resp) => {
       if (!resp.message) {
-        setMatricsResp(resp);
+        setMatricsResp(resp)
       }
-    });
+    })
     //misson & visson
     API({
       url: endpoints.about_us_mission,
     }).then((resp) => {
       if (!resp.message) {
-        setMissionResp(resp);
+        setMissionResp(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_vision,
     }).then((resp) => {
       if (!resp.message) {
-        setVisionResp(resp);
+        setVisionResp(resp)
       }
-    });
+    })
     // principal card
     API({
       url: endpoints.about_us_principle_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setPrincipalResp(resp);
+        setPrincipalResp(resp)
       }
-    });
+    })
     // about us our founders
     API({
       url: endpoints.about_us_our_founders,
     }).then((resp) => {
       if (!resp.message) {
-        setFounderResp(resp);
+        setFounderResp(resp)
       }
-    });
+    })
     //about us meet the team 1
     API({
       url: endpoints.about_us_meet_the_team_1,
     }).then((resp) => {
       if (!resp.message) {
-        setTeamInfoResp(resp);
+        setTeamInfoResp(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
-  function goToPage(numberPage) { }
+  function goToPage(numberPage) {}
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -225,8 +225,9 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
-                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
+                  index != principalResp.length - 1 && ""
+                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={135} width={135} />
@@ -501,7 +502,7 @@ export default function About() {
             className="mySwiper overflow-scroll mobile:h-845"
             onSwiper={setSwiperInstance}
             onSlideChange={(e) => {
-              setActiveTab(e.activeIndex);
+              setActiveTab(e.activeIndex)
             }}
           >
             {founderResp.map((item, index) => (
@@ -542,8 +543,8 @@ export default function About() {
               founderResp.map((item, index) => (
                 <div
                   onClick={() => {
-                    setActiveTab(index);
-                    founder.current?.swiper.slideTo(index);
+                    setActiveTab(index)
+                    founder.current?.swiper.slideTo(index)
                     // founder.swiper
                   }}
                   key={index}
@@ -551,14 +552,16 @@ export default function About() {
                   <div className="flex h-190 laptop:h-150 laptop:pr-50">
                     <div className="w-55% laptop:w-400 text-right laptop:pr-20">
                       <div
-                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
-                          } text-s20l30 text-F1F1F1`}
+                        className={`${
+                          activeTab == index ? "text-s24l150" : "text-s20l150"
+                        } text-s20l30 text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
-                          } text-s20l150`}
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -566,10 +569,11 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${activeTab == index
-                            ? "w-27 h-27 bg-F1F1F1 "
-                            : "w-17 h-16 bg-949494"
-                            } rounded-full bg-opacity-100 `}
+                          className={`${
+                            activeTab == index
+                              ? "w-27 h-27 bg-F1F1F1 "
+                              : "w-17 h-16 bg-949494"
+                          } rounded-full bg-opacity-100 `}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
@@ -595,6 +599,7 @@ export default function About() {
                 <div
                   className="w-205 whitespace-nowrap"
                   onScroll={() => setCurruntIndex(index)}
+                  key={index}
                 >
                   <div key={index} className="w-205">
                     <Image
@@ -618,5 +623,5 @@ export default function About() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }
