@@ -7,7 +7,6 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "refresh": "git pull && sh deploy.sh",
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
