@@ -34,10 +34,11 @@ export default function DesktopFooter() {
             )}
           </div>
           <div onClick={() => setDemoPopup(true)} className="button w-216 h-54">
-            Request A Demo
+            {slug == "partner-with-us" ? "Partner With us" : "Request A Demo"}
           </div>
         </div>
       )}
+      {console.log('egdhbjn', slug)}
       <div className="w-100% h-1 bg-E0E0E0" />
 
       <div className="flex justify-between px-180  laptop:px-50">

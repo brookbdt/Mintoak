@@ -118,7 +118,7 @@ export default function Merchant() {
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
-      <div className="relative top-bg-container">
+      <div className="relative  bg-home-top top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
           className="absolute mobile:hidden object-cover h-100% w-100% laptop:h-666 laptop:w-1366"
@@ -215,11 +215,7 @@ export default function Merchant() {
                 <Image
                   type="img"
                   src={item?.Icon[0]}
-<<<<<<< HEAD
-                  className="desktop:object-cover h-174 w-249 laptop:h-140"
-=======
                   className="object-cover h-174 w-249"
->>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
                 />
 
                 <div className="text-s24l36 text-F1F1F1 font-semibold text-center pt-48 laptop:w-300">
@@ -491,7 +487,7 @@ export default function Merchant() {
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
-                src="/images/backgrounds/merchant-mobile.svg"
+                src="/images/backgrounds/mechent_real_time.svg"
                 type="img"
                 height={500}
                 width={270}
@@ -823,7 +819,7 @@ export default function Merchant() {
           <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:pb-0 desktop:hidden laptop:hidden">
             <div className="px-20">
               <Carousel
-                itemsToShow={1}
+                itemsToShow={1.3}
                 // verticalMode
                 itemPadding={[0, 0, 28, 0]}
                 enableMouseSwipe={true}

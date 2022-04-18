@@ -7,21 +7,34 @@ export default function MiniFooter() {
   const [demoPopup, setDemoPopup] = useState(false);
   const [dropdownTab, setDropDownTab] = useState(null);
   const router = useRouter();
+  const [slug, setSlug] = useState("")
+
+  useEffect(() => {
+    let url = window.location.href
+    let slug = url.split("/").pop()
+    setSlug(slug)
+  }, [])
   const TogglePopup = () => {
     setDemoPopup(false);
   };
   return (
     <div className="flex desktop:hidden laptop:hidden flex-col items-center pb-60 w-100%">
       <div className="p-36 pb-0 w-100% flex flex-col mobile:p-20">
-        <div className="text-F1F1F1 text-s18l27">
-          Ready to begin your journey with us? Get onboard!
-        </div>
-        <div
-          onClick={() => setDemoPopup(true)}
-          className="mobile-button h-40 w-300 m-30 mobile:ml-0 mobile:w-166 mobile:h-40 font-bold"
-        >
-          Request A Demo
-        </div>
+        {
+          slug !== "career" && <>
+            <div className="text-F1F1F1 text-s18l27 font-bold">
+              Ready to begin your journey with us?
+              <div> Get onboard!</div>
+            </div>
+            <div
+              onClick={() => setDemoPopup(true)}
+              className="mobile-button h-40 w-300 m-30 mobile:ml-0 mobile:w-166 mobile:h-40 font-bold"
+            >
+              {slug == "partner-with-us" ? "Partner With us" : "Request A Demo"}
+
+            </div>
+          </>
+        }
 
         <div className="w-100%">
           <div className="flex items-center justify-between cursor-pointer py-15" onClick={() => { setDropDownTab(dropdownTab == 'company' ? null : 'company'); }}>
@@ -120,7 +133,7 @@ export default function MiniFooter() {
         </div>
       </div>
 
-      <div className="w-100% h-1 bg-E0E0E0 mb-50" />
+      <div className="w-100% h-1 bg-8B8B8B mb-50" />
 
       <Image src="/images/logo_white.svg" width={150} height={30} />
       <div className="mt-40 text-F5FBF3 text-s14l24">Find us on</div>
