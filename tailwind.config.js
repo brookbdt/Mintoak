@@ -169,6 +169,7 @@ module.exports = {
         footer:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%);",
         bg_resource: "url(/images/backgrounds/resource-bg-img.svg)",
+        bg_resource_mobile: "url(/images/backgrounds/Resource_mobile.svg)",
         form: " linear-gradient(341.98deg, #E9F2DD 21.15%, #8EA56F 184.51%);",
         mintoak_effect:
           "linear-gradient(163.57deg, #A7CD7E 11.39%, rgba(123, 205, 37, 0) 95.33%)",
@@ -183,7 +184,8 @@ module.exports = {
         privecy_bg:
           "linear-gradient(91.09deg, #39B565 0.82%, #43B93C 49.92%, #8CC63E 98.95%)",
         reel_img_bg: "url(/images/backgrounds/reel-img-bg.svg)",
-        partner_mobile: "url(http://uat-content.mintoak.com/uploads/Group_163266_c480074a91.svg)",
+        partner_mobile:
+          "url(http://uat-content.mintoak.com/uploads/Group_163266_c480074a91.svg)",
         read_more:
           "linear-gradient(360deg, #F3FBF6 0%, rgba(244, 251, 243, 0.9) 37.42%, rgba(248, 252, 243, 0.5) 67.65%, rgba(248, 252, 243, 0) 100%)",
       },

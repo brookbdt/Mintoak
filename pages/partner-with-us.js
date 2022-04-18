@@ -1,11 +1,11 @@
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { useEffect, useState, useRef } from "react"
-import { consts } from "react-elastic-carousel"
-import { Modal, Select } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import CircularProgress from "../components/helpers/Prograssbar"
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState, useRef } from "react";
+import { consts } from "react-elastic-carousel";
+import { Modal, Select } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import CircularProgress from "../components/helpers/Prograssbar";
 
 export default function Partner() {
   const { Option } = Select;
@@ -21,12 +21,12 @@ export default function Partner() {
   const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
   const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null)
-  const [countryList, setCountryList] = useState(null)
-  const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
-  const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
-  const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
-  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
+    useState(null);
+  const [countryList, setCountryList] = useState(null);
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
   const [fullName, setFullName] = useState(null);
   const [contactNo, setContactNo] = useState(null);
   const [email, setEmail] = useState(null);
@@ -132,7 +132,7 @@ export default function Partner() {
         }
       });
     }
-  }
+  };
   const handleSubmit = () => {
     let tempVal = true;
     if (fullName === null || fullName === "") {
@@ -191,9 +191,7 @@ export default function Partner() {
     setMsg("");
   };
 
-
   useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
-
 
   return (
     <>
@@ -204,13 +202,8 @@ export default function Partner() {
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
           />
-<<<<<<< HEAD
-          <div className="desktop:w-50% relative desktop:pb-107 laptop:pb-107 laptop:w-50% pl-176 laptop:pl-100 pr-0 pt-150 laptop:pt-41 z-10 mobile: w-100% mobile:p-20 ">
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
-=======
           <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 desktop:pt-150 z-10 mobile: w-100% mobile:px-20 ">
             <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-40 text-252525 shrink-0">
->>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
               {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-2">
@@ -232,18 +225,13 @@ export default function Partner() {
           <div className="desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
               src={partnerWithUsBanner?.mobilebanner}
-
               type="img"
               className=" h-fit w-100% block relative desktop:hidden laptop:hidden object-cover"
             />
           </div>
         </div>
         {/* Take your business  */}
-<<<<<<< HEAD
-        <div className="desktop:flex laptop:flex flex-col py-150 desktop:px-333 laptop:py-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
-=======
         <div className="desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
->>>>>>> 54db4ee3e1200671b2a5056fd279fa5067648756
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
@@ -509,7 +497,6 @@ export default function Partner() {
                     setFullName(e.target.value);
                   }}
                   value={fullName}
-
                 />
               </div>
               <div className="pb-40 ">
@@ -523,7 +510,6 @@ export default function Partner() {
                     setBankName(e.target.value);
                   }}
                   value={bankName}
-
                 />
               </div>
               <div>
@@ -547,7 +533,6 @@ export default function Partner() {
                       setContactNo(e.target.value);
                     }}
                     value={contactNo}
-
                   />
                 </div>
               </div>
@@ -562,7 +547,6 @@ export default function Partner() {
                     setTitle(e.target.value);
                   }}
                   value={title}
-
                 />
               </div>
             </div>
@@ -578,7 +562,6 @@ export default function Partner() {
                     setEmail(e.target.value);
                   }}
                   value={email}
-
                 />
               </div>
               <div className="pb-40 w-100% mobile:text-s12l14 mobile:global-partner-m  global-partner">
@@ -599,7 +582,6 @@ export default function Partner() {
                     setCountry(e.target);
                   }}
                   value={country}
-
                 >
                   {countryList &&
                     countryList.Data.map((item, index) => (
@@ -631,7 +613,6 @@ export default function Partner() {
                 onChange={(e) => {
                   setMsg(e.target.value);
                 }}
-
               />
             </div>
           </div>
@@ -727,8 +708,9 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

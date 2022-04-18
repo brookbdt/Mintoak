@@ -1,43 +1,43 @@
-import { useEffect, useState } from "react"
-import { API, endpoints } from "../components/helpers/API"
-import Image from "../components/helpers/Image"
-import Request_Demo from "./request_demo"
-import { Pagination } from "antd"
-import { useRouter } from "next/router"
+import { useEffect, useState } from "react";
+import { API, endpoints } from "../components/helpers/API";
+import Image from "../components/helpers/Image";
+import Request_Demo from "./request_demo";
+import { Pagination } from "antd";
+import { useRouter } from "next/router";
 
 export default function Resources() {
-  const router = useRouter()
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [resourcesBlogList, setResourcesBlogList] = useState(null)
-  const [allList, setAllList] = useState(null)
-  const [isClicked, setIsClicked] = useState("b")
-  const [search, setSearch] = useState(null)
+  const router = useRouter();
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [resourcesBlogList, setResourcesBlogList] = useState(null);
+  const [allList, setAllList] = useState(null);
+  const [isClicked, setIsClicked] = useState("b");
+  const [search, setSearch] = useState(null);
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
+    setDemoPopup(false);
+  };
   useEffect(() => {
     // resources_blog_list
     API({
       url: endpoints.resources_blog_list,
     }).then((resp) => {
       if (!resp.message) {
-        setResourcesBlogList(resp)
-        setAllList(resp)
+        setResourcesBlogList(resp);
+        setAllList(resp);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   useEffect(() => {
     if (search && search.length) {
       let list = resourcesBlogList.filter((rList) =>
         rList.Title.toLowerCase().includes(search.toLowerCase())
-      )
-      setResourcesBlogList(list)
+      );
+      setResourcesBlogList(list);
     } else {
-      setResourcesBlogList(allList)
+      setResourcesBlogList(allList);
     }
-  }, [search])
+  }, [search]);
 
   const month = [
     "Jan",
@@ -52,12 +52,12 @@ export default function Resources() {
     "Oct",
     "Nov",
     "Dec",
-  ]
+  ];
 
   return (
     <div>
       <div className="w-100%">
-        <div className="flex mobile:flex-col relative top-bg-container bg-bg_resource bg-cover h-fit laptop:w-fit bg-origin-content">
+        <div className="flex mobile:flex-col relative top-bg-container desktop:bg-bg_resource laptop:bg-bg_resource mobile:bg-bg_resource_mobile bg-cover h-fit laptop:w-fit bg-origin-content">
           {/* <Image
                         src="/images/backgrounds/resource-bg.svg"
                         className="w-100% h-100%  absolute z-minus1 mobile:hidden"
@@ -71,14 +71,14 @@ export default function Resources() {
             <div className="text-s44l120 mobile:text-s20l24 text-FFFFFF shrink-0 pr-50">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
-            <div className="text-s24l36 mobile:text-s14l24 mobile:text-center text-FFFFFF shrink-0 mt-37">
+            <div className="text-s24l36 mobile:text-s14l24 text-FFFFFF shrink-0 mt-37">
               In the fourth season of the American sitcom Friends, Chandler
               wants to quit his gym membership...
             </div>
             <div>
               <div
                 onClick={() => setDemoPopup(true)}
-                className="button w-216 mobile:w-100% mobile:h-40 h-54 mt-40 cursor-pointer z-20"
+                className="button w-216 mobile:w-100% mobile:h-37 mobile:w-166 mobile:text-s14l16_8 h-54 mt-40 cursor-pointer z-20"
               >
                 Read More
               </div>
@@ -87,56 +87,56 @@ export default function Resources() {
           <div className="desktop:w-50% desktop:p-100 mobile:justify-around laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
             <div className="cursor-pointer mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg1.svg"
                 type="img"
-                className="h-84 w-128"
+                className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn  rounded-md desktop:hidden laptop:hidden">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg1.svg"
                 width={84}
                 height={130}
               />
             </div>
             <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg2.svg"
                 type="img"
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden mt-276">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg2.svg"
                 width={84}
                 height={130}
               />
             </div>
             <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg3.svg"
                 type="img"
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg3.svg"
                 width={84}
                 height={130}
               />
             </div>
             <div className="cursor-pointer btn bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg3.svg"
                 type="img"
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
             <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
               <Image
-                src="/images/backgrounds/resource-bg.svg"
+                src="/images/backgrounds/Resource_bg3.svg"
                 width={84}
                 height={130}
               />
@@ -155,7 +155,7 @@ export default function Resources() {
               placeholder="Ex. Future of banking..."
               value={search}
               onChange={(e) => {
-                setSearch(e.target.value)
+                setSearch(e.target.value);
               }}
             />
           </div>
@@ -317,7 +317,7 @@ export default function Resources() {
         </div>
         {/* blogs */}
         <div className="text-s20l24 text-828282 desktop:pb-20 laptop:pb-20 mobile:pb-10 mobile:text-s14l16_8">
-          Showing 55 Blogs
+          Showing 10 Blogs
         </div>
         {resourcesBlogList &&
           resourcesBlogList.map((item, index) => (
@@ -378,5 +378,5 @@ export default function Resources() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
