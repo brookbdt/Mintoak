@@ -3,8 +3,6 @@ git pull
 if [ $? -eq 0 ]; then
     echo 'Git pulled successfully'
     echo 'Rebuilding Project...'
-    rm -rf node_modules/
-    rm -rf .next/
     npm install
     npm run build
 
