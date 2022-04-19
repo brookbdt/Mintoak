@@ -117,7 +117,7 @@ export default function Merchant() {
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
-      <div className="relative top-bg-container">
+      <div className="relative  bg-home-top top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
           className="absolute mobile:hidden object-cover h-100% w-100% laptop:h-666 laptop:w-1366"
@@ -497,7 +497,7 @@ export default function Merchant() {
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
-                src="/images/backgrounds/merchant-mobile.svg"
+                src="/images/backgrounds/mechent_real_time.svg"
                 type="img"
                 height={500}
                 width={270}
@@ -766,7 +766,7 @@ export default function Merchant() {
             />
           </div>
         </div>
-        <div className="pt-154 laptop:pt-50 mobile:py-80">
+        {/* <div className="pt-154 laptop:pt-50 mobile:py-80">
           <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
@@ -830,7 +830,7 @@ export default function Merchant() {
           <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:pb-0 desktop:hidden laptop:hidden">
             <div className="px-20">
               <Carousel
-                itemsToShow={1}
+                itemsToShow={1.3}
                 // verticalMode
                 itemPadding={[0, 0, 28, 0]}
                 enableMouseSwipe={true}
@@ -895,7 +895,7 @@ export default function Merchant() {
               </Carousel>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />

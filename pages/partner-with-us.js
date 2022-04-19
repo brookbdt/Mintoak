@@ -77,8 +77,8 @@ export default function Partner() {
       if (!resp.message) {
         setAboutUsCustomization2(resp);
         setDesc(resp[1].Description);
-        setVal0(resp[0]);
-        setVal1(resp[1]);
+        setVal0(resp[1]);
+        setVal1(resp[0]);
         setVal2(resp[2]);
       }
     });
@@ -197,7 +197,7 @@ export default function Partner() {
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
+        <div className="mobile:h-595 relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col leptop:h-646">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
@@ -222,7 +222,7 @@ export default function Partner() {
               {partnerWithUsBanner?.CTA}
             </div>
           </div>
-          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
+          <div className="mobile:absolute mobile:top-85 desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
               src={partnerWithUsBanner?.mobilebanner}
               type="img"

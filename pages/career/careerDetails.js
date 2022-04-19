@@ -34,13 +34,14 @@ export default function CareerDetails() {
         style={{ width: 70, height: 30 }}
         defaultValue="91"
         showArrow={false}
+        className={"border-r"}
       >
         <Option value="91">+91</Option>
       </Select>
     </Form.Item>
   );
   return (
-    <div className="desktop:h-fit w-100% bg-home-top  mobile:w-100%">
+    <div className="desktop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
       <div className="relative top-bg-container border-b-2 border-A4D77A">
         <div className="desktop:flex laptop:flex items-center justify-between laptop:p-100 py-60 px-180 mobile:pt-39 mobile:px-20 desktop:pb-33 laptop:pb-33 mobile:pb-28">
@@ -147,7 +148,8 @@ export default function CareerDetails() {
                 Ability to quickly adapt to most current technology
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
-                Should be comfortable with Agile methodology and using Agile tools
+                Should be comfortable with Agile methodology and using Agile
+                tools
               </li>
               <li className="text-s24l40_8 laptop:text-s20l140_62 mobile:text-s14l23_28">
                 Good verbal and written communication skills
@@ -187,7 +189,7 @@ export default function CareerDetails() {
               <Row gutter={24}>
                 <Col xs={24} md={8}>
                   <Form.Item className="job-app-form">
-                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s14l14 lable_mobile">
                       Full Name
                     </label>
                     <Input placeholder="Full Name" />
@@ -207,10 +209,23 @@ export default function CareerDetails() {
                     <label className="text-s20l24 text-C4C4C4  mobile:text-s12l14_4">
                       Contact Number
                     </label>
-                    <Input
+                    <div className="mt-27">
+                      {/* <Input
                       addonBefore={prefixSelector}
                       style={{ width: "100%" }}
-                    />
+                    /> */}
+                      <span className="desktop:text-s20l24 laptop:text-s20l24 pb-4 mobile:text-s14l16_8 text-8B8B8B border-r border-C4C4C4 h-23 mobile:h-20 pr-5 absolute mobile:pt-3 mobile:text-C4C4C4">
+                        +91
+                      </span>
+                      <input
+                        type="number"
+                        className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 text-F1F1F1 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                        // value={contactNo}
+                        onChange={(e) => {
+                          // setContactNo(e.target.value);
+                        }}
+                      />
+                    </div>
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
@@ -305,7 +320,7 @@ export default function CareerDetails() {
               <div className="text-s20l24 text-C4C4C4 pt-48  mobile:text-s12l14_4">
                 Resume (.pdf, .doc, .docx upto 2mb)
               </div>
-              <div className="pt-58">
+              <div className="pt-58 mobile:pt-0">
                 <Form.Item className="job-app-form">
                   <Upload>
                     <Button icon={false}>
