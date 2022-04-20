@@ -1,20 +1,20 @@
-import { useState } from "react"
-import Image from "../helpers/Image"
-import DesktopHeader from "./DesktopHeader"
-import MiniHeader from "./MiniHeader"
-import { useRouter } from "next/router"
+import { useState } from "react";
+import Image from "../helpers/Image";
+import DesktopHeader from "./DesktopHeader";
+import MiniHeader from "./MiniHeader";
+import { useRouter } from "next/router";
 
 export default function Header() {
-  const iconSize = 48
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
-  const [activeDesktopMenu, setActiveDesktopMenu] = useState("")
+  const iconSize = 48;
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [activeDesktopMenu, setActiveDesktopMenu] = useState("");
   const headerProps = {
     showMobileMenu,
     setShowMobileMenu,
     activeDesktopMenu,
     setActiveDesktopMenu,
-  }
-  const router = useRouter()
+  };
+  const router = useRouter();
 
   const renderProducts = () => {
     return (
@@ -34,7 +34,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">OMNI</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    OMNI
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Omni channel transactions
                     <div>with all payment modes</div>
@@ -48,7 +50,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">MOM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    MOM
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Instant merchant onboarding <div>& management</div>
                   </div>
@@ -61,7 +65,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Pay Later</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    Pay Later
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Digital register for <div>customer payment dues</div>
                   </div>
@@ -74,7 +80,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Acorn</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    Acorn
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Platform for all <div>the processing</div>
                   </div>
@@ -87,11 +95,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">Connect</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    Connect
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Payment and billing <div>
-                      integrations
-                    </div>
+                    Payment and billing <div>integrations</div>
                   </div>
                 </div>
               </div>
@@ -110,11 +118,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">IKU</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    IKU
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Instant customer <div>
-                      segmentation & recognition
-                    </div>
+                    Instant customer <div>segmentation & recognition</div>
                   </div>
                 </div>
               </div>
@@ -125,7 +133,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">OAR</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    OAR
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Offers and rewards <div>for customers</div>
                   </div>
@@ -138,7 +148,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">FAR</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    FAR
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Customer feedback <div>& ratings</div>
                   </div>
@@ -151,7 +163,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">BAT</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    BAT
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Badges, awards and <div>trophies for merchants</div>
                   </div>
@@ -164,7 +178,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">UAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    UAM
+                  </div>
                   <div className="text-s16l19 text-525252">
                     User access and <div>profile management</div>
                   </div>
@@ -177,11 +193,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">AIM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    AIM
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Business analytics, <div>
-                      insights and metrics
-                    </div>
+                    Business analytics, <div>insights and metrics</div>
                   </div>
                 </div>
               </div>
@@ -192,11 +208,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">MAC</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    MAC
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Marketing and campaigns <div>
-                      for latest trends
-                    </div>
+                    Marketing and campaigns <div>for latest trends</div>
                   </div>
                 </div>
               </div>
@@ -207,11 +223,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">SAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    SAM
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Service analytics <div>
-                      and management
-                    </div>
+                    Service analytics <div>and management</div>
                   </div>
                 </div>
               </div>
@@ -222,11 +238,11 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">PAM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    PAM
+                  </div>
                   <div className="text-s16l19 text-525252">
-                    Portfolio analytics <div>
-                      and management
-                    </div>
+                    Portfolio analytics <div>and management</div>
                   </div>
                 </div>
               </div>
@@ -234,7 +250,9 @@ export default function Header() {
           </div>
           <div className="w-100% my-32 h-1 bg-A4D77A opacity-50" />
           <div className="pl-65">
-            <div className="text-525252 text-s18l21_6 mb-9 font-semibold">Lending Stack</div>
+            <div className="text-525252 text-s18l21_6 mb-9 font-semibold">
+              Lending Stack
+            </div>
             <div className="flex flex-wrap">
               <div className="flex w-20% items-start cursor-pointer p-15 hover:bg-8FC055_O20 hover:bg-D1E6BA">
                 <Image
@@ -243,7 +261,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">XSM</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    XSM
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Cross- sell to <div>merchants</div>
                   </div>
@@ -256,7 +276,9 @@ export default function Header() {
                   width={iconSize}
                 />
                 <div className="ml-14">
-                  <div className="text-s20l24 text-252525 mb-5 font-semibold">XSC</div>
+                  <div className="text-s20l24 text-252525 mb-5 font-semibold">
+                    XSC
+                  </div>
                   <div className="text-s16l19 text-525252">
                     Cross- sell to <div>customers</div>
                   </div>
@@ -266,8 +288,8 @@ export default function Header() {
           </div>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const renderResources = () => {
     return (
@@ -276,7 +298,10 @@ export default function Header() {
         onMouseEnter={() => setActiveDesktopMenu("resources")}
         onMouseLeave={() => setActiveDesktopMenu("")}
       >
-        <div className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA" onClick={() => router.push("/resource")}>
+        <div
+          className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA"
+          onClick={() => router.push("/resource")}
+        >
           <Image
             src="/images/icons/blog.svg"
             height={iconSize}
@@ -285,7 +310,7 @@ export default function Header() {
           <div className="text-s20l24 text-252525 shrink-0 ml-10">Blog</div>
         </div>
 
-        <div className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA">
+        {/* <div className="flex px-24 py-10 items-center cursor-pointer hover:bg-D1E6BA">
           <Image
             src="/images/icons/case_studies.svg"
             height={iconSize}
@@ -294,7 +319,7 @@ export default function Header() {
           <div className="text-s20l24 text-252525 shrink-0 ml-10 ">
             Case Studies
           </div>
-        </div>
+        </div> */}
 
         <div className="flex px-24 py-10  items-center cursor-pointer hover:bg-D1E6BA">
           <Image
@@ -307,8 +332,8 @@ export default function Header() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const renderSupport = () => {
     return (
@@ -345,12 +370,12 @@ export default function Header() {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
-      <div className="relative flex items-center justify-between px-18 z-50 shadow-headerBoxShadow desktop:px-80 laptop:px-50 laptop:h-111 h-54 desktop:h-111 bg-E0EFD4">
+      <div className="relative flex items-center justify-between px-18 z-50 shadow-headerBoxShadow desktop:px-80 laptop:px-50 laptop:h-111 h-54 desktop:h-111 mobile:h-54 bg-E0EFD4">
         {/* For desktop size */}
         <DesktopHeader {...headerProps} />
 
@@ -362,10 +387,10 @@ export default function Header() {
       {activeDesktopMenu === "products"
         ? renderProducts()
         : activeDesktopMenu === "resources"
-          ? renderResources()
-          : activeDesktopMenu === "support"
-            ? renderSupport()
-            : null}
+        ? renderResources()
+        : activeDesktopMenu === "support"
+        ? renderSupport()
+        : null}
     </>
-  )
+  );
 }

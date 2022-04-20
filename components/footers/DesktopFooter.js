@@ -1,28 +1,28 @@
-import React from "react"
-import Image from "../helpers/Image"
-import Request_Demo from "../../pages/request_demo"
-import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
+import React from "react";
+import Image from "../helpers/Image";
+import Request_Demo from "../../pages/request_demo";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function DesktopFooter() {
-  const router = useRouter()
+  const router = useRouter();
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [slug, setSlug] = useState("")
+    setDemoPopup(false);
+  };
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [slug, setSlug] = useState("");
 
   useEffect(() => {
-    let url = window.location.href
-    let slug = url.split("/").pop()
-    setSlug(slug)
-  }, [])
+    let url = window.location.href;
+    let slug = url.split("/").pop();
+    setSlug(slug);
+  }, []);
 
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
       {slug == "faqs" || slug == "career" ? null : (
-        <div className="flex justify-between items-center px-80 py-60 laptop:px-50">
+        <div className="flex justify-between items-center px-180 py-60 laptop:px-50">
           <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
             {slug == "resource" || slug == "blog-detail" ? (
               <>Ready to join our community?</>
@@ -44,8 +44,8 @@ export default function DesktopFooter() {
       <div className="flex justify-between px-180  laptop:px-50">
         <div className="pb-175 pt-139">
           <Image src="/images/logo_white.svg" width={250} height={50} />
-          <div className="mt-58 text-F5FBF3 text-s20l24">Find us on</div>
-          <div className="flex mt-19 w-150 justify-between  cursor-pointer h-40">
+          <div className="mt-55 text-F5FBF3 text-s20l24">Find us on</div>
+          <div className="flex mt-20 w-150 justify-between  cursor-pointer h-40">
             <svg
               width="35"
               height="35"
@@ -147,9 +147,7 @@ export default function DesktopFooter() {
               Products
             </span>
           </div>
-          <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border">Customise</span>
-          </div>
+
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span
               className=" hover-border"
@@ -201,9 +199,6 @@ export default function DesktopFooter() {
             </span>
           </div>
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border">Case Studies</span>
-          </div>
-          <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">News & Media</span>
           </div>
         </div>
@@ -230,5 +225,5 @@ export default function DesktopFooter() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }

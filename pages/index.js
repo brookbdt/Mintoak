@@ -191,7 +191,7 @@ export default function Home() {
           <div className="mobile:mt-2 text-s44l120 laptop:text-s32l45 mobile:text-s24l28_8 text-252525 shrink-0 mobile:font-semibold">
             {homeBannerResp?.TitleBottom}
           </div>
-          <div className="text-s24l150 laptop:text-s20l30 mobile:text-s14l21 text-525252 shrink-0 mt-37 mobile:mt-16">
+          <div className="text-s24l36 font-normal laptop:text-s24l36 mobile:text-s14l21 text-525252 shrink-0 mt-37 mobile:mt-16">
             {homeBannerResp?.Description}
           </div>
           <div
@@ -269,7 +269,7 @@ export default function Home() {
         </div>
 
         {/* Mintoak Advantages */}
-        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-20 text-252525 font-semibold text-s44l120 mobile:text-s22l33 mobile:font-bold mb-60">
+        <div className="flex laptop:justify-around desktop:justify-around mobile:pl-20 mobile:mb-20 text-252525 font-semibold text-s44l66 mobile:text-s22l33 mobile:font-bold mb-60">
           The Mintoak Advantages
         </div>
         <div className="flex mobile:block justify-around w-100% px-180 laptop:px-100 mobile:px-0 mb-150 mobile:mb-80">
@@ -319,8 +319,10 @@ export default function Home() {
               />
               <div
                 className={
-                  "ml-25 font-bold text-s40l60 " +
-                  (isBORM === "b" ? "text-FFFFFF" : "text-A2A2A2")
+                  "ml-25  text-s44l52 " +
+                  (isBORM === "b"
+                    ? "text-FFFFFF font-bold"
+                    : "text-A1A1A1 font-normal")
                 }
               >
                 {homeForBanksResp?.Title1}
@@ -343,8 +345,10 @@ export default function Home() {
               />
               <div
                 className={
-                  "ml-25 font-bold text-s40l60 " +
-                  (isBORM === "m" ? "text-FFFFFF" : "text-A2A2A2")
+                  "ml-25 text-s44l52 " +
+                  (isBORM === "m"
+                    ? "text-FFFFFF font-bold"
+                    : "text-A1A1A1 font-normal")
                 }
               >
                 {homeForMerchant?.Title1}
@@ -365,9 +369,9 @@ export default function Home() {
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                         {homeForBanksResp?.Description2}
-                        <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                        {/* <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                           {homeForBanksResp?.CTA1}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                     <div
