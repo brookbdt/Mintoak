@@ -276,7 +276,6 @@ button[disabled] {
 .ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
   padding-right: 60px !important;
 }
-
 // search input in career
 .search-input {
   .ant-input-affix-wrapper:focus,
@@ -344,7 +343,6 @@ button[disabled] {
     padding-right: 14px;
   }
 }
-
 // Form of career detail page job application
 .job-app-form {
   .ant-input {
@@ -385,7 +383,7 @@ button[disabled] {
     border-bottom: 1.5px solid #c4c4c4;
     color: #ffffff;
     padding-left: 0;
-    margin-top: 16px;
+    padding-bottom: 0;
     font-size: 20px;
     height: 46px;
     text-align: left !important;
@@ -869,7 +867,7 @@ button[disabled] {
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     padding: 0;
-    padding-left: 5px;
+    padding-left: 0px;
     color: #f1f1f1;
     margin-top: 25px;
     font-size: 130%;
@@ -1369,4 +1367,8 @@ padding-bottom: 0px !important;
 }
 .shadow-achievement{
   box-shadow: 1.41026px 7.05128px 7.05128px rgba(0, 0, 0, 0.1);
+}
+.about-us-founders{
+  font-size: 14px !important; 
+  line-height: 21px !important;
 }

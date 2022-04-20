@@ -3,10 +3,8 @@ IP=$(curl -s https://ipinfo.io/ip)
 
 git pull
 if [ $? -eq 0 ]; then
-    echo "Git pulled successfully"
-    echo "Rebuilding Project..."
-    rm -rf node_modules/
-    rm -rf .next/
+    echo 'Git pulled successfully'
+    echo 'Rebuilding Project...'
     npm install
     npm run build
 

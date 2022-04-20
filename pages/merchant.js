@@ -106,7 +106,6 @@ export default function Merchant() {
     }
     if (num == 0) {
       let t = val0;
-      setVal0(val1);
       setVal1(t);
       merchantBenefits3.map((item) => {
         if (item.Title == val0) {
@@ -118,13 +117,18 @@ export default function Merchant() {
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
-      <div className="relative top-bg-container">
+      <div className="relative  bg-home-top top-bg-container">
         <Image
           src={merchantBannerResp.Illustration}
           className="absolute mobile:hidden object-cover h-100% w-100% laptop:h-666 laptop:w-1366"
           type="img"
         />
-        <div className="desktop:w-50% relative desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10">
+        <Image
+          src="/images/backgrounds/merchant_mobile.svg"
+          className="absolute desktop:hidden laptop:hidden object-cover h-100% w-100%"
+          type="img"
+        />
+        <div className="desktop:w-50% relative desktop:px-100 desktop:pt-150 laptop:pt-150 laptop:px-100 laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-115 z-10  mobile:h-580">
           <div className="text-s44l120 mobile:text-s24l29 text-252525 shrink-0">
             Get answers to all your
           </div>
@@ -493,7 +497,7 @@ export default function Merchant() {
             </div>
             <div className="flex justify-center pt-45 m-auto">
               <Image
-                src="/images/backgrounds/merchant-mobile.svg"
+                src="/images/backgrounds/mechent_real_time.svg"
                 type="img"
                 height={500}
                 width={270}
@@ -762,7 +766,7 @@ export default function Merchant() {
             />
           </div>
         </div>
-        <div className="pt-154 laptop:pt-50 mobile:py-80">
+        {/* <div className="pt-154 laptop:pt-50 mobile:py-80">
           <div className="flex justify-center font-bold text-s44l66 mobile:text-s20l24 mobile:px-34">
             Customers Onboard
           </div>
@@ -826,7 +830,7 @@ export default function Merchant() {
           <div className="flex mobile:block justify-center items-center w-100% py-50 mb-100 mobile:px-0 mobile:mb-0 mobile:pb-0 desktop:hidden laptop:hidden">
             <div className="px-20">
               <Carousel
-                itemsToShow={1}
+                itemsToShow={1.3}
                 // verticalMode
                 itemPadding={[0, 0, 28, 0]}
                 enableMouseSwipe={true}
@@ -891,7 +895,7 @@ export default function Merchant() {
               </Carousel>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />

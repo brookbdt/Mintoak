@@ -1,11 +1,11 @@
-import Image from "../components/helpers/Image"
-import Carousel from "react-elastic-carousel"
-import { useEffect, useState, useRef } from "react"
-import { consts } from "react-elastic-carousel"
-import { Modal, Select } from "antd"
-import { API, endpoints } from "../components/helpers/API"
-import Request_Demo from "./request_demo"
-import CircularProgress from "../components/helpers/Prograssbar"
+import Image from "../components/helpers/Image";
+import Carousel from "react-elastic-carousel";
+import { useEffect, useState, useRef } from "react";
+import { consts } from "react-elastic-carousel";
+import { Modal, Select } from "antd";
+import { API, endpoints } from "../components/helpers/API";
+import Request_Demo from "./request_demo";
+import CircularProgress from "../components/helpers/Prograssbar";
 
 export default function Partner() {
   const { Option } = Select;
@@ -21,12 +21,12 @@ export default function Partner() {
   const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
   const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null)
-  const [countryList, setCountryList] = useState(null)
-  const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
-  const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
-  const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
-  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
+    useState(null);
+  const [countryList, setCountryList] = useState(null);
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
   const [fullName, setFullName] = useState(null);
   const [contactNo, setContactNo] = useState(null);
   const [email, setEmail] = useState(null);
@@ -77,8 +77,8 @@ export default function Partner() {
       if (!resp.message) {
         setAboutUsCustomization2(resp);
         setDesc(resp[1].Description);
-        setVal0(resp[0]);
-        setVal1(resp[1]);
+        setVal0(resp[1]);
+        setVal1(resp[0]);
         setVal2(resp[2]);
       }
     });
@@ -132,7 +132,7 @@ export default function Partner() {
         }
       });
     }
-  }
+  };
   const handleSubmit = () => {
     let tempVal = true;
     if (fullName === null || fullName === "") {
@@ -191,15 +191,13 @@ export default function Partner() {
     setMsg("");
   };
 
-
   useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
-
 
   return (
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col">
+        <div className="mobile:h-595 relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col leptop:h-646">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
@@ -224,10 +222,9 @@ export default function Partner() {
               {partnerWithUsBanner?.CTA}
             </div>
           </div>
-          <div className="desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
+          <div className="mobile:absolute mobile:top-85 desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
               src={partnerWithUsBanner?.mobilebanner}
-
               type="img"
               className=" h-fit w-100% block relative desktop:hidden laptop:hidden object-cover"
             />
@@ -500,7 +497,6 @@ export default function Partner() {
                     setFullName(e.target.value);
                   }}
                   value={fullName}
-
                 />
               </div>
               <div className="pb-40 ">
@@ -514,7 +510,6 @@ export default function Partner() {
                     setBankName(e.target.value);
                   }}
                   value={bankName}
-
                 />
               </div>
               <div>
@@ -538,7 +533,6 @@ export default function Partner() {
                       setContactNo(e.target.value);
                     }}
                     value={contactNo}
-
                   />
                 </div>
               </div>
@@ -553,7 +547,6 @@ export default function Partner() {
                     setTitle(e.target.value);
                   }}
                   value={title}
-
                 />
               </div>
             </div>
@@ -569,7 +562,6 @@ export default function Partner() {
                     setEmail(e.target.value);
                   }}
                   value={email}
-
                 />
               </div>
               <div className="pb-40 w-100% mobile:text-s12l14 mobile:global-partner-m  global-partner">
@@ -590,7 +582,6 @@ export default function Partner() {
                     setCountry(e.target);
                   }}
                   value={country}
-
                 >
                   {countryList &&
                     countryList.Data.map((item, index) => (
@@ -622,7 +613,6 @@ export default function Partner() {
                 onChange={(e) => {
                   setMsg(e.target.value);
                 }}
-
               />
             </div>
           </div>
@@ -718,8 +708,9 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
-                            }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
