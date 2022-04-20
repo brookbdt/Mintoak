@@ -575,11 +575,7 @@ export default function About() {
                             activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
-<<<<<<< HEAD
                           } rounded-full bg-opacity-100`}
-=======
-                          } rounded-full bg-opacity-100 `}
->>>>>>> bebe7f3f989aab00138948b914b1f78edf7f4e41
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
