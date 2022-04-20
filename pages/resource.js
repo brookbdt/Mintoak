@@ -30,7 +30,7 @@ export default function Resources() {
 
   useEffect(() => {
     if (search && search.length) {
-      let list = resourcesBlogList.filter((rList) =>
+      let list = resourcesBlogList && resourcesBlogList.filter((rList) =>
         rList.Title.toLowerCase().includes(search.toLowerCase())
       );
       setResourcesBlogList(list);
@@ -332,14 +332,14 @@ export default function Resources() {
                     src="/images/backgrounds/blog1.svg"
                     height={296}
                     width={388}
-                    // layout="fill"
+                  // layout="fill"
                   />
                 </div>
                 <Image
                   src="/images/backgrounds/blog-img.svg"
                   type="img"
                   className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-                  // layout="fill"
+                // layout="fill"
                 />
                 <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
                   <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">
