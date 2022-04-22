@@ -589,7 +589,7 @@ export default function About() {
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s20l150 text-000000 font-bold text-center pt-80 pb-40">
+        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
           Our founders
         </div>
         <div className="w-100% flex justify-center">
@@ -616,7 +616,9 @@ export default function About() {
           <div className="text-252525 text-s17l25 font-bold pb-10">
             Raman Khanduja
           </div>
-          <div className="text-525252 text-s16l24">Chief Executive</div>
+          <div className="text-525252 text-s16l24 mobile:mb-80">
+            Chief Executive
+          </div>
         </div>
       </div>
       {demoPopup && (

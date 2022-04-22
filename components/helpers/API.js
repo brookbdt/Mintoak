@@ -1,13 +1,13 @@
 // STRAPI PORTAL http://uat-content.mintoak.com/admin  rushabh@mindlogicsolutions.com / EÛ8×^û
 
-import axios from "axios"
-import { Notification } from "./utils"
+import axios from "axios";
+import { Notification } from "./utils";
 
-const domain = "http://uat-content.mintoak.com"
-const slug = "/"
-const host = domain + slug
+const domain = "http://uat-content.mintoak.com";
+const slug = "/";
+const host = domain + slug;
 
-axios.defaults.baseURL = host
+axios.defaults.baseURL = host;
 
 const API = ({ url, method = "get", body = {}, headers = {} }) =>
   axios[method](url, headers, body)
@@ -17,9 +17,9 @@ const API = ({ url, method = "get", body = {}, headers = {} }) =>
         type: "error",
         message: "Opps, Something went wrong!",
         description: err.message,
-      })
-      return err
-    })
+      });
+      return err;
+    });
 
 // API ENDPOINTS
 const endpoints = {
@@ -34,7 +34,7 @@ const endpoints = {
   faq: "faq-s",
   about_us_banner: "about-us-banner",
   mintoak_story: "mintoak-story?sort=order",
-  about_us_metrics: "about-us-metrics",
+  about_us_metrics: "about-us-metrics?_sort=id:ASC",
   about_us_mission: "about-us-mission",
   about_us_vision: "about-us-vision",
   about_us_principle_cards: "about-us-principle-cards",
@@ -55,7 +55,7 @@ const endpoints = {
   career_listing_value_proposition:
     "career-listing-value-propositions?_sort=order:ASC",
   home_page_blogs: "home-page-blogs",
-  partner_with_us_new_heights2: "partner-with-us-new-heights-2-s",
+  partner_with_us_new_heights2: "partner-with-us-new-heights-2-s?_sort=id:ASC",
   about_us_customization_2: "about-us-customization-2-s",
   about_us_customization: "about-us-customization",
   partner_with_us_mintoak_effect:
@@ -70,6 +70,6 @@ const endpoints = {
   product_page_features: "product-page-features",
   product_page_feature2: "product-page-feature-2",
   product_page_feature3: "product-page-feature-3",
-}
+};
 
-export { API, endpoints, domain }
+export { API, endpoints, domain };
