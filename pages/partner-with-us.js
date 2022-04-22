@@ -202,8 +202,8 @@ export default function Partner() {
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
           />
-          <div className="desktop:w-50% relative desktop:pb-101 laptop:pb-107 laptop:w-50% pl-176 pr-0 desktop:pt-150 z-10 mobile: w-100% mobile:px-20 ">
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-40 text-252525 shrink-0">
+          <div className="desktop:w-50% relative desktop:pb-107 laptop:pb-107 laptop:w-50% pl-176 laptop:pl-100 pr-0 pt-150 laptop:pt-41 z-10 mobile: w-100% mobile:p-20 ">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-2">
@@ -231,7 +231,7 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col py-150 mobile:pt-81 px-333 mobile:pb-40 justify-center items-center mobile:px-20 ">
+        <div className="desktop:flex laptop:flex flex-col py-150 desktop:px-333 laptop:py-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>

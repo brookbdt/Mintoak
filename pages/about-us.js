@@ -553,15 +553,17 @@ export default function About() {
                     <div className="w-55% laptop:w-400 text-right laptop:pr-20">
                       <div
                         className={`${
-                          activeTab == index ? "text-s24l150" : "text-s20l150"
-                        } text-s20l30 text-F1F1F1`}
+                          activeTab == index
+                            ? "text-s24l150 laptop:text-s20l24"
+                            : "text-s20l150 laptop:text-s18l21_6"
+                        } text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
                         className={`${
                           activeTab == index ? "text-F1F1F1" : "text-949494"
-                        } text-s20l150`}
+                        } text-s20l150 laptop:text-s17l25`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -573,7 +575,7 @@ export default function About() {
                             activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
-                          } rounded-full bg-opacity-100 `}
+                          } rounded-full bg-opacity-100`}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
