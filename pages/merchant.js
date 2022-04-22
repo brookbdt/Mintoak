@@ -219,7 +219,7 @@ export default function Merchant() {
                 <Image
                   type="img"
                   src={item?.Icon[0]}
-                  className="object-cover h-174 w-249"
+                  className="desktop:object-cover h-174 w-249 laptop:h-140"
                 />
 
                 <div className="text-s24l36 text-F1F1F1 font-semibold text-center pt-48 laptop:w-300">

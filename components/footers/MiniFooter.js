@@ -20,7 +20,7 @@ export default function MiniFooter() {
   return (
     <div className="flex desktop:hidden laptop:hidden flex-col items-center pb-60 w-100%">
       <div className="p-36 pb-0 w-100% flex flex-col mobile:p-20">
-        {slug !== "career" && (
+        {slug !== "career" && slug !== "careerDetails" && (
           <>
             <div className="text-F1F1F1 text-s18l27 font-bold">
               Ready to begin your journey with us?

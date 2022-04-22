@@ -239,7 +239,7 @@ export default function Contact() {
                 }}
               />
             </div>
-            <div className="h-50 flex">
+            <div className="h-5 0 flex">
               {validate === false && (
                 <>
                   <Image

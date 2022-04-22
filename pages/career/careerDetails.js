@@ -50,28 +50,28 @@ export default function CareerDetails() {
               Senior Software Developer
             </div>
             <div className="desktop:pt-16 laptop:pt-16 flex items-center mobile:pt-16 mobile:flex-wrap text-525252">
-              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center mr-14">
-                <span className="pl-5 mobile:text-s16l32">Mumbai</span>
+              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center mr-14 mobile:h-30 mobile:w-83 mobile:px-15">
+                <span className=" mobile:text-s14l32">Mumbai</span>
               </span>
-              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14">
-                <span className="pl-5 mobile:text-s16l32">Full Time</span>
+              <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14  mobile:h-30 mobile:w-83">
+                <span className=" mobile:text-s14l32">Full Time</span>
               </span>
               <div className="mobile:flex mobile:justify-between mobile:items-center mobile:w-100%">
-                <span className="bg-8fc0554d py-5 rounded-lg px-13 flex items-center desktop:mr-14 laptop:ml-16 mobile:mt-14">
-                  <span className="pl-5 mobile:text-s16l32">
+                <span className="bg-8fc0554d py-5 rounded-lg px-13 mobile:px-20 flex items-center desktop:mr-14 laptop:ml-16 mobile:mt-14 mobile:h-30 mobile:w-222">
+                  <span className="pl-5  mobile:text-s15l32">
                     Technology & Development
                   </span>
                 </span>
                 <Image
                   src="/images/icons/share.svg"
-                  className="desktop:hidden laptop:hidden"
+                  className="desktop:hidden laptop:hidden mobile:pt-15"
                   type="img"
                 />
               </div>
             </div>
           </div>
           <div>
-            <div className="button w-163 mobile:w-166 py-30 mobile:px-30 mt-40 mobile:mt-15 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-40  h-54 cursor-pointer z-20 font-bold">
+            <div className="button w-163 mobile:w-166 py-30 mobile:px-30 mt-40 mobile:mt-15 mobile:text-s14l16_8 mobile:py-10 text-s14l16_8 mobile:h-37  h-54 cursor-pointer z-20 font-bold">
               Apply Now
             </div>
             <div className="flex items-center justify-between pt-20 mobile:hidden">
@@ -317,14 +317,14 @@ export default function CareerDetails() {
                   </Form.Item>
                 </Col>
               </Row>
-              <div className="text-s20l24 text-C4C4C4 pt-48  mobile:text-s12l14_4">
+              <div className="text-s20l24 text-C4C4C4 pt-48 mobile:pt-0 mobile:text-s12l14">
                 Resume (.pdf, .doc, .docx upto 2mb)
               </div>
               <div className="pt-58 mobile:pt-0">
                 <Form.Item className="job-app-form">
                   <Upload>
                     <Button icon={false}>
-                      <span className="text-F1F1F1 mobile:text-s12l14_4">
+                      <span className="text-F1F1F1 mobile:text-s14l17">
                         Tap here to upload
                       </span>
                     </Button>
@@ -341,7 +341,7 @@ export default function CareerDetails() {
         </div>
       </div>
 
-      <div className="py-150 pt-0 mobile:py-80 mobile:pb-66">
+      <div className=" py-150 pt-0 mobile:py-80 mobile:pb-66 mobile_carrer_res">
         <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44 mobile:pb-24">
           View similar roles
         </div>
@@ -367,12 +367,20 @@ export default function CareerDetails() {
                     </div> */}
                   </div>
                   <div className="flex items-center pt-46 mobile:pt-30 mobile:text-s12l24">
-                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center mr-14 w-120">
-                      <Image src="/images/icons/bag.svg" type="img" />
+                    <span className="bg-8FC055 py-9 rounded-lg px-13 mobile:px-8 flex items-center mr-14 w-120 mobile:h-24 mobile:w-87">
+                      <Image
+                        src="/images/icons/bag.svg"
+                        type="img"
+                        className="mobile:w-17"
+                      />
                       <span className="pl-5">{data.timing}</span>
                     </span>
-                    <span className="bg-8FC055 py-9 rounded-lg px-13 flex items-center w-120">
-                      <Image src="/images/icons/location.svg" type="img" />
+                    <span className="bg-8FC055 py-9 rounded-lg px-13 mobile:px-8 flex items-center w-120 mobile:h-24 mobile:w-87">
+                      <Image
+                        src="/images/icons/location.svg"
+                        type="img"
+                        className="mobile:w-17"
+                      />
                       <span className="pl-5">{data.location}</span>
                     </span>
                   </div>

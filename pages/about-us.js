@@ -551,14 +551,18 @@ export default function About() {
                   <div className="flex h-190 laptop:h-150 laptop:pr-50">
                     <div className="w-55% laptop:w-400 text-right laptop:pr-20">
                       <div
-                        className={`${activeTab == index ? "text-s24l150" : "text-s20l150"
-                          } text-s20l30 text-F1F1F1`}
+                        className={`${
+                          activeTab == index
+                            ? "text-s24l150 laptop:text-s20l24"
+                            : "text-s20l150 laptop:text-s18l21_6"
+                        } text-F1F1F1`}
                       >
                         {founderResp[index]?.Name}
                       </div>
                       <div
-                        className={`${activeTab == index ? "text-F1F1F1" : "text-949494"
-                          } text-s20l150`}
+                        className={`${
+                          activeTab == index ? "text-F1F1F1" : "text-949494"
+                        } text-s20l150 laptop:text-s17l25`}
                       >
                         {founderResp[index]?.Designation}
                       </div>
@@ -569,7 +573,7 @@ export default function About() {
                           className={`${activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
-                            } rounded-full bg-opacity-100 `}
+                          } rounded-full bg-opacity-100`}
                         ></div>
                       </div>
                       {founderResp && founderResp.length - 1 != index && (
@@ -585,7 +589,7 @@ export default function About() {
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s20l150 text-000000 font-bold text-center pt-80 pb-40">
+        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
           Our founders
         </div>
         <div className="w-100% flex justify-center">
@@ -612,7 +616,9 @@ export default function About() {
           <div className="text-252525 text-s17l25 font-bold pb-10">
             Raman Khanduja
           </div>
-          <div className="text-525252 text-s16l24">Chief Executive</div>
+          <div className="text-525252 text-s16l24 mobile:mb-80">
+            Chief Executive
+          </div>
         </div>
       </div>
       {demoPopup && (
