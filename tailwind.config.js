@@ -181,6 +181,10 @@ module.exports = {
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
         bg_reel: "url(/images/backgrounds/reel-img.svg)",
         bg_contact: "url(/images/backgrounds/contact-background.svg)",
+        bg_contact_responcive:
+          "url(/images/backgrounds/contect-us-background1.svg)",
+        bg_contact_responcive_color:
+          "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
         bg_partner: "url(/images/backgrounds/partner-with-us-img.svg)",
         we_offer_bg:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
