@@ -18,24 +18,25 @@ export default function Contact() {
             This Privacy Policy describes the information Mintoak Innovations
             Private Limited (called, “Mintoak” or “we” or “us) collect when a
             person or business (called “covered person” “ or “you” and “your”)
-            applies or signs up for Mintoak Account (called, “Merchant Account” or
-            “Mintoak Services” or “Services” or “Account”), including through an
-            EDC terminal (called, “POS terminal” or “Device”) and mobile
+            applies or signs up for Mintoak Account (called, “Merchant Account”
+            or “Mintoak Services” or “Services” or “Account”), including through
+            an EDC terminal (called, “POS terminal” or “Device”) and mobile
             application and software (called, “App”) or visits{""}
-            <div className="text-8CC63E">http://www.mintoak.com</div> (called,
-            “Website”). This Privacy Policy explains how we collect, use and share
-            your personal information.
+            <div className="hover:text-8CC63E">http://www.mintoak.com</div>{" "}
+            (called, “Website”). This Privacy Policy explains how we collect,
+            use and share your personal information.
             <br />
             <br /> By applying or signing up for a Mintoak Account online,
             including through the Device or mobile or computer and using our
             device and services, you accept the terms of this Privacy Policy and
-            agree to our collection, use, sharing and storing of your information
-            as described herein. If you do not agree to the terms of this Privacy
-            Policy, please do not use or access our Website/Device and/or
-            services. By mere use of or access to our Website/Device and/or
-            services, you expressly consent to our use and disclosure of your
-            personal information in accordance with this Privacy Policy. This
-            Privacy Policy is incorporated into and subject to the Terms of Use
+            agree to our collection, use, sharing and storing of your
+            information as described herein. If you do not agree to the terms of
+            this Privacy Policy, please do not use or access our Website/Device
+            and/or services. By mere use of or access to our Website/Device
+            and/or services, you expressly consent to our use and disclosure of
+            your personal information in accordance with this Privacy Policy.
+            This Privacy Policy is incorporated into and subject to the Terms of
+            Use
           </div>
           <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
             Who is covered in the policy
@@ -44,8 +45,9 @@ export default function Contact() {
             All persons or business, whose information is either collected/
             received/ possessed/ stored/ dealt in/ handled by Mintoak and who
             visit the site{" "}
-            <span className="text-8CC63E">http://www.mintoak.com</span> and
-            provide information to Mintoak online are covered under this Policy.
+            <span className="hover:text-8CC63E">http://www.mintoak.com</span>{" "}
+            and provide information to Mintoak online are covered under this
+            Policy.
           </div>
           <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-20 mobile:pb-12 font-semibold">
             Information covered by this policy
@@ -63,10 +65,10 @@ export default function Contact() {
             Definitions used in this policy
           </div>
           <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-20 mobile:pb-12">
-            "Information" means any information that relates to a natural or legal
-            person, which, either directly or indirectly, in combination with
-            other information available or likely to be available with a body
-            corporate, is capable of identifying such person/s.
+            "Information" means any information that relates to a natural or
+            legal person, which, either directly or indirectly, in combination
+            with other information available or likely to be available with a
+            body corporate, is capable of identifying such person/s.
             <div className="pt-10">
               "Sensitive personal data or information" of a person means such
               personal information which consists of information relating to :
@@ -76,11 +78,12 @@ export default function Contact() {
       </div>
       {clickStatus == false ? (
         <>
-          <div className="w-100% mobile:px-20 bg-home-top">
-            <div className="h-250 w-100%  bg-read_more absolute">
-              <div className="flex justify-center pt-150">
+          <div className="w-100% bg-read_more mobile:h-150">
+            <div className="h-250 w-100% mobile:w-100% absolute">
+              {/* bg-read_more */}
+              <div className="flex justify-center pt-150 mobile:pt-89">
                 <span
-                  className="text-s24l36 text-center text-46AC34  border-b border-46AC34 cursor-pointer"
+                  className="text-s24l36 text-center text-46AC34  border-b border-46AC34 cursor-pointer  mobile:text-s14l21"
                   onClick={() => {
                     setClickStatus(true);
                   }}
@@ -103,7 +106,7 @@ export default function Contact() {
         </>
       ) : (
         <>
-          <div className="w-100% desktop:pl-180 desktop:pr-540  laptop:pl-70 laptop:pr-200 mobile:px-20 bg-home-top">
+          <div className="w-100% desktop:pl-180 desktop:pr-540  laptop:pl-70 laptop:pr-200 mobile:px-20 ">
             <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 z-minus1 text-525252 pl-24 relative h-250 laptop:h-150 mobile:h-150">
               <ul className="list-disc">
                 <li>Password</li>
@@ -308,21 +311,24 @@ export default function Contact() {
                 <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14">
                   Mintoak may, from time to time, amend or change this policy
                   from time to time by posting a revised version on its Website
-                  https://www.mintoak.com and updating the “Last updated date”
-                  above. The revised version will be effective at the time we
-                  post it. We will provide you with reasonable prior notice of
-                  substantial changes in how we use your information, including
-                  by email at the email address you provide. Where these changes
-                  would cause material detriment to you, you may of course
-                  cancel your account at any time. We encourage you to review
-                  this Privacy Policy whenever you access or use in any manner
-                  Mintoak Services, Device, application, product, service,
-                  feature, technology, content, or website (collectively,
-                  “Services”) to stay informed about our information practices
-                  and the choices available to you and to contact us if you have
-                  any questions about these changes. Your continued use of our
-                  Services constitutes your acceptance of any amendment of this
-                  Privacy Policy.
+                  <span className="hover:text-8CC63E">
+                    http://www.mintoak.com
+                  </span>{" "}
+                  and updating the “Last updated date” above. The revised
+                  version will be effective at the time we post it. We will
+                  provide you with reasonable prior notice of substantial
+                  changes in how we use your information, including by email at
+                  the email address you provide. Where these changes would cause
+                  material detriment to you, you may of course cancel your
+                  account at any time. We encourage you to review this Privacy
+                  Policy whenever you access or use in any manner Mintoak
+                  Services, Device, application, product, service, feature,
+                  technology, content, or website (collectively, “Services”) to
+                  stay informed about our information practices and the choices
+                  available to you and to contact us if you have any questions
+                  about these changes. Your continued use of our Services
+                  constitutes your acceptance of any amendment of this Privacy
+                  Policy.
                 </div>
                 <div className="desktop:text-s24l45 laptop:text-s18l27 desktop:text-252525 mobile:text-s14l21 mobile:text-000000 desktop:pb-20 laptop:pb-20 mobile:pb-8 font-semibold">
                   Contact :
@@ -332,7 +338,7 @@ export default function Contact() {
                   this Privacy Policy at: privacy@mintoak.com addressed to Rama
                   Tadepalli (Grievance Officer, Mintoak).
                 </div>
-                <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14 desktop:pb-150 laptop:pb-150">
+                <div className="desktop:text-s24l36 text-525252 mobile:text-s14l21 desktop:pb-40 mobile:pb-14 ">
                   At Mintoak, we value your relationship and will always strive
                   to ensure your privacy.
                 </div>
@@ -341,9 +347,24 @@ export default function Contact() {
           </div>
         </>
       )}
-
-
-
+      {clickStatus === true && (
+        <>
+          <div className="h-150 w-100% mobile:w-100% absolute bg-read_more mobile:h-80">
+            {/* bg-read_less */}
+            <div className="flex justify-center pt-50 mobile:pt-20">
+              <span
+                className="text-s24l36 text-center text-46AC34  border-b border-46AC34 cursor-pointer  mobile:text-s14l21"
+                onClick={() => {
+                  setClickStatus(false);
+                }}
+              >
+                Read Less
+              </span>
+            </div>
+          </div>
+          <div className="w-100%  desktop:pl-180 desktop:pr-540 laptop:pl-70 laptop:pr-200 desktop:text-s24l36 mobile:text-s14l21 z-minus1 text-525252 pl-24 relative h-150 mobile:h-80"></div>
+        </>
+      )}
     </>
   );
 }

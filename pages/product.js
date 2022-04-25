@@ -284,6 +284,60 @@ export default function Product() {
           </div>
         </div>
       </div>
+      <div className="laptop:hidden desktop:hidden p-20 mt-92">
+        <div className="text-s22l33 font-bold text-252525">
+          Track your business progress with our interactive dashboard:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Get real time updates on your business, such as total sales,
+          transaction history, one view across payment modes, customizable
+          transaction reports, insights on new and repeat customers and also
+          customer feedback. Get performance trends to see how your business has
+          performed over a period of time.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden ">
+          <Image
+            src="/images/backgrounds/product-mobile1.svg"
+            height={315}
+            width={160}
+          />
+        </div>
+        <div className="text-s22l33 font-bold text-252525">
+          Multi-location Consolidated View & Location-level <br /> Drill Down:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Have more than one outlet? We have got you covered. You can get a
+          consolidated view across all outlets in one place. A comparative view
+          of outlets helps you understand how each outlet is performing. Get
+          in-depth insights on the performance of a particular outlet or a group
+          of outlets.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden">
+          <Image
+            src="/images/backgrounds/product-mobile2.svg"
+            height={315}
+            width={160}
+          />
+        </div>
+        <div className="text-s22l33 font-bold text-252525">
+          Credit-to-Bank <br />
+          information:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Get a quick consolidated and outlet level view of merchant payout
+          details from the settlement or credit-to-bank section. You can see the
+          total amount credited for transactions completed successfully. You get
+          a transparent view of gross amount, transaction fees if any and the
+          net amount.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden">
+          <Image
+            src="/images/backgrounds/product-mobile3.svg"
+            height={315}
+            width={160}
+          />
+        </div>
+      </div>
       {/* more queries */}
       <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 px-181 mobile:px-20 mobile:pt-81">
         <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">

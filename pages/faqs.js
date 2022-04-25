@@ -137,7 +137,7 @@ export default function Contact() {
             <div
               className={`${
                 isClickedSearch && "btn-click-shaddow"
-              } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
+              } button w-54 text-s22l26_4 mobile:text-s24l26 px-18 mobile:rounded-none`}
               onMouseUp={() => clicked()}
               onClick={() => {
                 handleSearch();
@@ -157,7 +157,7 @@ export default function Contact() {
             </div>
           </div>
           {/* scroll buttons */}
-          <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20">
+          <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20 hide-scroll">
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
@@ -246,34 +246,36 @@ export default function Contact() {
           <div className="text-s20l24 text-828282 pb-20 mobile:text-s14l16_8 mobile:pb-10">
             Need help ? We got you covered.
           </div>
-          <div className="border-2 border-8CC63E mobile:w-100% border-b-0">
-            <Collapse
-              accordion
-              expandIcon={({ isActive }) =>
-                isActive ? (
-                  <i className="fa fa-angle-up text-262626" />
-                ) : (
-                  <i className="fa fa-angle-down text-262626" />
-                )
-              }
-              expandIconPosition={"right"}
-              bordered={false}
-              // defaultActiveKey={["1"]}
-            >
-              {faqs?.map((items, index) => {
-                return (
-                  <Panel
-                    className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                    header={items.Question}
-                    key={index}
-                  >
-                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal desktop:pr-460 laptop:pr-100">
-                      {items.Answer}
-                    </p>
-                  </Panel>
-                );
-              })}
-            </Collapse>
+          <div className="border-2 border-8CC63E">
+            <div className=" border-8CC63E mobile:w-100% border-b-0">
+              <Collapse
+                accordion
+                expandIcon={({ isActive }) =>
+                  isActive ? (
+                    <i className="fa fa-angle-up text-262626" />
+                  ) : (
+                    <i className="fa fa-angle-down text-262626" />
+                  )
+                }
+                expandIconPosition={"right"}
+                bordered={false}
+                // defaultActiveKey={["1"]}
+              >
+                {faqs?.map((items, index) => {
+                  return (
+                    <Panel
+                      className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+                      header={items.Question}
+                      key={index}
+                    >
+                      <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal desktop:pr-460 laptop:pr-100">
+                        {items.Answer}
+                      </p>
+                    </Panel>
+                  );
+                })}
+              </Collapse>
+            </div>
           </div>
           {faqs && faqs.length > 0 && (
             <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
