@@ -197,7 +197,7 @@ export default function Partner() {
     <>
       <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
         {/* Top layout with resp */}
-        <div className="mobile:h-595 relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col leptop:h-646">
+        <div className="mobile:h-595 relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col leptop:h-646 desktop:h-646">
           <Image
             src={partnerWithUsBanner?.ilustration[0]}
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
@@ -708,9 +708,8 @@ export default function Partner() {
                       const isActivePage = activePage === page;
                       return (
                         <div
-                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
-                            isActivePage ? "bg-525252" : ""
-                          }`}
+                          className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-525252" : ""
+                            }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}

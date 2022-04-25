@@ -101,7 +101,7 @@ export default function About() {
     });
   }, []);
 
-  function goToPage(numberPage) {}
+  function goToPage(numberPage) { }
 
   return (
     <div className="desktop:h-fit w-100%  laptop:h-fit w-100% bg-home-top mobile:w-100% ">
@@ -225,9 +225,8 @@ export default function About() {
             principalResp.map((item, index) => (
               <div
                 key={index}
-                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${
-                  index != principalResp.length - 1 && ""
-                } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
+                className={`flex desktop:mx-30 laptop:mx-30 desktop:flex-col laptop:flex-col items-center desktop:border laptop:border border-8CC63E justify-center desktop:w-345 laptop:w-345 desktop:h-336 laptop:h-336 ${index != principalResp.length - 1 && ""
+                  } mobile:w-100% desktop:py-25 laptop:py-25 mobile:py-10`}
               >
                 <div>
                   <Image src={item.Icon} height={85} width={85} />
@@ -517,7 +516,7 @@ export default function About() {
                       <Image
                         src={item?.FounderImage}
                         type="img"
-                        className="h-660 w-529 mobile:h-368 founder-shadow"
+                        className="h-660 w-529 mobile:h-368"
                       />
                     </div>
                     <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end laptop:justify-center laptop:w-50% desktop:w-50% mobile:w-100% laptop:pl-50">
@@ -571,8 +570,7 @@ export default function About() {
                     <div className="flex flex-col items-center w-30% pt-5">
                       <div className="w-27 h-27 flex justify-center">
                         <div
-                          className={`${
-                            activeTab == index
+                          className={`${activeTab == index
                               ? "w-27 h-27 bg-F1F1F1 "
                               : "w-17 h-16 bg-949494"
                           } rounded-full bg-opacity-100`}
