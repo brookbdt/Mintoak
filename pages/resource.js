@@ -30,9 +30,11 @@ export default function Resources() {
 
   useEffect(() => {
     if (search && search.length) {
-      let list = resourcesBlogList && resourcesBlogList.filter((rList) =>
-        rList.Title.toLowerCase().includes(search.toLowerCase())
-      );
+      let list =
+        resourcesBlogList &&
+        resourcesBlogList.filter((rList) =>
+          rList.Title.toLowerCase().includes(search.toLowerCase())
+        );
       setResourcesBlogList(list);
     } else {
       setResourcesBlogList(allList);
@@ -84,7 +86,7 @@ export default function Resources() {
               </div>
             </div>
           </div>
-          <div className="desktop:w-50% desktop:p-100 mobile:justify-around laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
+          <div className="desktop:w-50% desktop:p-100 mobile:justify-between mobile:w-400 laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
             <div className="cursor-pointer mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
               <Image
                 src="/images/backgrounds/Resource_bg1.svg"
@@ -332,14 +334,14 @@ export default function Resources() {
                     src="/images/backgrounds/blog1.svg"
                     height={296}
                     width={388}
-                  // layout="fill"
+                    // layout="fill"
                   />
                 </div>
                 <Image
                   src="/images/backgrounds/blog-img.svg"
                   type="img"
                   className="h-130 w-3800 py-4 pl-4 pr-10 desktop:hidden laptop:hidden"
-                // layout="fill"
+                  // layout="fill"
                 />
                 <div className="desktop:pl-27 laptop:pl-27 desktop:pt-50 laptop:pt-22 mobile:pt-10 desktop:w-70%">
                   <div className="text-46AC34 desktop:text-s20l24 laptop:text-s20l24 mobile:text-s12l14 desktop:pb-24 mobile:pb-5">

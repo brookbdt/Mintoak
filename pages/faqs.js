@@ -91,8 +91,8 @@ export default function Contact() {
             <div className="absolute pl-27 pt-10">
               <Image
                 src="/images/icons/search-icon.svg"
-                width={35.15}
-                height={37}
+                width={30}
+                height={30}
                 // onClick={() => { handleSearch(); alert(7) }}
               />
             </div>

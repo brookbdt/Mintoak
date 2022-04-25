@@ -133,7 +133,7 @@ export default function Contact() {
                 }}
               />
             </div>
-            <div className="pb-40">
+            <div className="pb-40  ">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Contact Number
               </div>
@@ -142,7 +142,7 @@ export default function Contact() {
               </span>
               <input
                 type="number"
-                className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                className=" global-input-number  desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
                 value={contactNo}
                 onChange={(e) => {
                   setContactNo(e.target.value);
