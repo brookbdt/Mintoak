@@ -1382,3 +1382,6 @@ padding-bottom: 0px !important;
 .mobile_carrer_res{
   background: rgb(230, 240, 223,0.4);
 }
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
