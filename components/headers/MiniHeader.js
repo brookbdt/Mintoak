@@ -225,7 +225,7 @@ export default function MiniHeader(headerProps) {
       <>
         <div
           className="flex pl-8 py-9 pt-15 items-center cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/resource")}
         >
           <Image
             src="/images/icons/blog.svg"

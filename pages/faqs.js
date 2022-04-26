@@ -93,13 +93,12 @@ export default function Contact() {
                 src="/images/icons/search-icon.svg"
                 width={35.15}
                 height={37}
-                // onClick={() => { handleSearch(); alert(7) }}
+              // onClick={() => { handleSearch(); alert(7) }}
               />
             </div>
             <div
-              className={`button w-206 text-s22l26_4 ${
-                isClickedSearch && "btn-click-shaddow"
-              }`}
+              className={`button w-206 text-s22l26_4 ${isClickedSearch && "btn-click-shaddow"
+                }`}
               onMouseUp={() => clicked()}
               onClick={() => {
                 handleSearch();
@@ -135,9 +134,15 @@ export default function Contact() {
               />
             </div>
             <div
+<<<<<<< HEAD
+              className={`${isClickedSearch && "btn-click-shaddow"
+                } button w-54 text-s22l26_4 mobile:text-s24l26 px-18 mobile:rounded-none`}
+=======
+
               className={`${
                 isClickedSearch && "btn-click-shaddow"
-              } button w-54 text-s22l26_4 mobile:text-s24l26 px-18 mobile:rounded-none`}
+              } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
+>>>>>>> b479fa04ac093124f9d31eead06a3a042663f936
               onMouseUp={() => clicked()}
               onClick={() => {
                 handleSearch();
@@ -259,7 +264,7 @@ export default function Contact() {
                 }
                 expandIconPosition={"right"}
                 bordered={false}
-                // defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
               >
                 {faqs?.map((items, index) => {
                   return (
@@ -356,9 +361,8 @@ export default function Contact() {
             <div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 mobile:pt-35">
                 <div
-                  className={` flex mobile:mb-12  items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    omniStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={` flex mobile:mb-12  items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${omniStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setOmniStatus((prev) => !prev);
                   }}
@@ -388,9 +392,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    momStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${momStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setMomStatus((prev) => !prev);
                   }}
@@ -421,10 +424,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    paylaterStatus === true &&
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${paylaterStatus === true &&
                     "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                    }`}
                   onClick={() => {
                     setPaylaterStatus((prev) => !prev);
                   }}
@@ -455,9 +457,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    acornStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${acornStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setAcornStatus((prev) => !prev);
                   }}
@@ -490,10 +491,9 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    connectStatus === true &&
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${connectStatus === true &&
                     "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                    }`}
                   onClick={() => {
                     setConnectStatus((prev) => !prev);
                   }}
@@ -524,9 +524,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    ikuStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${ikuStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setIkuStatus((prev) => !prev);
                   }}
@@ -557,9 +556,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    oarStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${oarStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setOarStatus((prev) => !prev);
                   }}
@@ -590,9 +588,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    farStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${farStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setFarStatus((prev) => !prev);
                   }}
@@ -625,9 +622,8 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 ">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    batStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${batStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setBatStatus((prev) => !prev);
                   }}
@@ -658,9 +654,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    uamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${uamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setUamStatus((prev) => !prev);
                   }}
@@ -691,9 +686,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    aimStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${aimStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setAimStatus((prev) => !prev);
                   }}
@@ -724,9 +718,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    macStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${macStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setMacStatus((prev) => !prev);
                   }}
@@ -759,9 +752,8 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    pamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${pamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setPamStatus((prev) => !prev);
                   }}
@@ -792,9 +784,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    samStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${samStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setSamStatus((prev) => !prev);
                   }}
@@ -825,9 +816,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    xsmStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${xsmStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setXsmStatus((prev) => !prev);
                   }}
@@ -858,9 +848,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
-                    xscStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                  }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${xscStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                    }`}
                   onClick={() => {
                     setXscStatus((prev) => !prev);
                   }}
