@@ -123,7 +123,7 @@ export default function Contact() {
             <div className="w-100%">
               <input
                 type="text"
-                className="outline-none border border-8FC055 bg-DFEFD4 h-48 w-100% pl-50 desktop:text-s20l24 laptop:text-s20l24"
+                className="outline-none border-2 border-8CC63E bg-DFEFD4 h-48 w-100% pl-50 desktop:text-s20l24 laptop:text-s20l24"
                 placeholder="Enter your query here"
               />
             </div>
@@ -276,7 +276,7 @@ export default function Contact() {
             </Collapse>
           </div>
           {faqs && faqs.length > 0 && (
-            <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
+            <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-80">
               <Pagination defaultCurrent={1} total={30} />
             </div>
           )}

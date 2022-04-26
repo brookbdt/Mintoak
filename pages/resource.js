@@ -69,7 +69,7 @@ export default function Resources() {
                     // type="img"
 
                     /> */}
-          <div className="desktop:w-50% desktop:py-100  desktop:pl-180 laptop:py-100 laptop:pl-180  laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-40 z-10">
+          <div className="desktop:w-50% desktop:py-100  desktop:pl-180 laptop:py-100 laptop:pl-180  laptop:w-70% tablet:w-80% tablet:p-30 px-20 mobile:pt-40 mobile:w-100%  pb-40 z-10">
             <div className="text-s44l120 mobile:text-s20l24 text-FFFFFF shrink-0 pr-50">
               Get your money in seconds — 24/7 — with instant transfer
             </div>
@@ -86,8 +86,8 @@ export default function Resources() {
               </div>
             </div>
           </div>
-          <div className="desktop:w-50% desktop:p-100 mobile:justify-between mobile:w-400 laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
-            <div className="cursor-pointer mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
+          <div className="desktop:w-50% desktop:p-100 mobile:justify-between mobile:w-300 laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
+            <div className="cursor-pointer ml-auto mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
               <Image
                 src="/images/backgrounds/Resource_bg1.svg"
                 type="img"

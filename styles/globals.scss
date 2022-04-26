@@ -485,6 +485,9 @@ button[disabled] {
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
+.global {
+  border-bottom: 2px solid #c4c4c4;
+}
 
 .global-input:focus {
   border-bottom: 2px solid #a4d77a;

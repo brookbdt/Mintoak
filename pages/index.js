@@ -17,6 +17,8 @@ SwiperCore.use([Mousewheel, Pagination]);
 const { Panel } = Collapse;
 
 export default function Home() {
+  const router = useRouter();
+
   const [demoPopup, setDemoPopup] = useState(false);
   const [activeindex, setActiveIndex] = useState(1);
   const [isBORM, setIsBORM] = useState("b");
@@ -164,8 +166,9 @@ export default function Home() {
           {pages.map((page, index) => (
             <span
               key={index}
-              className={`w-6 h-6 ${page == activePage ? "bg-C4C4C4" : "bg-525252"
-                }  rounded-md bg-opacity-100 pr-6`}
+              className={`w-6 h-6 ${
+                page == activePage ? "bg-C4C4C4" : "bg-525252"
+              }  rounded-md bg-opacity-100 pr-6`}
             ></span>
           ))}
         </span>
@@ -277,8 +280,9 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className={`mobile:flex mobile:pt-${index != 0 ? "30" : "10"
-                  }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
+                className={`mobile:flex mobile:pt-${
+                  index != 0 ? "30" : "10"
+                }  mobile:flex-row mobile:px-20 flex flex-col items-center justify-center border desktop:w-345 laptop:w-345 laptop:h-361 desktop:h-361 mobile:border-0 border-8CC63E justify-center  mobile:w-100% p-20 mobile:p-0 mx-20 mobile:mx-0`}
               >
                 <Image
                   src={item.Icon}
@@ -310,8 +314,9 @@ export default function Home() {
               onClick={() => setIsBORM("b")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "b" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "b" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -335,8 +340,9 @@ export default function Home() {
               onClick={() => setIsBORM("m")}
             >
               <Image
-                src={`/images/icons/radio-${isBORM === "m" ? "selected" : "unselected"
-                  }.svg`}
+                src={`/images/icons/radio-${
+                  isBORM === "m" ? "selected" : "unselected"
+                }.svg`}
                 height={49}
                 width={49}
               />
@@ -580,7 +586,7 @@ export default function Home() {
 
         {/* Our achievements */}
         <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120  mobile:p-0">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:pt-40 mobile:pb-15">
             Our Achievements
           </div>
           <div className="flex items-center w-100% pt-60  mobile:px-0 mobile:py-0 mobile:hidden">
@@ -657,27 +663,31 @@ export default function Home() {
                     }}
                   >
                     <div
-                      className={`flex flex-col items-center bg-313131 ${activeindex == index
-                        ? "pt-30 pb-27 w-280 h-221 z-minus1 shadow-achievement border border-C4C4C4"
-                        : "pt-19 pb-20 h-170 w-210 border-t border-b border-C4C4C4 opacity-50"
-                        }`}
+                      className={`flex flex-col items-center bg-313131 ${
+                        activeindex == index
+                          ? "pt-30 pb-27 w-280 h-221 z-minus1 shadow-achievement border border-C4C4C4"
+                          : "pt-19 pb-20 h-170 w-210 border-t border-b border-C4C4C4 opacity-50"
+                      }`}
                     >
                       <Image
                         src={item.CertificateIcon}
                         type="img"
-                        className={`${activeindex == index ? "w-175 h-80" : "w-147 h-37"
-                          }`}
+                        className={`${
+                          activeindex == index ? "w-175 h-80" : "w-147 h-37"
+                        }`}
                       />
 
                       <div
-                        className={`font-bold text-DFDFDF text-center text-s16l19 ${activeindex == index ? "pt-18" : "pt-13"
-                          }`}
+                        className={`font-bold text-DFDFDF text-center text-s16l19 ${
+                          activeindex == index ? "pt-18" : "pt-13"
+                        }`}
                       >
                         {item?.Title}
                       </div>
                       <div
-                        className={`text-DFDFDF text-center mt-12 text-s12l18 ${activeindex == index ? "px-50" : "px-20"
-                          }`}
+                        className={`text-DFDFDF text-center mt-12 text-s12l18 ${
+                          activeindex == index ? "px-50" : "px-20"
+                        }`}
                       >
                         {item?.Description}
                       </div>

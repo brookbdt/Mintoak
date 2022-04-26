@@ -202,7 +202,7 @@ export default function About() {
               <Image
                 src="/images/icons/mission.svg"
                 type="img"
-                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-40 mobile:w-40 box-shadow-none"
+                className="desktop:h-49 desktop:w-49 laptop:h-49 laptop:w-49 mobile:h-40 mobile:w-40 "
               />
             </div>
             <div className="ls--1_5 text-s45l54 mobile:text-s22l26_4 text-FFFFFF font-bold desktop:px-25 laptop:px-25 mobile:px-8 ">
@@ -517,7 +517,7 @@ export default function About() {
                       <Image
                         src={item?.FounderImage}
                         type="img"
-                        className="h-660 w-529 mobile:h-368"
+                        className="h-663 w-529 mobile:h-368"
                       />
                     </div>
                     <div className="flex flex-col mobile:px-25 desktop:px-20 desktop:pt-40 justify-end laptop:justify-center laptop:w-50% desktop:w-50% mobile:w-100% laptop:pl-50">
@@ -527,7 +527,7 @@ export default function About() {
                       <div className="mobile:text-s16l19 text-s24l36  mobile:text-FFFFFF text-F1F1F1 pt-5 desktop:pb-30 laptop:pb-15 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="mobile:tracking-widest text-s20l30 mobile:text-s14l21 text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 laptop:w-400 mobile:pr-41">
+                      <div className="mobile:tracking-widest text-s20l30 mobile:text-s14l21 text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-33 desktop:pr-40 laptop:w-400 mobile:pr-41">
                         {item?.Description}
                       </div>
                     </div>
