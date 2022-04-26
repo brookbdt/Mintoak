@@ -33,6 +33,11 @@ export default function Product() {
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
+      <Image
+        src="/images/backgrounds/product-res-bg.svg"
+        className="absolute desktop:hidden laptop:hidden"
+        type="img"
+      />
       <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
         <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 laptop:pt-80 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">
           <div className="w-100%">
