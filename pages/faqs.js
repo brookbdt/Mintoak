@@ -126,16 +126,18 @@ export default function Contact() {
                 placeholder="Enter your query here"
               />
             </div>
-            <div className="absolute pl-14 pt-14">
+            <div className="absolute pl-10 pt-9">
               <Image
                 src="/images/icons/search-icon.svg"
-                width={22.67}
-                height={22.67}
+                width={32}
+                height={30}
               />
             </div>
             <div
-              className={`${isClickedSearch && "btn-click-shaddow"
-                } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18`}
+
+              className={`${
+                isClickedSearch && "btn-click-shaddow"
+              } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
               onMouseUp={() => clicked()}
               onClick={() => {
                 handleSearch();
@@ -159,7 +161,7 @@ export default function Contact() {
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
-                  "shadow-md-faq flex inline-block items-center justify-center px-18 rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  "shadow-md-faq flex inline-block items-center justify-center px-18 rounded-lg border border-87BD25 inline-block cursor-pointer mobile:w-65 mobile:h-26  " +
                   (isClicked === "b" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
                 onClick={() => setIsClicked("b")}
@@ -179,7 +181,7 @@ export default function Contact() {
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
-                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer mobile:w-95  " +
                   (isClicked === "m" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
                 onClick={() => setIsClicked("m")}
@@ -199,7 +201,7 @@ export default function Contact() {
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10 desktop:hidden laptop:hidden">
               <div
                 className={
-                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer mobile:w-115 " +
                   (isClicked === "c" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
                 onClick={() => setIsClicked("c")}
@@ -219,7 +221,7 @@ export default function Contact() {
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10 desktop:hidden laptop:hidden">
               <div
                 className={
-                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer  " +
+                  "shadow-md-faq flex inline-block items-center justify-center px-18  rounded-lg border border-87BD25 inline-block cursor-pointer mobile:w-65 " +
                   (isClicked === "d" ? "bg-faqs_bg" : "bg-DFEFD4")
                 }
                 onClick={() => setIsClicked("d")}

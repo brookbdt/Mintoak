@@ -47,13 +47,13 @@ export default function Product() {
               className="h-150 w-150 ml-161 mobile:ml-0 mobile:h-67 mobile:w-67"
             />
           </div>
-          <div className="pl-181 laptop:pl-100 mobile:pl-10 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-45 laptop:pt-45 mobile:pt-10">
+          <div className="pl-181 laptop:pl-100 mobile:pl-0 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-45 laptop:pt-45 mobile:pt-10">
             Mintoak AIM
           </div>
-          <div className="pl-181 laptop:pl-100 mobile:pl-10 desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-16 text-252525 shrink-0">
+          <div className="pl-181 laptop:pl-100 mobile:pl-0 desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 mobile:pr-0 pt-16 text-252525 shrink-0 mobile:font-semibold">
             Analytics, Insights & Metrics
           </div>
-          <div className="pl-181 laptop:pl-100 mobile:pl-10 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 laptop:pr-100 mobile:pr-0 text-525252 shrink-0">
+          <div className="pl-181 laptop:pl-100 mobile:pl-0 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 laptop:pr-100 mobile:pr-0 text-525252 shrink-0">
             A real time interactive business performance dashboard for the
             business owner.
           </div>
@@ -205,8 +205,9 @@ export default function Product() {
             >
               <div className="w-100% text-right">
                 <div
-                  className={`text-s28l42 ${activeTab == 0 ? "text-252525" : "text-848484"
-                    }`}
+                  className={`text-s28l42 ${
+                    activeTab == 0 ? "text-252525" : "text-848484"
+                  }`}
                 >
                   Interactive Dashboard
                 </div>
@@ -214,10 +215,11 @@ export default function Product() {
               <div className="flex flex-col items-center w-30% pt-5">
                 <div className="w-27 h-27 flex justify-center items-center">
                   <div
-                    className={`${activeTab == 0
-                      ? "w-22 h-21 bg-252525 "
-                      : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                    className={`${
+                      activeTab == 0
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
                   ></div>
                 </div>
 
@@ -234,8 +236,9 @@ export default function Product() {
             >
               <div className="w-100% text-right">
                 <div
-                  className={`text-s28l42 ${activeTab == 1 ? "text-252525" : "text-848484"
-                    }`}
+                  className={`text-s28l42 ${
+                    activeTab == 1 ? "text-252525" : "text-848484"
+                  }`}
                 >
                   Consolidated View
                 </div>
@@ -243,10 +246,11 @@ export default function Product() {
               <div className="flex flex-col items-center w-30% pt-5">
                 <div className="w-27 h-27 flex justify-center items-center">
                   <div
-                    className={`${activeTab == 1
-                      ? "w-22 h-21 bg-252525 "
-                      : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                    className={`${
+                      activeTab == 1
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
                   ></div>
                 </div>
 
@@ -263,8 +267,9 @@ export default function Product() {
             >
               <div className="w-100% text-right">
                 <div
-                  className={`text-s28l42 ${activeTab == 2 ? "text-252525" : "text-848484"
-                    }`}
+                  className={`text-s28l42 ${
+                    activeTab == 2 ? "text-252525" : "text-848484"
+                  }`}
                 >
                   Credit to Bank
                 </div>
@@ -272,10 +277,11 @@ export default function Product() {
               <div className="flex flex-col items-center w-30% pt-9">
                 <div className="w-27 h-27 flex justify-center items-center">
                   <div
-                    className={`${activeTab == 2
-                      ? "w-22 h-21 bg-252525 "
-                      : "w-14 h-14 bg-848484"
-                      } rounded-full bg-opacity-100 `}
+                    className={`${
+                      activeTab == 2
+                        ? "w-22 h-21 bg-252525 "
+                        : "w-14 h-14 bg-848484"
+                    } rounded-full bg-opacity-100 `}
                   ></div>
                 </div>
               </div>
@@ -352,8 +358,9 @@ export default function Product() {
                       }
                       return (
                         <div
-                          className={`mt-60 w-10 h-10 rounded-full mr-6 ${isActivePage ? "bg-525252" : "bg-active"
-                            }`}
+                          className={`mt-60 w-10 h-10 rounded-full mr-6 ${
+                            isActivePage ? "bg-525252" : "bg-active"
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -438,8 +445,9 @@ export default function Product() {
                       setActiveIndex(activePage);
                       return (
                         <div
-                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${isActivePage ? "bg-active" : ""
-                            }`}
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
                           key={page}
                           onClick={() => onClick(page)}
                           active={isActivePage}
@@ -452,10 +460,11 @@ export default function Product() {
             >
               <div
                 key={activeindex}
-                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${activeindex === 0
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
-                  : "left-280 bottom-0 opacity-60 mobile:h-180 top-15"
-                  }`}
+                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${
+                  activeindex === 0
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : "left-280 bottom-0 opacity-60 mobile:h-180 top-15"
+                }`}
               >
                 <Image
                   src="/images/icons/product-omni.svg"
@@ -470,12 +479,13 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${activeindex === 1
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
-                  : activeindex === 0
+                className={`w-256 h-211 flex flex-col items-center p-28 border border-C4C4C4 absolute ${
+                  activeindex === 1
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : activeindex === 0
                     ? "z-minus1 left-220 opacity-60 mobile:h-180 top-15"
                     : "z-minus1 right-220 opacity-60 mobile:h-180 top-15"
-                  }`}
+                }`}
               >
                 <Image
                   src="/images/icons/product-pay_later.svg"
@@ -490,10 +500,11 @@ export default function Product() {
                 </div>
               </div>
               <div
-                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 absolute ${activeindex === 2
-                  ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
-                  : "right-280 bottom-0 z-minus1 opacity-60 mobile:h-180 top-15"
-                  }`}
+                className={`w-256 h-211 flex flex-col items-center mobile:h-191 p-28 border border-C4C4C4 absolute ${
+                  activeindex === 2
+                    ? "bg-FFFFFF border border-46AC34 relative shadow-slideShadow mobile:h-210 mobile:w-256"
+                    : "right-280 bottom-0 z-minus1 opacity-60 mobile:h-180 top-15"
+                }`}
               >
                 <Image
                   src="/images/icons/product-iku.svg"

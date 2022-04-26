@@ -76,8 +76,8 @@ export default function Contact() {
 
   return (
     <>
-      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50 desktop:px-180 laptop:px-180">
-        <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100%">
+      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50 desktop:px-180 laptop:px-180 mobile:bg-bg_contact_responcive mobile:border-b mobile:border-C4C4C4">
+        <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100% mobile:opacity-70">
           <div>
             <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 mobile:px-33">
               Find us at
@@ -91,24 +91,24 @@ export default function Contact() {
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/call-icon.svg"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
               </div>
-              <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-29">
-                <span className="pr-10">+91</span>
+              <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-17">
+                <span className="pr-6">+91</span>
                 {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
-            <div className="laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33">
+            <div className="laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33 mobile:my-11">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/mail-icon.svg"
-                  width={30}
-                  height={30}
+                  width={23}
+                  height={23}
                 />
               </div>
-              <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-29">
+              <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-15">
                 {contactUsFindUsAt?.BussinessEmail}
               </div>
             </div>
@@ -126,10 +126,26 @@ export default function Contact() {
               </div>
               <input
                 type="text"
-                className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5"
+                className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-252525 w-100% global-input pb-5 mobile:font-semibold"
                 value={fullName}
                 onChange={(e) => {
                   setFullName(e.target.value);
+                }}
+              />
+            </div>
+            <div className="pb-40">
+              <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
+                Contact Number
+              </div>
+              <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
+                +91
+              </span>
+              <input
+                type="number"
+                className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                value={contactNo}
+                onChange={(e) => {
+                  setContactNo(e.target.value);
                 }}
               />
             </div>
@@ -172,25 +188,10 @@ export default function Contact() {
                 }}
               />
             </div>
-            <div className="pb-40">
-              <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                Contact Number
-              </div>
-              <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B border-r border-C4C4C4 pr-5 absolute mobile:pt-3">
-                +91
-              </span>
-              <input
-                type="number"
-                className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
-                value={contactNo}
-                onChange={(e) => {
-                  setContactNo(e.target.value);
-                }}
-              />
-            </div>
+
             <div className="pb-40 global-demo">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                Domain
+                Country
               </div>
               <Select
                 dropdownStyle={{
