@@ -198,6 +198,7 @@ export default function DesktopFooter() {
               Blogs
             </span>
           </div>
+
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">News & Media</span>
           </div>
