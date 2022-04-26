@@ -17,6 +17,7 @@ SwiperCore.use([Mousewheel, Pagination]);
 const { Panel } = Collapse;
 
 export default function Home() {
+  const router = useRouter();
   const [demoPopup, setDemoPopup] = useState(false);
   const [activeindex, setActiveIndex] = useState(1);
   const [isBORM, setIsBORM] = useState("b");
@@ -805,7 +806,12 @@ export default function Home() {
                 );
               })}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold">
+            <div
+              className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold"
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </div>
           </div>
@@ -928,7 +934,12 @@ export default function Home() {
                   </div>
                 ))}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold desktop:mb-150">
+            <div
+              className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold desktop:mb-150 "
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </div>
           </div>

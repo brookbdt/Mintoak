@@ -527,7 +527,7 @@ export default function About() {
                       <div className="mobile:text-s16l19 text-s24l36  mobile:text-FFFFFF text-F1F1F1 pt-5 desktop:pb-30 laptop:pb-15 mobile:pb-20">
                         {item?.Designation}
                       </div>
-                      <div className="mobile:tracking-widest text-s20l30 mobile:text-s14l21 text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 laptop:w-400 mobile:pr-41 desktop:pb-35">
+                      <div className="mobile:tracking-widest text-s20l30 mobile:text-s14l21 text-F1F1F1 mobile:text-FFFFFF opacity-70 desktop:py-20 desktop:pr-40 laptop:w-400 mobile:pr-41">
                         {item?.Description}
                       </div>
                     </div>
