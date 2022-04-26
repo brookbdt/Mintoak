@@ -134,8 +134,15 @@ export default function Contact() {
               />
             </div>
             <div
+<<<<<<< HEAD
               className={`${isClickedSearch && "btn-click-shaddow"
                 } button w-54 text-s22l26_4 mobile:text-s24l26 px-18 mobile:rounded-none`}
+=======
+
+              className={`${
+                isClickedSearch && "btn-click-shaddow"
+              } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
+>>>>>>> b479fa04ac093124f9d31eead06a3a042663f936
               onMouseUp={() => clicked()}
               onClick={() => {
                 handleSearch();
