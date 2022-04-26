@@ -60,7 +60,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32 mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/ctob_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 mobile:font-normal font-semibold">
@@ -72,7 +77,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32  mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/id_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200  mobile:font-normal font-semibold">
@@ -84,7 +94,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32  mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/mlcv_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-260 mobile:font-normal font-semibold">
@@ -284,7 +299,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <div className="laptop:hidden desktop:hidden p-20 mt-92">
+      <div className="laptop:hidden desktop:hidden p-20 mt-60">
         <div className="text-s22l33 font-bold text-252525">
           Track your business progress with our interactive dashboard:
         </div>
