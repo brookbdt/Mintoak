@@ -117,7 +117,7 @@ export default function Merchant() {
   return (
     <div className="h-fit w-100% ">
       {/* Merchant Banner */}
-      <div className="relative  bg-home-top top-bg-container">
+      <div className="relative  bg-home-top top-bg-container border-t border-A4D77A ">
         <Image
           src={merchantBannerResp.Illustration}
           className="absolute mobile:hidden object-cover h-100% w-100% laptop:h-666 laptop:w-1366"
@@ -150,7 +150,7 @@ export default function Merchant() {
         </div>
       </div>
       {/* border */}
-      <div className="border border-1 border-A4D77A w-100%"></div>
+      {/* <div className="w-100%"></div> */}
       {/* Benefits for the Merchants */}
       <div className="h-686 mobile:h-auto w-100% merchant-bg desktop:px-250 mobile:pb-44">
         <div className="pt-157 mobile:pt-81">
