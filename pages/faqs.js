@@ -893,7 +893,7 @@ export default function Contact() {
               </div>
               <div className="w-100% desktop:pt-48 laptop:pt-48 desktop:pb-40 laptop:pt-48 mobile:pt-40 mobile:pb-28 flex items-center justify-center">
                 <div
-                  className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
+                  className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-40 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
                   onClick={() => {
                     setmodalquerieVisible(true)
                     setmodalVisible(false)

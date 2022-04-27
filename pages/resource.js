@@ -59,7 +59,7 @@ export default function Resources() {
   return (
     <div>
       <div className="w-100%">
-        <div className="flex mobile:flex-col relative top-bg-container desktop:bg-bg_resource laptop:bg-bg_resource mobile:bg-bg_resource_mobile bg-cover h-fit laptop:w-fit bg-origin-content">
+        <div className="flex mobile:flex-col relative top-bg-container desktop:bg-bg_resource laptop:bg-bg_resource mobile:bg-bg_resource_mobile bg-cover h-fit mobile:h-659 laptop:w-fit bg-origin-content mobile:pb-15">
           {/* <Image
                         src="/images/backgrounds/resource-bg.svg"
                         className="w-100% h-100%  absolute z-minus1 mobile:hidden"
@@ -86,7 +86,7 @@ export default function Resources() {
               </div>
             </div>
           </div>
-          <div className="desktop:w-50% desktop:p-100 mobile:justify-around laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
+          <div className="desktop:w-50% desktop:p-100 mobile:hidden laptop:p-100 mobile:flex-row laptop:w-70% tablet:w-80% tablet:p-30 px-20  pb-40 z-10 flex flex-col items-end">
             <div className="cursor-pointer mb-16 btn rounded-md mobile:hidden border-2 border-solid border-F1F1F1">
               <Image
                 src="/images/backgrounds/Resource_bg1.svg"
@@ -94,13 +94,6 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn  rounded-md desktop:hidden laptop:hidden">
-              <Image
-                src="/images/backgrounds/Resource_bg1.svg"
-                width={84}
-                height={130}
-              />
-            </div>
             <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/Resource_bg2.svg"
@@ -108,13 +101,7 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden mt-276">
-              <Image
-                src="/images/backgrounds/Resource_bg2.svg"
-                width={84}
-                height={130}
-              />
-            </div>
+            
             <div className="cursor-pointer btn mb-16 bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/Resource_bg3.svg"
@@ -122,13 +109,7 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
-              <Image
-                src="/images/backgrounds/Resource_bg3.svg"
-                width={84}
-                height={130}
-              />
-            </div>
+            
             <div className="cursor-pointer btn bg-100F0F border-2 border-solid border-100F0F rounded-md mobile:hidden ">
               <Image
                 src="/images/backgrounds/Resource_bg3.svg"
@@ -136,13 +117,57 @@ export default function Resources() {
                 className="h-84 w-128 rounded-md global-img"
               />
             </div>
-            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden">
+            
+          </div>
+          <div className="desktop:hidden laptop:hidden w-100% px-20 h-100% w-100% flex items-end overf-m">
+          <div className="pr-10 w-auto whitespace-nowrap">
+          <div className="cursor-pointer btn rounded-md border-2 border-F1F1F1 desktop:hidden laptop:hidden h-130 w-84">
+              <Image
+                src="/images/backgrounds/Resource_bg1.svg"
+                width={84}
+                height={130}
+                type="img"
+                className="rounded-md"
+
+              />
+            </div>
+            </div>
+          <div className="pr-10 w-auto whitespace-nowrap">
+            <div className="cursor-pointer btn rounded-md  desktop:hidden laptop:hidden h-130 w-84">
+              <Image
+                src="/images/backgrounds/Resource_bg2.svg"
+                width={84}
+                height={130}
+                type="img"
+                className="rounded-md"
+
+              />
+            </div>
+            </div>
+            <div className="pr-10 w-auto whitespace-nowrap">
+            <div className="cursor-pointer btn rounded-md  desktop:hidden laptop:hidden h-130 w-84">
               <Image
                 src="/images/backgrounds/Resource_bg3.svg"
                 width={84}
                 height={130}
+                type="img"
+                className="rounded-md"
+
               />
             </div>
+            </div>
+            <div className="pr-10 w-auto whitespace-nowrap">
+            <div className="cursor-pointer btn rounded-md desktop:hidden laptop:hidden h-130 w-84">
+              <Image
+                src="/images/backgrounds/Resource_bg3.svg"
+                width={84}
+                height={130}
+                type="img"
+                className="rounded-md"
+              />
+            </div>
+            </div>
+            
           </div>
         </div>
       </div>
