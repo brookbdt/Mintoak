@@ -994,11 +994,14 @@ button[disabled] {
     line-height: 24px;
   }
 
-  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-select-single.ant-select-show-arrow,
   .ant-select-single.ant-select-show-arrow {
     color: #252525;
     font-weight: 500;
   }
+.ant-select-selection-item{
+  color: #8B8B8B;
+}
 }
 .global-partner {
   @media only screen and (min-width: 1366px) {
@@ -1432,4 +1435,7 @@ textarea {
 }
 .hide-scroll::-webkit-scrollbar{
   display: none;
+}
+.select-focus:focus{
+  color: black;
 }

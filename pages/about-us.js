@@ -21,6 +21,7 @@ export default function About() {
   const [activeTab, setActiveTab] = useState(0);
   const [itemView, setItemView] = useState();
   const [swiperInstance, setSwiperInstance] = useState();
+  const [activeindex, setActiveIndex] = useState();
   const founder = useRef(null);
   const swiper = useSwiper();
   const TogglePopup = () => {
@@ -623,6 +624,46 @@ export default function About() {
           </div>
         </div>
       </div>
+      {/* <div className="desktop:hidden laptop:hidden">
+        <Carousel
+          itemsToShow={1}
+          // verticalMode
+          itemPadding={[0, 0, 0, 0]}
+          enableMouseSwipe={true}
+          pagination={true}
+          initialActiveIndex={1}
+          showArrows={false}
+          outerSpacing={0}
+          style={{ width: "100%" }}
+          renderPagination={({ pages, activePage, onClick }) => {
+            return (
+              <div className="flex pageindex">
+                {pages.map((page) => {
+                  const isActivePage = activePage === page;
+                  setActiveIndex(activePage);
+                  return (
+                    <div
+                      className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                        isActivePage ? "bg-active" : ""
+                      }`}
+                      key={page}
+                      onClick={() => onClick(page)}
+                      active={isActivePage}
+                    ></div>
+                  );
+                })}
+              </div>
+            );
+          }}
+        >
+          {founderResp &&
+            founderResp.map((item, index) => (
+              <div key={activeindex} className={` flex flex-col items-center`}>
+                <Image src={item.FounderImage} height={205} width={201} />
+              </div>
+            ))}
+        </Carousel>
+      </div> */}
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
