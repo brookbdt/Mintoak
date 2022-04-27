@@ -483,6 +483,9 @@ button[disabled] {
   background-color: transparent;
   outline: none;
   border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+.global {
   border-bottom: 2px solid #c4c4c4;
 }
 
@@ -941,7 +944,7 @@ button[disabled] {
     }
 
     .ant-select-arrow {
-      font-size: 14px !important;
+      font-size: 10px !important;
     }
   }
   .career-label {
@@ -962,6 +965,7 @@ button[disabled] {
     top: 65%;
     color: black;
     font-size: 15px;
+    height: 5px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: transparent;
@@ -1441,7 +1445,7 @@ textarea {
 .mobile_carrer_res {
   background: rgb(230, 240, 223, 0.4);
 }
-.hide-scroll::-webkit-scrollbar{
+.hide-scroll::-webkit-scrollbar {
   display: none;
 }
 .inner-m{
