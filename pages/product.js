@@ -155,13 +155,6 @@ export default function Product() {
                     time.
                   </div>
                 </div>
-                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
-                  <Image
-                    src="/images/backgrounds/onboarding-1.svg"
-                    type="img"
-                    className="w-400 h-588"
-                  />
-                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide key={1}>
@@ -321,13 +314,61 @@ export default function Product() {
           customer feedback. Get performance trends to see how your business has
           performed over a period of time.
         </div>
-        <div className="w-100% text-center desktop:hidden laptop:hidden ">
-          <Image
-            src="/images/backgrounds/product-mobile1.svg"
-            height={315}
-            width={160}
-          />
-        </div>
+        <Carousel
+          itemPadding={[0, 15]}
+          itemsToShow={1}
+          outerSpacing={0}
+          showArrows={false}
+          pagination={true}
+          renderPagination={({ pages, activePage, onClick }) => {
+            return (
+              <div className="flex">
+                {pages.map((page) => {
+                  const isActivePage = activePage === page;
+                  return (
+                    <div
+                      className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 mb-40 ${
+                        isActivePage ? "bg-525252" : ""
+                      }`}
+                      key={page}
+                      onClick={() => onClick(page)}
+                      active={isActivePage}
+                    ></div>
+                  );
+                })}
+              </div>
+            );
+          }}
+        >
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileA1.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileA2.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileA3.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileA4.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+        </Carousel>
         <div className="text-s22l33 font-bold text-252525">
           Multi-location Consolidated View & Location-level <br /> Drill Down:
         </div>
@@ -338,13 +379,54 @@ export default function Product() {
           in-depth insights on the performance of a particular outlet or a group
           of outlets.
         </div>
-        <div className="w-100% text-center desktop:hidden laptop:hidden">
-          <Image
-            src="/images/backgrounds/product-mobile2.svg"
-            height={315}
-            width={160}
-          />
-        </div>
+        <Carousel
+          itemPadding={[0, 15]}
+          itemsToShow={1}
+          outerSpacing={0}
+          showArrows={false}
+          pagination={true}
+          renderPagination={({ pages, activePage, onClick }) => {
+            return (
+              <div className="flex">
+                {pages.map((page) => {
+                  const isActivePage = activePage === page;
+                  return (
+                    <div
+                      className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 mb-40 ${
+                        isActivePage ? "bg-525252" : ""
+                      }`}
+                      key={page}
+                      onClick={() => onClick(page)}
+                      active={isActivePage}
+                    ></div>
+                  );
+                })}
+              </div>
+            );
+          }}
+        >
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileB1.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileB2.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileB3.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+        </Carousel>
         <div className="text-s22l33 font-bold text-252525">
           Credit-to-Bank <br />
           information:
@@ -356,16 +438,50 @@ export default function Product() {
           a transparent view of gross amount, transaction fees if any and the
           net amount.
         </div>
-        <div className="w-100% text-center desktop:hidden laptop:hidden">
-          <Image
-            src="/images/backgrounds/product-mobile3.svg"
-            height={315}
-            width={160}
-          />
-        </div>
+        <Carousel
+          itemPadding={[0, 15]}
+          itemsToShow={1}
+          outerSpacing={0}
+          showArrows={false}
+          pagination={true}
+          renderPagination={({ pages, activePage, onClick }) => {
+            return (
+              <div className="flex">
+                {pages.map((page) => {
+                  const isActivePage = activePage === page;
+                  return (
+                    <div
+                      className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 mb-40 ${
+                        isActivePage ? "bg-525252" : ""
+                      }`}
+                      key={page}
+                      onClick={() => onClick(page)}
+                      active={isActivePage}
+                    ></div>
+                  );
+                })}
+              </div>
+            );
+          }}
+        >
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileC1.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+          <div className="w-100% text-center desktop:hidden laptop:hidden ">
+            <Image
+              src="/images/backgrounds/product-mobileC1.svg"
+              height={315}
+              width={160}
+            />
+          </div>
+        </Carousel>
       </div>
       {/* more queries */}
-      <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 px-181 mobile:px-20 mobile:pt-81">
+      <div className="flex mobile:flex-col w-100% desktop:py-100 laptop:py-100 px-181 mobile:px-20 mobile:pt-40">
         <div className="flex flex-col desktop:w-50% laptop:w-50% mobile:w-100%">
           <div className="desktop:text-s45l45 laptop:text-s45l45 mobile:text-s22l33 font-bold text-252525 pb-26">
             Leave a thought
