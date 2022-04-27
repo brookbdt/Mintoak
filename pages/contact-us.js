@@ -240,7 +240,7 @@ export default function Contact() {
                 }}
               />
             </div>
-            <div className="h-5 0 flex">
+            <div className="flex">
               {validate === false && (
                 <>
                   <Image
@@ -248,7 +248,7 @@ export default function Contact() {
                     height={20}
                     width={18}
                   />
-                  <div className="text-EC5F22 text-s18l22 pl-10 ">
+                  <div className="text-EC5F22 text-s18l22 mobile:text-s12l14 pl-10 ">
                     Please enter all the necessary details to submit the form.
                   </div>
                 </>

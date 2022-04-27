@@ -37,7 +37,7 @@ a {
 // ==================== ANTD CUSTOMIZATION START ====================
 .global-collapse {
   .ant-collapse-borderless > .ant-collapse-item {
-    border-bottom: 2px solid #a4d77a !important;
+    border-bottom: 1px solid #a4d77a !important;
   }
   .ant-collapse-borderless > .ant-collapse-item-active {
     border-bottom: none !important;
@@ -1431,4 +1431,7 @@ textarea {
 }
 .mobile_carrer_res {
   background: rgb(230, 240, 223, 0.4);
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
 }

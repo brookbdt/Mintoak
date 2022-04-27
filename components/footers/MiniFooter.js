@@ -20,7 +20,7 @@ export default function MiniFooter() {
   return (
     <div className="flex desktop:hidden laptop:hidden flex-col items-center pb-60 w-100%">
       <div className="p-36 pb-0 w-100% flex flex-col mobile:p-20">
-        {slug !== "career" && slug !== "careerDetails" && (
+        {slug !== "career" && slug !== "careerDetails" && slug !== "faqs" && (
           <>
             <div className="text-F1F1F1 text-s18l27 font-bold">
               Ready to begin your journey with us?
@@ -105,9 +105,11 @@ export default function MiniFooter() {
               <div className="text-FAFAFA text-s14l17">Products</div>
             </div>
             <div className="w-100% h-1 bg-8B8B8B" />
+
             <div className="items-center cursor-pointer py-8">
               <div className="text-FAFAFA text-s14l17">Customize</div>
             </div>
+
             <div className="w-100% h-1 bg-8B8B8B" />
             <div
               className="items-center cursor-pointer py-8"
@@ -187,9 +189,11 @@ export default function MiniFooter() {
               <div className="text-FAFAFA text-s14l17">Blogs</div>
             </div>
             <div className="w-100% h-1 bg-8B8B8B" />
+
             <div className="items-center cursor-pointer py-8">
               <div className="text-FAFAFA text-s14l17">Case Studies</div>
             </div>
+
             <div className="w-100% h-1 bg-8B8B8B" />
             <div className="items-center cursor-pointer py-8">
               <div className="text-FAFAFA text-s14l17">News & Media</div>

@@ -408,9 +408,9 @@ export default function Home() {
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       {homeForMerchant?.Description2}
-                      <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                      {/* <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                         {homeForMerchant?.CTA1}
-                      </span>
+                      </span> */}
                     </div>
 
                     <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
@@ -930,7 +930,7 @@ export default function Home() {
                   </div>
                 ))}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold">
+            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold desktop:mb-150">
               View all
             </div>
           </div>

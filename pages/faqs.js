@@ -1,73 +1,73 @@
-import Image from "../components/helpers/Image";
-import { Checkbox, Collapse } from "antd";
-import { Pagination } from "antd";
-import { Input } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import { Modal } from "antd";
-import { useEffect, useState } from "react";
-const { TextArea } = Input;
-const { Panel } = Collapse;
+import Image from "../components/helpers/Image"
+import { Checkbox, Collapse } from "antd"
+import { Pagination } from "antd"
+import { Input } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import { Modal } from "antd"
+import { useEffect, useState } from "react"
+const { TextArea } = Input
+const { Panel } = Collapse
 
 export default function Contact() {
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
-  const [faqs, setFaqs] = useState([]);
-  const [isClicked, setIsClicked] = useState("b");
-  const [search, setSearch] = useState(null);
-  const [allFaqs, setAllFaqs] = useState(null);
-  const [isClickedSearch, setIsClickedSearch] = useState(false);
-  const [omniStatus, setOmniStatus] = useState(false);
-  const [momStatus, setMomStatus] = useState(false);
-  const [paylaterStatus, setPaylaterStatus] = useState(false);
-  const [acornStatus, setAcornStatus] = useState(false);
-  const [connectStatus, setConnectStatus] = useState(false);
-  const [ikuStatus, setIkuStatus] = useState(false);
-  const [oarStatus, setOarStatus] = useState(false);
-  const [farStatus, setFarStatus] = useState(false);
-  const [batStatus, setBatStatus] = useState(false);
-  const [uamStatus, setUamStatus] = useState(false);
-  const [aimStatus, setAimStatus] = useState(false);
-  const [macStatus, setMacStatus] = useState(false);
-  const [pamStatus, setPamStatus] = useState(false);
-  const [samStatus, setSamStatus] = useState(false);
-  const [xsmStatus, setXsmStatus] = useState(false);
-  const [xscStatus, setXscStatus] = useState(false);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
+  const [faqs, setFaqs] = useState([])
+  const [isClicked, setIsClicked] = useState("b")
+  const [search, setSearch] = useState(null)
+  const [allFaqs, setAllFaqs] = useState(null)
+  const [isClickedSearch, setIsClickedSearch] = useState(false)
+  const [omniStatus, setOmniStatus] = useState(false)
+  const [momStatus, setMomStatus] = useState(false)
+  const [paylaterStatus, setPaylaterStatus] = useState(false)
+  const [acornStatus, setAcornStatus] = useState(false)
+  const [connectStatus, setConnectStatus] = useState(false)
+  const [ikuStatus, setIkuStatus] = useState(false)
+  const [oarStatus, setOarStatus] = useState(false)
+  const [farStatus, setFarStatus] = useState(false)
+  const [batStatus, setBatStatus] = useState(false)
+  const [uamStatus, setUamStatus] = useState(false)
+  const [aimStatus, setAimStatus] = useState(false)
+  const [macStatus, setMacStatus] = useState(false)
+  const [pamStatus, setPamStatus] = useState(false)
+  const [samStatus, setSamStatus] = useState(false)
+  const [xsmStatus, setXsmStatus] = useState(false)
+  const [xscStatus, setXscStatus] = useState(false)
 
   useEffect(() => {
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        setFaqs(resp);
-        setAllFaqs(resp);
+        setFaqs(resp)
+        setAllFaqs(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   useEffect(() => {
     if (search?.length == 0) {
-      setIsClickedSearch(false);
-      setFaqs(allFaqs);
+      setIsClickedSearch(false)
+      setFaqs(allFaqs)
     }
-  }, [search]);
+  }, [search])
 
   const clicked = () => {
     setInterval(() => {
-      setIsClickedSearch(false);
-    }, 500);
-  };
+      setIsClickedSearch(false)
+    }, 500)
+  }
   const handleSearch = () => {
-    setIsClickedSearch(true);
+    setIsClickedSearch(true)
     if (search && search.length) {
       let list = allFaqs.filter((rList) =>
         rList.Question.toLowerCase().includes(search.toLowerCase())
-      );
-      setFaqs(list);
+      )
+      setFaqs(list)
     } else {
-      setIsClickedSearch(false);
-      setFaqs(allFaqs);
+      setIsClickedSearch(false)
+      setFaqs(allFaqs)
     }
-  };
+  }
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function Contact() {
                 className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-90 text-s20l24"
                 placeholder="Ex. What is pay later?"
                 onChange={(e) => {
-                  setSearch(e.target.value);
+                  setSearch(e.target.value)
                 }}
                 value={search}
               />
@@ -102,7 +102,7 @@ export default function Contact() {
               }`}
               onMouseUp={() => clicked()}
               onClick={() => {
-                handleSearch();
+                handleSearch()
               }}
             >
               Search
@@ -140,7 +140,7 @@ export default function Contact() {
               } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
               onMouseUp={() => clicked()}
               onClick={() => {
-                handleSearch();
+                handleSearch()
               }}
             >
               <i className="fa-solid fa-arrow-right-long"></i>
@@ -157,7 +157,7 @@ export default function Contact() {
             </div>
           </div>
           {/* scroll buttons */}
-          <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20">
+          <div className="flex w-100% mobile:overflow-x-scroll mobile:overflow-y-hidden mobile:pb-20 hide-scroll">
             <div className="pr-21 w-auto whitespace-nowrap mobile:pr-10">
               <div
                 className={
@@ -246,34 +246,36 @@ export default function Contact() {
           <div className="text-s20l24 text-828282 pb-20 mobile:text-s14l16_8 mobile:pb-10">
             Need help ? We got you covered.
           </div>
-          <div className="border-2 border-8CC63E mobile:w-100% border-b-0">
-            <Collapse
-              accordion
-              expandIcon={({ isActive }) =>
-                isActive ? (
-                  <i className="fa fa-angle-up text-262626" />
-                ) : (
-                  <i className="fa fa-angle-down text-262626" />
-                )
-              }
-              expandIconPosition={"right"}
-              bordered={false}
-              // defaultActiveKey={["1"]}
-            >
-              {faqs?.map((items, index) => {
-                return (
-                  <Panel
-                    className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
-                    header={items.Question}
-                    key={index}
-                  >
-                    <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal desktop:pr-460 laptop:pr-100">
-                      {items.Answer}
-                    </p>
-                  </Panel>
-                );
-              })}
-            </Collapse>
+          <div className="border-2 border-8CC63E">
+            <div className=" border-8CC63E mobile:w-100% border-b-0">
+              <Collapse
+                accordion
+                expandIcon={({ isActive }) =>
+                  isActive ? (
+                    <i className="fa fa-angle-up text-262626" />
+                  ) : (
+                    <i className="fa fa-angle-down text-262626" />
+                  )
+                }
+                expandIconPosition={"right"}
+                bordered={false}
+                // defaultActiveKey={["1"]}
+              >
+                {faqs?.map((items, index) => {
+                  return (
+                    <Panel
+                      className="text-252525 desktop:text-s24l29 laptop:text-s24l29 mobile:text-s14l21 desktop:p-30 laptop:p-30 font-semibold"
+                      header={items.Question}
+                      key={index}
+                    >
+                      <p className="mobile:text-6B6B6B desktop:text-525252 laptop:text-525252 laptop:text-s20l150 mobile:text-s12l18 desktop:text-s20l150 font-normal desktop:pr-460 laptop:pr-100">
+                        {items.Answer}
+                      </p>
+                    </Panel>
+                  )
+                })}
+              </Collapse>
+            </div>
           </div>
           {faqs && faqs.length > 0 && (
             <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-80">
@@ -358,7 +360,7 @@ export default function Contact() {
                     omniStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setOmniStatus((prev) => !prev);
+                    setOmniStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -390,7 +392,7 @@ export default function Contact() {
                     momStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setMomStatus((prev) => !prev);
+                    setMomStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -424,7 +426,7 @@ export default function Contact() {
                     "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setPaylaterStatus((prev) => !prev);
+                    setPaylaterStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -457,7 +459,7 @@ export default function Contact() {
                     acornStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setAcornStatus((prev) => !prev);
+                    setAcornStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -493,7 +495,7 @@ export default function Contact() {
                     "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setConnectStatus((prev) => !prev);
+                    setConnectStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -526,7 +528,7 @@ export default function Contact() {
                     ikuStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setIkuStatus((prev) => !prev);
+                    setIkuStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -559,7 +561,7 @@ export default function Contact() {
                     oarStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setOarStatus((prev) => !prev);
+                    setOarStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -592,7 +594,7 @@ export default function Contact() {
                     farStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setFarStatus((prev) => !prev);
+                    setFarStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -627,7 +629,7 @@ export default function Contact() {
                     batStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setBatStatus((prev) => !prev);
+                    setBatStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -660,7 +662,7 @@ export default function Contact() {
                     uamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setUamStatus((prev) => !prev);
+                    setUamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -693,7 +695,7 @@ export default function Contact() {
                     aimStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setAimStatus((prev) => !prev);
+                    setAimStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -726,7 +728,7 @@ export default function Contact() {
                     macStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setMacStatus((prev) => !prev);
+                    setMacStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -761,7 +763,7 @@ export default function Contact() {
                     pamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setPamStatus((prev) => !prev);
+                    setPamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -794,7 +796,7 @@ export default function Contact() {
                     samStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setSamStatus((prev) => !prev);
+                    setSamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -827,7 +829,7 @@ export default function Contact() {
                     xsmStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setXsmStatus((prev) => !prev);
+                    setXsmStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -860,7 +862,7 @@ export default function Contact() {
                     xscStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
                   }`}
                   onClick={() => {
-                    setXscStatus((prev) => !prev);
+                    setXscStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -893,8 +895,8 @@ export default function Contact() {
                 <div
                   className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
                   onClick={() => {
-                    setmodalquerieVisible(true);
-                    setmodalVisible(false);
+                    setmodalquerieVisible(true)
+                    setmodalVisible(false)
                   }}
                 >
                   Submit
@@ -935,5 +937,5 @@ export default function Contact() {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }

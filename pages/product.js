@@ -33,6 +33,11 @@ export default function Product() {
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       {/* Top layout with resp */}
+      <Image
+        src="/images/backgrounds/product-res-bg.svg"
+        className="absolute desktop:hidden laptop:hidden"
+        type="img"
+      />
       <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
         <Image
           src="/images/backgrounds/product-bg.svg"
@@ -66,7 +71,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32 mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/ctob_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 mobile:font-normal font-semibold">
@@ -78,7 +88,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32  mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/id_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-200  mobile:font-normal font-semibold">
@@ -90,7 +105,12 @@ export default function Product() {
                 <Image
                   src="/images/icons/Product_aim.svg"
                   type="img"
-                  className="h-70 w-70 mobile:h-60 mobile:w-60 desktop:mr-32"
+                  className="h-70 w-70 desktop:mr-32  mobile:hidden"
+                />
+                <Image
+                  src="/images/icons/mlcv_product_logo.svg"
+                  type="img"
+                  className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-260 mobile:font-normal font-semibold">
@@ -288,6 +308,60 @@ export default function Product() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="laptop:hidden desktop:hidden p-20 mt-60">
+        <div className="text-s22l33 font-bold text-252525">
+          Track your business progress with our interactive dashboard:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Get real time updates on your business, such as total sales,
+          transaction history, one view across payment modes, customizable
+          transaction reports, insights on new and repeat customers and also
+          customer feedback. Get performance trends to see how your business has
+          performed over a period of time.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden ">
+          <Image
+            src="/images/backgrounds/product-mobile1.svg"
+            height={315}
+            width={160}
+          />
+        </div>
+        <div className="text-s22l33 font-bold text-252525">
+          Multi-location Consolidated View & Location-level <br /> Drill Down:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Have more than one outlet? We have got you covered. You can get a
+          consolidated view across all outlets in one place. A comparative view
+          of outlets helps you understand how each outlet is performing. Get
+          in-depth insights on the performance of a particular outlet or a group
+          of outlets.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden">
+          <Image
+            src="/images/backgrounds/product-mobile2.svg"
+            height={315}
+            width={160}
+          />
+        </div>
+        <div className="text-s22l33 font-bold text-252525">
+          Credit-to-Bank <br />
+          information:
+        </div>
+        <div className="mt-16 text-s14l21 text-252525">
+          Get a quick consolidated and outlet level view of merchant payout
+          details from the settlement or credit-to-bank section. You can see the
+          total amount credited for transactions completed successfully. You get
+          a transparent view of gross amount, transaction fees if any and the
+          net amount.
+        </div>
+        <div className="w-100% text-center desktop:hidden laptop:hidden">
+          <Image
+            src="/images/backgrounds/product-mobile3.svg"
+            height={315}
+            width={160}
+          />
         </div>
       </div>
       {/* more queries */}
