@@ -444,12 +444,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
-                  Name name name
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                  Name
                 </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div> */}
+                </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <Image
@@ -463,12 +463,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
-                  Name name name
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                  Name
                 </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div> */}
+                </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <Image
@@ -482,12 +482,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
-                  Name name name
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                  Name
                 </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
                   Designation
-                </div> */}
+                </div>
             </div>
           </Carousel>
         </div>
