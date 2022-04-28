@@ -112,7 +112,7 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 laptop:py-60 z-10">
+        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 laptop:py-60 z-10 mobile:absolute">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold mobile:w-285">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
@@ -592,7 +592,7 @@ export default function About() {
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
+        <div className="text-s24l36 text-000000 font-bold text-center pt-80 pb-40">
           Our founders
         </div>
         <div className="w-100% flex justify-center">
@@ -624,46 +624,6 @@ export default function About() {
           </div>
         </div>
       </div>
-      {/* <div className="desktop:hidden laptop:hidden">
-        <Carousel
-          itemsToShow={1}
-          // verticalMode
-          itemPadding={[0, 0, 0, 0]}
-          enableMouseSwipe={true}
-          pagination={true}
-          initialActiveIndex={1}
-          showArrows={false}
-          outerSpacing={0}
-          style={{ width: "100%" }}
-          renderPagination={({ pages, activePage, onClick }) => {
-            return (
-              <div className="flex pageindex">
-                {pages.map((page) => {
-                  const isActivePage = activePage === page;
-                  setActiveIndex(activePage);
-                  return (
-                    <div
-                      className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
-                        isActivePage ? "bg-active" : ""
-                      }`}
-                      key={page}
-                      onClick={() => onClick(page)}
-                      active={isActivePage}
-                    ></div>
-                  );
-                })}
-              </div>
-            );
-          }}
-        >
-          {founderResp &&
-            founderResp.map((item, index) => (
-              <div key={activeindex} className={` flex flex-col items-center`}>
-                <Image src={item.FounderImage} height={205} width={201} />
-              </div>
-            ))}
-        </Carousel>
-      </div> */}
       {demoPopup && (
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
