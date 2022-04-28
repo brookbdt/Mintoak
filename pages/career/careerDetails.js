@@ -273,7 +273,7 @@ export default function CareerDetails() {
                 </Col>
                 <Col xs={24} md={8}>
                   <Form.Item className="global-career">
-                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
+                    <label className=" text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
                       Qualifications
                     </label>
                     <Select

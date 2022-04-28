@@ -87,20 +87,20 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <div className="laptop:pl-106 pt-40 w-100% flex mobile:px-33">
+            <div className="laptop:pl-106 pt-40 w-100% flex mobile:px-33 mobile:items-center">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/call-icon.svg"
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
                 />
               </div>
-              <div className="mobile:s16l24 desktop:text-s24l36 laptop:text-s24l36 text-F1F1F1 pl-17">
+              <div className="text-s24l36 mobile:text-s16l24 text-F1F1F1 pl-17">
                 <span className="pr-6">+91</span>
                 {contactUsFindUsAt?.ContactUs}
               </div>
             </div>
-            <div className="laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33 mobile:my-11">
+            <div className="laptop:pl-106 mobile:11 desktop:pt-16 laptop:pt-16 w-100% flex mobile:px-33 mobile:my-11 mobile:items-center">
               <div className="font-FFFFFF">
                 <Image
                   src="/images/icons/mail-icon.svg"
@@ -133,16 +133,16 @@ export default function Contact() {
                 }}
               />
             </div>
-            <div className="pb-40">
+            <div className="pb-40   ">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
                 Contact Number
               </div>
-              <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
+              <span className="desktop:text-s20l24  laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
                 +91
               </span>
               <input
                 type="number"
-                className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                className=" global desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
                 value={contactNo}
                 onChange={(e) => {
                   setContactNo(e.target.value);

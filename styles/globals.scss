@@ -483,6 +483,9 @@ button[disabled] {
   background-color: transparent;
   outline: none;
   border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+.global {
   border-bottom: 2px solid #c4c4c4;
 }
 
@@ -1433,7 +1436,7 @@ textarea {
 .mobile_carrer_res {
   background: rgb(230, 240, 223, 0.4);
 }
-.hide-scroll::-webkit-scrollbar{
+.hide-scroll::-webkit-scrollbar {
   display: none;
 }
 .select-focus:focus{

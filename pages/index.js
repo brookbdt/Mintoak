@@ -18,6 +18,7 @@ const { Panel } = Collapse;
 
 export default function Home() {
   const router = useRouter();
+
   const [demoPopup, setDemoPopup] = useState(false);
   const [activeindex, setActiveIndex] = useState(1);
   const [isBORM, setIsBORM] = useState("b");
@@ -590,7 +591,7 @@ export default function Home() {
 
         {/* Our achievements */}
         <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120  mobile:p-0">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:pt-40 mobile:pb-15">
             Our Achievements
           </div>
           <div className="flex items-center w-100% pt-60  mobile:px-0 mobile:py-0 mobile:hidden">

@@ -208,7 +208,7 @@ export default function Request_Demo(props) {
               />
             </div>
             <div className="w-360 mobile:w-100% mobile:pb-24">
-              <div className="global-demo dropdown_font w-360 mobile:w-100%">
+              <div className="global-demo dropdown_font w-360 mobile:w-100%  ">
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Business Category
                 </div>
