@@ -799,7 +799,12 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-100% flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
@@ -928,7 +933,12 @@ export default function Home() {
                         router.push("blog-detail");
                       }}
                     >
-                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>

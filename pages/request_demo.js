@@ -180,7 +180,7 @@ export default function Request_Demo(props) {
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                Bank Name
+                Business Name
               </div>
               <input
                 type="text"
@@ -198,7 +198,6 @@ export default function Request_Demo(props) {
                 Job Title
               </div>
               <input
-                placeholder="Enter Your Job Title"
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={title}
@@ -212,92 +211,95 @@ export default function Request_Demo(props) {
                 <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24 mobile:pb-14">
                   Business Category
                 </div>
-                <Select
-                  dropdownStyle={{
-                    border: "1px solid #DFEFD4",
-                    boxSizing: "border-box",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                    background: "#DFEFD4",
-                    padding: "20px",
-                  }}
-                  placeholder="Choose Products"
-                  className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
-                  value={product}
-                  onChange={(e) => {
-                    setProduct(e.target);
-                  }}
-                >
-                  <Option
-                    value="Choose Products"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
+                <div className="select">
+                  <Select
+                    dropdownStyle={{
+                      border: "1px solid #DFEFD4",
+                      boxSizing: "border-box",
+                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                      background: "#DFEFD4",
+                      padding: "20px",
+                    }}
+                    placeholder="Choose Products"
+                    className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
+                    value={product}
+                    defaultValue={"Choose Product"}
+                    onChange={(e) => {
+                      setProduct(e.target);
+                    }}
                   >
-                    Choose Products
-                  </Option>
-                  <Option
-                    value="Apparel"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Apparel
-                  </Option>
-                  <Option
-                    value="Automobile"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Automobile
-                  </Option>
-                  <Option
-                    value="Hotel"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Hotel
-                  </Option>
-                  <Option
-                    value="Telecom"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Telecom
-                  </Option>
-                  <Option
-                    value="Restaurant"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Restaurant
-                  </Option>
-                  <Option
-                    value="Bakery"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Bakery
-                  </Option>
-                  <Option
-                    value="General_store"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    General Store
-                  </Option>
-                  <Option
-                    value="Aviation"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Aviation
-                  </Option>
-                  <Option
-                    value="Other"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Other
-                  </Option>
-                </Select>
+                    <Option
+                      value="Choose Products"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Choose Products
+                    </Option>
+                    <Option
+                      value="Apparel"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Apparel
+                    </Option>
+                    <Option
+                      value="Automobile"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Automobile
+                    </Option>
+                    <Option
+                      value="Hotel"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Hotel
+                    </Option>
+                    <Option
+                      value="Telecom"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Telecom
+                    </Option>
+                    <Option
+                      value="Restaurant"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Restaurant
+                    </Option>
+                    <Option
+                      value="Bakery"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Bakery
+                    </Option>
+                    <Option
+                      value="General_store"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      General Store
+                    </Option>
+                    <Option
+                      value="Aviation"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Aviation
+                    </Option>
+                    <Option
+                      value="Other"
+                      className="global-option-demo"
+                      style={{ background: "transparent" }}
+                    >
+                      Other
+                    </Option>
+                  </Select>
+                </div>
               </div>
             </div>
           </div>
