@@ -91,8 +91,8 @@ export default function Contact() {
             <div className="absolute pl-27 pt-10">
               <Image
                 src="/images/icons/search-icon.svg"
-                width={35.15}
-                height={37}
+                width={30}
+                height={30}
               // onClick={() => { handleSearch(); alert(7) }}
               />
             </div>
@@ -122,7 +122,7 @@ export default function Contact() {
             <div className="w-100%">
               <input
                 type="text"
-                className="outline-none border border-8FC055 bg-DFEFD4 h-48 w-100% pl-50 desktop:text-s20l24 laptop:text-s20l24"
+                className="outline-none border-2 border-8CC63E bg-DFEFD4 h-48 w-100% pl-50 desktop:text-s20l24 laptop:text-s20l24"
                 placeholder="Enter your query here"
               />
             </div>
@@ -134,7 +134,6 @@ export default function Contact() {
               />
             </div>
             <div
-
               className={`${isClickedSearch && "btn-click-shaddow"
                 } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
               onMouseUp={() => clicked()}
@@ -277,7 +276,7 @@ export default function Contact() {
             </div>
           </div>
           {faqs && faqs.length > 0 && (
-            <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-60">
+            <div className="flex desktop:py-60 laptop:py-60 w-100% justify-center items-center custom-pagination mobile:pt-24 mobile:pb-80">
               <Pagination defaultCurrent={1} total={30} />
             </div>
           )}
@@ -876,7 +875,7 @@ export default function Contact() {
               </div>
               <div className="w-100% desktop:pt-48 laptop:pt-48 desktop:pb-40 laptop:pt-48 mobile:pt-40 mobile:pb-28 flex items-center justify-center">
                 <div
-                  className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-54 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
+                  className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-40 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
                   onClick={() => {
                     setmodalquerieVisible(true);
                     setmodalVisible(false);

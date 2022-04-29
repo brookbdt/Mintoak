@@ -176,7 +176,7 @@ export default function CareerDetails() {
         </div>
       </div>
 
-      <div className="flex flex-col bg-footer desktop:my-150 mb-100 mobile:mb-0  w-100%">
+      <div className="flex flex-col bg-footer desktop:mt-150  mobile:mb-0  w-100%">
         <div className="w-100% px-180 mobile:px-20 py-100 mobile:py-39">
           <div className="text-s36l43 mobile:text-s22l33 font-bold text-F1F1F1">
             Job application
@@ -273,10 +273,11 @@ export default function CareerDetails() {
                 </Col>
                 <Col xs={24} md={8}>
                   <Form.Item className="global-career">
-                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
+                    <label className=" text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
                       Qualifications
                     </label>
                     <Select
+                      className="mobile:mt-10"
                       dropdownStyle={{
                         border: "1px solid #9F9FA0",
                         boxSizing: "border-box",
@@ -342,7 +343,7 @@ export default function CareerDetails() {
       </div>
 
       <div className=" py-150 pt-0 mobile:py-80 mobile:pb-66 mobile_carrer_res">
-        <div className="text-center font-bold text-s44l45 pb-60 mobile:text-s22l44 mobile:pb-24">
+        <div className="text-center font-extrabold text-s44l45 pb-60 mobile:text-s22l44 mobile:pb-25 desktop:pt-150">
           View similar roles
         </div>
         <div className="custom-row mobile:px-20 w-100% flex flex-col items-center">

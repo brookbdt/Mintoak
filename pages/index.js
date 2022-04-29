@@ -17,6 +17,8 @@ SwiperCore.use([Mousewheel, Pagination]);
 const { Panel } = Collapse;
 
 export default function Home() {
+  const router = useRouter();
+
   const [demoPopup, setDemoPopup] = useState(false);
   const [activeindex, setActiveIndex] = useState(1);
   const [isBORM, setIsBORM] = useState("b");
@@ -406,12 +408,17 @@ export default function Home() {
                   <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                     <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       {homeForMerchant?.Description2}
-                      <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                      {/* <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                         {homeForMerchant?.CTA1}
-                      </span>
+                      </span> */}
                     </div>
 
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    <div
+                      className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12"
+                      onClick={() => {
+                        router.push("/merchant");
+                      }}
+                    >
                       {homeForMerchant?.CTA2}
                     </div>
                   </div>
@@ -584,7 +591,7 @@ export default function Home() {
 
         {/* Our achievements */}
         <div className="flex flex-col items-center bg-footer w-100% laptop:px-100 px-180 py-120  mobile:p-0">
-          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:py-40">
+          <div className="text-center font-bold text-FAFAFA text-s44l120 mobile:text-s20l150 mobile:pt-40 mobile:pb-15">
             Our Achievements
           </div>
           <div className="flex items-center w-100% pt-60  mobile:px-0 mobile:py-0 mobile:hidden">
@@ -639,7 +646,6 @@ export default function Home() {
                 clickable: true,
               }}
               initialSlide={1}
-              refs={founder}
               centeredSlides={true}
               grabCursor={true}
               modules={[Mousewheel, Pagination]}
@@ -797,7 +803,12 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-100% flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
@@ -805,7 +816,12 @@ export default function Home() {
                 );
               })}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold">
+            <div
+              className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 mt-20 cursor-pointer font-bold"
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </div>
           </div>
@@ -921,14 +937,24 @@ export default function Home() {
                         router.push("blog-detail");
                       }}
                     >
-                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
                   </div>
                 ))}
             </Carousel>
-            <div className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold">
+            <div
+              className="text-s22l26_4 text-46AC34 border-b border-46AC34 py-5 m-20 cursor-pointer font-bold desktop:mb-150 "
+              onClick={() => {
+                router.push("/resource");
+              }}
+            >
               View all
             </div>
           </div>

@@ -1,5 +1,7 @@
 import Image from "../components/helpers/Image";
 import { consts } from "react-elastic-carousel";
+// import { useState } from "react/cjs/react.production.min";
+import { useState } from "react";
 
 export default function BlogDetail() {
   const blackCarouselArrows = ({ type, onClick, isEdge }) => {
@@ -15,12 +17,13 @@ export default function BlogDetail() {
       </button>
     );
   };
+
   return (
     <div className="h-fit w-100% bg-home-top">
       {/* blog-detail-bg */}
       <div className="relative top-bg-container h-640 bg-contain desktop-blog-detail-banner mobile:hidden">
-        <Image
-          src="/images/backgrounds/blog-detail-bg.svg"
+        <image
+          src="/images/backgrounds/blog-detail-banner.svg"
           className="absolute z-minus1 mobile:hidden bg-cover w-100% h-fit"
           // layout="fill"
           type="img"
@@ -32,7 +35,8 @@ export default function BlogDetail() {
           </div>
           <div className="pt-13 text-s20l24 mobile:text-s20l24 text-C4C4C4 shrink-0">
             <Image src="/images/icons/eye.svg" height={11} width={17} />
-            <span className="pl-16">200 views</span>
+            <span className="pl-16">222 views</span>
+            {/* <p>0</p> */}
           </div>
           <div className="pt-51 w-144 h-35 flex justify-between text-F1F1F1">
             <div>

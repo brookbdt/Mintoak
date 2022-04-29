@@ -12,11 +12,16 @@ export default function Contact() {
       </div>
       <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-150 mobile:pb-80">
         By visiting the website{" "}
-        <span className="hover:text-8CC63E">http://www.mintoak.com</span> <br />
+        <span className="text-8CC63E hover:text-8CC63E">
+          http://www.mintoak.com
+        </span>{" "}
+        <br />
         <br />
         You understand and accept that Mintoak Innovations Private Limited
         (called as, “Mintoak”) maintains the web-site{" "}
-        <span className="hover:text-8CC63E">http://www.mintoak.com</span>
+        <span className=" text-8CC63E hover:text-8CC63E">
+          http://www.mintoak.com
+        </span>
         (going ahead referred to as “the Site” or “the Mintoak website”) to
         provide visitors with information about Mintoak, its services and
         products and to facilitate communication with Mintoak and availing its
