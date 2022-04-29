@@ -180,7 +180,7 @@ export default function Request_Demo(props) {
             </div>
             <div className="pb-40 w-360 mobile:w-100% mobile:pb-24">
               <div className="laptop:text-s20l24 laptop:text-8B8B8B mobile:text-s12l14 desktop:text-s20l24 mobile:text-525252 desktop:text-8B8B8B pb-24">
-                Bank Name
+                Business Name
               </div>
               <input
                 type="text"
@@ -198,7 +198,6 @@ export default function Request_Demo(props) {
                 Job Title
               </div>
               <input
-                placeholder="Enter Your Job Title"
                 type="text"
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input pb-5"
                 value={title}
@@ -300,41 +299,42 @@ export default function Request_Demo(props) {
               </div>
             </div>
           </div>
-          <div className="py-18 flex">
-            {validate === false && (
-              <>
-                <Image
-                  src="/images/backgrounds/warn.svg"
-                  height={20}
-                  width={18}
-                />
-                <div className="text-EC5F22 text-s18l22 mobile:text-s14l17 pl-10">
-                  Please enter all the necessary details to submit the form.
-                </div>
-              </>
-            )}
-          </div>
-          <div className="w-100% flex justify-between">
-            <div className="bg-button mobile:w-110 w-363 flex items-center justify-center">
-              <div
-                className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
-                onClick={() => {
-                  handleClearAll();
-                }}
-              >
-                Clear All Fields
+        </div>
+        <div className="py-18 flex">
+          {validate === false && (
+            <>
+              <Image
+                src="/images/backgrounds/warn.svg"
+                height={20}
+                width={18}
+              />
+              <div className="text-EC5F22 text-s18l22 mobile:text-s14l17 pl-10">
+                Please enter all the necessary details to submit the form.
               </div>
-            </div>
+            </>
+          )}
+        </div>
+        <div className="w-100% flex justify-between">
+          <div className="bg-button mobile:w-110 w-363 flex items-center justify-center">
             <div
+              className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
               onClick={() => {
-                handleSubmit();
+                handleClearAll();
               }}
-              className="button desktop:text-s22l26_4 mobile:w-110 w-363 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
             >
-              Submit
+              Clear All Fields
             </div>
+          </div>
+          <div
+            onClick={() => {
+              handleSubmit();
+            }}
+            className="button desktop:text-s22l26_4 mobile:w-110 w-363 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13"
+          >
+            Submit
           </div>
         </div>
+        {/* </div> */}
       </Modal>
       {modalquerievisible ? (
         <Modal

@@ -400,7 +400,7 @@ button[disabled] {
     padding-left: 0;
     padding-bottom: 0;
     font-size: 20px;
-    height: 46px;
+    line-height: 4px;
     text-align: left !important;
     width: 100%;
     &:hover,
@@ -972,7 +972,6 @@ button[disabled] {
     top: 65%;
     color: black;
     font-size: 15px;
-    height: 5px;
   }
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     background-color: transparent;
