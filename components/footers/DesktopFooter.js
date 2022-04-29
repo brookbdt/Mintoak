@@ -148,6 +148,10 @@ export default function DesktopFooter() {
             </span>
           </div>
 
+          {/* <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
+            <span className="hover-border">Customise</span>
+          </div> */}
+
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span
               className=" hover-border"
@@ -198,6 +202,10 @@ export default function DesktopFooter() {
               Blogs
             </span>
           </div>
+
+          {/* <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
+            <span className="hover-border">Case Studies</span>
+          </div> */}
 
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span className="hover-border">News & Media</span>

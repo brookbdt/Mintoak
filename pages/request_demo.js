@@ -315,9 +315,9 @@ export default function Request_Demo(props) {
             )}
           </div>
           <div className="w-100% flex justify-between">
-            <div className="bg-button mobile:w-110 w-363 flex items-center justify-center">
+            <div className=" mobile:w-110 w-363 flex items-center justify-center ">
               <div
-                className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
+                className=" cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"
                 onClick={() => {
                   handleClearAll();
                 }}

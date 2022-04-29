@@ -989,7 +989,7 @@ button[disabled] {
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     padding: 0;
     padding-left: 5px;
-    color: #f1f1f1;
+    // color: #f1f1f1;
     font-size: 120%;
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
@@ -1020,10 +1020,8 @@ button[disabled] {
 .ant-select-selection-item{
   color: #8B8B8B;
 }
-.ant-select-selection-item:focus{
-  color: black;
-}
-}
+
+
 .global-partner {
   @media only screen and (min-width: 1366px) {
     .ant-select-selection-item {
@@ -1469,4 +1467,5 @@ textarea {
 }
 .carousel{
  overflow: hidden;
+}
 }
