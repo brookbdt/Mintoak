@@ -1,21 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "../helpers/Image";
 import DesktopHeader from "./DesktopHeader";
 import MiniHeader from "./MiniHeader";
 import { useRouter } from "next/router";
+import { API, endpoints } from "../helpers/API";
 
 export default function Header() {
   const iconSize = 48;
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [menu, setMenu] = useState([]);
   const [activeDesktopMenu, setActiveDesktopMenu] = useState("");
   const headerProps = {
     showMobileMenu,
     setShowMobileMenu,
     activeDesktopMenu,
     setActiveDesktopMenu,
+    menu
   };
   const router = useRouter();
 
+  useEffect(() => {
+    API({
+      url: endpoints.menu,
+    }).then((resp) => {
+      if (!resp.message) {
+        setMenu(resp);
+      }
+    });
+  }, [])
+  console.log('sxfgv', menu)
   const renderProducts = () => {
     return (
       <>
@@ -380,17 +393,17 @@ export default function Header() {
         <DesktopHeader {...headerProps} />
 
         {/* Below laptop size  */}
-        <MiniHeader {...headerProps} />
+        <MiniHeader menu={menu} {...headerProps} />
       </div>
 
       {/* Active desktop menu items */}
       {activeDesktopMenu === "products"
         ? renderProducts()
         : activeDesktopMenu === "resources"
-        ? renderResources()
-        : activeDesktopMenu === "support"
-        ? renderSupport()
-        : null}
+          ? renderResources()
+          : activeDesktopMenu === "support"
+            ? renderSupport()
+            : null}
     </>
   );
 }
