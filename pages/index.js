@@ -413,7 +413,12 @@ export default function Home() {
                       </span> */}
                     </div>
 
-                    <div className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12">
+                    <div
+                      className="button w-216 h-54 mt-40 mobile:w-290 mobile:h-40 mobile:ml-12"
+                      onClick={() => {
+                        router.push("/merchant");
+                      }}
+                    >
                       {homeForMerchant?.CTA2}
                     </div>
                   </div>

@@ -39,12 +39,6 @@ export default function Product() {
         type="img"
       />
       <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
-        <Image
-          src="/images/backgrounds/product-bg.svg"
-          className="w-100% absolute mobile:hidden"
-          // layout="fill"
-          type="img"
-        />
         <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 laptop:pt-80 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">
           <div className="w-100%">
             <Image
@@ -473,7 +467,7 @@ export default function Product() {
           </div>
           <div className="w-100% text-center desktop:hidden laptop:hidden ">
             <Image
-              src="/images/backgrounds/product-mobileC1.svg"
+              src="/images/backgrounds/product-mobileC2.svg"
               height={315}
               width={160}
             />

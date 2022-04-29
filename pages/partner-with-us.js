@@ -203,7 +203,7 @@ export default function Partner() {
             className="absolute mobile:hidden w-100% h-100% object-cover laptop:w-100% laptop:h-600"
           />
           <div className="desktop:w-50% relative desktop:pb-107 laptop:pb-107 laptop:w-50% pl-176 laptop:pl-100 pr-0 pt-150 laptop:pt-41 z-10 mobile: w-100% mobile:p-20 ">
-            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 text-252525 shrink-0">
+            <div className="desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 pt-50 mobile:pt-20 text-252525 shrink-0">
               {partnerWithUsBanner?.Title}
             </div>
             <div className="text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-6 laptop:pt-6 mobile:pt-2">
@@ -222,7 +222,7 @@ export default function Partner() {
               {partnerWithUsBanner?.CTA}
             </div>
           </div>
-          <div className="mobile:absolute mobile:top-85 desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
+          <div className="mobile:absolute desktop:w-50% laptop:w-50% flex items-center justify-center mobile:w-100%">
             <Image
               src={partnerWithUsBanner?.mobilebanner}
               type="img"
@@ -231,7 +231,7 @@ export default function Partner() {
           </div>
         </div>
         {/* Take your business  */}
-        <div className="desktop:flex laptop:flex flex-col py-150 desktop:px-333 laptop:py-80 mobile:pb-40 justify-center items-center mobile:px-20 ">
+        <div className="desktop:flex laptop:flex flex-col py-150 desktop:px-333 laptop:py-80 mobile:pb-40 justify-center items-center mobile:py-82 mobile:px-20 ">
           <div className="desktop:text-s45l45 laptop:text-s45l45 desktop:text-252525 laptop:text-252525 mobile:text-000000 font-bold mobile:pr-100 mobile:text-left mobile:text-s22l33">
             {partnerWithUsNewHeights?.Title}
           </div>
@@ -248,7 +248,7 @@ export default function Partner() {
             {partnerWithUsNewHeights2 &&
               partnerWithUsNewHeights2.map((item, index) => (
                 <div
-                  className="flex desktop:h-231 laptop:px-100 justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-40"
+                  className="flex desktop:h-231 laptop:px-100 justify-start items-center flex-col w-25% mobile:flex-row mobile:w-100% mobile:pb-35"
                   key={index}
                 >
                   <div>
@@ -412,7 +412,7 @@ export default function Partner() {
                     Contact Number
                   </div>
 
-                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3">
+                  <span className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-8B8B8B pr-5 absolute mobile:pt-3 mobile:border-r">
                     +91
                   </span>
                   <input
