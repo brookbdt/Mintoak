@@ -6,6 +6,8 @@ import Request_Demo from "./request_demo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import { useSwiper } from "swiper/react";
+import "swiper/css";
+import { useWindowSize } from "../components/helpers/utils";
 SwiperCore.use([Mousewheel, Pagination]);
 
 export default function About() {
@@ -19,8 +21,13 @@ export default function About() {
   const [founderResp, setFounderResp] = useState([]);
   const [teamInfoResp, setTeamInfoResp] = useState({});
   const [activeTab, setActiveTab] = useState(0);
-  const [itemView, setItemView] = useState();
+  const [itemView, setItemView] = useState(6.5);
+  const [currentIndex, setCurruntIndex] = useState(1);
   const [swiperInstance, setSwiperInstance] = useState();
+  const [activeindex, setActiveIndex] = useState();
+  const [swiperInstance2, setSwiperInstance2] = useState();
+  const [windowSize, setWindowSize] = useState(useWindowSize);
+  const [screen, setScreen] = useState(windowSize.width);
   const founder = useRef(null);
   const swiper = useSwiper();
   const TogglePopup = () => {
@@ -28,14 +35,20 @@ export default function About() {
   };
 
   const getScreen = () => {
-    if (window.innerWidth <= 1366) {
+    setScreen(window.innerWidth);
+    if (screen <= 1366) {
       setItemView(5);
     } else {
       setItemView(6.5);
     }
   };
+
   useEffect(() => {
-    getScreen();
+    window.addEventListener("resize", getScreen);
+    console.log("lksdjkhkasdja", screen);
+  }, [screen]);
+
+  useEffect(() => {
     // about_banner
     API({
       url: endpoints.about_us_banner,
@@ -111,7 +124,7 @@ export default function About() {
           src={aboutBannerResp?.Illustration}
           className="absolute mobile:hidden desktop:h-100% laptop:h-100% laptop:w-100% desktop:w-100%"
         />
-        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 laptop:py-60 z-10">
+        <div className="desktop:w-50% relative laptop:w-50% desktop:px-180 desktop:py-150 laptop:pl-100 tablet:w-80% tablet:p-30 px-20 mobile:pt-40 pb-95 laptop:py-60 z-10 mobile:absolute">
           <div className="ls--3 desktop:text-s45l45 laptop:text-s45l45 mobile:text-s24l29 text-252525 shrink-0 mobile:pt-0 mobile:font-semibold mobile:w-285">
             {/* {aboutBannerResp?.Title} */}
             Creating new-age financial solutions for
@@ -430,12 +443,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center  absolute bottom-25 mobile:pt-100">
-                  Name name name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
-                  Designation
-                </div> */}
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                Name
+              </div>
+              <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                Designation
+              </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <Image
@@ -449,12 +462,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
-                  Name name name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
-                  Designation
-                </div> */}
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                Name
+              </div>
+              <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                Designation
+              </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <Image
@@ -468,12 +481,12 @@ export default function About() {
                   backgroundImage: "linear-gradient(#fff0, #252525)",
                 }}
               ></div>
-              {/* <div className="text-s18l33 text-F1F1F1 text-center absolute bottom-25 mobile:pt-100">
-                  Name name name
-                </div>
-                <div className="text-s16l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
-                  Designation
-                </div> */}
+              <div className="text-s14l33 text-F1F1F1 text-center  absolute bottom-15 mobile:pt-100">
+                Name
+              </div>
+              <div className="text-s14l33 text-F1F1F1 text-center absolute bottom-0 mobile:pt-140">
+                Designation
+              </div>
             </div>
           </Carousel>
         </div>
@@ -494,7 +507,6 @@ export default function About() {
             slidesPerView={1}
             tag="section"
             spaceBetween={30}
-            mousewheel={true}
             pagination={{
               clickable: true,
             }}
@@ -592,28 +604,61 @@ export default function About() {
       {/* </Sticky> */}
       <div className=" border-F1F1F1 border-t"></div>
       <div className="desktop:hidden laptop:hidden mobile:flex flex-col">
-        <div className="text-s22l33 text-000000 font-bold text-center pt-80 pb-40">
+        <div className="text-s24l36 text-000000 font-bold text-center pt-80 pb-40">
           Our founders
         </div>
-        <div className="w-100% flex justify-center">
-          <div className="flex w-360 overflow-x-scroll">
+        <div
+          className="w-100% flex justify-center mobile_swiper"
+          id="founder_r"
+        >
+          <Swiper
+            slidesPerView={2}
+            ref={founder}
+            pagination={{
+              clickable: true,
+            }}
+            initialSlide={1}
+            centeredSlides={true}
+            grabCursor={true}
+            modules={[Mousewheel, Pagination]}
+            onSwiper={setSwiperInstance2}
+            onSlideChange={(e) => {
+              // setActiveTab(e.activeIndex);
+              setCurruntIndex(e.activeIndex);
+              // console.log(e.activeIndex, "sliderchange");
+            }}
+          >
             {founderResp &&
-              founderResp.map((item, index) => (
-                <div
-                  className="w-205 whitespace-nowrap"
-                  onScroll={() => setCurruntIndex(index)}
-                  key={index}
-                >
-                  <div key={index} className="w-205">
-                    <Image
-                      src={item.FounderImage}
-                      type="img"
-                      className="h-205 w-201"
-                    />
-                  </div>
-                </div>
-              ))}
-          </div>
+              founderResp.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    onClick={() => {
+                      setCurruntIndex(index);
+                      founder.current?.swiper.slideTo(index);
+                      // founder.swiper
+                    }}
+                  >
+                    <div
+                      id={`founder_r${index}`}
+                      className={`flex justify-center${
+                        currentIndex == index
+                          ? "w-201 h-205 z-minus1 shadow-achievement border border-C4C4C4"
+                          : "w-166 h-164 border-t border-b border-C4C4C4 opacity-50"
+                      }`}
+                    >
+                      <Image
+                        src={item.FounderImage}
+                        type="img"
+                        className={`object-cover ${
+                          currentIndex == index ? "w-201 h-205" : "w-166 h-164"
+                        }`}
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+          </Swiper>
         </div>
         <div className="w-100% flex flex-col items-center pt-16">
           <div className="text-252525 text-s17l25 font-bold pb-10">
