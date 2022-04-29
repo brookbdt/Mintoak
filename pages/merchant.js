@@ -267,7 +267,7 @@ export default function Merchant() {
               </div>
             </div>
           </div>
-          <div className="pt-50 h-256">
+          <div className="mt-20 h-256">
             <div className="flex flex-col w-100% items-center ">
               {/* <div className="text-s14l21 text-F1F1F1 text-center pt-8 pb-41 w-100% px-35">
                 {val1?.Description}
