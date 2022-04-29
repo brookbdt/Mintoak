@@ -213,6 +213,7 @@ export default function Request_Demo(props) {
                   Business Category
                 </div>
                 <Select
+                placeholder="Choose Products"
                   dropdownStyle={{
                     border: "1px solid #DFEFD4",
                     boxSizing: "border-box",
@@ -226,13 +227,7 @@ export default function Request_Demo(props) {
                     setProduct(e.target);
                   }}
                 >
-                  <Option
-                    value="Choose Products"
-                    className="global-option-demo"
-                    style={{ background: "transparent" }}
-                  >
-                    Choose Products
-                  </Option>
+                  
                   <Option
                     value="Apparel"
                     className="global-option-demo"

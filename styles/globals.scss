@@ -1000,13 +1000,13 @@ button[disabled] {
     color: #f1f1f1;
   }
   .ant-select-selection-placeholder {
-    color: #8b8b8b;
+    color: #9ca3af !important;
     font-size: 20px;
     line-height: 24px;
   }
 
   .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
-  .ant-select-single.ant-select-show-arrow {
+  .ant-select-single.ant-select-show-arrow{
     color: #252525;
     font-weight: 500;
   }
