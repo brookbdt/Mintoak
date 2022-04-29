@@ -641,7 +641,6 @@ export default function Home() {
                 clickable: true,
               }}
               initialSlide={1}
-              refs={founder}
               centeredSlides={true}
               grabCursor={true}
               modules={[Mousewheel, Pagination]}

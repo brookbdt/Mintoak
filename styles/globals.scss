@@ -795,6 +795,14 @@ button[disabled] {
 }
 
 // ================== FAQ POPUP CHECKBOX END ================
+.overf-m {
+  overflow-x: scroll;
+}
+.overf-m::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 5px;
+}
 
 .overf {
   overflow-x: scroll;
@@ -1253,7 +1261,7 @@ button[disabled] {
     justify-content: center;
   }
   .swiper-wrapper {
-    margin-left: -110px;
+    margin-left: -20px;
   }
   .swiper-slide {
     // text-align: center;
@@ -1265,8 +1273,8 @@ button[disabled] {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
@@ -1277,6 +1285,10 @@ button[disabled] {
     // display: flex;
     // align-items: center;
     // justify-content: center;
+  }
+  .swiper-slide.swiper-slide-prev{
+    display: flex;
+    justify-content: end;
   }
 }
 .achievement-swiper {
@@ -1435,4 +1447,10 @@ textarea {
 }
 .hide-scroll::-webkit-scrollbar {
   display: none;
+}
+.inner-m{
+  transition: transform 0.3s;
+}
+.carousel{
+ overflow: hidden;
 }

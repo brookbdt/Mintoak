@@ -220,7 +220,6 @@ export default function Request_Demo(props) {
                     background: "#DFEFD4",
                     padding: "20px",
                   }}
-                  placeholder="Choose Products"
                   className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                   value={product}
                   onChange={(e) => {
