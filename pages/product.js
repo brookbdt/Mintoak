@@ -23,7 +23,7 @@ export default function Product() {
   const founder = useRef(null);
 
   useEffect(() => {
-      setComponent('ACCORN')
+      setComponent('PAM')
   }, []);
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -37,7 +37,6 @@ export default function Product() {
         <Image
           src="/images/backgrounds/product-bg.svg"
           className="w-100% absolute mobile:hidden"
-          // layout="fill"
           type="img"
         />
         <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 laptop:pt-80 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">

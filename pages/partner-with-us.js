@@ -390,7 +390,7 @@ export default function Partner() {
           </div>
         </div>
         {/* Partner with us form */}
-        <div className="w-100%  bg-footer">
+        <div className="w-100%  bg-footer desktop:px-80">
           <div ref={scrollPoint} />
           <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
