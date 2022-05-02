@@ -372,9 +372,9 @@ export default function Home() {
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                         {homeForBanksResp?.Description2}
-                        {/* <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                        <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                           {homeForBanksResp?.CTA1}
-                        </span> */}
+                        </span>
                       </div>
                     </div>
                     <div
@@ -803,7 +803,12 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="w-100% flex items-center justify-end ">
-                      <div className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>
@@ -932,7 +937,12 @@ export default function Home() {
                         router.push("blog-detail");
                       }}
                     >
-                      <div className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer">
+                      <div
+                        className="rounded-sm bg-button rounded-sm text-FFFFFF px-8 py-3 flex items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          router.push("/resource");
+                        }}
+                      >
                         <Image src="/images/icons/arrow.svg" type="img" />
                       </div>
                     </div>

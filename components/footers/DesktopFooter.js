@@ -1,23 +1,23 @@
-import React from "react";
-import Image from "../helpers/Image";
-import Request_Demo from "../../pages/request_demo";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react"
+import Image from "../helpers/Image"
+import Request_Demo from "../../pages/request_demo"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
 
 export default function DesktopFooter() {
-  const router = useRouter();
+  const router = useRouter()
 
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [slug, setSlug] = useState("");
+    setDemoPopup(false)
+  }
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [slug, setSlug] = useState("")
 
   useEffect(() => {
-    let url = window.location.href;
-    let slug = url.split("/").pop();
-    setSlug(slug);
-  }, []);
+    let url = window.location.href
+    let slug = url.split("/").pop()
+    setSlug(slug)
+  }, [])
 
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
@@ -208,7 +208,12 @@ export default function DesktopFooter() {
           </div> */}
 
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border">News & Media</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/resource")}
+            >
+              News & Media
+            </span>
           </div>
         </div>
         <div className="pb-175 pt-186">
@@ -234,5 +239,5 @@ export default function DesktopFooter() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  );
+  )
 }
