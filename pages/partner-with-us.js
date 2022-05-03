@@ -1,121 +1,120 @@
-import Image from "../components/helpers/Image";
-import Carousel from "react-elastic-carousel";
-import { useEffect, useState, useRef } from "react";
-import { consts } from "react-elastic-carousel";
-import { Modal, Select } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import Request_Demo from "./request_demo";
-import CircularProgress from "../components/helpers/Prograssbar";
+import Image from "../components/helpers/Image"
+import Carousel from "react-elastic-carousel"
+import { useEffect, useState, useRef } from "react"
+import { consts } from "react-elastic-carousel"
+import { Modal, Select } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import Request_Demo from "./request_demo"
+import CircularProgress from "../components/helpers/Prograssbar"
 
 export default function Partner() {
-  const { Option } = Select;
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [comunityCard, setComunityCard] = useState([]);
-  const [anime, setAnime] = useState("");
-  const [customizclick, setCustomizClick] = useState(1);
-  const [demoPopup, setDemoPopup] = useState(false);
-  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null);
-  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null);
-  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] =
-    useState(null);
-  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null);
-  const [aboutUsCustomization, setAboutUsCustomization] = useState(null);
+  const { Option } = Select
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [comunityCard, setComunityCard] = useState([])
+  const [anime, setAnime] = useState("")
+  const [customizclick, setCustomizClick] = useState(1)
+  const [demoPopup, setDemoPopup] = useState(false)
+  const [partnerWithUsBanner, setPartnerWithUsBanner] = useState(null)
+  const [partnerWithUsNewHeights, setPartnerWithUsNewHeights] = useState(null)
+  const [partnerWithUsNewHeights2, setPartnerWithUsNewHeights2] = useState(null)
+  const [aboutUsCustomization2, setAboutUsCustomization2] = useState(null)
+  const [aboutUsCustomization, setAboutUsCustomization] = useState(null)
   const [partnerWithUsMintoakEffect, setPartnerWithUsMintoakEffect] =
-    useState(null);
-  const [countryList, setCountryList] = useState(null);
-  const [val0, setVal0] = useState(aboutUsCustomization2?.[0]);
-  const [val1, setVal1] = useState(aboutUsCustomization2?.[1]);
-  const [val2, setVal2] = useState(aboutUsCustomization2?.[2]);
-  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description);
-  const [fullName, setFullName] = useState(null);
-  const [contactNo, setContactNo] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [country, setCountry] = useState(null);
-  const [bankName, setBankName] = useState(null);
-  const [title, setTitle] = useState(null);
-  const [msg, setMsg] = useState(null);
-  const [validate, setValidate] = useState(true);
-  const scrollPoint = useRef(null);
+    useState(null)
+  const [countryList, setCountryList] = useState(null)
+  const [val0, setVal0] = useState(aboutUsCustomization2?.[0])
+  const [val1, setVal1] = useState(aboutUsCustomization2?.[1])
+  const [val2, setVal2] = useState(aboutUsCustomization2?.[2])
+  const [desc, setDesc] = useState(aboutUsCustomization2?.[1]?.Description)
+  const [fullName, setFullName] = useState(null)
+  const [contactNo, setContactNo] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [country, setCountry] = useState(null)
+  const [bankName, setBankName] = useState(null)
+  const [title, setTitle] = useState(null)
+  const [msg, setMsg] = useState(null)
+  const [validate, setValidate] = useState(true)
+  const scrollPoint = useRef(null)
 
   const scrollToBottom = () => {
-    scrollPoint.current.scrollIntoView({ behavior: "smooth" });
-  };
+    scrollPoint.current.scrollIntoView({ behavior: "smooth" })
+  }
   useEffect(() => {
     // Community card
     API({
       url: endpoints.comminity_cards,
     }).then((resp) => {
       if (!resp.message) {
-        setComunityCard(resp);
+        setComunityCard(resp)
       }
-    });
+    })
 
     API({
       url: endpoints.partner_with_us_banner,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsBanner(resp);
+        setPartnerWithUsBanner(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsNewHeights(resp);
+        setPartnerWithUsNewHeights(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_new_heights2,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsNewHeights2(resp);
+        setPartnerWithUsNewHeights2(resp)
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization_2,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutUsCustomization2(resp);
-        setDesc(resp[1].Description);
-        setVal0(resp[1]);
-        setVal1(resp[0]);
-        setVal2(resp[2]);
+        setAboutUsCustomization2(resp)
+        setDesc(resp[1].Description)
+        setVal0(resp[1])
+        setVal1(resp[0])
+        setVal2(resp[2])
       }
-    });
+    })
     API({
       url: endpoints.about_us_customization,
     }).then((resp) => {
       if (!resp.message) {
-        setAboutUsCustomization(resp);
+        setAboutUsCustomization(resp)
       }
-    });
+    })
     API({
       url: endpoints.partner_with_us_mintoak_effect,
     }).then((resp) => {
       if (!resp.message) {
-        setPartnerWithUsMintoakEffect(resp);
+        setPartnerWithUsMintoakEffect(resp)
       }
-    });
+    })
     API({
       url: endpoints.dropdown,
     }).then((resp) => {
       if (!resp.message) {
-        setCountryList(resp[0]);
+        setCountryList(resp[0])
       }
-    });
-  }, []);
+    })
+  }, [])
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
   // useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
 
   // console.log('countery', countryList)
 
   const handleData = (num) => {
     if (num == 2) {
-      let t = val2;
-      setVal2(val1);
-      setVal1(t);
+      let t = val2
+      setVal2(val1)
+      setVal1(t)
       // aboutUsCustomization2.map((item) => {
       //   if (item.Title == val2) {
       //     setDesc(item.Description);
@@ -123,75 +122,75 @@ export default function Partner() {
       // })
     }
     if (num == 0) {
-      let t = val0;
-      setVal0(val1);
-      setVal1(t);
+      let t = val0
+      setVal0(val1)
+      setVal1(t)
       aboutUsCustomization2.map((item) => {
         if (item.Title == val0) {
-          setDesc(item.Description);
+          setDesc(item.Description)
         }
-      });
+      })
     }
-  };
+  }
   const handleSubmit = () => {
-    let tempVal = true;
+    let tempVal = true
     if (fullName === null || fullName === "") {
-      setValidate(false);
-      console.log(1);
-      tempVal = false;
+      setValidate(false)
+      console.log(1)
+      tempVal = false
     }
     if (contactNo === null || contactNo === "") {
-      tempVal = false;
-      console.log(2);
-      setValidate(false);
+      tempVal = false
+      console.log(2)
+      setValidate(false)
     }
     if (email === null || email === "") {
-      tempVal = false;
-      console.log(3);
-      setValidate(false);
+      tempVal = false
+      console.log(3)
+      setValidate(false)
     } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      tempVal = false;
-      console.log(4);
-      setValidate(false);
+      tempVal = false
+      console.log(4)
+      setValidate(false)
     }
 
     if (bankName === null || bankName === "") {
-      setValidate(false);
-      tempVal = false;
+      setValidate(false)
+      tempVal = false
     }
     if (msg === null || msg === "") {
-      setValidate(false);
-      console.log(6);
-      tempVal = false;
+      setValidate(false)
+      console.log(6)
+      tempVal = false
     }
     if (title === null || title === "") {
-      setValidate(false);
-      console.log(7);
-      tempVal = false;
+      setValidate(false)
+      console.log(7)
+      tempVal = false
     }
     if (country === null || country === "") {
-      setValidate(false);
-      console.log(7);
-      tempVal = false;
+      setValidate(false)
+      console.log(7)
+      tempVal = false
     }
     if (tempVal) {
-      setValidate(true);
-      handleClearAll();
-      setmodalVisible(true);
+      setValidate(true)
+      handleClearAll()
+      setmodalVisible(true)
     }
-  };
+  }
 
   const handleClearAll = () => {
-    setFullName("");
-    setEmail("");
-    setContactNo("");
-    setBankName("");
-    setTitle("");
-    setCountry("");
-    setMsg("");
-  };
+    setFullName("")
+    setEmail("")
+    setContactNo("")
+    setBankName("")
+    setTitle("")
+    setCountry("")
+    setMsg("")
+  }
 
-  useEffect(scrollToBottom, [partnerWithUsMintoakEffect]);
+  useEffect(scrollToBottom, [partnerWithUsMintoakEffect])
 
   return (
     <>
@@ -318,8 +317,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(0);
-                    handleData(0);
+                    setCustomizClick(0)
+                    handleData(0)
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -338,8 +337,8 @@ export default function Partner() {
                 <div className="h-39 border-r-2 border-C4C4C4"></div>
                 <div
                   onClick={() => {
-                    setCustomizClick(2);
-                    handleData(2);
+                    setCustomizClick(2)
+                    handleData(2)
                   }}
                   className="rounded-full absolute mt-37 h-8 w-8 bg-C4C4C4"
                 ></div>
@@ -392,7 +391,7 @@ export default function Partner() {
         {/* Partner with us form */}
         <div className="w-100%  bg-footer">
           <div ref={scrollPoint} />
-          <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
+          <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-180 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
           <div className="w-100% flex mobile:flex-col mobile:px-20 laptop:hidden desktop:hidden">
@@ -484,8 +483,8 @@ export default function Partner() {
               </div>
             </div>
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 mobile:hidden">
-            <div className="desktop:px-100 laptop:px-100 w-100%">
+          <div className="w-100% flex mobile:flex-col justify-between desktop:pl-180 desktop:pr-312 mobile:px-20 mobile:hidden">
+            <div className="w-360">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                   Full Name
@@ -494,7 +493,7 @@ export default function Partner() {
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
-                    setFullName(e.target.value);
+                    setFullName(e.target.value)
                   }}
                   value={fullName}
                 />
@@ -507,7 +506,7 @@ export default function Partner() {
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
-                    setBankName(e.target.value);
+                    setBankName(e.target.value)
                   }}
                   value={bankName}
                 />
@@ -516,7 +515,7 @@ export default function Partner() {
                 <div></div>
               </div>
             </div>
-            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+            <div className="w-360">
               <div className="w-100% ">
                 <div className="pb-40 ">
                   <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 w-100% desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -530,7 +529,7 @@ export default function Partner() {
                     type="number"
                     className=" global-input-number desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% mobile:pl-35 desktop:pl-50 laptop:pl-50 global-input pb-3"
                     onChange={(e) => {
-                      setContactNo(e.target.value);
+                      setContactNo(e.target.value)
                     }}
                     value={contactNo}
                   />
@@ -544,13 +543,13 @@ export default function Partner() {
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
-                    setTitle(e.target.value);
+                    setTitle(e.target.value)
                   }}
                   value={title}
                 />
               </div>
             </div>
-            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+            <div className="w-360">
               <div className="pb-40 w-100% ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                   Business Email
@@ -559,7 +558,7 @@ export default function Partner() {
                   type="text"
                   className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setEmail(e.target.value)
                   }}
                   value={email}
                 />
@@ -579,7 +578,7 @@ export default function Partner() {
                   }}
                   placeholder="Select"
                   onChange={(e) => {
-                    setCountry(e.target);
+                    setCountry(e.target)
                   }}
                   value={country}
                 >
@@ -600,8 +599,8 @@ export default function Partner() {
               </div>
             </div>
           </div>
-          <div className="desktop:px-100 laptop:px-100 mobile:px-20 w-100%">
-            <div className="pb-40">
+          <div>
+            <div className="pb-40 desktop:pl-180 desktop:pr-312">
               <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                 Message
               </div>
@@ -611,14 +610,14 @@ export default function Partner() {
                 className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-F1F1F1 w-100% global-input pb-5"
                 value={msg}
                 onChange={(e) => {
-                  setMsg(e.target.value);
+                  setMsg(e.target.value)
                 }}
               />
             </div>
           </div>
           {validate === false && (
             <>
-              <div className="py-18 flex desktop:px-100 laptop:px-100 w-100%">
+              <div className="py-18 flex desktop:pl-180 desktop:pr-312 laptop:px-100 w-100%">
                 <Image
                   src="/images/backgrounds/warn.svg"
                   height={20}
@@ -631,7 +630,7 @@ export default function Partner() {
             </>
           )}
 
-          <div className="desktop:pl-100 laptop:pl-100 w-100% pb-100 mobile:flex mobile:items-center mobile:justify-center">
+          <div className="desktop:pl-180 desktop:pr-312 laptop:pl-180 laptop:pr-312 w-100% pb-100 mobile:flex mobile:items-center mobile:justify-center">
             <div
               onClick={() => handleSubmit()}
               className="mobile:w-320 desktop:w-359 laptop:w-359 button desktop:text-s22l26_4 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10 mobile:px-98 desktop:py-15 laptop:py-15 desktop:px-176 laptop:px-176"
@@ -657,7 +656,7 @@ export default function Partner() {
                     <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border  rounded-full h-63 w-63" />
-                  );
+                  )
                 return (
                   <button
                     onClick={onClick}
@@ -666,7 +665,7 @@ export default function Partner() {
                   >
                     {pointer}
                   </button>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -688,7 +687,7 @@ export default function Partner() {
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -705,7 +704,7 @@ export default function Partner() {
                 return (
                   <div className="flex">
                     {pages.map((page) => {
-                      const isActivePage = activePage === page;
+                      const isActivePage = activePage === page
                       return (
                         <div
                           className={`bg-C4C4C4 w-6 h-6 rounded-full mr-6 ${
@@ -715,10 +714,10 @@ export default function Partner() {
                           onClick={() => onClick(page)}
                           active={isActivePage}
                         ></div>
-                      );
+                      )
                     })}
                   </div>
-                );
+                )
               }}
             >
               {comunityCard.map((item, index) => {
@@ -726,7 +725,7 @@ export default function Partner() {
                   <div className="" key={index}>
                     <Image src={item.BankLogo} width={167} height={96} />
                   </div>
-                );
+                )
               })}
             </Carousel>
           </div>
@@ -761,5 +760,5 @@ export default function Partner() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </>
-  );
+  )
 }
