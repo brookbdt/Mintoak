@@ -5,21 +5,27 @@ export default function Contact() {
         Website Terms Of Use
       </div>
       <div className="desktop:pt-70 desktop:text-525252 mobile:text-000000 desktop:text-s24l29 mobile:text-s14l21 desktop:pb-40 mobile:pb-30 mobile:w-210">
-        Web Usage Terms Version 1.0 First published on 27.06.2018
+        Web Usage Terms Version 1.0 <br /> First published on 27.06.2018
       </div>
       <div className="desktop:text-s32l45 mobile:text-s16l24 desktop:text-252525 mobile:text-00000 font-semibold desktop:pb-40 mobile:pb-11">
         Web Usage Terms:
       </div>
-      <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-150 mobile:pb-80">
+      <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-150 desktop:pr-400 mobile:pb-80">
         By visiting the website{" "}
-        <span className="text-8CC63E hover:text-8CC63E">
+        <span
+          className="text-525252 hover:text-8CC63E 
+hover:underline"
+        >
           http://www.mintoak.com
         </span>{" "}
         <br />
         <br />
         You understand and accept that Mintoak Innovations Private Limited
         (called as, “Mintoak”) maintains the web-site{" "}
-        <span className=" text-8CC63E hover:text-8CC63E">
+        <span
+          className=" text-525252 hover:text-8CC63E 
+hover:underline"
+        >
           http://www.mintoak.com
         </span>
         (going ahead referred to as “the Site” or “the Mintoak website”) to

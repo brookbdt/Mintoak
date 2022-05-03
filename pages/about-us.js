@@ -288,7 +288,6 @@ export default function About() {
                   type="img"
                   className="h-299 w-229 object-cover rounded-xl "
                 />
-
                 <div
                   className="w-229 absolute h-60 bottom-0"
                   style={{

@@ -68,7 +68,10 @@ export default function Contact() {
             <br />
             1.5 You should read all our Terms and Conditions carefully which are
             also available on our website{" "}
-            <span className="text-8CC63E hover:text-8CC63E">
+            <span
+              className="text-525252 hover:text-8CC63E 
+hover:underline"
+            >
               http://www.mintoak.com
             </span>{" "}
             <br />
@@ -2053,7 +2056,10 @@ export default function Contact() {
               <br />
               38.4 These Terms and Conditions are published and available on
               Mintoak’s website{" "}
-              <span className="text-8CC63E hover:text-8CC63E">
+              <span
+                className="text-525252 hover:text-8CC63E 
+hover:underline"
+              >
                 http://www.mintoak.com
               </span>{" "}
               and any changes / amendments to these Terms and conditions shall

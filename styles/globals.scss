@@ -930,8 +930,9 @@ button[disabled] {
     }
 
     .ant-select-arrow {
-      font-size: 10px !important;
+      font-size: 8px !important;
     }
+  
   }
   .career-label {
     font-size: 130%;
@@ -962,7 +963,7 @@ button[disabled] {
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     padding: 0;
     padding-left: 5px;
-    color: #f1f1f1;
+    // color: #f1f1f1;
     font-size: 120%;
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
@@ -997,6 +998,8 @@ button[disabled] {
     color: black;
   }
 }
+
+
 .global-partner {
   @media only screen and (min-width: 1366px) {
     .ant-select-selection-item {
@@ -1370,7 +1373,7 @@ textarea {
   box-shadow: 0px 1px 11.8511px rgba(0, 0, 0, 0.2);
 }
 .clear-all-btn {
-  border-width: 2px;
+  border-width: px;
   border-style: solid;
   border-image: linear-gradient(to right, #95c11f, #77b82a, #46ac34, #3eab35, #3aaa35) 1;
 }

@@ -277,7 +277,6 @@ export default function CareerDetails() {
                       Qualifications
                     </label>
                     <Select
-                      className="mobile:mt-10"
                       dropdownStyle={{
                         border: "1px solid #9F9FA0",
                         boxSizing: "border-box",

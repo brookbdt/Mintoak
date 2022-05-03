@@ -38,8 +38,14 @@ export default function Product() {
         className="absolute desktop:hidden laptop:hidden"
         type="img"
       />
-      <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0">
-        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-175 laptop:pt-80 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">
+      <Image
+        src="/images/backgrounds/product_background.svg"
+        className="absolute right-0 mobile:hidden"
+        type="img"
+      />
+
+      <div className="relative top-bg-container flex w-100% border-b border-A4D77A mobile:flex-col mobile:border-0 desktop:h-646">
+        <div className="desktop:w-50% desktop:pb-88 laptop:pb-88 laptop:w-50%  pr-50 pt-150 laptop:pt-80 z-10 mobile:w-100% mobile:mt-70 mobile:p-20 ">
           <div className="w-100%">
             <Image
               src="/images/icons/aim.svg"
@@ -47,13 +53,13 @@ export default function Product() {
               className="h-150 w-150 ml-161 mobile:ml-0 mobile:h-67 mobile:w-67"
             />
           </div>
-          <div className="pl-181 laptop:pl-100 mobile:pl-0 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-45 laptop:pt-45 mobile:pt-10">
+          <div className="pl-181 laptop:pl-100 mobile:pl-0 text-s56l67 mobile:text-s36l43 font-bold text-252525 w-100% desktop:pt-20 laptop:pt-20 mobile:pt-10">
             Mintoak AIM
           </div>
           <div className="pl-181 laptop:pl-100 mobile:pl-0 desktop:text-s44l52 laptop:text-s44l52 mobile:text-s24l29 pr-80 mobile:pr-0 pt-16 text-252525 shrink-0 mobile:font-semibold">
             Analytics, Insights & Metrics
           </div>
-          <div className="pl-181 laptop:pl-100 mobile:pl-0 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 laptop:pr-100 mobile:pr-0 text-525252 shrink-0">
+          <div className="pl-181 laptop:pl-100 desktop:pr-330 mobile:pl-0 text-s20l30 mobile:text-s14l24 desktop:pt-32 laptop:pt-32 mobile:py-16 pr-350 laptop:pr-100 mobile:pr-0 text-525252 shrink-0">
             A real time interactive business performance dashboard for the
             business owner.
           </div>
@@ -74,7 +80,8 @@ export default function Product() {
                 />
               </div>
               <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-142 mobile:font-normal font-semibold">
-                Credit-to-Bank Information
+                Credit-to-Bank <br />
+                Information
               </div>
             </div>
             <div className="flex items-center ">
@@ -107,7 +114,7 @@ export default function Product() {
                   className="h-70 w-70 desktop:hidden laptop:hidden"
                 />
               </div>
-              <div className="text-252525 text-s24l36 mobile:text-s16l24 pl-16 w-355 mobile:w-260 mobile:font-normal font-semibold">
+              <div className="text-252525 text-s24l36 mobile:text-s16l24 mobile:pl-16 w-355 mobile:w-260 mobile:font-normal font-semibold">
                 Multi-location Consolidated View & Location-level Drill Down
               </div>
             </div>
@@ -149,6 +156,13 @@ export default function Product() {
                     time.
                   </div>
                 </div>
+                <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
+                  <Image
+                    src="/images/backgrounds/product-mobileA1.svg"
+                    type="img"
+                    className="w-400 h-588"
+                  />
+                </div>
               </div>
             </SwiperSlide>
             <SwiperSlide key={1}>
@@ -168,7 +182,7 @@ export default function Product() {
                 </div>
                 <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
                   <Image
-                    src="/images/backgrounds/onboarding-2.svg"
+                    src="/images/backgrounds/product-mobileB1.svg"
                     type="img"
                     className="w-400 h-588"
                   />
@@ -192,7 +206,7 @@ export default function Product() {
                 </div>
                 <div className="w-33% mt-113 ml-100 flex justify-end items-baseline">
                   <Image
-                    src="/images/backgrounds/onboarding-3.svg"
+                    src="/images/backgrounds/product-mobileC1.svg"
                     type="img"
                     className="w-400 h-588"
                   />
@@ -558,9 +572,9 @@ export default function Product() {
               renderArrow={({ type, onClick, isEdge }) => {
                 const pointer =
                   type === consts.PREV ? (
-                    <i className="fa fa-angle-left text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s30l36 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
                   ) : (
-                    <i className="fa fa-angle-right text-s24l150 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-right text-s30l36 text-252525 flex items-center justify-center border border-252525 rounded-full h-63 w-63" />
                   );
                 return (
                   <button onClick={onClick} disabled={isEdge}>
@@ -569,7 +583,7 @@ export default function Product() {
                 );
               }}
             >
-              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+              <div className="bg-current my-10 hover:bg-FFFFFF desktop:pt-50 hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
                 <Image
                   src="/images/icons/product-omni.svg"
                   height={110}
@@ -578,12 +592,12 @@ export default function Product() {
                 <div className="font-semibold text-252525 text-center text-s24l29 mt-24">
                   Mintoak OMNI
                 </div>
-                <div className="w-100% text-252525 text-center mt-30 text-s20l30">
+                <div className="w-100% text-252525 text-center mt-30 text-s19l30">
                   Handle all types of digital payments on a single platform
                 </div>
               </div>
 
-              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
+              <div className="bg-current my-10 hover:bg-FFFFFF desktop:pt-50 hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E ">
                 <Image
                   src="/images/icons/product-pay_later.svg"
                   height={110}
@@ -592,20 +606,20 @@ export default function Product() {
                 <div className="font-semibold text-252525 text-center text-s24l29 mt-24">
                   Pay Later
                 </div>
-                <div className="text-252525 text-center mt-30 text-s20l30">
+                <div className="text-252525 text-center mt-30 text-s19l30">
                   Track customer dues on a robust digital register
                 </div>
               </div>
-              <div className="bg-current my-10 hover:bg-FFFFFF hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
+              <div className="bg-current my-10 hover:bg-FFFFFF desktop:pt-50 hover:border-0 Product flex flex-col items-center w-311 h-334 p-28 border border-8CC63E">
                 <Image
                   src="/images/icons/product-iku.svg"
-                  height={148}
+                  height={110}
                   width={273}
                 />
                 <div className="font-semibold text-252525 text-center text-s24l29 mt-24">
                   Mintoak IKU
                 </div>
-                <div className="text-252525 text-center mt-30 text-s20l30 ls--1_5">
+                <div className="text-252525 text-center mt-30 text-s19l30 ls--1_5">
                   Perform instant customer recognition and segmentation
                 </div>
               </div>
