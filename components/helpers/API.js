@@ -70,6 +70,8 @@ const endpoints = {
   product_page_features: "product-page-features",
   product_page_feature2: "product-page-feature-2",
   product_page_feature3: "product-page-feature-3",
+  career_page_events: "career-page-events",
+  menu: "menus"
 };
 
 export { API, endpoints, domain };

@@ -105,6 +105,7 @@ module.exports = {
       s18l22: ["18px", "22px"],
       s18l27: ["18px", "27px"],
       s18l33: ["18px", "33px"],
+      s19l30: ["19px", "30px"],
       s20l24: ["20px", "24px"],
       s20l26_6: ["20px", "26.6px"],
       s20l30: ["20px", "30px"],
@@ -181,8 +182,6 @@ module.exports = {
           " linear-gradient(180deg, #88CD37 -48.55%, rgba(143, 192, 85, 0) 244.44%);",
         bg_reel: "url(/images/backgrounds/reel-img.svg)",
         bg_contact: "url(/images/backgrounds/contact-background.svg)",
-        bg_contact_responcive:
-          "url(/images/backgrounds/contect-us-background1.svg)",
         bg_contact_responcive_color:
           "linear-gradient(289.57deg, #19191A -0.47%, #353537 41.1%, #575757 81.6%, #797979 101.84%)",
         bg_partner: "url(/images/backgrounds/partner-with-us-img.svg)",

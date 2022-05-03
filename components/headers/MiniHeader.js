@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 export default function MiniHeader(headerProps) {
   const iconSize = 20;
-  const { showMobileMenu, setShowMobileMenu } = headerProps;
+  const { showMobileMenu, setShowMobileMenu, menu } = headerProps;
   const [activeMenu, setActiveMenu] = useState("menu");
   const [activeProductsMenu, setActiveProductsMenu] = useState("");
   const router = useRouter();
@@ -338,62 +338,31 @@ export default function MiniHeader(headerProps) {
           </div>
 
           {/* Menu items */}
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/about-us")}
-          >
-            <div className="text-s14l17 text-0D0D0D">About Us</div>
-          </div>
+          {menu && menu[0] && menu[0].Menu.map((item) => (
+            <div>
+              <div
+                className="flex pl-8 py-15 items-center justify-between cursor-pointer"
+                onClick={() => {
+                  if (item.name === "Products") {
+                    setActiveMenu("products")
+                  } else if (item.name === "Resources") {
+                    setActiveMenu("resources")
+                  } else if (item.name === "Support") {
+                    setActiveMenu("support")
+                  } else {
+                    router.push(item?.url ? item?.url : "")
+                  }
+                }}
+              >
+                <div className="text-s14l17 text-0D0D0D">{item.name}</div>
+                {item.name === "Products" || item.name === "Resources" || item.name === "Support" &&
+                  <i className="fa-soild fa-angle-right text-8CC63E"></i>
+                }
+              </div>
+              <div className="w-100% h-1 bg-8CC63E opacity-20" />
+            </div>
 
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("products")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Products</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/partner-with-us")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Partner With Us</div>
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("resources")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Resources</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/career")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Careers</div>
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("support")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Support</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
+          ))}
         </div>
 
         {/* Active menu sidebar */}
