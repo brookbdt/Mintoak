@@ -1,73 +1,75 @@
-import Image from "../components/helpers/Image";
-import { Checkbox, Collapse } from "antd";
-import { Pagination } from "antd";
-import { Input } from "antd";
-import { API, endpoints } from "../components/helpers/API";
-import { Modal } from "antd";
-import { useEffect, useState } from "react";
-const { TextArea } = Input;
-const { Panel } = Collapse;
+import Image from "../components/helpers/Image"
+import { Checkbox, Collapse } from "antd"
+import { Pagination } from "antd"
+import { Input } from "antd"
+import { API, endpoints } from "../components/helpers/API"
+import { Modal } from "antd"
+import { useEffect, useState } from "react"
+const { TextArea } = Input
+const { Panel } = Collapse
 
 export default function Contact() {
-  const [modalvisible, setmodalVisible] = useState(false);
-  const [modalquerievisible, setmodalquerieVisible] = useState(false);
-  const [faqs, setFaqs] = useState([]);
-  const [isClicked, setIsClicked] = useState("b");
-  const [search, setSearch] = useState(null);
-  const [allFaqs, setAllFaqs] = useState(null);
-  const [isClickedSearch, setIsClickedSearch] = useState(false);
-  const [omniStatus, setOmniStatus] = useState(false);
-  const [momStatus, setMomStatus] = useState(false);
-  const [paylaterStatus, setPaylaterStatus] = useState(false);
-  const [acornStatus, setAcornStatus] = useState(false);
-  const [connectStatus, setConnectStatus] = useState(false);
-  const [ikuStatus, setIkuStatus] = useState(false);
-  const [oarStatus, setOarStatus] = useState(false);
-  const [farStatus, setFarStatus] = useState(false);
-  const [batStatus, setBatStatus] = useState(false);
-  const [uamStatus, setUamStatus] = useState(false);
-  const [aimStatus, setAimStatus] = useState(false);
-  const [macStatus, setMacStatus] = useState(false);
-  const [pamStatus, setPamStatus] = useState(false);
-  const [samStatus, setSamStatus] = useState(false);
-  const [xsmStatus, setXsmStatus] = useState(false);
-  const [xscStatus, setXscStatus] = useState(false);
+  const [modalvisible, setmodalVisible] = useState(false)
+  const [modalquerievisible, setmodalquerieVisible] = useState(false)
+  const [faqs, setFaqs] = useState([])
+  const [isClicked, setIsClicked] = useState("b")
+  const [search, setSearch] = useState(null)
+  const [allFaqs, setAllFaqs] = useState(null)
+  const [isClickedSearch, setIsClickedSearch] = useState(false)
+  const [omniStatus, setOmniStatus] = useState(false)
+  const [momStatus, setMomStatus] = useState(false)
+  const [paylaterStatus, setPaylaterStatus] = useState(false)
+  const [acornStatus, setAcornStatus] = useState(false)
+  const [connectStatus, setConnectStatus] = useState(false)
+  const [queryData, setQueryData] = useState("")
+  const [validQuery, setValidQuery] = useState(true)
+  const [ikuStatus, setIkuStatus] = useState(false)
+  const [oarStatus, setOarStatus] = useState(false)
+  const [farStatus, setFarStatus] = useState(false)
+  const [batStatus, setBatStatus] = useState(false)
+  const [uamStatus, setUamStatus] = useState(false)
+  const [aimStatus, setAimStatus] = useState(false)
+  const [macStatus, setMacStatus] = useState(false)
+  const [pamStatus, setPamStatus] = useState(false)
+  const [samStatus, setSamStatus] = useState(false)
+  const [xsmStatus, setXsmStatus] = useState(false)
+  const [xscStatus, setXscStatus] = useState(false)
 
   useEffect(() => {
     API({
       url: endpoints.faq,
     }).then((resp) => {
       if (!resp.message) {
-        setFaqs(resp);
-        setAllFaqs(resp);
+        setFaqs(resp)
+        setAllFaqs(resp)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   useEffect(() => {
     if (search?.length == 0) {
-      setIsClickedSearch(false);
-      setFaqs(allFaqs);
+      setIsClickedSearch(false)
+      setFaqs(allFaqs)
     }
-  }, [search]);
+  }, [search])
 
   const clicked = () => {
     setInterval(() => {
-      setIsClickedSearch(false);
-    }, 500);
-  };
+      setIsClickedSearch(false)
+    }, 500)
+  }
   const handleSearch = () => {
-    setIsClickedSearch(true);
+    setIsClickedSearch(true)
     if (search && search.length) {
       let list = allFaqs.filter((rList) =>
         rList.Question.toLowerCase().includes(search.toLowerCase())
-      );
-      setFaqs(list);
+      )
+      setFaqs(list)
     } else {
-      setIsClickedSearch(false);
-      setFaqs(allFaqs);
+      setIsClickedSearch(false)
+      setFaqs(allFaqs)
     }
-  };
+  }
 
   return (
     <>
@@ -83,7 +85,7 @@ export default function Contact() {
                 className="outline-none border-2 border-8FC055 bg-DFEFD4 h-54 w-100% pl-90 text-s20l24"
                 placeholder="Ex. What is pay later?"
                 onChange={(e) => {
-                  setSearch(e.target.value);
+                  setSearch(e.target.value)
                 }}
                 value={search}
               />
@@ -93,15 +95,16 @@ export default function Contact() {
                 src="/images/icons/search-icon.svg"
                 width={30}
                 height={30}
-              // onClick={() => { handleSearch(); alert(7) }}
+                // onClick={() => { handleSearch(); alert(7) }}
               />
             </div>
             <div
-              className={`button w-206 text-s22l26_4 ${isClickedSearch && "btn-click-shaddow"
-                }`}
+              className={`button w-206 text-s22l26_4 ${
+                isClickedSearch && "btn-click-shaddow"
+              }`}
               onMouseUp={() => clicked()}
               onClick={() => {
-                handleSearch();
+                handleSearch()
               }}
             >
               Search
@@ -134,11 +137,12 @@ export default function Contact() {
               />
             </div>
             <div
-              className={`${isClickedSearch && "btn-click-shaddow"
-                } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
+              className={`${
+                isClickedSearch && "btn-click-shaddow"
+              } button w-54 text-s22l26_4 mobile:text-s18l21_6 px-18 mobile:rounded-none`}
               onMouseUp={() => clicked()}
               onClick={() => {
-                handleSearch();
+                handleSearch()
               }}
             >
               <i className="fa-solid fa-arrow-right-long"></i>
@@ -257,7 +261,7 @@ export default function Contact() {
                 }
                 expandIconPosition={"right"}
                 bordered={false}
-              // defaultActiveKey={["1"]}
+                // defaultActiveKey={["1"]}
               >
                 {faqs?.map((items, index) => {
                   return (
@@ -270,7 +274,7 @@ export default function Contact() {
                         {items.Answer}
                       </p>
                     </Panel>
-                  );
+                  )
                 })}
               </Collapse>
             </div>
@@ -300,8 +304,25 @@ export default function Contact() {
                 placeholder="Enter your thoughts or suggestions"
                 bordered={false}
                 style={{ height: "132px" }}
+                onChange={(e) => {
+                  setQueryData(e.target.value)
+                }}
                 className="resize-none"
               />
+              {!validQuery ? (
+                <>
+                  <div className="text-EC5F22 text-s18l22 mobile:text-s12l14 pl-10 mb-5 mt-10">
+                    <Image
+                      src="/images/backgrounds/warn.svg"
+                      height={20}
+                      width={18}
+                    />
+                    Please enter all the necessary details to submit the form.
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
             </div>
             <div className="pt-32 pb-50 custom-textaria-m laptop:hidden desktop:hidden">
               <TextArea
@@ -315,7 +336,14 @@ export default function Contact() {
             <div></div>
             <div>
               <div
-                onClick={() => setmodalquerieVisible(true)}
+                onClick={() => {
+                  if (!queryData) {
+                    setValidQuery(false)
+                  } else {
+                    setmodalquerieVisible(true)
+                    setValidQuery(true)
+                  }
+                }}
                 className="button desktop:w-124 laptop:w-124 mobile:w-100% desktop:text-s22l26_4 laptop:text-s22l26_4 mobile:text-s14l16_8 px-28 desktop:py-13 laptop:py-13 mobile:py-10 font-bold"
               >
                 Submit
@@ -354,10 +382,11 @@ export default function Contact() {
             <div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 mobile:pt-35">
                 <div
-                  className={` flex mobile:mb-12  items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${omniStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={` flex mobile:mb-12  items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    omniStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setOmniStatus((prev) => !prev);
+                    setOmniStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -385,10 +414,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${momStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    momStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setMomStatus((prev) => !prev);
+                    setMomStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -417,11 +447,12 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${paylaterStatus === true &&
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    paylaterStatus === true &&
                     "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  }`}
                   onClick={() => {
-                    setPaylaterStatus((prev) => !prev);
+                    setPaylaterStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -450,10 +481,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${acornStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    acornStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setAcornStatus((prev) => !prev);
+                    setAcornStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -484,11 +516,12 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${connectStatus === true &&
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    connectStatus === true &&
                     "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  }`}
                   onClick={() => {
-                    setConnectStatus((prev) => !prev);
+                    setConnectStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -517,10 +550,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${ikuStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    ikuStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setIkuStatus((prev) => !prev);
+                    setIkuStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -549,10 +583,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${oarStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    oarStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setOarStatus((prev) => !prev);
+                    setOarStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -581,10 +616,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${farStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    farStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setFarStatus((prev) => !prev);
+                    setFarStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -615,10 +651,11 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40 ">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${batStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    batStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setBatStatus((prev) => !prev);
+                    setBatStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -647,10 +684,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${uamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    uamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setUamStatus((prev) => !prev);
+                    setUamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -679,10 +717,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${aimStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    aimStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setAimStatus((prev) => !prev);
+                    setAimStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -711,10 +750,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${macStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    macStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setMacStatus((prev) => !prev);
+                    setMacStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -745,10 +785,11 @@ export default function Contact() {
               </div>
               <div className="flex mobile:flex-col w-100% items-center justify-around desktop:pt-40 laptop:pt-40">
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${pamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    pamStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setPamStatus((prev) => !prev);
+                    setPamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -777,10 +818,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${samStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    samStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setSamStatus((prev) => !prev);
+                    setSamStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -809,10 +851,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${xsmStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    xsmStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setXsmStatus((prev) => !prev);
+                    setXsmStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -841,10 +884,11 @@ export default function Contact() {
                   </div>
                 </div>
                 <div
-                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${xscStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
-                    }`}
+                  className={`flex mobile:mb-12 items-center cursor-pointer mobile:w-100%  mobile:border mobile:border-46AC34 mobile:pl-13 laptop:px-15 desktop:px-15 laptop:py-10 desktop:py-10 popup ${
+                    xscStatus === true && "desktop:bg-8FC055 laptop:bg-8FC055"
+                  }`}
                   onClick={() => {
-                    setXscStatus((prev) => !prev);
+                    setXscStatus((prev) => !prev)
                   }}
                 >
                   <Image
@@ -877,8 +921,8 @@ export default function Contact() {
                 <div
                   className="button w-124 mobile:w-166 text-s22l26_4 mobile:text-s14l16_8 py-15 mobile:py-10 h-40 laptop:w-100 laptop:text-s18l22 laptop:py-10 laptop:h-40"
                   onClick={() => {
-                    setmodalquerieVisible(true);
-                    setmodalVisible(false);
+                    setmodalquerieVisible(true)
+                    setmodalVisible(false)
                   }}
                 >
                   Submit
@@ -919,5 +963,5 @@ export default function Contact() {
         </Modal>
       ) : null}
     </>
-  );
+  )
 }
