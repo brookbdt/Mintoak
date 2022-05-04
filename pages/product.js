@@ -540,9 +540,11 @@ export default function Product() {
         <div className="pb-60">
           <div className="mobile:hidden cust-pagination">
             <Carousel
-              itemsToShow={itemsToShow}
+              itemsToShow={3}
+              itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
-              pagination={page}
+              // pagination={page}
+              pagination={true}
               initialActiveIndex={1}
               renderPagination={({ pages, activePage, onClick }) => {
                 return (

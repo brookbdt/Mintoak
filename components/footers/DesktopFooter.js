@@ -1,27 +1,27 @@
-import React from "react"
-import Image from "../helpers/Image"
-import Request_Demo from "../../pages/request_demo"
-import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
+import React from "react";
+import Image from "../helpers/Image";
+import Request_Demo from "../../pages/request_demo";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function DesktopFooter() {
-  const router = useRouter()
+  const router = useRouter();
 
   const TogglePopup = () => {
-    setDemoPopup(false)
-  }
-  const [demoPopup, setDemoPopup] = useState(false)
-  const [slug, setSlug] = useState("")
+    setDemoPopup(false);
+  };
+  const [demoPopup, setDemoPopup] = useState(false);
+  const [slug, setSlug] = useState("");
 
   useEffect(() => {
-    let url = window.location.href
-    let slug = url.split("/").pop()
-    setSlug(slug)
-  }, [])
+    let url = window.location.href;
+    let slug = url.split("/").pop();
+    setSlug(slug);
+  }, []);
 
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
-      {slug == "faqs" || slug == "career" ? null : (
+      {slug == "faqs" || slug == "career" || slug == "careerDetails" ? null : (
         <div className="flex justify-between items-center px-180 py-60 laptop:px-50">
           <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
             {slug == "resource" || slug == "blog-detail" ? (
@@ -239,5 +239,5 @@ export default function DesktopFooter() {
         <Request_Demo triger={demoPopup} handleClose={TogglePopup} />
       )}
     </div>
-  )
+  );
 }
