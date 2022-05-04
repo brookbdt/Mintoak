@@ -178,7 +178,6 @@ export default function Career() {
             {careersBannerResp?.CTA}
           </div>
         </div>
-
       </div>
       <div className="py-156 mobile:py-80 flex justify-center items-center">
         <div className="w-full">
@@ -529,9 +528,9 @@ export default function Career() {
             }) => {
               const pointer = (
                 <>
-                  <div className="flex">
-                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                  <div className="flex  justify-between">
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-525252 text-525252 ml-8 rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-525252 text-525252 ml-8 rounded-full h-63 w-63" />
                   </div>
                 </>
               );

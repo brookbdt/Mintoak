@@ -95,7 +95,7 @@ export default function Request_Demo(props) {
         // width="85%"
         wrapClassName="mobile:py-20"
       >
-        <div className="bg-form mobile:px-16 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+        <div className="bg-form mobile:px-16 mobile:pt-49 mobile:pb-31  laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
             Request A Demo
           </div>
@@ -300,7 +300,7 @@ export default function Request_Demo(props) {
             </div>
           </div>
         </div>
-        <div className="py-18 flex">
+        <div className="py-18 pl-75 flex">
           {validate === false && (
             <>
               <Image
@@ -314,7 +314,7 @@ export default function Request_Demo(props) {
             </>
           )}
         </div>
-        <div className="w-100% flex justify-between">
+        <div className="w-100% flex justify-around">
           <div className="bg-button mobile:w-110 w-363 flex items-center justify-center">
             <div
               className="cursor-pointer w-100% bg-e9f2dd rounded-sm text-center text-525252 desktop:text-s22l26_4 laptop:text-s22l26_4 text-525252 mobile:text-s14l16_8 font-bold mobile:py-10  desktop:py-13 laptop:py-13 clear-all-btn"

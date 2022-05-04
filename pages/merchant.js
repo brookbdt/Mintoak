@@ -527,7 +527,7 @@ export default function Merchant() {
         </div>
         <div className="">
           <div className="mobile:hidden desktop:px-105 laptop:px-0 cust-pagination">
-            <Carousel
+            {/* <Carousel
               itemsToShow={3}
               itemPadding={[0, 20, 0, 20]}
               enableMouseSwipe={false}
@@ -539,10 +539,39 @@ export default function Merchant() {
                   ) : (
                     <i className="fa fa-angle-right text-s24l150 text-F1F1F1 flex items-center justify-center border border-F1F1F1 rounded-full h-63 w-63" />
                   );
+
                 return (
                   <button onClick={onClick} disabled={isEdge}>
                     {pointer}
                   </button>
+                );
+              }}
+            > */}
+            <Carousel
+              itemsToShow={3}
+              // verticalMode
+              itemPadding={[0, 0, 20, 0]}
+              enableMouseSwipe={true}
+              pagination={true}
+              showArrows={false}
+              outerSpacing={0}
+              renderPagination={({ pages, activePage, onClick }) => {
+                return (
+                  <div className="flex pb-42">
+                    {pages.map((page) => {
+                      const isActivePage = activePage === page;
+                      return (
+                        <div
+                          className={`bg-525252 w-6 h-6 rounded-full mr-6 ${
+                            isActivePage ? "bg-active" : ""
+                          }`}
+                          key={page}
+                          onClick={() => onClick(page)}
+                          active={isActivePage}
+                        ></div>
+                      );
+                    })}
+                  </div>
                 );
               }}
             >
