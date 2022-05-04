@@ -499,8 +499,8 @@ export default function Partner() {
                   value={fullName}
                 />
               </div>
-              <div className="pb-40 ">
-                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+              <div className="pb-56 ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15 ">
                   Bank Name
                 </div>
                 <input
@@ -511,6 +511,14 @@ export default function Partner() {
                   }}
                   value={bankName}
                 />
+                <div className="flex text-s20l24 desktop:text-F1F1F1 mt-20">
+                  <Image
+                    src="/images/icons/Bank_mark.svg"
+                    type="img"
+                    className="w-25 h-25 mr-8 mobile:hidden"
+                  />
+                  Customise Your Product
+                </div>
               </div>
               <div>
                 <div></div>
@@ -541,8 +549,9 @@ export default function Partner() {
                   Job Title
                 </div>
                 <input
+                  placeholder="Head of Product Team"
                   type="text"
-                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  className="job_title desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
                     setTitle(e.target.value);
                   }}
@@ -602,7 +611,7 @@ export default function Partner() {
           </div>
           <div>
             <div className="pb-40 desktop:pl-180 desktop:pr-312 mobile:p-20 mobile:pt-0">
-              <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+              <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15 desktop:pb-58">
                 Message
               </div>
               <input
