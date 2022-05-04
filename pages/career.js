@@ -5,7 +5,7 @@ import { consts } from "react-elastic-carousel";
 import { API, endpoints } from "../components/helpers/API";
 import { Row, Col, Input, Select, Pagination } from "antd";
 import Request_Demo from "./request_demo";
-import ImgsViewer from "react-images-viewer";
+// import ImgsViewer from "react-images-viewer";
 
 export default function Career() {
   const { Option } = Select;
@@ -126,32 +126,32 @@ export default function Career() {
     setImageViewer(status);
     let tempData = [];
     if (item.EventImage.length) {
-      tempData.push(
-        { "src": "http://uat-content.mintoak.com" + item.EventImage[0].url }
-      )
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage[0].url,
+      });
     }
     if (item.EventImage2.length) {
-      tempData.push(
-        { "src": "http://uat-content.mintoak.com" + item.EventImage2[0].url }
-      )
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage2[0].url,
+      });
     }
     if (item.EventImage3.length) {
-      tempData.push(
-        { "src": "http://uat-content.mintoak.com" + item.EventImage3[0].url }
-      )
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage3[0].url,
+      });
     }
     if (item.EventImage4.length) {
-      tempData.push(
-        { "src": "http://uat-content.mintoak.com" + item.EventImage4[0].url }
-      )
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage4[0].url,
+      });
     }
     if (item.EventImage5.length) {
-      tempData.push(
-        { "src": "http://uat-content.mintoak.com" + item.EventImage5[0].url }
-      )
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage5[0].url,
+      });
     }
     setImageViewerData(tempData);
-  }
+  };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
       <div className="relative top-bg-container border-b border-A4D77A">
@@ -187,7 +187,6 @@ export default function Career() {
             {careersBannerResp?.CTA}
           </div>
         </div>
-
       </div>
       <div className="py-156 mobile:py-80 flex justify-center items-center">
         <div className="w-full">
@@ -503,7 +502,12 @@ export default function Career() {
                 className="desktop:w-385 desktop:h-fit bg-FFFFFF board-shadow my-21"
                 key={index}
               >
-                <div className="pt-10 px-12" onClick={() => { viewImage(true, data); }}>
+                <div
+                  className="pt-10 px-12"
+                  onClick={() => {
+                    viewImage(true, data);
+                  }}
+                >
                   <Image
                     src={data?.EventImage[0]}
                     type="img"
@@ -539,8 +543,8 @@ export default function Career() {
               const pointer = (
                 <>
                   <div className="flex">
-                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-8B8B8B rounded-full h-63 w-63" />
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-525252 rounded-full h-63 w-63 mobile:mr-8 mobile:text-525252" />
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-525252 rounded-full h-63 w-63 mobile:ml-8 mobile:text-525252" />
                   </div>
                 </>
               );
@@ -571,18 +575,20 @@ export default function Career() {
             {onBoardData.map((data, index) => (
               <div className="bg-FFFFFF shadow-lg my-21" key={index}>
                 <div className="pt-10 px-12">
-                  {/* <Image
-                      src="/images/backgrounds/img-11.svg"
-                      width={"100%"}
-                      type="img"
-                    /> */}
-                  <ImgsViewer
+                  <Image
+                    src="/images/backgrounds/img-11.svg"
+                    width={"100%"}
+                    type="img"
+                  />
+                  {/* <ImgsViewer
                     imgs={imageViewerData}
                     isOpen={imageViewer}
-                    onClose={() => { setImageViewer(false); }}
-                    onClickPrev={() => { }}
-                    onClickNext={() => { }}
-                  />
+                    onClose={() => {
+                      setImageViewer(false);
+                    }}
+                    onClickPrev={() => {}}
+                    onClickNext={() => {}}
+                  /> */}
                 </div>
                 <div className="p-20">
                   <div className="font-semibold desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12">
