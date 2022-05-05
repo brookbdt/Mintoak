@@ -951,7 +951,7 @@ button[disabled] {
     }
 
     .ant-select-arrow {
-      font-size: 10px !important;
+      font-size: 8px !important;
     }
   }
   .career-label {
@@ -988,7 +988,7 @@ button[disabled] {
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     padding: 0;
     padding-left: 5px;
-    color: #f1f1f1;
+    // color: #f1f1f1;
     font-size: 120%;
   }
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
@@ -1006,7 +1006,7 @@ button[disabled] {
     color: #f1f1f1;
   }
   .ant-select-selection-placeholder {
-    color: #8b8b8b;
+    color: #9ca3af !important;
     font-size: 20px;
     line-height: 24px;
   }
@@ -1023,6 +1023,7 @@ button[disabled] {
     color: black;
   }
 }
+
 .global-partner {
   @media only screen and (min-width: 1366px) {
     .ant-select-selection-item {
@@ -1414,7 +1415,7 @@ textarea {
   box-shadow: 0px 1px 11.8511px rgba(0, 0, 0, 0.2);
 }
 .clear-all-btn {
-  border-width: 2px;
+  border-width: px;
   border-style: solid;
   border-image: linear-gradient(
       to right,
@@ -1427,15 +1428,11 @@ textarea {
     1;
 }
 
-.global-option-demo .ant-select-dropdown,
-.ant-select-dropdown-placement-topLeft {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+.ant-select-dropdown.ant-select-dropdown-placement-topLeft {
+  padding: 0px !important;
 }
-.global-option-demo .ant-select-dropdown,
-.ant-select-dropdown-placement-bottomLeft {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+.ant-select-dropdown.ant-select-dropdown-placement-bottomLeft {
+  padding: 0px !important;
 }
 .shadow-img-slide {
   box-shadow: 0px 5px 11px 0px rgb(0 0 0 / 50%);
@@ -1468,4 +1465,12 @@ textarea {
 }
 .carousel {
   overflow: hidden;
+}
+.careerLable {
+  font-size: 14px;
+}
+.job_title::placeholder {
+  color: #8b8b8b;
+  font-size: 20px;
+  line-height: 24px;
 }

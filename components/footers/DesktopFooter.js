@@ -21,7 +21,7 @@ export default function DesktopFooter() {
 
   return (
     <div className="hidden desktop:flex laptop:flex flex-col">
-      {slug == "faqs" || slug == "career" ? null : (
+      {slug == "faqs" || slug == "career" || slug == "careerDetails" ? null : (
         <div className="flex justify-between items-center px-180 py-60 laptop:px-50">
           <div className="text-F1F1F1 text-s40l60 laptop:text-s30l33">
             {slug == "resource" || slug == "blog-detail" ? (
@@ -148,6 +148,10 @@ export default function DesktopFooter() {
             </span>
           </div>
 
+          {/* <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
+            <span className="hover-border">Customise</span>
+          </div> */}
+
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
             <span
               className=" hover-border"
@@ -199,8 +203,17 @@ export default function DesktopFooter() {
             </span>
           </div>
 
+          {/* <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
+            <span className="hover-border">Case Studies</span>
+          </div> */}
+
           <div className="text-FAFAFA text-s20l140_62 mb-32 cursor-pointer">
-            <span className="hover-border">News & Media</span>
+            <span
+              className="hover-border"
+              onClick={() => router.push("/resource")}
+            >
+              News & Media
+            </span>
           </div>
         </div>
         <div className="pb-175 pt-186">

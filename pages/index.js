@@ -372,9 +372,9 @@ export default function Home() {
                     <div className="text-s20l150 laptop:text-s16l24 mobile:text-s14l24 tracking-wider text-F1F1F1">
                       <div className="text-s20l150 mobile:text-s14l24 tracking-wider text-F1F1F1">
                         {homeForBanksResp?.Description2}
-                        {/* <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
+                        <span className="text-s20l150 mobile:text-s16l19 text-8CC63E cursor-pointer">
                           {homeForBanksResp?.CTA1}
-                        </span> */}
+                        </span>
                       </div>
                     </div>
                     <div

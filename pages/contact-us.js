@@ -28,37 +28,23 @@ export default function Contact() {
 
   const handleSubmit = () => {
     let tempVal = true;
-    if (fullName === null || fullName === "") {
+    if (!fullName || !contactNo || !domain || !msg || !email) {
       setValidate(false);
       tempVal = false;
+      if (!email) {
+        tempVal = false;
+        setValidate(false);
+      } else if (
+        !email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+      ) {
+        tempVal = false;
+        setValidate(false);
+      }
+    } else {
+      setValidate(true);
     }
-    if (contactNo === null || contactNo === "") {
-      tempVal = false;
-      setValidate(false);
-    }
-    if (email === null || email === "") {
-      tempVal = false;
-      setValidate(false);
-    } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      tempVal = false;
-      setValidate(false);
-    }
-    if (domain === null || domain === "") {
-      setValidate(false);
-      tempVal = false;
-    }
-    // if (bankName === null || bankName === '') {
-    //   setValidate(false);
-    //   tempVal = false;
-    // }
-    if (msg === null || msg === "") {
-      setValidate(false);
-      tempVal = false;
-    }
-    // if (title === null || title === '') {
-    //   setValidate(false);
-    //   tempVal = false;
-    // }
+
+    console.log("tempVal", fullName, contactNo, email, domain, msg, validate);
     if (tempVal) {
       setValidate(true);
       handleClearAll();
@@ -76,7 +62,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50 desktop:px-180 laptop:px-180 mobile:bg-bg_contact_responcive mobile:border-b mobile:border-C4C4C4">
+      <div className="w-100% desktop:bg-cover bg-bg_contact mobile:px-20 flex mobile:flex-col mobile:pt-50 desktop:px-180 laptop:px-180 mobile:bg-contact_us mobile:border-b mobile:border-C4C4C4">
         <div className="flex flex-col mobile:bg-464646 desktop:w-50% laptop:w-50% mobile:py-80 justify-center mobile:w-100% mobile:opacity-70">
           <div>
             <div className="mobile:text-s22l26_4 desktop:text-s45l54 laptop:text-s45l54 text-F1F1F1 mobile:px-33">
@@ -142,7 +128,7 @@ export default function Contact() {
               </span>
               <input
                 type="number"
-                className=" global desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3"
+                className=" global desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525 w-100% global-input mobile:pl-35 desktop:pl-50 laptop:pl-50 pb-3 mobile:border-b"
                 value={contactNo}
                 onChange={(e) => {
                   setContactNo(e.target.value);
@@ -204,7 +190,7 @@ export default function Contact() {
                 className="w-100% desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text-252525  pb-5"
                 value={domain}
                 onChange={(e) => {
-                  setDomain(e.target);
+                  setDomain(e);
                 }}
               >
                 <Option
@@ -241,17 +227,19 @@ export default function Contact() {
               />
             </div>
             <div className="flex">
-              {validate === false && (
+              {!validate ? (
                 <>
                   <Image
                     src="/images/backgrounds/warn.svg"
                     height={20}
                     width={18}
                   />
-                  <div className="text-EC5F22 text-s18l22 mobile:text-s12l14 pl-10 ">
+                  <div className="text-EC5F22 text-s18l22 mobile:text-s12l14 pl-10 mb-5">
                     Please enter all the necessary details to submit the form.
                   </div>
                 </>
+              ) : (
+                ""
               )}
             </div>
             <div

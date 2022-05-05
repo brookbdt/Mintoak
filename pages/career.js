@@ -5,6 +5,7 @@ import { consts } from "react-elastic-carousel";
 import { API, endpoints } from "../components/helpers/API";
 import { Row, Col, Input, Select, Pagination } from "antd";
 import Request_Demo from "./request_demo";
+// import ImgsViewer from "react-images-viewer";
 
 export default function Career() {
   const { Option } = Select;
@@ -18,38 +19,10 @@ export default function Career() {
   ] = useState(null);
   const [searchJob, setSearchJob] = useState("");
   const [demoPopup, setDemoPopup] = useState(false);
-  const [onBoardData, setOnBoardData] = useState([
-    {
-      url: "/images/backgrounds/img-11.svg",
-      title: "Conference Day",
-      description:
-        "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
-    },
-    {
-      url: "/images/backgrounds/img-12.svg",
-      title: "Conference Day",
-      description:
-        "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
-    },
-    {
-      url: "/images/backgrounds/img-13.svg",
-      title: "Conference Day",
-      description:
-        "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
-    },
-    {
-      url: "/images/backgrounds/img-11.svg",
-      title: "Conference Day",
-      description:
-        "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
-    },
-    {
-      url: "/images/backgrounds/img-12.svg",
-      title: "Conference Day",
-      description:
-        "Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit moo comprehensam ne, usu cu stet prompta reformidans. Est tation latine aliquip.",
-    },
-  ]);
+  const [onBoardData, setOnBoardData] = useState([]);
+  const [imageViewer, setImageViewer] = useState(false);
+  const [imageViewerData, setImageViewerData] = useState([]);
+
   const [jobOpenings, setJobOpenings] = useState([
     {
       designation: "Java Developer",
@@ -136,10 +109,48 @@ export default function Career() {
         setCareerListingValuePropositionResp(resp);
       }
     });
-    // career_listing_value_proposition
+
+    API({
+      url: endpoints.career_page_events,
+    }).then((resp) => {
+      if (!resp.message) {
+        setOnBoardData(resp);
+      }
+    });
   }, []);
   const TogglePopup = () => {
     setDemoPopup(false);
+  };
+
+  const viewImage = (status, item) => {
+    setImageViewer(status);
+    let tempData = [];
+    if (item.EventImage.length) {
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage[0].url,
+      });
+    }
+    if (item.EventImage2.length) {
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage2[0].url,
+      });
+    }
+    if (item.EventImage3.length) {
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage3[0].url,
+      });
+    }
+    if (item.EventImage4.length) {
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage4[0].url,
+      });
+    }
+    if (item.EventImage5.length) {
+      tempData.push({
+        src: "http://uat-content.mintoak.com" + item.EventImage5[0].url,
+      });
+    }
+    setImageViewerData(tempData);
   };
   return (
     <div className="desktop:h-fit laptop:h-fit w-100% bg-home-top mobile:w-100%">
@@ -168,8 +179,6 @@ export default function Career() {
           </div>
           <div className="text-s24l150 mobile:text-s14l24 text-525252 shrink-0 mt-37 mobile:mt-16">
             {careersBannerResp?.Description}
-            {/* Explore various opportunities for enthusiastic, innovative and
-            dedicated individuals to join our team. */}
           </div>
           <div
             onClick={() => setDemoPopup(true)}
@@ -189,7 +198,7 @@ export default function Career() {
               careerListingValuePropositionResp.map((item, index) => (
                 <div
                   key={index}
-                  className="desktop:flex-column desktop:mx-70 laptop:mx-70 laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-start items-center mobile:py-15 "
+                  className="desktop:flex-column desktop:mx-70 laptop:flex-column mobile:flex desktop:justify-center laptop:justify-center mobile:justify-start items-center mobile:py-15 "
                 >
                   <div className="flex justify-center align-center">
                     <Image
@@ -493,19 +502,24 @@ export default function Career() {
                 className="desktop:w-385 desktop:h-fit bg-FFFFFF board-shadow my-21"
                 key={index}
               >
-                <div className="pt-10 px-12">
+                <div
+                  className="pt-10 px-12"
+                  onClick={() => {
+                    viewImage(true, data);
+                  }}
+                >
                   <Image
-                    src={data?.url}
+                    src={data?.EventImage[0]}
                     type="img"
                     className=" w-100% h-100% object-cover"
                   />
                 </div>
                 <div className="p-20">
                   <div className="desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12 font-semibold">
-                    {data.title}
+                    {data.Title}
                   </div>
                   <div className="text-s18l25 w-100% pr-80">
-                    {data.description}
+                    {data.Description}
                   </div>
                 </div>
               </div>
@@ -528,9 +542,9 @@ export default function Career() {
             }) => {
               const pointer = (
                 <>
-                  <div className="flex  justify-between">
-                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-525252 text-525252 ml-8 rounded-full h-63 w-63" />
-                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-525252 text-525252 ml-8 rounded-full h-63 w-63" />
+                  <div className="flex">
+                    <i className="fa fa-angle-left text-s24l150 flex items-center justify-center border border-525252 rounded-full h-63 w-63 mobile:mr-8 mobile:text-525252" />
+                    <i className="fa fa-angle-right text-s24l150 flex items-center justify-center border border-525252 rounded-full h-63 w-63 mobile:ml-8 mobile:text-525252" />
                   </div>
                 </>
               );
@@ -566,6 +580,15 @@ export default function Career() {
                     width={"100%"}
                     type="img"
                   />
+                  {/* <ImgsViewer
+                    imgs={imageViewerData}
+                    isOpen={imageViewer}
+                    onClose={() => {
+                      setImageViewer(false);
+                    }}
+                    onClickPrev={() => {}}
+                    onClickNext={() => {}}
+                  /> */}
                 </div>
                 <div className="p-20">
                   <div className="font-semibold desktop:text-s23_7l28_44 laptop:text-s23_7l28_44 mobile:text-s15_22l18_27 pb-12">

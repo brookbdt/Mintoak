@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Image from "../helpers/Image";
-import { useRouter } from "next/router";
+import React, { useState } from "react"
+import Image from "../helpers/Image"
+import { useRouter } from "next/router"
 
 export default function MiniHeader(headerProps) {
-  const iconSize = 20;
-  const { showMobileMenu, setShowMobileMenu } = headerProps;
-  const [activeMenu, setActiveMenu] = useState("menu");
-  const [activeProductsMenu, setActiveProductsMenu] = useState("");
-  const router = useRouter();
+  const iconSize = 20
+  const { showMobileMenu, setShowMobileMenu, menu } = headerProps
+  const [activeMenu, setActiveMenu] = useState("menu")
+  const [activeProductsMenu, setActiveProductsMenu] = useState("")
+  const router = useRouter()
 
   const TogglePopup = () => {
-    setDemoPopup(false);
-  };
+    setDemoPopup(false)
+  }
 
   const renderPaymentsStack = () => {
     return (
@@ -217,8 +217,8 @@ export default function MiniHeader(headerProps) {
 
         <div className="w-100% h-1 bg-8CC63E opacity-20" />
       </>
-    );
-  };
+    )
+  }
 
   const renderResources = () => {
     return (
@@ -263,8 +263,8 @@ export default function MiniHeader(headerProps) {
           </div>
         </div>
       </>
-    );
-  };
+    )
+  }
 
   const renderSupport = () => {
     return (
@@ -289,8 +289,8 @@ export default function MiniHeader(headerProps) {
           </div>
         </div>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -314,8 +314,8 @@ export default function MiniHeader(headerProps) {
           <i
             className="fa-solid fa-xmark cursor-pointer mr-20 w-13 h-13 font-bold text-252525 text-s18l22"
             onClick={() => {
-              setShowMobileMenu(false);
-              setActiveMenu("menu");
+              setShowMobileMenu(false)
+              setActiveMenu("menu")
             }}
           />
         </div>
@@ -325,8 +325,8 @@ export default function MiniHeader(headerProps) {
           <div
             className="flex items-center cursor-pointer"
             onClick={() => {
-              setActiveMenu("menu");
-              setActiveProductsMenu("");
+              setActiveMenu("menu")
+              setActiveProductsMenu("")
             }}
           >
             {activeMenu !== "menu" && (
@@ -338,62 +338,34 @@ export default function MiniHeader(headerProps) {
           </div>
 
           {/* Menu items */}
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/about-us")}
-          >
-            <div className="text-s14l17 text-0D0D0D">About Us</div>
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("products")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Products</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/partner-with-us")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Partner With Us</div>
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("resources")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Resources</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => router.push("/career")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Careers</div>
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
-
-          <div
-            className="flex pl-8 py-15 items-center justify-between cursor-pointer"
-            onClick={() => setActiveMenu("support")}
-          >
-            <div className="text-s14l17 text-0D0D0D">Support</div>
-            <i className="fa-solid fa-angle-right text-8CC63E" />
-          </div>
-
-          <div className="w-100% h-1 bg-8CC63E opacity-20" />
+          {menu &&
+            menu[0] &&
+            menu[0].Menu.map((item, index) => (
+              <div key={index}>
+                <div
+                  className="flex pl-8 py-15 items-center justify-between cursor-pointer"
+                  onClick={() => {
+                    if (item.name === "Products") {
+                      setActiveMenu("products")
+                    } else if (item.name === "Resources") {
+                      setActiveMenu("resources")
+                    } else if (item.name === "Support") {
+                      setActiveMenu("support")
+                    } else {
+                      router.push(item?.url ? item?.url : "")
+                    }
+                  }}
+                >
+                  <div className="text-s14l17 text-0D0D0D">{item.name}</div>
+                  {item.name === "Products" ||
+                    item.name === "Resources" ||
+                    (item.name === "Support" && (
+                      <i className="fa-soild fa-angle-right text-8CC63E"></i>
+                    ))}
+                </div>
+                <div className="w-100% h-1 bg-8CC63E opacity-20" />
+              </div>
+            ))}
         </div>
 
         {/* Active menu sidebar */}
@@ -406,12 +378,12 @@ export default function MiniHeader(headerProps) {
           {activeMenu === "products"
             ? renderPaymentsStack()
             : activeMenu === "resources"
-              ? renderResources()
-              : activeMenu === "support"
-                ? renderSupport()
-                : null}
+            ? renderResources()
+            : activeMenu === "support"
+            ? renderSupport()
+            : null}
         </div>
       </div>
     </>
-  );
+  )
 }

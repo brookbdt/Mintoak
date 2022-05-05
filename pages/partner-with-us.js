@@ -390,9 +390,9 @@ export default function Partner() {
           </div>
         </div>
         {/* Partner with us form */}
-        <div className="w-100%  bg-footer">
+        <div className="w-100%  bg-footer desktop:px-80">
           <div ref={scrollPoint} />
-          <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-100 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
+          <div className="desktop:text-s45l45 laptop:text-s45l45 text-FFFFFF desktop:pl-180 laptop:pl-100 desktop:pt-100 laptop:pt-100 pb-48 mobile:pt-48 mobile:pl-20 mobile:text-s22l45">
             Partner with us
           </div>
           <div className="w-100% flex mobile:flex-col mobile:px-20 laptop:hidden desktop:hidden">
@@ -484,8 +484,8 @@ export default function Partner() {
               </div>
             </div>
           </div>
-          <div className="w-100% flex mobile:flex-col mobile:px-20 mobile:hidden">
-            <div className="desktop:px-100 laptop:px-100 w-100%">
+          <div className="w-100% flex mobile:flex-col justify-between desktop:pl-180 desktop:pr-312 mobile:px-20 mobile:hidden">
+            <div className="w-360">
               <div className="pb-40 ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                   Full Name
@@ -499,8 +499,8 @@ export default function Partner() {
                   value={fullName}
                 />
               </div>
-              <div className="pb-40 ">
-                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+              <div className="pb-56 ">
+                <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15 ">
                   Bank Name
                 </div>
                 <input
@@ -511,12 +511,20 @@ export default function Partner() {
                   }}
                   value={bankName}
                 />
+                <div className="flex text-s20l24 desktop:text-F1F1F1 mt-20">
+                  <Image
+                    src="/images/icons/Bank_mark.svg"
+                    type="img"
+                    className="w-25 h-25 mr-8 mobile:hidden"
+                  />
+                  Customise Your Product
+                </div>
               </div>
               <div>
                 <div></div>
               </div>
             </div>
-            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+            <div className="w-360">
               <div className="w-100% ">
                 <div className="pb-40 ">
                   <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 w-100% desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
@@ -541,8 +549,9 @@ export default function Partner() {
                   Job Title
                 </div>
                 <input
+                  placeholder="Head of Product Team"
                   type="text"
-                  className="desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
+                  className="job_title desktop:text-s20l24 laptop:text-s20l24 mobile:text-s14l16_8 text text-F1F1F1 w-100% global-input pb-5"
                   onChange={(e) => {
                     setTitle(e.target.value);
                   }}
@@ -550,7 +559,7 @@ export default function Partner() {
                 />
               </div>
             </div>
-            <div className="desktop:pr-100 laptop:pr-100 w-100%">
+            <div className="w-360">
               <div className="pb-40 w-100% ">
                 <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
                   Business Email
@@ -600,9 +609,9 @@ export default function Partner() {
               </div>
             </div>
           </div>
-          <div className="desktop:px-100 laptop:px-100 mobile:px-20 w-100%">
-            <div className="pb-40">
-              <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15">
+          <div>
+            <div className="pb-40 desktop:pl-180 desktop:pr-312 mobile:p-20 mobile:pt-0">
+              <div className="mobile:text-s12l14 desktop:text-s20l24 laptop:text-s20l24 mobile:text-C4C4C4 desktop:text-C4C4C4 laptop:text-C4C4C4 pb-15 desktop:pb-58">
                 Message
               </div>
               <input
@@ -618,7 +627,7 @@ export default function Partner() {
           </div>
           {validate === false && (
             <>
-              <div className="py-18 flex desktop:px-100 laptop:px-100 w-100%">
+              <div className="py-18 flex desktop:pl-180 desktop:pr-312 laptop:px-100 w-100%">
                 <Image
                   src="/images/backgrounds/warn.svg"
                   height={20}
@@ -631,7 +640,7 @@ export default function Partner() {
             </>
           )}
 
-          <div className="desktop:pl-100 laptop:pl-100 w-100% pb-100 mobile:flex mobile:items-center mobile:justify-center">
+          <div className="desktop:pl-180 desktop:pr-312 laptop:pl-180 laptop:pr-312 w-100% pb-100 mobile:flex mobile:items-center mobile:justify-center">
             <div
               onClick={() => handleSubmit()}
               className="mobile:w-320 desktop:w-359 laptop:w-359 button desktop:text-s22l26_4 laptop:text-s22l26_4 text-FFFFFF mobile:text-s14l16_8 font-bold mobile:py-10 mobile:px-98 desktop:py-15 laptop:py-15 desktop:px-176 laptop:px-176"
