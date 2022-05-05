@@ -528,7 +528,7 @@ export default function Product() {
             <Carousel
               itemsToShow={itemsToShow}
               enableMouseSwipe={false}
-              pagination={page}
+              pagination={true}
               initialActiveIndex={1}
               renderPagination={({ pages, activePage, onClick }) => {
                 return (

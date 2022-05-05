@@ -229,11 +229,27 @@ export default function CareerDetails() {
                   </Form.Item>
                 </Col>
                 <Col xs={24} md={8}>
-                  <Form.Item className="global-career">
+                  <Form.Item className="job-app-form">
+                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
+                      Business Email
+                    </label>
+                    <Input placeholder="Enter email address" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} md={8}>
+                  <Form.Item className="job-app-form">
+                    <label className="text-s20l24 text-C4C4C4">Location</label>
+                    <Input placeholder="Enter location" />
+                  </Form.Item>
+                </Col>
+
+                <Col xs={24} md={8}>
+                  <Form.Item className="job-app-form">
                     <label className="text-s20l24 text-C4C4C4 career-label mobile:text-s12l14_4">
                       Key Skills
                     </label>
                     <Select
+                      className="select"
                       dropdownStyle={{
                         border: "1px solid #9F9FA0",
                         boxSizing: "border-box",
@@ -241,7 +257,7 @@ export default function CareerDetails() {
                         background:
                           "linear-gradient(126.9deg, #3F3F3F -3.96%, #000000 136.6%)",
                       }}
-                      placeholder="Select key skills"
+                      placeholder="Select Key Skills"
                     >
                       <Option
                         className="global-option-career"
@@ -257,14 +273,6 @@ export default function CareerDetails() {
                 </Col>
               </Row>
               <Row gutter={24}>
-                <Col xs={24} md={8}>
-                  <Form.Item className="job-app-form">
-                    <label className="text-s20l24 text-C4C4C4 mobile:text-s12l14_4">
-                      Email Address
-                    </label>
-                    <Input placeholder="Enter email address" />
-                  </Form.Item>
-                </Col>
                 <Col xs={24} md={8}>
                   <Form.Item className="job-app-form">
                     <label className="text-s20l24 text-C4C4C4">Location</label>
@@ -315,6 +323,22 @@ export default function CareerDetails() {
                         B.Tech.
                       </Option>
                     </Select>
+                  </Form.Item>
+                </Col>
+                <Col xs={24} md={8}>
+                  <Form.Item className="job-app-form">
+                    <label className="text-s20l24 text-C4C4C4">
+                      Current CTC
+                    </label>
+                    <Input placeholder="Current CTC" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} md={8}>
+                  <Form.Item className="job-app-form">
+                    <label className="text-s20l24 text-C4C4C4">
+                      Notice Period
+                    </label>
+                    <Input placeholder="Notice Period" />
                   </Form.Item>
                 </Col>
               </Row>
