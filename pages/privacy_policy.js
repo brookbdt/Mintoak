@@ -43,47 +43,6 @@ hover:underline"
             This Privacy Policy is incorporated into and subject to the Terms of
             Use
           </div>
-          <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
-            Who is covered in the policy
-          </div>
-          <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 laptop:pb-50 mobile:pb-40">
-            All persons or business, whose information is either collected/
-            received/ possessed/ stored/ dealt in/ handled by Mintoak and who
-            visit the site{" "}
-            <span
-              className="text-525252 hover:text-8CC63E 
-hover:underline"
-            >
-              http://www.mintoak.com
-            </span>{" "}
-            and provide information to Mintoak online are covered under this
-            Policy.
-          </div>
-          <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-20 mobile:pb-12 font-semibold">
-            Information covered by this policy
-          </div>
-          <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 laptop:pb-50 mobile:pb-40">
-            This Policy seeks to cover “information”, of the Covered Persons,
-            provided to Mintoak as also any information collected by the Mintoak
-            server from the visitors browser or through the Mintoak
-            Device/applications. The ("Information"), i.e. any of the following:
-            Personal/private/financial/business/demographic information of the
-            covered persons, during signing up process or when you apply or sign
-            up for our Services. Sensitive personal data or information.
-          </div>
-          <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
-            Definitions used in this policy
-          </div>
-          <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-20 mobile:pb-12">
-            "Information" means any information that relates to a natural or
-            legal person, which, either directly or indirectly, in combination
-            with other information available or likely to be available with a
-            body corporate, is capable of identifying such person/s.
-            <div className="pt-10">
-              "Sensitive personal data or information" of a person means such
-              personal information which consists of information relating to :
-            </div>
-          </div>
         </div>
       </div>
       {clickStatus == false ? (
@@ -103,20 +62,70 @@ hover:underline"
               </div>
             </div>
             <div className="w-100%  desktop:pl-180 desktop:pr-540 laptop:pl-70 laptop:pr-200 desktop:text-s24l36 mobile:text-s14l21 z-minus1 text-525252 pl-24 relative h-250">
-              <ul className="list-disc ml-20">
-                <li>Password</li>
-                <li> Financial information </li>
-                <li>Bank account and card details</li>
-                <li>Biometric information </li>
-                <li>address, profile, date of birth</li>
-                <li>Contact details</li>
-              </ul>
+              <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
+                Who is covered in the policy
+              </div>
+              <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 laptop:pb-50 mobile:pb-40">
+                All persons or business, whose information is either collected/
+                received/ possessed/ stored/ dealt in/ handled by Mintoak and
+                who visit the site{" "}
+                <span
+                  className="text-525252 hover:text-8CC63E 
+hover:underline"
+                >
+                  http://www.mintoak.com
+                </span>{" "}
+                and provide information to Mintoak online are covered under this
+                Policy.
+              </div>
             </div>
           </div>
         </>
       ) : (
         <>
           <div className="w-100% desktop:pl-180 desktop:pr-540  laptop:pl-70 laptop:pr-200 mobile:px-20 ">
+            <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
+              Who is covered in the policy
+            </div>
+            <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 laptop:pb-50 mobile:pb-40">
+              All persons or business, whose information is either collected/
+              received/ possessed/ stored/ dealt in/ handled by Mintoak and who
+              visit the site{" "}
+              <span
+                className="text-525252 hover:text-8CC63E 
+hover:underline"
+              >
+                http://www.mintoak.com
+              </span>{" "}
+              and provide information to Mintoak online are covered under this
+              Policy.
+            </div>
+            <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-20 mobile:pb-12 font-semibold">
+              Information covered by this policy
+            </div>
+            <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-80 laptop:pb-50 mobile:pb-40">
+              This Policy seeks to cover “information”, of the Covered Persons,
+              provided to Mintoak as also any information collected by the
+              Mintoak server from the visitors browser or through the Mintoak
+              Device/applications. The ("Information"), i.e. any of the
+              following: Personal/private/financial/business/demographic
+              information of the covered persons, during signing up process or
+              when you apply or sign up for our Services. Sensitive personal
+              data or information.
+            </div>
+            <div className="mobile:text-s16l24 desktop:text-s32l45 laptop:text-s28l42 mobile:text-000000 text-252525 mobile:pt-22 desktop:pb-40 laptop:pb-30 mobile:pb-12 font-semibold">
+              Definitions used in this policy
+            </div>
+            <div className="desktop:text-s24l36 mobile:text-s14l21 text-525252 desktop:pb-20 mobile:pb-12">
+              "Information" means any information that relates to a natural or
+              legal person, which, either directly or indirectly, in combination
+              with other information available or likely to be available with a
+              body corporate, is capable of identifying such person/s.
+              <div className="pt-10">
+                "Sensitive personal data or information" of a person means such
+                personal information which consists of information relating to :
+              </div>
+            </div>
             <div className="w-100% desktop:text-s24l36 mobile:text-s14l21 z-minus1 text-525252 pl-24 relative h-250 laptop:h-150 mobile:h-150">
               <ul className="list-disc">
                 <li>Password</li>
