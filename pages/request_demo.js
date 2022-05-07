@@ -95,7 +95,7 @@ export default function Request_Demo(props) {
         // width="85%"
         wrapClassName="mobile:py-20"
       >
-        <div className="bg-form mobile:px-16 mobile:pt-49 mobile:pb-31 desktop:py-75 laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
+        <div className="bg-form mobile:px-16 mobile:pt-49 mobile:pb-31  laptop:py-75 desktop:px-75 laptop:px-75 flex flex-col justify-center mobile:w-100% desktop:w-100% laptop:w-100%">
           <div className="mobile:text-s24l29 desktop:text-s45l54 laptop:text-s45l54 text-252525 font-bold  desktop:pr-135 laptop:pr-135 pb-40">
             Request A Demo
           </div>
@@ -213,7 +213,7 @@ export default function Request_Demo(props) {
                   Business Category
                 </div>
                 <Select
-                placeholder="Choose Products"
+                  placeholder="Choose Products"
                   dropdownStyle={{
                     border: "1px solid #DFEFD4",
                     boxSizing: "border-box",
@@ -227,7 +227,6 @@ export default function Request_Demo(props) {
                     setProduct(e.target);
                   }}
                 >
-                  
                   <Option
                     value="Apparel"
                     className="global-option-demo"

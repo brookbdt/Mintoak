@@ -941,7 +941,7 @@ export default function Contact() {
           }}
           centered
           visible={modalquerievisible}
-          onCancel={() => setmodalquerieVisible(false)}
+          onCancel={() => setmodalquerieVisible(true)}
           footer={null}
           className="shadow-popupShadow close-btn faq-submit-bg"
         >
